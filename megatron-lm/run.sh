@@ -50,6 +50,12 @@ ROCM_PATH=/opt/rocm
 HIP_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 HSA_NO_SCRATCH_RECLAIM=1
 PYTORCH_ROCM_ARCH=gfx950
+# PyTorch in megatron-lm.sif is built without gfx950 code objects
+# (torch.cuda.get_arch_list() == []), so HIP init fails on MI355X with
+# "No HIP GPUs are available". Alias gfx950 -> gfx942 so the existing
+# MI300X kernels run on MI355X (binary-compatible at gfx9 ISA level).
+# Remove this once a gfx950-native PyTorch wheel is in the image.
+HSA_OVERRIDE_GFX_VERSION=9.4.2
 
 # RCCL / NCCL
 NCCL_IB_DISABLE=1

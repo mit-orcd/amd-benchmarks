@@ -63,6 +63,29 @@ python setup.py install
 - Check AMD's ROCm PyTorch support matrix for the exact compatible wheel:
   https://rocm.docs.amd.com/en/latest/compatibility/pytorch-support-matrix.html
 
+### Workaround when PyTorch lacks gfx950 kernels
+
+The PyTorch shipped in `megatron-lm.sif` is built without gfx950 code objects
+(`torch.cuda.get_arch_list()` returns `[]`). On MI355X this surfaces as:
+
+```
+RuntimeError: No HIP GPUs are available
+# but torch.cuda.device_count() == 8
+```
+
+`rocminfo` will still happily list all 8 MI355X agents — the failure is
+purely on the PyTorch / HIP-kernel-load side, not the device-permission side.
+
+Fix: alias gfx950 → gfx942 at the HSA layer so the existing MI300X kernels
+run on MI355X (binary-compatible at the gfx9 ISA level):
+
+```bash
+export HSA_OVERRIDE_GFX_VERSION=9.4.2
+```
+
+In `work/run.sh` this is already set inside the container env block.
+Remove it once a gfx950-native PyTorch wheel is baked into the image.
+
 ---
 
 ## Container Image (Singularity) — Network Issue

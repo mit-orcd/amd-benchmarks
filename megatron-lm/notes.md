@@ -233,3 +233,106 @@ The split in `work/run.sh`:
   `NCCL_ALGO`, `NCCL_DEBUG`, `NCCL_SOCKET_IFNAME` -- inherited from NCCL.
 - `RCCL_MSCCL_ENABLE` -- AMD-only (MSCCL is AMD's tuned collective scheduler),
   so it gets the `RCCL_` prefix.
+
+---
+
+## What else is in each Megatron-LM log (besides TFLOP/s and comm timers)
+
+Inventory of everything the per-N log file emits, grouped by category. Useful
+when reading `logs/sweep_<STAMP>/bench_bf16_n<N>.log`.
+
+### 1. Per-iteration training scalars (the main iter line)
+
+Every `--log-interval` steps, in addition to TFLOP/s/GPU:
+
+- `elapsed time per iteration (ms)` -- raw wall-clock per step (3,467 ms
+  steady-state on the 8-GPU run).
+- `consumed samples` -- running total.
+- `mem usages` -- normalized HBM fraction (~0.636 on 8-GPU).
+- `learning rate` -- cosine schedule progression.
+- `global batch size` -- sanity check during the sweep.
+- `lm loss` -- CE loss on mock data; here it falls 12.05 -> 8.12 over the 50
+  iters then plateaus (expected on `--mock-data`).
+- `loss scale` -- only meaningful for FP16 (constant 1.0 in BF16).
+- `grad norm` -- pre-clip L2 of all gradients (37.6 at iter 1 -> 0.19 at
+  iter 50; spikes warn of instability).
+- `number of skipped iterations` / `number of nan iterations` --
+  non-finite-grad guard.
+
+### 2. Compute timers (per stage, per rank)
+
+Same `--timing-log-level 2` block, non-comm side:
+
+- `forward-compute` / `backward-compute` / `forward-backward` -- local-compute
+  fraction of the step (~3,140 ms of 3,471 ms on 8-GPU).
+- `batch-generator` -- data-loader time per step (~1.25 ms with `--mock-data`).
+- `optimizer-copy-to-main-grad` (bf16->fp32 grad cast),
+  `optimizer-inner-step` (Adam math itself),
+  `optimizer-copy-main-to-model-params` (fp32->bf16 weight write-back), and
+  the rolled-up `optimizer` total (~98.5 ms on 8-GPU).
+
+### 3. Model + memory footprints (printed once, before training)
+
+- `Total number of parameters in billions: 16.22` -- split into transformer
+  (15.60 B) and embeddings (0.62 B), plus "most loaded shard" (matters under
+  TP/PP).
+- `Activation memory footprint per transformer layer (precise, without SP): 1632.0 MB`.
+- `Theoretical memory footprints: weight and optimizer=116036.06 MB,
+  activation=69522.67 MB, total=185558.73 MB`.
+- `[Rank 0] (after N iterations) memory (MB) | allocated | max allocated |
+  reserved | max reserved` -- actual HBM after iter 1 and iter 5 (allocated
+  116 GB; max-allocated 162 -> 178 GB once the bwd pass holds activations;
+  reserved 170 -> 179 GB).
+
+### 4. Startup phase timers (one-shot, before iter 1)
+
+Cold-start cost -- useful for short benchmarks where init dominates:
+
+- `startup-program-entry-spread`, `startup-library-setup`,
+  `startup-program-setup`, `startup-in-process-setup`,
+  `startup-in-job-setup`.
+- `startup-initialize-megatron`, `startup-megatron-init-local`,
+  `startup-megatron-init-global`, `startup-set-jit-fusion-options`.
+- `all-reduce-start-timestamps-tensor` -- RCCL world handshake.
+- `model-and-optimizer-setup` and `train/valid/test-data-iterators-setup` --
+  model build + dataset wiring.
+
+### 5. End-of-run evaluation
+
+Even with `--eval-interval 1000000`, the final test/validation eval still
+runs at job exit. Each eval prints `Evaluating iter K/100` over 1600 mock
+samples and reports a separate validation/test loss. Mostly noise on
+`--mock-data`, but the iter-rate during eval is a clean inference-throughput
+number.
+
+### 6. Full argument dump
+
+The ~800-line argparse echo near the top of each log records every Megatron
+knob (including ones the script didn't set). Authoritative reproducibility
+record per N -- including `data_parallel_size`, parallel-group geometry
+(`initialized tensor model parallel with size 1` / `pipeline ... size 1`),
+and the full `AdamOptimizerConfig` and `DistributedDataParallelConfig`.
+
+### 7. Environment + warnings (worth scanning per run)
+
+- Python / PyTorch / `torch.cuda.device_count()` banner (the in-container check).
+- `HIP_VISIBLE_DEVICES` line (added by the sweep `run.sh`) -- confirms each
+  sweep point saw the right N devices.
+- RCCL `NCCL_DEBUG=WARN` lines: `NUMA auto balancing enabled` (variance
+  risk), `Missing "iommu=pt"` (perf/stability), TransformerEngine
+  flash-attn-version range warning, Apex falling back to native RoPE. These
+  don't change between sweep points but the NUMA one in particular can
+  cause rank-time spread to grow at higher N.
+
+### What is **not** in the logs (and you'd need extra wiring for)
+
+- GPU power / energy -- the run shows `log_energy = False`; flipping
+  `--log-energy` would add a per-step energy line (pynvml-based).
+- HBM bandwidth, kernel-level latency, achieved-vs-theoretical FLOPS per
+  kernel -- needs `rocprof` / `omniperf` outside Megatron.
+- Tokens/sec -- not printed directly; derive it from
+  `global batch size * seq-length / elapsed_time_per_iter` (~18.9k tok/s for
+  the 8-GPU run).
+- Per-collective bytes / busBW -- would need `NCCL_DEBUG=INFO` and
+  `NCCL_DEBUG_SUBSYS=COLL,P2P` (current setting is `WARN`, intentionally
+  quieter).

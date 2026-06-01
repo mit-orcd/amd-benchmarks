@@ -95,6 +95,32 @@ GPU_COUNTS=1 PRECISIONS=fp16 DURATION_MS=10000 ./run_tflops.sh
 OUT_DIR=/tmp/my_tflops_run ./run_tflops.sh
 ```
 
+## `run_tflops_sweep.sh` — full 1..8 GPU sweep
+
+Thin wrapper around `run_tflops.sh` that defaults `GPU_COUNTS` to every count
+from 1 to 8 (instead of the inner script's `1 2 4 8`) and tees the combined
+stdout/stderr into `sweep.log` alongside the per-run artifacts. Useful for
+producing a full scaling curve in one command.
+
+```bash
+# Full sweep: 1..8 GPUs x all 9 precisions (~40 min)
+./run_tflops_sweep.sh
+
+# Override the GPU sweep but keep all precisions
+GPU_COUNTS="1 4 8" ./run_tflops_sweep.sh
+
+# Restrict precisions
+PRECISIONS="fp16 bf16" ./run_tflops_sweep.sh
+```
+
+Output lands in `tflops_runs/sweep_<timestamp>/` and contains the same files
+as a plain `run_tflops.sh` run (`summary.txt`, `summary.csv`, per-run `.conf`
+and `.log`) plus `sweep.log` with the full console output.
+
+Every environment variable accepted by `run_tflops.sh` (`RVS_BIN`,
+`DURATION_MS`, `LOG_INTERVAL_MS`, `PRECISIONS`, `OUT_DIR`, ...) is passed
+through unchanged.
+
 ## How aggregation works
 
 - Per-GPU value = **peak** `GFLOPS` value observed across log intervals for that

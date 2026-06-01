@@ -131,6 +131,24 @@ N=3/5/6/7 fall off this clean line not because the math changes but because RCCL
 
 ---
 
+## Q: Is the non-power-of-2 efficiency drop a hardware-design issue or a Megatron-LM problem?
+
+Neither — it's the collective-communication library (RCCL), not the MI355X hardware and not Megatron-LM.
+
+The evidence is in §2:
+
+- **Per-rank compute is flat across all N.** Forward ~385 ms, backward ~2,793 ms regardless of GPU count. So Megatron-LM's compute path is doing the right thing — nothing in the trainer changes between N=4 and N=5.
+- **The entire regression is in `all-grads-sync` + `params-all-gather`.** At N=5/6/7 those jump 4–8× vs. the nearest power of 2 (N=8 → 272 ms total comm, N=7 → 2,195 ms). Everything else is identical.
+- **xGMI itself is fine.** Every collective is rank-balanced to <0.2 ms spread across ranks at every N. If it were a hardware topology problem (one link saturated, one die isolated), you'd see straggler ranks. You don't.
+
+So the cliff is **RCCL's algorithm choice** at non-power-of-2 arities. On an 8-way xGMI all-to-all mesh, ring/tree collectives form a clean balanced double-ring at N ∈ {2,4,8}; at N ∈ {5,6,7} they drop onto a fallback path that doesn't pipeline as well. N=3 is interesting — it sits at ~84 % because a 3-ring is small and trivially balanced.
+
+The N=8 number also looks artificially good because of two compounding effects that are *expected*, not bugs: reduce-scatter's `(N−1)/N` bandwidth term and dist-opt's `1/N` per-rank all-gather payload both naturally shrink the comm fraction as N grows. The §3 prediction (1.062×) matches observation (1.059×) almost exactly.
+
+What's worth trying before blaming the stack: rerun N=5/6/7 with `NCCL_ALGO=Tree`, `NCCL_PROTO=Simple`, and `RCCL_MSCCL_ENABLE=0` independently to pin which fallback is firing. If RCCL has MSCCL-tuned algos for 8-way xGMI but not for those arities, that confirms the diagnosis.
+
+---
+
 ## Recommended next experiments
 
 1. **Investigate the non-power-of-2 cliff.** Re-run N=5/6/7 with `NCCL_ALGO=Tree` (force tree only), `NCCL_PROTO=Simple` (drop LL/LL128), and `RCCL_MSCCL_ENABLE=0` independently to isolate which fallback path is firing. If MSCCL tuned algorithms exist for AMD 8-way xGMI but not for these arities, that pins the root cause.

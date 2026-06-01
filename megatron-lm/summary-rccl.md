@@ -130,58 +130,6 @@ For the existing single-node workload, **the only effective mitigation is N ∈ 
 
 ---
 
-## Q: Why is there a cliff in RCCL? Algorithm or hardware?
-
-It's the algorithm, not the hardware. The data points to it cleanly.
-
-**Hardware is healthy.**
-
-The MI355X UBB is a *complete graph* `K₈`: each of the 8 GPUs has 7 xGMI links, one to each of the other 7. Every pair of GPUs is one hop. There's no NUMA-style asymmetry between pairs (0,1) and (0,4) — every link is the same. From this sweep:
-
-- At N=2 each link delivers ~61 GB/s busbw → matches expected xGMI per-link bandwidth.
-- Rank-time spread is <0.2 ms at every N (summary-2 §2) → no straggler link, no flaky GPU.
-- N=3 is *fine* (75 GB/s busbw, *higher* than N=2). If the cliff were a "non-power-of-2 hardware penalty," N=3 should also cliff. It doesn't.
-
-So the fabric delivers what it should at every N.
-
-**The algorithm explanation — per-rank effective bandwidth:**
-
-Converting busbw to per-rank algorithm bandwidth (the bytes each rank actually pushes through xGMI) using `busbw = algbw × 2(N−1)/N`:
-
-| N | busbw (GB/s) | per-rank algbw (GB/s) | links engaged per rank |
-|--:|-------------:|----------------------:|------------------------:|
-| 2 |        61.24 |                  61.2 | ~1 link |
-| 3 |        75.15 |                  56.4 | ~1 link |
-| 4 |       168.59 |                 112.4 | **~2 links** |
-| 5 |        38.62 |                  24.1 | **<1 link** |
-| 6 |        38.38 |                  23.0 | **<1 link** |
-| 7 |        37.77 |                  22.0 | **<1 link** |
-| 8 |       381.33 |                 217.9 | **~3.5 links** |
-
-The pattern is "how many parallel ring channels did RCCL construct?":
-
-- **N=4** — `K₄` allows 1 Hamiltonian cycle + bidirectional traffic = 2 effective channels. ~2 links/rank, busbw ≈ 2× link. ✓
-- **N=8** — `K₈` admits a decomposition into 3 edge-disjoint Hamiltonian cycles. RCCL clearly uses several channels in parallel. ~3–4 links/rank, busbw ≈ 6× link. ✓
-- **N=2/3** — only 1 cycle is possible; already at link capacity. ✓
-
-**N=5/6/7 is the anomaly:** `K₅` mathematically admits 2 edge-disjoint Hamiltonian cycles, `K₆` admits 2, `K₇` admits 3. So the topology *could* support multi-channel rings at these sizes. But the empirical per-rank bandwidth (24 GB/s) is *less than one xGMI link*. That means RCCL isn't even using one link fully — it's running a single ring channel with poor pipelining.
-
-**Why "poor pipelining of one ring" specifically:**
-
-In a ring of N nodes, the chunk size is `S/N` and the pipeline depth is `N`. For the ring to saturate a link you need enough in-flight chunks to fill the link's round-trip latency. RCCL's ring algorithm has hand-tuned `nChannels`, `chunkSteps`, `sliceSteps` parameters; for power-of-2 N on this fabric those parameters are tuned (or fall through to safe defaults). For N=5/6/7, the defaults appear to leave the pipeline under-filled — you see ~40 % of single-link bandwidth.
-
-This is also why **no env knob recovers it** (§2): `default`, `ring`, `no_mscll`, `proto_simple` all converge to ~38 GB/s. The issue isn't algorithm-selection or protocol-selection — it's that RCCL's *ring constructor itself* produces a suboptimal ring layout at those N, and there's no user-level knob for the inner pipeline parameters.
-
-**Summary**
-
-- **Hardware issue?** No. xGMI is symmetric and delivers full per-link bandwidth at every N.
-- **RCCL algorithm issue?** Yes — specifically, RCCL's ring-channel construction and pipeline tuning for non-power-of-2 N on a fully-connected `K₈` mesh is under-tuned. AMD's ROCm 6.4.3 / RCCL 2.22 tuning tables were focused on MI300X (gfx942); for the MI355X 8-way mesh at N=5/6/7 the path falls through to a generic, conservative ring builder.
-- **NCCL on NVSwitch doesn't show this** because NVSwitch is a true crossbar — the "build a ring on a topology graph" problem effectively goes away. It's the *combination* of (point-to-point mesh) + (non-power-of-2 ring construction) that creates the cliff. UALink-based future AMD parts with a switch fabric would not exhibit this.
-
-The fix is either a tuned MSCCL/MSCCL++ plan for N∈{5,6,7} on `K₈` (multi-channel ring decomposition + chunk-pipeline parameters), or a ROCm release with gfx950 entries in the internal tuning tables. Neither is achievable from user-space inside the SIF.
-
----
-
 ## Q: How does this node's interconnect compare to NVSwitch 8-way? And why does the cliff happen here but not there?
 
 **Name of this node's topology.** AMD MI355X 8-GPU on an OCP **UBB 2.0 / OAM** baseboard, interconnected by an **AMD Infinity Fabric (xGMI) fully-connected mesh** — `K₈` on direct silicon-to-silicon links, no switch chip. Sometimes called an "Infinity Fabric hive" in AMD literature.
@@ -216,6 +164,50 @@ A collective library doing all_reduce on N GPUs picks a *ring algorithm* by defa
 2. **On a switched fabric (DGX H100).** From the library's perspective the graph is "any rank can talk to any rank at full link rate through the switch." There's no Hamiltonian-cycle problem at all — a "ring" is just a logical ordering of ranks, and each rank's NVLink ports can each carry an independent chunk through whichever switch port is free. Edge-disjointness is replaced by *switch-port availability*, which scales smoothly with the number of NVLink ports per GPU regardless of N. Non-power-of-2 N just chooses a different chunk count; nothing in the physical layer cares.
 
 So the same RCCL/NCCL code path that produces a cliff on this node would run smoothly on an NVSwitch-class machine — and conversely, NCCL on the older DGX-1 NVLink mesh historically showed similar non-power-of-2 cliffs until NVIDIA shipped tuned topology entries. The defining variable is **switch vs. point-to-point mesh**, not vendor or library brand.
+
+---
+
+## Why the non-power-of-2 cliff happens — complete causal chain
+
+1. **The MI355X UBB has no switch fabric.** All 8 GPUs are connected by direct point-to-point xGMI links (7 per GPU, one to each peer). **Because there is no switch**, RCCL sees a *fixed* graph — `K₈` — and every byte sent must traverse a specifically named edge.
+
+2. **Because the graph is fixed, getting more than one link's worth of bandwidth per GPU requires running multiple ring channels in parallel.** A channel is a Hamiltonian cycle through the N selected ranks. **So** to use K channels concurrently without two channels fighting over the same link, the K rings must be **edge-disjoint** Hamiltonian cycles on the selected `K_k` subgraph.
+
+3. **Because edge-disjoint Hamiltonian decomposition is a property of `K_k`, the maximum usable channel count is set by graph theory alone**:
+   - `K₂`, `K₃`: 1 cycle → 1 channel.
+   - `K₄`: 1 cycle + bidirectional traffic → 2 effective channels.
+   - `K₅`: 2 edge-disjoint cycles (Walecki construction).
+   - `K₆`: 2 edge-disjoint cycles + 1 perfect matching.
+   - `K₇`: 3 edge-disjoint cycles.
+   - `K₈`: 3 edge-disjoint cycles + 1 perfect matching → ~3.5 effective channels.
+
+4. **Because the per-N channel layout is non-trivial, RCCL relies on hand-measured "tuning entries" (or MSCCL plans) that pick the right channel count and chunk-pipeline parameters for each `(topology, N)` pair**. These entries get written for the values customers actually run.
+
+5. **Because gfx950 (MI355X) is brand-new and ROCm 6.4.3 / RCCL 2.22 was tuned primarily for gfx942 (MI300X) at common N values (typically 2, 4, 8), the entries for `(K₈, N ∈ {5,6,7})` do not exist yet.** **So** the runtime falls through to the *generic* ring-builder: one single ring, conservative chunk-pipelining parameters chosen to be safe across all topologies.
+
+6. **Because a single ring of N hops splits the payload into chunks of size S/N and serializes them through N−1 stages, keeping a link saturated requires enough in-flight chunks to cover the link's round-trip latency**. The generic-path parameters were not tuned for this `(K_8 subgraph, N=5/6/7)` regime, **so** the pipeline runs under-filled and **a single xGMI link gets used at well below its capacity**.
+
+7. **The per-rank algorithm bandwidth confirms this directly** (algbw = busbw × N / (2(N−1)); one xGMI link ≈ 64 GB/s):
+
+   | N | per-rank algbw | implied link engagement |
+   |--:|---------------:|-------------------------:|
+   | 2 |    61.2 GB/s   | ~1 link, saturated |
+   | 3 |    56.4 GB/s   | ~1 link, saturated |
+   | 4 |   112.4 GB/s   | ~2 links, multi-channel |
+   | **5** | **24.1 GB/s** | **~0.38 link — under-pipelined single ring** |
+   | **6** | **23.0 GB/s** | **~0.36 link — under-pipelined single ring** |
+   | **7** | **22.0 GB/s** | **~0.34 link — under-pipelined single ring** |
+   | 8 |   217.9 GB/s   | ~3.4 links, multi-channel |
+
+8. **Because the under-pipelining happens inside the ring-builder, it sits below the algorithm/protocol selection layer that user-facing env vars touch.** `NCCL_ALGO`, `NCCL_PROTO`, `RCCL_MSCCL_ENABLE` all route through the same builder and produce the same fallback at N=5/6/7. **So** no env toggle moves the ~38 GB/s busbw floor (§2).
+
+9. **An NVSwitch-based system would not exhibit this cliff because step 1 of this chain does not hold there.** With a crossbar, the library does not see a sparse graph; it sees any-to-any at full link rate. There is no Hamiltonian-decomposition problem — each channel is "pick a free NVLink port and send." The usable channel count equals the per-GPU NVLink port count (18 on H100), **independent of N**. Non-power-of-2 N just chooses a different chunk count; nothing in the physical layer cares.
+
+10. **Therefore the cliff exists exactly because both conditions hold:**
+    1. **the hardware is a point-to-point K₈ mesh** (no switch → graph-decomposition is required to get multi-link bandwidth), **and**
+    2. **the RCCL ring-builder lacks tuned multi-channel entries for `(K₈, N ∈ {5,6,7})` on gfx950** (so the runtime falls back to an under-pipelined single-channel ring).
+
+    **Removing either condition removes the cliff** — a future AMD platform with a switched fabric would break the chain at step 1; tuned MSCCL/MSCCL++ plans for the missing arities on the existing hardware would break it at step 5. Neither is achievable from user-space inside the current SIF.
 
 ---
 

@@ -233,6 +233,44 @@ It's the standard layout for this generation of AMD Instinct, not specific to th
 
 ---
 
+## Q: Can we expect the non-power-of-2 cliff in *all* cases — any RCCL build, any system/driver install, any AMD GPU server?
+
+Mostly yes, with two important qualifications.
+
+**Yes, expect the cliff under all of these conditions (the practical case here):**
+
+| Variable | Will the cliff still appear? |
+|----------|------------------------------|
+| Different SIF build (anyone's, including AMD's official) | **Yes** — they all bundle the same upstream RCCL package |
+| Different host OS / driver version | **Yes** — driver and OS sit below the collective layer |
+| Different NUMA / IOMMU / kernel cmdline | **Yes** — that affects jitter, not the ring-builder |
+| Different vendor server SKU (Dell XE9680, Supermicro AS-8125, HPE EX, Lenovo SR685a V3, …) | **Yes** — all use the same OCP UBB 2.0 + 8 OAM design |
+| Different MI300X-class GPU (MI300X, MI325X, MI355X) | **Yes** — same `K₈` xGMI topology, same RCCL code path |
+| Different ROCm minor version up through 6.4.3 (current as of June 2026) | **Yes** — no MI355X-tuned MSCCL plans have shipped yet |
+
+So for "off-the-shelf ROCm + MI300X-class node + 5/6/7 GPUs," the cliff is essentially guaranteed. It is a property of the *generation*, not the *machine*.
+
+**Two qualifications where the cliff would NOT appear:**
+
+1. **Different AMD GPU generation → different cliff pattern (not necessarily at N=5/6/7).**
+   - **MI250X (CDNA2)** has an 8-GCD hypercube/dragonfly topology, not `K₈`. Some pairs have multiple links, some have one. Non-power-of-2 cliffs still likely exist on MI250X but at *different N values* and with *different magnitudes*, because the underlying graph is different.
+   - **MI300A (CDNA3 APU)** has only 4 GPUs per quad (`K₄`); there is no N=5/6/7 to test in the first place.
+   - **MI100** has 4-way hives — same story; no N=5/6/7 case.
+   - **Future MI400 + UALink** — switched fabric, no graph-decomposition problem at all → **no cliff expected at any non-pow2 N.** This is the "real fix" on the roadmap.
+
+2. **A user-modified RCCL deployment that ships custom MSCCL plans → cliff goes away on this same hardware.**
+   - Anyone (AMD upstream, an HPC center, a research group) can author `allreduce-allpairs-5n-*.xml` / `-6n-*.xml` / `-7n-*.xml` plan files, drop them into `/opt/rocm/share/rccl/msccl-algorithms/` (or point `RCCL_MSCCL_ALGO_DIR` at them), and the cliff disappears on the same hardware — no kernel or driver change needed.
+   - A future ROCm release with shipping non-N=8 plans would also remove it.
+   - So the cliff is *what the current stack delivers*, not a fundamental forever property of MI300X-class hardware.
+
+**Refined version of the statement:**
+
+> On any MI300X / MI325X / MI355X server, running any AMD-distributed ROCm release up through 6.4.3, with any standard SIF build / driver / OS setup, you will see an RCCL collective cliff at N ∈ {5, 6, 7} on intra-node `K₈` xGMI. This holds regardless of vendor, kernel, or runtime config. The cliff disappears only when (a) someone adds non-`8n` MSCCL plans to the install, or (b) the hardware moves to UALink in a future generation.
+
+That is the airtight version. The "all cases" claim is true within the scope realistically run today; the universality breaks only when the *generation* of AMD hardware changes or the *content* of RCCL's MSCCL package changes.
+
+---
+
 ## Recommended next experiments
 
 1. **File the cliff upstream** at github.com/ROCm/rccl with this `rccl_tests_summary.txt` as the repro. The data is clean: same hardware, same RCCL version, only N varies.

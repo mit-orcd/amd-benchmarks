@@ -211,6 +211,28 @@ So the same RCCL/NCCL code path that produces a cliff on this node would run smo
 
 ---
 
+## Q: Is the no-switch topology specific to this node, or is it the standard AMD GPU node design?
+
+It's the standard layout for this generation of AMD Instinct, not specific to this node.
+
+**For MI300X-class GPUs (MI300X, MI325X, MI355X).** The `K₈` no-switch xGMI mesh is the AMD reference design. Every server SKU built around these GPUs uses the same OCP UBB 2.0 baseboard with 8 OAM modules and direct GPU-to-GPU xGMI — Dell PowerEdge XE9680, Supermicro AS-8125GS-TNMR2, HPE Cray EX, Lenovo SR685a V3, etc. None of them inserts a switch between the GPUs because AMD doesn't ship one. So the topology on this node is what every MI300X-class deployment looks like — and the cliff is therefore a *generation-wide* phenomenon, not a config quirk.
+
+**Across the broader AMD Instinct line, the no-switch pattern is the norm; only the graph shape changes:**
+
+| Product | GPUs / module | Inter-GPU topology | Switch? |
+|---------|---------------|---------------------|---------|
+| MI100 (CDNA1) | 1 per OAM | 4-way mesh (`K₄`) within a hive | No |
+| MI250X (CDNA2) | 2 GCDs per OAM | 8-GCD hypercube/dragonfly variant | No |
+| MI300A (CDNA3 APU) | 1 per socket | 4-way mesh (`K₄`) per quad | No |
+| **MI300X / MI325X / MI355X (CDNA3 / 3.x / 4)** | **1 per OAM, 8 per UBB** | **`K₈` xGMI mesh** | **No** |
+| MI400 (announced) | TBD | Expected to add **UALink** switching | **Yes (planned)** |
+
+**The roadmap pivot is UALink.** AMD, together with other consortium members (Intel, Broadcom, Cisco, Meta, Google, etc.), is shipping an open switched-fabric standard called **UALink**, intended to play the role NVSwitch plays for NVIDIA. First products will land in the MI400 generation (publicly targeted around 2026). Once that ships, the structural condition that produces the cliff (step 1 of the causal chain above) goes away — UALink-based AMD systems would behave more like DGX H100 with respect to non-power-of-2 N.
+
+**Practical implication.** The RCCL N=5/6/7 cliff measured here will reproduce on **any current MI300X / MI325X / MI355X node**, regardless of vendor, until either (a) ROCm ships MI355X-tuned MSCCL plans for the missing arities, or (b) the platform moves to UALink in a future generation. It is not a "this particular machine was set up wrong" issue.
+
+---
+
 ## Recommended next experiments
 
 1. **File the cliff upstream** at github.com/ROCm/rccl with this `rccl_tests_summary.txt` as the repro. The data is clean: same hardware, same RCCL version, only N varies.

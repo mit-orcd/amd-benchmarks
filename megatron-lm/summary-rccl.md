@@ -130,6 +130,95 @@ For the existing single-node workload, **the only effective mitigation is N ∈ 
 
 ---
 
+## Q: Why is there a cliff in RCCL? Algorithm or hardware?
+
+It's the algorithm, not the hardware. The data points to it cleanly.
+
+**Hardware is healthy.**
+
+The MI355X UBB is a *complete graph* `K₈`: each of the 8 GPUs has 7 xGMI links, one to each of the other 7. Every pair of GPUs is one hop. There's no NUMA-style asymmetry between pairs (0,1) and (0,4) — every link is the same. From this sweep:
+
+- At N=2 each link delivers ~61 GB/s busbw → matches expected xGMI per-link bandwidth.
+- Rank-time spread is <0.2 ms at every N (summary-2 §2) → no straggler link, no flaky GPU.
+- N=3 is *fine* (75 GB/s busbw, *higher* than N=2). If the cliff were a "non-power-of-2 hardware penalty," N=3 should also cliff. It doesn't.
+
+So the fabric delivers what it should at every N.
+
+**The algorithm explanation — per-rank effective bandwidth:**
+
+Converting busbw to per-rank algorithm bandwidth (the bytes each rank actually pushes through xGMI) using `busbw = algbw × 2(N−1)/N`:
+
+| N | busbw (GB/s) | per-rank algbw (GB/s) | links engaged per rank |
+|--:|-------------:|----------------------:|------------------------:|
+| 2 |        61.24 |                  61.2 | ~1 link |
+| 3 |        75.15 |                  56.4 | ~1 link |
+| 4 |       168.59 |                 112.4 | **~2 links** |
+| 5 |        38.62 |                  24.1 | **<1 link** |
+| 6 |        38.38 |                  23.0 | **<1 link** |
+| 7 |        37.77 |                  22.0 | **<1 link** |
+| 8 |       381.33 |                 217.9 | **~3.5 links** |
+
+The pattern is "how many parallel ring channels did RCCL construct?":
+
+- **N=4** — `K₄` allows 1 Hamiltonian cycle + bidirectional traffic = 2 effective channels. ~2 links/rank, busbw ≈ 2× link. ✓
+- **N=8** — `K₈` admits a decomposition into 3 edge-disjoint Hamiltonian cycles. RCCL clearly uses several channels in parallel. ~3–4 links/rank, busbw ≈ 6× link. ✓
+- **N=2/3** — only 1 cycle is possible; already at link capacity. ✓
+
+**N=5/6/7 is the anomaly:** `K₅` mathematically admits 2 edge-disjoint Hamiltonian cycles, `K₆` admits 2, `K₇` admits 3. So the topology *could* support multi-channel rings at these sizes. But the empirical per-rank bandwidth (24 GB/s) is *less than one xGMI link*. That means RCCL isn't even using one link fully — it's running a single ring channel with poor pipelining.
+
+**Why "poor pipelining of one ring" specifically:**
+
+In a ring of N nodes, the chunk size is `S/N` and the pipeline depth is `N`. For the ring to saturate a link you need enough in-flight chunks to fill the link's round-trip latency. RCCL's ring algorithm has hand-tuned `nChannels`, `chunkSteps`, `sliceSteps` parameters; for power-of-2 N on this fabric those parameters are tuned (or fall through to safe defaults). For N=5/6/7, the defaults appear to leave the pipeline under-filled — you see ~40 % of single-link bandwidth.
+
+This is also why **no env knob recovers it** (§2): `default`, `ring`, `no_mscll`, `proto_simple` all converge to ~38 GB/s. The issue isn't algorithm-selection or protocol-selection — it's that RCCL's *ring constructor itself* produces a suboptimal ring layout at those N, and there's no user-level knob for the inner pipeline parameters.
+
+**Summary**
+
+- **Hardware issue?** No. xGMI is symmetric and delivers full per-link bandwidth at every N.
+- **RCCL algorithm issue?** Yes — specifically, RCCL's ring-channel construction and pipeline tuning for non-power-of-2 N on a fully-connected `K₈` mesh is under-tuned. AMD's ROCm 6.4.3 / RCCL 2.22 tuning tables were focused on MI300X (gfx942); for the MI355X 8-way mesh at N=5/6/7 the path falls through to a generic, conservative ring builder.
+- **NCCL on NVSwitch doesn't show this** because NVSwitch is a true crossbar — the "build a ring on a topology graph" problem effectively goes away. It's the *combination* of (point-to-point mesh) + (non-power-of-2 ring construction) that creates the cliff. UALink-based future AMD parts with a switch fabric would not exhibit this.
+
+The fix is either a tuned MSCCL/MSCCL++ plan for N∈{5,6,7} on `K₈` (multi-channel ring decomposition + chunk-pipeline parameters), or a ROCm release with gfx950 entries in the internal tuning tables. Neither is achievable from user-space inside the SIF.
+
+---
+
+## Q: How does this node's interconnect compare to NVSwitch 8-way? And why does the cliff happen here but not there?
+
+**Name of this node's topology.** AMD MI355X 8-GPU on an OCP **UBB 2.0 / OAM** baseboard, interconnected by an **AMD Infinity Fabric (xGMI) fully-connected mesh** — `K₈` on direct silicon-to-silicon links, no switch chip. Sometimes called an "Infinity Fabric hive" in AMD literature.
+
+**Side-by-side:**
+
+| Dimension | This node — MI355X UBB (K₈ xGMI mesh) | NVIDIA DGX H100 — 8× H100 + 4× NVSwitch4 |
+|-----------|----------------------------------------|------------------------------------------|
+| Fabric chip | None — direct GPU-to-GPU xGMI | 4× NVSwitch4 ASICs on board |
+| Topology graph | `K₈` complete graph, 28 edges | Switched any-to-any (logically a crossbar) |
+| Links / GPU | 7 xGMI lanes (one per peer) | 18 NVLink4 ports → distributed across the 4 switches |
+| Per-link BW (uni) | ~64 GB/s | 50 GB/s |
+| Aggregate / GPU (uni) | 7 × 64 = ~448 GB/s | 18 × 50 = 900 GB/s |
+| Hops between any pair | 1 (direct edge) | 1 (through any free switch port) |
+| Multiple paths between same pair | **No** — single xGMI edge per pair | **Yes** — any free switch port |
+| Ring construction problem | Find Hamiltonian cycle on selected `K_k` subgraph | Any permutation works; no graph search |
+| Multi-channel rings | Limited by edge-disjoint Hamiltonian decomposition of `K_k` | Limited only by switch port count |
+| Tuning sensitivity to N | **High** — each (topology, N) needs a measured plan | **Low** — generic ring path works at any N |
+| Non-power-of-2 N | Cliff at N = 5/6/7 (this sweep) | Smooth across all N (independent reports on H100) |
+| Closest NVIDIA analogue | DGX-1 P100 / DGX-2 NVLink mesh (pre-NVSwitch) | Itself — H100/H200 with NVSwitch4 |
+
+**Why the cliff happens — the topology consequence.**
+
+A collective library doing all_reduce on N GPUs picks a *ring algorithm* by default: arrange the N ranks in a cycle and pass partial sums around. To run fast it actually wants **multiple parallel rings ("channels")**, so several xGMI/NVLink lanes carry chunks simultaneously. Two regimes:
+
+1. **On a mesh fabric (this node).** The library sees the physical graph and must build each ring channel from *actually-existing* edges. A ring of N nodes consumes N edges; to run K channels in parallel without contention you need K edge-disjoint Hamiltonian cycles on the selected `K_k` subgraph. Graph theory says:
+   - `K₈` decomposes into **3 edge-disjoint Hamiltonian cycles + 1 perfect matching** → up to ~3 parallel channels at N=8.
+   - `K₄` admits 1 cycle + bidirectional traffic → 2 effective channels at N=4.
+   - `K₅`, `K₆`, `K₇` mathematically admit 2–3 edge-disjoint cycles, but **finding them is harder** and RCCL's heuristic ring-builder, lacking MI355X-specific tuning entries, falls through to a conservative single-channel ring with under-filled chunk pipelining. Result: per-rank algorithm bandwidth at N=5 is ~24 GB/s — less than one xGMI link's capacity.
+   - The cliff is therefore **structurally allowed by the topology** (single xGMI edge per pair means there's no "spare path" to mask a bad ring choice) and **actually caused by missing tuning for non-power-of-2 `K_k`** in the current RCCL build.
+
+2. **On a switched fabric (DGX H100).** From the library's perspective the graph is "any rank can talk to any rank at full link rate through the switch." There's no Hamiltonian-cycle problem at all — a "ring" is just a logical ordering of ranks, and each rank's NVLink ports can each carry an independent chunk through whichever switch port is free. Edge-disjointness is replaced by *switch-port availability*, which scales smoothly with the number of NVLink ports per GPU regardless of N. Non-power-of-2 N just chooses a different chunk count; nothing in the physical layer cares.
+
+So the same RCCL/NCCL code path that produces a cliff on this node would run smoothly on an NVSwitch-class machine — and conversely, NCCL on the older DGX-1 NVLink mesh historically showed similar non-power-of-2 cliffs until NVIDIA shipped tuned topology entries. The defining variable is **switch vs. point-to-point mesh**, not vendor or library brand.
+
+---
+
 ## Recommended next experiments
 
 1. **File the cliff upstream** at github.com/ROCm/rccl with this `rccl_tests_summary.txt` as the repro. The data is clean: same hardware, same RCCL version, only N varies.

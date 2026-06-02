@@ -19,3 +19,55 @@ rccl-tests: Version develop_deprecated:40b1b17
 localhost:479874:479874 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
 localhost:479874:479874 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.22.3-HEAD:7d8d67c+
+HIP version  : 6.4.43484-123eb5128
+ROCm version : 6.4.3.0-128-e7d83f5
+Hostname     : localhost.localdomain
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:479874:479874 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong                               
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)                                      
+    16777152        699048     float    none      -1   1331.4   12.60   10.50    N/A   1192.3   14.07   11.73    N/A
+    33554400       1398100     float    none      -1   2511.9   13.36   11.13    N/A   2266.1   14.81   12.34    N/A
+    67108800       2796200     float    none      -1   5234.3   12.82   10.68    N/A   4430.6   15.15   12.62    N/A
+   134217696       5592404     float    none      -1   5366.5   25.01   20.84    N/A   4547.8   29.51   24.59    N/A
+   268435392      11184808     float    none      -1   5786.8   46.39   38.66    N/A   4953.1   54.20   45.16    N/A
+   536870880      22369620     float    none      -1    11196   47.95   39.96    N/A   9898.9   54.24   45.20    N/A
+  1073741760      44739240     float    none      -1    21554   49.82   41.51    N/A    19890   53.98   44.99    N/A
+  2147483616      89478484     float    none      -1    43016   49.92   41.60    N/A    39631   54.19   45.16    N/A
+  4294967232     178956968     float    none      -1    86368   49.73   41.44    N/A    78007   55.06   45.88    N/A
+  8589934560     357913940     float    none      -1   173281   49.57   41.31    N/A   156928   54.74   45.62    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 31.5461 
+#
+# Collective test concluded: alltoall_perf
+

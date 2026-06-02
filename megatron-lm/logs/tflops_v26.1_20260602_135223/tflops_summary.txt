@@ -1,0 +1,8 @@
+MBS  RECOMPUTE  PREC  GBS   last_TF/GPU   best_TF/GPU   OOM   log
+2    none       bf16  16    ERR           ERR           no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_20260602_135223/bench_mbs2_rcnone_bf16.log
+4    none       bf16  32    ERR           ERR           no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_20260602_135223/bench_mbs4_rcnone_bf16.log
+4    selective  bf16  32    ERR           ERR           no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_20260602_135223/bench_mbs4_rcselective_bf16.log
+8    full       bf16  64    ERR           ERR           no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_20260602_135223/bench_mbs8_rcfull_bf16.log
+2    none       fp8   16    ERR           ERR           no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_20260602_135223/bench_mbs2_rcnone_fp8.log
+4    none       fp8   32    ERR           ERR           no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_20260602_135223/bench_mbs4_rcnone_fp8.log
+8    full       fp8   64    ERR           ERR           no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_20260602_135223/bench_mbs8_rcfull_fp8.log

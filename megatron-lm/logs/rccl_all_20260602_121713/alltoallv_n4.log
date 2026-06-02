@@ -1,0 +1,63 @@
+[in-container] HIP_VISIBLE_DEVICES=0,1,2,3
+[in-container] NCCL_ALGO=Ring,Tree
+[in-container] NCCL_PROTO=Simple,LL,LL128
+[in-container] RCCL_MSCCL_ENABLE=1
+[in-container] binary: /home/v89592/shaohao/megatron-lm/work/rccl-tests/build/alltoallv_perf
+
+# Collective test starting: alltoallv_perf
+# nThread 1 nGpus 4 minBytes 16777216 maxBytes 8589934592 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 0 graph: 0
+#
+rccl-tests: Version develop_deprecated:40b1b17
+# Using devices
+#  Rank  0 Group  0 Pid 482556 on  localhost device  0 [0000:0c:00] AMD Instinct MI355X
+#  Rank  1 Group  0 Pid 482556 on  localhost device  1 [0000:3d:00] AMD Instinct MI355X
+#  Rank  2 Group  0 Pid 482556 on  localhost device  2 [0000:a8:00] AMD Instinct MI355X
+#  Rank  3 Group  0 Pid 482556 on  localhost device  3 [0000:dc:00] AMD Instinct MI355X
+
+localhost:482556:482556 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:482556:482556 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:482556:482556 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:482556:482556 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:482556:482556 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:482556:482556 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.22.3-HEAD:7d8d67c+
+HIP version  : 6.4.43484-123eb5128
+ROCm version : 6.4.3.0-128-e7d83f5
+Hostname     : localhost.localdomain
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+localhost:482556:482556 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:482556:482556 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:482556:482556 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:482556:482556 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:482556:482556 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:482556:482556 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong                               
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)                                      
+    16777216       1048576     float    none      -1    135.3  124.02   93.02    N/A    321.0   52.26   39.20    N/A
+    33554432       2097152     float    none      -1    251.8  133.27   99.95    N/A    252.0  133.18   99.88    N/A
+    67108864       4194304     float    none      -1    463.4  144.83  108.62    N/A    463.8  144.70  108.52    N/A
+   134217728       8388608     float    none      -1    887.5  151.24  113.43    N/A    886.2  151.45  113.59    N/A
+   268435456      16777216     float    none      -1   1733.2  154.88  116.16    N/A   1734.1  154.80  116.10    N/A
+   536870912      33554432     float    none      -1   3706.6  144.84  108.63    N/A   3427.6  156.63  117.47    N/A
+  1073741824      67108864     float    none      -1   7128.1  150.63  112.98    N/A   6842.4  156.92  117.69    N/A
+  2147483648     134217728     float    none      -1    13971  153.71  115.28    N/A    13942  154.03  115.52    N/A
+  4294967296     268435456     float    none      -1    27745  154.80  116.10    N/A    27823  154.37  115.78    N/A
+  8589934592     536870912     float    none      -1    55629  154.42  115.81    N/A    55596  154.51  115.88    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 107.981 
+#
+# Collective test concluded: alltoallv_perf
+

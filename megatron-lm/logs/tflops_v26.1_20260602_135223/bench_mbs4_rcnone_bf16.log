@@ -1,0 +1,36 @@
+[in-container] python: Python 3.10.12
+[in-container] torch : 2.10.0.dev20251112+rocm7.1 True 8
+[in-container] arch  : ['gfx900', 'gfx906', 'gfx908', 'gfx90a', 'gfx942', 'gfx1030', 'gfx1100', 'gfx1101', 'gfx1102', 'gfx1200', 'gfx1201', 'gfx950', 'gfx1150', 'gfx1151']
+[in-container] HIP_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+
+/opt/venv/bin/python: can't open file '/home/v89592/shaohao/megatron-lm/Megatron-LM/ ': [Errno 2] No such file or directory
+E0602 13:53:04.958000 498824 torch/distributed/elastic/multiprocessing/api.py:978] failed (exitcode: 2) local_rank: 0 (pid: 499857) of binary: /opt/venv/bin/python
+Traceback (most recent call last):
+  File "/opt/venv/bin/torchrun", line 33, in <module>
+    sys.exit(load_entry_point('torch', 'console_scripts', 'torchrun')())
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 362, in wrapper
+    return f(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/run.py", line 992, in main
+    run(args)
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/run.py", line 983, in run
+    elastic_launch(
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 319, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+  FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-06-02_13:53:04
+  host      : localhost.localdomain
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 499857)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

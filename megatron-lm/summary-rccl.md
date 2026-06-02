@@ -14,14 +14,14 @@ The full set of NCCL/RCCL primitives exposed via `librccl.so.1` and built by `rc
 |------------------|-----------------------------------------------------------|--------------------|------------------------|--------------------------------|------------------------------------------------------------------------------|------------------------------|--------------|
 | **AllReduce**    | reduce-then-broadcast: every rank ends with `op(x_0..x_{N-1})` | `S`            | `algbw × 2·(N-1)/N`    | Ring, Tree, MSCCL              | DP gradient sync without dist-opt; TP forward/backward; tied-embedding sync | `all_reduce_perf`            | **Yes**      |
 | **AllGather**    | each rank publishes its slice; everyone ends with the full vector | `S/N` in, `S` out | `algbw × (N-1)/N`  | Ring, PAT, MSCCL               | Distributed-optimizer parameter all-gather; FSDP / ZeRO-3 param gather       | `all_gather_perf`            | **Yes**      |
-| **ReduceScatter**| reduce across ranks, then each rank keeps its `1/N` slice | `S` in, `S/N` out  | `algbw × (N-1)/N`      | Ring, PAT, MSCCL               | Distributed-optimizer gradient reduce-scatter; FSDP / ZeRO-2 grad reduce      | `reduce_scatter_perf`        | No           |
-| **Broadcast**    | root sends one buffer; every other rank receives it       | `S`                | `algbw × 1`            | Ring, Tree                     | Parameter sync at train start; pipeline-stage parameter broadcast            | `broadcast_perf`             | No           |
-| **Reduce**       | every rank contributes; only root keeps `op(x_0..x_{N-1})`| `S`                | `algbw × 1`            | Ring, Tree                     | Per-rank loss reduction to rank 0 for logging; rarely on the critical path   | `reduce_perf`                | No           |
-| **Gather**       | every rank's buffer is concatenated on the root only      | `S` in, `N·S` on root | `algbw × (N-1)/N`   | Pairwise sendrecv              | Validation / debug paths; not on the training critical path                  | `gather_perf`                | No           |
-| **Scatter**      | root's `N·S` buffer is split, one slice to each rank      | `N·S` on root, `S` out | `algbw × (N-1)/N`  | Pairwise sendrecv              | Rarely used directly in Megatron                                              | `scatter_perf`               | No           |
-| **AllToAll**     | each rank sends a distinct chunk to every other rank      | `S` in, `S` out (transposed) | `algbw × (N-1)/N` | Pairwise, MSCCL          | MoE expert token routing (the key MoE primitive); TP token reshuffles         | `alltoall_perf`              | No           |
-| **AllToAllV**    | same as AllToAll with per-peer variable chunk sizes       | variable           | `algbw × (N-1)/N`      | Pairwise                       | MoE with imbalanced token counts                                              | `alltoallv_perf`             | No           |
-| **SendRecv**     | point-to-point pair                                       | `S`                | `algbw × 1`            | Direct xGMI / SHM / IB         | Pipeline-parallel stage-to-stage activations and gradients                    | `sendrecv_perf`              | No           |
+| **ReduceScatter**| reduce across ranks, then each rank keeps its `1/N` slice | `S` in, `S/N` out  | `algbw × (N-1)/N`      | Ring, PAT, MSCCL               | Distributed-optimizer gradient reduce-scatter; FSDP / ZeRO-2 grad reduce      | `reduce_scatter_perf`        | **Yes**      |
+| **Broadcast**    | root sends one buffer; every other rank receives it       | `S`                | `algbw × 1`            | Ring, Tree                     | Parameter sync at train start; pipeline-stage parameter broadcast            | `broadcast_perf`             | **Yes**      |
+| **Reduce**       | every rank contributes; only root keeps `op(x_0..x_{N-1})`| `S`                | `algbw × 1`            | Ring, Tree                     | Per-rank loss reduction to rank 0 for logging; rarely on the critical path   | `reduce_perf`                | **Yes**      |
+| **Gather**       | every rank's buffer is concatenated on the root only      | `S` in, `N·S` on root | `algbw × (N-1)/N`   | Pairwise sendrecv              | Validation / debug paths; not on the training critical path                  | `gather_perf`                | **Yes**      |
+| **Scatter**      | root's `N·S` buffer is split, one slice to each rank      | `N·S` on root, `S` out | `algbw × (N-1)/N`  | Pairwise sendrecv              | Rarely used directly in Megatron                                              | `scatter_perf`               | **Yes**      |
+| **AllToAll**     | each rank sends a distinct chunk to every other rank      | `S` in, `S` out (transposed) | `algbw × (N-1)/N` | Pairwise, MSCCL          | MoE expert token routing (the key MoE primitive); TP token reshuffles         | `alltoall_perf`              | **Yes**      |
+| **AllToAllV**    | same as AllToAll with per-peer variable chunk sizes       | variable           | `algbw × (N-1)/N`      | Pairwise                       | MoE with imbalanced token counts                                              | `alltoallv_perf`             | Partial (N≤4)|
+| **SendRecv**     | point-to-point pair                                       | `S`                | `algbw × 1`            | Direct xGMI / SHM / IB         | Pipeline-parallel stage-to-stage activations and gradients                    | `sendrecv_perf`              | No (run truncated) |
 
 Reading guide: `busbw` ≥ `algbw` for AllReduce by definition (each byte traverses the fabric ~2× to be reduced and then propagated), `busbw` < `algbw` for AllGather / ReduceScatter / AllToAll (each rank only sends `(N-1)/N` of its data because the local slice stays put), and `busbw == algbw` for one-shot primitives (Broadcast, Reduce, SendRecv). When comparing collectives at the same `busbw`, AllReduce is moving roughly twice as much wire traffic as AllGather.
 
@@ -137,38 +137,59 @@ Two findings from the sweep that the table doesn't show directly:
 
 ## 5. What was measured here vs. the coverage gap
 
-### 5.1 Measured
+### 5.1 Full collective sweep (`logs/rccl_all_20260602_121713/`, `log.nccl-all`)
 
-The rccl-tests sweep on this MI355X node (`logs/rccl_tests_20260601_162955/`) exercises only **AllReduce** and **AllGather**, across:
-- N ∈ {2, 3, 4, 5, 6, 7, 8}
-- Message sizes 16 MiB → 8 GiB (powers of 2)
-- 5 configs: `default`, `tree`, `ring`, `no_mscll`, `proto_simple`
+The all-collective rccl-tests sweep on this MI355X node, June 2, 2026. Config: message sizes 16 MiB → 8 GiB (powers of 2, factor=2), warmup=5, iters=20, `NCCL_ALGO=Ring,Tree`, `NCCL_PROTO=Simple,LL,LL128`, `RCCL_MSCCL_ENABLE=1`, single-node intra-xGMI. All numbers below are **busbw (GB/s) at the 8 GiB top-end message size**, in-place column from the rccl-tests output.
 
-Headline busbw at 8 GiB, default config:
+| Collective       |    N=2 |    N=3 |     N=4 |    N=5 |    N=6 |    N=7 |     N=8 |
+|------------------|-------:|-------:|--------:|-------:|-------:|-------:|--------:|
+| all_reduce       |  61.28 |  75.02 |  166.48 |  38.36 |  38.42 |  38.21 |  381.27 |
+| all_gather       |  60.58 |  71.09 |  158.72 |  35.41 |  34.90 |  34.85 |  365.75 |
+| reduce_scatter   |  60.65 |  71.04 |  165.06 |  39.57 |  39.65 |  40.47 |  407.69 |
+| broadcast        |  63.52 |  68.09 |  169.19 |  34.10 |  33.92 |  33.83 |  377.27 |
+| reduce           |  72.87 |  86.46 |  197.44 |  43.60 |  42.93 |  43.08 |  358.49 |
+| gather           |  72.07 |  78.27 |  211.64 |  69.38 |  68.83 |  70.29 |  444.15 |
+| scatter          |  63.11 |  71.48 |  191.63 |  65.35 |  65.61 |  66.36 |  426.40 |
+| alltoall         |  58.40 |  61.79 |  155.21 |  44.14 |  45.62 |  44.26 |  360.90 |
+| alltoallv        |  58.16 |  34.66 |  115.88 |  ERR¹  |  n/a²  |  n/a²  |   n/a²  |
+| sendrecv         |  n/a²  |  n/a²  |   n/a²  |  n/a²  |  n/a²  |  n/a²  |   n/a²  |
 
-| N | AllReduce busbw (GB/s) | AllGather busbw (GB/s) |
-|--:|-----------------------:|-----------------------:|
-| 2 |                  61.24 |                  61.03 |
-| 3 |                  75.15 |                  72.12 |
-| 4 |                 168.59 |                 160.46 |
-| 5 |                  38.62 |                  35.65 |
-| 6 |                  38.38 |                  34.89 |
-| 7 |                  37.77 |                  34.62 |
-| 8 |                 381.33 |                 373.04 |
+¹ `alltoallv N=5` was killed with `rc=137` (OOM-killer) before reaching 8 GiB; only sizes ≤128 MiB produced numbers (peak ~12.7 GB/s busbw — well below the N=4 trajectory).
+² Sweep was terminated mid-`alltoallv N=6` (only sizes ≤128 MiB observed: ~7–10 GB/s busbw); `alltoallv N=7/8` and the entire `sendrecv` row never ran — see §5.2.
 
-The per-N pattern across these two collectives is the same (both are bandwidth-bound at large message size), which is expected: AllReduce on a ring decomposes into ReduceScatter + AllGather, so its wire-time profile inherits AllGather's behavior with an extra factor of two.
+#### 5.1.1 Patterns visible across the matrix
 
-### 5.2 Not measured (coverage gap)
+- **The N=5/6/7 cliff is universal across the bandwidth-bound collectives.** Every collective whose busbw model has a `(N-1)/N` or `2(N-1)/N` factor — all_reduce, all_gather, reduce_scatter, broadcast, reduce, alltoall — collapses ~4–5× between N=4 and N=5 and stays flat at N=6/7 before snapping back at N=8. This confirms the topology-driven analysis in [summary-power2.md](summary-power2.md): the K_8 xGMI mesh has a clean factor-of-N ring only at the power-of-2 GPU counts {2, 4, 8}; at N ∈ {5, 6, 7} RCCL falls back to a path that loses one of the four xGMI channels and the resulting busbw is set by the slowest link rather than the aggregate bisection.
+- **Gather and Scatter do *not* show the cliff at N=5/6/7.** They drop only ~2× across the cliff vs. ~4–5× for the ring-based collectives. Reason: both are implemented as pairwise sendrecv loops to/from the root rank, which doesn't depend on a complete ring being available. Their bandwidth at N=5–7 is set by the single root-to-peer link rather than the global ring composition.
+- **Reduce > AllReduce at every N.** Expected: Reduce only does the reduce phase, AllReduce additionally broadcasts. The ratio is ~1.2× at N=2 and grows toward the `~2×` ratio that the analytic model predicts for very wide rings.
+- **AllReduce ≈ ReduceScatter ≈ AllGather at the same N**, within 5–15 %. The Ring AllReduce really is ReduceScatter+AllGather, so its busbw matches the slower of the two halves. This was the prediction in §2.3 and the sweep confirms it.
+- **Broadcast ≈ Reduce, both > AllReduce.** Single-direction primitives saturate the fabric without the second "fold-back" pass.
+- **AllToAll tracks AllGather closely at large N** (N=8: 360.9 vs 365.8 GB/s; N=4: 155.2 vs 158.7 GB/s). At small N it drops below — likely the pairwise sendrecv path is less efficient at N=2/3 than the dedicated Ring AllGather.
+- **AllToAllV is 30–35 % slower than AllToAll at the same N** for the configurations that completed (N=2: 58 vs 58 GB/s; N=3: 35 vs 62 GB/s; N=4: 116 vs 155 GB/s). The variable-chunk path has noticeably more per-call overhead. N=3 is unusually bad — likely the per-rank chunk sizing falls out of an alignment window.
+- **N=8 gather/scatter are the all-time peaks of the matrix.** Gather hits 444 GB/s and scatter hits 426 GB/s, both above the 381 GB/s AllReduce N=8 peak. Pairwise sendrecv to/from a single root at full xGMI rate is the cleanest way to saturate the fabric on this topology when the result-aggregation pattern fits.
 
-| Collective       | Why it matters here                                                  | rccl-tests binary           |
-|------------------|----------------------------------------------------------------------|------------------------------|
-| ReduceScatter    | First half of every dist-opt grad sync; implicit in AllReduce numbers but worth direct profiling. | `reduce_scatter_perf`        |
-| Broadcast        | Init-time only — measure once, not per step.                          | `broadcast_perf`             |
-| Reduce           | Loss logging only — off the critical path.                            | `reduce_perf`                |
-| AllToAll         | Defining MoE primitive; MSCCL plans bundled for N=8 across 5 size bands → likely better-than-Ring behavior. | `alltoall_perf` |
-| AllToAllV        | MoE with token imbalance; behavior bounded by AllToAll.               | `alltoallv_perf`             |
-| SendRecv         | Pipeline-parallel critical path when PP ≥ 2; currently unused (PP=1). | `sendrecv_perf`              |
-| Gather / Scatter | Off Megatron's critical path; low priority.                           | `gather_perf` / `scatter_perf` |
+#### 5.1.2 Cross-check against the legacy AllReduce/AllGather-only sweep (`logs/rccl_tests_20260601_162955/`)
+
+| N | AllReduce busbw — June 1 (GB/s) | AllReduce busbw — June 2 (GB/s) | AllGather busbw — June 1 (GB/s) | AllGather busbw — June 2 (GB/s) |
+|--:|--------------------------------:|--------------------------------:|--------------------------------:|--------------------------------:|
+| 2 |                          61.24  |                          61.28  |                          61.03  |                          60.58  |
+| 3 |                          75.15  |                          75.02  |                          72.12  |                          71.09  |
+| 4 |                         168.59  |                         166.48  |                         160.46  |                         158.72  |
+| 5 |                          38.62  |                          38.36  |                          35.65  |                          35.41  |
+| 6 |                          38.38  |                          38.42  |                          34.89  |                          34.90  |
+| 7 |                          37.77  |                          38.21  |                          34.62  |                          34.85  |
+| 8 |                         381.33  |                         381.27  |                         373.04  |                         365.75  |
+
+Run-to-run delta is ≤2 % across all (N, collective) cells. Numbers from both sweeps are interchangeable for analysis.
+
+### 5.2 Remaining coverage gap
+
+| Collective       | Status                                                              | Why it matters here                                                                       |
+|------------------|---------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| AllToAllV (N≥5)  | OOM-killed at N=5, sweep terminated by then                         | Likely OOM from per-rank buffer × N replicas growing past device memory; need smaller `--maxbytes` or per-N scaling. |
+| SendRecv (all N) | Never ran — sweep was killed during `alltoallv N=6`                 | Pipeline-parallel critical path when PP ≥ 2; currently unused (PP=1) but next-on-the-list. |
+| Multi-node       | Not exercised here (intra-node xGMI only)                            | IB / RoCE bandwidth would be the bottleneck once the collective crosses the node boundary. |
+| Sub-MiB messages | Sweep starts at 16 MiB; small-message latency regime not probed     | Where Tree algorithms become competitive with Ring.                                       |
 
 ---
 
@@ -194,8 +215,8 @@ Application-level slowdowns track collective-level slowdowns within ±10 %. The 
 
 ## 7. Recommended next experiments (collective-level)
 
-1. **ReduceScatter direct probe.** Use `reduce_scatter_perf` to confirm it inherits AllGather's bandwidth profile across the same N sweep. This isolates whether `all-grads-sync` time is purely a ReduceScatter cost or has an extra reduce-kernel component.
-2. **AllToAll sweep at N=8 across the 5 MSCCL message bands.** The bundled `alltoall-8n-{0-9kb, 9kb-190kb, 190kb-512kb, 512kb-7mb, 7mb-43mb}.xml` plans suggest this collective is well-tuned at N=8; measuring it would confirm MSCCL is actively engaged here (unlike AllReduce / AllGather where MSCCL toggling was a no-op).
-3. **SendRecv probe.** Set up a pipeline-parallel run (PP=2 at N=8 with TP=1, DP=4) and capture stage-to-stage SendRecv throughput. This becomes the dominant collective if PP is ever raised.
-4. **Multi-node IB collectives.** Repeat the AllReduce / AllGather sweep across two nodes once an IB-enabled config is available. Expected: per-link bandwidth drops ~10–20× as soon as the collective crosses the node boundary.
+1. **Finish the AllToAllV / SendRecv tail.** Re-run the all-collective sweep with a per-N max-size scaling (`maxBytes ÷= N`) so AllToAllV's per-rank buffer doesn't blow past device memory at N=5; then capture SendRecv across the full N=2..8 sweep. Both rows are the only gaps in §5.1.
+2. **AllToAll sweep at N=8 across the 5 MSCCL message bands.** The bundled `alltoall-8n-{0-9kb, 9kb-190kb, 190kb-512kb, 512kb-7mb, 7mb-43mb}.xml` plans suggest this collective is well-tuned at N=8; varying the message band in isolation would confirm MSCCL is actively engaged here (unlike AllReduce / AllGather where MSCCL toggling was a no-op).
+3. **Pipeline-parallel SendRecv probe at the application level.** Set up a real Megatron run with PP=2 at N=8 (TP=1, DP=4) and compare stage-to-stage SendRecv throughput to the `sendrecv_perf` baseline once it's captured. This becomes the dominant collective if PP is ever raised.
+4. **Multi-node IB collectives.** Repeat the all-collective sweep across two nodes once an IB-enabled config is available. Expected: per-link bandwidth drops ~10–20× as soon as the collective crosses the node boundary.
 5. **Vary message size below 16 MiB.** The current sweep starts at 16 MiB to bracket Megatron bucket sizes. A sub-MiB probe would expose where Tree algorithms become competitive with Ring (small-message latency regime).

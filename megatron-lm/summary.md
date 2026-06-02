@@ -37,6 +37,8 @@ Aggregate TF/s = best_TF/s/GPU × 8. Mem util is the stable HBM fraction from it
 
 **Headline:** MBS=2 with no recompute is the throughput winner at **236.8 TF/s/GPU**. Every other configuration is slower — a clear sign that on this setup the per-GPU arithmetic intensity is maximized at the smallest feasible batch (the sweet spot for HBM bandwidth vs. compute balance), and neither larger batches nor recompute policies improve it.
 
+**Critical caveat — this number is anomalously low and is being capped by the software stack, not the silicon.** See §5 below. The MI355X silicon delivers **1,639.78 TF/s/GPU BF16** under a native hipBLASLt GEMM benchmark (per `work-rocmval/summary.md`), and reference Megatron-LM on NVIDIA B200 reaches ~1,000 TF/s/GPU. Our best here is **only 14 % of the hipBLASLt achievable ceiling** and ~24 % of B200 Megatron-LM. The MBS/recompute sweep is exploring the *wrong axis* — no value of MBS or recompute can close that gap.
+
 ---
 
 ## 1. TFLOP/s per GPU  ★
@@ -107,7 +109,68 @@ The OOM is reproducible and fundamental: selective recompute does not save enoug
 
 ---
 
-## 4. Comparison to summary-1 (N-GPU sweep baseline)
+## 4. Why is best only 236.8 TF/s/GPU? — Root-cause analysis  ★★
+
+The measured per-GPU throughput is dramatically below what the silicon and the framework should deliver. The gap is on the wrong side of "needs tuning" — it's a structural software-stack mismatch.
+
+### The numbers don't line up
+
+| Reference | BF16 throughput per GPU | % of MI355X dense peak (2,500 TF/s) |
+|-----------|------------------------:|------------------------------------:|
+| MI355X paper dense peak (matrix, no sparsity) | 2,500 TF/s | 100 % |
+| MI355X hipBLASLt GEMM (rocmval, native gfx950, 1-GPU) | **1,639.78 TF/s** | **65.6 %** ← realistic library ceiling |
+| NVIDIA B200 Megatron-LM (user reference) | ~1,000 TF/s | ~44 % MFU (relative to B200's 2,250 peak) |
+| **This sweep, MBS=2 no-RC** | **236.8 TF/s** | **9.5 %** |
+| Ratio to hipBLASLt ceiling on the same silicon | — | **14.4 %** |
+| Ratio to B200 Megatron-LM | — | **23.7 %** |
+
+A Megatron-LM run that successfully uses its underlying BLAS library typically achieves **40–55 % of the BLAS ceiling** (per-GEMM efficiency × in-model overheads like attention, optimizer, communication). Hitting only 14 % means most of the heavy kernels aren't actually using the fast path.
+
+### The smoking gun: gfx942 kernels on gfx950 silicon
+
+Three lines in the log expose it:
+
+1. **`AITER_ASM_DIR set to: /opt/conda/envs/py_3.10/lib/python3.10/site-packages/transformer_engine/aiter/gfx942/`**
+   TransformerEngine's `aiter` (AMD-tuned JIT kernel framework, ships hand-written assembly for the hot paths — attention, GEMM epilogues, LayerNorm/RMSNorm) only contains a **gfx942** (MI300X) subdirectory in this image. There is no `gfx950/` directory. Every model-hot kernel that goes through `aiter` is loading MI300X assembly.
+
+2. **`HSA_OVERRIDE_GFX_VERSION=9.4.2`** in `run-tflops.sh` (and `run.sh`).
+   This forces the HSA/ROCr runtime to advertise the MI355X dies as **gfx942** (MI300X) so the framework can find *any* compatible kernel. Without this override the run would not start at all (kernel cache miss). The cost: every dispatched kernel runs MI300X codegen on MI355X silicon — wrong CU count, wrong wavefront layout, wrong LDS/VGPR tuning, no MX-format fast paths, no gfx950-specific instructions.
+
+3. **`PYTORCH_ROCM_ARCH=gfx950`** is set, but it is a *build-time* hint; the PyTorch wheel in the SIF was actually built only for gfx942 (see summary-1: `torch.cuda.get_arch_list() == []` from inside the container — no gfx950 device code present).
+
+The `work-rocmval` benchmark hits 1,639.78 TF/s precisely because it runs **directly against hipBLASLt with native gfx950 codegen** and bypasses TE/aiter/Inductor. That's the ceiling the Megatron run cannot reach with this image.
+
+### What else compounds the loss
+
+In rough order of contribution to the residual gap (gfx942-on-gfx950 is the dominant factor):
+
+| Issue | Evidence in log | Estimated impact |
+|-------|-----------------|------------------|
+| TE+aiter using gfx942 assembly on gfx950 silicon | `AITER_ASM_DIR .../aiter/gfx942/` | ~3–5× throughput (the dominant term) |
+| `HSA_OVERRIDE_GFX_VERSION=9.4.2` masks gfx950 to runtime | env in `run-tflops.sh` | Inseparable from the above |
+| `flash-attn 3.0.0.post1` outside TE's supported window | `[WARNING transformer_engine.pytorch.dot_product_attention.utils]: Supported flash-attn versions are >= 2.1.1, <= 2.8.0.post2. Found flash-attn 3.0.0.post1.` (×8) | Attention falls off the fused FlashAttention path; attention is 30–50 % of forward compute. |
+| Apex `fused_rope` unavailable, native PyTorch RoPE | `UserWarning: Using the native apex kernel for RoPE.` | ~3–6 % step time. |
+| `accumulate_allreduce_grads_in_fp32 = True` | args dump | Doubles grad-reduce bandwidth, marginal. |
+| Inductor compiles fused BDA / SwiGLU for gfx942 | `torchinductor_v89592/.../call(...)` paths | Same gfx942 codegen issue applied to JIT'd fused kernels. |
+
+### What "good" would look like
+
+Closing the gap requires fixing the toolchain, not the workload:
+
+- **PyTorch wheel built natively for gfx950**, so `torch.cuda.get_arch_list()` returns `['gfx950']` and `HSA_OVERRIDE_GFX_VERSION` can be removed.
+- **TransformerEngine `aiter` shipping `gfx950/` assembly** — currently only `gfx942/` exists in the image.
+- **flash-attn pinned to ≤ 2.8.0.post2** to keep TE's fused-attention path active (or upgrade TE to a version that accepts FA3).
+- **Apex built for gfx950**, restoring fused RoPE.
+
+A reasonable expectation after the toolchain fix: 700–1,000 TF/s/GPU (30–45 % MFU), matching well-tuned NVIDIA H100/B200 Megatron-LM behavior. Anything substantially below ~1,000 TF/s on a working stack would then point at workload-level tuning (MBS, TP/SP, etc.), at which point the kind of sweep this summary describes becomes meaningful.
+
+### Why MBS/recompute couldn't fix this
+
+Every configuration in §1 is bottlenecked on the **per-kernel** throughput, not on memory or batching. Changing MBS only changes how many tokens per second a slow kernel processes; the per-token TF/s ceiling is set by which kernels load. That's why the entire sweep clusters in a narrow 207–237 TF/s band: it's the gfx942-kernel ceiling, not a workload-tuning frontier.
+
+---
+
+## 5. Comparison to summary-1 (N-GPU sweep baseline)
 
 The MBS=2, no-RC configuration in this sweep is deliberately identical to the N=8 arm of summary-1:
 
@@ -134,8 +197,21 @@ The results reproduce to within measurement noise, confirming stable hardware st
 
 ## Recommended next experiments
 
-1. **Disable selective recompute and try MBS=5/6 with full recompute.** The selective path is currently broken (uses more memory AND is slower); full recompute at MBS=6–7 should comfortably fit within 288 GiB (MBS=8 full at 0.58 util leaves ~116 GiB headroom).
-2. **Push full-recompute MBS higher.** MBS=12 full is at 0.66 util — try MBS=16 (GBS=128) and MBS=20 (GBS=160). The MBS=8 → 12 plateau in throughput (208.0 → 207.2) suggests diminishing returns are already present, but the OOM boundary is not yet located.
-3. **Investigate selective recompute compatibility.** The counter-intuitive memory increase at MBS=4 selective vs. none may be a known TE + flash-attn 3.0.0.post1 incompatibility. Upgrading to a TE-compatible flash-attn version (≤ 2.8.0.post2) or gating selective RC through Megatron's native path (not TE) would isolate the cause.
-4. **Add TP to the MBS sweep.** With `--tensor-model-parallel-size=2` or `=4`, each rank holds only a shard of the weight matrices, cutting static HBM by 2–4×. This would allow much larger MBS without recompute and exercise the xGMI all-reduce path inside TP.
-5. **Bake a gfx950-native PyTorch.** The 4.7 % MFU ceiling is compute-side. Dropping `HSA_OVERRIDE_GFX_VERSION=9.4.2` with a native gfx950 wheel would be the highest-leverage single change for per-GPU throughput.
+**Priority 1 — fix the toolchain (highest leverage by far).** Without this, further MBS / TP / DP sweeps will keep measuring the gfx942 kernel ceiling instead of the silicon's potential.
+
+1. **Get a gfx950-native PyTorch + TransformerEngine + aiter.** Verify inside the container:
+   ```python
+   python -c "import torch; print(torch.cuda.get_arch_list())"   # must include 'gfx950'
+   ls /opt/conda/envs/py_3.10/lib/python3.10/site-packages/transformer_engine/aiter/  # must have gfx950/
+   ```
+   If either is missing, no other change matters. A ROCm 7.2.3+ container that has natively built wheels (e.g. AMD's official `rocm/pytorch-training` image for MI355X) should replace `megatron-lm.sif`. Remove `HSA_OVERRIDE_GFX_VERSION=9.4.2` once gfx950 is real.
+2. **Pin `flash-attn` to a TE-supported version (≤ 2.8.0.post2)** so TE keeps the fused-attention path. Currently TE prints the warning 8× per run and falls off the fast attention path.
+3. **Rebuild Apex with gfx950 support** to restore fused RoPE.
+
+Once those three are done, re-run **MBS=2 no-RC at N=8** as a sanity check. Expected target: **700–1,000 TF/s/GPU** (matching the 30–45 % MFU band typical of well-tuned Megatron-LM on H100/B200). If that lands, then the workload sweeps below are worth running; if not, dig further into the BLAS dispatch path.
+
+**Priority 2 — workload tuning (only meaningful after Priority 1 lands).**
+
+4. **Disable selective recompute and try MBS=5/6 with full recompute.** The selective path is currently broken (uses more memory AND is slower); full recompute at MBS=6–7 should comfortably fit within 288 GiB (MBS=8 full at 0.58 util leaves ~116 GiB headroom). Note: this may resolve on its own once the toolchain is fixed, since the selective-RC memory bloat looks like a TE codegen artifact.
+5. **Push full-recompute MBS higher.** MBS=12 full is at 0.66 util — try MBS=16 (GBS=128) and MBS=20 (GBS=160). The MBS=8 → 12 plateau in throughput (208.0 → 207.2) suggests diminishing returns are already present, but the OOM boundary is not yet located.
+6. **Add TP to the MBS sweep.** With `--tensor-model-parallel-size=2` or `=4`, each rank holds only a shard of the weight matrices, cutting static HBM by 2–4×. This would allow much larger MBS without recompute and exercise the xGMI all-reduce path inside TP.

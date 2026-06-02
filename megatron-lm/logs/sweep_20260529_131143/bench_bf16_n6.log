@@ -1,0 +1,2876 @@
+[in-container] python: Python 3.10.18
+[in-container] torch : 2.8.0a0+gitd06a406 True 6
+[in-container] HIP_VISIBLE_DEVICES=0,1,2,3,4,5
+
+W0529 13:37:38.549000 265905 site-packages/torch/distributed/run.py:774] 
+W0529 13:37:38.549000 265905 site-packages/torch/distributed/run.py:774] *****************************************
+W0529 13:37:38.549000 265905 site-packages/torch/distributed/run.py:774] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0529 13:37:38.549000 265905 site-packages/torch/distributed/run.py:774] *****************************************
+/opt/conda/envs/py_3.10/lib/python3.10/site-packages/redis/connection.py:77: UserWarning: redis-py works best with hiredis. Please consider installing
+  warnings.warn(msg)
+[WARNING  | transformer_engine.pytorch.dot_product_attention.utils]: Supported flash-attn versions are >= 2.1.1, <= 2.8.0.post2. Found flash-attn 3.0.0.post1.
+[WARNING  | transformer_engine.pytorch.dot_product_attention.utils]: Supported flash-attn versions are >= 2.1.1, <= 2.8.0.post2. Found flash-attn 3.0.0.post1.
+[WARNING  | transformer_engine.pytorch.dot_product_attention.utils]: Supported flash-attn versions are >= 2.1.1, <= 2.8.0.post2. Found flash-attn 3.0.0.post1.
+[WARNING  | transformer_engine.pytorch.dot_product_attention.utils]: Supported flash-attn versions are >= 2.1.1, <= 2.8.0.post2. Found flash-attn 3.0.0.post1.
+[WARNING  | transformer_engine.pytorch.dot_product_attention.utils]: Supported flash-attn versions are >= 2.1.1, <= 2.8.0.post2. Found flash-attn 3.0.0.post1.
+[WARNING  | transformer_engine.pytorch.dot_product_attention.utils]: Supported flash-attn versions are >= 2.1.1, <= 2.8.0.post2. Found flash-attn 3.0.0.post1.
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] start build [module_aiter_enum] under /home/v89592/.aiter/jit/build/module_aiter_enum
+[92mSuccessfully preprocessed all matching files.[0m
+[aiter] finish build [module_aiter_enum], cost 16.11129628s
+/opt/conda/envs/py_3.10/lib/python3.10/site-packages/apex/transformer/functional/fused_rope.py:54: UserWarning: Using the native apex kernel for RoPE.
+  warnings.warn("Using the native apex kernel for RoPE.", UserWarning)
+/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/energy_monitor.py:9: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  from pynvml import (
+[W529 13:38:07.325101728 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[W529 13:38:07.387911916 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[W529 13:38:07.392093265 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+using world size: 6, data-parallel size: 6, context-parallel size: 1, hierarchical context-parallel sizes: None, tensor-model-parallel size: 1, pipeline-model-parallel size: 1
+/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/utils.py:456: UserWarning: Overriding default arguments for tokenizer_type:GPT2BPETokenizer with tokenizer_type:NullTokenizer
+  warnings.warn(message)
+Number of virtual stages per pipeline stage: None
+accumulate and all-reduce gradients in fp32 for bfloat16 data type.
+using torch.bfloat16 for parameters ...
+------------------------ arguments ------------------------
+  account_for_embedding_in_pipeline_split ......... False
+  account_for_loss_in_pipeline_split .............. False
+  accumulate_allreduce_grads_in_fp32 .............. True
+  activation_func_clamp_value ..................... None
+  adam_beta1 ...................................... 0.9
+  adam_beta2 ...................................... 0.95
+  adam_eps ........................................ 1e-08
+  adaptive_seq_len ................................ False
+  add_bias_attn_fc ................................ True
+  add_bias_linear ................................. True
+  add_bias_linear_fc .............................. True
+  add_position_embedding .......................... True
+  add_qkv_bias .................................... True
+  adlr_autoresume ................................. False
+  adlr_autoresume_interval ........................ 1000
+  align_grad_reduce ............................... True
+  align_param_gather .............................. False
+  allow_ambiguous_pad_tokens ...................... False
+  app_tag_run_name ................................ None
+  app_tag_run_version ............................. 0.0.0
+  apply_query_key_layer_scaling ................... False
+  apply_residual_connection_post_layernorm ........ False
+  apply_rope_fusion ............................... True
+  apply_wd_to_qk_layernorm ........................ False
+  async_save ...................................... False
+  async_tensor_model_parallel_allreduce ........... True
+  attention_backend ............................... AttnBackend.auto
+  attention_dropout ............................... 0.1
+  attention_head_type ............................. None
+  attention_output_gate ........................... False
+  attention_sink_k ................................ 0
+  attention_softmax_in_fp32 ....................... False
+  auto_detect_ckpt_format ......................... False
+  barrier_with_L1_time ............................ True
+  batch_invariant_mode ............................ False
+  bert_binary_head ................................ True
+  bert_embedder_type .............................. megatron
+  bert_load ....................................... None
+  bf16 ............................................ True
+  bias_dropout_fusion ............................. True
+  bias_gelu_fusion ................................ True
+  bias_swiglu_fusion .............................. True
+  biencoder_projection_dim ........................ 0
+  biencoder_shared_query_context_model ............ False
+  block_data_path ................................. None
+  cache_mla_latents ............................... False
+  calc_ft_timeouts ................................ False
+  calculate_per_token_loss ........................ False
+  check_for_large_grads ........................... False
+  check_for_nan_in_loss_and_grad .................. True
+  check_for_spiky_loss ............................ False
+  check_weight_hash_across_dp_replicas_interval ... None
+  ckpt_assume_constant_structure .................. False
+  ckpt_convert_format ............................. None
+  ckpt_convert_save ............................... None
+  ckpt_convert_update_legacy_dist_opt_format ...... False
+  ckpt_format ..................................... torch_dist
+  ckpt_fully_parallel_load ........................ False
+  ckpt_fully_parallel_save ........................ True
+  ckpt_fully_parallel_save_deprecated ............. False
+  ckpt_step ....................................... None
+  classes_fraction ................................ 1.0
+  clip_grad ....................................... 1.0
+  clone_scatter_output_in_embedding ............... True
+  config_logger_dir ............................... 
+  consumed_train_samples .......................... 0
+  consumed_valid_samples .......................... 0
+  context_parallel_size ........................... 1
+  convert_checkpoint_from_megatron_to_transformers  False
+  cp_comm_type .................................... ['p2p']
+  cpu_offloading_num_layers ....................... 0
+  create_all_gather_group ......................... False
+  create_attention_mask_in_dataloader ............. True
+  cross_entropy_fusion_impl ....................... native
+  cross_entropy_loss_fusion ....................... False
+  cuda_graph_impl ................................. none
+  cuda_graph_scope ................................ []
+  cuda_graph_warmup_steps ......................... 3
+  cvcuda_image_processing ......................... False
+  data_args_path .................................. None
+  data_cache_path ................................. None
+  data_dir ........................................ None
+  data_parallel_random_init ....................... False
+  data_parallel_sharding_strategy ................. no_shard
+  data_parallel_size .............................. 6
+  data_path ....................................... None
+  data_per_class_fraction ......................... 1.0
+  data_sharding ................................... True
+  dataloader_defer_npy_index_mmap ................. False
+  dataloader_fast_cache_load ...................... False
+  dataloader_type ................................. single
+  dataset ......................................... None
+  ddp_average_in_collective ....................... False
+  ddp_bucket_size ................................. None
+  ddp_num_buckets ................................. None
+  ddp_pad_buckets_for_high_nccl_busbw ............. False
+  ddp_reduce_scatter_with_fp32_accumulation ....... False
+  decode_only_cuda_graphs ......................... False
+  decoder_first_pipeline_num_layers ............... None
+  decoder_last_pipeline_num_layers ................ None
+  decoder_num_layers .............................. None
+  decoder_seq_length .............................. None
+  decoupled_lr .................................... None
+  decoupled_min_lr ................................ None
+  decrease_batch_size_if_needed ................... False
+  defer_embedding_wgrad_compute ................... False
+  delay_wgrad_compute ............................. False
+  deprecated_keep_fp8_weight_transpose_cache ...... False
+  deprecated_use_mcore_models ..................... False
+  deterministic_mode .............................. False
+  dino_bottleneck_size ............................ 256
+  dino_freeze_last_layer .......................... 1
+  dino_head_hidden_size ........................... 2048
+  dino_local_crops_number ......................... 10
+  dino_local_img_size ............................. 96
+  dino_norm_last_layer ............................ False
+  dino_teacher_temp ............................... 0.07
+  dino_warmup_teacher_temp ........................ 0.04
+  dino_warmup_teacher_temp_epochs ................. 30
+  disable_bf16_reduced_precision_matmul ........... False
+  disable_chunked_prefill ......................... True
+  disable_jit_fuser ............................... False
+  disable_straggler_on_startup .................... False
+  disable_symmetric_registration .................. False
+  disable_te_fused_rope ........................... False
+  dist_ckpt_format_deprecated ..................... None
+  dist_ckpt_optim_fully_reshardable ............... False
+  dist_ckpt_save_pre_mcore_014 .................... False
+  dist_ckpt_strictness ............................ assume_ok_unexpected
+  distrib_optim_fully_reshardable_mem_efficient ... False
+  distribute_saved_activations .................... False
+  distributed_backend ............................. nccl
+  distributed_timeout_minutes ..................... 10
+  distributed_timeout_seconds_after_init .......... None
+  dsa_indexer_head_dim ............................ None
+  dsa_indexer_loss_coeff .......................... None
+  dsa_indexer_n_heads ............................. None
+  dsa_indexer_topk ................................ None
+  dsa_indexer_use_sparse_loss ..................... False
+  dump_param_to_param_group_map ................... None
+  embed_layernorm ................................. False
+  embedding_init_method_std ....................... None
+  embedding_path .................................. None
+  empty_unused_memory_level ....................... 0
+  enable_cuda_graph ............................... False
+  enable_experimental ............................. False
+  enable_ft_package ............................... False
+  enable_full_sharding_in_hsdp .................... False
+  enable_gloo_process_groups ...................... True
+  enable_gpt_oss .................................. False
+  enable_msc ...................................... True
+  enable_one_logger ............................... True
+  enable_parallel_output .......................... True
+  enable_shared_expert ............................ False
+  encoder_num_layers .............................. 40
+  encoder_seq_length .............................. 4096
+  end_weight_decay ................................ 0.1
+  eod_mask_loss ................................... False
+  ep_overlap_early_attn_memory_release ............ False
+  epochs .......................................... None
+  error_injection_rate ............................ 0
+  error_injection_type ............................ transient_error
+  eval_dev ........................................ False
+  eval_fp32 ....................................... False
+  eval_interval ................................... 1000000
+  eval_iters ...................................... 100
+  evidence_data_path .............................. None
+  exit_duration_in_mins ........................... None
+  exit_interval ................................... None
+  exit_on_missing_checkpoint ...................... False
+  exit_signal ..................................... 15
+  exit_signal_handler ............................. False
+  exit_signal_handler_for_dataloader .............. False
+  exp_avg_dtype ................................... torch.float32
+  exp_avg_sq_dtype ................................ torch.float32
+  experimental_attention_variant .................. None
+  expert_interval ................................. 2
+  expert_model_parallel_size ...................... 1
+  expert_tensor_parallel_size ..................... 1
+  expert_tensor_parallelism ....................... False
+  export_force_local_attention .................... False
+  export_kd_cfg ................................... None
+  export_kd_teacher_ckpt_format ................... None
+  export_kd_teacher_load .......................... None
+  export_kd_teacher_model_config .................. None
+  export_kv_cache_quant ........................... none
+  export_legacy_megatron .......................... False
+  export_model_type ............................... GPTModel
+  export_moe_apply_probs_on_input ................. False
+  export_offline_model ............................ False
+  export_qk_l2_norm ............................... False
+  export_quant_cfg ................................ None
+  export_real_quant_cfg ........................... None
+  export_te_mcore_model ........................... False
+  external_cuda_graph ............................. False
+  extra_vocab_size ................................ 0
+  fake_process_group .............................. False
+  ffn_hidden_size ................................. 16384
+  fim_data ........................................ False
+  fim_eod_token ................................... <|endoftext|>
+  fim_fragment_rate ............................... None
+  fim_middle_token ................................ <fim_middle>
+  fim_no_prefix ................................... None
+  fim_pad_token ................................... <fim_pad>
+  fim_prefix_token ................................ <fim_prefix>
+  fim_rate ........................................ 0.5
+  fim_split_sample ................................ None
+  fim_spm_rate .................................... 0.5
+  fim_suffix_token ................................ <fim_suffix>
+  fine_grained_activation_offloading .............. False
+  finetune ........................................ False
+  finetune_data_split ............................. train
+  finetune_hf_dataset ............................. None
+  first_last_layers_bf16 .......................... False
+  flash_decode .................................... False
+  fp16 ............................................ False
+  fp16_lm_cross_entropy ........................... False
+  fp32_residual_connection ........................ False
+  fp4 ............................................. None
+  fp4_param ....................................... False
+  fp4_quantizer_factory ........................... None
+  fp4_recipe ...................................... nvfp4
+  fp8 ............................................. None
+  fp8_amax_compute_algo ........................... most_recent
+  fp8_amax_history_len ............................ 1
+  fp8_interval .................................... 1
+  fp8_margin ...................................... 0
+  fp8_param_gather ................................ False
+  fp8_quantizer_factory ........................... None
+  fp8_recipe ...................................... delayed
+  fp8_wgrad ....................................... True
+  freeze_clip_vision_tower ........................ False
+  freeze_llm ...................................... False
+  fsdp_double_buffer .............................. False
+  fsdp_manual_registration ........................ False
+  ft_num_warmup_iters ............................. 5
+  full_validation ................................. False
+  fused_padded_mla_attention ...................... False
+  generation_length ............................... None
+  global_batch_size ............................... 12
+  glu_activation .................................. None
+  glu_linear_offset ............................... 0.0
+  grad_reduce_in_bf16 ............................. False
+  gradient_accumulation_fusion .................... True
+  gradient_reduce_div_fusion ...................... True
+  group_query_attention ........................... True
+  grpo_clamp_eps_lower ............................ 0.01
+  grpo_clamp_eps_upper ............................ 0.01
+  grpo_entropy_term_weight ........................ 0.0
+  grpo_filter_groups_with_same_reward ............. False
+  grpo_group_size ................................. 2
+  grpo_iterations ................................. 2
+  grpo_kl_beta .................................... 0.001
+  grpo_prompts_per_step ........................... 32
+  head_lr_mult .................................... 1.0
+  heterogeneous_layers_config_encoded_json ........ None
+  heterogeneous_layers_config_path ................ None
+  hidden_dropout .................................. 0.1
+  hidden_size ..................................... 6144
+  hierarchical_context_parallel_sizes ............. None
+  high_priority_stream_groups ..................... []
+  hybrid_attention_ratio .......................... 0.0
+  hybrid_context_parallel ......................... False
+  hybrid_mlp_ratio ................................ 0.0
+  hybrid_override_pattern ......................... None
+  hysteresis ...................................... 2
+  ict_head_size ................................... None
+  ict_load ........................................ None
+  image_aspect_ratio .............................. square
+  image_folder .................................... 
+  image_size ...................................... None
+  img_h ........................................... 224
+  img_w ........................................... 224
+  indexer_batch_size .............................. 128
+  indexer_log_interval ............................ 1000
+  inference_batch_times_seqlen_threshold .......... -1
+  inference_coordinator_port ...................... 12346
+  inference_dynamic_batching ...................... False
+  inference_dynamic_batching_block_size ........... 256
+  inference_dynamic_batching_buffer_size_gb ....... 40.0
+  inference_dynamic_batching_cuda_graph_max_tokens  16384
+  inference_dynamic_batching_cuda_graph_mixed_prefill_count  16
+  inference_dynamic_batching_max_requests ......... None
+  inference_dynamic_batching_max_tokens ........... None
+  inference_dynamic_batching_num_cuda_graphs ...... 16
+  inference_dynamic_batching_paused_buffer_size_gb  None
+  inference_dynamic_batching_track_paused_request_events  False
+  inference_dynamic_batching_unified_memory_level . 0
+  inference_fuse_tp_communication ................. False
+  inference_logging_step_interval ................. 0
+  inference_max_batch_size ........................ 8
+  inference_max_seq_length ........................ 2560
+  inference_rng_tracker ........................... False
+  inference_wandb_logging ......................... False
+  init_method_std ................................. 0.02
+  init_method_xavier_uniform ...................... False
+  init_model_with_meta_device ..................... False
+  initial_loss_scale .............................. 4294967296
+  inprocess_active_world_size ..................... 6
+  inprocess_barrier_timeout ....................... 120
+  inprocess_completion_timeout .................... 120
+  inprocess_empty_cuda_cache ...................... False
+  inprocess_granularity ........................... node
+  inprocess_hard_timeout .......................... 90
+  inprocess_heartbeat_interval .................... 30
+  inprocess_heartbeat_timeout ..................... 60
+  inprocess_last_call_wait ........................ 1
+  inprocess_max_iterations ........................ None
+  inprocess_monitor_process_interval .............. 1.0
+  inprocess_monitor_thread_interval ............... 1.0
+  inprocess_progress_watchdog_interval ............ 1.0
+  inprocess_restart ............................... False
+  inprocess_soft_timeout .......................... 60
+  inprocess_termination_grace_time ................ 1
+  input_len ....................................... 1
+  intermediate_size ............................... None
+  is_hybrid_model ................................. False
+  iter_per_epoch .................................. 1250
+  iterations_to_skip .............................. []
+  keep_fp8_transpose_cache ........................ False
+  keep_fp8_weight_transpose_cache ................. False
+  keep_last ....................................... False
+  kitchen_attention_backend ....................... sdpa
+  kv_channels ..................................... 128
+  kv_lora_rank .................................... 32
+  langrl_env_config ............................... None
+  langrl_external_server .......................... False
+  langrl_inference_server_conversation_template ... None
+  langrl_inference_server_type .................... inplace_megatron
+  layernorm_epsilon ............................... 1e-05
+  layernorm_zero_centered_gamma ................... False
+  lazy_mpu_init ................................... None
+  legacy_tokenizer ................................ False
+  linear_attention_freq ........................... None
+  linear_conv_kernel_dim .......................... 4
+  linear_key_head_dim ............................. 128
+  linear_num_key_heads ............................ 16
+  linear_num_value_heads .......................... 32
+  linear_value_head_dim ........................... 128
+  load ............................................ None
+  load_main_params_from_ckpt ...................... False
+  local_rank ...................................... 0
+  log_batch_size_to_tensorboard ................... False
+  log_device_memory_used .......................... False
+  log_energy ...................................... False
+  log_interval .................................... 5
+  log_loss_scale_to_tensorboard ................... True
+  log_max_attention_logit ......................... False
+  log_memory_interval ............................. None
+  log_memory_to_tensorboard ....................... False
+  log_num_zeros_in_grad ........................... False
+  log_params_norm ................................. False
+  log_progress .................................... False
+  log_straggler ................................... False
+  log_throughput .................................. True
+  log_timers_to_tensorboard ....................... False
+  log_validation_ppl_to_tensorboard ............... False
+  log_world_size_to_tensorboard ................... False
+  logging_level ................................... None
+  loss_scale ...................................... None
+  loss_scale_window ............................... 1000
+  lr .............................................. 0.0003
+  lr_decay_iters .................................. 30
+  lr_decay_samples ................................ None
+  lr_decay_style .................................. cosine
+  lr_warmup_fraction .............................. None
+  lr_warmup_init .................................. 0.0
+  lr_warmup_iters ................................. 5
+  lr_warmup_samples ............................... 0
+  lr_wsd_decay_iters .............................. None
+  lr_wsd_decay_samples ............................ None
+  lr_wsd_decay_style .............................. exponential
+  main_grads_dtype ................................ torch.float32
+  main_params_dtype ............................... torch.float32
+  make_vocab_size_divisible_by .................... 128
+  mamba_head_dim .................................. 64
+  mamba_num_groups ................................ 8
+  mamba_num_heads ................................. None
+  mamba_state_dim ................................. 128
+  manual_gc ....................................... False
+  manual_gc_eval .................................. True
+  manual_gc_interval .............................. 0
+  mask_factor ..................................... 1.0
+  mask_prob ....................................... 0.15
+  mask_type ....................................... random
+  masked_softmax_fusion ........................... True
+  max_padding_length .............................. None
+  max_position_embeddings ......................... 4096
+  max_seqlen_per_dp_cp_rank ....................... None
+  max_tokens_to_oom ............................... 12000
+  memory_snapshot_path ............................ snapshot.pickle
+  merge_file ...................................... None
+  micro_batch_size ................................ 2
+  microbatch_group_size_per_vp_stage .............. None
+  mid_level_dataset_surplus ....................... 0.005
+  min_loss_scale .................................. 1.0
+  min_lr .......................................... 3e-05
+  min_offloaded_tensor_size ....................... 1048576
+  mlp_chunks_for_prefill .......................... 1
+  mm_projector_type ............................... None
+  mm_use_im_patch_token ........................... False
+  mm_use_im_start_end ............................. False
+  mm_vision_select_layer .......................... None
+  mmap_bin_files .................................. True
+  mock_data ....................................... True
+  modelopt_enabled ................................ False
+  moe ............................................. False
+  moe_apply_probs_on_input ........................ False
+  moe_aux_loss_coeff .............................. 0.0
+  moe_deepep_num_sms .............................. 20
+  moe_enable_deepep ............................... False
+  moe_enable_routing_replay ....................... False
+  moe_eval_capacity_factor ........................ 1.0
+  moe_expert_capacity_factor ...................... None
+  moe_expert_parallel_size ........................ None
+  moe_extended_tp ................................. False
+  moe_ffn_hidden_size ............................. None
+  moe_flex_dispatcher_backend ..................... deepep
+  moe_grouped_gemm ................................ False
+  moe_hybridep_num_sms ............................ 16
+  moe_input_feature_slicing ....................... False
+  moe_input_jitter_eps ............................ None
+  moe_latent_size ................................. None
+  moe_layer_freq .................................. 1
+  moe_layer_recompute ............................. False
+  moe_loss_coeff .................................. 0.01
+  moe_min_capacity ................................ 4
+  moe_pad_expert_input_to_capacity ................ False
+  moe_pad_experts_for_cuda_graph_inference ........ False
+  moe_per_layer_logging ........................... False
+  moe_permute_fusion .............................. False
+  moe_router_bias_update_rate ..................... 0.001
+  moe_router_dtype ................................ None
+  moe_router_enable_expert_bias ................... False
+  moe_router_force_load_balancing ................. False
+  moe_router_fusion ............................... False
+  moe_router_group_topk ........................... None
+  moe_router_load_balancing_type .................. aux_loss
+  moe_router_num_groups ........................... None
+  moe_router_padding_for_fp8 ...................... False
+  moe_router_padding_for_quantization ............. False
+  moe_router_pre_softmax .......................... False
+  moe_router_score_function ....................... softmax
+  moe_router_topk ................................. 2
+  moe_router_topk_scaling_factor .................. None
+  moe_shared_expert_gate .......................... False
+  moe_shared_expert_intermediate_size ............. None
+  moe_shared_expert_overlap ....................... False
+  moe_token_dispatcher_type ....................... allgather
+  moe_token_drop_policy ........................... probs
+  moe_topk ........................................ 1
+  moe_train_capacity_factor ....................... 1.0
+  moe_upcycling_granularity ....................... 1
+  moe_use_legacy_grouped_gemm ..................... False
+  moe_use_upcycling ............................... False
+  moe_z_loss_coeff ................................ None
+  mrope_section ................................... None
+  mscale .......................................... 1.0
+  mscale_all_dim .................................. 0.0
+  mtp_hybrid_override_pattern ..................... None
+  mtp_loss_scaling_factor ......................... 0.1
+  mtp_num_layers .................................. None
+  mtp_standalone .................................. False
+  mtp_use_repeated_layer .......................... False
+  multi_latent_attention .......................... False
+  multiple_validation_sets ........................ False
+  muon_extra_scale_factor ......................... 1.0
+  muon_fp32_matmul_prec ........................... medium
+  muon_momentum ................................... 0.9
+  muon_num_ns_steps ............................... 5
+  muon_scale_mode ................................. spectral
+  muon_split_qkv .................................. True
+  muon_tp_mode .................................... blockwise
+  muon_use_nesterov ............................... False
+  n_head_kv ....................................... None
+  nccl_all_reduce_for_prefill ..................... False
+  nccl_communicator_config_path ................... None
+  nccl_ub ......................................... False
+  no_load_optim ................................... None
+  no_load_rng ..................................... None
+  no_persist_layer_norm ........................... False
+  no_rope_freq .................................... None
+  no_save_optim ................................... None
+  no_save_rng ..................................... None
+  no_weight_decay_cond_type ....................... None
+  non_persistent_ckpt_type ........................ None
+  non_persistent_global_ckpt_dir .................. None
+  non_persistent_local_ckpt_algo .................. fully_parallel
+  non_persistent_local_ckpt_dir ................... None
+  non_persistent_save_interval .................... None
+  normalization ................................... RMSNorm
+  num_attention_heads ............................. 48
+  num_channels .................................... 3
+  num_classes ..................................... 1000
+  num_dataset_builder_threads ..................... 1
+  num_distributed_optimizer_instances ............. 1
+  num_experts ..................................... None
+  num_fewshot ..................................... None
+  num_layers ...................................... 40
+  num_layers_at_end_in_bf16 ....................... 1
+  num_layers_at_start_in_bf16 ..................... 1
+  num_layers_per_virtual_pipeline_stage ........... None
+  num_query_groups ................................ 8
+  num_shared_experts .............................. None
+  num_virtual_stages_per_pipeline_rank ............ None
+  num_workers ..................................... 2
+  object_storage_cache_path ....................... None
+  offload_modules ................................. []
+  one_logger_async ................................ False
+  one_logger_project .............................. megatron-lm
+  one_logger_run_name ............................. None
+  onnx_safe ....................................... None
+  openai_gelu ..................................... False
+  optimizer ....................................... adam
+  optimizer_cpu_offload ........................... False
+  optimizer_offload_auto_threshold ................ 2147483648
+  optimizer_offload_chunk_size .................... 33554432
+  optimizer_offload_fraction ...................... 1.0
+  optimizer_offload_policy ........................ static
+  out_seq_length .................................. 1024
+  outer_dp_sharding_strategy ...................... no_shard
+  output_bert_embeddings .......................... False
+  overlap_cpu_optimizer_d2h_h2d ................... False
+  overlap_grad_reduce ............................. False
+  overlap_moe_expert_parallel_comm ................ False
+  overlap_p2p_comm ................................ False
+  overlap_p2p_comm_warmup_flush ................... False
+  overlap_param_gather ............................ False
+  overlap_param_gather_with_optimizer_step ........ False
+  override_opt_param_scheduler .................... False
+  padded_vocab_size ............................... None
+  params_dtype .................................... torch.bfloat16
+  patch_dim ....................................... 16
+  patch_size ...................................... None
+  per_dataset_sequences_path ...................... None
+  per_split_data_args_path ........................ None
+  perform_initialization .......................... True
+  perform_rl_step ................................. False
+  phase_transition_iterations ..................... None
+  pin_cpu_grads ................................... True
+  pin_cpu_params .................................. True
+  pipeline_model_parallel_comm_backend ............ None
+  pipeline_model_parallel_layout .................. None
+  pipeline_model_parallel_size .................... 1
+  position_embedding_type ......................... rope
+  position_encoding_2d ............................ False
+  pretrained_checkpoint ........................... None
+  profile ......................................... False
+  profile_ranks ................................... [0]
+  profile_step_end ................................ 12
+  profile_step_start .............................. 10
+  q_lora_rank ..................................... None
+  qk_clip ......................................... False
+  qk_clip_alpha ................................... 0.5
+  qk_clip_threshold ............................... 100
+  qk_head_dim ..................................... 128
+  qk_l2_norm ...................................... False
+  qk_layernorm .................................... False
+  qk_nope_head_dim ................................ None
+  qk_pos_emb_head_dim ............................. 64
+  qk_rope_head_dim ................................ None
+  query_in_block_prob ............................. 0.1
+  quick_geglu ..................................... False
+  rampup_batch_size ............................... None
+  rank ............................................ 0
+  recompute_granularity ........................... None
+  recompute_method ................................ None
+  recompute_modules ............................... None
+  recompute_num_layers ............................ None
+  record_memory_history ........................... False
+  refit_method .................................... gloo
+  relative_attention_max_distance ................. 128
+  relative_attention_num_buckets .................. 32
+  repetition_penalty .............................. 1.1
+  replication ..................................... False
+  replication_factor .............................. 2
+  replication_jump ................................ None
+  rerun_mode ...................................... validate_results
+  reset_attention_mask ............................ False
+  reset_position_ids .............................. False
+  result_rejected_tracker_filename ................ None
+  retriever_report_topk_accuracies ................ []
+  retriever_score_scaling ......................... False
+  reuse_grad_buf_for_mxfp8_param_ag ............... False
+  rl_default_temperature .......................... 1.0
+  rl_default_top_k ................................ -1
+  rl_default_top_p ................................ 0
+  rl_importance_sampling_truncation_coef .......... None
+  rl_inference_expert_model_parallel_size ......... None
+  rl_inference_expert_tensor_model_parallel_size .. None
+  rl_inference_logprobs_is_correction ............. False
+  rl_inference_model_unified_memory_level ......... 0
+  rl_inference_pipeline_model_parallel_size ....... None
+  rl_inference_tensor_model_parallel_size ......... None
+  rl_offload_inference_model_weights_when_idle .... False
+  rl_offload_kv_cache_during_training ............. False
+  rl_offload_optimizer_during_inference ........... False
+  rl_parallel_generation_tasks .................... 512
+  rl_partial_rollouts ............................. False
+  rl_prompts_per_eval ............................. 32
+  rl_remove_kv_cache_during_training .............. False
+  rl_reset_cuda_graphs ............................ False
+  rl_sequence_packing_algo ........................ fifo
+  rl_sequence_packing_max_sequences_per_bin ....... 50
+  rl_skip_bos_token ............................... False
+  rl_training_cuda_graphs ......................... False
+  rl_use_sequence_packing ......................... False
+  rl_verify_model_weights_swap .................... False
+  rope_scaling_factor ............................. 8.0
+  rope_type ....................................... None
+  rotary_base ..................................... 10000
+  rotary_interleaved .............................. False
+  rotary_percent .................................. 1.0
+  rotary_scale_factor ............................. 1
+  rotary_scaling_factor ........................... 1.0
+  rotary_seq_len_interpolation_factor ............. None
+  router_type ..................................... topk
+  run_workload_inspector_server ................... False
+  sample_rate ..................................... 1.0
+  save ............................................ None
+  save_dgrads_interval ............................ None
+  save_interval ................................... 1000000
+  save_retain_interval ............................ None
+  save_wgrads_interval ............................ None
+  scatter_gather_tensors_in_pipeline .............. True
+  seed ............................................ 1234
+  seq_length ...................................... 4096
+  sequence_parallel ............................... False
+  sft ............................................. False
+  sft_tokenizer_prompt_format ..................... nemotron-h-aligned
+  sgd_momentum .................................... 0.9
+  shared_moe_ffn_hidden_size ...................... None
+  sharp_enabled_group ............................. None
+  short_seq_prob .................................. 0.1
+  skip_train ...................................... False
+  skipped_train_samples ........................... 0
+  sliding_window .................................. None
+  softmax_type .................................... vanilla
+  source_seq_len .................................. None
+  spec ............................................ None
+  split ........................................... None
+  squared_relu .................................... False
+  start_weight_decay .............................. 0.1
+  straggler_ctrlr_port ............................ 65535
+  straggler_minmax_count .......................... 1
+  strict_fsdp_dtensor_load ........................ True
+  suggested_communication_unit_size ............... None
+  swiglu .......................................... True
+  swin_backbone_type .............................. tiny
+  symmetric_ar_type ............................... None
+  target_seq_len .................................. None
+  task_list ....................................... all
+  te_precision_config_file ........................ None
+  te_rng_tracker .................................. False
+  temperature ..................................... 1.0
+  tensor_model_parallel_size ...................... 1
+  tensorboard_dir ................................. None
+  tensorboard_log_interval ........................ 1
+  tensorboard_queue_size .......................... 1000
+  test_data_path .................................. None
+  test_mode ....................................... False
+  text_generate_gt_file ........................... 
+  text_generate_input_file ........................ 
+  text_generate_output_file ....................... 
+  tiktoken_num_special_tokens ..................... 1000
+  tiktoken_pattern ................................ None
+  tiktoken_special_tokens ......................... None
+  time ............................................ False
+  timing_log_level ................................ 2
+  timing_log_option ............................... all
+  titles_data_path ................................ None
+  tokenizer_hf_include_special_tokens ............. False
+  tokenizer_hf_use_fast ........................... False
+  tokenizer_metadata .............................. None
+  tokenizer_model ................................. None
+  tokenizer_sentencepiece_legacy .................. False
+  tokenizer_special_tokens ........................ None
+  tokenizer_type .................................. NullTokenizer
+  top_k ........................................... 0
+  top_p ........................................... 0.0
+  torch_fsdp2_reshard_after_forward ............... True
+  tp_comm_bootstrap_backend ....................... nccl
+  tp_comm_bulk_dgrad .............................. True
+  tp_comm_bulk_wgrad .............................. True
+  tp_comm_overlap ................................. False
+  tp_comm_overlap_ag .............................. True
+  tp_comm_overlap_cfg ............................. None
+  tp_comm_overlap_rs .............................. True
+  tp_comm_overlap_rs_dgrad ........................ False
+  tp_comm_split_ag ................................ True
+  tp_comm_split_rs ................................ True
+  train_data ...................................... None
+  train_data_path ................................. None
+  train_iters ..................................... 50
+  train_mode ...................................... pretrain
+  train_samples ................................... None
+  train_sync_interval ............................. None
+  transformer_impl ................................ transformer_engine
+  transformer_pipeline_model_parallel_size ........ 1
+  transformer_timers .............................. False
+  transformer_type ................................ megatron
+  trust_remote_code ............................... False
+  tune_mm_mlp_adapter ............................. False
+  untie_embeddings_and_output_weights ............. True
+  use_alibi_mask .................................. False
+  use_checkpoint_args ............................. False
+  use_checkpoint_opt_param_scheduler .............. False
+  use_cpu_initialization .......................... None
+  use_dist_ckpt ................................... True
+  use_dist_ckpt_deprecated ........................ False
+  use_distributed_optimizer ....................... True
+  use_flash_attn .................................. True
+  use_fsdp2 ....................................... False
+  use_fused_weighted_squared_relu ................. False
+  use_kitchen_attention ........................... False
+  use_legacy_models ............................... False
+  use_legacy_static_engine ........................ False
+  use_llama2_rotary_position_embeddings ........... False
+  use_mamba_mem_eff_path .......................... True
+  use_megatron_fsdp ............................... False
+  use_mistral_rotary_position_embeddings .......... False
+  use_mp_args_from_checkpoint_args ................ False
+  use_normhead .................................... False
+  use_one_sent_docs ............................... False
+  use_persistent_ckpt_worker ...................... False
+  use_precision_aware_optimizer ................... False
+  use_pytorch_profiler ............................ False
+  use_ring_exchange_p2p ........................... False
+  use_rope_scaling ................................ False
+  use_rotary_position_embeddings .................. False
+  use_sharp ....................................... False
+  use_te_activation_func .......................... False
+  use_tokenizer_model_from_checkpoint_args ........ True
+  use_torch_fsdp2 ................................. False
+  use_torch_optimizer_for_cpu_offload ............. False
+  use_tp_pp_dp_mapping ............................ False
+  use_tutel ....................................... False
+  v_head_dim ...................................... 128
+  valid_data ...................................... None
+  valid_data_path ................................. None
+  variable_seq_lengths ............................ False
+  verbosity ....................................... INFO
+  version ......................................... plain
+  virtual_pipeline_model_parallel_size ............ None
+  vision_backbone_type ............................ vit
+  vision_pretraining .............................. False
+  vision_pretraining_type ......................... classify
+  vision_tower .................................... 
+  vocab_extra_ids ................................. 0
+  vocab_file ...................................... None
+  vocab_size ...................................... 50304
+  wandb_entity .................................... None
+  wandb_exp_name .................................. None
+  wandb_project ................................... None
+  wandb_save_dir .................................. None
+  weight_decay .................................... 0.1
+  weight_decay_incr_style ......................... constant
+  wgrad_deferral_limit ............................ 0
+  window_attn_skip_freq ........................... None
+  window_size ..................................... None
+  world_size ...................................... 6
+  yaml_cfg ........................................ None
+  z_loss_weight ................................... 0.0
+-------------------- end of arguments ---------------------
+INFO:megatron.core.num_microbatches_calculator:setting number of microbatches to constant 1
+> building NullTokenizer tokenizer ...
+WARNING:megatron.core.datasets.megatron_tokenizer:You're using the legacy tokenizer system, which is deprecated and will be removed in a future release. Please migrate to the new tokenizer system (`megatron.core.tokenizers.MegatronTokenizer`).
+ > padded vocab (size: 50305) with 127 dummy tokens (new size: 50432)
+WARNING:megatron.core.rerun_state_machine:RerunStateMachine initialized in mode validate_results
+> initializing torch distributed ...
+[W529 13:38:07.405399280 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[W529 13:38:07.413835888 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+WARNING: one_logger package is required to enable e2e metrics tracking. please go to https://confluence.nvidia.com/display/MLWFO/Package+Repositories for details to install it
+[W529 13:38:07.440048473 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[Gloo] Rank 0 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank 1 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank 3 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank 2 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank [Gloo] Rank 5 is connected to 45 is connected to  peer ranks. 5Expected number of connected peer ranks is :  peer ranks. Expected number of connected peer ranks is : 55
+
+[Gloo] Rank 0 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank 3 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank 2 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank 1 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank [Gloo] Rank 54 is connected to  is connected to 55 peer ranks.  peer ranks. Expected number of connected peer ranks is : 5Expected number of connected peer ranks is : 
+5
+[Gloo] Rank 3 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank 1 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank 0 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank 2 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank 4 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+[Gloo] Rank 5 is connected to 5 peer ranks. Expected number of connected peer ranks is : 5
+> initialized tensor model parallel with size 1
+> initialized pipeline model parallel with size 1
+> setting random seeds to 1234 ...
+> compiling dataset index builder ...
+[rank2]:[W529 13:38:07.453376328 HIPAllocatorConfig.h:36] Warning: expandable_segments not supported on this platform (function operator())
+[rank1]:[W529 13:38:07.453376609 HIPAllocatorConfig.h:36] Warning: expandable_segments not supported on this platform (function operator())
+[rank3]:[W529 13:38:07.453385941 HIPAllocatorConfig.h:36] Warning: expandable_segments not supported on this platform (function operator())
+[rank4]:[W529 13:38:07.453397717 HIPAllocatorConfig.h:36] Warning: expandable_segments not supported on this platform (function operator())
+[rank5]:[W529 13:38:07.453405087 HIPAllocatorConfig.h:36] Warning: expandable_segments not supported on this platform (function operator())
+[rank1]:[W529 13:38:07.454929919 ProcessGroupNCCL.cpp:5079] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can specify device_id in init_process_group() to force use of a particular device.
+[rank2]:[W529 13:38:07.454929999 ProcessGroupNCCL.cpp:5079] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can specify device_id in init_process_group() to force use of a particular device.
+[rank3]:[W529 13:38:07.454929839 ProcessGroupNCCL.cpp:5079] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can specify device_id in init_process_group() to force use of a particular device.
+[rank4]:[W529 13:38:07.454953391 ProcessGroupNCCL.cpp:5079] [PG ID 0 PG GUID 0 Rank 4]  using GPU 4 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can specify device_id in init_process_group() to force use of a particular device.
+[rank5]:[W529 13:38:07.454955484 ProcessGroupNCCL.cpp:5079] [PG ID 0 PG GUID 0 Rank 5]  using GPU 5 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can specify device_id in init_process_group() to force use of a particular device.
+make: Entering directory '/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/datasets'
+make: Nothing to be done for 'default'.
+make: Leaving directory '/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/datasets'
+>>> done with dataset index builder. Compilation time: 0.038 seconds
+> compiling and loading fused kernels ...
+/opt/conda/envs/py_3.10/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4805: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+[rank0]:[W529 13:38:07.490603420 HIPAllocatorConfig.h:36] Warning: expandable_segments not supported on this platform (function operator())
+[rank0]:[W529 13:38:07.490792158 ProcessGroupNCCL.cpp:5079] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can specify device_id in init_process_group() to force use of a particular device.
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.22.3-HEAD:7d8d67c+
+HIP version  : 6.4.43484-123eb5128
+ROCm version : 6.4.3.0-128-e7d83f5
+Hostname     : localhost.localdomain
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+>>> done with compiling and loading fused kernels. Compilation time: 1.336 seconds
+time to initialize megatron (seconds): 2.601
+[after in-process setup and before initialize_megatron] datetime: 2026-05-29 13:38:07.743936 
+[after in-job setup and before initialize_megatron] datetime: 2026-05-29 13:38:07.771677 
+INFO:megatron.core.timers:times across ranks (ms):
+  startup-program-entry-spread:
+     rank  1: 0.59
+     rank  2: 1.27
+     rank  3: 1.66
+     rank  4: 1.83
+     rank  5: 2.49
+  startup-library-setup:
+     rank  0: 28794.57
+     rank  1: 28712.86
+     rank  2: 28787.94
+     rank  3: 28774.27
+     rank  4: 28781.87
+     rank  5: 28790.95
+  startup-program-setup:
+     rank  0: 276.13
+     rank  1: 278.39
+     rank  2: 293.00
+     rank  3: 280.73
+     rank  4: 275.99
+     rank  5: 314.34
+  startup-in-process-setup:
+     rank  0: 0.00
+     rank  1: 0.00
+     rank  2: 0.00
+     rank  3: 0.00
+     rank  4: 0.00
+     rank  5: 0.00
+  startup-in-job-setup:
+     rank  0: 27.74
+     rank  1: 27.88
+     rank  2: 27.64
+     rank  3: 27.52
+     rank  4: 27.98
+     rank  5: 27.70
+  startup-initialize-megatron:
+     rank  0: 1452.14
+     rank  1: 1530.79
+     rank  2: 1440.67
+     rank  3: 1466.34
+     rank  4: 1462.85
+     rank  5: 1415.04
+  startup-set-jit-fusion-options:
+     rank  0: 719.31
+     rank  1: 709.40
+     rank  2: 711.13
+     rank  3: 715.66
+     rank  4: 729.09
+     rank  5: 725.50
+  all-reduce-start-timestamps-tensor:
+     rank  0: 10.27
+     rank  1: 20.24
+     rank  2: 18.51
+     rank  3: 13.97
+     rank  4: 0.55
+     rank  5: 4.14
+  startup-megatron-init-local:
+     rank  0: 2209.46
+     rank  1: 2288.32
+     rank  2: 2197.95
+     rank  3: 2223.50
+     rank  4: 2220.47
+     rank  5: 2172.38
+  startup-megatron-init-global:
+     rank  0: 31280.16
+     rank  1: 31280.16
+     rank  2: 31280.16
+     rank  3: 31280.16
+     rank  4: 31280.16
+     rank  5: 31280.16
+[before library-setup] datetime: 2026-05-29 13:37:38.673238
+[after library-setup] datetime: 2026-05-29 13:38:07.467808
+[before megatron-init] datetime: 2026-05-29 13:38:07.743934
+[after megatron is initialized] datetime: 2026-05-29 13:38:09.968151 
+building GPT model ...
+ > number of parameters on (tensor, pipeline) model parallel rank (0, 0): 16225146880
+INFO:megatron.core.distributed.distributed_data_parallel:Setting up DistributedDataParallel with config DistributedDataParallelConfig(grad_reduce_in_fp32=True, overlap_grad_reduce=False, overlap_param_gather=False, align_param_gather=False, use_distributed_optimizer=True, num_distributed_optimizer_instances=1, check_for_nan_in_grad=True, check_for_large_grads=False, bucket_size=None, pad_buckets_for_high_nccl_busbw=False, reduce_scatter_with_fp32_accumulation=False, average_in_collective=False, fp8_param_gather=False, reuse_grad_buf_for_mxfp8_param_ag=False, use_megatron_fsdp=False, use_custom_fsdp=False, data_parallel_sharding_strategy='no_shard', gradient_reduce_div_fusion=True, suggested_communication_unit_size=None, preserve_fp32_weights=True, keep_fp8_transpose_cache=False, nccl_ub=False, fsdp_double_buffer=False, outer_dp_sharding_strategy='no_shard', disable_symmetric_registration=False, fsdp_manual_registration=False, delay_wgrad_compute=False)
+INFO:megatron.core.distributed.param_and_grad_buffer:Number of buckets for gradient all-reduce / reduce-scatter: 1
+Params for bucket 1 (16225146880 elements, 16225147008 padded size):
+	module.decoder.layers.20.mlp.linear_fc1.weight
+	module.decoder.layers.25.mlp.linear_fc2.weight
+	module.decoder.layers.23.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.9.self_attention.linear_proj.bias
+	module.decoder.layers.7.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.3.self_attention.linear_proj.bias
+	module.decoder.layers.35.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.26.mlp.linear_fc1.bias
+	module.decoder.layers.1.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.29.self_attention.linear_qkv.bias
+	module.decoder.layers.11.self_attention.linear_proj.bias
+	module.embedding.word_embeddings.weight
+	module.decoder.layers.20.mlp.linear_fc2.bias
+	module.decoder.layers.5.mlp.linear_fc1.weight
+	module.decoder.layers.12.self_attention.linear_proj.weight
+	module.decoder.layers.32.mlp.linear_fc1.weight
+	module.decoder.layers.30.self_attention.linear_proj.weight
+	module.decoder.layers.23.self_attention.linear_qkv.bias
+	module.decoder.layers.35.self_attention.linear_qkv.bias
+	module.decoder.layers.21.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.14.mlp.linear_fc1.weight
+	module.decoder.layers.5.self_attention.linear_proj.bias
+	module.decoder.layers.10.self_attention.linear_qkv.bias
+	module.decoder.layers.24.self_attention.linear_proj.weight
+	module.decoder.layers.17.self_attention.linear_qkv.weight
+	module.decoder.layers.8.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.4.mlp.linear_fc2.weight
+	module.decoder.layers.38.mlp.linear_fc2.bias
+	module.decoder.layers.36.self_attention.linear_proj.weight
+	module.decoder.layers.3.mlp.linear_fc2.bias
+	module.decoder.layers.0.mlp.linear_fc2.weight
+	module.decoder.layers.20.mlp.linear_fc2.weight
+	module.decoder.layers.5.mlp.linear_fc1.bias
+	module.decoder.layers.32.mlp.linear_fc2.bias
+	module.decoder.layers.7.mlp.linear_fc1.weight
+	module.decoder.layers.21.mlp.linear_fc1.bias
+	module.decoder.layers.14.mlp.linear_fc2.bias
+	module.decoder.layers.33.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.31.self_attention.linear_proj.bias
+	module.decoder.layers.26.mlp.linear_fc1.weight
+	module.decoder.layers.29.self_attention.linear_qkv.weight
+	module.decoder.layers.15.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.3.mlp.linear_fc1.weight
+	module.decoder.layers.39.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.32.mlp.linear_fc2.weight
+	module.decoder.layers.23.self_attention.linear_qkv.weight
+	module.decoder.layers.19.self_attention.linear_proj.bias
+	module.decoder.layers.10.mlp.linear_fc2.bias
+	module.decoder.layers.35.self_attention.linear_qkv.weight
+	module.decoder.layers.14.mlp.linear_fc2.weight
+	module.decoder.layers.1.mlp.linear_fc2.weight
+	module.decoder.layers.33.mlp.linear_fc1.bias
+	module.decoder.layers.26.mlp.linear_fc2.bias
+	module.decoder.layers.13.self_attention.linear_proj.bias
+	module.decoder.layers.10.self_attention.linear_proj.weight
+	module.decoder.layers.38.mlp.linear_fc2.weight
+	module.decoder.layers.18.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.15.mlp.linear_fc1.bias
+	module.decoder.layers.10.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.27.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.1.mlp.linear_fc1.weight
+	module.decoder.layers.39.mlp.linear_fc1.bias
+	module.decoder.layers.37.self_attention.linear_proj.bias
+	module.decoder.layers.30.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.12.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.1.self_attention.linear_proj.weight
+	module.decoder.layers.21.mlp.linear_fc1.weight
+	module.decoder.layers.31.self_attention.linear_proj.weight
+	module.decoder.layers.26.mlp.linear_fc2.weight
+	module.decoder.layers.24.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.36.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.25.self_attention.linear_proj.bias
+	module.decoder.layers.18.self_attention.linear_qkv.bias
+	module.decoder.layers.8.self_attention.linear_qkv.bias
+	module.decoder.layers.0.self_attention.linear_qkv.weight
+	module.decoder.layers.27.mlp.linear_fc1.bias
+	module.decoder.layers.30.self_attention.linear_qkv.bias
+	module.decoder.layers.19.self_attention.linear_proj.weight
+	module.decoder.layers.12.self_attention.linear_qkv.bias
+	module.decoder.layers.4.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.10.mlp.linear_fc2.weight
+	module.decoder.layers.21.mlp.linear_fc2.bias
+	module.decoder.layers.33.mlp.linear_fc1.weight
+	module.decoder.layers.24.self_attention.linear_qkv.bias
+	module.decoder.layers.13.self_attention.linear_proj.weight
+	module.decoder.layers.8.self_attention.linear_proj.weight
+	module.decoder.layers.36.self_attention.linear_qkv.bias
+	module.decoder.layers.22.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.15.mlp.linear_fc1.weight
+	module.decoder.layers.3.mlp.linear_fc2.weight
+	module.decoder.layers.8.mlp.linear_fc1.bias
+	module.decoder.layers.5.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.39.mlp.linear_fc1.weight
+	module.decoder.layers.37.self_attention.linear_proj.weight
+	module.decoder.layers.16.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.28.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.21.mlp.linear_fc2.weight
+	module.decoder.layers.11.self_attention.linear_qkv.weight
+	module.decoder.layers.33.mlp.linear_fc2.bias
+	module.decoder.layers.20.self_attention.linear_proj.bias
+	module.decoder.layers.25.self_attention.linear_proj.weight
+	module.decoder.layers.22.mlp.linear_fc1.bias
+	module.decoder.layers.18.self_attention.linear_qkv.weight
+	module.decoder.layers.15.mlp.linear_fc2.bias
+	module.decoder.layers.10.self_attention.linear_qkv.weight
+	module.decoder.layers.34.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.27.mlp.linear_fc1.weight
+	module.decoder.layers.39.mlp.linear_fc2.bias
+	module.decoder.layers.30.self_attention.linear_qkv.weight
+	module.decoder.layers.16.mlp.linear_fc1.bias
+	module.decoder.layers.12.self_attention.linear_qkv.weight
+	module.decoder.layers.10.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.28.mlp.linear_fc1.bias
+	module.decoder.final_layernorm.weight
+	module.decoder.layers.38.self_attention.linear_proj.bias
+	module.decoder.layers.33.mlp.linear_fc2.weight
+	module.decoder.layers.31.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.24.self_attention.linear_qkv.weight
+	module.decoder.layers.7.self_attention.linear_qkv.weight
+	module.decoder.layers.6.mlp.linear_fc1.bias
+	module.decoder.layers.4.mlp.linear_fc1.weight
+	module.decoder.layers.36.self_attention.linear_qkv.weight
+	module.decoder.layers.32.self_attention.linear_proj.bias
+	module.decoder.layers.15.mlp.linear_fc2.weight
+	module.decoder.layers.3.self_attention.linear_proj.weight
+	module.decoder.layers.34.mlp.linear_fc1.bias
+	module.decoder.layers.27.mlp.linear_fc2.bias
+	module.decoder.layers.14.self_attention.linear_proj.bias
+	module.decoder.layers.39.mlp.linear_fc2.weight
+	module.decoder.layers.19.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.7.self_attention.linear_qkv.bias
+	module.decoder.layers.2.mlp.linear_fc1.bias
+	module.decoder.layers.31.self_attention.linear_qkv.bias
+	module.decoder.layers.20.self_attention.linear_proj.weight
+	module.decoder.layers.13.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.6.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.2.self_attention.linear_proj.bias
+	module.decoder.layers.22.mlp.linear_fc1.weight
+	module.decoder.layers.7.self_attention.linear_proj.bias
+	module.decoder.layers.27.mlp.linear_fc2.weight
+	module.decoder.layers.37.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.26.self_attention.linear_proj.bias
+	module.decoder.layers.19.self_attention.linear_qkv.bias
+	module.decoder.layers.16.mlp.linear_fc1.weight
+	module.decoder.layers.8.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.28.mlp.linear_fc1.weight
+	module.decoder.layers.7.self_attention.linear_proj.weight
+	module.decoder.layers.2.mlp.linear_fc1.weight
+	module.decoder.layers.0.mlp.linear_fc2.bias
+	module.decoder.layers.38.self_attention.linear_proj.weight
+	module.decoder.layers.17.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.13.self_attention.linear_qkv.bias
+	module.decoder.layers.32.self_attention.linear_proj.weight
+	module.decoder.layers.25.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.9.self_attention.linear_qkv.weight
+	module.decoder.layers.2.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.1.mlp.linear_fc2.bias
+	module.decoder.layers.34.mlp.linear_fc1.weight
+	module.decoder.layers.14.self_attention.linear_proj.weight
+	module.decoder.layers.37.self_attention.linear_qkv.bias
+	module.decoder.layers.16.mlp.linear_fc2.bias
+	module.decoder.layers.28.mlp.linear_fc2.bias
+	module.decoder.layers.9.mlp.linear_fc2.bias
+	module.decoder.layers.31.self_attention.linear_qkv.weight
+	module.decoder.layers.17.mlp.linear_fc1.bias
+	module.decoder.layers.11.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.29.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.25.self_attention.linear_qkv.bias
+	module.decoder.layers.22.mlp.linear_fc2.weight
+	module.decoder.layers.4.self_attention.linear_proj.bias
+	module.decoder.layers.34.mlp.linear_fc2.bias
+	module.decoder.layers.21.self_attention.linear_proj.bias
+	module.decoder.layers.4.self_attention.linear_qkv.weight
+	module.decoder.layers.26.self_attention.linear_proj.weight
+	module.decoder.layers.23.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.19.self_attention.linear_qkv.weight
+	module.decoder.layers.16.mlp.linear_fc2.weight
+	module.decoder.layers.35.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.28.mlp.linear_fc2.weight
+	module.decoder.layers.8.mlp.linear_fc2.bias
+	module.decoder.layers.20.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.13.self_attention.linear_qkv.weight
+	module.decoder.layers.11.mlp.linear_fc2.bias
+	module.decoder.layers.29.mlp.linear_fc1.bias
+	module.decoder.layers.22.mlp.linear_fc2.bias
+	module.decoder.layers.6.self_attention.linear_proj.bias
+	module.decoder.layers.2.self_attention.linear_qkv.bias
+	module.decoder.layers.34.mlp.linear_fc2.weight
+	module.decoder.layers.9.mlp.linear_fc2.weight
+	module.decoder.layers.37.self_attention.linear_qkv.weight
+	module.decoder.layers.33.self_attention.linear_proj.bias
+	module.decoder.layers.23.mlp.linear_fc1.bias
+	module.decoder.layers.35.mlp.linear_fc1.bias
+	module.decoder.layers.15.self_attention.linear_proj.bias
+	module.decoder.layers.3.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.38.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.20.self_attention.linear_qkv.bias
+	module.decoder.layers.17.mlp.linear_fc1.weight
+	module.decoder.layers.39.self_attention.linear_proj.bias
+	module.decoder.layers.32.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.25.self_attention.linear_qkv.weight
+	module.decoder.layers.21.self_attention.linear_proj.weight
+	module.decoder.layers.14.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.4.self_attention.linear_qkv.bias
+	module.decoder.layers.3.mlp.linear_fc1.bias
+	module.decoder.layers.38.self_attention.linear_qkv.bias
+	module.decoder.layers.27.self_attention.linear_proj.bias
+	module.decoder.layers.17.mlp.linear_fc2.bias
+	module.decoder.layers.32.self_attention.linear_qkv.bias
+	module.decoder.layers.29.mlp.linear_fc1.weight
+	module.decoder.layers.11.mlp.linear_fc1.bias
+	module.decoder.layers.3.self_attention.linear_qkv.weight
+	module.decoder.layers.0.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.14.self_attention.linear_qkv.bias
+	module.decoder.layers.8.mlp.linear_fc2.weight
+	module.decoder.layers.33.self_attention.linear_proj.weight
+	module.decoder.layers.26.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.23.mlp.linear_fc1.weight
+	module.decoder.layers.35.mlp.linear_fc1.weight
+	module.decoder.layers.15.self_attention.linear_proj.weight
+	module.decoder.layers.10.mlp.linear_fc1.bias
+	module.decoder.layers.38.mlp.linear_fc1.bias
+	module.decoder.layers.20.self_attention.linear_qkv.weight
+	module.decoder.layers.17.mlp.linear_fc2.weight
+	module.decoder.layers.39.self_attention.linear_proj.weight
+	module.decoder.layers.29.mlp.linear_fc2.bias
+	module.decoder.layers.18.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.12.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.30.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.26.self_attention.linear_qkv.bias
+	module.decoder.layers.23.mlp.linear_fc2.bias
+	module.decoder.layers.7.mlp.linear_fc2.bias
+	module.decoder.layers.1.self_attention.linear_qkv.weight
+	module.decoder.layers.35.mlp.linear_fc2.bias
+	module.decoder.layers.22.self_attention.linear_proj.bias
+	module.decoder.layers.9.self_attention.linear_proj.weight
+	module.decoder.layers.38.self_attention.linear_qkv.weight
+	module.decoder.layers.27.self_attention.linear_proj.weight
+	module.decoder.layers.24.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.36.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.32.self_attention.linear_qkv.weight
+	module.decoder.layers.29.mlp.linear_fc2.weight
+	module.decoder.layers.18.mlp.linear_fc1.bias
+	module.decoder.layers.16.self_attention.linear_proj.bias
+	module.decoder.layers.11.mlp.linear_fc2.weight
+	module.decoder.layers.10.mlp.linear_fc1.weight
+	module.decoder.layers.6.self_attention.linear_proj.weight
+	module.decoder.layers.28.self_attention.linear_proj.bias
+	module.decoder.layers.21.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.14.self_attention.linear_qkv.weight
+	module.decoder.layers.30.mlp.linear_fc1.bias
+	module.decoder.layers.23.mlp.linear_fc2.weight
+	module.decoder.layers.12.mlp.linear_fc1.bias
+	module.decoder.layers.2.mlp.linear_fc2.bias
+	module.decoder.layers.35.mlp.linear_fc2.weight
+	module.decoder.layers.3.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.34.self_attention.linear_proj.bias
+	module.decoder.layers.24.mlp.linear_fc1.bias
+	module.decoder.layers.4.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.36.mlp.linear_fc1.bias
+	module.decoder.layers.6.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.21.self_attention.linear_qkv.bias
+	module.decoder.layers.0.mlp.linear_fc1.weight
+	module.decoder.layers.33.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.26.self_attention.linear_qkv.weight
+	module.decoder.layers.22.self_attention.linear_proj.weight
+	module.decoder.layers.15.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.7.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.6.self_attention.linear_qkv.weight
+	module.decoder.layers.4.mlp.linear_fc1.bias
+	module.decoder.layers.39.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.18.mlp.linear_fc1.weight
+	module.decoder.layers.16.self_attention.linear_proj.weight
+	module.decoder.layers.28.self_attention.linear_proj.weight
+	module.decoder.layers.11.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.1.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.12.mlp.linear_fc1.weight
+	module.decoder.layers.33.self_attention.linear_qkv.bias
+	module.decoder.layers.30.mlp.linear_fc1.weight
+	module.decoder.layers.15.self_attention.linear_qkv.bias
+	module.decoder.layers.11.self_attention.linear_qkv.bias
+	module.decoder.layers.34.self_attention.linear_proj.weight
+	module.decoder.layers.31.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.27.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.24.mlp.linear_fc1.weight
+	module.decoder.layers.6.self_attention.linear_qkv.bias
+	module.decoder.layers.39.self_attention.linear_qkv.bias
+	module.decoder.layers.36.mlp.linear_fc1.weight
+	module.decoder.layers.18.mlp.linear_fc2.bias
+	module.decoder.layers.7.mlp.linear_fc2.weight
+	module.decoder.layers.21.self_attention.linear_qkv.weight
+	module.decoder.layers.5.self_attention.linear_qkv.weight
+	module.decoder.layers.0.self_attention.linear_proj.bias
+	module.decoder.layers.30.mlp.linear_fc2.bias
+	module.decoder.layers.19.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.17.self_attention.linear_proj.bias
+	module.decoder.layers.12.mlp.linear_fc2.bias
+	module.decoder.layers.31.mlp.linear_fc1.bias
+	module.decoder.layers.27.self_attention.linear_qkv.bias
+	module.decoder.layers.24.mlp.linear_fc2.bias
+	module.decoder.layers.13.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.36.mlp.linear_fc2.bias
+	module.decoder.layers.18.mlp.linear_fc2.weight
+	module.decoder.layers.37.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.33.self_attention.linear_qkv.weight
+	module.decoder.layers.30.mlp.linear_fc2.weight
+	module.decoder.layers.19.mlp.linear_fc1.bias
+	module.decoder.layers.12.mlp.linear_fc2.weight
+	module.decoder.layers.9.mlp.linear_fc1.weight
+	module.decoder.layers.8.self_attention.linear_proj.bias
+	module.decoder.layers.2.mlp.linear_fc2.weight
+	module.decoder.layers.29.self_attention.linear_proj.bias
+	module.decoder.layers.22.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.15.self_attention.linear_qkv.weight
+	module.decoder.layers.0.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.9.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.24.mlp.linear_fc2.weight
+	module.decoder.layers.13.mlp.linear_fc1.bias
+	module.decoder.layers.5.mlp.linear_fc2.weight
+	module.decoder.layers.39.self_attention.linear_qkv.weight
+	module.decoder.layers.36.mlp.linear_fc2.weight
+	module.decoder.layers.25.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.23.self_attention.linear_proj.bias
+	module.decoder.layers.16.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.35.self_attention.linear_proj.bias
+	module.decoder.layers.28.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.8.self_attention.linear_qkv.weight
+	module.decoder.layers.5.self_attention.linear_qkv.bias
+	module.decoder.layers.37.mlp.linear_fc1.bias
+	module.decoder.layers.17.self_attention.linear_proj.weight
+	module.decoder.layers.1.mlp.linear_fc1.bias
+	module.decoder.layers.22.self_attention.linear_qkv.bias
+	module.decoder.layers.34.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.31.mlp.linear_fc1.weight
+	module.decoder.layers.27.self_attention.linear_qkv.weight
+	module.decoder.layers.9.mlp.linear_fc1.bias
+	module.decoder.layers.6.mlp.linear_fc1.weight
+	module.decoder.layers.5.mlp.linear_fc2.bias
+	module.decoder.layers.25.mlp.linear_fc1.bias
+	module.decoder.layers.16.self_attention.linear_qkv.bias
+	module.decoder.layers.11.mlp.linear_fc1.weight
+	module.decoder.layers.28.self_attention.linear_qkv.bias
+	module.decoder.layers.5.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.1.self_attention.linear_qkv.bias
+	module.decoder.layers.19.mlp.linear_fc1.weight
+	module.decoder.layers.29.self_attention.linear_proj.weight
+	module.decoder.layers.9.self_attention.linear_qkv.bias
+	module.decoder.layers.2.self_attention.linear_proj.weight
+	module.decoder.layers.13.mlp.linear_fc1.weight
+	module.decoder.layers.34.self_attention.linear_qkv.bias
+	module.decoder.layers.31.mlp.linear_fc2.bias
+	module.decoder.layers.20.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.6.mlp.linear_fc2.bias
+	module.decoder.layers.0.self_attention.linear_proj.weight
+	module.decoder.layers.23.self_attention.linear_proj.weight
+	module.decoder.layers.4.mlp.linear_fc2.bias
+	module.decoder.layers.35.self_attention.linear_proj.weight
+	module.decoder.layers.37.mlp.linear_fc1.weight
+	module.decoder.layers.19.mlp.linear_fc2.bias
+	module.decoder.layers.22.self_attention.linear_qkv.weight
+	module.decoder.layers.11.self_attention.linear_proj.weight
+	module.decoder.layers.3.self_attention.linear_qkv.bias
+	module.decoder.layers.18.self_attention.linear_proj.bias
+	module.output_layer.weight
+	module.decoder.layers.38.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.31.mlp.linear_fc2.weight
+	module.decoder.layers.20.mlp.linear_fc1.bias
+	module.decoder.layers.13.mlp.linear_fc2.bias
+	module.decoder.layers.9.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.32.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.25.mlp.linear_fc1.weight
+	module.decoder.layers.16.self_attention.linear_qkv.weight
+	module.decoder.layers.0.mlp.linear_fc1.bias
+	module.decoder.layers.28.self_attention.linear_qkv.weight
+	module.decoder.layers.14.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.7.mlp.linear_fc1.bias
+	module.decoder.layers.37.mlp.linear_fc2.bias
+	module.decoder.layers.19.mlp.linear_fc2.weight
+	module.decoder.layers.17.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.38.mlp.linear_fc1.weight
+	module.decoder.layers.34.self_attention.linear_qkv.weight
+	module.decoder.layers.18.self_attention.linear_proj.weight
+	module.decoder.layers.13.mlp.linear_fc2.weight
+	module.decoder.layers.6.mlp.linear_fc2.weight
+	module.decoder.layers.2.self_attention.linear_qkv.weight
+	module.decoder.layers.1.self_attention.linear_proj.bias
+	module.decoder.layers.32.mlp.linear_fc1.bias
+	module.decoder.layers.30.self_attention.linear_proj.bias
+	module.decoder.layers.25.mlp.linear_fc2.bias
+	module.decoder.layers.12.self_attention.linear_proj.bias
+	module.decoder.layers.14.mlp.linear_fc1.bias
+	module.decoder.layers.5.self_attention.linear_proj.weight
+	module.decoder.layers.0.self_attention.linear_qkv.bias
+	module.decoder.layers.37.mlp.linear_fc2.weight
+	module.decoder.layers.26.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.24.self_attention.linear_proj.bias
+	module.decoder.layers.17.self_attention.linear_qkv.bias
+	module.decoder.layers.10.self_attention.linear_proj.bias
+	module.decoder.layers.8.mlp.linear_fc1.weight
+	module.decoder.layers.4.self_attention.linear_proj.weight
+	module.decoder.layers.2.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.36.self_attention.linear_proj.bias
+	module.decoder.layers.29.self_attention.linear_qkv.layer_norm_weight
+INFO:megatron.core.optimizer:Setting up optimizer with config AdamOptimizerConfig(lr=0.0003, min_lr=3e-05, decoupled_lr=None, decoupled_min_lr=None, weight_decay=0.1, apply_wd_to_qk_layernorm=False, fp8_recipe='delayed', fp16=False, bf16=True, reuse_grad_buf_for_mxfp8_param_ag=False, params_dtype=torch.bfloat16, use_precision_aware_optimizer=False, store_param_remainders=True, main_grads_dtype=torch.float32, main_params_dtype=torch.float32, exp_avg_dtype=torch.float32, exp_avg_sq_dtype=torch.float32, optimizer='adam', loss_scale=None, initial_loss_scale=4294967296, min_loss_scale=1.0, loss_scale_window=1000, hysteresis=2, adam_beta1=0.9, adam_beta2=0.95, adam_eps=1e-08, decoupled_weight_decay=True, sgd_momentum=0.9, muon_momentum=0.9, muon_split_qkv=True, muon_use_nesterov=False, muon_scale_mode='spectral', muon_fp32_matmul_prec='medium', muon_num_ns_steps=5, muon_tp_mode='blockwise', muon_extra_scale_factor=1.0, use_distributed_optimizer=True, overlap_param_gather=False, overlap_param_gather_with_optimizer_step=False, optimizer_cpu_offload=False, optimizer_offload_fraction=1.0, use_torch_optimizer_for_cpu_offload=False, overlap_cpu_optimizer_d2h_h2d=False, pin_cpu_grads=True, pin_cpu_params=True, clip_grad=1.0, log_num_zeros_in_grad=False, barrier_with_L1_time=True, timers=<megatron.core.timers.Timers object at 0x7f48cfe3f910>, config_logger_dir='')
+INFO:megatron.core.optimizer_param_scheduler:> learning rate decay style: cosine
+[after model, optimizer, and learning rate scheduler are built] datetime: 2026-05-29 13:38:10.114572 
+> building train, validation, and test datasets ...
+ > datasets target sizes (minimum size):
+    train:      600
+    validation: 1200
+    test:       1200
+INFO:megatron.core.datasets.blended_megatron_dataset_config:Let mock = True, as both blend and blend_per_split are None
+INFO:megatron.core.datasets.blended_megatron_dataset_config:Let split = 1,1,1, an arbitrarily even split, as mock is True
+INFO:megatron.core.datasets.blended_megatron_dataset_config:Let split_matrix = [(0, 0.3333333333333333), (0.3333333333333333, 0.6666666666666666), (0.6666666666666666, 1.0)]
+> building train, validation, and test datasets for GPT ...
+INFO:megatron.core.datasets.blended_megatron_dataset_builder:Building MockGPTDataset splits with sizes=(600, 1200, 1200) and config=GPTDatasetConfig(random_seed=1234, sequence_length=4096, blend=None, blend_per_split=None, multiple_validation_sets=False, full_validation=False, split='1,1,1', split_matrix=[(0, 0.3333333333333333), (0.3333333333333333, 0.6666666666666666), (0.6666666666666666, 1.0)], num_dataset_builder_threads=1, path_to_cache=None, mmap_bin_files=True, mock=True, tokenizer=<megatron.core.tokenizers.text.models.default_tokenizer.DefaultTokenizerText object at 0x7f4860f48f10>, mid_level_dataset_surplus=0.005, allow_ambiguous_pad_tokens=False, fast_cache_load=False, defer_npy_index_mmap=False, reset_position_ids=False, reset_attention_mask=False, eod_mask_loss=False, create_attention_mask=True, drop_last_partial_validation_sequence=True, add_extra_token_to_sequence=True, object_storage_cache_path=None, context_parallel_size=1, data_parallel_size=6, sequence_parallel_size=0, hybrid_context_parallel=False, sequences_per_dataset=None, token_dtype_code=8)
+INFO:megatron.core.datasets.gpt_dataset:Build and save the MockGPTDataset train indices
+WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
+INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 16648
+INFO:megatron.core.datasets.gpt_dataset:> total number of epochs: 1
+INFO:megatron.core.datasets.gpt_dataset:Build and save the MockGPTDataset valid indices
+WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
+INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 16640
+INFO:megatron.core.datasets.gpt_dataset:> total number of epochs: 1
+INFO:megatron.core.datasets.gpt_dataset:Build and save the MockGPTDataset test indices
+WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
+INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 16671
+INFO:megatron.core.datasets.gpt_dataset:> total number of epochs: 1
+> finished creating GPT datasets ...
+[after dataloaders are built] datetime: 2026-05-29 13:38:10.412742 
+done with setup ...
+training ...
+INFO:megatron.core.timers:times across ranks (ms):
+  model-and-optimizer-setup:
+     rank  0: 146.17
+     rank  1: 146.14
+     rank  2: 146.12
+     rank  3: 146.12
+     rank  4: 146.15
+     rank  5: 146.15
+  train/valid/test-data-iterators-setup:
+     rank  0: 170.57
+     rank  1: 151.99
+     rank  2: 144.90
+     rank  3: 164.99
+     rank  4: 137.92
+     rank  5: 150.31
+Overwriting rerun_state_machine.current_iteration from -1 to 0...
+[before the start of training step] datetime: 2026-05-29 13:38:10.433253 
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.22.3-HEAD:7d8d67c+
+HIP version  : 6.4.43484-123eb5128
+ROCm version : 6.4.3.0-128-e7d83f5
+Hostname     : localhost.localdomain
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.22.3-HEAD:7d8d67c+
+HIP version  : 6.4.43484-123eb5128
+ROCm version : 6.4.3.0-128-e7d83f5
+Hostname     : localhost.localdomain
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.22.3-HEAD:7d8d67c+
+HIP version  : 6.4.43484-123eb5128
+ROCm version : 6.4.3.0-128-e7d83f5
+Hostname     : localhost.localdomain
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.22.3-HEAD:7d8d67c+
+HIP version  : 6.4.43484-123eb5128
+ROCm version : 6.4.3.0-128-e7d83f5
+Hostname     : localhost.localdomain
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.22.3-HEAD:7d8d67c+
+HIP version  : 6.4.43484-123eb5128
+ROCm version : 6.4.3.0-128-e7d83f5
+Hostname     : localhost.localdomain
+Librccl path : /opt/rocm/lib/librccl.so.1
+AITER_ASM_DIR set to: /opt/conda/envs/py_3.10/lib/python3.10/site-packages/transformer_engine/aiter/gfx942/
+AITER_ASM_DIR set to: /opt/conda/envs/py_3.10/lib/python3.10/site-packages/transformer_engine/aiter/gfx942/
+WARNING:megatron.core.rerun_state_machine:Result validation enabled
+AITER_ASM_DIR set to: /opt/conda/envs/py_3.10/lib/python3.10/site-packages/transformer_engine/aiter/gfx942/
+AITER_ASM_DIR set to: /opt/conda/envs/py_3.10/lib/python3.10/site-packages/transformer_engine/aiter/gfx942/
+AITER_ASM_DIR set to: /opt/conda/envs/py_3.10/lib/python3.10/site-packages/transformer_engine/aiter/gfx942/
+AITER_ASM_DIR set to: /opt/conda/envs/py_3.10/lib/python3.10/site-packages/transformer_engine/aiter/gfx942/
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266111:266111 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266115:266115 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266116:266116 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266112:266112 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266113:266113 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:157 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+localhost:266114:266114 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/init.cc:178 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+Number of parameters in transformer block in billions:  15.60 [2026-05-29 13:38:35.646176] iteration        1/      50 | consumed samples:           12 | elapsed time per iteration (ms): 25221.9 | mem usages: 0.6032 | throughput per GPU (TFLOP/s/GPU): 33.0 | learning rate: 6.000000E-05 | global batch size:    12 | lm loss: 1.205689E+01 | loss scale: 1.0 | grad norm: 43.408 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Number of parameters in embedding layers in billions: 0.62
+Total number of parameters in billions: 16.22
+Number of parameters in most loaded shard in billions: 16.2230
+
+compute_activation_memory_without_sp
+Activation memory footprint per transformer layer (precise, without SP): 1632.0 MB
+Theoretical memory footprints: weight and optimizer=123771.80 MB, activation=69522.67 MB, total=193294.46 MB
+
+[Rank 0] (after 1 iterations) memory (MB) | allocated: 123823.04 | max allocated: 164774.26 | reserved: 175640.00 | max reserved: 175640.00
+INFO:megatron.core.timers:times across ranks (ms):
+  forward-backward:
+     rank  0: 4794.77
+     rank  1: 4794.14
+     rank  2: 4792.52
+     rank  3: 4792.76
+     rank  4: 4792.65
+     rank  5: 4792.50
+  embedding-grads-all-reduce:
+     rank  0: 0.00
+     rank  1: 0.00
+     rank  2: 0.00
+     rank  3: 0.00
+     rank  4: 0.00
+     rank  5: 0.00
+  all-grads-sync:
+     rank  0: 318.11
+     rank  1: 318.14
+     rank  2: 318.10
+     rank  3: 318.13
+     rank  4: 318.12
+     rank  5: 318.08
+  params-all-gather:
+     rank  0: 166.85
+     rank  1: 166.89
+     rank  2: 166.87
+     rank  3: 166.88
+     rank  4: 166.86
+     rank  5: 166.88
+  optimizer-copy-to-main-grad:
+     rank  0: 0.07
+     rank  1: 0.07
+     rank  2: 0.08
+     rank  3: 0.08
+     rank  4: 0.08
+     rank  5: 0.08
+  optimizer-inner-step:
+     rank  0: 4.66
+     rank  1: 4.58
+     rank  2: 4.56
+     rank  3: 4.73
+     rank  4: 4.55
+     rank  5: 4.61
+  optimizer-copy-main-to-model-params:
+     rank  0: 0.57
+     rank  1: 0.57
+     rank  2: 0.57
+     rank  3: 0.57
+     rank  4: 0.57
+     rank  5: 0.57
+  optimizer:
+     rank  0: 229.61
+     rank  1: 229.65
+     rank  2: 229.65
+     rank  3: 229.66
+     rank  4: 229.62
+     rank  5: 229.64
+  batch-generator:
+     rank  0: 14.10
+     rank  1: 11.51
+     rank  2: 10.62
+     rank  3: 12.20
+     rank  4: 9.10
+     rank  5: 12.41
+  forward-compute:
+     rank  0: 2854.97
+     rank  1: 3794.67
+     rank  2: 3200.71
+     rank  3: 3517.06
+     rank  4: 2564.08
+     rank  5: 2275.30
+  backward-compute:
+     rank  0: 682.20
+     rank  1: 680.67
+     rank  2: 683.37
+     rank  3: 678.85
+     rank  4: 681.48
+     rank  5: 686.93
+Number of parameters in transformer block in billions:  15.60 [2026-05-29 13:38:57.251986] iteration        5/      50 | consumed samples:           60 | elapsed time per iteration (ms): 9365.5 | mem usages: 0.6438 | throughput per GPU (TFLOP/s/GPU): 88.8 | learning rate: 3.000000E-04 | global batch size:    12 | lm loss: 1.144743E+01 | loss scale: 1.0 | grad norm: 136.747 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Number of parameters in embedding layers in billions: 0.62
+Total number of parameters in billions: 16.22
+
+Number of parameters in most loaded shard in billions: 16.2230
+compute_activation_memory_without_sp
+Activation memory footprint per transformer layer (precise, without SP): 1632.0 MB
+Theoretical memory footprints: weight and optimizer=123771.80 MB, activation=69522.67 MB, total=193294.46 MB
+
+[Rank 0] (after 5 iterations) memory (MB) | allocated: 123823.04 | max allocated: 185407.85 | reserved: 187332.00 | max reserved: 187332.00
+INFO:megatron.core.timers:times across ranks (ms):
+  forward-backward:
+     rank  0: 8460.44
+     rank  1: 8459.87
+     rank  2: 8458.35
+     rank  3: 8458.58
+     rank  4: 8458.38
+     rank  5: 8458.17
+  embedding-grads-all-reduce:
+     rank  0: 0.01
+     rank  1: 0.01
+     rank  2: 0.01
+     rank  3: 0.01
+     rank  4: 0.01
+     rank  5: 0.01
+  all-grads-sync:
+     rank  0: 1415.03
+     rank  1: 1415.12
+     rank  2: 1415.02
+     rank  3: 1415.06
+     rank  4: 1415.08
+     rank  5: 1415.02
+  params-all-gather:
+     rank  0: 782.84
+     rank  1: 782.88
+     rank  2: 782.94
+     rank  3: 782.91
+     rank  4: 782.82
+     rank  5: 782.93
+  optimizer-copy-to-main-grad:
+     rank  0: 0.31
+     rank  1: 0.36
+     rank  2: 0.36
+     rank  3: 0.37
+     rank  4: 0.37
+     rank  5: 0.32
+  optimizer-inner-step:
+     rank  0: 18.83
+     rank  1: 18.45
+     rank  2: 18.30
+     rank  3: 19.22
+     rank  4: 18.46
+     rank  5: 18.61
+  optimizer-copy-main-to-model-params:
+     rank  0: 2.81
+     rank  1: 2.82
+     rank  2: 2.82
+     rank  3: 2.84
+     rank  4: 2.83
+     rank  5: 2.83
+  optimizer:
+     rank  0: 870.02
+     rank  1: 870.06
+     rank  2: 870.17
+     rank  3: 870.15
+     rank  4: 870.00
+     rank  5: 870.12
+  batch-generator:
+     rank  0: 15.15
+     rank  1: 12.56
+     rank  2: 11.77
+     rank  3: 13.31
+     rank  4: 10.16
+     rank  5: 13.51
+  forward-compute:
+     rank  0: 3169.94
+     rank  1: 4108.13
+     rank  2: 3513.08
+     rank  3: 3829.39
+     rank  4: 2879.24
+     rank  5: 2587.22
+  backward-compute:
+     rank  0: 2919.30
+     rank  1: 2923.95
+     rank  2: 2932.13
+     rank  3: 2927.46
+     rank  4: 2924.50
+     rank  5: 2927.70
+ [2026-05-29 13:39:24.140234] iteration       10/      50 | consumed samples:          120 | elapsed time per iteration (ms): 5377.6 | mem usages: 0.6438 | throughput per GPU (TFLOP/s/GPU): 154.6 | learning rate: 2.742173E-04 | global batch size:    12 | lm loss: 1.470436E+01 | loss scale: 1.0 | grad norm: 204.104 | number of skipped iterations:   0 | number of nan iterations:   0 |
+INFO:megatron.core.timers:times across ranks (ms):
+  forward-backward:
+     rank  0: 4567.88
+     rank  1: 4568.15
+     rank  2: 4568.20
+     rank  3: 4568.05
+     rank  4: 4568.06
+     rank  5: 4567.92
+  embedding-grads-all-reduce:
+     rank  0: 0.01
+     rank  1: 0.01
+     rank  2: 0.01
+     rank  3: 0.01
+     rank  4: 0.01
+     rank  5: 0.01
+  all-grads-sync:
+     rank  0: 1370.18
+     rank  1: 1370.13
+     rank  2: 1370.18
+     rank  3: 1370.20
+     rank  4: 1370.21
+     rank  5: 1370.23
+  params-all-gather:
+     rank  0: 759.93
+     rank  1: 760.15
+     rank  2: 759.96
+     rank  3: 759.99
+     rank  4: 760.02
+     rank  5: 760.04
+  optimizer-copy-to-main-grad:
+     rank  0: 0.27
+     rank  1: 0.36
+     rank  2: 0.36
+     rank  3: 0.32
+     rank  4: 0.35
+     rank  5: 0.30
+  optimizer-inner-step:
+     rank  0: 17.66
+     rank  1: 17.40
+     rank  2: 17.20
+     rank  3: 18.11
+     rank  4: 17.34
+     rank  5: 17.54
+  optimizer-copy-main-to-model-params:
+     rank  0: 2.79
+     rank  1: 2.84
+     rank  2: 2.79
+     rank  3: 2.81
+     rank  4: 2.82
+     rank  5: 2.81
+  optimizer:
+     rank  0: 790.49
+     rank  1: 790.72
+     rank  2: 790.54
+     rank  3: 790.56
+     rank  4: 790.57
+     rank  5: 790.60
+  batch-generator:
+     rank  0: 1.19
+     rank  1: 1.32
+     rank  2: 1.40
+     rank  3: 1.35
+     rank  4: 1.35
+     rank  5: 1.21
+  forward-compute:
+     rank  0: 386.47
+     rank  1: 386.12
+     rank  2: 384.39
+     rank  3: 382.95
+     rank  4: 387.61
+     rank  5: 380.51
+  backward-compute:
+     rank  0: 2790.88
+     rank  1: 2803.09
+     rank  2: 2806.68
+     rank  3: 2804.10
+     rank  4: 2799.52
+     rank  5: 2792.56
+ [2026-05-29 13:39:50.941043] iteration       15/      50 | consumed samples:          180 | elapsed time per iteration (ms): 5360.1 | mem usages: 0.6438 | throughput per GPU (TFLOP/s/GPU): 155.1 | learning rate: 2.067173E-04 | global batch size:    12 | lm loss: 9.837892E+00 | loss scale: 1.0 | grad norm: 1.614 | number of skipped iterations:   0 | number of nan iterations:   0 |
+INFO:megatron.core.timers:times across ranks (ms):
+  forward-backward:
+     rank  0: 4551.37
+     rank  1: 4551.76
+     rank  2: 4551.66
+     rank  3: 4551.39
+     rank  4: 4551.42
+     rank  5: 4551.10
+  embedding-grads-all-reduce:
+     rank  0: 0.01
+     rank  1: 0.02
+     rank  2: 0.01
+     rank  3: 0.01
+     rank  4: 0.01
+     rank  5: 0.01
+  all-grads-sync:
+     rank  0: 1348.39
+     rank  1: 1348.37
+     rank  2: 1348.42
+     rank  3: 1348.38
+     rank  4: 1348.42
+     rank  5: 1348.37
+  params-all-gather:
+     rank  0: 757.21
+     rank  1: 757.29
+     rank  2: 757.26
+     rank  3: 757.22
+     rank  4: 757.27
+     rank  5: 757.28
+  optimizer-copy-to-main-grad:
+     rank  0: 0.33
+     rank  1: 0.42
+     rank  2: 0.38
+     rank  3: 0.30
+     rank  4: 0.35
+     rank  5: 0.28
+  optimizer-inner-step:
+     rank  0: 17.72
+     rank  1: 17.48
+     rank  2: 17.21
+     rank  3: 18.07
+     rank  4: 17.40
+     rank  5: 17.52
+  optimizer-copy-main-to-model-params:
+     rank  0: 2.79
+     rank  1: 2.88
+     rank  2: 2.81
+     rank  3: 2.80
+     rank  4: 2.84
+     rank  5: 2.79
+  optimizer:
+     rank  0: 787.82
+     rank  1: 787.92
+     rank  2: 787.89
+     rank  3: 787.82
+     rank  4: 787.89
+     rank  5: 787.89
+  batch-generator:
+     rank  0: 1.23
+     rank  1: 1.51
+     rank  2: 1.38
+     rank  3: 1.19
+     rank  4: 1.29
+     rank  5: 1.21
+  forward-compute:
+     rank  0: 387.75
+     rank  1: 390.34
+     rank  2: 386.54
+     rank  3: 379.52
+     rank  4: 386.77
+     rank  5: 379.16
+  backward-compute:
+     rank  0: 2790.24
+     rank  1: 2808.84
+     rank  2: 2803.70
+     rank  3: 2793.80
+     rank  4: 2800.26
+     rank  5: 2794.75
+ [2026-05-29 13:40:17.618314] iteration       20/      50 | consumed samples:          240 | elapsed time per iteration (ms): 5335.4 | mem usages: 0.6438 | throughput per GPU (TFLOP/s/GPU): 155.9 | learning rate: 1.232827E-04 | global batch size:    12 | lm loss: 8.313274E+00 | loss scale: 1.0 | grad norm: 1.539 | number of skipped iterations:   0 | number of nan iterations:   0 |
+INFO:megatron.core.timers:times across ranks (ms):
+  forward-backward:
+     rank  0: 4538.01
+     rank  1: 4537.97
+     rank  2: 4538.05
+     rank  3: 4537.91
+     rank  4: 4537.95
+     rank  5: 4537.87
+  embedding-grads-all-reduce:
+     rank  0: 0.01
+     rank  1: 0.01
+     rank  2: 0.01
+     rank  3: 0.01
+     rank  4: 0.01
+     rank  5: 0.01
+  all-grads-sync:
+     rank  0: 1349.52
+     rank  1: 1349.56
+     rank  2: 1349.52
+     rank  3: 1349.51
+     rank  4: 1349.54
+     rank  5: 1349.53
+  params-all-gather:
+     rank  0: 751.85
+     rank  1: 751.97
+     rank  2: 751.90
+     rank  3: 751.88
+     rank  4: 751.95
+     rank  5: 751.93
+  optimizer-copy-to-main-grad:
+     rank  0: 0.32
+     rank  1: 0.35
+     rank  2: 0.36
+     rank  3: 0.32
+     rank  4: 0.33
+     rank  5: 0.30
+  optimizer-inner-step:
+     rank  0: 17.68
+     rank  1: 17.34
+     rank  2: 17.19
+     rank  3: 18.06
+     rank  4: 17.36
+     rank  5: 17.49
+  optimizer-copy-main-to-model-params:
+     rank  0: 2.81
+     rank  1: 2.83
+     rank  2: 2.80
+     rank  3: 2.80
+     rank  4: 2.80
+     rank  5: 2.80
+  optimizer:
+     rank  0: 779.22
+     rank  1: 779.37
+     rank  2: 779.27
+     rank  3: 779.26
+     rank  4: 779.32
+     rank  5: 779.31
+  batch-generator:
+     rank  0: 1.23
+     rank  1: 1.36
+     rank  2: 1.31
+     rank  3: 1.21
+     rank  4: 1.27
+     rank  5: 1.22
+  forward-compute:
+     rank  0: 384.87
+     rank  1: 385.12
+     rank  2: 384.58
+     rank  3: 383.25
+     rank  4: 384.95
+     rank  5: 378.53
+  backward-compute:
+     rank  0: 2787.97
+     rank  1: 2796.44
+     rank  2: 2797.74
+     rank  3: 2791.81
+     rank  4: 2796.70
+     rank  5: 2790.53
+ [2026-05-29 13:40:44.370775] iteration       25/      50 | consumed samples:          300 | elapsed time per iteration (ms): 5350.5 | mem usages: 0.6438 | throughput per GPU (TFLOP/s/GPU): 155.4 | learning rate: 5.578270E-05 | global batch size:    12 | lm loss: 8.191928E+00 | loss scale: 1.0 | grad norm: 0.866 | number of skipped iterations:   0 | number of nan iterations:   0 |
+INFO:megatron.core.timers:times across ranks (ms):
+  forward-backward:
+     rank  0: 4542.64
+     rank  1: 4542.55
+     rank  2: 4542.49
+     rank  3: 4542.52
+     rank  4: 4542.54
+     rank  5: 4542.51
+  embedding-grads-all-reduce:
+     rank  0: 0.01
+     rank  1: 0.01
+     rank  2: 0.01
+     rank  3: 0.01
+     rank  4: 0.01
+     rank  5: 0.01
+  all-grads-sync:
+     rank  0: 1351.50
+     rank  1: 1351.39
+     rank  2: 1351.18
+     rank  3: 1351.06
+     rank  4: 1350.89
+     rank  5: 1348.97
+  params-all-gather:
+     rank  0: 763.75
+     rank  1: 763.85
+     rank  2: 763.76
+     rank  3: 763.80
+     rank  4: 763.80
+     rank  5: 763.86
+  optimizer-copy-to-main-grad:
+     rank  0: 0.32
+     rank  1: 0.35
+     rank  2: 0.29
+     rank  3: 0.30
+     rank  4: 0.32
+     rank  5: 0.30
+  optimizer-inner-step:
+     rank  0: 17.67
+     rank  1: 17.34
+     rank  2: 17.15
+     rank  3: 18.05
+     rank  4: 17.35
+     rank  5: 17.48
+  optimizer-copy-main-to-model-params:
+     rank  0: 2.81
+     rank  1: 2.82
+     rank  2: 2.78
+     rank  3: 2.79
+     rank  4: 2.80
+     rank  5: 2.79
+  optimizer:
+     rank  0: 790.05
+     rank  1: 790.17
+     rank  2: 790.07
+     rank  3: 790.11
+     rank  4: 790.11
+     rank  5: 790.16
+  batch-generator:
+     rank  0: 1.20
+     rank  1: 1.32
+     rank  2: 1.25
+     rank  3: 1.21
+     rank  4: 1.24
+     rank  5: 1.20
+  forward-compute:
+     rank  0: 385.14
+     rank  1: 384.04
+     rank  2: 384.21
+     rank  3: 379.90
+     rank  4: 385.78
+     rank  5: 379.95
+  backward-compute:
+     rank  0: 2788.55
+     rank  1: 2795.02
+     rank  2: 2799.06
+     rank  3: 2792.59
+     rank  4: 2797.69
+     rank  5: 2790.60
+ [2026-05-29 13:41:11.052732] iteration       30/      50 | consumed samples:          360 | elapsed time per iteration (ms): 5336.4 | mem usages: 0.6438 | throughput per GPU (TFLOP/s/GPU): 155.8 | learning rate: 3.000000E-05 | global batch size:    12 | lm loss: 8.152853E+00 | loss scale: 1.0 | grad norm: 1.268 | number of skipped iterations:   0 | number of nan iterations:   0 |
+INFO:megatron.core.timers:times across ranks (ms):
+  forward-backward:
+     rank  0: 4538.21
+     rank  1: 4538.15
+     rank  2: 4538.02
+     rank  3: 4538.02
+     rank  4: 4538.09
+     rank  5: 4538.06
+  embedding-grads-all-reduce:
+     rank  0: 0.01
+     rank  1: 0.01
+     rank  2: 0.01
+     rank  3: 0.01
+     rank  4: 0.01
+     rank  5: 0.01
+  all-grads-sync:
+     rank  0: 1351.25
+     rank  1: 1351.35
+     rank  2: 1351.27
+     rank  3: 1351.30
+     rank  4: 1351.29
+     rank  5: 1351.33
+  params-all-gather:
+     rank  0: 752.07
+     rank  1: 752.18
+     rank  2: 752.09
+     rank  3: 752.13
+     rank  4: 752.12
+     rank  5: 752.19
+  optimizer-copy-to-main-grad:
+     rank  0: 0.32
+     rank  1: 0.36
+     rank  2: 0.29
+     rank  3: 0.29
+     rank  4: 0.32
+     rank  5: 0.30
+  optimizer-inner-step:
+     rank  0: 17.70
+     rank  1: 17.36
+     rank  2: 17.15
+     rank  3: 18.05
+     rank  4: 17.36
+     rank  5: 17.48
+  optimizer-copy-main-to-model-params:
+     rank  0: 2.82
+     rank  1: 2.83
+     rank  2: 2.79
+     rank  3: 2.79
+     rank  4: 2.82
+     rank  5: 2.79
+  optimizer:
+     rank  0: 780.42
+     rank  1: 780.55
+     rank  2: 780.44
+     rank  3: 780.48
+     rank  4: 780.47
+     rank  5: 780.54
+  batch-generator:
+     rank  0: 1.20
+     rank  1: 1.32
+     rank  2: 1.18
+     rank  3: 1.19
+     rank  4: 1.24
+     rank  5: 1.22
+  forward-compute:
+     rank  0: 387.20
+     rank  1: 387.29
+     rank  2: 381.69
+     rank  3: 380.94
+     rank  4: 387.49
+     rank  5: 382.07
+  backward-compute:
+     rank  0: 2788.07
+     rank  1: 2792.59
+     rank  2: 2799.23
+     rank  3: 2791.08
+     rank  4: 2794.87
+     rank  5: 2791.76
+ [2026-05-29 13:41:37.714703] iteration       35/      50 | consumed samples:          420 | elapsed time per iteration (ms): 5332.4 | mem usages: 0.6438 | throughput per GPU (TFLOP/s/GPU): 156.0 | learning rate: 3.000000E-05 | global batch size:    12 | lm loss: 8.090936E+00 | loss scale: 1.0 | grad norm: 0.662 | number of skipped iterations:   0 | number of nan iterations:   0 |
+INFO:megatron.core.timers:times across ranks (ms):
+  forward-backward:
+     rank  0: 4532.14
+     rank  1: 4532.05
+     rank  2: 4532.03
+     rank  3: 4531.98
+     rank  4: 4532.00
+     rank  5: 4532.05
+  embedding-grads-all-reduce:
+     rank  0: 0.01
+     rank  1: 0.01
+     rank  2: 0.01
+     rank  3: 0.01
+     rank  4: 0.01
+     rank  5: 0.01
+  all-grads-sync:
+     rank  0: 1341.97
+     rank  1: 1341.99
+     rank  2: 1342.01
+     rank  3: 1341.96
+     rank  4: 1341.98
+     rank  5: 1341.95
+  params-all-gather:
+     rank  0: 754.12
+     rank  1: 754.21
+     rank  2: 754.15
+     rank  3: 754.13
+     rank  4: 754.18
+     rank  5: 754.19
+  optimizer-copy-to-main-grad:
+     rank  0: 0.32
+     rank  1: 0.33
+     rank  2: 0.31
+     rank  3: 0.29
+     rank  4: 0.30
+     rank  5: 0.29
+  optimizer-inner-step:
+     rank  0: 17.69
+     rank  1: 17.37
+     rank  2: 17.16
+     rank  3: 18.06
+     rank  4: 17.36
+     rank  5: 17.50
+  optimizer-copy-main-to-model-params:
+     rank  0: 2.81
+     rank  1: 2.85
+     rank  2: 2.79
+     rank  3: 2.80
+     rank  4: 2.82
+     rank  5: 2.79
+  optimizer:
+     rank  0: 782.45
+     rank  1: 782.56
+     rank  2: 782.49
+     rank  3: 782.47
+     rank  4: 782.51
+     rank  5: 782.52
+  batch-generator:
+     rank  0: 1.20
+     rank  1: 1.31
+     rank  2: 1.22
+     rank  3: 1.16
+     rank  4: 1.28
+     rank  5: 1.21
+  forward-compute:
+     rank  0: 386.56
+     rank  1: 388.17
+     rank  2: 384.57
+     rank  3: 381.06
+     rank  4: 387.45
+     rank  5: 381.39
+  backward-compute:
+     rank  0: 2789.46
+     rank  1: 2795.27
+     rank  2: 2797.78
+     rank  3: 2793.89
+     rank  4: 2796.27
+     rank  5: 2792.59
+ [2026-05-29 13:42:04.426216] iteration       40/      50 | consumed samples:          480 | elapsed time per iteration (ms): 5342.3 | mem usages: 0.6438 | throughput per GPU (TFLOP/s/GPU): 155.7 | learning rate: 3.000000E-05 | global batch size:    12 | lm loss: 8.008154E+00 | loss scale: 1.0 | grad norm: 12.044 | number of skipped iterations:   0 | number of nan iterations:   0 |
+INFO:megatron.core.timers:times across ranks (ms):
+  forward-backward:
+     rank  0: 4545.86
+     rank  1: 4545.80
+     rank  2: 4545.69
+     rank  3: 4545.68
+     rank  4: 4545.74
+     rank  5: 4545.77
+  embedding-grads-all-reduce:
+     rank  0: 0.01
+     rank  1: 0.01
+     rank  2: 0.01
+     rank  3: 0.01
+     rank  4: 0.01
+     rank  5: 0.01
+  all-grads-sync:
+     rank  0: 1354.53
+     rank  1: 1354.59
+     rank  2: 1354.55
+     rank  3: 1354.56
+     rank  4: 1354.56
+     rank  5: 1354.56
+  params-all-gather:
+     rank  0: 748.29
+     rank  1: 748.45
+     rank  2: 748.34
+     rank  3: 748.32
+     rank  4: 748.42
+     rank  5: 748.40
+  optimizer-copy-to-main-grad:
+     rank  0: 0.31
+     rank  1: 0.33
+     rank  2: 0.28
+     rank  3: 0.28
+     rank  4: 0.29
+     rank  5: 0.29
+  optimizer-inner-step:
+     rank  0: 17.71
+     rank  1: 17.39
+     rank  2: 17.17
+     rank  3: 18.07
+     rank  4: 17.37
+     rank  5: 17.52
+  optimizer-copy-main-to-model-params:
+     rank  0: 2.79
+     rank  1: 2.84
+     rank  2: 2.78
+     rank  3: 2.79
+     rank  4: 2.82
+     rank  5: 2.78
+  optimizer:
+     rank  0: 778.69
+     rank  1: 778.85
+     rank  2: 778.72
+     rank  3: 778.71
+     rank  4: 778.81
+     rank  5: 778.81
+  batch-generator:
+     rank  0: 1.25
+     rank  1: 1.30
+     rank  2: 1.24
+     rank  3: 1.22
+     rank  4: 1.25
+     rank  5: 1.21
+  forward-compute:
+     rank  0: 386.26
+     rank  1: 387.40
+     rank  2: 385.59
+     rank  3: 381.27
+     rank  4: 389.48
+     rank  5: 382.07
+  backward-compute:
+     rank  0: 2787.52
+     rank  1: 2793.93
+     rank  2: 2795.90
+     rank  3: 2790.14
+     rank  4: 2796.31
+     rank  5: 2793.81
+ [2026-05-29 13:42:31.120840] iteration       45/      50 | consumed samples:          540 | elapsed time per iteration (ms): 5338.9 | mem usages: 0.6438 | throughput per GPU (TFLOP/s/GPU): 155.8 | learning rate: 3.000000E-05 | global batch size:    12 | lm loss: 7.929858E+00 | loss scale: 1.0 | grad norm: 0.632 | number of skipped iterations:   0 | number of nan iterations:   0 |
+INFO:megatron.core.timers:times across ranks (ms):
+  forward-backward:
+     rank  0: 4545.39
+     rank  1: 4545.38
+     rank  2: 4545.28
+     rank  3: 4545.20
+     rank  4: 4545.25
+     rank  5: 4545.21
+  embedding-grads-all-reduce:
+     rank  0: 0.01
+     rank  1: 0.01
+     rank  2: 0.01
+     rank  3: 0.01
+     rank  4: 0.01
+     rank  5: 0.01
+  all-grads-sync:
+     rank  0: 1351.65
+     rank  1: 1351.71
+     rank  2: 1351.66
+     rank  3: 1351.68
+     rank  4: 1351.67
+     rank  5: 1351.70
+  params-all-gather:
+     rank  0: 746.37
+     rank  1: 746.53
+     rank  2: 746.37
+     rank  3: 746.45
+     rank  4: 746.45
+     rank  5: 746.53
+  optimizer-copy-to-main-grad:
+     rank  0: 0.31
+     rank  1: 0.34
+     rank  2: 0.31
+     rank  3: 0.29
+     rank  4: 0.31
+     rank  5: 0.29
+  optimizer-inner-step:
+     rank  0: 17.68
+     rank  1: 17.34
+     rank  2: 17.18
+     rank  3: 18.04
+     rank  4: 17.36
+     rank  5: 17.49
+  optimizer-copy-main-to-model-params:
+     rank  0: 2.79
+     rank  1: 2.84
+     rank  2: 2.78
+     rank  3: 2.79
+     rank  4: 2.82
+     rank  5: 2.80
+  optimizer:
+     rank  0: 775.72
+     rank  1: 775.89
+     rank  2: 775.72
+     rank  3: 775.80
+     rank  4: 775.81
+     rank  5: 775.90
+  batch-generator:
+     rank  0: 1.23
+     rank  1: 1.23
+     rank  2: 1.22
+     rank  3: 1.16
+     rank  4: 1.25
+     rank  5: 1.18
+  forward-compute:
+     rank  0: 389.34
+     rank  1: 386.67
+     rank  2: 383.85
+     rank  3: 383.15
+     rank  4: 387.45
+     rank  5: 383.97
+  backward-compute:
+     rank  0: 2785.97
+     rank  1: 2796.99
+     rank  2: 2796.85
+     rank  3: 2793.17
+     rank  4: 2796.72
+     rank  5: 2790.00
+ [2026-05-29 13:42:57.820834] iteration       50/      50 | consumed samples:          600 | elapsed time per iteration (ms): 5340.0 | mem usages: 0.6438 | throughput per GPU (TFLOP/s/GPU): 155.7 | learning rate: 3.000000E-05 | global batch size:    12 | lm loss: 7.885172E+00 | loss scale: 1.0 | grad norm: 2.765 | number of skipped iterations:   0 | number of nan iterations:   0 |
+INFO:megatron.core.timers:times across ranks (ms):
+  forward-backward:
+     rank  0: 4542.54
+     rank  1: 4542.52
+     rank  2: 4542.42
+     rank  3: 4542.36
+     rank  4: 4542.46
+     rank  5: 4542.37
+  embedding-grads-all-reduce:
+     rank  0: 0.01
+     rank  1: 0.01
+     rank  2: 0.01
+     rank  3: 0.01
+     rank  4: 0.01
+     rank  5: 0.01
+  all-grads-sync:
+     rank  0: 1352.63
+     rank  1: 1352.67
+     rank  2: 1352.66
+     rank  3: 1352.62
+     rank  4: 1352.65
+     rank  5: 1352.61
+  params-all-gather:
+     rank  0: 746.33
+     rank  1: 746.47
+     rank  2: 746.39
+     rank  3: 746.34
+     rank  4: 746.47
+     rank  5: 746.40
+  optimizer-copy-to-main-grad:
+     rank  0: 0.30
+     rank  1: 0.36
+     rank  2: 0.30
+     rank  3: 0.28
+     rank  4: 0.29
+     rank  5: 0.28
+  optimizer-inner-step:
+     rank  0: 17.83
+     rank  1: 17.36
+     rank  2: 17.19
+     rank  3: 18.06
+     rank  4: 17.38
+     rank  5: 17.48
+  optimizer-copy-main-to-model-params:
+     rank  0: 2.81
+     rank  1: 2.86
+     rank  2: 2.78
+     rank  3: 2.81
+     rank  4: 2.79
+     rank  5: 2.81
+  optimizer:
+     rank  0: 779.29
+     rank  1: 779.45
+     rank  2: 779.34
+     rank  3: 779.29
+     rank  4: 779.44
+     rank  5: 779.36
+  batch-generator:
+     rank  0: 1.20
+     rank  1: 1.36
+     rank  2: 1.18
+     rank  3: 1.16
+     rank  4: 1.26
+     rank  5: 1.22
+  forward-compute:
+     rank  0: 387.23
+     rank  1: 386.74
+     rank  2: 383.60
+     rank  3: 382.29
+     rank  4: 389.26
+     rank  5: 382.07
+  backward-compute:
+     rank  0: 2788.54
+     rank  1: 2795.70
+     rank  2: 2798.10
+     rank  3: 2793.23
+     rank  4: 2795.08
+     rank  5: 2792.16
+[after training is done] datetime: 2026-05-29 13:42:57.827947 
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode disabled
+Evaluating on 1200 samples
+Evaluating iter 1/100
+Evaluating iter 2/100
+Evaluating iter 3/100
+Evaluating iter 4/100
+Evaluating iter 5/100
+Evaluating iter 6/100
+Evaluating iter 7/100
+Evaluating iter 8/100
+Evaluating iter 9/100
+Evaluating iter 10/100
+Evaluating iter 11/100
+Evaluating iter 12/100
+Evaluating iter 13/100
+Evaluating iter 14/100
+Evaluating iter 15/100
+Evaluating iter 16/100
+Evaluating iter 17/100
+Evaluating iter 18/100
+Evaluating iter 19/100
+Evaluating iter 20/100
+Evaluating iter 21/100
+Evaluating iter 22/100
+Evaluating iter 23/100
+Evaluating iter 24/100
+Evaluating iter 25/100
+Evaluating iter 26/100
+Evaluating iter 27/100
+Evaluating iter 28/100
+Evaluating iter 29/100
+Evaluating iter 30/100
+Evaluating iter 31/100
+Evaluating iter 32/100
+Evaluating iter 33/100
+Evaluating iter 34/100
+Evaluating iter 35/100
+Evaluating iter 36/100
+Evaluating iter 37/100
+Evaluating iter 38/100
+Evaluating iter 39/100
+Evaluating iter 40/100
+Evaluating iter 41/100
+Evaluating iter 42/100
+Evaluating iter 43/100
+Evaluating iter 44/100
+Evaluating iter 45/100
+Evaluating iter 46/100
+Evaluating iter 47/100
+Evaluating iter 48/100
+Evaluating iter 49/100
+Evaluating iter 50/100
+Evaluating iter 51/100
+Evaluating iter 52/100
+Evaluating iter 53/100
+Evaluating iter 54/100
+Evaluating iter 55/100
+Evaluating iter 56/100
+Evaluating iter 57/100
+Evaluating iter 58/100
+Evaluating iter 59/100
+Evaluating iter 60/100
+Evaluating iter 61/100
+Evaluating iter 62/100
+Evaluating iter 63/100
+Evaluating iter 64/100
+Evaluating iter 65/100
+Evaluating iter 66/100
+Evaluating iter 67/100
+Evaluating iter 68/100
+Evaluating iter 69/100
+Evaluating iter 70/100
+Evaluating iter 71/100
+Evaluating iter 72/100
+Evaluating iter 73/100
+Evaluating iter 74/100
+Evaluating iter 75/100
+Evaluating iter 76/100
+Evaluating iter 77/100
+Evaluating iter 78/100
+Evaluating iter 79/100
+Evaluating iter 80/100
+Evaluating iter 81/100
+Evaluating iter 82/100
+Evaluating iter 83/100
+Evaluating iter 84/100
+Evaluating iter 85/100
+Evaluating iter 86/100
+Evaluating iter 87/100
+Evaluating iter 88/100
+Evaluating iter 89/100
+Evaluating iter 90/100
+Evaluating iter 91/100
+Evaluating iter 92/100
+Evaluating iter 93/100
+Evaluating iter 94/100
+Evaluating iter 95/100
+Evaluating iter 96/100
+Evaluating iter 97/100
+Evaluating iter 98/100
+Evaluating iter 99/100
+Evaluating iter 100/100
+INFO:megatron.core.timers:times across ranks (ms):
+  evaluate:
+     rank  0: 37610.30
+     rank  1: 37608.68
+     rank  2: 37609.05
+     rank  3: 37608.69
+     rank  4: 37610.16
+     rank  5: 37609.03
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode validate_results
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode validate_results
+----------------------------------------------------------------------------------------------------------------
+ validation loss at iteration 50 on validation set | lm loss value: 7.786955E+00 | lm loss PPL: 2.408972E+03 | 
+----------------------------------------------------------------------------------------------------------------
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode disabled
+Evaluating on 1200 samples
+Evaluating iter 1/100
+Evaluating iter 2/100
+Evaluating iter 3/100
+Evaluating iter 4/100
+Evaluating iter 5/100
+Evaluating iter 6/100
+Evaluating iter 7/100
+Evaluating iter 8/100
+Evaluating iter 9/100
+Evaluating iter 10/100
+Evaluating iter 11/100
+Evaluating iter 12/100
+Evaluating iter 13/100
+Evaluating iter 14/100
+Evaluating iter 15/100
+Evaluating iter 16/100
+Evaluating iter 17/100
+Evaluating iter 18/100
+Evaluating iter 19/100
+Evaluating iter 20/100
+Evaluating iter 21/100
+Evaluating iter 22/100
+Evaluating iter 23/100
+Evaluating iter 24/100
+Evaluating iter 25/100
+Evaluating iter 26/100
+Evaluating iter 27/100
+Evaluating iter 28/100
+Evaluating iter 29/100
+Evaluating iter 30/100
+Evaluating iter 31/100
+Evaluating iter 32/100
+Evaluating iter 33/100
+Evaluating iter 34/100
+Evaluating iter 35/100
+Evaluating iter 36/100
+Evaluating iter 37/100
+Evaluating iter 38/100
+Evaluating iter 39/100
+Evaluating iter 40/100
+Evaluating iter 41/100
+Evaluating iter 42/100
+Evaluating iter 43/100
+Evaluating iter 44/100
+Evaluating iter 45/100
+Evaluating iter 46/100
+Evaluating iter 47/100
+Evaluating iter 48/100
+Evaluating iter 49/100
+Evaluating iter 50/100
+Evaluating iter 51/100
+Evaluating iter 52/100
+Evaluating iter 53/100
+Evaluating iter 54/100
+Evaluating iter 55/100
+Evaluating iter 56/100
+Evaluating iter 57/100
+Evaluating iter 58/100
+Evaluating iter 59/100
+Evaluating iter 60/100
+Evaluating iter 61/100
+Evaluating iter 62/100
+Evaluating iter 63/100
+Evaluating iter 64/100
+Evaluating iter 65/100
+Evaluating iter 66/100
+Evaluating iter 67/100
+Evaluating iter 68/100
+Evaluating iter 69/100
+Evaluating iter 70/100
+Evaluating iter 71/100
+Evaluating iter 72/100
+Evaluating iter 73/100
+Evaluating iter 74/100
+Evaluating iter 75/100
+Evaluating iter 76/100
+Evaluating iter 77/100
+Evaluating iter 78/100
+Evaluating iter 79/100
+Evaluating iter 80/100
+Evaluating iter 81/100
+Evaluating iter 82/100
+Evaluating iter 83/100
+Evaluating iter 84/100
+Evaluating iter 85/100
+Evaluating iter 86/100
+Evaluating iter 87/100
+Evaluating iter 88/100
+Evaluating iter 89/100
+Evaluating iter 90/100
+Evaluating iter 91/100
+Evaluating iter 92/100
+Evaluating iter 93/100
+Evaluating iter 94/100
+Evaluating iter 95/100
+Evaluating iter 96/100
+Evaluating iter 97/100
+Evaluating iter 98/100
+Evaluating iter 99/100
+Evaluating iter 100/100
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode validate_results
+INFO:megatron.core.timers:times across ranks (ms):
+  evaluate:
+     rank  0: 37372.88
+     rank  1: 37371.99
+     rank  2: 37373.65
+     rank  3: 37371.99
+     rank  4: 37373.26
+     rank  5: 37371.99
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode validate_results
+----------------------------------------------------------------------------------------------------------
+ validation loss at iteration 50 on test set | lm loss value: 7.803423E+00 | lm loss PPL: 2.448970E+03 | 
+----------------------------------------------------------------------------------------------------------
+[rank0]:[W529 13:44:14.352165025 ProcessGroupNCCL.cpp:1541] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+
+localhost:266111:269119 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266111:269119 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 0, res=3, closed=0
+
+localhost:266111:269119 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 0] Failed to execute operation Close from rank 0, retcode 3
+
+localhost:266116:269121 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266116:269121 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 5, res=3, closed=0
+
+localhost:266116:269121 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 5] Failed to execute operation Close from rank 5, retcode 3
+
+localhost:266115:269120 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266115:269120 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 4, res=3, closed=0
+
+localhost:266115:269120 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 4] Failed to execute operation Close from rank 4, retcode 3
+
+localhost:266113:269127 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266113:269127 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 2, res=3, closed=0
+
+localhost:266113:269127 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 2] Failed to execute operation Close from rank 2, retcode 3
+
+localhost:266114:269125 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266114:269125 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 3, res=3, closed=0
+
+localhost:266114:269125 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 3] Failed to execute operation Close from rank 3, retcode 3
+
+localhost:266111:269181 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266111:269181 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 0, res=3, closed=0
+
+localhost:266111:269181 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 0] Failed to execute operation Close from rank 0, retcode 3
+[rank5]:[W529 13:44:15.621589963 ProcessGroupNCCL.cpp:1541] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+
+localhost:266116:269190 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266116:269190 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 0, res=3, closed=0
+
+localhost:266116:269190 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 0] Failed to execute operation Close from rank 0, retcode 3
+[rank4]:[W529 13:44:15.632990637 ProcessGroupNCCL.cpp:1541] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+
+localhost:266115:269183 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266115:269183 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 0, res=3, closed=0
+
+localhost:266115:269183 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 0] Failed to execute operation Close from rank 0, retcode 3
+
+localhost:266112:269126 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266112:269126 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 1, res=3, closed=0
+
+localhost:266112:269126 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 1] Failed to execute operation Close from rank 1, retcode 3
+
+localhost:266111:269151 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266111:269151 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 0, res=3, closed=0
+
+localhost:266111:269151 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 0] Failed to execute operation Close from rank 0, retcode 3
+[rank1]:[W529 13:44:15.121955941 ProcessGroupNCCL.cpp:1541] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+
+localhost:266112:269185 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266112:269185 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 0, res=3, closed=0
+
+localhost:266112:269185 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 0] Failed to execute operation Close from rank 0, retcode 3
+[rank3]:[W529 13:44:15.123320303 ProcessGroupNCCL.cpp:1541] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+
+localhost:266114:269187 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266114:269187 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 0, res=3, closed=0
+
+localhost:266114:269187 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 0] Failed to execute operation Close from rank 0, retcode 3
+
+localhost:266116:269155 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266116:269155 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 5, res=3, closed=0
+
+localhost:266116:269155 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 5] Failed to execute operation Close from rank 5, retcode 3
+[rank2]:[W529 13:44:15.133719520 ProcessGroupNCCL.cpp:1541] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+
+localhost:266113:269189 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266113:269189 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 0, res=3, closed=0
+
+localhost:266113:269189 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 0] Failed to execute operation Close from rank 0, retcode 3
+
+localhost:266115:269153 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266115:269153 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 4, res=3, closed=0
+
+localhost:266115:269153 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 4] Failed to execute operation Close from rank 4, retcode 3
+
+localhost:266116:268660 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed No such file or directory
+
+localhost:266116:268660 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 5, res=3, closed=0
+
+localhost:266116:268660 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 5] Failed to execute operation Close from rank 5, retcode 3
+
+localhost:266111:268666 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed No such file or directory
+
+localhost:266111:268666 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 0, res=3, closed=0
+
+localhost:266111:268666 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 0] Failed to execute operation Close from rank 0, retcode 3
+
+localhost:266115:268657 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed No such file or directory
+
+localhost:266115:268657 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 4, res=3, closed=0
+
+localhost:266115:268657 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 4] Failed to execute operation Close from rank 4, retcode 3
+
+localhost:266112:269152 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266112:269152 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 1, res=3, closed=0
+
+localhost:266112:269152 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 1] Failed to execute operation Close from rank 1, retcode 3
+
+localhost:266113:269156 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266113:269156 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 2, res=3, closed=0
+
+localhost:266113:269156 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 2] Failed to execute operation Close from rank 2, retcode 3
+
+localhost:266114:269154 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266114:269154 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 3, res=3, closed=0
+
+localhost:266114:269154 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 3] Failed to execute operation Close from rank 3, retcode 3
+
+localhost:266114:268658 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed No such file or directory
+
+localhost:266114:268658 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 3, res=3, closed=0
+
+localhost:266114:268658 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 3] Failed to execute operation Close from rank 3, retcode 3
+
+localhost:266112:268659 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed Resource temporarily unavailable
+
+localhost:266112:268659 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 1, res=3, closed=0
+
+localhost:266112:268659 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 1] Failed to execute operation Close from rank 1, retcode 3
+
+localhost:266113:268663 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1489 NCCL WARN [Service thread] Accept failed No such file or directory
+
+localhost:266113:268663 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1528 NCCL WARN [Service thread] Could not receive type from localRank 2, res=3, closed=0
+
+localhost:266113:268663 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/ubuntu-22.04/22.04/build/rccl/hipify/src/proxy.cc:1552 NCCL WARN [Proxy Service 2] Failed to execute operation Close from rank 2, retcode 3

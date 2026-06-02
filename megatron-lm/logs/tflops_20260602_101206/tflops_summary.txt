@@ -1,0 +1,8 @@
+MBS  RECOMPUTE  GBS   last_TF/GPU   best_TF/GPU   OOM   log
+2    none       16    236.7         236.8         no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_20260602_101206/bench_mbs2_rcnone.log
+3    none       24    233.2         233.5         no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_20260602_101206/bench_mbs3_rcnone.log
+4    none       32    231.2         231.6         no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_20260602_101206/bench_mbs4_rcnone.log
+4    selective  32    228.5         228.9         no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_20260602_101206/bench_mbs4_rcselective.log
+6    selective  48    ERR           ERR           yes   /home/v89592/shaohao/megatron-lm/work/logs/tflops_20260602_101206/bench_mbs6_rcselective.log
+8    full       64    207.7         208.0         no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_20260602_101206/bench_mbs8_rcfull.log
+12   full       96    206.4         207.2         no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_20260602_101206/bench_mbs12_rcfull.log

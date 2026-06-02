@@ -1,0 +1,2 @@
+collective   config     N_GPUS  max_size     busbw_GB/s   log
+all_reduce   default    2       134217728    57.90        /home/v89592/shaohao/megatron-lm/work/logs/rccl_tests_20260601_162747/all_reduce_default_n2.log

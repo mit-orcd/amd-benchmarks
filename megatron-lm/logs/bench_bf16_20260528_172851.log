@@ -1,0 +1,132 @@
+[in-container] python: Python 3.10.18
+[in-container] torch : 2.8.0a0+gitd06a406 False 8
+
+W0528 17:28:55.550000 179186 site-packages/torch/distributed/run.py:774] 
+W0528 17:28:55.550000 179186 site-packages/torch/distributed/run.py:774] *****************************************
+W0528 17:28:55.550000 179186 site-packages/torch/distributed/run.py:774] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0528 17:28:55.550000 179186 site-packages/torch/distributed/run.py:774] *****************************************
+/opt/conda/envs/py_3.10/lib/python3.10/site-packages/redis/connection.py:77: UserWarning: redis-py works best with hiredis. Please consider installing
+  warnings.warn(msg)
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] start build [module_aiter_enum] under /home/v89592/.aiter/jit/build/module_aiter_enum
+[92mSuccessfully preprocessed all matching files.[0m
+[aiter] finish build [module_aiter_enum], cost 15.96974664s
+/opt/conda/envs/py_3.10/lib/python3.10/site-packages/apex/transformer/functional/fused_rope.py:54: UserWarning: Using the native apex kernel for RoPE.
+  warnings.warn("Using the native apex kernel for RoPE.", UserWarning)
+/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/energy_monitor.py:9: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  from pynvml import (
+Traceback (most recent call last):
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+    pretrain(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 791, in pretrain
+    initialize_megatron(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/initialize.py", line 62, in initialize_megatron
+    assert torch.cuda.is_available(), "Megatron requires CUDA."
+AssertionError: Megatron requires CUDA.
+Traceback (most recent call last):
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+    pretrain(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 791, in pretrain
+    initialize_megatron(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/initialize.py", line 62, in initialize_megatron
+    assert torch.cuda.is_available(), "Megatron requires CUDA."
+AssertionError: Megatron requires CUDA.
+Traceback (most recent call last):
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+    pretrain(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 791, in pretrain
+    initialize_megatron(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/initialize.py", line 62, in initialize_megatron
+    assert torch.cuda.is_available(), "Megatron requires CUDA."
+AssertionError: Megatron requires CUDA.
+Traceback (most recent call last):
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+    pretrain(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 791, in pretrain
+    initialize_megatron(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/initialize.py", line 62, in initialize_megatron
+    assert torch.cuda.is_available(), "Megatron requires CUDA."
+AssertionError: Megatron requires CUDA.
+Traceback (most recent call last):
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+    pretrain(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 791, in pretrain
+    initialize_megatron(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/initialize.py", line 62, in initialize_megatron
+    assert torch.cuda.is_available(), "Megatron requires CUDA."
+AssertionError: Megatron requires CUDA.
+Traceback (most recent call last):
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+    pretrain(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 791, in pretrain
+    initialize_megatron(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/initialize.py", line 62, in initialize_megatron
+    assert torch.cuda.is_available(), "Megatron requires CUDA."
+AssertionError: Megatron requires CUDA.
+Traceback (most recent call last):
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+    pretrain(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 791, in pretrain
+    initialize_megatron(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/initialize.py", line 62, in initialize_megatron
+    assert torch.cuda.is_available(), "Megatron requires CUDA."
+AssertionError: Megatron requires CUDA.
+Traceback (most recent call last):
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+    pretrain(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 791, in pretrain
+    initialize_megatron(
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/initialize.py", line 62, in initialize_megatron
+    assert torch.cuda.is_available(), "Megatron requires CUDA."
+AssertionError: Megatron requires CUDA.
+W0528 17:29:29.112000 179186 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 179403 closing signal SIGTERM
+W0528 17:29:29.112000 179186 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 179404 closing signal SIGTERM
+W0528 17:29:29.113000 179186 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 179405 closing signal SIGTERM
+W0528 17:29:29.113000 179186 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 179406 closing signal SIGTERM
+W0528 17:29:29.113000 179186 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 179408 closing signal SIGTERM
+W0528 17:29:29.113000 179186 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 179409 closing signal SIGTERM
+W0528 17:29:29.113000 179186 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 179410 closing signal SIGTERM
+E0528 17:29:29.277000 179186 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 4 (pid: 179407) of binary: /opt/conda/envs/py_3.10/bin/python3
+Traceback (most recent call last):
+  File "/opt/conda/envs/py_3.10/bin/torchrun", line 33, in <module>
+    sys.exit(load_entry_point('torch==2.8.0a0+gitd06a406', 'console_scripts', 'torchrun')())
+  File "/opt/conda/envs/py_3.10/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+  File "/opt/conda/envs/py_3.10/lib/python3.10/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/opt/conda/envs/py_3.10/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/opt/conda/envs/py_3.10/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/opt/conda/envs/py_3.10/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 277, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-05-28_17:29:29
+  host      : localhost.localdomain
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 179407)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

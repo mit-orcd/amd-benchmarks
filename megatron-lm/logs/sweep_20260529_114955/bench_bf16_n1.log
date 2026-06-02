@@ -1,0 +1,4 @@
+[in-container] python: Python 3.10.18
+[in-container] torch : 2.8.0a0+gitd06a406 True 1
+[in-container] HIP_VISIBLE_DEVICES=0
+

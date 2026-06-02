@@ -1,0 +1,9 @@
+N_GPUS  GBS    last_TF/GPU   best_TF/GPU   log
+1       2      52.6          52.6          /home/v89592/shaohao/megatron-lm/work/logs/sweep_20260529_131143/bench_bf16_n1.log
+2       4      202.7         202.7         /home/v89592/shaohao/megatron-lm/work/logs/sweep_20260529_131143/bench_bf16_n2.log
+3       6      198.3         198.4         /home/v89592/shaohao/megatron-lm/work/logs/sweep_20260529_131143/bench_bf16_n3.log
+4       8      223.3         223.6         /home/v89592/shaohao/megatron-lm/work/logs/sweep_20260529_131143/bench_bf16_n4.log
+5       10     156.9         157.3         /home/v89592/shaohao/megatron-lm/work/logs/sweep_20260529_131143/bench_bf16_n5.log
+6       12     155.7         156.0         /home/v89592/shaohao/megatron-lm/work/logs/sweep_20260529_131143/bench_bf16_n6.log
+7       14     153.2         153.9         /home/v89592/shaohao/megatron-lm/work/logs/sweep_20260529_131143/bench_bf16_n7.log
+8       16     236.5         237.5         /home/v89592/shaohao/megatron-lm/work/logs/sweep_20260529_131143/bench_bf16_n8.log

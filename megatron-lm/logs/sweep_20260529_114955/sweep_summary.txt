@@ -1,0 +1,1 @@
+N_GPUS  GBS    last_TF/GPU   best_TF/GPU   log

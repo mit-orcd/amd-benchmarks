@@ -16,6 +16,22 @@
 
 ---
 
+## At a glance
+
+| N_GPUS | GBS | TF/s/GPU last | Aggregate TFLOP/s | Parallel efficiency | comm = grads+gather (ms) | comm / iter |
+|-------:|----:|--------------:|------------------:|--------------------:|-------------------------:|------------:|
+|      2 |   4 |         201.2 |             402.4 |              85.0 % |                      841 |      20.4 % |
+|      3 |   6 |         197.9 |             593.7 |              83.6 % |                      942 |      22.4 % |
+|      4 |   8 |         223.7 |             894.8 |              94.5 % |                      482 |      13.0 % |
+|      5 |  10 |         156.8 |             784.0 |              66.3 % |                    2,068 |      39.0 % |
+|      6 |  12 |         155.9 |             935.4 |              65.9 % |                    2,105 |      39.4 % |
+|      7 |  14 |         153.6 |           1,075.2 |              64.9 % |                    2,190 |      40.4 % |
+|      8 |  16 |         236.6 |           1,892.8 |             100.0 % |                      267 |       7.6 % |
+
+Parallel efficiency normalized to N=8 (236.6 TF/s/GPU). comm = all-grads-sync + params-all-gather at iter 45.
+
+---
+
 ## 1. TFLOP/s per GPU  ★
 
 Steady-state per-GPU throughput at iter 50 (last) and best across iters 10–50:

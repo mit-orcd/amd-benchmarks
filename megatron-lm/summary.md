@@ -1,115 +1,141 @@
-# Megatron-LM BF16 Sweep — Result Summary
+# Megatron-LM BF16 TF/s Push Sweep — Result Summary
 
 **Sources**
-- `work/log.run` — wrapping `nohup` driver log for the sweep, started `2026-05-29 11:51:09 CDT`.
-- `work/logs/sweep_20260529_115109/` — per-N container logs (`bench_bf16_n{1..8}.log`) and `sweep_summary.txt`.
-- Driver: `work/run.sh` (weak-scaling sweep: `MICRO_BS=2` constant, `GBS = MICRO_BS × N_GPUS`, `N_GPUS ∈ {1..8}`).
+- `work/log.tflops` — wrapping `nohup` driver log for the sweep, started `2026-06-02 10:12:06 CDT`.
+- `work/logs/tflops_20260602_101206/` — per-config container logs (`bench_mbs{N}_rc{mode}.log`) and `tflops_summary.txt`.
+- Driver: `work/run-tflops.sh` (MBS sweep: `N_GPUS=8` fixed, `GBS = MBS × 8`, `MBS ∈ {2,3,4,4,6,8,12}` × recompute mode).
 
-**Setup recap (from run.sh / log header)**
-- 1 node × up to 8 × AMD Instinct MI355X (gfx950), ROCm 7.2.3, PyTorch 2.8.0a inside `megatron-lm.sif`.
+**Setup recap (from run-tflops.sh / log header)**
+- 1 node × 8 × AMD Instinct MI355X (gfx950), ROCm 7.2.3, PyTorch 2.8.0a inside `megatron-lm.sif`.
 - Workload: GPT, 40 layers, hidden 6144, FFN 16384, 48 heads (GQA, 8 KV groups), seq 4096, SwiGLU + RMSNorm + RoPE, untied embeddings.
-- Parallelism: **TP=1, PP=1, DP=N** (pure data-parallel), distributed optimizer ON, `data_parallel_sharding_strategy=no_shard` → full 16.22 B model replicated on every rank.
-- Batch: micro=2 per GPU, GBS = 2 × N (so per-rank compute per step is *constant* across the sweep — this is weak scaling).
+- Parallelism: **TP=1, PP=1, DP=8** (pure data-parallel), distributed optimizer ON, `data_parallel_sharding_strategy=no_shard` → full 16.22 B model replicated on every rank.
+- Topology: **N=8 fixed** — held constant at the best collective-bandwidth regime identified in summary-1/rccl. Sweep knobs are MBS and activation recompute policy.
 - Precision: BF16, FlashAttention, mock data, 50 train iters, log every 5.
 - Total trainable parameters: **16.22 B** (transformer 15.60 B + embeddings 0.62 B).
-- Interconnect: AMD Infinity Fabric / xGMI via RCCL (IB disabled, `NCCL_P2P_DISABLE=0`, `RCCL_MSCCL_ENABLE=1`).
+- Interconnect: AMD Infinity Fabric / xGMI via RCCL (`NCCL_IB_DISABLE=1`, `RCCL_MSCCL_ENABLE=1`).
+
+**Recompute modes tested**
+- `none` — no activation recompute (baseline, identical to summary-1 N=8 run).
+- `selective` — `--recompute-granularity selective` (TE-style selective attention recompute).
+- `full` — `--recompute-granularity full --recompute-method uniform --recompute-num-layers 1` (full per-layer recompute).
+
+---
+
+## At a glance
+
+| MBS | Recompute | GBS | last TF/s/GPU | best TF/s/GPU | Aggregate TF/s | Mem util | OOM |
+|----:|-----------|----:|--------------:|--------------:|---------------:|---------:|:---:|
+|   2 | none      |  16 |         236.7 |     **236.8** |          1,894 |     0.64 | no  |
+|   3 | none      |  24 |         233.2 |         233.5 |          1,868 |     0.75 | no  |
+|   4 | none      |  32 |         231.2 |         231.6 |          1,853 |     0.85 | no  |
+|   4 | selective |  32 |         228.5 |         228.9 |          1,831 |     0.88 | no  |
+|   6 | selective |  48 |          —    |          —    |           —    |    > 0.98| yes |
+|   8 | full      |  64 |         207.7 |         208.0 |          1,662 |     0.58 | no  |
+|  12 | full      |  96 |         206.4 |         207.2 |          1,658 |     0.66 | no  |
+
+Aggregate TF/s = best_TF/s/GPU × 8. Mem util is the stable HBM fraction from iter 5 onward (reported by Megatron as `mem usages`).
+
+**Headline:** MBS=2 with no recompute is the throughput winner at **236.8 TF/s/GPU**. Every other configuration is slower — a clear sign that on this setup the per-GPU arithmetic intensity is maximized at the smallest feasible batch (the sweet spot for HBM bandwidth vs. compute balance), and neither larger batches nor recompute policies improve it.
 
 ---
 
 ## 1. TFLOP/s per GPU  ★
 
-Steady-state per-GPU throughput at iter 50 (last) and best across iters 10–50:
+Steady-state per-GPU throughput at iter 50 (last), best across iters 10–50, and iter time:
 
-| N_GPUS | GBS | iter time (ms) | **TF/s/GPU last** | TF/s/GPU best | mem util |
-|-------:|----:|---------------:|------------------:|--------------:|---------:|
-|      1 |   2 |  —  (OOM)      |  —¹               |  —¹           | 0.99 → OOM |
-|      2 |   4 |  4,132.8       | **201.2**         | 201.8         | 0.87 |
-|      3 |   6 |  4,202.8       | **197.9**         | 198.4         | 0.75 |
-|      4 |   8 |  3,718.3       | **223.7**         | 223.7         | 0.70 |
-|      5 |  10 |  5,304.1       | **156.8**         | 157.2         | 0.67 |
-|      6 |  12 |  5,335.6       | **155.9**         | 156.2         | 0.64 |
-|      7 |  14 |  5,414.5       | **153.6**         | 153.9         | 0.63 |
-|      8 |  16 |  3,515.4       | **236.6**         | 236.9         | 0.64 |
+| MBS | Recompute | GBS | iter time (ms) | **TF/s/GPU last** | TF/s/GPU best | Mem util |
+|----:|-----------|----:|---------------:|------------------:|--------------:|---------:|
+|   2 | none      |  16 |       3,513.6  |          **236.7**|     **236.8** |     0.64 |
+|   3 | none      |  24 |       5,348.8  |          **233.2**|         233.5 |     0.75 |
+|   4 | none      |  32 |       7,194.0  |          **231.2**|         231.6 |     0.85 |
+|   4 | selective |  32 |       7,277.4  |          **228.5**|         228.9 |     0.88 |
+|   6 | selective |  48 |        —  (OOM)|           —      |          —    |    > 0.98|
+|   8 | full      |  64 |      16,015.4  |          **207.7**|         208.0 |     0.58 |
+|  12 | full      |  96 |      24,171.9  |          **206.4**|         207.2 |     0.66 |
 
-¹ **N=1 OOM.** Iter 1 reported 53.9 TF/s/GPU but never reached steady state — `torch.OutOfMemoryError: HIP out of memory. Tried to allocate 256.00 MiB. GPU 0 has a total capacity of 287.98 GiB of which 6.00 MiB is free.` The full 16 B model + optimizer state + autograd graph saturates a single 288 GB MI355X. With DP ≥ 2 the distributed optimizer shards Adam state and per-rank memory drops from ~0.99 to ≤ 0.87.
+**Observations:**
 
-**Headline:**
-- **Best per-GPU throughput: 236.9 TF/s/GPU at N=8** (powers of 2).
-- **N=4 hits 223.7 TF/s/GPU** — close to the N=8 number, so the per-GPU compute kernel itself is fine.
-- **N=3, 5, 6, 7 drop to 154–198 TF/s/GPU** — a non-power-of-2 cliff (see §2 & §3).
-- **MFU:** MI355X BF16 dense peak ≈ 5 PFLOP/s/GPU → 236.9 / 5000 ≈ **4.7 % MFU** at the best point. Same headline limiter as the prior single-run analysis: PyTorch in the SIF has *no* gfx950 code objects (`torch.cuda.get_arch_list() == []`); the run goes through `HSA_OVERRIDE_GFX_VERSION=9.4.2`, so MI300X (gfx942) kernels execute on MI355X — no gfx950-tuned GEMM/attention. FlashAttention 3.0.0.post1 is also outside Transformer Engine's supported window, and Apex falls back to the *native* RoPE kernel (not the fused one).
-
----
-
-## 2. GPU–GPU communication overhead  ★
-
-Per-rank timer breakdown averaged across ranks at **iter 45** (steady state; rank-0 numbers shown, others within < 0.1 ms — see balance note below). Forward / backward compute is essentially constant across N because the per-rank batch is constant.
-
-| N | all-grads-sync (ms) | params-all-gather (ms) | optimizer (ms) | fwd-compute (ms) | bwd-compute (ms) | **comm = grads+gather (ms)** | **comm / iter** |
-|--:|--------------------:|-----------------------:|---------------:|-----------------:|-----------------:|-----------------------------:|----------------:|
-| 2 |               574.6 |                  266.8 |          356.3 |              387 |             2,790 |                    **841**   |     **20.4 %**  |
-| 3 |               649.4 |                  292.0 |          349.2 |              387 |             2,790 |                    **942**   |     **22.4 %**  |
-| 4 |               332.6 |                  149.0 |          188.3 |              383 |             2,790 |                    **482**   |     **13.0 %**  |
-| 5 |             1,354.8 |                  712.7 |          753.0 |              384 |             2,790 |                  **2,068**   |     **39.0 %**  |
-| 6 |             1,357.5 |                  747.5 |          772.9 |              383 |             2,790 |                  **2,105**   |     **39.4 %**  |
-| 7 |             1,422.9 |                  766.8 |          788.7 |              384 |             2,790 |                  **2,190**   |     **40.4 %**  |
-| 8 |               191.0 |                   75.5 |           98.5 |              387 |             2,790 |                    **267**   |      **7.6 %**  |
-
-**Two regimes — power-of-2 vs not.**
-- **N ∈ {2, 4, 8}: comm is well-controlled.** N=8 spends only 267 ms (7.6 %) on cross-GPU collectives. N=4 spends 482 ms (13 %). RCCL with `NCCL_ALGO=Ring,Tree` cleanly maps onto the symmetric xGMI mesh, and the distributed-optimizer reduce-scatter / all-gather sees the expected `(N−1)/N` bandwidth term.
-- **N ∈ {3, 5, 6, 7}: comm collapses.** Collective time jumps **4–7×** vs. the nearest power-of-2 (N=8 → 267 ms, N=7 → 2,190 ms). This is a classic RCCL ring/tree-topology penalty: non-power-of-2 ring sizes can't form a balanced double-ring on an 8-way xGMI all-to-all mesh, so the all-reduce and all-gather fall back to a slower path. Forward / backward compute is **unchanged** (~387 / ~2,790 ms), confirming the regression is entirely collective-side, not compute-side.
-- **Optimizer time tracks all-gather.** `optimizer` (which includes the dist-opt parameter all-gather slice) jumps from 98 ms (N=8) to ~750 ms (N=5–7), in lock-step with `params-all-gather`.
-- **Embedding-grads-all-reduce ≈ 0.01 ms** everywhere — `--untie-embeddings-and-output-weights` keeps it off the critical path.
-
-**Rank balance (iter 45, max − min spread across all N).**
-- `forward-compute`: spread ≤ 8 ms (~2 %), normal kernel-launch jitter.
-- `backward-compute`: spread ≤ 14 ms (~0.5 %).
-- `all-grads-sync`, `params-all-gather`, `optimizer`: spread < 0.2 ms at every N.
-
-Every collective is uniform across all ranks, including at N=5/6/7 where they are slow. The slowdown is therefore a **collective-algorithm issue**, not a straggler or a NUMA-induced skew, despite the `[aiter] WARNING: NUMA balancing is enabled` notice still appearing in the logs.
+- **Best is MBS=2, no RC: 236.8 TF/s/GPU** — matches the N=8 baseline from summary-1 (236.9 TF/s/GPU) to within measurement noise, confirming result reproducibility.
+- **Per-GPU throughput decreases monotonically with MBS (within the no-RC group).** From MBS=2 → 4, throughput falls from 236.8 → 231.6 TF/s/GPU (~2.2 %). Larger batches fill HBM more, reduce effective bandwidth, and introduce additional overhead without any additional parallelism benefit (DP rank compute is proportional to MBS).
+- **Full recompute costs ~12.2 % throughput** vs. the no-RC baseline (236.8 → 208.0 TF/s/GPU). The added compute from replaying 40 transformer layers' forward passes during backward directly extends the step time.
+- **MBS=8 vs MBS=12 under full recompute:** nearly identical (208.0 vs 207.2 TF/s/GPU, < 0.4 % difference). Full recompute pins activation memory near-zero per-layer, so scaling MBS from 8 → 12 has marginal additional cost — only static weight/optimizer state determines HBM usage in steady state.
+- **MFU context:** MI355X BF16 dense peak ≈ 5 PFLOP/s/GPU → 236.8 / 5000 ≈ **4.7 % MFU** at best. Same ceiling as summary-1. Root cause: `HSA_OVERRIDE_GFX_VERSION=9.4.2` forces MI300X (gfx942) kernels on MI355X — no gfx950-tuned GEMMs. FlashAttention 3.0.0.post1 is outside TE's supported window.
 
 ---
 
-## 3. Scaling with number of GPUs  ★
+## 2. Memory vs. Throughput trade-off  ★
 
-This sweep is **weak scaling**: per-GPU micro-batch is fixed (=2), GBS grows with N. Ideal weak-scaling preserves per-GPU TFLOP/s.
+The sweep explicitly trades HBM for throughput via batch size and recompute mode.
 
-Aggregate throughput and weak-scaling efficiency (normalized to the best per-GPU point, N=8 = 236.6 TF/s/GPU):
+| MBS | Recompute | Mem util | HBM used (GiB)¹ | TF/s/GPU best | Throughput penalty vs. MBS=2 |
+|----:|-----------|:--------:|----------------:|--------------:|-----------------------------:|
+|   2 | none      |     0.64 |           184.3 |         236.8 |                         0.0 % |
+|   3 | none      |     0.75 |           216.0 |         233.5 |                        −1.4 % |
+|   4 | none      |     0.85 |           244.8 |         231.6 |                        −2.2 % |
+|   4 | selective |     0.88 |           253.4 |         228.9 |                        −3.3 % |
+|   8 | full      |     0.58 |           167.0 |         208.0 |                       −12.2 % |
+|  12 | full      |     0.66 |           190.0 |         207.2 |                       −12.5 % |
 
-| N | Aggregate TFLOP/s | Ideal (N × 236.6) | **Weak-scaling efficiency** |
-|--:|------------------:|------------------:|----------------------------:|
-| 2 |        **402.4**  |             473.2 |                     **85.0 %** |
-| 3 |        **593.7**  |             709.8 |                     **83.6 %** |
-| 4 |        **894.8**  |             946.4 |                     **94.5 %** |
-| 5 |        **784.0**  |           1,183.0 |                     **66.3 %** |
-| 6 |        **935.4**  |           1,419.6 |                     **65.9 %** |
-| 7 |      **1,075.2**  |           1,656.2 |                     **64.9 %** |
-| 8 |      **1,892.8**  |           1,892.8 |                    **100.0 %** |
+¹ HBM used = mem util × 287.98 GiB.
 
-**Observations.**
+**Key take-aways:**
 
-1. **Non-monotonic.** Aggregate throughput goes up from N=2 → 4 (almost linearly), **drops** from N=4 → 5 (894.8 → 784.0 PFLOP/s), recovers slowly across N=5,6,7, then **jumps** from N=7 → 8 (1,075 → 1,893). A user picking 5 GPUs to "use what's free" would get *less* aggregate throughput than 4 GPUs.
-2. **Powers of 2 dominate.** N=4 (94.5 %) and N=8 (100 %) sit on a clean linear-scaling line; N=3 (83.6 %) is close behind. N=5/6/7 are uniformly ~65 %, capped by the collective overhead identified in §2.
-3. **The cliff is RCCL, not xGMI.** Compute per rank is constant (§2). xGMI itself is symmetric — every collective is rank-balanced. The penalty comes from the all-reduce / all-gather algorithm not finding a balanced ring at N ∈ {5, 6, 7}. Likely fixes worth trying *before* re-running: force `NCCL_ALGO=Tree` only, enable `RCCL_MSCCL_ALGO_DIR`, or pin the algorithm via an MSCCL tuning file for those sizes.
-4. **Multi-node not exercised.** All comms in this sweep cross **only xGMI** (`NCCL_IB_DISABLE=1`). Once a step crosses InfiniBand, the comm budget would grow ~10–20× per link and the picture changes again.
-5. **Single-GPU baseline missing — model is too big for one MI355X under this driver.** Without DP sharding the 16.22 B model + Adam state + activations OOM at 288 GB. To get an N=1 point: enable `--data-parallel-sharding-strategy optim_grads_params` (or activation recompute), or shrink the model.
+1. **No-recompute memory scales with MBS as expected.** MBS=2 uses 0.64 → MBS=4 uses 0.85, a ~33 % increase tracking activation memory growth (activations scale linearly with batch, weights + optimizer state are constant). The model at N=8 has ~104 GB free at MBS=2 and only ~43 GB free at MBS=4 — tight headroom.
+
+2. **Selective recompute counter-intuitively uses *more* memory than no-recompute at the same MBS.** MBS=4 selective (0.88) vs MBS=4 none (0.85): selective RC consumed an extra ~8.6 GiB. Under the installed `flash-attn 3.0.0.post1` / TransformerEngine version combination (which TE itself flags as outside its supported window), the selective recompute path appears to store additional workspace buffers for the recompute graph that exceed the activation savings. Net effect: higher HBM *and* lower throughput than the baseline — selective RC is strictly dominated here.
+
+3. **Full recompute resets HBM usage to a lower baseline than even MBS=2 no-RC.** MBS=8 full uses only 0.58 (167 GiB), lower than the MBS=2 no-RC level (0.64 / 184 GiB). Full recompute discards all intermediate activations per layer and re-runs the forward during backward — effectively trading 12.2 % of compute throughput for an enormous activation memory saving.
+
+4. **Full recompute at MBS=12 still fits comfortably.** 0.66 HBM util with GBS=96 — there may be additional headroom to push MBS further under full recompute (MBS=16+), though diminishing returns are already visible from MBS=8 → 12.
 
 ---
 
-## Other notable results (not covered above)
+## 3. OOM analysis: MBS=6 selective  ★
 
-- **Memory scales as expected with `--use-distributed-optimizer`.** Per-rank normalized memory drops from 0.87 (N=2) → 0.70 (N=4) → 0.64 (N=8) as the optimizer state shards across DP ranks. `no_shard` is still set for params/grads (full replication), which is why memory plateaus rather than dropping to ~1/N.
-- **Iter 1 / iter 5 warm-up dominates the early window.** First-iter times are 7–30 s (RCCL init + hipBLASLt cache fill + Inductor compilation of the SwiGLU fused kernel). Iter 10 onward is steady; exclude iters 1 and 5 from any throughput average.
-- **Loss converges quickly to ~8.0–8.3 across all N** on mock data — not a perf factor, but confirms training is numerically progressing (no NaNs, no skipped iters anywhere in the sweep).
-- **RCCL teardown warnings at end of each run** (`Failed to execute operation Close`, `Accept failed Resource temporarily unavailable`) are shutdown-time only and do not affect measured throughput.
-- **Persistent environment warnings** (carried over from the single-run analysis): TransformerEngine flags flash-attn 3.0.0.post1 as outside its supported window; Apex falls back to a *native* RoPE kernel; `[aiter] WARNING: NUMA balancing is enabled` — host setting, no observed rank-skew effect this sweep.
-- **`pynvml` deprecation warning** in `energy_monitor.py` — cosmetic.
+MBS=6 with selective recompute failed at **iter 1 during the forward pass** — before any throughput measurement was logged.
+
+**Error detail:** All 8 GPUs exhausted HBM during the forward pass through the transformer block. The allocation failures were:
+- GPUs 6, 7: `Tried to allocate 288 MiB` — failed in `fused_bias_dropout` (Inductor-compiled `self_attn_bda`) inside `_forward_attention`.
+- GPUs 0, 5: `Tried to allocate 1.50 GiB` — failed in `TE LayerNormLinear.forward → general_gemm` inside `_forward_mlp`.
+
+At the point of failure, ~**281.5–281.7 GiB was already allocated** by PyTorch (≈ 0.978 HBM util) with only 192–326 MiB free. This is consistent with:
+- MBS=4 selective consuming 0.88 × 288 = 253 GiB.
+- MBS=6 selective adding 50 % more activations (MBS 4 → 6) = ~127 GiB additional, pushing well above 288 GiB.
+- Selective recompute's excess workspace amplifying the problem further (see §2).
+
+The OOM is reproducible and fundamental: selective recompute does not save enough activation memory at MBS=6 to stay within 288 GiB. Full recompute would be required (as confirmed by MBS=8 full succeeding at 0.58 util).
+
+---
+
+## 4. Comparison to summary-1 (N-GPU sweep baseline)
+
+The MBS=2, no-RC configuration in this sweep is deliberately identical to the N=8 arm of summary-1:
+
+| Metric | summary-1 (N=8, MBS=2, no-RC) | This sweep (MBS=2, no-RC) | Match? |
+|--------|:------------------------------:|:-------------------------:|:------:|
+| TF/s/GPU last | 236.6 | 236.7 | ✓ < 0.1 % |
+| TF/s/GPU best | 236.9 | 236.8 | ✓ < 0.1 % |
+| iter time (ms) | 3,515.4 | 3,513.6 | ✓ < 0.1 % |
+| Mem util | 0.64 | 0.6363 | ✓ identical |
+
+The results reproduce to within measurement noise, confirming stable hardware state and run-to-run consistency across the two separate runs.
+
+---
+
+## Other notable results
+
+- **Warm-up cost is large regardless of MBS.** Iter 1 is 10–50× slower than steady state (28.7 TF/s at MBS=2 to 96.8 TF/s at MBS=12) due to RCCL init, hipBLASLt cache fill, and Inductor/aiter JIT compilation of fused kernels. Steady state is reached by iter 10 in all successful runs.
+- **Loss converges consistently on mock data.** All successful runs reach lm loss ~8.0–8.2 by iter 50; no NaNs or skipped iters. Large-batch runs (MBS=8,12) converge faster in terms of consumed samples.
+- **`aiter` module JIT build fires on MBS=2 (first run) and is cached for all subsequent configs.** Build cost is 16.1 s, amortized. Later runs skip rebuild.
+- **Persistent environment warnings** (same as summary-1): TE flags flash-attn 3.0.0.post1 as outside its supported range; Apex falls back to native RoPE kernel; `[aiter] NUMA balancing` warning; `pynvml` deprecation; `TORCH_NCCL_AVOID_RECORD_STREAMS` deprecation.
+- **Activation memory footprint logged for MBS=8 full:** TE reports `6,528 MB` per transformer layer (40 layers = 261 GB if stored without recompute — hence why full recompute is mandatory for MBS ≥ 5 without selective RC).
 
 ---
 
 ## Recommended next experiments
 
-1. **Investigate the non-power-of-2 cliff.** Re-run N=5/6/7 with `NCCL_ALGO=Tree` (force tree only), `NCCL_PROTO=Simple` (drop LL/LL128), and `RCCL_MSCCL_ENABLE=0` independently to isolate which fallback path is firing. If MSCCL tuned algorithms exist for AMD 8-way xGMI but not for these arities, that pins the root cause.
-2. **Bake a gfx950-native PyTorch.** The 4.7 % MFU ceiling is single-GPU compute, not communication. Drop `HSA_OVERRIDE_GFX_VERSION=9.4.2` once a gfx950 wheel is in the image.
-3. **Add a TP/SP sweep at N=8** (`--tensor-model-parallel-size = 1, 2, 4, 8` with `--sequence-parallel`) to put xGMI in the hot path and measure the real all-reduce ceiling.
-4. **Enable `optim_grads_params` sharding** so N=1 finishes — needed for a true scaling baseline.
+1. **Disable selective recompute and try MBS=5/6 with full recompute.** The selective path is currently broken (uses more memory AND is slower); full recompute at MBS=6–7 should comfortably fit within 288 GiB (MBS=8 full at 0.58 util leaves ~116 GiB headroom).
+2. **Push full-recompute MBS higher.** MBS=12 full is at 0.66 util — try MBS=16 (GBS=128) and MBS=20 (GBS=160). The MBS=8 → 12 plateau in throughput (208.0 → 207.2) suggests diminishing returns are already present, but the OOM boundary is not yet located.
+3. **Investigate selective recompute compatibility.** The counter-intuitive memory increase at MBS=4 selective vs. none may be a known TE + flash-attn 3.0.0.post1 incompatibility. Upgrading to a TE-compatible flash-attn version (≤ 2.8.0.post2) or gating selective RC through Megatron's native path (not TE) would isolate the cause.
+4. **Add TP to the MBS sweep.** With `--tensor-model-parallel-size=2` or `=4`, each rank holds only a shard of the weight matrices, cutting static HBM by 2–4×. This would allow much larger MBS without recompute and exercise the xGMI all-reduce path inside TP.
+5. **Bake a gfx950-native PyTorch.** The 4.7 % MFU ceiling is compute-side. Dropping `HSA_OVERRIDE_GFX_VERSION=9.4.2` with a native gfx950 wheel would be the highest-leverage single change for per-GPU throughput.

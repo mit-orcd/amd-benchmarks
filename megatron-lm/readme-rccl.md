@@ -76,19 +76,73 @@ MIN_BYTES=512M MAX_BYTES=4G bash work/run-rccl-tests.sh
 | `ITERS` / `WARMUP` | `20` / `5` | rccl-tests timing knobs |
 | `RCCL_TESTS_DIR` | autodetect | force a specific build dir |
 
-## 3. Where the output lands
+## 3. Run the full-collective sweep
+
+A separate script, [`run-rccl-all.sh`](run-rccl-all.sh), characterizes **every
+RCCL collective** at a single config (the `run.sh` baseline) across every N.
+Use this when you want a per-collective bandwidth table — AllReduce, AllGather,
+ReduceScatter, Broadcast, Reduce, Gather, Scatter, AllToAll, AllToAllV,
+SendRecv — rather than env-knob comparisons.
+
+Same prerequisites as section 2 — it reuses the same rccl-tests build and the
+same megatron-lm.sif container.
+
+```bash
+# full sweep: 10 collectives × 7 N values = 70 runs (~45-90 min)
+bash work/run-rccl-all.sh
+
+# background, like the Megatron runs
+nohup bash work/run-rccl-all.sh > log.rccl-all 2>&1 &
+```
+
+### Common subsets
+
+```bash
+# only the MoE-relevant collective on power-of-2 sizes
+COLLECTIVES=alltoall GPU_COUNTS="2 4 8" bash work/run-rccl-all.sh
+
+# point-to-point only (the pipeline-parallel primitive)
+COLLECTIVES=sendrecv bash work/run-rccl-all.sh
+
+# all collectives at N=8 only (smoke test the matrix)
+GPU_COUNTS=8 bash work/run-rccl-all.sh
+```
+
+### Env knobs
+
+| var | default | purpose |
+|-----|---------|---------|
+| `COLLECTIVES` | `all_reduce all_gather reduce_scatter broadcast reduce gather scatter alltoall alltoallv sendrecv` | which collectives to run; missing binaries are skipped with a warning |
+| `GPU_COUNTS` | `2 3 4 5 6 7 8` | which N values to sweep |
+| `MIN_BYTES` / `MAX_BYTES` / `STEP_FACTOR` | `16M` / `8G` / `2` | rccl-tests size sweep |
+| `ITERS` / `WARMUP` | `20` / `5` | rccl-tests timing knobs |
+| `RCCL_TESTS_DIR` | autodetect | force a specific build dir |
+
+Unlike [`run-rccl-tests.sh`](run-rccl-tests.sh), this script does **not** sweep
+the RCCL algorithm/protocol configs — it locks `NCCL_ALGO=Ring,Tree`,
+`NCCL_PROTO=Simple,LL,LL128`, `RCCL_MSCCL_ENABLE=1` so the per-collective
+numbers stay directly comparable to the Megatron baseline.
+
+## 4. Where the output lands
 
 ```
-work/logs/rccl_tests_<stamp>/
-  rccl_tests_summary.txt        # one-line-per-(coll,config,N): max_size busbw_GB/s
-  all_reduce_default_n2.log     # raw rccl-tests stdout per run
-  all_reduce_default_n3.log
+work/logs/rccl_tests_<stamp>/         # from run-rccl-tests.sh (env-knob sweep)
+  rccl_tests_summary.txt              # one-line-per-(coll,config,N): max_size busbw_GB/s
+  all_reduce_default_n2.log
   ...
   all_gather_proto_simple_n8.log
+
+work/logs/rccl_all_<stamp>/           # from run-rccl-all.sh (all-collective sweep)
+  rccl_all_summary.txt                # one-line-per-(coll,N): max_size busbw_GB/s
+  all_reduce_n2.log                   # raw rccl-tests stdout per run
+  all_reduce_n3.log
+  ...
+  sendrecv_n8.log
 ```
 
 `rccl_tests_summary.txt` is what you compare against the Megatron timer table
-in summary-1/2 §2. See [`rccl-tests.md`](rccl-tests.md#how-to-read-the-result)
+in summary-1/2 §2. `rccl_all_summary.txt` feeds the per-collective catalog in
+[`summary-rccl.md`](summary-rccl.md) §5. See [`rccl-tests.md`](rccl-tests.md#how-to-read-the-result)
 for the interpretation patterns.
 
 ## Q: What is the GPU-GPU topology on this node? Is it like an NVIDIA DGX? Is there a switch like NVSwitch?
@@ -139,7 +193,7 @@ ring construction not yet tuned for MI355X) is exactly the condition that
 produces the collapse. A future AMD platform with a switched fabric would
 lift this constraint at the hardware layer.
 
-## 4. Troubleshooting
+## 5. Troubleshooting
 
 - **"Could not find rccl-tests in the container."** Step 1 didn't run, or
   built to a non-standard place. Fix: rerun step 1, or set

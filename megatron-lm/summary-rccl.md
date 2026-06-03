@@ -22,11 +22,11 @@ The all-collective rccl-tests sweep on this MI355X node, June 2, 2026. Config: m
 | gather           |  72.07 |  78.27 |  211.64 |  69.38 |  68.83 |  70.29 |  444.15 |
 | scatter          |  63.11 |  71.48 |  191.63 |  65.35 |  65.61 |  66.36 |  426.40 |
 | alltoall         |  58.40 |  61.79 |  155.21 |  44.14 |  45.62 |  44.26 |  360.90 |
-| alltoallv        |  58.16 |  34.66 |  115.88 |  ERR¹  |  n/a²  |  n/a²  |   n/a²  |
-| sendrecv         |  59.21 |  60.32 |   60.59 |  43.83 |  43.77 |  43.44 |   53.24 |
+| sendrecv¹        |  59.21 |  60.32 |   60.59 |  43.83 |  43.77 |  43.44 |   53.24 |
 
-¹ `alltoallv N=5` was killed with `rc=137` (OOM-killer) before reaching 8 GiB; only sizes ≤128 MiB produced numbers (peak ~12.7 GB/s busbw — well below the N=4 trajectory).
-² `alltoallv N=6` was truncated mid-run; `N=7/8` never ran — see §1.3. The sendrecv row was captured by a follow-on standalone sweep (`logs/rccl_sendrecv_20260602_153246/`, `log.nccl-sendrecv`) on the same env stack and message envelope.
+¹ The sendrecv row was captured by a follow-on standalone sweep (`logs/rccl_sendrecv_20260602_153246/`, `log.nccl-sendrecv`) on the same env stack and message envelope.
+
+**AllToAllV** is intentionally omitted from the table: at N=2/3/4 the busbw at 8 GiB measured 58.16 / 34.66 / 115.88 GB/s (30–35 % below the equal-chunk AllToAll at the same N, with N=3 anomalously low — likely a per-rank chunk-alignment artifact); N=5 was OOM-killed (`rc=137`) before reaching 8 GiB, only sizes ≤128 MiB produced numbers (peak ~12.7 GB/s busbw); N=6 was truncated mid-run; N=7/8 never ran — see §1.3.
 
 #### 1.1.1 Patterns visible across the matrix
 

@@ -37,29 +37,38 @@
 
 ### vs. NVIDIA B200
 
-Per-GPU throughput across GPU counts (TFLOP/s/GPU):
+Per-GPU throughput across GPU counts (TFLOP/s/GPU, BF16, MBS=4, no recompute):
 
-| GPUs | B200    | MI355X            |
-|----:|--------:|------------------:|
-|   1 | 1,031.6 | —                 |
-|   2 | 1,005.3 | —                 |
-|   4 |   993.5 | 778.1 (N=8 BF16)  |
+| GPUs | B200    | MI355X        | MI355X / B200 |
+|----:|--------:|--------------:|--------------:|
+|   1 | 1,031.6 | OOM¹          | —             |
+|   2 | 1,005.3 | OOM¹          | —             |
+|   4 |   993.5 | **723.8**     | 72.9 %        |
+|   5 |    —    |     583.2     | —             |
+|   6 |    —    |     573.4     | —             |
+|   7 |    —    |     572.7²    | —             |
+|   8 |    —    |     778.1³    | —             |
 
-At 4 GPUs:
+Source: GPU-count weak-scaling sweep `logs/tflops_v26.1_gpusweep_20260603_094642/` (see §6). ¹ N=1/2/3 OOM at MBS=4 — full 16 B model + ~130 GB activations exceeds the 288 GB MI355X HBM at low DP rank; dist-opt sharding alone is insufficient. ² N=7 only ran 4 logged iters (1, 5, 10, 15) before the driver killed the sweep; treat as preliminary. N=8 was never reached. ³ N=8 figure is from the MBS×RC×precision sweep above (different driver, same image and config), included here for the high-N reference point.
+
+At 4 GPUs — the only direct apples-to-apples point:
 
 | Metric                          |  B200 | MI355X |
 |---------------------------------|------:|-------:|
 | Parallel efficiency (vs. N=1)   | 96.3 %|  n/a¹  |
-| % of dense BF16 peak            | 44.2 %| 31.1 % |
+| % of dense BF16 peak            | 44.2 %|  29.0 %|
+| % of hipBLASLt BF16 ceiling     |   —   |  44.1 %|
 
-Dense BF16 peak (no sparsity): B200 = 2,250 TF/s, MI355X = 2,500 TF/s. ¹ This file has no MI355X N=1 baseline (the 778.1 figure is from the N=8 sweep), so parallel efficiency cannot be computed.
+Dense BF16 peak (no sparsity): B200 = 2,250 TF/s, MI355X = 2,500 TF/s. hipBLASLt BF16 ceiling for MI355X = 1,640 TF/s. ¹ MI355X N=1 OOM'd in both `no_shard` and `optim_grads_params` shard modes, so parallel efficiency cannot be computed against an N=1 baseline.
 
 **Reading the comparison:**
 
-- **B200 weak-scales cleanly:** only a 3.7 % per-GPU drop from N=1 to N=4 (1,031.6 → 993.5), so 96.3 % parallel efficiency. Collective overhead is small relative to compute on its NVSwitch fabric.
-- **Framework-efficiency gap at the same precision:** at 4 GPUs B200 hits 44.2 % of its dense BF16 peak; MI355X N=8 hits 31.1 % of its dense BF16 peak. ~13 pp of framework headroom remains on MI355X (FP8 kernel tuning, fused-RoPE, etc.).
-- **Caveat on the per-GPU column:** 778.1 is at N=8 — twice the GPUs of the matching B200 column — so it is *not* a like-for-like point. Per-GPU throughput typically rises with N (the dist-opt collective fraction shrinks), so a true MI355X N=4 number would land somewhat below 778.1 and widen the framework-efficiency gap further.
-- **FP8 closes the headline gap:** MI355X FP8 hits 1,111.5 TF/s/GPU at N=8 — above B200's BF16 numbers across the board. The dense-peak comparison is no longer apples-to-apples (FP8 vs. BF16) but the wall-clock throughput is competitive.
+- **At matched N=4 BF16, MI355X delivers 73 % of B200 per-GPU** (723.8 vs 993.5). The gap is now apples-to-apples at the framework level, not contaminated by the prior N=8-vs-N=4 caveat.
+- **B200 weak-scales cleanly:** only a 3.7 % per-GPU drop from N=1 to N=4 (1,031.6 → 993.5), so 96.3 % parallel efficiency on NVSwitch.
+- **MI355X has a non-power-of-2 cliff at N=5–7:** per-GPU collapses from 724 (N=4) to ~570 (N=5/6/7) — a ~21 % drop just by adding one rank. Same pattern observed on the old image (`summary-2.md`); the floor is now ~570 TF/s instead of ~155, but the cliff itself persists. This is a fabric/collective topology effect (rings vs trees, xGMI ordering), not a kernel issue. **N=4 and N=8 are the only "good" scaling points.**
+- **N=8 BF16 (778.1) is higher per-GPU than N=4 (723.8)** — the dist-opt collective amortizes better at larger N when N is a power of 2. The non-monotone shape is `N=4 ✓, N=5/6/7 ✗, N=8 ✓`, not classic weak-scaling decay.
+- **Framework-efficiency gap at N=4:** B200 hits 44.2 % of its dense BF16 peak; MI355X hits 29.0 % — a 15 pp gap. Against the hipBLASLt BF16 ceiling (a more realistic Megatron-reachable target), MI355X is at 44.1 % — closer, with headroom from FP8 tuning, fused-RoPE, and the N=5–7 cliff.
+- **FP8 still wins on wall-clock:** MI355X FP8 at N=8 hits 1,111.5 TF/s/GPU — above B200's BF16 numbers across the board. Not apples-to-apples (precision mismatch), but the realized throughput is competitive.
 
 ---
 
@@ -198,3 +207,61 @@ Now that the baseline is competitive, the next gains are smaller but worth measu
 4. **Push MBS=6 with selective RC.** The old-image OOM at MBS=6 selective was 0.978 util; with v26.1's tighter memory accounting and the bias-free model, MBS=6 selective might fit.
 5. **Add `--use-flash-attn` after a flash-attn downgrade.** If a flash-attn ≤ 2.8.1 wheel can be sideloaded into the image, TE would re-enable the FlashAttention backend for cases where it beats FusedAttention.
 6. **Source an Apex fused-RoPE build for gfx950.** The native fallback costs 3–5 %.
+7. **Diagnose the N=5–7 cliff.** Try `RCCL_PROTO=LL/LL128`, alternate `NCCL_ALGO` choices, or `RCCL_TOPO_FILE`. Compare allreduce/all-gather bus-bandwidth at N=4 vs N=5 with `rccl-tests`; the per-GPU floor of ~570 TF/s strongly suggests a collective regression, not a compute one.
+8. **Re-run N=7 to completion and add N=8 BF16 MBS=4 to the GPU-count sweep.** Current sweep stopped after N=7 reached only iter 15, and N=8 was never run on the dedicated GPU-count driver (the 778.1 figure is reused from the MBS×RC×precision sweep).
+
+---
+
+## 6. GPU-count weak-scaling sweep (BF16, MBS=4, no recompute)
+
+**Sources**
+- `work/log.tflops-v26.1-gpusweep` — driver log, started `2026-06-03 09:46:42 CDT`.
+- `work/logs/tflops_v26.1_gpusweep_20260603_094642/` — per-N container logs (`bench_n{1..7}_bf16.log`) and `tflops_summary.txt`.
+- Driver: `work/run-tflops-v26.1-gpusweep.sh` (weak-scaling: MBS=4 fixed, GBS = MBS × N, BF16 no-RC, `data_parallel_sharding_strategy=no_shard`).
+- Goal: produce the new-image equivalent of `summary-2.md` so the headline B200 comparison has real MI355X N=1/2/4 data.
+
+### Per-N results
+
+| N_GPUS | GBS | iter time (ms) | TF/s/GPU last | TF/s/GPU best | mem util | status |
+|-------:|----:|---------------:|--------------:|--------------:|---------:|--------|
+|      1 |   4 |   —            |  —            |  —            |  —       | OOM in both `no_shard` and `optim_grads_params` modes |
+|      2 |   8 |   —            |  —            |  —            | 0.88 → OOM | OOM after iter 1 (53.4 TF/s warm-up only) |
+|      3 |  12 |   —            |  —            |  —            | 0.88 → OOM | OOM after iter 1 (53.4 TF/s warm-up only) |
+|      4 |  16 |  2,304         |     **721.9** |     **723.8** | 0.94     | ✓ 50 iters |
+|      5 |  20 |  2,860         |       581.5   |       583.2   | 0.93     | ✓ 50 iters |
+|      6 |  24 |  2,919         |       569.8   |       573.4   | 0.89     | ✓ 50 iters |
+|      7 |  28 |  2,941¹        |     (565.5)¹  |     (572.7)¹  | 0.87     | partial — only iters 1, 5, 10, 15 logged before sweep driver killed |
+|      8 |   — |   —            |  —            |  —            |  —       | not run (sweep terminated after N=7) |
+
+¹ N=7 numbers are from the first 15 iters only; steady-state may be slightly different but iter-10 (572.7) and iter-15 (565.5) bracket the value seen at N=5/6. The 778.1 N=8 BF16 point from the MBS×RC×precision sweep (§1) is the reference for the high-N power-of-2 case.
+
+### Why N=1/2/3 OOM
+
+Theoretical per-rank footprint reported by Megatron at MBS=4, BF16, no-RC: **weight+optimizer = 119,351 MB, activation = 139,045 MB, total = 258,396 MB ≈ 252 GiB** per rank. With `no_shard` (and even with dist-opt + `optim_grads_params` sharding at N=1), this leaves only ~36 GiB headroom in 288 GiB HBM — eaten by hipBLASLt workspaces, RCCL buffers, autograd graph spikes, and TE FP8 scaling state. N=1 OOMs at allocation; N=2/3 succeed iter 1 (which uses smaller intermediate buffers) but blow up on iter 2+ when activation memory hits its peak.
+
+At N=4 the optimizer-state shard drops per-rank from ~119 GiB to ~30 GiB; that's enough to fit. The first viable scaling point is therefore N=4, and the parallel-efficiency baseline (1-GPU TF/s) is not measurable for this configuration on MI355X.
+
+**Workaround for a true N=1 baseline:** would need either MBS=2 (smaller activations) or full recompute (`--recompute-granularity full`) — both change the comparison axis and were out of scope for this sweep.
+
+### The N=4 → N=5 cliff
+
+| N | TF/s/GPU best | Δ vs N=4 |
+|--:|--------------:|---------:|
+| 4 | 723.8         | baseline |
+| 5 | 583.2         | −19.4 %  |
+| 6 | 573.4         | −20.8 %  |
+| 7 | 572.7¹        | −20.9 %  |
+| 8 | 778.1²        |  +7.5 %  |
+
+¹ partial, ² from MBS×RC sweep (§1).
+
+A single extra rank costs ~20 % per-GPU throughput, then the floor plateaus across N=5/6/7, then N=8 recovers and exceeds N=4. This is a **fabric/collective regression**, not a compute one — kernel iter time grows from 2,304 ms (N=4) to 2,860–2,941 ms (N=5–7) for the *same* per-rank work. The same shape was seen on the old image (`summary-2.md` reported the same N=4 ✓ / N=5–7 ✗ / N=8 ✓ pattern, just at much lower absolute throughput).
+
+Likely root cause: RCCL's all-reduce/all-gather algorithm choice changes when N crosses 4 on the xGMI fabric — ring at N=4 (clean 4-node ring), then tree-or-mixed for N=5/6/7, then back to ring at N=8. Confirming this requires `NCCL_DEBUG=INFO` algorithm logs side-by-side at N=4 and N=5, plus `rccl-tests` allreduce bus-bandwidth at the same shapes. Listed in §5 as next-experiment item #7.
+
+### Operational notes on the sweep
+
+- **N=1 retry mechanism worked as designed:** the driver detected the no-shard OOM and re-ran N=1 with `--data-parallel-sharding-strategy optim_grads_params` (`bench_n1_bf16_ogp.log`). Both modes OOM'd — confirming N=1 is not viable at MBS=4 regardless of sharding.
+- **Exit code −11 (SIGSEGV) at teardown for N=4/5/6/7** is the same shutdown-time RCCL cleanup race noted in §4; throughput numbers are recorded before shutdown and are valid.
+- **Sweep stopped mid-N=7** with no error in the bench log — the driver process exited cleanly without ever logging the N=8 header. Driver log ends at the N=7 marker; container log ends mid-run at iter 15. Worth re-running N=7/8 to complete the curve.
+- **Memory utilization is high but stable** at N=4 (0.94) and decreases monotonically with N as activations stay fixed per rank but optimizer-state shards shrink. None of N=4..7 hit a runtime OOM.

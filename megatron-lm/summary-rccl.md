@@ -60,16 +60,18 @@ This node is 8 × `AMD Instinct MI355X` (gfx950, 256 CUs/die, confirmed via `amd
 
 rccl-tests `busbw` is steady-state bytes crossing the wire per unit time. The comparable spec depends on what fraction of the GPU's links is active:
 
-| Measurement (busbw, GB/s, 8 GiB)                       | Compare against (per direction)        | Achieved |
-|---------------------------------------------------------|----------------------------------------|---------:|
-| SendRecv N=2 — single direct xGMI link                  | 76.8 GB/s (1 link, 1 direction)        | **77 %** |
-| SendRecv N=2..4 plateau (~60 GB/s)                      | 76.8 GB/s                              | 77–82 %  |
-| AllReduce N=8 — 381 GB/s (Ring across all 7 links)      | 537.6 GB/s (per-GPU aggregate, 1 dir)  | **71 %** |
-| ReduceScatter N=8 — 408 GB/s                            | 537.6 GB/s                             | 76 %     |
-| Gather N=8 — 444 GB/s (highest in matrix)               | 537.6 GB/s                             | **83 %** |
-| Scatter N=8 — 426 GB/s                                  | 537.6 GB/s                             | 79 %     |
-| AllReduce N=4 — 166 GB/s                                | ~307 GB/s (4 ranks × ~half links live) | ~54 %    |
-| AllReduce N=5/6/7 cliff — ~38 GB/s                      | 537.6 GB/s                             | **~7 %** |
+Each row's ceiling is the maximum bandwidth the *specific collective* can physically engage on this topology, **not** the GPU's full 7-link aggregate. SendRecv only exercises one xGMI link per pair, so its ceiling is the 1-link rate (76.8 GB/s); Ring AllReduce/ReduceScatter/Gather at N=8 drive all 7 links concurrently, so their ceiling is the 7-link aggregate (537.6 GB/s); at N=4 only ~4 of the 7 links carry ring traffic, so the ceiling scales accordingly (~307 GB/s); at N=5/6/7 RCCL has failed to construct a valid ring, so the comparison is against full aggregate to size the loss vs what *should* be available.
+
+| Measurement (busbw at 8 GiB)            | Measured (GB/s) | Ceiling (per direction, GB/s)                                | Achieved |
+|------------------------------------------|----------------:|--------------------------------------------------------------|---------:|
+| SendRecv N=2 — single direct xGMI link   |           59.21 | **76.8** — 1 link × 1 direction                              | **77 %** |
+| SendRecv N=2..4 plateau                  |           ~60   | **76.8** — 1 link × 1 direction                              | 77–82 %  |
+| AllReduce N=8 — Ring across all 7 links  |          381.27 | **537.6** — 7-link per-GPU aggregate × 1 direction           | **71 %** |
+| ReduceScatter N=8                        |          407.69 | **537.6** — 7-link per-GPU aggregate × 1 direction           | 76 %     |
+| Gather N=8 — highest in matrix           |          444.15 | **537.6** — 7-link per-GPU aggregate × 1 direction           | **83 %** |
+| Scatter N=8                              |          426.40 | **537.6** — 7-link per-GPU aggregate × 1 direction           | 79 %     |
+| AllReduce N=4                            |          166.48 | **~307** — 4 ranks × ~half the links live × 1 direction      | ~54 %    |
+| AllReduce N=5/6/7 cliff                  |           ~38   | **537.6** — full aggregate (RCCL failed to build a valid ring; comparing to what *should* be reachable to size the loss) | **~7 %** |
 
 Reading:
 

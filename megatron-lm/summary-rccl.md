@@ -26,6 +26,10 @@ The all-collective rccl-tests sweep on this MI355X node, June 2, 2026. Config: m
 
 ¹ The sendrecv row was captured by a follow-on standalone sweep (`logs/rccl_sendrecv_20260602_153246/`, `log.nccl-sendrecv`) on the same env stack and message envelope.
 
+![MI355X RCCL busbw at 8 GiB vs N — full collective sweep](rccl_busbw_8GiB.png)
+
+The shaded band highlights the N=5/6/7 cliff: every ring-based collective collapses ~4–5× from N=4 and snaps back at N=8 when all four xGMI channels reactivate. Sendrecv stays flat (single-link rate) and does not recover at N=8. Gather/scatter degrade only ~2× across the cliff because they ride pairwise sendrecv loops rather than a closed ring.
+
 **AllToAllV** is intentionally omitted from the table: at N=2/3/4 the busbw at 8 GiB measured 58.16 / 34.66 / 115.88 GB/s (30–35 % below the equal-chunk AllToAll at the same N, with N=3 anomalously low — likely a per-rank chunk-alignment artifact); N=5 was OOM-killed (`rc=137`) before reaching 8 GiB, only sizes ≤128 MiB produced numbers (peak ~12.7 GB/s busbw); N=6 was truncated mid-run; N=7/8 never ran — see §1.3.
 
 #### 1.1.1 Patterns visible across the matrix

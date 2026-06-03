@@ -1,0 +1,5 @@
+N_GPUS  GBS    last_TF/GPU   best_TF/GPU   shard         RC    OOM   log
+1       4      ERR           ERR           no_shard      full  no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_gpusweep_20260603_150741/bench_n1_bf16_full.log
+2       8      546.0         550.3         no_shard      full  no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_gpusweep_20260603_150741/bench_n2_bf16_full.log
+3       12     587.8         591.4         no_shard      full  no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_gpusweep_20260603_150741/bench_n3_bf16_full.log
+4       16     724.4         726.2         no_shard      none  no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_gpusweep_20260603_150741/bench_n4_bf16.log

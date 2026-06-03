@@ -21,7 +21,7 @@
 
 ---
 
-## At a glance
+## Headline
 
 | MBS | Recompute | Precision | GBS | iter time (ms) | last TF/s/GPU | best TF/s/GPU | Mem util |
 |----:|-----------|-----------|----:|---------------:|--------------:|--------------:|---------:|
@@ -35,9 +35,35 @@
 
 ★ **Overall winner: MBS=4, no recompute, FP8 — 1,111.5 TF/s/GPU best (1,108.0 last).**
 
+### vs. NVIDIA B200
+
+Per-GPU throughput across GPU counts (TFLOP/s/GPU):
+
+| GPUs | B200    | MI355X            |
+|----:|--------:|------------------:|
+|   1 | 1,031.6 | —                 |
+|   2 | 1,005.3 | —                 |
+|   4 |   993.5 | 778.1 (N=8 BF16)  |
+
+At 4 GPUs:
+
+| Metric                          |  B200 | MI355X |
+|---------------------------------|------:|-------:|
+| Parallel efficiency (vs. N=1)   | 96.3 %|  n/a¹  |
+| % of dense BF16 peak            | 44.2 %| 31.1 % |
+
+Dense BF16 peak (no sparsity): B200 = 2,250 TF/s, MI355X = 2,500 TF/s. ¹ This file has no MI355X N=1 baseline (the 778.1 figure is from the N=8 sweep), so parallel efficiency cannot be computed.
+
+**Reading the comparison:**
+
+- **B200 weak-scales cleanly:** only a 3.7 % per-GPU drop from N=1 to N=4 (1,031.6 → 993.5), so 96.3 % parallel efficiency. Collective overhead is small relative to compute on its NVSwitch fabric.
+- **Framework-efficiency gap at the same precision:** at 4 GPUs B200 hits 44.2 % of its dense BF16 peak; MI355X N=8 hits 31.1 % of its dense BF16 peak. ~13 pp of framework headroom remains on MI355X (FP8 kernel tuning, fused-RoPE, etc.).
+- **Caveat on the per-GPU column:** 778.1 is at N=8 — twice the GPUs of the matching B200 column — so it is *not* a like-for-like point. Per-GPU throughput typically rises with N (the dist-opt collective fraction shrinks), so a true MI355X N=4 number would land somewhat below 778.1 and widen the framework-efficiency gap further.
+- **FP8 closes the headline gap:** MI355X FP8 hits 1,111.5 TF/s/GPU at N=8 — above B200's BF16 numbers across the board. The dense-peak comparison is no longer apples-to-apples (FP8 vs. BF16) but the wall-clock throughput is competitive.
+
 ---
 
-## Headline numbers
+## What drove the 3–5× gain
 
 | Metric | Old image (`megatron-lm.sif`, `summary-3.md`) | This sweep (`megatron-lm-v26.1.sif`) | Improvement |
 |--------|------------------------------------------------:|--------------------------------------:|------------:|
@@ -45,12 +71,9 @@
 | Best per-GPU TF/s (overall) | 236.8 | **1,111.5** | **4.69×** |
 | % of MI355X hipBLASLt BF16 ceiling (1,640 TF/s) | 14.4 % | 47.4 % (BF16) | 3.3× |
 | % of MI355X hipBLASLt FP8 ceiling (3,611 TF/s) | n/a | 30.8 % (FP8) | n/a |
-| vs. B200 Megatron-LM (~1,000 TF/s reference) | 24 % | **111 %** | matches/exceeds B200 |
 
-**MI355X on this Megatron-LM workload is now competitive with B200, and exceeds the B200 reference number when FP8 is enabled.** Two changes drove this:
-
-1. **Container image swap** from gfx942-only `megatron-lm.sif` to gfx950-native `megatron-lm-v26.1.sif`. This is the dominant ~3× win on its own — every hot kernel (GEMM epilogues, LayerNorm, attention) now loads native gfx950 code instead of MI300X assembly via `HSA_OVERRIDE_GFX_VERSION=9.4.2`.
-2. **Script tuning** layered on top: `--overlap-grad-reduce --overlap-param-gather`, `--attention-backend fused`, `--cross-entropy-loss-fusion`, `--manual-gc`, `--no-masked-softmax-fusion`, plus the env block from AMD's reference (`CUDA_DEVICE_MAX_CONNECTIONS=1`, `RCCL_MSCCL_ENABLE=0`, `NCCL_PROTO=Simple`, `TE_HIPBLASLT_TUNING_RUN_COUNT/ALGO_COUNT`). Net of the image swap, the tunings + FP8 add another ~1.4× on top.
+1. **gfx950-native image (~3×).** Hot kernels now load native gfx950 code instead of MI300X assembly under `HSA_OVERRIDE_GFX_VERSION=9.4.2`.
+2. **Tunings + FP8 (~1.4× on top).** Overlap flags, fused attention, AMD reference env block, and FP8 hybrid.
 
 ---
 
@@ -156,41 +179,7 @@ Five distinct issues had to be resolved between the old image and this winning s
 
 ---
 
-## 4. Comparison to summary-3.md (old image)
-
-Same model, same N=8 topology, same script structure — only difference is the image and the post-image-swap tunings (`--disable-bias-linear` was forced by item 5 above, but in practice modern LLMs run without linear biases anyway):
-
-| Metric | Old image best (summary-3.md) | New image best (this run) | Ratio |
-|--------|------------------------------:|--------------------------:|------:|
-| BF16 winner (TF/s/GPU) | 236.8 (MBS=2) | 778.1 (MBS=4) | **3.29×** |
-| FP8 winner (TF/s/GPU) | not viable | 1,111.5 (MBS=4) | n/a |
-| Best HBM util | 0.99 (OOM at N=1) | 0.91 | OOMs eliminated |
-| Best iter time (ms) | 3,514 (MBS=2 BF16) | 1,496 (MBS=4 FP8) | **2.35× faster** |
-
-### vs. NVIDIA B200 reference (framework efficiency framing)
-
-- B200 Megatron-LM at ~1,000 TF/s/GPU = **59 % of B200's hipBLASLt BF16 ceiling** (~1,700 TF/s).
-- MI355X new image at 778 TF/s BF16 = **47 % of MI355X's BF16 ceiling** (1,640 TF/s) — close but still ~12 pp behind B200's framework efficiency.
-- MI355X with FP8 at 1,111 TF/s = **111 % of B200's BF16 number**, **31 % of MI355X's FP8 ceiling** — the FP8 path is delivering competitive headline numbers but is still under-tuned relative to silicon.
-
-### Per-architecture context
-
-| Layer | MI355X this run | B200 reference |
-|-------|----------------:|---------------:|
-| Paper BF16 peak | 2,500 | 2,250 |
-| Tuned BLAS ceiling | 1,640 | ~1,700 |
-| Megatron measured BF16 | 778 | ~1,000 |
-| Megatron measured FP8 | 1,111 | (not given) |
-| Framework efficiency vs. BLAS | 47 % | 59 % |
-
-The remaining ~12 pp framework-efficiency gap vs. B200 is likely in:
-- Apex fused-RoPE still falling back to native PyTorch on AMD (~3–5 % perf).
-- flash-attn 2.8.3 disabled in TE (TE uses FusedAttention instead — works, but flash-attn would be faster on supported shapes).
-- More tuned FP8 kernels needed for the wgrad and grad-input paths.
-
----
-
-## 5. Other notable findings
+## 4. Other notable findings
 
 - **Loss converges normally** on mock data in all 7 configs. FP8 reaches a lower loss faster (7.07 at iter 50 vs 7.65 BF16) — consistent with the smaller per-step time letting cosine LR schedule decay further per wall-clock minute. No NaNs, no skipped iterations.
 - **`Activation memory footprint per transformer layer (precise, without SP): 3264.0 MB`** logged for MBS=4 BF16 no-RC. 40 layers × 3.26 GB = 130 GB activations alone — explains why MBS=6 won't fit without RC and MBS=8 needs full RC.
@@ -199,7 +188,7 @@ The remaining ~12 pp framework-efficiency gap vs. B200 is likely in:
 
 ---
 
-## 6. Recommended next experiments
+## 5. Recommended next experiments
 
 Now that the baseline is competitive, the next gains are smaller but worth measuring.
 

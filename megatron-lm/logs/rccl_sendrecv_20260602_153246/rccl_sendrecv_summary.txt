@@ -1,2 +1,8 @@
 collective      N_GPUS  max_size     busbw_GB/s   log
 sendrecv        2       8589934592   59.21        /home/v89592/shaohao/megatron-lm/work/logs/rccl_sendrecv_20260602_153246/sendrecv_n2.log
+sendrecv        3       8589934592   60.32        /home/v89592/shaohao/megatron-lm/work/logs/rccl_sendrecv_20260602_153246/sendrecv_n3.log
+sendrecv        4       8589934592   60.59        /home/v89592/shaohao/megatron-lm/work/logs/rccl_sendrecv_20260602_153246/sendrecv_n4.log
+sendrecv        5       8589934592   43.83        /home/v89592/shaohao/megatron-lm/work/logs/rccl_sendrecv_20260602_153246/sendrecv_n5.log
+sendrecv        6       8589934592   43.77        /home/v89592/shaohao/megatron-lm/work/logs/rccl_sendrecv_20260602_153246/sendrecv_n6.log
+sendrecv        7       8589934592   43.44        /home/v89592/shaohao/megatron-lm/work/logs/rccl_sendrecv_20260602_153246/sendrecv_n7.log
+sendrecv        8       8589934592   53.24        /home/v89592/shaohao/megatron-lm/work/logs/rccl_sendrecv_20260602_153246/sendrecv_n8.log

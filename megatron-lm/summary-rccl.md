@@ -26,7 +26,7 @@ The all-collective rccl-tests sweep on this MI355X node, June 2, 2026. Config: m
 
 ¹ The sendrecv row was captured by a follow-on standalone sweep (`logs/rccl_sendrecv_20260602_153246/`, `log.nccl-sendrecv`) on the same env stack and message envelope.
 
-![MI355X RCCL busbw at 8 GiB vs N — full collective sweep](rccl_busbw_8GiB.png)
+![MI355X RCCL busbw at 8 GiB vs N](./rccl_busbw_8GiB.png)
 
 The shaded band highlights the N=5/6/7 cliff: every ring-based collective collapses ~4–5× from N=4 and snaps back at N=8 when all four xGMI channels reactivate. Sendrecv stays flat (single-link rate) and does not recover at N=8. Gather/scatter degrade only ~2× across the cliff because they ride pairwise sendrecv loops rather than a closed ring.
 

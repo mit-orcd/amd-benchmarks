@@ -41,23 +41,9 @@ The all-collective rccl-tests sweep on this MI355X node, June 2, 2026. Config: m
 - **SendRecv has a much milder N=5/6/7 cliff than the ring-based collectives** — ~28 % drop (60 → 43 GB/s) vs ~76 % drop (167 → 38 GB/s) for AllReduce. Reason: `sendrecv_perf` exercises a single point-to-point ring where every rank does one send and one recv at a time, so the busbw is set by the *slowest single hop* in the ring rather than by aggregate ring bisection. At N=5/6/7 one pair lands on a slower indirect path; at N=2/3/4 every pair has a direct xGMI link (~60 GB/s, the single-link xGMI rate).
 - **SendRecv at N=8 does *not* snap back to a high peak** (53 GB/s, below the N=2..4 plateau). Unlike Ring AllReduce — which at N=8 reactivates all four xGMI channels in parallel and recovers to 381 GB/s — sendrecv has no opportunity to multiplex channels: per-pair traffic uses one link, and the ring closure on the K_8 mesh forces one hop onto a longer path. This is the predicted ceiling for **pipeline-parallel SendRecv** throughput: ~60 GB/s per stage-to-stage exchange at PP=2/4, dropping to ~53 GB/s at PP=8.
 
-#### 1.1.2 Cross-check against the legacy AllReduce/AllGather-only sweep (`logs/rccl_tests_20260601_162955/`)
-
-| N | AllReduce busbw — June 1 (GB/s) | AllReduce busbw — June 2 (GB/s) | AllGather busbw — June 1 (GB/s) | AllGather busbw — June 2 (GB/s) |
-|--:|--------------------------------:|--------------------------------:|--------------------------------:|--------------------------------:|
-| 2 |                          61.24  |                          61.28  |                          61.03  |                          60.58  |
-| 3 |                          75.15  |                          75.02  |                          72.12  |                          71.09  |
-| 4 |                         168.59  |                         166.48  |                         160.46  |                         158.72  |
-| 5 |                          38.62  |                          38.36  |                          35.65  |                          35.41  |
-| 6 |                          38.38  |                          38.42  |                          34.89  |                          34.90  |
-| 7 |                          37.77  |                          38.21  |                          34.62  |                          34.85  |
-| 8 |                         381.33  |                         381.27  |                         373.04  |                         365.75  |
-
-Run-to-run delta is ≤2 % across all (N, collective) cells. Numbers from both sweeps are interchangeable for analysis.
-
 ### 1.2 Cross-check against Megatron-LM application timers
 
-The Megatron sweeps ([summary-1.md](summary-1.md), [summary-2.md](summary-2.md)) report two collective-bearing timers at iter 45:
+The Megatron sweeps ([summary.md](summary.md)) report two collective-bearing timers at iter 45:
 
 - `all-grads-sync` — ReduceScatter + the kernel-level reduce. Bounded by ReduceScatter bandwidth.
 - `params-all-gather` — straight AllGather of the post-step parameters.

@@ -1,9 +1,15 @@
 [in-container] python: Python 3.10.12
-[in-container] torch : 2.10.0.dev20251112+rocm7.1 True 1
+[in-container] torch : 2.10.0.dev20251112+rocm7.1 True 3
 [in-container] arch  : ['gfx900', 'gfx906', 'gfx908', 'gfx90a', 'gfx942', 'gfx1030', 'gfx1100', 'gfx1101', 'gfx1102', 'gfx1200', 'gfx1201', 'gfx950', 'gfx1150', 'gfx1151']
-[in-container] HIP_VISIBLE_DEVICES=0
-[in-container] sharding=no_shard RC=none MBS=4 GBS=4
+[in-container] HIP_VISIBLE_DEVICES=0,1,2
+[in-container] sharding=no_shard RC=full MBS=4 GBS=12
 
+W0603 15:46:22.081000 81334 torch/distributed/run.py:853] 
+W0603 15:46:22.081000 81334 torch/distributed/run.py:853] *****************************************
+W0603 15:46:22.081000 81334 torch/distributed/run.py:853] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0603 15:46:22.081000 81334 torch/distributed/run.py:853] *****************************************
+Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
+Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
 Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
 /opt/venv/lib/python3.10/site-packages/torch/library.py:356: UserWarning: Warning only once for all operators,  other operators may also be overridden.
   Overriding a previously registered kernel for the same operator and the same dispatch key
@@ -14,14 +20,21 @@ Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
        new kernel: registered at /opt/venv/lib/python3.10/site-packages/torch/_library/custom_ops.py:922 (Triggered internally at /pytorch/aten/src/ATen/core/dispatch/OperatorEntry.cpp:208.)
   self.m.impl(
 [aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
 [aiter] start build [module_aiter_enum] under /home/v89592/.aiter/jit/build/module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
 [aiter] [32mfinish build [module_aiter_enum], cost 2.7s [0m
 /opt/venv/lib/python3.10/site-packages/apex/transformer/functional/fused_rope.py:54: UserWarning: Using the native apex kernel for RoPE.
   warnings.warn("Using the native apex kernel for RoPE.", UserWarning)
 /home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/energy_monitor.py:9: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   from pynvml import (
 LANG_RL Log directory: None
-using world size: 1, data-parallel size: 1, context-parallel size: 1, hierarchical context-parallel sizes: None, tensor-model-parallel size: 1, pipeline-model-parallel size: 1
+LANG_RL Log directory: None
+LANG_RL Log directory: None
+WARNING: one_logger package is required to enable e2e metrics tracking. please go to https://confluence.nvidia.com/display/MLWFO/Package+Repositories for details to install it
+using world size: 3, data-parallel size: 3, context-parallel size: 1, hierarchical context-parallel sizes: None, tensor-model-parallel size: 1, pipeline-model-parallel size: 1
 /home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/utils.py:456: UserWarning: Overriding default arguments for tokenizer_type:GPT2BPETokenizer with tokenizer_type:NullTokenizer
   warnings.warn(message)
 Number of virtual stages per pipeline stage: None
@@ -112,7 +125,7 @@ using torch.bfloat16 for parameters ...
   data_dir ........................................ None
   data_parallel_random_init ....................... False
   data_parallel_sharding_strategy ................. no_shard
-  data_parallel_size .............................. 1
+  data_parallel_size .............................. 3
   data_path ....................................... None
   data_per_class_fraction ......................... 1.0
   data_sharding ................................... True
@@ -188,6 +201,7 @@ using torch.bfloat16 for parameters ...
   eod_mask_loss ................................... False
   ep_overlap_early_attn_memory_release ............ False
   epochs .......................................... None
+[W603 15:46:39.088459890 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
   error_injection_rate ............................ 0
   error_injection_type ............................ transient_error
   eval_dev ........................................ False
@@ -236,7 +250,8 @@ using torch.bfloat16 for parameters ...
   fim_rate ........................................ 0.5
   fim_split_sample ................................ None
   fim_spm_rate .................................... 0.5
-  fim_suffix_token ................................ <fim_suffix>
+  fim_suffix_token ................................ <fim_suffix>[W603 15:46:39.088623543 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+
   fine_grained_activation_offloading .............. False
   finetune ........................................ False
   finetune_data_split ............................. train
@@ -267,7 +282,7 @@ using torch.bfloat16 for parameters ...
   full_validation ................................. False
   fused_padded_mla_attention ...................... False
   generation_length ............................... None
-  global_batch_size ............................... 4
+  global_batch_size ............................... 12
   glu_activation .................................. None
   glu_linear_offset ............................... 0.0
   grad_reduce_in_bf16 ............................. False
@@ -326,7 +341,7 @@ using torch.bfloat16 for parameters ...
   init_method_xavier_uniform ...................... False
   init_model_with_meta_device ..................... False
   initial_loss_scale .............................. 4294967296
-  inprocess_active_world_size ..................... 1
+  inprocess_active_world_size ..................... 3
   inprocess_barrier_timeout ....................... 120
   inprocess_completion_timeout .................... 120
   inprocess_empty_cuda_cache ...................... False
@@ -593,10 +608,10 @@ using torch.bfloat16 for parameters ...
   quick_geglu ..................................... False
   rampup_batch_size ............................... None
   rank ............................................ 0
-  recompute_granularity ........................... None
-  recompute_method ................................ None
+  recompute_granularity ........................... full
+  recompute_method ................................ uniform
   recompute_modules ............................... None
-  recompute_num_layers ............................ None
+  recompute_num_layers ............................ 1
   record_memory_history ........................... False
   refit_method .................................... gloo
   relative_attention_max_distance ................. 128
@@ -788,139 +803,436 @@ using torch.bfloat16 for parameters ...
   wgrad_deferral_limit ............................ 0
   window_attn_skip_freq ........................... None
   window_size ..................................... None
-  world_size ...................................... 1
+  world_size ...................................... 3
   yaml_cfg ........................................ None
   z_loss_weight ................................... 0.0
 -------------------- end of arguments ---------------------
 > building NullTokenizer tokenizer ...
 WARNING:megatron.core.datasets.megatron_tokenizer:You're using the legacy tokenizer system, which is deprecated and will be removed in a future release. Please migrate to the new tokenizer system (`megatron.core.tokenizers.MegatronTokenizer`).
  > padded vocab (size: 50305) with 127 dummy tokens (new size: 50432)
-WARNING: one_logger package is required to enable e2e metrics tracking. please go to https://confluence.nvidia.com/display/MLWFO/Package+Repositories for details to install it
 WARNING:megatron.core.rerun_state_machine:RerunStateMachine initialized in mode validate_results
 > initializing torch distributed ...
-[W603 15:32:27.392954522 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
-[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[W603 15:46:39.091709984 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[Gloo] Rank [Gloo] Rank 02 is connected to  is connected to 22 peer ranks.  peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 22
+
+[Gloo] Rank 1 is connected to 2 peer ranks. Expected number of connected peer ranks is : 2
+[Gloo] Rank 0 is connected to 2[Gloo] Rank  peer ranks. Expected number of connected peer ranks is : 21[Gloo] Rank 
+ is connected to 2 peer ranks. 2Expected number of connected peer ranks is :  is connected to 22 peer ranks. 
+Expected number of connected peer ranks is : 2
+[Gloo] Rank 0 is connected to 2 peer ranks. Expected number of connected peer ranks is : 2
+[Gloo] Rank [Gloo] Rank 1 is connected to 22 is connected to  peer ranks. 2 peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 22
+
 > initialized tensor model parallel with size 1
 > initialized pipeline model parallel with size 1
 > setting random seeds to 1234 ...
 > compiling dataset index builder ...
+[rank2]:[W603 15:46:39.100517479 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
+[rank1]:[W603 15:46:39.100517810 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
 make: Entering directory '/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/datasets'
 make: Nothing to be done for 'default'.
 make: Leaving directory '/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/datasets'
->>> done with dataset index builder. Compilation time: 0.033 seconds
+>>> done with dataset index builder. Compilation time: 0.034 seconds
 /home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/utils.py:456: UserWarning: Constraints for invoking optimized fused softmax kernel are not met. We default back to unfused kernel invocations.
   warnings.warn(message)
 > compiling and loading fused kernels ...
 /opt/venv/lib/python3.10/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
   return func(*args, **kwargs)
-[rank0]:[W603 15:32:27.434647791 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
-[rank0]:[W603 15:32:27.434828677 ProcessGroupNCCL.cpp:5138] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+[rank0]:[W603 15:46:39.134904180 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
+[rank0]:[W603 15:46:39.135102861 ProcessGroupNCCL.cpp:5138] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
 
-[2026-06-03 15:32:27] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:46:39] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:32:27] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:46:39] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-03 15:32:28] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:46:39] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:32:28] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:46:39] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 RCCL version : 2.27.7-HEAD:ca8ec1f
 HIP version  : 7.1.25424-4179531dcd
 ROCm version : 7.1.0.0-20-4179531dcd
 Hostname     : localhost.localdomain
 Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
->>> done with compiling and loading fused kernels. Compilation time: 1.507 seconds
-time to initialize megatron (seconds): 4.454
+
+[2026-06-03 15:46:39] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:46:39] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:46:39] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:46:39] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+>>> done with compiling and loading fused kernels. Compilation time: 2.852 seconds
+time to initialize megatron (seconds): 7.128
 /opt/venv/lib/python3.10/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
   return func(*args, **kwargs)
-[after in-process setup and before initialize_megatron] datetime: 2026-06-03 15:32:27.739799 
-[after in-job setup and before initialize_megatron] datetime: 2026-06-03 15:32:27.767543 
-[before library-setup] datetime: 2026-06-03 15:32:13.545050
-[after library-setup] datetime: 2026-06-03 15:32:27.707412
-[before megatron-init] datetime: 2026-06-03 15:32:27.739798
-[after megatron is initialized] datetime: 2026-06-03 15:32:32.023653 
+[after in-process setup and before initialize_megatron] datetime: 2026-06-03 15:46:39.438418 
+[after in-job setup and before initialize_megatron] datetime: 2026-06-03 15:46:39.466386 
+[before library-setup] datetime: 2026-06-03 15:46:22.651195
+[after library-setup] datetime: 2026-06-03 15:46:39.404952
+[before megatron-init] datetime: 2026-06-03 15:46:39.438418
+[after megatron is initialized] datetime: 2026-06-03 15:46:46.390543 
 building GPT model ...
  > number of parameters on (tensor, pipeline) model parallel rank (0, 0): 16223016960
-[after model, optimizer, and learning rate scheduler are built] datetime: 2026-06-03 15:32:32.244033 
+[after model, optimizer, and learning rate scheduler are built] datetime: 2026-06-03 15:46:46.615016 
 > building train, validation, and test datasets ...
  > datasets target sizes (minimum size):
-    train:      200
-    validation: 400
-    test:       400
+    train:      600
+    validation: 1200
+    test:       1200
 > building train, validation, and test datasets for GPT ...
 WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
 WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
 WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
 > finished creating GPT datasets ...
-[after dataloaders are built] datetime: 2026-06-03 15:32:32.406223 
+[after dataloaders are built] datetime: 2026-06-03 15:46:46.877906 
 done with setup ...
 training ...
 Overwriting rerun_state_machine.current_iteration from -1 to 0...
-[before the start of training step] datetime: 2026-06-03 15:32:32.411554 
+[before the start of training step] datetime: 2026-06-03 15:46:46.895169 
 
-[2026-06-03 15:32:32] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:46:47] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:32:32] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:46:47] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-03 15:32:32] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:46:47] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:32:32] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:46:47] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.27.7-HEAD:ca8ec1f
+HIP version  : 7.1.25424-4179531dcd
+ROCm version : 7.1.0.0-20-4179531dcd
+Hostname     : localhost.localdomain
+Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
+
+[2026-06-03 15:46:47] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:46:47] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:46:47] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:46:47] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.27.7-HEAD:ca8ec1f
+HIP version  : 7.1.25424-4179531dcd
+ROCm version : 7.1.0.0-20-4179531dcd
+Hostname     : localhost.localdomain
+Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
+
+[2026-06-03 15:46:47] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:46:47] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:46:47] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:46:47] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 WARNING:megatron.core.rerun_state_machine:Result validation enabled
 /home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py:189: UserWarning: The AccumulateGrad node's stream does not match the stream of the node that produced the incoming gradient. This may incur unnecessary synchronization and break CUDA graph capture if the AccumulateGrad node's stream is the default stream. This mismatch is caused by an AccumulateGrad node created prior to the current iteration being kept alive. This can happen if the autograd graph is still being kept alive by tensors such as the loss, or if you are using DDP, which will stash a reference to the node. To resolve the mismatch, delete all references to the autograd graph or ensure that DDP initialization is performed under the same stream as subsequent forwards. If the mismatch is intentional, you can use torch.autograd.graph.set_warn_on_accumulate_grad_stream_mismatch(False) to suppress this warning. (Triggered internally at /pytorch/torch/csrc/autograd/input_buffer.cpp:240.)
   Variable._execution_engine.run_backward(
+/opt/venv/lib/python3.10/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
 
-[2026-06-03 15:33:01] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:47:17] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:33:01] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:47:17] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-03 15:33:01] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:47:17] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:33:01] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:47:17] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-03 15:33:02] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:47:17] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:33:02] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:47:17] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-03 15:33:02] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:47:17] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:33:02] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
-[rank0]: Traceback (most recent call last):
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
-[rank0]:     pretrain(
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1054, in pretrain
-[rank0]:     iteration, num_floating_point_operations_so_far = train(
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 2827, in train
-[rank0]:     ) = train_step(
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1726, in train_step
-[rank0]:     update_successful, grad_norm, num_zeros_in_grad = optimizer.step()
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
-[rank0]:     return func(*args, **kwargs)
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/optimizer/optimizer.py", line 1336, in step
-[rank0]:     update_successful = self.step_with_ready_grads()
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
-[rank0]:     return func(*args, **kwargs)
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/optimizer/optimizer.py", line 1246, in step_with_ready_grads
-[rank0]:     success &= optimizer.step_with_ready_grads()
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
-[rank0]:     return func(*args, **kwargs)
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/optimizer/distrib_optimizer.py", line 2603, in step_with_ready_grads
-[rank0]:     update_successful = super().step_with_ready_grads()
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
-[rank0]:     return func(*args, **kwargs)
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/optimizer/optimizer.py", line 569, in step_with_ready_grads
-[rank0]:     self.optimizer.step()
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/torch/optim/optimizer.py", line 526, in wrapper
-[rank0]:     out = func(*args, **kwargs)
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/optimizers/fused_adam.py", line 548, in step
-[rank0]:     self.initialize_state(p, store_param_remainders)
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/optimizers/fused_adam.py", line 412, in initialize_state
-[rank0]:     self._initialize_state(param, "exp_avg", zero_buffer=True)
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/optimizers/fused_adam.py", line 381, in _initialize_state
-[rank0]:     data = torch.empty_like(param, dtype=dtype)
-[rank0]: torch.OutOfMemoryError: HIP out of memory. Tried to allocate 1.15 GiB. GPU 0 has a total capacity of 287.98 GiB of which 330.00 MiB is free. Of the allocated memory 271.16 GiB is allocated by PyTorch, and 12.92 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
-[rank0]:[W603 15:33:34.086511118 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
-E0603 15:33:37.424000 64514 torch/distributed/elastic/multiprocessing/api.py:978] failed (exitcode: -11) local_rank: 0 (pid: 65594) of binary: /opt/venv/bin/python
+[2026-06-03 15:47:17] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:47:18] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:47:18] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:47:18] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:47:18] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:47:18] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:47:18] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:47:18] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:47:18] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:47:19] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:47:19] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:47:19] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:47:19] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:47:19] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:47:19] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:47:19] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:47:19] localhost:81629:81629 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:47:19] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:47:19] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:47:19] localhost:81630:81630 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:47:19] localhost:81631:81631 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+Number of parameters in transformer block in billions:  15.60
+Number of parameters in embedding layers in billions: 0.62
+Total number of parameters in billions: 16.22
+Number of parameters in most loaded shard in billions: 16.2230
+compute_activation_memory_without_sp
+Activation memory footprint per transformer layer (precise, without SP): 3264.0 MB
+Theoretical memory footprints: weight and optimizer=154714.75 MB, activation=139045.33 MB, total=293760.08 MB
+
+ [2026-06-03 15:47:19.202614] iteration        1/      50 | consumed samples:           12 | elapsed time per iteration (ms): 32307.5 | mem usages: 0.5670 | throughput per GPU (TFLOP/s/GPU): 51.5 | learning rate: 6.000000E-05 | global batch size:    12 | lm loss: 1.205479E+01 | loss scale: 1.0 | grad norm: 284.903 | number of skipped iterations:   0 | number of nan iterations:   0 |
+[Rank 0] (after 1 iterations) memory (MB) | allocated: 156269.77 | max allocated: 156269.77 | reserved: 160336.00 | max reserved: 160336.00
+Number of parameters in transformer block in billions:  15.60
+Number of parameters in embedding layers in billions: 0.62
+Total number of parameters in billions: 16.22
+Number of parameters in most loaded shard in billions: 16.2230
+compute_activation_memory_without_sp
+Activation memory footprint per transformer layer (precise, without SP): 3264.0 MB
+Theoretical memory footprints: weight and optimizer=154714.75 MB, activation=139045.33 MB, total=293760.08 MB
+
+ [2026-06-03 15:47:30.796886] iteration        5/      50 | consumed samples:           60 | elapsed time per iteration (ms): 8780.3 | mem usages: 0.6361 | throughput per GPU (TFLOP/s/GPU): 189.4 | learning rate: 3.000000E-04 | global batch size:    12 | lm loss: 1.149686E+01 | loss scale: 1.0 | grad norm: 111.240 | number of skipped iterations:   0 | number of nan iterations:   0 |
+[Rank 0] (after 5 iterations) memory (MB) | allocated: 156269.77 | max allocated: 172374.86 | reserved: 180700.00 | max reserved: 180700.00
+ [2026-06-03 15:47:45.153226] iteration       10/      50 | consumed samples:          120 | elapsed time per iteration (ms): 2871.2 | mem usages: 0.6361 | throughput per GPU (TFLOP/s/GPU): 579.3 | learning rate: 2.742173E-04 | global batch size:    12 | lm loss: 1.194569E+01 | loss scale: 1.0 | grad norm: 1.569 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-06-03 15:47:59.491335] iteration       15/      50 | consumed samples:          180 | elapsed time per iteration (ms): 2867.6 | mem usages: 0.6361 | throughput per GPU (TFLOP/s/GPU): 580.0 | learning rate: 2.067173E-04 | global batch size:    12 | lm loss: 9.585490E+00 | loss scale: 1.0 | grad norm: 0.666 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-06-03 15:48:13.729341] iteration       20/      50 | consumed samples:          240 | elapsed time per iteration (ms): 2847.6 | mem usages: 0.6361 | throughput per GPU (TFLOP/s/GPU): 584.1 | learning rate: 1.232827E-04 | global batch size:    12 | lm loss: 8.291603E+00 | loss scale: 1.0 | grad norm: 0.690 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-06-03 15:48:27.920970] iteration       25/      50 | consumed samples:          300 | elapsed time per iteration (ms): 2838.3 | mem usages: 0.6361 | throughput per GPU (TFLOP/s/GPU): 586.0 | learning rate: 5.578270E-05 | global batch size:    12 | lm loss: 8.200225E+00 | loss scale: 1.0 | grad norm: 0.381 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-06-03 15:48:42.170004] iteration       30/      50 | consumed samples:          360 | elapsed time per iteration (ms): 2849.8 | mem usages: 0.6361 | throughput per GPU (TFLOP/s/GPU): 583.6 | learning rate: 3.000000E-05 | global batch size:    12 | lm loss: 8.208360E+00 | loss scale: 1.0 | grad norm: 0.327 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-06-03 15:48:56.372480] iteration       35/      50 | consumed samples:          420 | elapsed time per iteration (ms): 2840.5 | mem usages: 0.6361 | throughput per GPU (TFLOP/s/GPU): 585.5 | learning rate: 3.000000E-05 | global batch size:    12 | lm loss: 8.179871E+00 | loss scale: 1.0 | grad norm: 0.281 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-06-03 15:49:10.576031] iteration       40/      50 | consumed samples:          480 | elapsed time per iteration (ms): 2840.7 | mem usages: 0.6361 | throughput per GPU (TFLOP/s/GPU): 585.5 | learning rate: 3.000000E-05 | global batch size:    12 | lm loss: 8.159253E+00 | loss scale: 1.0 | grad norm: 0.472 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-06-03 15:49:24.788225] iteration       45/      50 | consumed samples:          540 | elapsed time per iteration (ms): 2842.4 | mem usages: 0.6361 | throughput per GPU (TFLOP/s/GPU): 585.1 | learning rate: 3.000000E-05 | global batch size:    12 | lm loss: 8.125552E+00 | loss scale: 1.0 | grad norm: 0.241 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-06-03 15:49:39.008105] iteration       50/      50 | consumed samples:          600 | elapsed time per iteration (ms): 2844.0 | mem usages: 0.6361 | throughput per GPU (TFLOP/s/GPU): 584.8 | learning rate: 3.000000E-05 | global batch size:    12 | lm loss: 8.177502E+00 | loss scale: 1.0 | grad norm: 0.199 | number of skipped iterations:   0 | number of nan iterations:   0 |
+[after training is done] datetime: 2026-06-03 15:49:39.274362 
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode disabled
+Evaluating on 1200 samples
+Evaluating iter 1/100
+Evaluating iter 2/100
+Evaluating iter 3/100
+Evaluating iter 4/100
+Evaluating iter 5/100
+Evaluating iter 6/100
+Evaluating iter 7/100
+Evaluating iter 8/100
+Evaluating iter 9/100
+Evaluating iter 10/100
+Evaluating iter 11/100
+Evaluating iter 12/100
+Evaluating iter 13/100
+Evaluating iter 14/100
+Evaluating iter 15/100
+Evaluating iter 16/100
+Evaluating iter 17/100
+Evaluating iter 18/100
+Evaluating iter 19/100
+Evaluating iter 20/100
+Evaluating iter 21/100
+Evaluating iter 22/100
+Evaluating iter 23/100
+Evaluating iter 24/100
+Evaluating iter 25/100
+Evaluating iter 26/100
+Evaluating iter 27/100
+Evaluating iter 28/100
+Evaluating iter 29/100
+Evaluating iter 30/100
+Evaluating iter 31/100
+Evaluating iter 32/100
+Evaluating iter 33/100
+Evaluating iter 34/100
+Evaluating iter 35/100
+Evaluating iter 36/100
+Evaluating iter 37/100
+Evaluating iter 38/100
+Evaluating iter 39/100
+Evaluating iter 40/100
+Evaluating iter 41/100
+Evaluating iter 42/100
+Evaluating iter 43/100
+Evaluating iter 44/100
+Evaluating iter 45/100
+Evaluating iter 46/100
+Evaluating iter 47/100
+Evaluating iter 48/100
+Evaluating iter 49/100
+Evaluating iter 50/100
+Evaluating iter 51/100
+Evaluating iter 52/100
+Evaluating iter 53/100
+Evaluating iter 54/100
+Evaluating iter 55/100
+Evaluating iter 56/100
+Evaluating iter 57/100
+Evaluating iter 58/100
+Evaluating iter 59/100
+Evaluating iter 60/100
+Evaluating iter 61/100
+Evaluating iter 62/100
+Evaluating iter 63/100
+Evaluating iter 64/100
+Evaluating iter 65/100
+Evaluating iter 66/100
+Evaluating iter 67/100
+Evaluating iter 68/100
+Evaluating iter 69/100
+Evaluating iter 70/100
+Evaluating iter 71/100
+Evaluating iter 72/100
+Evaluating iter 73/100
+Evaluating iter 74/100
+Evaluating iter 75/100
+Evaluating iter 76/100
+Evaluating iter 77/100
+Evaluating iter 78/100
+Evaluating iter 79/100
+Evaluating iter 80/100
+Evaluating iter 81/100
+Evaluating iter 82/100
+Evaluating iter 83/100
+Evaluating iter 84/100
+Evaluating iter 85/100
+Evaluating iter 86/100
+Evaluating iter 87/100
+Evaluating iter 88/100
+Evaluating iter 89/100
+Evaluating iter 90/100
+Evaluating iter 91/100
+Evaluating iter 92/100
+Evaluating iter 93/100
+Evaluating iter 94/100
+Evaluating iter 95/100
+Evaluating iter 96/100
+Evaluating iter 97/100
+Evaluating iter 98/100
+Evaluating iter 99/100
+Evaluating iter 100/100
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode validate_results
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode validate_results
+----------------------------------------------------------------------------------------------------------------
+ validation loss at iteration 50 on validation set | lm loss value: 8.148848E+00 | lm loss PPL: 3.459390E+03 | 
+----------------------------------------------------------------------------------------------------------------
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode disabled
+Evaluating on 1200 samples
+Evaluating iter 1/100
+Evaluating iter 2/100
+Evaluating iter 3/100
+Evaluating iter 4/100
+Evaluating iter 5/100
+Evaluating iter 6/100
+Evaluating iter 7/100
+Evaluating iter 8/100
+Evaluating iter 9/100
+Evaluating iter 10/100
+Evaluating iter 11/100
+Evaluating iter 12/100
+Evaluating iter 13/100
+Evaluating iter 14/100
+Evaluating iter 15/100
+Evaluating iter 16/100
+Evaluating iter 17/100
+Evaluating iter 18/100
+Evaluating iter 19/100
+Evaluating iter 20/100
+Evaluating iter 21/100
+Evaluating iter 22/100
+Evaluating iter 23/100
+Evaluating iter 24/100
+Evaluating iter 25/100
+Evaluating iter 26/100
+Evaluating iter 27/100
+Evaluating iter 28/100
+Evaluating iter 29/100
+Evaluating iter 30/100
+Evaluating iter 31/100
+Evaluating iter 32/100
+Evaluating iter 33/100
+Evaluating iter 34/100
+Evaluating iter 35/100
+Evaluating iter 36/100
+Evaluating iter 37/100
+Evaluating iter 38/100
+Evaluating iter 39/100
+Evaluating iter 40/100
+Evaluating iter 41/100
+Evaluating iter 42/100
+Evaluating iter 43/100
+Evaluating iter 44/100
+Evaluating iter 45/100
+Evaluating iter 46/100
+Evaluating iter 47/100
+Evaluating iter 48/100
+Evaluating iter 49/100
+Evaluating iter 50/100
+Evaluating iter 51/100
+Evaluating iter 52/100
+Evaluating iter 53/100
+Evaluating iter 54/100
+Evaluating iter 55/100
+Evaluating iter 56/100
+Evaluating iter 57/100
+Evaluating iter 58/100
+Evaluating iter 59/100
+Evaluating iter 60/100
+Evaluating iter 61/100
+Evaluating iter 62/100
+Evaluating iter 63/100
+Evaluating iter 64/100
+Evaluating iter 65/100
+Evaluating iter 66/100
+Evaluating iter 67/100
+Evaluating iter 68/100
+Evaluating iter 69/100
+Evaluating iter 70/100
+Evaluating iter 71/100
+Evaluating iter 72/100
+Evaluating iter 73/100
+Evaluating iter 74/100
+Evaluating iter 75/100
+Evaluating iter 76/100
+Evaluating iter 77/100
+Evaluating iter 78/100
+Evaluating iter 79/100
+Evaluating iter 80/100
+Evaluating iter 81/100
+Evaluating iter 82/100
+Evaluating iter 83/100
+Evaluating iter 84/100
+Evaluating iter 85/100
+Evaluating iter 86/100
+Evaluating iter 87/100
+Evaluating iter 88/100
+Evaluating iter 89/100
+Evaluating iter 90/100
+Evaluating iter 91/100
+Evaluating iter 92/100
+Evaluating iter 93/100
+Evaluating iter 94/100
+Evaluating iter 95/100
+Evaluating iter 96/100
+Evaluating iter 97/100
+Evaluating iter 98/100
+Evaluating iter 99/100
+Evaluating iter 100/100
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode validate_results
+----------------------------------------------------------------------------------------------------------WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode validate_results
+
+ validation loss at iteration 50 on test set | lm loss value: 8.156375E+00 | lm loss PPL: 3.485528E+03 | 
+----------------------------------------------------------------------------------------------------------
+[rank0]:[W603 15:51:03.902057708 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank1]:[W603 15:51:03.308344861 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank2]:[W603 15:51:04.610104386 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W0603 15:51:07.167000 81334 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 81629 closing signal SIGTERM
+W0603 15:51:07.168000 81334 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 81631 closing signal SIGTERM
+E0603 15:51:07.545000 81334 torch/distributed/elastic/multiprocessing/api.py:978] failed (exitcode: -11) local_rank: 1 (pid: 81630) of binary: /opt/venv/bin/python
 Traceback (most recent call last):
   File "/opt/venv/bin/torchrun", line 33, in <module>
     sys.exit(load_entry_point('torch', 'console_scripts', 'torchrun')())
@@ -939,14 +1251,27 @@ torch.distributed.elastic.multiprocessing.errors.ChildFailedError:
 /home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py FAILED
 ------------------------------------------------------------
 Failures:
-  <NO_OTHER_FAILURES>
+[1]:
+  time      : 2026-06-03_15:51:07
+  host      : localhost.localdomain
+  rank      : 0 (local_rank: 0)
+  exitcode  : -11 (pid: 81629)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 81629
+[2]:
+  time      : 2026-06-03_15:51:07
+  host      : localhost.localdomain
+  rank      : 2 (local_rank: 2)
+  exitcode  : -15 (pid: 81631)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 81631
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2026-06-03_15:33:37
+  time      : 2026-06-03_15:51:07
   host      : localhost.localdomain
-  rank      : 0 (local_rank: 0)
-  exitcode  : -11 (pid: 65594)
+  rank      : 1 (local_rank: 1)
+  exitcode  : -11 (pid: 81630)
   error_file: <N/A>
-  traceback : Signal 11 (SIGSEGV) received by PID 65594
+  traceback : Signal 11 (SIGSEGV) received by PID 81630
 ============================================================

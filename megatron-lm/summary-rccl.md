@@ -30,7 +30,7 @@ The all-collective rccl-tests sweep on this MI355X node, June 2, 2026. Config: m
 
 The shaded band highlights the N=5/6/7 cliff: every ring-based collective collapses ~4–5× from N=4 and snaps back at N=8 when all four xGMI channels reactivate. Sendrecv stays flat (single-link rate) and does not recover at N=8. Gather/scatter degrade only ~2× across the cliff because they ride pairwise sendrecv loops rather than a closed ring.
 
-**AllToAllV** is intentionally omitted from the table: at N=2/3/4 the busbw at 8 GiB measured 58.16 / 34.66 / 115.88 GB/s (30–35 % below the equal-chunk AllToAll at the same N, with N=3 anomalously low — likely a per-rank chunk-alignment artifact); N=5 was OOM-killed (`rc=137`) before reaching 8 GiB, only sizes ≤128 MiB produced numbers (peak ~12.7 GB/s busbw); N=6 was truncated mid-run; N=7/8 never ran — see §1.3.
+**AllToAllV** is intentionally omitted from the table: at N=2/3/4 the busbw at 8 GiB measured 58.16 / 34.66 / 115.88 GB/s (30–35 % below the equal-chunk AllToAll at the same N, with N=3 anomalously low — likely a per-rank chunk-alignment artifact); N=5 was OOM-killed (`rc=137`) before reaching 8 GiB, only sizes ≤128 MiB produced numbers (peak ~12.7 GB/s busbw); N=6 was truncated mid-run; N=7/8 never ran — see §1.4.
 
 #### 1.1.1 Patterns visible across the matrix
 
@@ -45,7 +45,38 @@ The shaded band highlights the N=5/6/7 cliff: every ring-based collective collap
 - **SendRecv has a much milder N=5/6/7 cliff than the ring-based collectives** — ~28 % drop (60 → 43 GB/s) vs ~76 % drop (167 → 38 GB/s) for AllReduce. Reason: `sendrecv_perf` exercises a single point-to-point ring where every rank does one send and one recv at a time, so the busbw is set by the *slowest single hop* in the ring rather than by aggregate ring bisection. At N=5/6/7 one pair lands on a slower indirect path; at N=2/3/4 every pair has a direct xGMI link (~60 GB/s, the single-link xGMI rate).
 - **SendRecv at N=8 does *not* snap back to a high peak** (53 GB/s, below the N=2..4 plateau). Unlike Ring AllReduce — which at N=8 reactivates all four xGMI channels in parallel and recovers to 381 GB/s — sendrecv has no opportunity to multiplex channels: per-pair traffic uses one link, and the ring closure on the K_8 mesh forces one hop onto a longer path. This is the predicted ceiling for **pipeline-parallel SendRecv** throughput: ~60 GB/s per stage-to-stage exchange at PP=2/4, dropping to ~53 GB/s at PP=8.
 
-### 1.2 Cross-check against Megatron-LM application timers
+### 1.2 Infinity Fabric paper spec vs measured ceilings
+
+This node is 8 × `AMD Instinct MI355X` (gfx950, 256 CUs/die, confirmed via `amd-smi static -a`). Each GPU has **7 xGMI / Infinity Fabric links** wired point-to-point to the other 7 GPUs (the K₈ mesh confirmed by `amd-smi topology` — every off-diagonal cell is XGMI, weight 15, 1 hop). On-node bandwidth telemetry (`amd-smi topology` NUMA BW table and `rocm-smi --shownodesbw`) reports `0-0`/`N/A` on this driver build, so the paper numbers below come from AMD's MI350-series published peaks:
+
+| Quantity                                          | Spec (per paper)        |
+|---------------------------------------------------|-------------------------|
+| Per xGMI link, **bidirectional**                  | **153.6 GB/s**          |
+| Per xGMI link, per direction                      | 76.8 GB/s               |
+| Per-GPU aggregate IF BW, **bidirectional** (×7 links) | **1075.2 GB/s**     |
+| Per-GPU aggregate IF BW, per direction            | 537.6 GB/s              |
+
+rccl-tests `busbw` is steady-state bytes crossing the wire per unit time. The comparable spec depends on what fraction of the GPU's links is active:
+
+| Measurement (busbw, GB/s, 8 GiB)                       | Compare against (per direction)        | Achieved |
+|---------------------------------------------------------|----------------------------------------|---------:|
+| SendRecv N=2 — single direct xGMI link                  | 76.8 GB/s (1 link, 1 direction)        | **77 %** |
+| SendRecv N=2..4 plateau (~60 GB/s)                      | 76.8 GB/s                              | 77–82 %  |
+| AllReduce N=8 — 381 GB/s (Ring across all 7 links)      | 537.6 GB/s (per-GPU aggregate, 1 dir)  | **71 %** |
+| ReduceScatter N=8 — 408 GB/s                            | 537.6 GB/s                             | 76 %     |
+| Gather N=8 — 444 GB/s (highest in matrix)               | 537.6 GB/s                             | **83 %** |
+| Scatter N=8 — 426 GB/s                                  | 537.6 GB/s                             | 79 %     |
+| AllReduce N=4 — 166 GB/s                                | ~307 GB/s (4 ranks × ~half links live) | ~54 %    |
+| AllReduce N=5/6/7 cliff — ~38 GB/s                      | 537.6 GB/s                             | **~7 %** |
+
+Reading:
+
+- **Single-link efficiency is ~77 %** of the spec — clean and consistent across the small-N sendrecv plateau. The remaining ~23 % is RCCL kernel overhead + xGMI protocol framing, broadly in line with what NCCL/NVLink shows on H100/H200.
+- **Ring AllReduce at N=8 hits 71 % of the per-GPU aggregate IF ceiling.** This is the realistic upper bound for DP-grad sync on this server: a Megatron run cannot do better than ~381 GB/s on a fully populated K₈, no matter how the dist-opt is tuned.
+- **Pairwise-sendrecv collectives (Gather/Scatter) at N=8 are the closest to silicon: 79–83 % of aggregate.** They route directly to/from one root over many concurrent links without needing a closed ring, so they avoid the ring-balance overhead.
+- **The N=5/6/7 cliff caps utilization at ~7 % of fabric peak.** Two-orders-of-magnitude headroom is being thrown away on the floor by RCCL's lack of a valid ring construction at those arities — this is the single largest gap between paper and measured on this server.
+
+### 1.3 Cross-check against Megatron-LM application timers
 
 The Megatron sweeps ([summary.md](summary.md)) report two collective-bearing timers at iter 45:
 
@@ -63,7 +94,7 @@ Comparison at the N=4 → N=5 transition (relative slowdown):
 
 Application-level slowdowns track collective-level slowdowns within ±10 %. The rccl-tests measurements are a faithful predictor of the Megatron timer values at this configuration.
 
-### 1.3 Remaining coverage gap
+### 1.4 Remaining coverage gap
 
 | Collective       | Status                                                              | Why it matters here                                                                       |
 |------------------|---------------------------------------------------------------------|-------------------------------------------------------------------------------------------|

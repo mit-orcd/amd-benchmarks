@@ -1,9 +1,15 @@
 [in-container] python: Python 3.10.12
-[in-container] torch : 2.10.0.dev20251112+rocm7.1 True 1
+[in-container] torch : 2.10.0.dev20251112+rocm7.1 True 3
 [in-container] arch  : ['gfx900', 'gfx906', 'gfx908', 'gfx90a', 'gfx942', 'gfx1030', 'gfx1100', 'gfx1101', 'gfx1102', 'gfx1200', 'gfx1201', 'gfx950', 'gfx1150', 'gfx1151']
-[in-container] HIP_VISIBLE_DEVICES=0
-[in-container] sharding=no_shard RC=none MBS=4 GBS=4
+[in-container] HIP_VISIBLE_DEVICES=0,1,2
+[in-container] sharding=no_shard RC=none MBS=4 GBS=12
 
+W0603 15:44:28.419000 77924 torch/distributed/run.py:853] 
+W0603 15:44:28.419000 77924 torch/distributed/run.py:853] *****************************************
+W0603 15:44:28.419000 77924 torch/distributed/run.py:853] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0603 15:44:28.419000 77924 torch/distributed/run.py:853] *****************************************
+Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
+Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
 Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
 /opt/venv/lib/python3.10/site-packages/torch/library.py:356: UserWarning: Warning only once for all operators,  other operators may also be overridden.
   Overriding a previously registered kernel for the same operator and the same dispatch key
@@ -14,21 +20,28 @@ Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
        new kernel: registered at /opt/venv/lib/python3.10/site-packages/torch/_library/custom_ops.py:922 (Triggered internally at /pytorch/aten/src/ATen/core/dispatch/OperatorEntry.cpp:208.)
   self.m.impl(
 [aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
 [aiter] start build [module_aiter_enum] under /home/v89592/.aiter/jit/build/module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
+[aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
 [aiter] [32mfinish build [module_aiter_enum], cost 2.7s [0m
 /opt/venv/lib/python3.10/site-packages/apex/transformer/functional/fused_rope.py:54: UserWarning: Using the native apex kernel for RoPE.
   warnings.warn("Using the native apex kernel for RoPE.", UserWarning)
 /home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/energy_monitor.py:9: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   from pynvml import (
+LANG_RL Log directory: NoneLANG_RL Log directory: None
+
 LANG_RL Log directory: None
-using world size: 1, data-parallel size: 1, context-parallel size: 1, hierarchical context-parallel sizes: None, tensor-model-parallel size: 1, pipeline-model-parallel size: 1
+using world size: 3, data-parallel size: 3, context-parallel size: 1, hierarchical context-parallel sizes: None, tensor-model-parallel size: 1, pipeline-model-parallel size: 1
 /home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/utils.py:456: UserWarning: Overriding default arguments for tokenizer_type:GPT2BPETokenizer with tokenizer_type:NullTokenizer
   warnings.warn(message)
 Number of virtual stages per pipeline stage: None
 accumulate and all-reduce gradients in fp32 for bfloat16 data type.
 using torch.bfloat16 for parameters ...
 ------------------------ arguments ------------------------
-  account_for_embedding_in_pipeline_split ......... False
+WARNING: one_logger package is required to enable e2e metrics tracking. please go to https://confluence.nvidia.com/display/MLWFO/Package+Repositories for details to install it  account_for_embedding_in_pipeline_split ......... False
+
   account_for_loss_in_pipeline_split .............. False
   accumulate_allreduce_grads_in_fp32 .............. True
   activation_func_clamp_value ..................... None
@@ -112,7 +125,7 @@ using torch.bfloat16 for parameters ...
   data_dir ........................................ None
   data_parallel_random_init ....................... False
   data_parallel_sharding_strategy ................. no_shard
-  data_parallel_size .............................. 1
+  data_parallel_size .............................. 3
   data_path ....................................... None
   data_per_class_fraction ......................... 1.0
   data_sharding ................................... True
@@ -267,7 +280,7 @@ using torch.bfloat16 for parameters ...
   full_validation ................................. False
   fused_padded_mla_attention ...................... False
   generation_length ............................... None
-  global_batch_size ............................... 4
+  global_batch_size ............................... 12
   glu_activation .................................. None
   glu_linear_offset ............................... 0.0
   grad_reduce_in_bf16 ............................. False
@@ -326,7 +339,7 @@ using torch.bfloat16 for parameters ...
   init_method_xavier_uniform ...................... False
   init_model_with_meta_device ..................... False
   initial_loss_scale .............................. 4294967296
-  inprocess_active_world_size ..................... 1
+  inprocess_active_world_size ..................... 3
   inprocess_barrier_timeout ....................... 120
   inprocess_completion_timeout .................... 120
   inprocess_empty_cuda_cache ...................... False
@@ -533,7 +546,9 @@ using torch.bfloat16 for parameters ...
   num_query_groups ................................ 8
   num_shared_experts .............................. None
   num_virtual_stages_per_pipeline_rank ............ None
-  num_workers ..................................... 2
+  num_workers ..................................... 2[W603 15:44:45.502047687 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[W603 15:44:45.502047557 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+
   object_storage_cache_path ....................... None
   offload_modules ................................. []
   one_logger_async ................................ False
@@ -788,139 +803,350 @@ using torch.bfloat16 for parameters ...
   wgrad_deferral_limit ............................ 0
   window_attn_skip_freq ........................... None
   window_size ..................................... None
-  world_size ...................................... 1
+  world_size ...................................... 3
   yaml_cfg ........................................ None
   z_loss_weight ................................... 0.0
 -------------------- end of arguments ---------------------
 > building NullTokenizer tokenizer ...
 WARNING:megatron.core.datasets.megatron_tokenizer:You're using the legacy tokenizer system, which is deprecated and will be removed in a future release. Please migrate to the new tokenizer system (`megatron.core.tokenizers.MegatronTokenizer`).
  > padded vocab (size: 50305) with 127 dummy tokens (new size: 50432)
-WARNING: one_logger package is required to enable e2e metrics tracking. please go to https://confluence.nvidia.com/display/MLWFO/Package+Repositories for details to install it
 WARNING:megatron.core.rerun_state_machine:RerunStateMachine initialized in mode validate_results
 > initializing torch distributed ...
-[W603 15:32:27.392954522 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
-[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
-[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[W603 15:44:45.504201235 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[Gloo] Rank 0 is connected to 2 peer ranks. Expected number of connected peer ranks is : 2
+[Gloo] Rank 1 is connected to 2 peer ranks. Expected number of connected peer ranks is : 2[Gloo] Rank 
+2 is connected to 2 peer ranks. Expected number of connected peer ranks is : 2
+[Gloo] Rank 2 is connected to 2 peer ranks. Expected number of connected peer ranks is : 2
+[Gloo] Rank 0 is connected to 2 peer ranks. Expected number of connected peer ranks is : 2
+[Gloo] Rank 1 is connected to 2 peer ranks. Expected number of connected peer ranks is : 2
+[Gloo] Rank 0 is connected to 2 peer ranks. Expected number of connected peer ranks is : 2
+[Gloo] Rank 2 is connected to 2 peer ranks. Expected number of connected peer ranks is : 2
+[Gloo] Rank 1 is connected to 2 peer ranks. Expected number of connected peer ranks is : 2
 > initialized tensor model parallel with size 1
 > initialized pipeline model parallel with size 1
 > setting random seeds to 1234 ...
 > compiling dataset index builder ...
+[rank1]:[W603 15:44:45.512863863 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
+[rank2]:[W603 15:44:45.512864043 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
 make: Entering directory '/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/datasets'
 make: Nothing to be done for 'default'.
 make: Leaving directory '/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/datasets'
->>> done with dataset index builder. Compilation time: 0.033 seconds
+>>> done with dataset index builder. Compilation time: 0.034 seconds
 /home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/utils.py:456: UserWarning: Constraints for invoking optimized fused softmax kernel are not met. We default back to unfused kernel invocations.
   warnings.warn(message)
 > compiling and loading fused kernels ...
 /opt/venv/lib/python3.10/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
   return func(*args, **kwargs)
-[rank0]:[W603 15:32:27.434647791 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
-[rank0]:[W603 15:32:27.434828677 ProcessGroupNCCL.cpp:5138] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+[rank0]:[W603 15:44:45.547562439 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
+[rank0]:[W603 15:44:45.547732431 ProcessGroupNCCL.cpp:5138] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
 
-[2026-06-03 15:32:27] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:44:46] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:32:27] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:44:46] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-03 15:32:28] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:44:46] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:32:28] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:44:46] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:44:46] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:44:46] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 RCCL version : 2.27.7-HEAD:ca8ec1f
 HIP version  : 7.1.25424-4179531dcd
 ROCm version : 7.1.0.0-20-4179531dcd
 Hostname     : localhost.localdomain
 Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
->>> done with compiling and loading fused kernels. Compilation time: 1.507 seconds
-time to initialize megatron (seconds): 4.454
+
+[2026-06-03 15:44:46] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:44:46] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+>>> done with compiling and loading fused kernels. Compilation time: 2.758 seconds
+time to initialize megatron (seconds): 7.176
 /opt/venv/lib/python3.10/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
   return func(*args, **kwargs)
-[after in-process setup and before initialize_megatron] datetime: 2026-06-03 15:32:27.739799 
-[after in-job setup and before initialize_megatron] datetime: 2026-06-03 15:32:27.767543 
-[before library-setup] datetime: 2026-06-03 15:32:13.545050
-[after library-setup] datetime: 2026-06-03 15:32:27.707412
-[before megatron-init] datetime: 2026-06-03 15:32:27.739798
-[after megatron is initialized] datetime: 2026-06-03 15:32:32.023653 
+[after in-process setup and before initialize_megatron] datetime: 2026-06-03 15:44:45.852057 
+[after in-job setup and before initialize_megatron] datetime: 2026-06-03 15:44:45.879515 
+[before library-setup] datetime: 2026-06-03 15:44:29.122560
+[after library-setup] datetime: 2026-06-03 15:44:45.819975
+[before megatron-init] datetime: 2026-06-03 15:44:45.852057
+[after megatron is initialized] datetime: 2026-06-03 15:44:52.854795 
 building GPT model ...
  > number of parameters on (tensor, pipeline) model parallel rank (0, 0): 16223016960
-[after model, optimizer, and learning rate scheduler are built] datetime: 2026-06-03 15:32:32.244033 
+[after model, optimizer, and learning rate scheduler are built] datetime: 2026-06-03 15:44:53.078359 
 > building train, validation, and test datasets ...
  > datasets target sizes (minimum size):
-    train:      200
-    validation: 400
-    test:       400
+    train:      600
+    validation: 1200
+    test:       1200
 > building train, validation, and test datasets for GPT ...
 WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
 WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
 WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
 > finished creating GPT datasets ...
-[after dataloaders are built] datetime: 2026-06-03 15:32:32.406223 
+[after dataloaders are built] datetime: 2026-06-03 15:44:53.353055 
 done with setup ...
 training ...
 Overwriting rerun_state_machine.current_iteration from -1 to 0...
-[before the start of training step] datetime: 2026-06-03 15:32:32.411554 
+[before the start of training step] datetime: 2026-06-03 15:44:53.361754 
 
-[2026-06-03 15:32:32] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:44:53] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:32:32] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:44:53] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-03 15:32:32] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:44:53] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:32:32] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:44:53] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:44:53] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:44:53] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.27.7-HEAD:ca8ec1f
+HIP version  : 7.1.25424-4179531dcd
+ROCm version : 7.1.0.0-20-4179531dcd
+Hostname     : localhost.localdomain
+Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
+
+[2026-06-03 15:44:53] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:44:53] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:44:53] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:44:53] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:44:53] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:44:53] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.27.7-HEAD:ca8ec1f
+HIP version  : 7.1.25424-4179531dcd
+ROCm version : 7.1.0.0-20-4179531dcd
+Hostname     : localhost.localdomain
+Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
 WARNING:megatron.core.rerun_state_machine:Result validation enabled
 /home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py:189: UserWarning: The AccumulateGrad node's stream does not match the stream of the node that produced the incoming gradient. This may incur unnecessary synchronization and break CUDA graph capture if the AccumulateGrad node's stream is the default stream. This mismatch is caused by an AccumulateGrad node created prior to the current iteration being kept alive. This can happen if the autograd graph is still being kept alive by tensors such as the loss, or if you are using DDP, which will stash a reference to the node. To resolve the mismatch, delete all references to the autograd graph or ensure that DDP initialization is performed under the same stream as subsequent forwards. If the mismatch is intentional, you can use torch.autograd.graph.set_warn_on_accumulate_grad_stream_mismatch(False) to suppress this warning. (Triggered internally at /pytorch/torch/csrc/autograd/input_buffer.cpp:240.)
   Variable._execution_engine.run_backward(
 
-[2026-06-03 15:33:01] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:45:23] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:33:01] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:45:23] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-03 15:33:01] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:45:23] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:33:01] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:45:23] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-03 15:33:02] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:45:23] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:33:02] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-03 15:45:23] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-03 15:33:02] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-03 15:45:23] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-03 15:33:02] localhost:65594:65594 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
-[rank0]: Traceback (most recent call last):
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
-[rank0]:     pretrain(
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1054, in pretrain
-[rank0]:     iteration, num_floating_point_operations_so_far = train(
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 2827, in train
-[rank0]:     ) = train_step(
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1726, in train_step
-[rank0]:     update_successful, grad_norm, num_zeros_in_grad = optimizer.step()
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
-[rank0]:     return func(*args, **kwargs)
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/optimizer/optimizer.py", line 1336, in step
-[rank0]:     update_successful = self.step_with_ready_grads()
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
-[rank0]:     return func(*args, **kwargs)
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/optimizer/optimizer.py", line 1246, in step_with_ready_grads
-[rank0]:     success &= optimizer.step_with_ready_grads()
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
-[rank0]:     return func(*args, **kwargs)
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/optimizer/distrib_optimizer.py", line 2603, in step_with_ready_grads
-[rank0]:     update_successful = super().step_with_ready_grads()
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
-[rank0]:     return func(*args, **kwargs)
-[rank0]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/optimizer/optimizer.py", line 569, in step_with_ready_grads
-[rank0]:     self.optimizer.step()
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/torch/optim/optimizer.py", line 526, in wrapper
-[rank0]:     out = func(*args, **kwargs)
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/optimizers/fused_adam.py", line 548, in step
-[rank0]:     self.initialize_state(p, store_param_remainders)
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/optimizers/fused_adam.py", line 412, in initialize_state
-[rank0]:     self._initialize_state(param, "exp_avg", zero_buffer=True)
-[rank0]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/optimizers/fused_adam.py", line 381, in _initialize_state
-[rank0]:     data = torch.empty_like(param, dtype=dtype)
-[rank0]: torch.OutOfMemoryError: HIP out of memory. Tried to allocate 1.15 GiB. GPU 0 has a total capacity of 287.98 GiB of which 330.00 MiB is free. Of the allocated memory 271.16 GiB is allocated by PyTorch, and 12.92 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
-[rank0]:[W603 15:33:34.086511118 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
-E0603 15:33:37.424000 64514 torch/distributed/elastic/multiprocessing/api.py:978] failed (exitcode: -11) local_rank: 0 (pid: 65594) of binary: /opt/venv/bin/python
+[2026-06-03 15:45:23] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:45:24] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:45:24] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:45:24] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:45:24] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:45:24] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:45:24] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:45:24] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:45:24] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:45:24] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:45:24] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:45:24] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:45:24] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:45:24] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:45:24] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:45:24] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:45:24] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:45:24] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-03 15:45:24] localhost:78218:78218 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:45:24] localhost:78219:78219 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-03 15:45:24] localhost:78217:78217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+Number of parameters in transformer block in billions:  15.60
+Number of parameters in embedding layers in billions: 0.62
+Total number of parameters in billions: 16.22
+Number of parameters in most loaded shard in billions: 16.2230
+ [2026-06-03 15:45:24.594108] iteration        1/      50 | consumed samples:           12 | elapsed time per iteration (ms): 31234.3 | mem usages: 0.8348 | throughput per GPU (TFLOP/s/GPU): 53.3 | learning rate: 6.000000E-05 | global batch size:    12 | lm loss: 1.205480E+01 | loss scale: 1.0 | grad norm: 43.386 | number of skipped iterations:   0 | number of nan iterations:   0 |compute_activation_memory_without_sp
+Activation memory footprint per transformer layer (precise, without SP): 3264.0 MB
+
+Theoretical memory footprints: weight and optimizer=154714.75 MB, activation=139045.33 MB, total=293760.08 MB
+
+[Rank 0] (after 1 iterations) memory (MB) | allocated: 156269.73 | max allocated: 239909.74 | reserved: 242202.00 | max reserved: 242202.00
+WARNING:megatron.core.utils:HIP out of memory. Tried to allocate 3.08 GiB. GPU 2 has a total capacity of 287.98 GiB of which 2.59 GiB is free. Of the allocated memory 272.88 GiB is allocated by PyTorch, and 8.59 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+['Traceback (most recent call last):\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step\n    output_tensor = model(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward\n    return self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1889, in _call_impl\n    return inner()\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1837, in inner\n    result = forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward\n    outputs = self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1889, in _call_impl\n    return inner()\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1837, in inner\n    result = forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 539, in forward\n    return self._postprocess(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 677, in _postprocess\n    loss = self.compute_language_model_loss(labels, logits)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/common/language_module/language_module.py", line 166, in compute_language_model_loss\n    loss = fused_vocab_parallel_cross_entropy(logits, labels, self.pg_collection.tp)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/fusions/fused_cross_entropy.py", line 148, in fused_vocab_parallel_cross_entropy\n    return _VocabParallelCrossEntropy.apply(vocab_parallel_logits, target, tp_group)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/autograd/function.py", line 583, in apply\n    return super().apply(*args, **kwargs)  # type: ignore[misc]\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/fusions/fused_cross_entropy.py", line 104, in forward\n    calculate_predicted_logits(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 920, in compile_wrapper\n    return fn(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/fusions/fused_cross_entropy.py", line 25, in calculate_predicted_logits\n    @jit_fuser\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1148, in _fn\n    return fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1151, in forward\n    return compiled_fn(full_args)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__\n    return self.compiled_fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper\n    all_outs = call_func_at_runtime_with_args(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args\n    out = normalize_as_list(f(args))\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper\n    return compiled_fn(runtime_args)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 620, in __call__\n    return self.current_callable(inputs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_inductor/utils.py", line 3198, in run\n    out = model(new_inputs)\n', '  File "/tmp/torchinductor_v89592/6e/c6exkzki4qmksukl6tp4gdreath7foxuxjtn4k4qsreqkxqqc7u3.py", line 286, in call\n    buf9 = empty_strided_cuda((4096, 4, 50432), (201728, 50432, 1), torch.float32)\n', 'torch.OutOfMemoryError: HIP out of memory. Tried to allocate 3.08 GiB. GPU 2 has a total capacity of 287.98 GiB of which 2.59 GiB is free. Of the allocated memory 272.88 GiB is allocated by PyTorch, and 8.59 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n']
+WARNING:megatron.core.utils:HIP out of memory. Tried to allocate 3.08 GiB. GPU 1 has a total capacity of 287.98 GiB of which 2.59 GiB is free. Of the allocated memory 272.88 GiB is allocated by PyTorch, and 8.59 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+['Traceback (most recent call last):\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step\n    output_tensor = model(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward\n    return self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1889, in _call_impl\n    return inner()\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1837, in inner\n    result = forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward\n    outputs = self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1889, in _call_impl\n    return inner()\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1837, in inner\n    result = forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 539, in forward\n    return self._postprocess(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 677, in _postprocess\n    loss = self.compute_language_model_loss(labels, logits)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/common/language_module/language_module.py", line 166, in compute_language_model_loss\n    loss = fused_vocab_parallel_cross_entropy(logits, labels, self.pg_collection.tp)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/fusions/fused_cross_entropy.py", line 148, in fused_vocab_parallel_cross_entropy\n    return _VocabParallelCrossEntropy.apply(vocab_parallel_logits, target, tp_group)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/autograd/function.py", line 583, in apply\n    return super().apply(*args, **kwargs)  # type: ignore[misc]\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/fusions/fused_cross_entropy.py", line 104, in forward\n    calculate_predicted_logits(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 920, in compile_wrapper\n    return fn(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/fusions/fused_cross_entropy.py", line 25, in calculate_predicted_logits\n    @jit_fuser\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1148, in _fn\n    return fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1151, in forward\n    return compiled_fn(full_args)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__\n    return self.compiled_fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper\n    all_outs = call_func_at_runtime_with_args(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args\n    out = normalize_as_list(f(args))\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper\n    return compiled_fn(runtime_args)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 620, in __call__\n    return self.current_callable(inputs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_inductor/utils.py", line 3198, in run\n    out = model(new_inputs)\n', '  File "/tmp/torchinductor_v89592/gv/cgvedtywgvhvcbtm7bsn4teozbvfssmlybnpek2xe37pk5rt4nfa.py", line 286, in call\n    buf9 = empty_strided_cuda((4096, 4, 50432), (201728, 50432, 1), torch.float32)\n', 'torch.OutOfMemoryError: HIP out of memory. Tried to allocate 3.08 GiB. GPU 1 has a total capacity of 287.98 GiB of which 2.59 GiB is free. Of the allocated memory 272.88 GiB is allocated by PyTorch, and 8.59 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n']
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+[rank1]:     pretrain(
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1054, in pretrain
+[rank1]:     iteration, num_floating_point_operations_so_far = train(
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 2827, in train
+[rank1]:     ) = train_step(
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1675, in train_step
+[rank1]:     losses_reduced = forward_backward_func(
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 659, in forward_backward_no_pipelining
+[rank1]:     output_tensor, num_tokens = forward_step(
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 426, in forward_step
+[rank1]:     output_tensor, loss_func = forward_step_func(data_iterator, model)
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step
+[rank1]:     output_tensor = model(
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward
+[rank1]:     return self.module(*inputs, **kwargs)
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1889, in _call_impl
+[rank1]:     return inner()
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1837, in inner
+[rank1]:     result = forward_call(*args, **kwargs)
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward
+[rank1]:     outputs = self.module(*inputs, **kwargs)
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1889, in _call_impl
+[rank1]:     return inner()
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1837, in inner
+[rank1]:     result = forward_call(*args, **kwargs)
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 539, in forward
+[rank1]:     return self._postprocess(
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 677, in _postprocess
+[rank1]:     loss = self.compute_language_model_loss(labels, logits)
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/common/language_module/language_module.py", line 166, in compute_language_model_loss
+[rank1]:     loss = fused_vocab_parallel_cross_entropy(logits, labels, self.pg_collection.tp)
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/fusions/fused_cross_entropy.py", line 148, in fused_vocab_parallel_cross_entropy
+[rank1]:     return _VocabParallelCrossEntropy.apply(vocab_parallel_logits, target, tp_group)
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/autograd/function.py", line 583, in apply
+[rank1]:     return super().apply(*args, **kwargs)  # type: ignore[misc]
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/fusions/fused_cross_entropy.py", line 104, in forward
+[rank1]:     calculate_predicted_logits(
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 920, in compile_wrapper
+[rank1]:     return fn(*args, **kwargs)
+[rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/fusions/fused_cross_entropy.py", line 25, in calculate_predicted_logits
+[rank1]:     @jit_fuser
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1148, in _fn
+[rank1]:     return fn(*args, **kwargs)
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1151, in forward
+[rank1]:     return compiled_fn(full_args)
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__
+[rank1]:     return self.compiled_fn(*args, **kwargs)
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper
+[rank1]:     all_outs = call_func_at_runtime_with_args(
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args
+[rank1]:     out = normalize_as_list(f(args))
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper
+[rank1]:     return compiled_fn(runtime_args)
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 620, in __call__
+[rank1]:     return self.current_callable(inputs)
+[rank1]:   File "/opt/venv/lib/python3.10/site-packages/torch/_inductor/utils.py", line 3198, in run
+[rank1]:     out = model(new_inputs)
+[rank1]:   File "/tmp/torchinductor_v89592/gv/cgvedtywgvhvcbtm7bsn4teozbvfssmlybnpek2xe37pk5rt4nfa.py", line 286, in call
+[rank1]:     buf9 = empty_strided_cuda((4096, 4, 50432), (201728, 50432, 1), torch.float32)
+[rank1]: torch.OutOfMemoryError: HIP out of memory. Tried to allocate 3.08 GiB. GPU 1 has a total capacity of 287.98 GiB of which 2.59 GiB is free. Of the allocated memory 272.88 GiB is allocated by PyTorch, and 8.59 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+[rank2]:     pretrain(
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1054, in pretrain
+[rank2]:     iteration, num_floating_point_operations_so_far = train(
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 2827, in train
+[rank2]:     ) = train_step(
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1675, in train_step
+[rank2]:     losses_reduced = forward_backward_func(
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 659, in forward_backward_no_pipelining
+[rank2]:     output_tensor, num_tokens = forward_step(
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 426, in forward_step
+[rank2]:     output_tensor, loss_func = forward_step_func(data_iterator, model)
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step
+[rank2]:     output_tensor = model(
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank2]:     return self._call_impl(*args, **kwargs)
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank2]:     return forward_call(*args, **kwargs)
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward
+[rank2]:     return self.module(*inputs, **kwargs)
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank2]:     return self._call_impl(*args, **kwargs)
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1889, in _call_impl
+[rank2]:     return inner()
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1837, in inner
+[rank2]:     result = forward_call(*args, **kwargs)
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward
+[rank2]:     outputs = self.module(*inputs, **kwargs)
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank2]:     return self._call_impl(*args, **kwargs)
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1889, in _call_impl
+[rank2]:     return inner()
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1837, in inner
+[rank2]:     result = forward_call(*args, **kwargs)
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 539, in forward
+[rank2]:     return self._postprocess(
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 677, in _postprocess
+[rank2]:     loss = self.compute_language_model_loss(labels, logits)
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/common/language_module/language_module.py", line 166, in compute_language_model_loss
+[rank2]:     loss = fused_vocab_parallel_cross_entropy(logits, labels, self.pg_collection.tp)
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/fusions/fused_cross_entropy.py", line 148, in fused_vocab_parallel_cross_entropy
+[rank2]:     return _VocabParallelCrossEntropy.apply(vocab_parallel_logits, target, tp_group)
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/autograd/function.py", line 583, in apply
+[rank2]:     return super().apply(*args, **kwargs)  # type: ignore[misc]
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/fusions/fused_cross_entropy.py", line 104, in forward
+[rank2]:     calculate_predicted_logits(
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 920, in compile_wrapper
+[rank2]:     return fn(*args, **kwargs)
+[rank2]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/fusions/fused_cross_entropy.py", line 25, in calculate_predicted_logits
+[rank2]:     @jit_fuser
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1148, in _fn
+[rank2]:     return fn(*args, **kwargs)
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1151, in forward
+[rank2]:     return compiled_fn(full_args)
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__
+[rank2]:     return self.compiled_fn(*args, **kwargs)
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper
+[rank2]:     all_outs = call_func_at_runtime_with_args(
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args
+[rank2]:     out = normalize_as_list(f(args))
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper
+[rank2]:     return compiled_fn(runtime_args)
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 620, in __call__
+[rank2]:     return self.current_callable(inputs)
+[rank2]:   File "/opt/venv/lib/python3.10/site-packages/torch/_inductor/utils.py", line 3198, in run
+[rank2]:     out = model(new_inputs)
+[rank2]:   File "/tmp/torchinductor_v89592/6e/c6exkzki4qmksukl6tp4gdreath7foxuxjtn4k4qsreqkxqqc7u3.py", line 286, in call
+[rank2]:     buf9 = empty_strided_cuda((4096, 4, 50432), (201728, 50432, 1), torch.float32)
+[rank2]: torch.OutOfMemoryError: HIP out of memory. Tried to allocate 3.08 GiB. GPU 2 has a total capacity of 287.98 GiB of which 2.59 GiB is free. Of the allocated memory 272.88 GiB is allocated by PyTorch, and 8.59 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+W0603 15:46:01.016000 77924 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 78217 closing signal SIGTERM
+Stack (most recent call first):
+  File "/opt/venv/lib/python3.10/site-packages/torch/cuda/__init__.py", line 1108 in synchronize
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/timers.py", line 165 in stop
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 508 in backward_step
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 678 in forward_backward_no_pipelining
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1675 in train_step
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 2827 in train
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1054 in pretrain
+  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350 in <module>
+W0603 15:46:01.020000 77924 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 78219 closing signal SIGTERM
+E0603 15:46:01.487000 77924 torch/distributed/elastic/multiprocessing/api.py:978] failed (exitcode: -11) local_rank: 1 (pid: 78218) of binary: /opt/venv/bin/python
 Traceback (most recent call last):
   File "/opt/venv/bin/torchrun", line 33, in <module>
     sys.exit(load_entry_point('torch', 'console_scripts', 'torchrun')())
@@ -939,14 +1165,27 @@ torch.distributed.elastic.multiprocessing.errors.ChildFailedError:
 /home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py FAILED
 ------------------------------------------------------------
 Failures:
-  <NO_OTHER_FAILURES>
+[1]:
+  time      : 2026-06-03_15:46:01
+  host      : localhost.localdomain
+  rank      : 0 (local_rank: 0)
+  exitcode  : -15 (pid: 78217)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 78217
+[2]:
+  time      : 2026-06-03_15:46:01
+  host      : localhost.localdomain
+  rank      : 2 (local_rank: 2)
+  exitcode  : -11 (pid: 78219)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 78219
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2026-06-03_15:33:37
+  time      : 2026-06-03_15:46:01
   host      : localhost.localdomain
-  rank      : 0 (local_rank: 0)
-  exitcode  : -11 (pid: 65594)
+  rank      : 1 (local_rank: 1)
+  exitcode  : -11 (pid: 78218)
   error_file: <N/A>
-  traceback : Signal 11 (SIGSEGV) received by PID 65594
+  traceback : Signal 11 (SIGSEGV) received by PID 78218
 ============================================================

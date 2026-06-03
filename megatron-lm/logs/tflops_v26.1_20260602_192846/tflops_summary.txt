@@ -1,0 +1,2 @@
+MBS  RECOMPUTE  PREC  GBS   last_TF/GPU   best_TF/GPU   OOM   log
+2    none       bf16  16    ERR           ERR           no    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_20260602_192846/bench_mbs2_rcnone_bf16.log

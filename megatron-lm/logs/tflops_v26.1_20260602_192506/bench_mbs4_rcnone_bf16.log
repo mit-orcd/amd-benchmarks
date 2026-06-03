@@ -3,10 +3,10 @@
 [in-container] arch  : ['gfx900', 'gfx906', 'gfx908', 'gfx90a', 'gfx942', 'gfx1030', 'gfx1100', 'gfx1101', 'gfx1102', 'gfx1200', 'gfx1201', 'gfx950', 'gfx1150', 'gfx1151']
 [in-container] HIP_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 
-W0602 19:25:26.916000 548677 torch/distributed/run.py:853] 
-W0602 19:25:26.916000 548677 torch/distributed/run.py:853] *****************************************
-W0602 19:25:26.916000 548677 torch/distributed/run.py:853] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0602 19:25:26.916000 548677 torch/distributed/run.py:853] *****************************************
+W0602 19:27:04.586000 554287 torch/distributed/run.py:853] 
+W0602 19:27:04.586000 554287 torch/distributed/run.py:853] *****************************************
+W0602 19:27:04.586000 554287 torch/distributed/run.py:853] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0602 19:27:04.586000 554287 torch/distributed/run.py:853] *****************************************
 Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
 Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
 Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
@@ -24,14 +24,14 @@ Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
        new kernel: registered at /opt/venv/lib/python3.10/site-packages/torch/_library/custom_ops.py:922 (Triggered internally at /pytorch/aten/src/ATen/core/dispatch/OperatorEntry.cpp:208.)
   self.m.impl(
 [aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
-[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
-[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
-[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
-[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
-[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
-[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
-[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
 [aiter] start build [module_aiter_enum] under /home/v89592/.aiter/jit/build/module_aiter_enum
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
 [aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
 [aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
 [aiter] waiting for baton release at /home/v89592/.aiter/jit/build/lock_module_aiter_enum
@@ -45,14 +45,15 @@ Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
 /home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/energy_monitor.py:9: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
   from pynvml import (
 LANG_RL Log directory: None
+LANG_RL Log directory: None
+LANG_RL Log directory: None
 LANG_RL Log directory: NoneLANG_RL Log directory: None
+LANG_RL Log directory: None
 
 LANG_RL Log directory: NoneLANG_RL Log directory: None
 
-LANG_RL Log directory: None
-LANG_RL Log directory: None
-LANG_RL Log directory: None
 using world size: 8, data-parallel size: 8, context-parallel size: 1, hierarchical context-parallel sizes: None, tensor-model-parallel size: 1, pipeline-model-parallel size: 1
+WARNING: one_logger package is required to enable e2e metrics tracking. please go to https://confluence.nvidia.com/display/MLWFO/Package+Repositories for details to install it
 /home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/utils.py:456: UserWarning: Overriding default arguments for tokenizer_type:GPT2BPETokenizer with tokenizer_type:NullTokenizer
   warnings.warn(message)
 Number of virtual stages per pipeline stage: None
@@ -264,7 +265,9 @@ using torch.bfloat16 for parameters ...
   fim_no_prefix ................................... None
   fim_pad_token ................................... <fim_pad>
   fim_prefix_token ................................ <fim_prefix>
-  fim_rate ........................................ 0.5
+[W602 19:27:26.805782864 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+  fim_rate ........................................ 0.5[W602 19:27:26.805782644 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+
   fim_split_sample ................................ None
   fim_spm_rate .................................... 0.5
   fim_suffix_token ................................ <fim_suffix>
@@ -298,12 +301,13 @@ using torch.bfloat16 for parameters ...
   full_validation ................................. False
   fused_padded_mla_attention ...................... False
   generation_length ............................... None
-  global_batch_size ............................... 16
+  global_batch_size ............................... 32
   glu_activation .................................. None
   glu_linear_offset ............................... 0.0
   grad_reduce_in_bf16 ............................. False
   gradient_accumulation_fusion .................... True
-  gradient_reduce_div_fusion ...................... True
+  gradient_reduce_div_fusion ...................... True[W602 19:27:26.805917879 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+
   group_query_attention ........................... True
   grpo_clamp_eps_lower ............................ 0.01
   grpo_clamp_eps_upper ............................ 0.01
@@ -344,6 +348,8 @@ using torch.bfloat16 for parameters ...
   inference_dynamic_batching_max_requests ......... None
   inference_dynamic_batching_max_tokens ........... None
   inference_dynamic_batching_num_cuda_graphs ...... 16
+[W602 19:27:26.806058140 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[W602 19:27:26.806057920 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
   inference_dynamic_batching_paused_buffer_size_gb  None
   inference_dynamic_batching_track_paused_request_events  False
   inference_dynamic_batching_unified_memory_level . 0
@@ -451,7 +457,7 @@ using torch.bfloat16 for parameters ...
   max_tokens_to_oom ............................... 12000
   memory_snapshot_path ............................ snapshot.pickle
   merge_file ...................................... None
-  micro_batch_size ................................ 2
+  micro_batch_size ................................ 4
   microbatch_group_size_per_vp_stage .............. None
   mid_level_dataset_surplus ....................... 0.005
   min_loss_scale .................................. 1.0
@@ -511,10 +517,9 @@ using torch.bfloat16 for parameters ...
   moe_token_drop_policy ........................... probs
   moe_topk ........................................ 1
   moe_train_capacity_factor ....................... 1.0
-WARNING: one_logger package is required to enable e2e metrics tracking. please go to https://confluence.nvidia.com/display/MLWFO/Package+Repositories for details to install it  moe_upcycling_granularity ....................... 1
+  moe_upcycling_granularity ....................... 1
   moe_use_legacy_grouped_gemm ..................... False
   moe_use_upcycling ............................... False
-
   moe_z_loss_coeff ................................ None
   mrope_section ................................... None
   mscale .......................................... 1.0
@@ -580,6 +585,7 @@ WARNING: one_logger package is required to enable e2e metrics tracking. please g
   optimizer_offload_fraction ...................... 1.0
   optimizer_offload_policy ........................ static
   out_seq_length .................................. 1024
+[W602 19:27:26.806822794 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
   outer_dp_sharding_strategy ...................... no_shard
   output_bert_embeddings .......................... False
   overlap_cpu_optimizer_d2h_h2d ................... False
@@ -607,7 +613,8 @@ WARNING: one_logger package is required to enable e2e metrics tracking. please g
   position_embedding_type ......................... rope
   position_encoding_2d ............................ False
   pretrained_checkpoint ........................... None
-  profile ......................................... False
+  profile ......................................... False[W602 19:27:26.806914710 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+
   profile_ranks ................................... [0]
   profile_step_end ................................ 12
   profile_step_start .............................. 10
@@ -689,17 +696,13 @@ WARNING: one_logger package is required to enable e2e metrics tracking. please g
   seq_length ...................................... 4096
   sequence_parallel ............................... False
   sft ............................................. False
-[W602 19:25:48.414383203 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
   sft_tokenizer_prompt_format ..................... nemotron-h-aligned
   sgd_momentum .................................... 0.9
   shared_moe_ffn_hidden_size ...................... None
   sharp_enabled_group ............................. None
   short_seq_prob .................................. 0.1
   skip_train ...................................... False
-  skipped_train_samples ........................... 0[W602 19:25:48.414402239 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
-
-[W602 19:25:48.414402529 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
-[W602 19:25:48.414408067 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+  skipped_train_samples ........................... 0
   sliding_window .................................. None
   softmax_type .................................... vanilla
   source_seq_len .................................. None
@@ -714,7 +717,6 @@ WARNING: one_logger package is required to enable e2e metrics tracking. please g
   swiglu .......................................... True
   swin_backbone_type .............................. tiny
   symmetric_ar_type ............................... None
-[W602 19:25:48.414452057 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
   target_seq_len .................................. None
   task_list ....................................... all
   te_precision_config_file ........................ None
@@ -764,8 +766,7 @@ WARNING: one_logger package is required to enable e2e metrics tracking. please g
   train_sync_interval ............................. None
   transformer_impl ................................ transformer_engine
   transformer_pipeline_model_parallel_size ........ 1
-  transformer_timers .............................. False[W602 19:25:48.414613758 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
-
+  transformer_timers .............................. False
   transformer_type ................................ megatron
   trust_remote_code ............................... False
   tune_mm_mlp_adapter ............................. False
@@ -827,8 +828,7 @@ WARNING: one_logger package is required to enable e2e metrics tracking. please g
   window_attn_skip_freq ........................... None
   window_size ..................................... None
   world_size ...................................... 8
-  yaml_cfg ........................................ None[W602 19:25:48.414817496 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
-
+  yaml_cfg ........................................ None
   z_loss_weight ................................... 0.0
 -------------------- end of arguments ---------------------
 > building NullTokenizer tokenizer ...
@@ -836,293 +836,219 @@ WARNING:megatron.core.datasets.megatron_tokenizer:You're using the legacy tokeni
  > padded vocab (size: 50305) with 127 dummy tokens (new size: 50432)
 WARNING:megatron.core.rerun_state_machine:RerunStateMachine initialized in mode validate_results
 > initializing torch distributed ...
-[W602 19:25:48.416441583 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
-[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank [Gloo] Rank 47 is connected to  is connected to 7 peer ranks. Expected number of connected peer ranks is : 77 peer ranks. 
-Expected number of connected peer ranks is : 7
-[Gloo] Rank [Gloo] Rank 0 is connected to 17 is connected to  peer ranks. Expected number of connected peer ranks is : 77 peer ranks. 
-Expected number of connected peer ranks is : 7
-[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[W602 19:27:26.809415914 ProcessGroupNCCL.cpp:929] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
 [Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4[Gloo] Rank  is connected to 71 peer ranks. Expected number of connected peer ranks is :  is connected to 77
+ peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to [Gloo] Rank 75 peer ranks.  is connected to Expected number of connected peer ranks is : 77 peer ranks. 
+Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 2 is connected to [Gloo] Rank 76 peer ranks.  is connected to Expected number of connected peer ranks is : 77 peer ranks. 
-Expected number of connected peer ranks is : 7
-[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank [Gloo] Rank 57[Gloo] Rank  is connected to  is connected to 677 peer ranks.  is connected to  peer ranks. Expected number of connected peer ranks is : 7Expected number of connected peer ranks is : 7 peer ranks. Expected number of connected peer ranks is : 7
+7
+
 [Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5[Gloo] Rank  is connected to 7 peer ranks. 4Expected number of connected peer ranks is :  is connected to 77
+ peer ranks. Expected number of connected peer ranks is : 7
 > initialized tensor model parallel with size 1
 > initialized pipeline model parallel with size 1
 > setting random seeds to 1234 ...
-[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7[Gloo] Rank 
-7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : [Gloo] Rank 7
+6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 > compiling dataset index builder ...
-[rank5]:[W602 19:25:48.441643428 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
-[rank1]:[W602 19:25:48.441656056 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
-[rank2]:[W602 19:25:48.441661133 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
-[rank4]:[W602 19:25:48.441667411 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
-[rank6]:[W602 19:25:48.441693647 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
-[rank3]:[W602 19:25:48.441693957 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
-[rank7]:[W602 19:25:48.441772625 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
+[rank7]:[W602 19:27:26.830202352 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
+[rank4]:[W602 19:27:26.830203714 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
+[rank5]:[W602 19:27:26.830250297 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
+[rank3]:[W602 19:27:26.830250437 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
+[rank1]:[W602 19:27:26.830264597 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
+[rank6]:[W602 19:27:26.830334682 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
+[rank2]:[W602 19:27:26.830334672 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
 make: Entering directory '/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/datasets'
 make: Nothing to be done for 'default'.
 make: Leaving directory '/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/datasets'
->>> done with dataset index builder. Compilation time: 0.034 seconds
+>>> done with dataset index builder. Compilation time: 0.033 seconds
 > compiling and loading fused kernels ...
 /opt/venv/lib/python3.10/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
   return func(*args, **kwargs)
-[rank0]:[W602 19:25:48.476660474 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
-[rank0]:[W602 19:25:48.476864032 ProcessGroupNCCL.cpp:5138] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+[rank0]:[W602 19:27:26.863745615 HIPAllocatorConfig.h:40] Warning: expandable_segments not supported on this platform (function operator())
+[rank0]:[W602 19:27:26.863953439 ProcessGroupNCCL.cpp:5138] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
 
-[2026-06-02 19:25:48] localhost:549342:549342 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:26] localhost:554951:554951 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:25:48] localhost:549342:549342 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:26] localhost:554951:554951 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-02 19:25:49] localhost:549342:549342 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:26] localhost:554951:554951 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:25:49] localhost:549342:549342 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:26] localhost:554951:554951 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 RCCL version : 2.27.7-HEAD:ca8ec1f
 HIP version  : 7.1.25424-4179531dcd
 ROCm version : 7.1.0.0-20-4179531dcd
 Hostname     : localhost.localdomain
 Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
 
-[2026-06-02 19:25:49] localhost:549349:549349 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:26] localhost:554956:554956 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:25:49] localhost:549348:549348 [6] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:26] localhost:554954:554954 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:25:49] localhost:549345:549345 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:26] localhost:554956:554956 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-02 19:25:49] localhost:549348:549348 [6] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:26] localhost:554954:554954 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-02 19:25:49] localhost:549349:549349 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:26] localhost:554955:554955 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:25:49] localhost:549345:549345 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:26] localhost:554958:554958 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:25:49] localhost:549343:549343 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:26] localhost:554957:554957 [6] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:25:49] localhost:549347:549347 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:26] localhost:554953:554953 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:25:49] localhost:549346:549346 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:26] localhost:554955:554955 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-02 19:25:49] localhost:549344:549344 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:26] localhost:554958:554958 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-02 19:25:49] localhost:549343:549343 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:26] localhost:554957:554957 [6] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-02 19:25:49] localhost:549347:549347 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:26] localhost:554953:554953 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-02 19:25:49] localhost:549346:549346 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:26] localhost:554952:554952 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:25:49] localhost:549344:549344 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
->>> done with compiling and loading fused kernels. Compilation time: 9.499 seconds
-time to initialize megatron (seconds): 14.112
+[2026-06-02 19:27:26] localhost:554952:554952 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+>>> done with compiling and loading fused kernels. Compilation time: 9.555 seconds
+time to initialize megatron (seconds): 13.743
 /opt/venv/lib/python3.10/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
   return func(*args, **kwargs)
-[after in-process setup and before initialize_megatron] datetime: 2026-06-02 19:25:48.754939 
-[after in-job setup and before initialize_megatron] datetime: 2026-06-02 19:25:48.782260 
-[before library-setup] datetime: 2026-06-02 19:25:27.507124
-[after library-setup] datetime: 2026-06-02 19:25:48.722894
-[before megatron-init] datetime: 2026-06-02 19:25:48.754939
-[after megatron is initialized] datetime: 2026-06-02 19:26:02.700069 
+[after in-process setup and before initialize_megatron] datetime: 2026-06-02 19:27:26.147411 
+[after in-job setup and before initialize_megatron] datetime: 2026-06-02 19:27:26.175004 
+[before library-setup] datetime: 2026-06-02 19:27:05.166961
+[after library-setup] datetime: 2026-06-02 19:27:26.114981
+[before megatron-init] datetime: 2026-06-02 19:27:26.147410
+[after megatron is initialized] datetime: 2026-06-02 19:27:39.723234 
 building GPT model ...
  > number of parameters on (tensor, pipeline) model parallel rank (0, 0): 16225146880
-[after model, optimizer, and learning rate scheduler are built] datetime: 2026-06-02 19:26:03.209796 
+[after model, optimizer, and learning rate scheduler are built] datetime: 2026-06-02 19:27:40.040738 
 > building train, validation, and test datasets ...
  > datasets target sizes (minimum size):
-    train:      800
-    validation: 1600
-    test:       1600
+    train:      1600
+    validation: 3200
+    test:       3200
 > building train, validation, and test datasets for GPT ...
 WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
 WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
 WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
 > finished creating GPT datasets ...
-[after dataloaders are built] datetime: 2026-06-02 19:26:03.958688 
+[after dataloaders are built] datetime: 2026-06-02 19:27:40.780551 
 done with setup ...
 training ...
 Overwriting rerun_state_machine.current_iteration from -1 to 0...
-[before the start of training step] datetime: 2026-06-02 19:26:04.030548 
+[before the start of training step] datetime: 2026-06-02 19:27:40.864790 
 
-[2026-06-02 19:26:04] localhost:549343:549343 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:41] localhost:554951:554951 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:26:04] localhost:549343:549343 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:41] localhost:554954:554954 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:26:04] localhost:549343:549343 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:41] localhost:554951:554951 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-02 19:26:04] localhost:549343:549343 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:41] localhost:554954:554954 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-02 19:27:41] localhost:554953:554953 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-02 19:27:41] localhost:554955:554955 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-02 19:27:41] localhost:554958:554958 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-02 19:27:41] localhost:554955:554955 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-02 19:27:41] localhost:554953:554953 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-02 19:27:41] localhost:554958:554958 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-02 19:27:41] localhost:554954:554954 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-02 19:27:41] localhost:554954:554954 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 RCCL version : 2.27.7-HEAD:ca8ec1f
 HIP version  : 7.1.25424-4179531dcd
 ROCm version : 7.1.0.0-20-4179531dcd
 Hostname     : localhost.localdomain
 Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
 
-[2026-06-02 19:26:04] localhost:549344:549344 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:41] localhost:554952:554952 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:26:04] localhost:549344:549344 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:41] localhost:554952:554952 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-02 19:26:04] localhost:549345:549345 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:41] localhost:554957:554957 [6] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:26:04] localhost:549344:549344 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:41] localhost:554957:554957 [6] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-02 19:26:04] localhost:549345:549345 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:41] localhost:554957:554957 [6] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:26:04] localhost:549344:549344 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:41] localhost:554957:554957 [6] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 RCCL version : 2.27.7-HEAD:ca8ec1f
 HIP version  : 7.1.25424-4179531dcd
 ROCm version : 7.1.0.0-20-4179531dcd
 Hostname     : localhost.localdomain
 Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
 
-[2026-06-02 19:26:04] localhost:549345:549345 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:41] localhost:554956:554956 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:26:04] localhost:549345:549345 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:41] localhost:554956:554956 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+[2026-06-02 19:27:41] localhost:554958:554958 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+[2026-06-02 19:27:41] localhost:554958:554958 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 RCCL version : 2.27.7-HEAD:ca8ec1f
 HIP version  : 7.1.25424-4179531dcd
 ROCm version : 7.1.0.0-20-4179531dcd
 Hostname     : localhost.localdomain
 Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
 
-[2026-06-02 19:26:04] localhost:549346:549346 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:41] localhost:554955:554955 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:26:04] localhost:549346:549346 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
-
-[2026-06-02 19:26:04] localhost:549346:549346 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
-
-[2026-06-02 19:26:04] localhost:549346:549346 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:41] localhost:554955:554955 [4] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 RCCL version : 2.27.7-HEAD:ca8ec1f
 HIP version  : 7.1.25424-4179531dcd
 ROCm version : 7.1.0.0-20-4179531dcd
 Hostname     : localhost.localdomain
 Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
 
-[2026-06-02 19:26:04] localhost:549347:549347 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:41] localhost:554952:554952 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:26:04] localhost:549347:549347 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:41] localhost:554952:554952 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 
-[2026-06-02 19:26:04] localhost:549347:549347 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:41] localhost:554956:554956 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:26:04] localhost:549347:549347 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:41] localhost:554956:554956 [5] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.27.7-HEAD:ca8ec1f
+HIP version  : 7.1.25424-4179531dcd
+ROCm version : 7.1.0.0-20-4179531dcd
+Hostname     : localhost.localdomain
+Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
 RCCL version : 2.27.7-HEAD:ca8ec1f
 HIP version  : 7.1.25424-4179531dcd
 ROCm version : 7.1.0.0-20-4179531dcd
 Hostname     : localhost.localdomain
 Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
 
-[2026-06-02 19:26:04] localhost:549348:549348 [6] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:41] localhost:554953:554953 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:26:04] localhost:549348:549348 [6] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
-
-[2026-06-02 19:26:04] localhost:549348:549348 [6] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
-
-[2026-06-02 19:26:04] localhost:549348:549348 [6] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+[2026-06-02 19:27:41] localhost:554953:554953 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 RCCL version : 2.27.7-HEAD:ca8ec1f
 HIP version  : 7.1.25424-4179531dcd
 ROCm version : 7.1.0.0-20-4179531dcd
 Hostname     : localhost.localdomain
 Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
 
-[2026-06-02 19:26:04] localhost:549349:549349 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+[2026-06-02 19:27:41] localhost:554951:554951 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
 
-[2026-06-02 19:26:04] localhost:549349:549349 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
-
-[2026-06-02 19:26:04] localhost:549349:549349 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
-
-[2026-06-02 19:26:04] localhost:549349:549349 [7] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
-RCCL version : 2.27.7-HEAD:ca8ec1f
-HIP version  : 7.1.25424-4179531dcd
-ROCm version : 7.1.0.0-20-4179531dcd
-Hostname     : localhost.localdomain
-Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
-
-[2026-06-02 19:26:04] localhost:549342:549342 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
-
-[2026-06-02 19:26:04] localhost:549342:549342 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
-
-[2026-06-02 19:26:04] localhost:549342:549342 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:174 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
-
-[2026-06-02 19:26:04] localhost:549342:549342 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
-WARNING:megatron.core.utils:No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
-['Traceback (most recent call last):\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step\n    output_tensor = model(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward\n    return self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward\n    outputs = self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward\n    hidden_states = self.decoder(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward\n    hidden_states, context = layer(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward\n    hidden_states, context = self._forward_attention(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention\n    attention_output_with_bias = self.self_attention(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward\n    core_attn_out = apply_module(self.core_attention)(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward\n    core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper\n    return fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward\n    raise ValueError(\n', 'ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.\n']
-[rank7]: Traceback (most recent call last):
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
-[rank7]:     pretrain(
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1054, in pretrain
-[rank7]:     iteration, num_floating_point_operations_so_far = train(
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 2827, in train
-[rank7]:     ) = train_step(
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1675, in train_step
-[rank7]:     losses_reduced = forward_backward_func(
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 659, in forward_backward_no_pipelining
-[rank7]:     output_tensor, num_tokens = forward_step(
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 426, in forward_step
-[rank7]:     output_tensor, loss_func = forward_step_func(data_iterator, model)
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step
-[rank7]:     output_tensor = model(
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank7]:     return self._call_impl(*args, **kwargs)
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank7]:     return forward_call(*args, **kwargs)
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward
-[rank7]:     return self.module(*inputs, **kwargs)
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank7]:     return self._call_impl(*args, **kwargs)
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank7]:     return forward_call(*args, **kwargs)
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward
-[rank7]:     outputs = self.module(*inputs, **kwargs)
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank7]:     return self._call_impl(*args, **kwargs)
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank7]:     return forward_call(*args, **kwargs)
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward
-[rank7]:     hidden_states = self.decoder(
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__
-[rank7]:     return super().__call__(*args, **kwargs)
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
-[rank7]:     return super().__call__(*args, **kwargs)
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank7]:     return self._call_impl(*args, **kwargs)
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank7]:     return forward_call(*args, **kwargs)
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward
-[rank7]:     hidden_states, context = layer(
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__
-[rank7]:     return super().__call__(*args, **kwargs)
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
-[rank7]:     return super().__call__(*args, **kwargs)
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank7]:     return self._call_impl(*args, **kwargs)
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank7]:     return forward_call(*args, **kwargs)
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward
-[rank7]:     hidden_states, context = self._forward_attention(*args, **kwargs)
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention
-[rank7]:     attention_output_with_bias = self.self_attention(
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank7]:     return self._call_impl(*args, **kwargs)
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank7]:     return forward_call(*args, **kwargs)
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward
-[rank7]:     core_attn_out = apply_module(self.core_attention)(
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank7]:     return self._call_impl(*args, **kwargs)
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank7]:     return forward_call(*args, **kwargs)
-[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward
-[rank7]:     core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper
-[rank7]:     return fn(*args, **kwargs)
-[rank7]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward
-[rank7]:     raise ValueError(
-[rank7]: ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
+[2026-06-02 19:27:41] localhost:554951:554951 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/almalinux-8.10/8.10/build/rccl/hipify/src/init.cc:195 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
 WARNING:megatron.core.utils:No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
 ['Traceback (most recent call last):\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step\n    output_tensor = model(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward\n    return self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward\n    outputs = self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward\n    hidden_states = self.decoder(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward\n    hidden_states, context = layer(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward\n    hidden_states, context = self._forward_attention(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention\n    attention_output_with_bias = self.self_attention(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward\n    core_attn_out = apply_module(self.core_attention)(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward\n    core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper\n    return fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward\n    raise ValueError(\n', 'ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.\n']
 [rank3]: Traceback (most recent call last):
@@ -1197,6 +1123,80 @@ WARNING:megatron.core.utils:No dot product attention backend is available for th
 [rank3]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward
 [rank3]:     raise ValueError(
 [rank3]: ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
+WARNING:megatron.core.utils:No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
+['Traceback (most recent call last):\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step\n    output_tensor = model(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward\n    return self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward\n    outputs = self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward\n    hidden_states = self.decoder(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward\n    hidden_states, context = layer(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward\n    hidden_states, context = self._forward_attention(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention\n    attention_output_with_bias = self.self_attention(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward\n    core_attn_out = apply_module(self.core_attention)(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward\n    core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper\n    return fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward\n    raise ValueError(\n', 'ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.\n']
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+[rank5]:     pretrain(
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1054, in pretrain
+[rank5]:     iteration, num_floating_point_operations_so_far = train(
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 2827, in train
+[rank5]:     ) = train_step(
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1675, in train_step
+[rank5]:     losses_reduced = forward_backward_func(
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 659, in forward_backward_no_pipelining
+[rank5]:     output_tensor, num_tokens = forward_step(
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 426, in forward_step
+[rank5]:     output_tensor, loss_func = forward_step_func(data_iterator, model)
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step
+[rank5]:     output_tensor = model(
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank5]:     return self._call_impl(*args, **kwargs)
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank5]:     return forward_call(*args, **kwargs)
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward
+[rank5]:     return self.module(*inputs, **kwargs)
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank5]:     return self._call_impl(*args, **kwargs)
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank5]:     return forward_call(*args, **kwargs)
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward
+[rank5]:     outputs = self.module(*inputs, **kwargs)
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank5]:     return self._call_impl(*args, **kwargs)
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank5]:     return forward_call(*args, **kwargs)
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward
+[rank5]:     hidden_states = self.decoder(
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__
+[rank5]:     return super().__call__(*args, **kwargs)
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
+[rank5]:     return super().__call__(*args, **kwargs)
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank5]:     return self._call_impl(*args, **kwargs)
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank5]:     return forward_call(*args, **kwargs)
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward
+[rank5]:     hidden_states, context = layer(
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__
+[rank5]:     return super().__call__(*args, **kwargs)
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
+[rank5]:     return super().__call__(*args, **kwargs)
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank5]:     return self._call_impl(*args, **kwargs)
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank5]:     return forward_call(*args, **kwargs)
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward
+[rank5]:     hidden_states, context = self._forward_attention(*args, **kwargs)
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention
+[rank5]:     attention_output_with_bias = self.self_attention(
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank5]:     return self._call_impl(*args, **kwargs)
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank5]:     return forward_call(*args, **kwargs)
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward
+[rank5]:     core_attn_out = apply_module(self.core_attention)(
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank5]:     return self._call_impl(*args, **kwargs)
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank5]:     return forward_call(*args, **kwargs)
+[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward
+[rank5]:     core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper
+[rank5]:     return fn(*args, **kwargs)
+[rank5]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward
+[rank5]:     raise ValueError(
+[rank5]: ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
 WARNING:DotProductAttention:flash-attn may provide important feature support or performance improvement. Please install flash-attn >= 2.1.1, <= 2.8.1 by pip3 install flash-attn==<version>.
 WARNING:megatron.core.utils:No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
 ['Traceback (most recent call last):\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step\n    output_tensor = model(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward\n    return self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward\n    outputs = self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward\n    hidden_states = self.decoder(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward\n    hidden_states, context = layer(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward\n    hidden_states, context = self._forward_attention(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention\n    attention_output_with_bias = self.self_attention(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward\n    core_attn_out = apply_module(self.core_attention)(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward\n    core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper\n    return fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward\n    raise ValueError(\n', 'ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.\n']
@@ -1274,80 +1274,6 @@ WARNING:megatron.core.utils:No dot product attention backend is available for th
 [rank0]: ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
 WARNING:megatron.core.utils:No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
 ['Traceback (most recent call last):\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step\n    output_tensor = model(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward\n    return self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward\n    outputs = self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward\n    hidden_states = self.decoder(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward\n    hidden_states, context = layer(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward\n    hidden_states, context = self._forward_attention(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention\n    attention_output_with_bias = self.self_attention(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward\n    core_attn_out = apply_module(self.core_attention)(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward\n    core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper\n    return fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward\n    raise ValueError(\n', 'ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.\n']
-[rank4]: Traceback (most recent call last):
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
-[rank4]:     pretrain(
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1054, in pretrain
-[rank4]:     iteration, num_floating_point_operations_so_far = train(
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 2827, in train
-[rank4]:     ) = train_step(
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1675, in train_step
-[rank4]:     losses_reduced = forward_backward_func(
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 659, in forward_backward_no_pipelining
-[rank4]:     output_tensor, num_tokens = forward_step(
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 426, in forward_step
-[rank4]:     output_tensor, loss_func = forward_step_func(data_iterator, model)
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step
-[rank4]:     output_tensor = model(
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank4]:     return self._call_impl(*args, **kwargs)
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank4]:     return forward_call(*args, **kwargs)
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward
-[rank4]:     return self.module(*inputs, **kwargs)
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank4]:     return self._call_impl(*args, **kwargs)
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank4]:     return forward_call(*args, **kwargs)
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward
-[rank4]:     outputs = self.module(*inputs, **kwargs)
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank4]:     return self._call_impl(*args, **kwargs)
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank4]:     return forward_call(*args, **kwargs)
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward
-[rank4]:     hidden_states = self.decoder(
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__
-[rank4]:     return super().__call__(*args, **kwargs)
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
-[rank4]:     return super().__call__(*args, **kwargs)
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank4]:     return self._call_impl(*args, **kwargs)
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank4]:     return forward_call(*args, **kwargs)
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward
-[rank4]:     hidden_states, context = layer(
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__
-[rank4]:     return super().__call__(*args, **kwargs)
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
-[rank4]:     return super().__call__(*args, **kwargs)
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank4]:     return self._call_impl(*args, **kwargs)
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank4]:     return forward_call(*args, **kwargs)
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward
-[rank4]:     hidden_states, context = self._forward_attention(*args, **kwargs)
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention
-[rank4]:     attention_output_with_bias = self.self_attention(
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank4]:     return self._call_impl(*args, **kwargs)
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank4]:     return forward_call(*args, **kwargs)
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward
-[rank4]:     core_attn_out = apply_module(self.core_attention)(
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank4]:     return self._call_impl(*args, **kwargs)
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank4]:     return forward_call(*args, **kwargs)
-[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward
-[rank4]:     core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper
-[rank4]:     return fn(*args, **kwargs)
-[rank4]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward
-[rank4]:     raise ValueError(
-[rank4]: ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
-WARNING:megatron.core.utils:No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
-['Traceback (most recent call last):\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step\n    output_tensor = model(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward\n    return self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward\n    outputs = self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward\n    hidden_states = self.decoder(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward\n    hidden_states, context = layer(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward\n    hidden_states, context = self._forward_attention(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention\n    attention_output_with_bias = self.self_attention(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward\n    core_attn_out = apply_module(self.core_attention)(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward\n    core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper\n    return fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward\n    raise ValueError(\n', 'ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.\n']
 [rank1]: Traceback (most recent call last):
 [rank1]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
 [rank1]:     pretrain(
@@ -1422,152 +1348,78 @@ WARNING:megatron.core.utils:No dot product attention backend is available for th
 [rank1]: ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
 WARNING:megatron.core.utils:No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
 ['Traceback (most recent call last):\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step\n    output_tensor = model(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward\n    return self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward\n    outputs = self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward\n    hidden_states = self.decoder(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward\n    hidden_states, context = layer(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward\n    hidden_states, context = self._forward_attention(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention\n    attention_output_with_bias = self.self_attention(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward\n    core_attn_out = apply_module(self.core_attention)(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward\n    core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper\n    return fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward\n    raise ValueError(\n', 'ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.\n']
-[rank6]: Traceback (most recent call last):
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
-[rank6]:     pretrain(
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1054, in pretrain
-[rank6]:     iteration, num_floating_point_operations_so_far = train(
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 2827, in train
-[rank6]:     ) = train_step(
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1675, in train_step
-[rank6]:     losses_reduced = forward_backward_func(
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 659, in forward_backward_no_pipelining
-[rank6]:     output_tensor, num_tokens = forward_step(
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 426, in forward_step
-[rank6]:     output_tensor, loss_func = forward_step_func(data_iterator, model)
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step
-[rank6]:     output_tensor = model(
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank6]:     return self._call_impl(*args, **kwargs)
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank6]:     return forward_call(*args, **kwargs)
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward
-[rank6]:     return self.module(*inputs, **kwargs)
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank6]:     return self._call_impl(*args, **kwargs)
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank6]:     return forward_call(*args, **kwargs)
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward
-[rank6]:     outputs = self.module(*inputs, **kwargs)
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank6]:     return self._call_impl(*args, **kwargs)
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank6]:     return forward_call(*args, **kwargs)
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward
-[rank6]:     hidden_states = self.decoder(
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__
-[rank6]:     return super().__call__(*args, **kwargs)
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
-[rank6]:     return super().__call__(*args, **kwargs)
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank6]:     return self._call_impl(*args, **kwargs)
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank6]:     return forward_call(*args, **kwargs)
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward
-[rank6]:     hidden_states, context = layer(
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__
-[rank6]:     return super().__call__(*args, **kwargs)
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
-[rank6]:     return super().__call__(*args, **kwargs)
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank6]:     return self._call_impl(*args, **kwargs)
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank6]:     return forward_call(*args, **kwargs)
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward
-[rank6]:     hidden_states, context = self._forward_attention(*args, **kwargs)
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention
-[rank6]:     attention_output_with_bias = self.self_attention(
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank6]:     return self._call_impl(*args, **kwargs)
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank6]:     return forward_call(*args, **kwargs)
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward
-[rank6]:     core_attn_out = apply_module(self.core_attention)(
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank6]:     return self._call_impl(*args, **kwargs)
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank6]:     return forward_call(*args, **kwargs)
-[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward
-[rank6]:     core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper
-[rank6]:     return fn(*args, **kwargs)
-[rank6]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward
-[rank6]:     raise ValueError(
-[rank6]: ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
-WARNING:megatron.core.utils:No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
-['Traceback (most recent call last):\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step\n    output_tensor = model(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward\n    return self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward\n    outputs = self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward\n    hidden_states = self.decoder(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward\n    hidden_states, context = layer(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward\n    hidden_states, context = self._forward_attention(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention\n    attention_output_with_bias = self.self_attention(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward\n    core_attn_out = apply_module(self.core_attention)(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward\n    core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper\n    return fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward\n    raise ValueError(\n', 'ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.\n']
-[rank5]: Traceback (most recent call last):
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
-[rank5]:     pretrain(
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1054, in pretrain
-[rank5]:     iteration, num_floating_point_operations_so_far = train(
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 2827, in train
-[rank5]:     ) = train_step(
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1675, in train_step
-[rank5]:     losses_reduced = forward_backward_func(
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 659, in forward_backward_no_pipelining
-[rank5]:     output_tensor, num_tokens = forward_step(
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 426, in forward_step
-[rank5]:     output_tensor, loss_func = forward_step_func(data_iterator, model)
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step
-[rank5]:     output_tensor = model(
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank5]:     return self._call_impl(*args, **kwargs)
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank5]:     return forward_call(*args, **kwargs)
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward
-[rank5]:     return self.module(*inputs, **kwargs)
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank5]:     return self._call_impl(*args, **kwargs)
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank5]:     return forward_call(*args, **kwargs)
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward
-[rank5]:     outputs = self.module(*inputs, **kwargs)
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank5]:     return self._call_impl(*args, **kwargs)
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank5]:     return forward_call(*args, **kwargs)
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward
-[rank5]:     hidden_states = self.decoder(
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__
-[rank5]:     return super().__call__(*args, **kwargs)
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
-[rank5]:     return super().__call__(*args, **kwargs)
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank5]:     return self._call_impl(*args, **kwargs)
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank5]:     return forward_call(*args, **kwargs)
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward
-[rank5]:     hidden_states, context = layer(
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__
-[rank5]:     return super().__call__(*args, **kwargs)
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
-[rank5]:     return super().__call__(*args, **kwargs)
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank5]:     return self._call_impl(*args, **kwargs)
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank5]:     return forward_call(*args, **kwargs)
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward
-[rank5]:     hidden_states, context = self._forward_attention(*args, **kwargs)
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention
-[rank5]:     attention_output_with_bias = self.self_attention(
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank5]:     return self._call_impl(*args, **kwargs)
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank5]:     return forward_call(*args, **kwargs)
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward
-[rank5]:     core_attn_out = apply_module(self.core_attention)(
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
-[rank5]:     return self._call_impl(*args, **kwargs)
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
-[rank5]:     return forward_call(*args, **kwargs)
-[rank5]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward
-[rank5]:     core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper
-[rank5]:     return fn(*args, **kwargs)
-[rank5]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward
-[rank5]:     raise ValueError(
-[rank5]: ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+[rank4]:     pretrain(
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1054, in pretrain
+[rank4]:     iteration, num_floating_point_operations_so_far = train(
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 2827, in train
+[rank4]:     ) = train_step(
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1675, in train_step
+[rank4]:     losses_reduced = forward_backward_func(
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 659, in forward_backward_no_pipelining
+[rank4]:     output_tensor, num_tokens = forward_step(
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 426, in forward_step
+[rank4]:     output_tensor, loss_func = forward_step_func(data_iterator, model)
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step
+[rank4]:     output_tensor = model(
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank4]:     return self._call_impl(*args, **kwargs)
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank4]:     return forward_call(*args, **kwargs)
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward
+[rank4]:     return self.module(*inputs, **kwargs)
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank4]:     return self._call_impl(*args, **kwargs)
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank4]:     return forward_call(*args, **kwargs)
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward
+[rank4]:     outputs = self.module(*inputs, **kwargs)
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank4]:     return self._call_impl(*args, **kwargs)
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank4]:     return forward_call(*args, **kwargs)
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward
+[rank4]:     hidden_states = self.decoder(
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__
+[rank4]:     return super().__call__(*args, **kwargs)
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
+[rank4]:     return super().__call__(*args, **kwargs)
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank4]:     return self._call_impl(*args, **kwargs)
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank4]:     return forward_call(*args, **kwargs)
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward
+[rank4]:     hidden_states, context = layer(
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__
+[rank4]:     return super().__call__(*args, **kwargs)
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
+[rank4]:     return super().__call__(*args, **kwargs)
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank4]:     return self._call_impl(*args, **kwargs)
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank4]:     return forward_call(*args, **kwargs)
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward
+[rank4]:     hidden_states, context = self._forward_attention(*args, **kwargs)
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention
+[rank4]:     attention_output_with_bias = self.self_attention(
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank4]:     return self._call_impl(*args, **kwargs)
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank4]:     return forward_call(*args, **kwargs)
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward
+[rank4]:     core_attn_out = apply_module(self.core_attention)(
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank4]:     return self._call_impl(*args, **kwargs)
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank4]:     return forward_call(*args, **kwargs)
+[rank4]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward
+[rank4]:     core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper
+[rank4]:     return fn(*args, **kwargs)
+[rank4]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward
+[rank4]:     raise ValueError(
+[rank4]: ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
 WARNING:megatron.core.utils:No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
 ['Traceback (most recent call last):\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step\n    output_tensor = model(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward\n    return self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward\n    outputs = self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward\n    hidden_states = self.decoder(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward\n    hidden_states, context = layer(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward\n    hidden_states, context = self._forward_attention(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention\n    attention_output_with_bias = self.self_attention(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward\n    core_attn_out = apply_module(self.core_attention)(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward\n    core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper\n    return fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward\n    raise ValueError(\n', 'ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.\n']
 [rank2]: Traceback (most recent call last):
@@ -1642,15 +1494,163 @@ WARNING:megatron.core.utils:No dot product attention backend is available for th
 [rank2]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward
 [rank2]:     raise ValueError(
 [rank2]: ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
-[rank0]:[W602 19:26:37.776027618 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
-W0602 19:26:42.291000 548677 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 549343 closing signal SIGTERM
-W0602 19:26:42.292000 548677 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 549344 closing signal SIGTERM
-W0602 19:26:42.292000 548677 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 549345 closing signal SIGTERM
-W0602 19:26:42.293000 548677 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 549346 closing signal SIGTERM
-W0602 19:26:42.293000 548677 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 549347 closing signal SIGTERM
-W0602 19:26:42.295000 548677 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 549348 closing signal SIGTERM
-W0602 19:26:42.296000 548677 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 549349 closing signal SIGTERM
-E0602 19:26:43.226000 548677 torch/distributed/elastic/multiprocessing/api.py:978] failed (exitcode: 1) local_rank: 0 (pid: 549342) of binary: /opt/venv/bin/python
+WARNING:megatron.core.utils:No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
+['Traceback (most recent call last):\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step\n    output_tensor = model(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward\n    return self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward\n    outputs = self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward\n    hidden_states = self.decoder(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward\n    hidden_states, context = layer(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward\n    hidden_states, context = self._forward_attention(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention\n    attention_output_with_bias = self.self_attention(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward\n    core_attn_out = apply_module(self.core_attention)(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward\n    core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper\n    return fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward\n    raise ValueError(\n', 'ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.\n']
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+[rank7]:     pretrain(
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1054, in pretrain
+[rank7]:     iteration, num_floating_point_operations_so_far = train(
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 2827, in train
+[rank7]:     ) = train_step(
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1675, in train_step
+[rank7]:     losses_reduced = forward_backward_func(
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 659, in forward_backward_no_pipelining
+[rank7]:     output_tensor, num_tokens = forward_step(
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 426, in forward_step
+[rank7]:     output_tensor, loss_func = forward_step_func(data_iterator, model)
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step
+[rank7]:     output_tensor = model(
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank7]:     return self._call_impl(*args, **kwargs)
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank7]:     return forward_call(*args, **kwargs)
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward
+[rank7]:     return self.module(*inputs, **kwargs)
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank7]:     return self._call_impl(*args, **kwargs)
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank7]:     return forward_call(*args, **kwargs)
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward
+[rank7]:     outputs = self.module(*inputs, **kwargs)
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank7]:     return self._call_impl(*args, **kwargs)
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank7]:     return forward_call(*args, **kwargs)
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward
+[rank7]:     hidden_states = self.decoder(
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__
+[rank7]:     return super().__call__(*args, **kwargs)
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
+[rank7]:     return super().__call__(*args, **kwargs)
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank7]:     return self._call_impl(*args, **kwargs)
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank7]:     return forward_call(*args, **kwargs)
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward
+[rank7]:     hidden_states, context = layer(
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__
+[rank7]:     return super().__call__(*args, **kwargs)
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
+[rank7]:     return super().__call__(*args, **kwargs)
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank7]:     return self._call_impl(*args, **kwargs)
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank7]:     return forward_call(*args, **kwargs)
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward
+[rank7]:     hidden_states, context = self._forward_attention(*args, **kwargs)
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention
+[rank7]:     attention_output_with_bias = self.self_attention(
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank7]:     return self._call_impl(*args, **kwargs)
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank7]:     return forward_call(*args, **kwargs)
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward
+[rank7]:     core_attn_out = apply_module(self.core_attention)(
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank7]:     return self._call_impl(*args, **kwargs)
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank7]:     return forward_call(*args, **kwargs)
+[rank7]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward
+[rank7]:     core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper
+[rank7]:     return fn(*args, **kwargs)
+[rank7]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward
+[rank7]:     raise ValueError(
+[rank7]: ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
+WARNING:megatron.core.utils:No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
+['Traceback (most recent call last):\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step\n    output_tensor = model(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward\n    return self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward\n    outputs = self.module(*inputs, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward\n    hidden_states = self.decoder(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward\n    hidden_states, context = layer(\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__\n    return super().__call__(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward\n    hidden_states, context = self._forward_attention(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention\n    attention_output_with_bias = self.self_attention(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward\n    core_attn_out = apply_module(self.core_attention)(\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n', '  File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward\n    core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper\n    return fn(*args, **kwargs)\n', '  File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward\n    raise ValueError(\n', 'ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.\n']
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 350, in <module>
+[rank6]:     pretrain(
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1054, in pretrain
+[rank6]:     iteration, num_floating_point_operations_so_far = train(
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 2827, in train
+[rank6]:     ) = train_step(
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/training/training.py", line 1675, in train_step
+[rank6]:     losses_reduced = forward_backward_func(
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 659, in forward_backward_no_pipelining
+[rank6]:     output_tensor, num_tokens = forward_step(
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 426, in forward_step
+[rank6]:     output_tensor, loss_func = forward_step_func(data_iterator, model)
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/pretrain_gpt.py", line 200, in forward_step
+[rank6]:     output_tensor = model(
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank6]:     return self._call_impl(*args, **kwargs)
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank6]:     return forward_call(*args, **kwargs)
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/distributed/data_parallel_base.py", line 22, in forward
+[rank6]:     return self.module(*inputs, **kwargs)
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank6]:     return self._call_impl(*args, **kwargs)
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank6]:     return forward_call(*args, **kwargs)
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 489, in forward
+[rank6]:     outputs = self.module(*inputs, **kwargs)
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank6]:     return self._call_impl(*args, **kwargs)
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank6]:     return forward_call(*args, **kwargs)
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/models/gpt/gpt_model.py", line 525, in forward
+[rank6]:     hidden_states = self.decoder(
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 620, in __call__
+[rank6]:     return super().__call__(*args, **kwargs)
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
+[rank6]:     return super().__call__(*args, **kwargs)
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank6]:     return self._call_impl(*args, **kwargs)
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank6]:     return forward_call(*args, **kwargs)
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_block.py", line 766, in forward
+[rank6]:     hidden_states, context = layer(
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 1233, in __call__
+[rank6]:     return super().__call__(*args, **kwargs)
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/module.py", line 352, in __call__
+[rank6]:     return super().__call__(*args, **kwargs)
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank6]:     return self._call_impl(*args, **kwargs)
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank6]:     return forward_call(*args, **kwargs)
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 527, in forward
+[rank6]:     hidden_states, context = self._forward_attention(*args, **kwargs)
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/transformer_layer.py", line 612, in _forward_attention
+[rank6]:     attention_output_with_bias = self.self_attention(
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank6]:     return self._call_impl(*args, **kwargs)
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank6]:     return forward_call(*args, **kwargs)
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/transformer/attention.py", line 1170, in forward
+[rank6]:     core_attn_out = apply_module(self.core_attention)(
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+[rank6]:     return self._call_impl(*args, **kwargs)
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+[rank6]:     return forward_call(*args, **kwargs)
+[rank6]:   File "/home/v89592/shaohao/megatron-lm/Megatron-LM/megatron/core/extensions/transformer_engine.py", line 1503, in forward
+[rank6]:     core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 203, in nonrecursive_disable_wrapper
+[rank6]:     return fn(*args, **kwargs)
+[rank6]:   File "/opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py", line 1018, in forward
+[rank6]:     raise ValueError(
+[rank6]: ValueError: No dot product attention backend is available for the provided inputs. Please run with NVTE_DEBUG=1 NVTE_DEBUG_LEVEL=2 to find out the reasons for disabling all backends.
+[rank0]:[W602 19:28:13.252853246 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W0602 19:28:18.858000 554287 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 554952 closing signal SIGTERM
+W0602 19:28:18.858000 554287 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 554953 closing signal SIGTERM
+W0602 19:28:18.859000 554287 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 554954 closing signal SIGTERM
+W0602 19:28:18.860000 554287 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 554955 closing signal SIGTERM
+W0602 19:28:18.860000 554287 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 554956 closing signal SIGTERM
+W0602 19:28:18.861000 554287 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 554957 closing signal SIGTERM
+W0602 19:28:18.861000 554287 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 554958 closing signal SIGTERM
+E0602 19:28:20.127000 554287 torch/distributed/elastic/multiprocessing/api.py:978] failed (exitcode: 1) local_rank: 0 (pid: 554951) of binary: /opt/venv/bin/python
 Traceback (most recent call last):
   File "/opt/venv/bin/torchrun", line 33, in <module>
     sys.exit(load_entry_point('torch', 'console_scripts', 'torchrun')())
@@ -1670,61 +1670,61 @@ torch.distributed.elastic.multiprocessing.errors.ChildFailedError:
 ------------------------------------------------------------
 Failures:
 [1]:
-  time      : 2026-06-02_19:26:43
+  time      : 2026-06-02_19:28:20
   host      : localhost.localdomain
   rank      : 1 (local_rank: 1)
-  exitcode  : -15 (pid: 549343)
+  exitcode  : -15 (pid: 554952)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 549343
+  traceback : Signal 15 (SIGTERM) received by PID 554952
 [2]:
-  time      : 2026-06-02_19:26:43
+  time      : 2026-06-02_19:28:20
   host      : localhost.localdomain
   rank      : 2 (local_rank: 2)
-  exitcode  : -15 (pid: 549344)
+  exitcode  : -15 (pid: 554953)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 549344
+  traceback : Signal 15 (SIGTERM) received by PID 554953
 [3]:
-  time      : 2026-06-02_19:26:43
+  time      : 2026-06-02_19:28:20
   host      : localhost.localdomain
   rank      : 3 (local_rank: 3)
-  exitcode  : -15 (pid: 549345)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 549345
-[4]:
-  time      : 2026-06-02_19:26:43
-  host      : localhost.localdomain
-  rank      : 4 (local_rank: 4)
-  exitcode  : -15 (pid: 549346)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 549346
-[5]:
-  time      : 2026-06-02_19:26:43
-  host      : localhost.localdomain
-  rank      : 5 (local_rank: 5)
-  exitcode  : -15 (pid: 549347)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 549347
-[6]:
-  time      : 2026-06-02_19:26:43
-  host      : localhost.localdomain
-  rank      : 6 (local_rank: 6)
-  exitcode  : -15 (pid: 549348)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 549348
-[7]:
-  time      : 2026-06-02_19:26:43
-  host      : localhost.localdomain
-  rank      : 7 (local_rank: 7)
-  exitcode  : 1 (pid: 549349)
+  exitcode  : 1 (pid: 554954)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2026-06-02_19:28:20
+  host      : localhost.localdomain
+  rank      : 4 (local_rank: 4)
+  exitcode  : -15 (pid: 554955)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 554955
+[5]:
+  time      : 2026-06-02_19:28:20
+  host      : localhost.localdomain
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 554956)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[6]:
+  time      : 2026-06-02_19:28:20
+  host      : localhost.localdomain
+  rank      : 6 (local_rank: 6)
+  exitcode  : -15 (pid: 554957)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 554957
+[7]:
+  time      : 2026-06-02_19:28:20
+  host      : localhost.localdomain
+  rank      : 7 (local_rank: 7)
+  exitcode  : -15 (pid: 554958)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 554958
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2026-06-02_19:26:42
+  time      : 2026-06-02_19:28:18
   host      : localhost.localdomain
   rank      : 0 (local_rank: 0)
-  exitcode  : 1 (pid: 549342)
+  exitcode  : 1 (pid: 554951)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================

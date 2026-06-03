@@ -26,6 +26,8 @@ The all-collective rccl-tests sweep on this MI355X node, June 2, 2026. Config: m
 
 ¹ The sendrecv row was captured by a follow-on standalone sweep (`logs/rccl_sendrecv_20260602_153246/`, `log.nccl-sendrecv`) on the same env stack and message envelope.
 
+> **Note on what the numbers represent.** Each cell is the **single 8 GiB data point** from each `(collective, N)` run — the *converged*, saturated busbw at the top-end message size — **not an average across the 16 MiB → 8 GiB sweep.** rccl-tests `busbw` rises monotonically with message size as fixed per-call overhead amortizes, and flattens once the transfer is large enough to saturate the fabric; 8 GiB is comfortably in that flat region for every collective measured here, so this single point is the right "fabric ceiling" number to read. Averaging across sizes would drag every value down by the small-size points where busbw had not yet plateaued and would understate the achievable bandwidth.
+
 ![MI355X RCCL busbw at 8 GiB vs N](./rccl_busbw_8GiB.png)
 
 The shaded band highlights the N=5/6/7 cliff: every ring-based collective collapses ~4–5× from N=4 and snaps back at N=8 when all four xGMI channels reactivate. Sendrecv stays flat (single-link rate) and does not recover at N=8. Gather/scatter degrade only ~2× across the cliff because they ride pairwise sendrecv loops rather than a closed ring.

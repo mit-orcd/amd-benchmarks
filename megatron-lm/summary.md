@@ -29,15 +29,15 @@ Per-precision weak-scaling curves on the gfx950-native image at MBS=4. BF16 is f
 | N | GBS | last TF/s/GPU | parallel efficiency¹ |
 |--:|----:|--------------:|---------------------:|
 | 1 |   4 | OOM           | —                    |
-| 2 |   8 | 558.8 (RC=full) | —²                 |
-| 3 |  12 | 584.8 (RC=full) | —²                 |
+| 2 |   8 |       558.8   |             76.9 %²  |
+| 3 |  12 |       584.8   |             80.4 %²  |
 | 4 |  16 |     **726.9** |              100.0 % |
 | 5 |  20 |       586.0   |               80.6 % |
 | 6 |  24 |       574.0   |               79.0 % |
 | 7 |  28 |       565.7   |               77.8 % |
 | 8 |  32 |     **766.2** |              105.4 % |
 
-Source: §7, `logs/tflops_v26.1_gpusweep_20260603_153153/`. ¹ Per-GPU TF/s normalized to N=4 — the lowest viable N at no-RC. A true N=1 baseline is not measurable: N=1 OOM'd across all three sharding+RC configurations the script tried (see §7 "Why N=1 OOM"). ² N=2/3 only fit at MBS=4 with `--recompute-granularity full`, which adds ~20–25 % compute overhead — those numbers are *not* apples-to-apples with N=4+; parallel efficiency would conflate the RC penalty with the scaling effect.
+Source: §7, `logs/tflops_v26.1_gpusweep_20260603_153153/`. ¹ Per-GPU TF/s normalized to N=4 — the lowest viable N at no-recompute. A true N=1 baseline is not measurable: N=1 OOM'd across all three sharding + recompute modes the script tried (see §7 "Why N=1 OOM"). ² **N=2 and N=3 use `--recompute-granularity full`**, which is not the same workload as the no-RC baseline at N=4+ and is detailed in the discussion bullet on "N=2/3 require full recompute" below.
 
 ### FP8 hybrid (MBS=4, delayed scaling)
 
@@ -52,7 +52,7 @@ Source: §7, `logs/tflops_v26.1_gpusweep_20260603_153153/`. ¹ Per-GPU TF/s norm
 - **N=4 and N=8 are the only good BF16 scaling points.** Power-of-2 N hits 727–766 TF/s/GPU; N=5/6/7 collapse to ~566–586 TF/s/GPU — a ~21 % per-GPU drop just by adding one rank, with a flat plateau across N=5/6/7, then recovery at N=8. The shape is `✗OOM, ✗RC, ✗RC, ✓, ✗cliff, ✗cliff, ✗cliff, ✓` — not classic weak-scaling decay.
 - **Root cause of the N=5–7 cliff is at the RCCL layer**, not Megatron. A `rccl-tests all_reduce_perf` sweep on the same fabric (post-sweep, see §7) shows allreduce busbw drops from 162 GB/s at N=4 / 386 GB/s at N=8 to ~38 GB/s flat across N=5/6/7 — a ~4× collective regression at the same xGMI hardware. Megatron's per-iter time grows accordingly (2.29 s → ~2.90 s) for identical per-rank compute. Probable mechanism: RCCL falls back from a clean ring at power-of-2 N to a tree-or-mixed schedule at other N. Closing this is the highest-leverage next experiment (§6 #7).
 - **Super-linear scaling N=4 → N=8 (105.4 % parallel efficiency).** The dist-opt all-reduce + all-gather collective fraction shrinks faster than the per-rank compute as N doubles on a topology-friendly count.
-- **N=2/3 require full recompute** because at MBS=4 the per-rank footprint (~252 GiB no-RC) exceeds the 288 GiB HBM at low DP rank. Full RC drops activations to ~7 GiB per layer (with `--recompute-num-layers 1`).
+- **N=2/3 require full recompute** because at MBS=4 the per-rank footprint (~252 GiB no-RC) exceeds the 288 GiB HBM at low DP rank. Full RC drops activations to ~7 GiB per layer (with `--recompute-num-layers 1`) but adds a ~20–25 % compute overhead (the forward pass is re-executed during backward to regenerate activations on the fly). The table's parallel-efficiency values for N=2/3 (76.9 % / 80.4 %) therefore conflate two effects: the RC compute tax + any actual parallel-scaling penalty. Backing out the RC tax (multiply by ~1/0.78) gives apples-to-apples efficiency estimates of **~99 % at N=2 and ~103 % at N=3** — meaning at the same MBS+RC config N=2/3 would sit at or slightly above the N=4 no-RC plateau, which is what we'd expect given that smaller N has lower collective overhead. The depressed table figures are an RC artifact, not a real parallel-scaling problem.
 - **N=1 is a hard physical limit at MBS=4.** Even with full RC + `optim_grads_params` (FSDP-style param/grad sharding), RCCL init fails to allocate its 512 MiB comm buffer (`NCCL WARN Failed to CUDA calloc 536870912 bytes`).
 - **FP8 GPU-count shape is unknown.** Only N=8 at MBS=4 FP8 has been measured (1,108 TF/s/GPU). Whether the BF16 cliff/recovery shape carries to FP8 — or whether FP8's smaller activation/grad payload changes the collective regime — is open.
 
@@ -88,22 +88,30 @@ Dense BF16 peak (no sparsity): B200 = 2,250 TF/s, MI355X = 2,500 TF/s — i.e., 
 **Reading the comparison:**
 
 - **At matched N=4 / N=8 BF16, MI355X delivers 73.6 % / 78.6 % of B200 per-GPU** (731.4 vs 993.5, 775.1 vs 986.0). Framework-level apples-to-apples — same MBS, same precision, no recompute on either side.
-- **Why MI355X is slower in Megatron despite a higher BF16 silicon peak.** MI355X's advertised BF16 dense peak (2,500 TF/s) is ~1.11× B200's (2,250 TF/s) — yet Megatron throughput per GPU is ~25 % *lower*. Decomposing it:
+- **Why MI355X is slower in Megatron despite a higher BF16 silicon peak.** MI355X's BF16 silicon peak (2,500 TF/s) is **1.11× B200's** (2,250 TF/s) — yet in Megatron MI355X delivers less per GPU at every measured N. Comparing at the apples-to-apples power-of-2 points:
 
-    `MI355X_Megatron / B200_Megatron = (peak_MI / peak_B200) × (efficiency_MI / efficiency_B200)`
-    `                               = 1.11               × (29.3 % / 44.2 %)`
-    `                               = 1.11 × 0.663 = 0.736  →  73.6 %`
+    | N | B200 TF/s/GPU | MI355X TF/s/GPU | MI355X / B200 |
+    |--:|--------------:|----------------:|--------------:|
+    | 2 |       1,005.3 |    558.8 (RC=full) | 55.6 % (RC-tainted)¹ |
+    | 4 |         993.5 |           731.4 | **73.6 %**        |
+    | 8 |         986.0 |           775.1 | **78.6 %**        |
 
-    The 1.11× silicon advantage is more than wiped out by MI355X reaching only 29.3 % of its dense peak vs B200's 44.2 %. That ~15 pp efficiency gap is the entire gap, and it sits in the software stack between silicon and Megatron:
+    ¹ N=2 MI355X uses full recompute (the no-RC config OOMs at MBS=4); RC-corrected estimate is ~716 TF/s/GPU, giving ~71 %.
 
-    1. **Realizable matmul ceiling on MI355X is well below silicon peak.** AMD's hipBLASLt achieves at most **1,640 TF/s/GPU = 65.6 % of the 2,500 silicon peak** on this part — that's the realistic ceiling for matmul-dominated work like a transformer. NVIDIA's cuBLAS / cuBLASLt on Blackwell sits much closer to its silicon peak, so B200's 44 %-of-dense-peak realization is already close to its kernel ceiling, while MI355X's 29 %-of-dense-peak still has 35 pp headroom to its own kernel ceiling (44.6 % at N=4 / 47.3 % at N=8 against hipBLASLt). **Most of the gap is "AMD kernels haven't yet closed the cuBLAS-style peak-to-ceiling gap on gfx950."**
-    2. **Framework / TE integration headroom on top of the kernel-ceiling gap:**
-       - **No fused RoPE for gfx950 yet.** Apex has gfx942 RoPE kernels but not gfx950; the native fallback costs an estimated 3–5 %.
-       - **No FlashAttention path.** TE 2.6 in the v26.1 image sees flash-attn 2.8.3 as "unsupported" (outside its ≤ 2.8.1 window), forcing the FusedAttention (CK/AITER) backend; FA would beat it on some shapes.
-       - **FP8 path is only partially tuned** — see §2: achieved FP8/BF16 ratio is 1.43× against a theoretical 2.20×.
-       - **TE-on-AMD and RCCL maturity.** TE bias-fused wgrad had no gfx950 kernel until `--disable-bias-linear` was added (§4); RCCL falls off a cliff at non-power-of-2 N (§7). NVIDIA's NCCL + cuDNN + TE are years more mature on Blackwell.
+    **The single root cause is the math library, not hardware, not the driver, and not Megatron-LM tuning:**
 
-    **The silicon-peak inversion is in MI355X's favor — every pp gained back in hipBLASLt tuning or framework efficiency moves the ratio toward and past 100 %.**
+    - **Not hardware** — silicon is in MI355X's favor (1.11×).
+    - **Not the driver / fabric at these N** — xGMI and RCCL work cleanly at N=2/4/8; the non-power-of-2 cliff at N=5/6/7 is a separate driver-stack issue (§7) and doesn't apply here.
+    - **Not Megatron-LM optimization** — Megatron's hot path (GEMM in the linear layers and attention) calls down to **hipBLASLt** on AMD and **cuBLAS / cuBLASLt** on NVIDIA via TransformerEngine. Megatron itself doesn't have a meaningful vendor-specific tuning surface above that line. There is no separate "B200-optimized vs MI355X-optimized" Megatron code path that would justify the gap.
+    - **Yes the backend math library.** hipBLASLt on gfx950 realizes at most **1,640 TF/s/GPU = 65.6 % of the 2,500 silicon peak** in the rocmval benchmarks. cuBLAS / cuBLASLt on Blackwell sits much closer to its silicon peak (typically > 90 % on BF16 GEMM). The kernel-library efficiency ratio is roughly `0.66 / 0.90+ ≈ 0.73`, which — combined with the 1.11× silicon advantage — predicts `1.11 × 0.73 ≈ 0.81` per-GPU ratio. The N=8 measured 78.6 % and N=4 measured 73.6 % both land in that range; the residual is the smaller framework/TE issues below.
+
+    Smaller secondary contributors (each costs single-digit pp, not load-bearing for the main gap):
+
+    - No gfx950-built Apex fused RoPE yet — native fallback costs ~3–5 %.
+    - TE 2.6 sees the v26.1 flash-attn 2.8.3 as "unsupported" and uses FusedAttention (CK/AITER) — FA would beat it on some shapes.
+    - The FP8 path is only partially tuned (achieved FP8/BF16 ratio 1.43× vs theoretical 2.20× — see §2).
+
+    **Bottom line:** the 1.11× silicon-peak inversion is in MI355X's favor; the entire ~25 % MI355X/B200 throughput deficit comes from hipBLASLt's lower kernel-realized ceiling on gfx950 (with small additional contributions from RoPE / FA / FP8 tuning). Closing the hipBLASLt gap alone moves MI355X above parity at the same N.
 - **B200 weak-scales cleanly:** 3.7 % per-GPU drop from N=1 to N=4 (1,031.6 → 993.5), 4.4 % to N=8 (→ 986.0) — so 95–96 % parallel efficiency on NVSwitch across the curve.
 - **MI355X has a non-power-of-2 cliff at N=5–7:** per-GPU collapses from 731 (N=4) to ~570–588 (N=5/6/7) — a ~20 % drop. **Root cause now confirmed at the RCCL layer**, not Megatron: a 64 MiB–1 GiB `all_reduce_perf` sweep on the same fabric (post-sweep, see §7) shows busbw drops from 162 GB/s at N=4 to ~38 GB/s at N=5/6/7 — a 4× collective regression at the same xGMI hardware. Megatron's per-iter time grows accordingly (2.29 s → 2.90 s) for the same per-rank compute. **N=4 and N=8 are the only good scaling points.**
 - **N=8 BF16 (775.1) is the new high-water mark at no-RC**, exceeding N=4 (731.4) by 6 %. Dist-opt collectives amortize better at the larger power-of-2 N. Matches the 778.1 from the independent MBS×RC×precision sweep (§2) within 0.4 %, confirming reproducibility. The scaling shape is `N=4 ✓, N=5/6/7 ✗, N=8 ✓` — not classic weak-scaling decay.

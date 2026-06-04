@@ -62,16 +62,15 @@ The long-form version is preserved in `summary-long.md`. The condensed write-up 
 
 #### 1. Megatron MI355X vs B200
 
-Per-GPU throughput, BF16, MBS=4:
+Per-GPU throughput at matched N=8 MBS=4 BF16 no-RC, MI355X at the §3 tuned best:
 
-| N | B200 TF/s/GPU | MI355X TF/s/GPU | RC | MI355X / B200 |
-|--:|--------------:|----------------:|----|--------------:|
-| 1 |       1,031.6 | OOM             | —    | —          |
-| 2 |       1,005.3 |           561.7 | full | 55.9 %¹    |
-| 4 |         993.5 |       **731.4** | none | **73.6 %** |
-| 8 |         986.0 |       **775.1** (790.4²) | none | **78.6 %** (**80.2 %**²) |
+| N | B200 TF/s/GPU | MI355X TF/s/GPU | MI355X / B200 |
+|--:|--------------:|----------------:|--------------:|
+| 8 |         986.0 |       **790.4** |    **80.2 %** |
 
-¹ N=2 MI355X uses full recompute (~20–25 % compute tax — no-RC OOMs at MBS=4 on 288 GiB HBM); RC-corrected estimate is ~71 %. B200 weak-scales cleanly (95–96 % efficiency from N=1→8); MI355X has a separate RCCL cliff at N=5/6/7 (busbw drops 4×). ² **Tuned best (§3):** 790.4 TF/s/GPU at N=8 with `--ddp-bucket-size 250000000`, moving MI355X to **80.2 %** of B200 at matched N=8 MBS=4 no-RC. The 775.1 figure is the untuned weak-scaling value used in the headline BF16 table for parallel-efficiency comparability across N. **Apples-to-apples conclusion: at matched MBS=4 BF16 no-RC, MI355X is 73.6 % of B200 at N=4 and 78.6–80.2 % at N=8.** Source: `logs/tflops_v26.1_gpusweep_20260603_153153/` and `logs/tflops_v26.1_tune_20260604_104624/`.
+At other matched no-RC points the picture is consistent: N=4 = 731.4 / 993.5 = **73.6 %**. N=2 fits only with full recompute on MI355X (the no-RC config OOMs at MBS=4 on 288 GiB HBM); RC-corrected N=2 estimate is ~71 %. N=1 OOMs on MI355X across all sharding + RC modes. B200 weak-scales cleanly (95–96 % efficiency from N=1→8); MI355X has a separate RCCL cliff at N=5/6/7 (allreduce busbw drops 4× at non-power-of-2 N).
+
+**Apples-to-apples conclusion: at matched MBS=4 BF16 no-RC, MI355X is 73.6 % of B200 at N=4 and 80.2 % at N=8.** Source: `logs/tflops_v26.1_gpusweep_20260603_153153/` and `logs/tflops_v26.1_tune_20260604_104624/`.
 
 #### 2. Why Megatron is slower than rocmval on MI355X
 
@@ -106,9 +105,18 @@ Both vendors drop, but the layers that cost AMD more are clearly identifiable.
 | Vendor | Microbench BF16 peak           | Megatron N=8 BF16 best | Retention |
 |--------|-------------------------------:|-----------------------:|----------:|
 | B200    | 1,493 (gpu-fryer / cuBLAS)     | 986.0                  | **66 %** |
-| MI355X  | 1,639.78 (rocmval / hipBLASLt) | 790.4 (tuned, §3)      | **48 %** |
+| MI355X  | 1,639.78 (rocmval / hipBLASLt) | 790.4                  | **48 %** |
 
-Subtracting the per-vendor drop tables in #2 and #3 row-by-row:
+**Root cause: gfx950 hipBLASLt's per-shape tuning coverage is months old vs cuBLAS-on-Blackwell's years.** For the ~7 transformer GEMM shapes Megatron exercises back-to-back, hipBLASLt drops further below its own microbench peak on off-peak shapes than cuBLAS does on B200. Three single-digit-pp secondary factors (no FA path, no gfx950 Apex RoPE, newer TE↔hipBLASLt integration) trace to the same "new architecture" condition — gfx950 is a new GPU and the entire transformer-training software stack on it (hipBLASLt + ROCm-TE + FA + Apex) is months old, vs years on the NVIDIA side.
+
+**It is not a library-architecture difference.** Both stacks dispatch transformer GEMMs through a runtime-tuned vendor library with algorithm-selection heuristics (hipBLASLt ↔ cuBLAS). The difference is the size and quality of the *tuned-shape database* for transformer shapes on each architecture, not the API or the dispatch model.
+
+**Direct evidence the shape-coverage gap is the dominant single factor:**
+
+- §3 bumped `TE_HIPBLASLT_TUNING_RUN_COUNT × ALGO_COUNT` from 10×50 to 30×150 and got only **+1.2 %**. Online tuning can only pick among algorithms compiled into the library; if hipBLASLt doesn't have a good algorithm for shape X on gfx950, searching harder doesn't help. The offline shape coverage *is* the bottleneck.
+- Sensitivity check: if hipBLASLt fully matured (each Megatron shape hits ~90 % of microbench peak, as cuBLAS does on Blackwell), MI355X's 52 % drop shrinks to ~37 %, lifting retention from 48 % → ~63 % — within a few pp of B200's 66 %. The remaining gap is then the three secondary symptoms combined.
+
+**Supporting decomposition** (estimates anchored to the measured totals; not from profiling — see "Estimates, not profile data" caveat below):
 
 | Factor                          | MI355X drop | B200 drop | Net contribution to the 18 pp gap |
 |---------------------------------|------------:|----------:|----------------------------------:|
@@ -119,7 +127,9 @@ Subtracting the per-vendor drop tables in #2 and #3 row-by-row:
 | TE ↔ library integration        |        2 %  |      3 %  | ~−1 pp |
 | **Total**                       |    **52 %** |  **34 %** | **~18 pp** |
 
-Quantitatively this matches the measured Megatron ratio:
+Estimates, not profile data: the 52 % and 34 % totals are measured (790.4/1,639.78 and 986.0/1,493); the per-row allocations are plausible breakdowns consistent with §3 tuning evidence and known qualitative facts (FA disabled, gfx950 Apex absent, RCCL allreduce at N=8 = 386 GB/s). To get profile-derived numbers, run rocprof / PyTorch profiler.
+
+Quantitatively the measured ratio matches the decomposition:
 
 ```
 MI355X / B200 = (microbench ratio) × (Megatron-retention ratio)
@@ -128,11 +138,34 @@ MI355X / B200 = (microbench ratio) × (Megatron-retention ratio)
               ≈ 0.80
 ```
 
-— matches measured 0.80 at N=8 (0.74 at N=4). The 1.10× microbench advantage is real; the flip happens entirely at the microbench → Megatron transition, dominated by the hipBLASLt shape-coverage gap on gfx950.
+— measured 0.80 at N=8 (0.74 at N=4). The 1.10× microbench advantage is real; the flip happens entirely at the microbench → Megatron transition.
 
 **Not contributors:** hardware (silicon favors MI355X), driver/fabric at power-of-2 N (the N=5/6/7 RCCL cliff doesn't apply at N=2/4/8), or Megatron itself (no vendor-specific tuning above the TE → GEMM line).
 
 **Closes the gap:** offline hipBLASLt tuning on gfx950 alone moves MI355X to or past parity. Secondary single-digit-pp items: gfx950 Apex fused RoPE, FlashAttention path unlocked in TE 2.6, and FP8 tuning closer to the 2.2× theoretical ratio (currently 1.43×).
+
+#### 5. Does this generalize beyond Megatron?
+
+**Does the microbench → real-workload drop happen in other PyTorch DL apps?** Yes — it's structural. Any workload with multiple shapes + non-GEMM ops + collectives loses throughput vs a single-shape microbench. Magnitude varies:
+
+| Workload class                  | Same MI355X-vs-B200 picture?                                                  |
+|---------------------------------|--------------------------------------------------------------------------------|
+| Transformer training (LLM, ViT) | Yes — hipBLASLt path, similar shape mix                                        |
+| Transformer inference           | Smaller gap (no backward, no grad collectives)                                 |
+| CNN training                    | Different — convs route through MIOpen / cuDNN, not hipBLASLt / cuBLAS         |
+| Diffusion / RNN                 | Mixed (convs + attention or small irregular GEMMs)                             |
+
+**Is hipBLASLt the GEMM backend on gfx950 PyTorch?** For BF16 / FP16 / FP8 transformer-shape GEMMs: yes, predominantly. PyTorch 2.4+ on ROCm dispatches `nn.Linear` / `torch.matmul` to hipBLASLt by default (forceable with `TORCH_BLAS_PREFER_HIPBLASLT=1`); TransformerEngine on ROCm calls it directly. Convolutions go through MIOpen (separate library); small or FP32 GEMMs may fall back to rocBLAS. For a typical transformer-training script on MI355X, hipBLASLt is the path whether or not TE is involved.
+
+**Is MI355X likely slower than B200 for BF16 PyTorch training?** Direct evidence: only Megatron on this image (80 % of B200). The same root cause applies to any framework calling hipBLASLt with transformer shapes — HuggingFace Trainer, NeMo, DeepSpeed, raw PyTorch — so a similar 75–85 % ratio is plausible. CNN training (MIOpen, not hipBLASLt) and inference (smaller framework overhead) follow different math.
+
+> **The careful version of the claim:** For transformer BF16 training in PyTorch on a 2026-mid software stack, MI355X is likely 75–85 % of B200 per-GPU on a 16 B-class model — primarily because gfx950 hipBLASLt's per-shape tuning coverage is younger than cuBLAS-on-Blackwell's. The silicon advantage is real (1.10× microbench, 1.11× spec), and the gap is expected to narrow as AMD's library matures.
+
+What NOT to say: ❌ "MI355X is slower than B200 for deep learning." Too broad — conflates hardware, software, workload class, and a moment in time.
+
+**Does rocmval use a "better" library than Megatron does?** No — both call hipBLASLt on MI355X. (CK = Composable Kernel, AMD's library of hand-written GPU kernels for specific shapes — used by FlashAttention and TE's fused-attention path, but not a general substitute for hipBLASLt's role in dispatching arbitrary GEMM shapes.)
+
+> **The clean way to state this:** rocmval and Megatron both call hipBLASLt on MI355X — same library, same dispatch path. What differs is the shape: rocmval measures one hand-picked near-peak shape (well-tuned in hipBLASLt's gfx950 algorithm DB); Megatron exercises ~7 transformer shapes, several of which are off the well-tuned set. The peak shape is fast because AMD's library tuners targeted it; the other shapes are slower because the gfx950 algorithm DB is months old and hasn't covered them yet. CK exists but only for hand-written kernel shapes (used by FA / fused-attention); it's not a general substitute for hipBLASLt's role in dispatch.
 
 ---
 

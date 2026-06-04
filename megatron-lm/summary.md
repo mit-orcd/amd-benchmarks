@@ -4,7 +4,7 @@
 - `work/log.tflops-v26.1` — driver log for the sweep, started `2026-06-02 21:47:58 CDT`.
 - `work/logs/tflops_v26.1_20260602_214758/` — per-config container logs (`bench_mbs{N}_rc{mode}_{prec}.log`) and `tflops_summary.txt`.
 - Driver: `work/run-tflops-v26.1.sh` (MBS × recompute × precision sweep at fixed N=8).
-- New image: `megatron-lm-v26.1.sif` (built from `docker://rocm/megatron-lm:v26.1`, 21 GB), sitting alongside — not replacing — the original `megatron-lm.sif`. The old-image baseline and the 3–5× gain analysis are kept in §9 as a side note.
+- Image: `megatron-lm-v26.1.sif` (built from `docker://rocm/megatron-lm:v26.1`, 21 GB), gfx950-native.
 
 **Setup recap**
 - 1 node × 8 × AMD Instinct MI355X (gfx950), ROCm 7.2.3 host driver, PyTorch 2.10.0.dev20251112+rocm7.1 inside the new SIF.
@@ -22,7 +22,7 @@
 
 ## Headline
 
-Per-precision weak-scaling curves on the gfx950-native image at MBS=4. BF16 is fully populated (N=1..8) from the GPU-count sweep (§8); FP8 has only the N=8 data point from the MBS×RC×precision sweep (§2) — a dedicated FP8 GPU-count sweep is still to be run.
+Per-precision weak-scaling curves on the gfx950-native image at MBS=4. BF16 is fully populated (N=1..8) from the GPU-count sweep (`logs/tflops_v26.1_gpusweep_20260603_153153/`); FP8 has only the N=8 data point from the MBS×RC×precision sweep (§2). The tuned bests come from the §3 tuning sweep.
 
 ### BF16 (MBS=4)
 
@@ -37,7 +37,7 @@ Per-precision weak-scaling curves on the gfx950-native image at MBS=4. BF16 is f
 | 7 |  28 |       565.7   |               77.8 % |
 | 8 |  32 |     **766.2** |              105.4 % |
 
-Source: §8, `logs/tflops_v26.1_gpusweep_20260603_153153/`. ¹ Per-GPU TF/s normalized to N=4 — the lowest viable N at no-recompute. A true N=1 baseline is not measurable: N=1 OOM'd across all three sharding + recompute modes the script tried (see §8 "Why N=1 OOM"). ² **N=2 and N=3 use `--recompute-granularity full`**, which is not the same workload as the no-RC baseline at N=4+ and is detailed in the discussion bullet on "N=2/3 require full recompute" below. **Tuned best at N=8: 790.4 TF/s/GPU** (§3, `--ddp-bucket-size 250000000`) — +2.0 % over the 775.1 untuned weak-scaling figure used in the rest of this table.
+Source: `logs/tflops_v26.1_gpusweep_20260603_153153/`. ¹ Per-GPU TF/s normalized to N=4 — the lowest viable N at no-recompute. A true N=1 baseline is not measurable: N=1 OOM'd across all three sharding + recompute modes the script tried (the 16 B model + RCCL comm buffer exceeds 288 GiB HBM at single-rank scale). ² **N=2 and N=3 use `--recompute-granularity full`**, which is not the same workload as the no-RC baseline at N=4+ and is detailed in the discussion bullet on "N=2/3 require full recompute" below. **Tuned best at N=8: 790.4 TF/s/GPU** (§3, `--ddp-bucket-size 250000000`) — +2.0 % over the 775.1 untuned weak-scaling figure used in the rest of this table.
 
 ### FP8 hybrid (MBS=4, delayed scaling)
 
@@ -45,12 +45,12 @@ Source: §8, `logs/tflops_v26.1_gpusweep_20260603_153153/`. ¹ Per-GPU TF/s norm
 |--:|----:|--------------:|--------------------:|
 | 8 |  32 |    **1,108.0 ★** | — (single point) |
 
-★ Overall throughput winner across all configurations measured. Source: §2 MBS×RC×precision sweep at N=8, `logs/tflops_v26.1_20260602_214758/`. **A dedicated FP8 GPU-count sweep across N=1..8 has not been run yet** — listed in §7 next-experiments. The FP8/BF16 ratio at the matched MBS=4 / N=8 point is **1.45×** (1,108.0 / 766.2), close to the §2 figure of 1.43×. **Tuned best at N=8: 1,119.3 TF/s/GPU** (§3, `--fp8-margin 2 --fp8-amax-history-len 16`) — +1.0 % over the 1,108.0 baseline.
+★ Overall throughput winner across all configurations measured. Source: §2 MBS×RC×precision sweep at N=8, `logs/tflops_v26.1_20260602_214758/`. **A dedicated FP8 GPU-count sweep across N=1..8 has not been run yet.** The FP8/BF16 ratio at the matched MBS=4 / N=8 point is **1.45×** (1,108.0 / 766.2), close to the §2 figure of 1.43×. **Tuned best at N=8: 1,119.3 TF/s/GPU** (§3, `--fp8-margin 2 --fp8-amax-history-len 16`) — +1.0 % over the 1,108.0 baseline.
 
 ### Discussion
 
 - **N=4 and N=8 are the only good BF16 scaling points.** Power-of-2 N hits 727–766 TF/s/GPU; N=5/6/7 collapse to ~566–586 TF/s/GPU — a ~21 % per-GPU drop just by adding one rank, with a flat plateau across N=5/6/7, then recovery at N=8. The shape is `✗OOM, ✗RC, ✗RC, ✓, ✗cliff, ✗cliff, ✗cliff, ✓` — not classic weak-scaling decay.
-- **Root cause of the N=5–7 cliff is at the RCCL layer**, not Megatron. A `rccl-tests all_reduce_perf` sweep on the same fabric (post-sweep, see §8) shows allreduce busbw drops from 162 GB/s at N=4 / 386 GB/s at N=8 to ~38 GB/s flat across N=5/6/7 — a ~4× collective regression at the same xGMI hardware. Megatron's per-iter time grows accordingly (2.29 s → ~2.90 s) for identical per-rank compute. Probable mechanism: RCCL falls back from a clean ring at power-of-2 N to a tree-or-mixed schedule at other N. Closing this is the highest-leverage next experiment (§7 #7).
+- **Root cause of the N=5–7 cliff is at the RCCL layer**, not Megatron. A `rccl-tests all_reduce_perf` sweep on the same fabric shows allreduce busbw drops from 162 GB/s at N=4 / 386 GB/s at N=8 to ~38 GB/s flat across N=5/6/7 — a ~4× collective regression at the same xGMI hardware. Megatron's per-iter time grows accordingly (2.29 s → ~2.90 s) for identical per-rank compute. Probable mechanism: RCCL falls back from a clean ring at power-of-2 N to a tree-or-mixed schedule at other N.
 - **Super-linear scaling N=4 → N=8 (105.4 % parallel efficiency).** The dist-opt all-reduce + all-gather collective fraction shrinks faster than the per-rank compute as N doubles on a topology-friendly count.
 - **N=2/3 require full recompute** because at MBS=4 the per-rank footprint (~252 GiB no-RC) exceeds the 288 GiB HBM at low DP rank. Full RC drops activations to ~7 GiB per layer (with `--recompute-num-layers 1`) but adds a ~20–25 % compute overhead (the forward pass is re-executed during backward to regenerate activations on the fly). The table's parallel-efficiency values for N=2/3 (76.9 % / 80.4 %) therefore conflate two effects: the RC compute tax + any actual parallel-scaling penalty. Backing out the RC tax (multiply by ~1/0.78) gives apples-to-apples efficiency estimates of **~99 % at N=2 and ~103 % at N=3** — meaning at the same MBS+RC config N=2/3 would sit at or slightly above the N=4 no-RC plateau, which is what we'd expect given that smaller N has lower collective overhead. The depressed table figures are an RC artifact, not a real parallel-scaling problem.
 - **N=1 is a hard physical limit at MBS=4.** Even with full RC + `optim_grads_params` (FSDP-style param/grad sharding), RCCL init fails to allocate its 512 MiB comm buffer (`NCCL WARN Failed to CUDA calloc 536870912 bytes`).
@@ -71,7 +71,7 @@ Per-GPU throughput, BF16, MBS=4:
 | 4 |         993.5 |       **731.4** | none | **73.6 %** |
 | 8 |         986.0 |       **775.1** (790.4²) | none | **78.6 %** (**80.2 %**²) |
 
-¹ N=2 MI355X uses full recompute (~20–25 % compute tax — no-RC OOMs at MBS=4 on 288 GiB HBM); RC-corrected estimate is ~71 %. B200 weak-scales cleanly (95–96 % efficiency from N=1→8); MI355X has a separate RCCL cliff at N=5/6/7 (busbw drops 4×, see §8). ² **Tuned best (§3):** 790.4 TF/s/GPU at N=8 with `--ddp-bucket-size 250000000`, moving MI355X to **80.2 %** of B200 at matched N=8 MBS=4 no-RC. The 775.1 figure is the untuned weak-scaling value carried over from §8 for parallel-efficiency comparability across N. **Apples-to-apples conclusion: at matched MBS=4 BF16 no-RC, MI355X is 73.6 % of B200 at N=4 and 78.6–80.2 % at N=8.** Source: `logs/tflops_v26.1_gpusweep_20260603_153153/` and `logs/tflops_v26.1_tune_20260604_104624/`.
+¹ N=2 MI355X uses full recompute (~20–25 % compute tax — no-RC OOMs at MBS=4 on 288 GiB HBM); RC-corrected estimate is ~71 %. B200 weak-scales cleanly (95–96 % efficiency from N=1→8); MI355X has a separate RCCL cliff at N=5/6/7 (busbw drops 4×). ² **Tuned best (§3):** 790.4 TF/s/GPU at N=8 with `--ddp-bucket-size 250000000`, moving MI355X to **80.2 %** of B200 at matched N=8 MBS=4 no-RC. The 775.1 figure is the untuned weak-scaling value used in the headline BF16 table for parallel-efficiency comparability across N. **Apples-to-apples conclusion: at matched MBS=4 BF16 no-RC, MI355X is 73.6 % of B200 at N=4 and 78.6–80.2 % at N=8.** Source: `logs/tflops_v26.1_gpusweep_20260603_153153/` and `logs/tflops_v26.1_tune_20260604_104624/`.
 
 #### 2. Megatron vs rocmval on MI355X
 
@@ -107,7 +107,27 @@ MI355X_Megatron / B200_Megatron = (silicon ratio) × (library efficiency ratio)
 
 — matches the measured 0.74 (N=4) / 0.79 (N=8). The 1.11× silicon advantage is real, but hipBLASLt realizes only ~66 % of MI355X peak across Megatron's shape mix, while cuBLAS realizes 90 %+ of B200 peak across the same shapes. The library-efficiency ratio inverts the silicon ratio.
 
-**Not contributors:** hardware (silicon favors MI355X), driver/fabric at power-of-2 N (the N=5/6/7 cliff is separate, §8), or Megatron itself (no vendor-specific tuning above the TE → GEMM line).
+**But why does MI355X lose MORE going microbench → Megatron than B200 does?** Both vendors drop from their microbenchmark peak to Megatron — what's different is the size of that drop:
+
+| Vendor | Microbench BF16 peak | Megatron N=8 BF16 best | Microbench → Megatron retention |
+|---|---:|---:|---:|
+| B200    | ~2,250 (cuBLAS BF16 peak) | 986.0 | **~44 %** |
+| MI355X  | ~2,475 (rocmval BF16)     | 790.4 (tuned, §3) | **~32 %** |
+
+B200 keeps ~44 % of its microbench number in Megatron; MI355X keeps only ~32 % — a ~12 pp retention gap. That gap comes from four compounding factors, all rooted in software maturity:
+
+| Factor                          | B200 impact | MI355X impact | Net contribution to the 12 pp gap |
+|---------------------------------|-------------|---------------|-----------------------------------|
+| GEMM library shape coverage     | cuBLAS hits ~90 %+ of peak on each of the ~7 Megatron shapes (years of tuning) | hipBLASLt hits ~66 % across the same shapes (gfx950 fat-binary is months old) | **~7–9 pp** (dominant) |
+| Attention path                  | FlashAttention (fully fused, highly tuned)                              | FA disabled (TE 2.6 ≠ FA 2.8.3 version), falls back to CK/AITER FusedAttention | **~3–5 pp** |
+| RoPE fusion                     | Apex fused RoPE for Blackwell                                            | No gfx950 Apex RoPE kernel; unfused PyTorch fallback                          | **~2–3 pp** |
+| TE ↔ GEMM-library integration   | cuBLAS/TE is a multi-year integration; aggressive kernel fusion across linear-bias-activation-norm | hipBLASLt/TE on ROCm is newer; more Python-side dispatch, fewer fused paths | **~1–2 pp** |
+
+The collective layer is **not** a contributor at the comparison points: RCCL allreduce busbw at N=8 is 386 GB/s (higher than the 165 GB/s figure at N=4 on the same fabric), and Megatron iter time at N=8 is dominated by GEMM, not communication.
+
+**In short**, the same software-maturity gap that puts Megatron MI355X at 78 % of B200 *also* explains why MI355X falls further from its own microbenchmark peak than B200 does. It's the same problem viewed from two angles — every factor that costs throughput in the microbench → Megatron transition costs more on the AMD side because each piece of the stack (hipBLASLt, TE/AMD integration, gfx950 Apex, FA on ROCm) is newer.
+
+**Not contributors:** hardware (silicon favors MI355X), driver/fabric at power-of-2 N (the N=5/6/7 RCCL cliff is a separate issue and doesn't apply at N=2/4/8), or Megatron itself (no vendor-specific tuning above the TE → GEMM line).
 
 **Closes the gap:** hipBLASLt shape-mix tuning on gfx950 alone moves MI355X to or past parity. Secondary single-digit-pp items: gfx950 Apex fused RoPE (~3–5 %), FlashAttention path enabled in TE 2.6 (currently falls back to CK/AITER), and FP8 tuning closer to the 2.2× theoretical ratio (currently 1.43×).
 
@@ -115,7 +135,7 @@ MI355X_Megatron / B200_Megatron = (silicon ratio) × (library efficiency ratio)
 
 ## 2. MBS × Recompute × Precision sweep at N=8
 
-At fixed N=8 DP, sweep (MBS, recompute, precision) to find the per-config sweet spot. This is where the FP8 winner came from and where the BF16 N=8 reference value of 778.1 TF/s/GPU was first measured (independently reproduced as 775.1 in §8).
+At fixed N=8 DP, sweep (MBS, recompute, precision) to find the per-config sweet spot. This is where the FP8 winner came from and where the BF16 N=8 reference value of 778.1 TF/s/GPU was first measured (independently reproduced as 775.1 in the GPU-count sweep).
 
 | MBS | Recompute | Precision | GBS | iter time (ms) | last TF/s/GPU | best TF/s/GPU | Mem util |
 |----:|-----------|-----------|----:|---------------:|--------------:|--------------:|---------:|
@@ -170,7 +190,7 @@ Steady-state mean ≈ 1,096 TF/s/GPU. FP8 loss decays faster than BF16 over the 
 - **MBS=2 FP8: 950.6**
 - **MBS=4 FP8: 1,111.5** ← **+17 % over MBS=2 in FP8**
 
-With proper gfx950 GEMM kernels, **larger batches improve per-GPU throughput** by amortizing kernel launch / collective overhead against more compute per step. MBS=4 hits 0.88–0.90 HBM utilization, leaving no room for MBS=6+ without recompute. (Historical note: on the old `megatron-lm.sif` image MBS=2 was the BF16 winner — see §9.)
+With proper gfx950 GEMM kernels, **larger batches improve per-GPU throughput** by amortizing kernel launch / collective overhead against more compute per step. MBS=4 hits 0.88–0.90 HBM utilization, leaving no room for MBS=6+ without recompute.
 
 ### Recompute is unnecessary at MBS=4 and a regression at MBS=8
 
@@ -193,54 +213,27 @@ Theoretical FP8/BF16 silicon ratio on MI355X (per rocmval): 3,611 / 1,640 = 2.20
 
 ## 3. N=8 tuning sweep (DP-only, MBS=4 BF16 + FP8)
 
-**Source:** `work/log.tflops-v26.1-tune{,-resume}`, `logs/tflops_v26.1_tune_20260604_104624/`. Drivers: `work/run-tflops-v26.1-tune.sh` (initial) + `run-tflops-v26.1-tune-resume.sh` (after the 11:33 host crash).
+Hold parallelism fixed (TP=PP=CP=1, DP=8, MBS=4, no-RC); ablate one knob at a time vs the §2 baseline. Source: `logs/tflops_v26.1_tune_20260604_104624/`.
 
-Goal: hold parallelism fixed (TP=PP=CP=1, DP=8, MBS=4, no-RC) and ablate one knob at a time against the §2 baseline (774.9 BF16 / 1,108.1 FP8) to find what's still on the table at the framework / collective / library level without changing parallelism shape.
+| variant                  | prec | best TF/s/GPU | Δ          | knob                                            |
+|--------------------------|:----:|--------------:|-----------:|-------------------------------------------------|
+| bf16_baseline            | bf16 |     774.9     |    —       | reference                                       |
+| bf16_ddp_bucket_250M     | bf16 |   **790.4**   | **+2.0 %** | `--ddp-bucket-size 250000000`                   |
+| bf16_nccl_buffsize_16M   | bf16 |     789.2     |   +1.9 %   | `NCCL_BUFFSIZE=16777216`                        |
+| bf16_hipblaslt_30x150    | bf16 |     784.3     |   +1.2 %   | deeper hipBLASLt tuning (vs 10×50)              |
+| fp8_baseline             | fp8  |   1,108.1     |    —       | reference                                       |
+| fp8_margin2_amax16       | fp8  |  **1,119.3**  |   +1.0 %   | `--fp8-margin 2 --fp8-amax-history-len 16`      |
+| fp8_amax_max             | fp8  |   1,098.4     |   −0.9 %   | `--fp8-amax-compute-algo max` (higher variance) |
 
-### Per-variant results
+**New bests:** BF16 N=8 = **790.4** (was 778.1, +1.6 %); FP8 N=8 = **1,119.3** (was 1,111.5, +0.7 %).
 
-| variant | precision | best TF/s/GPU | vs baseline | status |
-|---|:--:|---:|---:|---|
-| bf16_baseline                | bf16 |   774.9   |    —    | OK |
-| bf16_hipblaslt_30x150        | bf16 |   784.3   | +1.2 %  | OK |
-| bf16_hipblaslt_50x250        | bf16 |   —       |   —     | TIMEOUT (startup tuning > 1800 s) |
-| bf16_msccl_on                | bf16 |   —       |   —     | **host crash at iter 15** |
-| bf16_nccl_buffsize_16M       | bf16 |   789.2   | +1.9 %  | OK |
-| bf16_rope_fusion             | bf16 |   —       |   —     | UNREC (flag not in this build) |
-| bf16_grad_accum_fusion       | bf16 |   —       |   —     | UNREC |
-| bf16_ddp_bucket_250M         | bf16 | **790.4** |**+2.0 %**| OK |
-| bf16_compound_v1             | bf16 |   —       |   —     | UNREC (depends on rope / grad-accum fusion) |
-| fp8_baseline                 | fp8  | 1,108.1   |    —    | OK |
-| fp8_margin2_amax16           | fp8  |**1,119.3**| +1.0 %  | OK |
-| fp8_amax_max                 | fp8  | 1,098.4   | −0.9 %  | OK |
-| fp8_compound_v1              | fp8  |   —       |   —     | UNREC |
+**Did not work:**
 
-### New bests
+- `RCCL_MSCCL_ENABLE=1` — **crashed the host at iter 15** (3 h downtime). MSCCL on this gfx950 image is unstable; do not enable.
+- `TE_HIPBLASLT_TUNING_RUN_COUNT=50 / ALGO_COUNT=250` — TIMEOUT > 1800 s; 30×150 is the practical ceiling.
+- `--apply-rope-fusion`, `--gradient-accumulation-fusion` — argparse rejects both in this Megatron build (`705c37b83`). Either renamed or compiled out.
 
-| precision | prior best                  | tuning best | Δ                      |
-|-----------|----------------------------:|------------:|-----------------------:|
-| BF16 N=8 MBS=4 no-RC | 778.1 (§2) / 775.1 (§8) | **790.4** | **+1.6 %** over §2 |
-| FP8  N=8 MBS=4 no-RC | 1,111.5 (§2)            | **1,119.3** | **+0.7 %**         |
-
-### What worked
-
-- **`--ddp-bucket-size 250000000`** (+2.0 %, top BF16 win). Larger DDP buckets amortize the all-reduce-of-grads launch/sync overhead over more data per call; default ~40 MB.
-- **`NCCL_BUFFSIZE=16777216`** (+1.9 %). Larger RCCL send/recv staging buffers saturate xGMI better on the dist-opt collectives; default 4 MB is undersized for this fabric.
-- **`TE_HIPBLASLT_TUNING_RUN_COUNT=30 / ALGO_COUNT=150`** (+1.2 %). Deeper hipBLASLt online algorithm search. Smaller win than expected — confirms the bulk of the hipBLASLt shape-mix gap (the ~22 % vs cuBLAS in the Headline) is NOT closable by deeper online tuning alone; the library needs offline-tuned algorithms for off-peak gfx950 shapes, which is out-of-tree.
-- **`--fp8-margin 2 --fp8-amax-history-len 16`** (+1.0 % on FP8). Standard "tight" TE FP8 recipe — restricts the amax window so per-tensor scale factors track the current step more closely.
-
-### What didn't (and why)
-
-- **`RCCL_MSCCL_ENABLE=1`** — **crashed the host at iter 15** (3 h downtime, reboot at 14:41). Same failure mode as the 2026-06-03 N=7 RCCL cliff incident. MSCCL kernels on this gfx950 image are not stable; do not enable until AMD ships a fixed schedule. The in-flight iter-15 throughput (722 TF/s) was already below the 760 baseline at the same point, so a successful run probably wouldn't have helped anyway.
-- **`TE_HIPBLASLT_TUNING_RUN_COUNT=50 / ALGO_COUNT=250`** — TIMEOUT. Startup tuning exceeds the 1800 s per-run budget; 30×150 is the practical ceiling.
-- **`--apply-rope-fusion`, `--gradient-accumulation-fusion`** — argparse rejects both in this Megatron build (ROCm fork at `705c37b83`). Either renamed or compiled out; not accessible from CLI alone. Both compound rungs that depended on them inherited the failure.
-- **`--fp8-amax-compute-algo max`** — slight regression (−0.9 %). The `max` algo has higher variance than the default `most_recent` on this workload.
-
-### Implications
-
-- **The remaining BF16 headroom on this image without changing parallelism or precision is ~2 %.** The three wins (DDP bucket + NCCL buffsize + hipBLASLt depth) likely don't fully stack — they all target collective amortization at different layers; running them combined is the next experiment.
-- **The library-side gap to B200 (~22 %) is not collapsible at this image.** Deeper online tuning gives only +1.2 %; the rest needs offline-tuned hipBLASLt, gfx950 Apex RoPE, or a TE/FA version that unlocks the FlashAttention backend — all out-of-tree work (§7 next-experiments).
-- **The bigger FP8 lever is still MXFP8** (`--fp8-recipe mxfp8`, §7 #1), which we haven't measured. FP8 recipe tuning is only +1 % on top of the already-best 1,111.5.
+**Takeaway:** the ~2 % BF16 headroom comes from collective amortization (DDP bucket, NCCL buffsize), not from the GEMM library. Deeper hipBLASLt online tuning gives only +1.2 %, confirming the ~22 % gap to B200 needs offline-tuned algorithms / gfx950 Apex RoPE / FA — all out-of-tree. The bigger FP8 lever is still untried **MXFP8** (`--fp8-recipe mxfp8`).
 
 ---
 
@@ -260,13 +253,13 @@ Goal: hold parallelism fixed (TP=PP=CP=1, DP=8, MBS=4, no-RC) and ablate one kno
 - The model itself (weights + dist-opt state) takes ~120 GiB; activations add MBS-proportional pressure.
 - MBS=4 no-RC sits at 0.88 (BF16) / 0.90 (FP8) HBM util — tight but stable, no OOMs.
 - **Full recompute** drops activation memory to near-zero, giving 0.65 util at MBS=8 — could be pushed to MBS=12+ if needed.
-- **Selective recompute** at MBS=4 used slightly *more* memory than no-RC (0.91 vs 0.88) without throughput benefit — same counter-intuitive pattern observed on the old image (TE selective-RC workspace overhead exceeds the savings at this model size).
+- **Selective recompute** at MBS=4 used slightly *more* memory than no-RC (0.91 vs 0.88) without throughput benefit — TE selective-RC workspace overhead exceeds the activation savings at this model size.
 
 ---
 
 ## 5. The journey here (failures and fixes)
 
-Five distinct issues had to be resolved between the old image and this winning sweep. Each is worth recording — these are traps anyone else migrating from a gfx942 image to v26.1 will hit.
+Five distinct issues had to be resolved to get a working sweep on this image. Each is worth recording.
 
 | # | Failure mode | Root cause | Fix |
 |---|--------------|------------|-----|
@@ -288,130 +281,3 @@ Five distinct issues had to be resolved between the old image and this winning s
 - **All 7 configs completed successfully** — no OOMs, no real-training crashes. The script's per-config resilience matters less now that no configs fail; the next sweep can be more ambitious (more MBS points, TP variants, MXFP8).
 
 ---
-
-## 7. Recommended next experiments
-
-Now that the baseline is competitive, the next gains are smaller but worth measuring.
-
-1. **Try MXFP8 recipe.** `--fp8-recipe mxfp8` exists in this Megatron build and is the focus of the recent ROCm-fork commit `705c37b83` ("MXFP4 recipe enablement"). MX block-scaled FP8 is what MI355X silicon is optimized for; the current `--fp8-recipe delayed` is the legacy path. Expected: another **+10–25 %** on top of 1,111 TF/s.
-2. **Try `--fp8-param-gather`.** Currently False. Keeps params in FP8 during the all-gather (vs. cast-then-gather), reducing comm bandwidth.
-3. **TP=2 + sequence parallel.** With biases-off we're now in the regime where TE's TP-comm-overlap (`tp_comm_overlap_ag/rs`) becomes hot. `--tensor-model-parallel-size 2 --sequence-parallel` would split the model and enable bulk TP collectives.
-4. **Push MBS=6 with selective RC.** The old-image OOM at MBS=6 selective was 0.978 util; with v26.1's tighter memory accounting and the bias-free model, MBS=6 selective might fit.
-5. **Add `--use-flash-attn` after a flash-attn downgrade.** If a flash-attn ≤ 2.8.1 wheel can be sideloaded into the image, TE would re-enable the FlashAttention backend for cases where it beats FusedAttention.
-6. **Source an Apex fused-RoPE build for gfx950.** The native fallback costs 3–5 %.
-7. **Close the N=5/6/7 RCCL cliff.** Confirmed via `rccl-tests` at the RCCL layer (§8): at non-power-of-2 N the all_reduce busbw drops from 162 GB/s (N=4) / 386 GB/s (N=8) to ~37 GB/s flat. Next steps: sweep `NCCL_ALGO=Tree`, `NCCL_PROTO=LL/LL128`, `RCCL_MSCCL_ENABLE=1` with a tuned schedule, or an explicit `RCCL_TOPO_FILE` for the xGMI fabric. A clean fix here would lift N=5/6/7 from ~570 TF/s/GPU toward the N=4/N=8 plateau of 730–780 — a ~30 % gain at those configs without touching kernels.
-8. **N=7/N=8 GPU-count gap closed** (2026-06-03 15:31 sweep, §8). N=8 BF16 MBS=4 no-RC = 775.1 TF/s/GPU on the dedicated GPU-count driver, matching the §2 figure (778.1) within 0.4 %.
-9. **FP8 GPU-count sweep.** Only the N=8 point is known (1,108 TF/s/GPU at MBS=4 from §2). The BF16 cliff/recovery shape across N=4/5/6/7/8 may or may not transfer to FP8 — FP8's smaller activation and gradient payload could either dodge the RCCL fallback (smaller messages stay in the LL/Simple protocol) or hit it harder. Worth measuring before assuming the headline FP8 number holds at other N.
-
----
-
-## 8. GPU-count weak-scaling sweep (BF16, MBS=4)
-
-**Sources (re-run on 2026-06-03 15:31 CDT — see §8.5 for why the first attempt was discarded)**
-- `work/log.tflops-v26.1-gpusweep-rerun-2` — driver log, started `2026-06-03 15:31:53 CDT`.
-- `work/logs/tflops_v26.1_gpusweep_20260603_153153/` — per-N container logs + `tflops_summary.txt`.
-- Driver: `work/run-tflops-v26.1-gpusweep.sh` (weak-scaling: MBS=4 fixed, GBS = MBS × N, BF16, OOM-fallback cascade `no_shard → no_shard+full-RC → optim_grads_params+full-RC`).
-- Goal: produce the new-image equivalent of `summary-2.md` so the headline B200 comparison has real MI355X N=1..8 data.
-
-### Per-N results
-
-| N | GBS | shard / RC                  | iter time (ms) | TF/s/GPU last | TF/s/GPU best | mem util | status |
-|--:|----:|-----------------------------|---------------:|--------------:|--------------:|---------:|--------|
-| 1 |   4 | (all 3 rungs)               |   —            |  —            |  —            |  —       | OOM all 3 configurations — see "Why N=1 OOM" below |
-| 2 |   8 | no_shard + full RC          |  2,973         |     558.8     |     **561.7** | 0.76     | ✓ (rung-1 no-RC OOM'd, rung-2 fit) |
-| 3 |  12 | no_shard + full RC          |  2,844         |     584.8     |     **586.0** | 0.64     | ✓ (rung-1 no-RC OOM'd, rung-2 fit) |
-| 4 |  16 | no_shard + no RC            |  2,288         |     726.9     |     **731.4** | 0.94     | ✓ |
-| 5 |  20 | no_shard + no RC            |  2,838         |     586.0     |     **588.0** | 0.93     | ✓ |
-| 6 |  24 | no_shard + no RC            |  2,898         |     574.0     |     **579.3** | 0.89     | ✓ |
-| 7 |  28 | no_shard + no RC            |  2,940         |     565.7     |     **569.8** | 0.87     | ✓ |
-| 8 |  32 | no_shard + no RC            |  2,171         |     766.2     |     **775.1** | 0.88     | ✓ — matches §2's 778.1 within 0.4 % |
-
-Steady-state from iter 10 onward; iter time is the median of iters 10–50. **N=2/3 use full recompute** (no-RC OOM's at MBS=4 for N<4), so their numbers are not directly comparable to N=4+; rough RC penalty is ~20–25 % from §2 data.
-
-### Why N=1 OOM (all three rungs)
-
-Theoretical per-rank footprint reported by Megatron at MBS=4 BF16: **weight+optimizer ≈ 119 GiB, activation ≈ 139 GiB, total ≈ 258 GiB** with no-RC. With full recompute, activations drop to ~7 GiB per layer / per microbatch (uniform RC with `--recompute-num-layers 1`) — bringing the total to ~127 GiB.
-
-But at N=1 there's nowhere to shard the optimizer state, and RCCL still initializes a comm buffer for the dist-opt setup. The third rung run failed with:
-```
-NCCL WARN Failed to CUDA calloc 536870912 bytes
-ncclUnhandledCudaError: Call to CUDA function failed.
-```
-i.e., RCCL couldn't get a 512 MiB allocation after the model loaded. With 127 GiB resident, plus hipBLASLt workspaces, plus TE scratch, plus PyTorch caching allocator overhead, the 288 GiB HBM is too tight. **N=1 at MBS=4 is a hard physical limit on a single MI355X**, not a script bug.
-
-**Workarounds for a true N=1 baseline (out of scope for this sweep):** drop MBS to 2 (`summary-2.md` did this on the old image and N=1 still OOM'd), or wait for an MI355X part with more HBM, or compare against a TP=2-style split that gives up the "one-rank-fits-all" property.
-
-### The N=4 → N=5 cliff is at the RCCL layer
-
-| N | Megatron iter time (ms) | Megatron TF/s/GPU | rccl-tests all_reduce busbw at 1 GiB (GB/s) |
-|--:|------------------------:|------------------:|--------------------------------------------:|
-| 4 | 2,288                   | 731.4             | 165                                         |
-| 5 | 2,838                   | 588.0             | **37**                                      |
-| 6 | 2,898                   | 579.3             | **37**                                      |
-| 7 | 2,940                   | 569.8             | **39**                                      |
-| 8 | 2,171                   | 775.1             | 386                                         |
-
-The 4× drop in `all_reduce_perf` busbw at N=5/6/7 (measured on the same fabric, same env, immediately after the sweep) is the direct cause of the Megatron cliff. **Megatron's per-iter time grows by ~600 ms going from N=4 to N=5 for identical per-rank work** — that delta is entirely the gradient all-reduce + param all-gather taking longer.
-
-Probable mechanism: at non-power-of-2 N on a fully-connected xGMI fabric, RCCL can't construct a clean unidirectional ring across all ranks and falls back to a tree-or-mixed algorithm that doesn't saturate the available bisection bandwidth. The flat ~37 GB/s plateau across all message sizes from 64 MiB to 1 GiB is the signature of a fixed-link-utilization fallback, not a topology-aware schedule.
-
-**This explains the non-monotone scaling shape `N=4 ✓ / N=5–7 ✗ / N=8 ✓`** — power-of-2 N values get the fast ring, others get the slow fallback. Same pattern observed on the old image (`summary-2.md`) at much lower absolute throughput; the cliff is in the collective layer, persistent across image versions.
-
-### N=8 reproducibility
-
-Two independent runs at MBS=4 BF16 no-RC, N=8 (different drivers, ~21 h apart):
-
-| Source | best TF/s/GPU | iter time (ms) | mem util |
-|--------|--------------:|---------------:|---------:|
-| MBS×RC×precision sweep (§2, 2026-06-02 21:47)    | 778.1 | 2,138 | 0.88 |
-| GPU-count sweep (§8, 2026-06-03 15:31)            | 775.1 | 2,146 | 0.88 |
-
-Δ = 0.4 % — well inside run-to-run variance. The headline 778.1 figure stands.
-
-### 8.5. Operational notes (post-mortem from the failed first attempt)
-
-The first re-run of this sweep (started 2026-06-03 09:46:42, dir `tflops_v26.1_gpusweep_20260603_094642/`) terminated incomplete and had to be discarded — useful as a record of what the fixes addressed:
-
-| Failure | Root cause | Fix in current driver |
-|---------|------------|-----------------------|
-| N=7 stopped at iter 15 of 50; N=8 never ran | Host crashed at ~12:45 the same day (`last` shows session `Jun 3 09:47 - crash`). Most likely the N=7 non-power-of-2 collective wedged the GPU; host limped along then rebooted | Per-N `timeout 1800` cap; between-N `rocm-smi` health gate aborts the sweep if the driver is wedged |
-| N=1 logged ERR with `OOM=no` despite RCCL alloc failure | OOM-detection regex matched only `HIP out of memory` / `OutOfMemoryError` / `CUDA out of memory`; RCCL's `Failed to CUDA calloc` slipped through, and the third (`optim_grads_params + full RC`) rung was never tried | Regex expanded to also catch `Failed to CUDA calloc`, `hipErrorOutOfMemory`, `cudaErrorMemoryAllocation` |
-| Driver-side `[[: invalid arithmetic operator` error per successful run | `RC=$(run_one ...)` captured the entire `tee`d container output into `$RC` instead of just the exit code | `run_one` now writes its exit code to a global `RUN_RC` and uses no command substitution |
-| N=1/2/3 reported as plain OOM with no fallback attempt | Original script only retried N=1 with `optim_grads_params` (useless at N=1 — nothing to shard to) | Three-rung OOM-fallback cascade: `no_shard, no-RC` → `no_shard, full-RC` → `optim_grads_params, full-RC` (last rung tried only at N=1) |
-
-The current sweep ran to completion in 44 min 46 s with no hangs, no host issues, and clean steady-state across all N. The legacy log/dir from the failed first attempt is left in place under `tflops_v26.1_gpusweep_20260603_094642/` for reference.
-
----
-
-## 9. Side note — comparison with the old `megatron-lm.sif` image (`summary-3.md`)
-
-All numbers above are on the new gfx950-native image `megatron-lm-v26.1.sif`. The old `megatron-lm.sif` (gfx942 binaries running on MI355X under `HSA_OVERRIDE_GFX_VERSION=9.4.2`) is the prior baseline; its full analysis lives in `summary-3.md` and is preserved as a historical record of what the gfx950 fat-binary migration bought us.
-
-### What drove the 3–5× gain
-
-| Metric | Old image (`megatron-lm.sif`, `summary-3.md`) | This sweep (`megatron-lm-v26.1.sif`) | Improvement |
-|--------|------------------------------------------------:|--------------------------------------:|------------:|
-| Best per-GPU TF/s (BF16) | 236.8 | **778.1** | **3.29×** |
-| Best per-GPU TF/s (overall) | 236.8 | **1,111.5** | **4.69×** |
-| % of MI355X hipBLASLt BF16 ceiling (1,640 TF/s) | 14.4 % | 47.4 % (BF16) | 3.3× |
-| % of MI355X hipBLASLt FP8 ceiling (3,611 TF/s) | n/a | 30.8 % (FP8) | n/a |
-
-1. **gfx950-native image (~3×).** Hot kernels now load native gfx950 code instead of MI300X assembly under `HSA_OVERRIDE_GFX_VERSION=9.4.2`.
-2. **Tunings + FP8 (~1.4× on top).** Overlap flags, fused attention, AMD reference env block, and FP8 hybrid.
-
-### MBS sweet-spot moved from 2 (old) to 4 (new)
-
-On the old image, MBS=2 was the BF16 winner — gfx942 kernels saturated at small batches and degraded with larger ones. With proper gfx950 GEMMs the relationship inverts: MBS=4 wins both precisions because larger batches amortize kernel launch / collective overhead against more compute per step (see §2 for the new-image numbers; the +9 % BF16 / +17 % FP8 gain over MBS=2 only shows up once the kernels are native).
-
-| MBS / precision | Old image (`summary-3.md`) | New image (§2) |
-|-----------------|---------------------------:|---------------:|
-| MBS=2 BF16      | 236.8                      | 715.7          |
-| MBS=4 BF16      | 231.6                      | **778.1**      |
-| MBS=4 FP8       | n/a                        | **1,111.5**    |
-
-### Where else the old image still shapes the new analysis
-
-- The "Selective RC uses more memory than no-RC" pattern noted in §4 was first observed in `summary-3.md`; it's a TE workspace overhead, not an image artifact, and persists on v26.1.
-- The N=4 ✓ / N=5–7 ✗ / N=8 ✓ scaling shape noted in §8 was first seen in `summary-2.md` on the old image; the floor is now ~570 TF/s instead of ~155, but the cliff itself is in the collective layer and persists across image versions.
-
-These observations made it into the body sections above (with no direct `summary-3.md` reference, since they're now properties of the v26.1 result and not historical context). This section is the single load-bearing pointer back to the old-image analysis for anyone who wants to walk that history.

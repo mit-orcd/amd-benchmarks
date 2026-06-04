@@ -79,13 +79,13 @@ Same hardware, very different realized throughput:
 
 | Measurement                              | TF/s/GPU | % of MI355X silicon peak (2,500) |
 |------------------------------------------|---------:|---------------------------------:|
-| rocmval BF16 (peak shape)                |  ~2,475  |                            ~99 % |
-| hipBLASLt BF16 ceiling                   |   1,640  |                           65.6 % |
+| MI355X dense BF16 silicon peak (spec)    |   2,500  |                          100 %   |
+| rocmval BF16 (peak shape, ≈ hipBLASLt ceiling) | 1,639.78 |                       65.6 % |
 | Megatron BF16 N=8 (untuned best)         |    775.1 |                           31.0 % |
 | Megatron BF16 N=8 (tuned best, §3)       |  **790.4** |                         **31.6 %** |
 | Megatron BF16 N=4 (best)                 |    731.4 |                           29.3 % |
 
-rocmval is a microbenchmark on hand-tuned single-shape GEMMs (CK / rocBLAS at near-peak shapes). Megatron exercises ~7 transformer GEMM shapes back-to-back through hipBLASLt + TE, plus collectives and TE overhead. The gap between rocmval (~99 %) and hipBLASLt ceiling (~66 %) is the library identity; the gap between hipBLASLt ceiling and Megatron is shape-mix + framework overhead.
+rocmval is a microbenchmark on the best-case BF16 GEMM shape through hipBLASLt; it realizes only ~66 % of MI355X silicon peak (the library overhead even at the best shape). Megatron exercises ~7 transformer GEMM shapes back-to-back through hipBLASLt + TE, plus collectives and TE overhead. The silicon → microbench gap (~34 %) is library implementation cost at peak shape; the microbench → Megatron gap (a further ~52 %) is shape mix + framework overhead.
 
 #### 3. Answer: rocmval MI355X is 1.1× gpu-freyer B200 at BF16, but Megatron MI355X is ~78 % of B200 — why?
 
@@ -100,25 +100,26 @@ Three things flip the ratio:
 Quantitatively:
 
 ```
-MI355X_Megatron / B200_Megatron = (silicon ratio) × (library efficiency ratio)
-                                = 1.11           × (~0.66 / ~0.90+)
-                                ≈ 0.81
+MI355X_Megatron / B200_Megatron = (microbench ratio) × (Megatron-retention ratio)
+                                = 1,639.78 / 1,493  × (0.482 / 0.660)
+                                = 1.10              × 0.73
+                                ≈ 0.80
 ```
 
-— matches the measured 0.74 (N=4) / 0.79 (N=8). The 1.11× silicon advantage is real, but hipBLASLt realizes only ~66 % of MI355X peak across Megatron's shape mix, while cuBLAS realizes 90 %+ of B200 peak across the same shapes. The library-efficiency ratio inverts the silicon ratio.
+— matches the measured 0.80 at N=8 (and 0.74 at N=4). At the microbenchmark layer (rocmval / gpu-freyer), MI355X retains its 1.10× silicon advantage. The flip happens in the **microbench → Megatron transition**: MI355X retains only 48 % of its microbench peak in Megatron, while B200 retains 66 %.
 
 **But why does MI355X lose MORE going microbench → Megatron than B200 does?** Both vendors drop from their microbenchmark peak to Megatron — what's different is the size of that drop:
 
 | Vendor | Microbench BF16 peak | Megatron N=8 BF16 best | Microbench → Megatron retention |
 |---|---:|---:|---:|
-| B200    | ~2,250 (cuBLAS BF16 peak) | 986.0 | **~44 %** |
-| MI355X  | ~2,475 (rocmval BF16)     | 790.4 (tuned, §3) | **~32 %** |
+| B200    | 1,493 (gpu-freyer / cuBLAS) | 986.0 | **66 %** |
+| MI355X  | 1,639.78 (rocmval / hipBLASLt) | 790.4 (tuned, §3) | **48 %** |
 
-B200 keeps ~44 % of its microbench number in Megatron; MI355X keeps only ~32 % — a ~12 pp retention gap. That gap comes from four compounding factors, all rooted in software maturity:
+B200 keeps ~66 % of its microbench number in Megatron; MI355X keeps only ~48 % — an **~18 pp retention gap**. That gap comes from four compounding factors, all rooted in software maturity:
 
-| Factor                          | B200 impact | MI355X impact | Net contribution to the 12 pp gap |
+| Factor                          | B200 impact | MI355X impact | Net contribution to the 18 pp gap |
 |---------------------------------|-------------|---------------|-----------------------------------|
-| GEMM library shape coverage     | cuBLAS hits ~90 %+ of peak on each of the ~7 Megatron shapes (years of tuning) | hipBLASLt hits ~66 % across the same shapes (gfx950 fat-binary is months old) | **~7–9 pp** (dominant) |
+| GEMM library shape coverage     | cuBLAS hits ~90 %+ of its microbench peak on each of the ~7 Megatron shapes (years of tuning) | hipBLASLt drops further below its microbench peak on off-peak shapes (gfx950 fat-binary is months old) | **~12–13 pp** (dominant) |
 | Attention path                  | FlashAttention (fully fused, highly tuned)                              | FA disabled (TE 2.6 ≠ FA 2.8.3 version), falls back to CK/AITER FusedAttention | **~3–5 pp** |
 | RoPE fusion                     | Apex fused RoPE for Blackwell                                            | No gfx950 Apex RoPE kernel; unfused PyTorch fallback                          | **~2–3 pp** |
 | TE ↔ GEMM-library integration   | cuBLAS/TE is a multi-year integration; aggressive kernel fusion across linear-bias-activation-norm | hipBLASLt/TE on ROCm is newer; more Python-side dispatch, fewer fused paths | **~1–2 pp** |

@@ -1,0 +1,14 @@
+variant                          prec last_TF/GPU   best_TF/GPU   status   log
+bf16_baseline                    bf16 774.9         774.9         OK       /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_tune_20260604_104624/bench_bf16_baseline.log
+bf16_hipblaslt_30x150            bf16 772.7         784.3         OK       /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_tune_20260604_104624/bench_bf16_hipblaslt_30x150.log
+bf16_hipblaslt_50x250            bf16 ERR           ERR           TIMEOUT  /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_tune_20260604_104624/bench_bf16_hipblaslt_50x250.log
+# ---- RESUME after host crash, 2026-06-04 15:08:59 ----
+bf16_nccl_buffsize_16M           bf16 774.0         789.2         OK       /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_tune_20260604_104624/bench_bf16_nccl_buffsize_16M.log
+bf16_rope_fusion                 bf16 ERR           ERR           UNREC    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_tune_20260604_104624/bench_bf16_rope_fusion.log
+bf16_grad_accum_fusion           bf16 ERR           ERR           UNREC    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_tune_20260604_104624/bench_bf16_grad_accum_fusion.log
+bf16_ddp_bucket_250M             bf16 783.1         790.4         OK       /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_tune_20260604_104624/bench_bf16_ddp_bucket_250M.log
+bf16_compound_v1                 bf16 ERR           ERR           UNREC    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_tune_20260604_104624/bench_bf16_compound_v1.log
+fp8_baseline                     fp8  1089.1        1108.1        OK       /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_tune_20260604_104624/bench_fp8_baseline.log
+fp8_margin2_amax16               fp8  1094.4        1119.3        OK       /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_tune_20260604_104624/bench_fp8_margin2_amax16.log
+fp8_amax_max                     fp8  1090.7        1098.4        OK       /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_tune_20260604_104624/bench_fp8_amax_max.log
+fp8_compound_v1                  fp8  ERR           ERR           UNREC    /home/v89592/shaohao/megatron-lm/work/logs/tflops_v26.1_tune_20260604_104624/bench_fp8_compound_v1.log

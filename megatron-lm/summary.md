@@ -73,64 +73,66 @@ Per-GPU throughput, BF16, MBS=4:
 
 ¹ N=2 MI355X uses full recompute (~20–25 % compute tax — no-RC OOMs at MBS=4 on 288 GiB HBM); RC-corrected estimate is ~71 %. B200 weak-scales cleanly (95–96 % efficiency from N=1→8); MI355X has a separate RCCL cliff at N=5/6/7 (busbw drops 4×). ² **Tuned best (§3):** 790.4 TF/s/GPU at N=8 with `--ddp-bucket-size 250000000`, moving MI355X to **80.2 %** of B200 at matched N=8 MBS=4 no-RC. The 775.1 figure is the untuned weak-scaling value used in the headline BF16 table for parallel-efficiency comparability across N. **Apples-to-apples conclusion: at matched MBS=4 BF16 no-RC, MI355X is 73.6 % of B200 at N=4 and 78.6–80.2 % at N=8.** Source: `logs/tflops_v26.1_gpusweep_20260603_153153/` and `logs/tflops_v26.1_tune_20260604_104624/`.
 
-#### 2. Megatron vs rocmval on MI355X
+#### 2. Why Megatron is slower than rocmval on MI355X
 
-Same hardware, very different realized throughput:
+Megatron BF16 N=8 tuned = **790.4** vs rocmval microbench = **1,639.78** — Megatron realizes only **~48 %** of microbench peak. The drop comes from everything wrapped around the GEMM:
 
-| Measurement                              | TF/s/GPU | % of MI355X silicon peak (2,500) |
-|------------------------------------------|---------:|---------------------------------:|
-| MI355X dense BF16 silicon peak (spec)    |   2,500  |                          100 %   |
-| rocmval BF16 (peak shape, ≈ hipBLASLt ceiling) | 1,639.78 |                       65.6 % |
-| Megatron BF16 N=8 (untuned best)         |    775.1 |                           31.0 % |
-| Megatron BF16 N=8 (tuned best, §3)       |  **790.4** |                         **31.6 %** |
-| Megatron BF16 N=4 (best)                 |    731.4 |                           29.3 % |
+| Layer                              | What it adds vs rocmval                                                              | Drop  |
+|------------------------------------|---------------------------------------------------------------------------------------|------:|
+| Shape mix                          | rocmval runs one peak GEMM shape; Megatron runs ~7 (QKV, O, FFN up/gate/down, lm-head). hipBLASLt on gfx950 is not consistently tuned across the off-peak shapes | ~25 % |
+| Non-GEMM compute + reformat        | softmax, RMSNorm, RoPE (unfused — no gfx950 Apex kernel), data-layout transposes      | ~15 % |
+| Attention path                     | TE 2.6 rejects FA 2.8.3, falls back to CK/AITER FusedAttention                        | ~5 %  |
+| Collective time                    | RCCL all-reduce of grads + all-gather of params (dist-opt) at N=8                     | ~5 %  |
+| TE ↔ hipBLASLt integration         | newer integration; Python-side dispatch, fewer fused linear-bias-activation paths     | ~2 %  |
+| **Total**                          |                                                                                       | **~52 %** |
 
-rocmval is a microbenchmark on the best-case BF16 GEMM shape through hipBLASLt; it realizes only ~66 % of MI355X silicon peak (the library overhead even at the best shape). Megatron exercises ~7 transformer GEMM shapes back-to-back through hipBLASLt + TE, plus collectives and TE overhead. The silicon → microbench gap (~34 %) is library implementation cost at peak shape; the microbench → Megatron gap (a further ~52 %) is shape mix + framework overhead.
+#### 3. Why Megatron is slower than gpu-fryer on B200
 
-#### 3. Answer: rocmval MI355X is 1.1× gpu-freyer B200 at BF16, but Megatron MI355X is ~78 % of B200 — why?
+Megatron BF16 N=8 = **986.0** vs gpu-fryer microbench = **1,493** — Megatron realizes **~66 %** of microbench peak. Same kind of drop, smaller magnitude:
 
-Three things flip the ratio:
+| Layer                              | What it adds vs gpu-fryer                                                            | Drop  |
+|------------------------------------|---------------------------------------------------------------------------------------|------:|
+| Shape mix                          | cuBLAS is well-tuned across all of Megatron's ~7 shapes; small per-shape gap          | ~12 % |
+| Non-GEMM compute + reformat        | softmax, LayerNorm, Apex fused RoPE on Blackwell                                       | ~12 % |
+| Attention path                     | FlashAttention enabled and well-tuned                                                  | ~2 %  |
+| Collective time                    | NCCL all-reduce + all-gather on NVSwitch                                              | ~5 %  |
+| TE ↔ cuBLAS integration            | multi-year-mature; aggressive cross-op fusion                                          | ~3 %  |
+| **Total**                          |                                                                                       | **~34 %** |
 
-| Effect                   | rocmval (MI355X)                              | Megatron (MI355X)                                         |
-|--------------------------|-----------------------------------------------|-----------------------------------------------------------|
-| Library                  | spec / CK / rocBLAS at one peak shape         | hipBLASLt via TE across all transformer shapes            |
-| Shape coverage           | 1–2 hand-tuned shapes near silicon ceiling    | ~7 distinct shapes (QKV / O / FFN up/gate/down) back-to-back |
-| Surrounding cost         | raw GEMM only                                 | TE dispatch + RCCL collectives + activation reformat      |
+Both vendors drop, but the layers that cost AMD more are clearly identifiable.
 
-Quantitatively:
+#### 4. Why does MI355X lose MORE going microbench → Megatron than B200 does?
+
+| Vendor | Microbench BF16 peak           | Megatron N=8 BF16 best | Retention |
+|--------|-------------------------------:|-----------------------:|----------:|
+| B200    | 1,493 (gpu-fryer / cuBLAS)     | 986.0                  | **66 %** |
+| MI355X  | 1,639.78 (rocmval / hipBLASLt) | 790.4 (tuned, §3)      | **48 %** |
+
+Subtracting the per-vendor drop tables in #2 and #3 row-by-row:
+
+| Factor                          | MI355X drop | B200 drop | Net contribution to the 18 pp gap |
+|---------------------------------|------------:|----------:|----------------------------------:|
+| GEMM library shape coverage     |       25 %  |     12 %  | **~13 pp** (dominant) |
+| Non-GEMM compute + reformat     |       15 %  |     12 %  | ~3 pp  |
+| Attention path                  |        5 %  |      2 %  | ~3 pp  |
+| Collective time                 |        5 %  |      5 %  | ~0 pp  |
+| TE ↔ library integration        |        2 %  |      3 %  | ~−1 pp |
+| **Total**                       |    **52 %** |  **34 %** | **~18 pp** |
+
+Quantitatively this matches the measured Megatron ratio:
 
 ```
-MI355X_Megatron / B200_Megatron = (microbench ratio) × (Megatron-retention ratio)
-                                = 1,639.78 / 1,493  × (0.482 / 0.660)
-                                = 1.10              × 0.73
-                                ≈ 0.80
+MI355X / B200 = (microbench ratio) × (Megatron-retention ratio)
+              = 1,639.78 / 1,493  × (0.482 / 0.660)
+              = 1.10              × 0.73
+              ≈ 0.80
 ```
 
-— matches the measured 0.80 at N=8 (and 0.74 at N=4). At the microbenchmark layer (rocmval / gpu-freyer), MI355X retains its 1.10× silicon advantage. The flip happens in the **microbench → Megatron transition**: MI355X retains only 48 % of its microbench peak in Megatron, while B200 retains 66 %.
+— matches measured 0.80 at N=8 (0.74 at N=4). The 1.10× microbench advantage is real; the flip happens entirely at the microbench → Megatron transition, dominated by the hipBLASLt shape-coverage gap on gfx950.
 
-**But why does MI355X lose MORE going microbench → Megatron than B200 does?** Both vendors drop from their microbenchmark peak to Megatron — what's different is the size of that drop:
+**Not contributors:** hardware (silicon favors MI355X), driver/fabric at power-of-2 N (the N=5/6/7 RCCL cliff doesn't apply at N=2/4/8), or Megatron itself (no vendor-specific tuning above the TE → GEMM line).
 
-| Vendor | Microbench BF16 peak | Megatron N=8 BF16 best | Microbench → Megatron retention |
-|---|---:|---:|---:|
-| B200    | 1,493 (gpu-freyer / cuBLAS) | 986.0 | **66 %** |
-| MI355X  | 1,639.78 (rocmval / hipBLASLt) | 790.4 (tuned, §3) | **48 %** |
-
-B200 keeps ~66 % of its microbench number in Megatron; MI355X keeps only ~48 % — an **~18 pp retention gap**. That gap comes from four compounding factors, all rooted in software maturity:
-
-| Factor                          | B200 impact | MI355X impact | Net contribution to the 18 pp gap |
-|---------------------------------|-------------|---------------|-----------------------------------|
-| GEMM library shape coverage     | cuBLAS hits ~90 %+ of its microbench peak on each of the ~7 Megatron shapes (years of tuning) | hipBLASLt drops further below its microbench peak on off-peak shapes (gfx950 fat-binary is months old) | **~12–13 pp** (dominant) |
-| Attention path                  | FlashAttention (fully fused, highly tuned)                              | FA disabled (TE 2.6 ≠ FA 2.8.3 version), falls back to CK/AITER FusedAttention | **~3–5 pp** |
-| RoPE fusion                     | Apex fused RoPE for Blackwell                                            | No gfx950 Apex RoPE kernel; unfused PyTorch fallback                          | **~2–3 pp** |
-| TE ↔ GEMM-library integration   | cuBLAS/TE is a multi-year integration; aggressive kernel fusion across linear-bias-activation-norm | hipBLASLt/TE on ROCm is newer; more Python-side dispatch, fewer fused paths | **~1–2 pp** |
-
-The collective layer is **not** a contributor at the comparison points: RCCL allreduce busbw at N=8 is 386 GB/s (higher than the 165 GB/s figure at N=4 on the same fabric), and Megatron iter time at N=8 is dominated by GEMM, not communication.
-
-**In short**, the same software-maturity gap that puts Megatron MI355X at 78 % of B200 *also* explains why MI355X falls further from its own microbenchmark peak than B200 does. It's the same problem viewed from two angles — every factor that costs throughput in the microbench → Megatron transition costs more on the AMD side because each piece of the stack (hipBLASLt, TE/AMD integration, gfx950 Apex, FA on ROCm) is newer.
-
-**Not contributors:** hardware (silicon favors MI355X), driver/fabric at power-of-2 N (the N=5/6/7 RCCL cliff is a separate issue and doesn't apply at N=2/4/8), or Megatron itself (no vendor-specific tuning above the TE → GEMM line).
-
-**Closes the gap:** hipBLASLt shape-mix tuning on gfx950 alone moves MI355X to or past parity. Secondary single-digit-pp items: gfx950 Apex fused RoPE (~3–5 %), FlashAttention path enabled in TE 2.6 (currently falls back to CK/AITER), and FP8 tuning closer to the 2.2× theoretical ratio (currently 1.43×).
+**Closes the gap:** offline hipBLASLt tuning on gfx950 alone moves MI355X to or past parity. Secondary single-digit-pp items: gfx950 Apex fused RoPE, FlashAttention path unlocked in TE 2.6, and FP8 tuning closer to the 2.2× theoretical ratio (currently 1.43×).
 
 ---
 

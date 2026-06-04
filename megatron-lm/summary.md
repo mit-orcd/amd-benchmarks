@@ -140,6 +140,10 @@ MI355X / B200 = (microbench ratio) × (Megatron-retention ratio)
 
 — measured 0.80 at N=8 (0.74 at N=4). The 1.10× microbench advantage is real; the flip happens entirely at the microbench → Megatron transition.
 
+(CK = Composable Kernel, AMD's library of hand-written GPU kernels for specific shapes — used by FlashAttention and TE's fused-attention path, but not a general substitute for hipBLASLt's role in dispatching arbitrary GEMM shapes.)
+
+> **The clean way to state this:** rocmval and Megatron both call hipBLASLt on MI355X — same library, same dispatch path. What differs is the shape: rocmval measures one hand-picked near-peak shape (well-tuned in hipBLASLt's gfx950 algorithm DB); Megatron exercises ~7 transformer shapes, several of which are off the well-tuned set. The peak shape is fast because AMD's library tuners targeted it; the other shapes are slower because the gfx950 algorithm DB is months old and hasn't covered them yet. CK exists but only for hand-written kernel shapes (used by FA / fused-attention); it's not a general substitute for hipBLASLt's role in dispatch.
+
 **Not contributors:** hardware (silicon favors MI355X), driver/fabric at power-of-2 N (the N=5/6/7 RCCL cliff doesn't apply at N=2/4/8), or Megatron itself (no vendor-specific tuning above the TE → GEMM line).
 
 **Closes the gap:** offline hipBLASLt tuning on gfx950 alone moves MI355X to or past parity. Secondary single-digit-pp items: gfx950 Apex fused RoPE, FlashAttention path unlocked in TE 2.6, and FP8 tuning closer to the 2.2× theoretical ratio (currently 1.43×).
@@ -162,10 +166,6 @@ MI355X / B200 = (microbench ratio) × (Megatron-retention ratio)
 > **The careful version of the claim:** For transformer BF16 training in PyTorch on a 2026-mid software stack, MI355X is likely 75–85 % of B200 per-GPU on a 16 B-class model — primarily because gfx950 hipBLASLt's per-shape tuning coverage is younger than cuBLAS-on-Blackwell's. The silicon advantage is real (1.10× microbench, 1.11× spec), and the gap is expected to narrow as AMD's library matures.
 
 What NOT to say: ❌ "MI355X is slower than B200 for deep learning." Too broad — conflates hardware, software, workload class, and a moment in time.
-
-**Does rocmval use a "better" library than Megatron does?** No — both call hipBLASLt on MI355X. (CK = Composable Kernel, AMD's library of hand-written GPU kernels for specific shapes — used by FlashAttention and TE's fused-attention path, but not a general substitute for hipBLASLt's role in dispatching arbitrary GEMM shapes.)
-
-> **The clean way to state this:** rocmval and Megatron both call hipBLASLt on MI355X — same library, same dispatch path. What differs is the shape: rocmval measures one hand-picked near-peak shape (well-tuned in hipBLASLt's gfx950 algorithm DB); Megatron exercises ~7 transformer shapes, several of which are off the well-tuned set. The peak shape is fast because AMD's library tuners targeted it; the other shapes are slower because the gfx950 algorithm DB is months old and hasn't covered them yet. CK exists but only for hand-written kernel shapes (used by FA / fused-attention); it's not a general substitute for hipBLASLt's role in dispatch.
 
 ---
 

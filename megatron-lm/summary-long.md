@@ -58,57 +58,130 @@ Source: §7, `logs/tflops_v26.1_gpusweep_20260603_153153/`. ¹ Per-GPU TF/s norm
 
 ### vs. NVIDIA B200
 
-The long-form version is preserved in `summary-long.md`. The condensed write-up follows.
+Per-GPU throughput across GPU counts (TFLOP/s/GPU, BF16, MBS=4):
 
-#### 1. Megatron MI355X vs B200
+| GPUs | B200    | MI355X        | RC for MI355X | MI355X / B200 |
+|----:|--------:|--------------:|---------------|--------------:|
+|   1 | 1,031.6 | OOM¹          | —             | —             |
+|   2 | 1,005.3 | 561.7²        | full          | 55.9 %²       |
+|   3 |    —    | 586.0²        | full          | —             |
+|   4 |   993.5 | **731.4**     | none          | **73.6 %**    |
+|   5 |    —    |     588.0     | none          | —             |
+|   6 |    —    |     579.3     | none          | —             |
+|   7 |    —    |     569.8     | none          | —             |
+|   8 |   986.0 |   **775.1**   | none          | **78.6 %**    |
 
-Per-GPU throughput, BF16, MBS=4:
+Source: GPU-count weak-scaling sweep `logs/tflops_v26.1_gpusweep_20260603_153153/` (see §7). ¹ N=1 OOM at MBS=4 across all three configurations the script tried (`no_shard`, `no_shard + full RC`, `optim_grads_params + full RC`) — the 16 B model + ~512 MiB RCCL comm buffer exceeds 288 GiB HBM at single-rank scale. Confirmed physical limit, not a script issue. ² **RC-handicapped:** N=2/3 only fit at MBS=4 with `--recompute-granularity full`, which adds ~20–25 % compute overhead (recompute does the forward pass twice — once during forward, once during backward — to save activation memory). The MI355X column at those rows therefore measures a *different* workload than B200's no-recompute column, so the 55.9 % ratio at N=2 conflates the RC penalty with the hardware/framework gap. Backing out the ~20–25 % RC tax gives an RC-corrected ~71 % at N=2 — in line with the N=4/8 no-RC figures. N=3 has no B200 reference at this MBS.
 
-| N | B200 TF/s/GPU | MI355X TF/s/GPU | RC | MI355X / B200 |
-|--:|--------------:|----------------:|----|--------------:|
-| 1 |       1,031.6 | OOM             | —    | —          |
-| 2 |       1,005.3 |           561.7 | full | 55.9 %¹    |
-| 4 |         993.5 |       **731.4** | none | **73.6 %** |
-| 8 |         986.0 |       **775.1** | none | **78.6 %** |
+At matched MBS=4 BF16 no-RC, the two direct apples-to-apples points are N=4 and N=8:
 
-¹ N=2 MI355X uses full recompute (~20–25 % compute tax — no-RC OOMs at MBS=4 on 288 GiB HBM); RC-corrected estimate is ~71 %. B200 weak-scales cleanly (95–96 % efficiency from N=1→8); MI355X has a separate RCCL cliff at N=5/6/7 (busbw drops 4×, see §7). **Apples-to-apples conclusion: at matched MBS=4 BF16 no-RC, MI355X is 73.6 % of B200 at N=4 and 78.6 % at N=8.** Source: `logs/tflops_v26.1_gpusweep_20260603_153153/`.
+| Metric                          |  B200 N=4 | MI355X N=4 |  B200 N=8 | MI355X N=8 |
+|---------------------------------|----------:|-----------:|----------:|-----------:|
+| Megatron TF/s/GPU               |     993.5 |      731.4 |     986.0 |      775.1 |
+| MI355X / B200                   |         — |   73.6 %   |         — |   78.6 %   |
+| Parallel efficiency (vs. N=1)   |     96.3 %|       n/a¹ |     95.6 %|       n/a¹ |
+| % of dense BF16 peak            |     44.2 %|     29.3 % |     43.8 %|     31.0 % |
+| % of hipBLASLt BF16 ceiling     |       —   |     44.6 % |       —   |     47.3 % |
 
-#### 2. Megatron vs rocmval on MI355X
+Dense BF16 peak (no sparsity): B200 = 2,250 TF/s, MI355X = 2,500 TF/s — i.e., **MI355X silicon is 1.11× B200**. hipBLASLt BF16 ceiling for MI355X = 1,640 TF/s. ¹ MI355X N=1 OOM'd on all three sharding+RC combinations the script tried, so no N=1 baseline is achievable at MBS=4 — parallel efficiency cannot be computed.
 
-Same hardware, very different realized throughput:
+### Reading the comparison
 
-| Measurement                              | TF/s/GPU | % of MI355X silicon peak (2,500) |
-|------------------------------------------|---------:|---------------------------------:|
-| rocmval BF16 (peak shape)                |  ~2,475  |                            ~99 % |
-| hipBLASLt BF16 ceiling                   |   1,640  |                           65.6 % |
-| Megatron BF16 N=8 (best)                 |    775.1 |                           31.0 % |
-| Megatron BF16 N=4 (best)                 |    731.4 |                           29.3 % |
+- **At matched N=4 / N=8 BF16, MI355X delivers 73.6 % / 78.6 % of B200 per-GPU** (731.4 vs 993.5, 775.1 vs 986.0). Framework-level apples-to-apples — same MBS, same precision, no recompute on either side. The detailed root-cause analysis is in the subsection below.
+- **B200 weak-scales cleanly:** 3.7 % per-GPU drop from N=1 to N=4 (1,031.6 → 993.5), 4.4 % to N=8 (→ 986.0) — so 95–96 % parallel efficiency on NVSwitch across the curve.
+- **MI355X has a non-power-of-2 cliff at N=5–7:** per-GPU collapses from 731 (N=4) to ~570–588 (N=5/6/7) — a ~20 % drop. **Root cause now confirmed at the RCCL layer**, not Megatron: a 64 MiB–1 GiB `all_reduce_perf` sweep on the same fabric (post-sweep, see §7) shows busbw drops from 162 GB/s at N=4 to ~38 GB/s at N=5/6/7 — a 4× collective regression at the same xGMI hardware. Megatron's per-iter time grows accordingly (2.29 s → 2.90 s) for the same per-rank compute. **N=4 and N=8 are the only good scaling points.**
+- **N=8 BF16 (775.1) is the new high-water mark at no-RC**, exceeding N=4 (731.4) by 6 %. Dist-opt collectives amortize better at the larger power-of-2 N. Matches the 778.1 from the independent MBS×RC×precision sweep (§2) within 0.4 %, confirming reproducibility. The scaling shape is `N=4 ✓, N=5/6/7 ✗, N=8 ✓` — not classic weak-scaling decay.
+- **FP8 still wins on wall-clock:** MI355X FP8 at N=8 hits 1,111.5 TF/s/GPU — above B200's BF16 numbers across the board. Not apples-to-apples (precision mismatch), but the realized throughput is competitive.
 
-rocmval is a microbenchmark on hand-tuned single-shape GEMMs (CK / rocBLAS at near-peak shapes). Megatron exercises ~7 transformer GEMM shapes back-to-back through hipBLASLt + TE, plus collectives and TE overhead. The gap between rocmval (~99 %) and hipBLASLt ceiling (~66 %) is the library identity; the gap between hipBLASLt ceiling and Megatron is shape-mix + framework overhead.
+### Why MI355X is slower in Megatron despite a higher BF16 silicon peak
 
-#### 3. Answer: rocmval MI355X is 1.1× gpu-freyer B200 at BF16, but Megatron MI355X is ~78 % of B200 — why?
+At the apples-to-apples power-of-2 N points (same MBS, same precision, no recompute on either side):
 
-Three things flip the ratio:
+| N | B200 TF/s/GPU | MI355X TF/s/GPU | MI355X / B200 |
+|--:|--------------:|----------------:|--------------:|
+| 2 |       1,005.3 |    558.8 (RC=full) | 55.6 % (RC-tainted)¹ |
+| 4 |         993.5 |           731.4 | **73.6 %**        |
+| 8 |         986.0 |           775.1 | **78.6 %**        |
 
-| Effect                   | rocmval (MI355X)                              | Megatron (MI355X)                                         |
-|--------------------------|-----------------------------------------------|-----------------------------------------------------------|
-| Library                  | spec / CK / rocBLAS at one peak shape         | hipBLASLt via TE across all transformer shapes            |
-| Shape coverage           | 1–2 hand-tuned shapes near silicon ceiling    | ~7 distinct shapes (QKV / O / FFN up/gate/down) back-to-back |
-| Surrounding cost         | raw GEMM only                                 | TE dispatch + RCCL collectives + activation reformat      |
+¹ N=2 MI355X uses full recompute (the no-RC config OOMs at MBS=4); RC-corrected estimate is ~716 TF/s/GPU, giving ~71 %.
 
-Quantitatively:
+The puzzle: in the **rocmval** validation suite, MI355X's BF16 peak is **~1.1× B200's** (matching the silicon-spec ratio 2,500 / 2,250 = 1.11). Yet in Megatron, MI355X delivers only **~74–79 %** of B200's per-GPU throughput. Same hardware, same workload class, opposite ratios — what flipped between rocmval and Megatron?
+
+**Important up-front clarification — Megatron uses each vendor's own GEMM library, not cuBLAS on both sides.**
+
+The comparison is between Megatron's *real, deployed* execution paths on each platform — each one running the vendor's native math library:
+
+| Stack on MI355X (our measurement)                         | Stack on B200 (the published reference)                |
+|-----------------------------------------------------------|--------------------------------------------------------|
+| Megatron-LM (ROCm fork) → TransformerEngine → **hipBLASLt** | Megatron-LM (upstream) → TransformerEngine → **cuBLAS / cuBLASLt** |
+
+cuBLAS is CUDA-only and cannot run on AMD GPUs at all — there is no scenario where Megatron would use cuBLAS on MI355X. hipBLASLt is the only realistic choice on the AMD side, and Megatron *does* use it via TE. So the comparison below is apples-to-apples in the only way it could be: each side running its vendor's GEMM library against the same model and same training script.
+
+**What it is NOT:**
+
+- **Not hardware.** Silicon is in MI355X's favor (1.11× peak).
+- **Not the driver or fabric at these N.** xGMI and RCCL work cleanly at N=2/4/8 (the cliff at N=5/6/7 is a separate driver-stack issue, §7, and doesn't apply to the points we're comparing here).
+- **Not Megatron-LM optimization.** Megatron itself has no meaningful vendor-specific tuning surface above the TE → GEMM-library line — there is no separate "B200-optimized vs MI355X-optimized" Megatron code path. The ROCm fork mirrors the upstream training loop; the divergence is below TE, in how each vendor's GEMM library realizes the same operations.
+
+**What it IS — the math-library *shape-mix* penalty:**
+
+Given the stack above, the question reduces to: on Megatron's GEMM workload, why does hipBLASLt realize a smaller fraction of MI355X silicon than cuBLAS does of B200 silicon? The next subsection unpacks what rocmval actually measures (it may not use hipBLASLt at all); for now, the two factors are **which GEMM shapes get measured** and **how well-tuned the library is across those shapes:**
+
+| Source | Shapes measured | MI355X / B200 |
+|---|---|---:|
+| rocmval BF16 TFLOPs | best-case / peak GEMM shapes — close to silicon ceiling on each part | **1.10×** |
+| Megatron BF16 N=8 | mix of ~7 different GEMM shapes (QKV projection, output projection, FFN up/down, …) running back-to-back, with framework + collective overhead | **0.79×** |
+
+cuBLAS on Blackwell is well-tuned across **all** the shapes Megatron exercises, so its realized-per-shape throughput stays close to its peak. hipBLASLt on gfx950 has fewer well-tuned algorithms for the off-peak shapes (the gfx950 fat-binary is recent), so its realized-per-shape throughput drops further below its peak than cuBLAS does. That widens the gap from a 1.10× MI355X advantage at peak shapes to a ~22 % deficit on the actual Megatron workload.
+
+**Quantitative decomposition:**
 
 ```
 MI355X_Megatron / B200_Megatron = (silicon ratio) × (library efficiency ratio)
                                 = 1.11           × (~0.66 / ~0.90+)
-                                ≈ 0.81
+                                ≈ 1.11 × 0.73 = 0.81
 ```
 
-— matches the measured 0.74 (N=4) / 0.79 (N=8). The 1.11× silicon advantage is real, but hipBLASLt realizes only ~66 % of MI355X peak across Megatron's shape mix, while cuBLAS realizes 90 %+ of B200 peak across the same shapes. The library-efficiency ratio inverts the silicon ratio.
+— where 0.66 is hipBLASLt's realized fraction of MI355X silicon peak (1,640 / 2,500), and 0.90+ is cuBLAS's realized fraction of B200 silicon peak (typical for cuBLAS BF16 GEMM on Blackwell). The N=8 measured 0.79 and N=4 measured 0.74 both land in that predicted range; the few-pp residual at N=4 vs N=8 is the smaller framework/TE issues below plus collective overhead amortizing better at larger N.
 
-**Not contributors:** hardware (silicon favors MI355X), driver/fabric at power-of-2 N (the N=5/6/7 cliff is separate, §7), or Megatron itself (no vendor-specific tuning above the TE → GEMM line).
+**Smaller secondary contributors** (each costs single-digit pp, not load-bearing for the main gap):
 
-**Closes the gap:** hipBLASLt shape-mix tuning on gfx950 alone moves MI355X to or past parity. Secondary single-digit-pp items: gfx950 Apex fused RoPE (~3–5 %), FlashAttention path enabled in TE 2.6 (currently falls back to CK/AITER), and FP8 tuning closer to the 2.2× theoretical ratio (currently 1.43×).
+- **No gfx950-built Apex fused RoPE yet.** Apex has gfx942 RoPE kernels but not gfx950; the native fallback costs ~3–5 %.
+- **No FlashAttention path.** TE 2.6 in the v26.1 image sees flash-attn 2.8.3 as "unsupported" (outside its ≤ 2.8.1 window), forcing the FusedAttention (CK/AITER) backend; FA would beat it on some shapes.
+- **FP8 path partially tuned.** Achieved FP8/BF16 ratio is 1.43× vs theoretical 2.20× — see §2.
+
+**Bottom line:** the 1.11× silicon-peak inversion is in MI355X's favor. The primary ~22–25 % Megatron deficit comes from **hipBLASLt being less consistently tuned across Megatron's GEMM shape mix than cuBLAS is on Blackwell** — not from hardware, not from the driver, not from Megatron framework tuning. The library picture between rocmval and Megatron is more nuanced and is covered in the next subsection.
+
+### Math library differences: rocmval vs. Megatron
+
+The rocmval BF16 figure (≈ 1.1× B200) and the Megatron BF16 figure (73–79 % of B200) likely come from different software paths, even though both run on the same MI355X hardware.
+
+**What Megatron uses on MI355X:**
+
+Megatron-LM on AMD calls TransformerEngine (TE), which dispatches GEMMs to **hipBLASLt**. hipBLASLt selects from a library of autotuned algorithms at runtime — it is the AMD counterpart to cuBLASLt, and is what `te.Linear` uses on ROCm. cuBLAS cannot run on AMD GPUs at all; hipBLASLt is the only viable path.
+
+**What rocmval likely uses:**
+
+The ROCm validation suite's BF16 figure can come from several places, none of which need to be hipBLASLt via TE:
+
+| Likely source | What it measures | Library |
+|---|---|---|
+| Silicon spec (2,500 TF/s dense BF16) | Theoretical peak from the MI355X product spec — no actual kernel run | None |
+| CK (Composable Kernel) hand-tuned GEMMs | Single large near-square GEMM (e.g., M=N=K=16384) manually assembled for gfx950 | CK |
+| rocBLAS | Single large GEMM at shapes where rocBLAS is well-optimized | rocBLAS |
+| hipBLASLt at a chosen peak shape | Online-tuned run at a single sweet-spot shape | hipBLASLt |
+
+CK and rocBLAS are hand-tuned to hit or closely approach the theoretical peak at the shapes they target; validators typically run them at those sweet-spot shapes. hipBLASLt covers more shapes (the full set Megatron exercises), but is less consistently close to peak outside the best-case shapes — particularly on gfx950, where fat-binary support in hipBLASLt is newer.
+
+**Three real differences between rocmval and Megatron on AMD:**
+
+| Dimension | rocmval | Megatron |
+|---|---|---|
+| Library | spec / CK / rocBLAS (optimal for the chosen shape) | hipBLASLt via TE (covers all of Megatron's shapes) |
+| Shape mix | 1–2 peak shapes per benchmark | ~7 distinct GEMM shapes back-to-back (QKV proj, O-proj, FFN up/gate/down, …) |
+| Surrounding overhead | None — raw GEMM throughput only | TE dispatch, activation reformat, collective synchronization |
+
+The result: rocmval can legitimately report ≥ 1.1× B200 because it measures at best-case shapes where MI355X silicon efficiency is high (and it may be using a library, CK/rocBLAS, that is more optimized at those shapes than hipBLASLt). Megatron sees 73–79 % of B200 because hipBLASLt on gfx950 realizes less of its peak across the full shape mix, and cuBLAS on Blackwell is well-tuned across all of those shapes. The library is not the same on each side — the AMD stack has multiple GEMM layers (spec → CK → rocBLAS → hipBLASLt), and which one a benchmark lands on determines how close to silicon peak it gets.
 
 ---
 

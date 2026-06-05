@@ -1,211 +1,172 @@
-# readme-rccl — rccl-tests quick-start
+# RCCL Collective Sweep — reproducing summary-rccl.md
 
-How to download, build, and run the rccl-tests sweep that drives
-[`run-rccl-tests.sh`](run-rccl-tests.sh). For *why* this sweep exists and how
-to read the results, see [`rccl-tests.md`](rccl-tests.md).
+Scripts and setup to reproduce the measured results in `summary-rccl.md §1`
+on the MI355X 8-GPU node.
 
-## Prerequisites
+| summary-rccl.md content | Script | Output |
+|--------------------------|--------|--------|
+| §1.1 all-collective × N table | `run-rccl-all.sh` | `logs/rccl_all_<stamp>/` |
+| §1.1 sendrecv row (footnote ¹) | `run-rccl-sendrecv.sh` | `logs/rccl_sendrecv_<stamp>/` |
+| §1.1 busbw figure | `plot_rccl_busbw.py` | `rccl_busbw_8GiB.png` |
 
-- Singularity image at `/home/v89592/shaohao/megatron-lm/megatron-lm.sif`
-  (the same one used by `run.sh`). It ships ROCm 6.4.3 + RCCL 2.22 + a
-  working `git`, `make`, and `hipcc`, so no host toolchain is needed.
-- An MI355X node (or any gfx9 GPU); the script bakes
-  `HSA_OVERRIDE_GFX_VERSION=9.4.2` so prebuilt gfx942 kernels run on gfx950
-  the same way Megatron does.
-- ~30 min of GPU time for the full sweep (2 collectives × 7 N).
+## Layout
 
-## 1. Download + build rccl-tests
+```
+/home/v89592/shaohao/megatron-lm/
+├── megatron-lm.sif              # pre-v26.1 Singularity image (ROCm + RCCL + build tools)
+└── work/
+    ├── run-rccl-all.sh
+    ├── run-rccl-sendrecv.sh
+    ├── plot_rccl_busbw.py
+    ├── rccl-tests/
+    │   └── build/               # compiled rccl-tests binaries (one-time build)
+    └── logs/
+        ├── rccl_all_<stamp>/    # from run-rccl-all.sh
+        └── rccl_sendrecv_<stamp>/  # from run-rccl-sendrecv.sh
+```
 
-One-time. Builds into `work/rccl-tests/build/` — host-bind-mounted, so it
-survives container teardown and reboots:
+## Requirements
+
+- `singularity` (or `apptainer`) on the host.
+- ROCm host driver; `rocm-smi` must see all 8 GPUs.
+- No host C++ toolchain needed — `make` and `hipcc` come from inside the container.
+- No sudo needed. Scripts write only under `work/logs/` and `work/rccl-tests/`.
+
+**Note:** These scripts use `megatron-lm.sif` (the pre-v26.1 image), **not**
+`megatron-lm-v26.1.sif`. `HSA_OVERRIDE_GFX_VERSION=9.4.2` is set inside both
+scripts so gfx942-compiled RCCL kernels run on gfx950 hardware.
+
+## Installation
+
+### 1. Singularity image
+
+If `megatron-lm.sif` does not already exist, build it from the pre-v26.1
+ROCm Megatron-LM Docker image (ROCm 6.4.3, RCCL 2.22):
+
+```bash
+cd /home/v89592/shaohao/megatron-lm
+singularity build megatron-lm.sif docker://rocm/megatron-lm
+```
+
+Verify:
+
+```bash
+ls -lh /home/v89592/shaohao/megatron-lm/megatron-lm.sif
+```
+
+### 2. Clone and build rccl-tests
+
+One-time build inside the container. Binaries land in `work/rccl-tests/build/`,
+which is host-bind-mounted and survives container restarts.
 
 ```bash
 ROOT=/home/v89592/shaohao/megatron-lm
 singularity exec --rocm \
   --bind "$ROOT:$ROOT" \
-  "$ROOT/megatron-lm.sif" bash -lc '
+  "$ROOT/megatron-lm.sif" bash -lc "
     set -euo pipefail
-    cd '"$ROOT"'/work
+    cd $ROOT/work
     git clone --depth=1 https://github.com/ROCm/rccl-tests.git rccl-tests
     cd rccl-tests
     make MPI=0 HIP_HOME=/opt/rocm -j
-'
+"
 ```
 
-Build emits gfx906/908/90a/942 + gfx10xx code objects (no gfx950 yet); the
-runtime `HSA_OVERRIDE_GFX_VERSION=9.4.2` in the sweep script handles the gap.
-
-Verify:
+Verify the key binaries exist:
 
 ```bash
-ls work/rccl-tests/build/all_reduce_perf work/rccl-tests/build/all_gather_perf
+ls /home/v89592/shaohao/megatron-lm/work/rccl-tests/build/*_perf
 ```
 
-## 2. Run the sweep
+The build emits gfx906/908/90a/942 code objects (no native gfx950 yet);
+`HSA_OVERRIDE_GFX_VERSION=9.4.2` in both sweep scripts handles the gap at
+runtime.
 
-The script auto-detects `work/rccl-tests/build/` — no env override needed.
+## Running the sweeps
+
+### All-collective sweep — `run-rccl-all.sh`
+
+Runs all 10 RCCL collectives at N=2..8. Produces the main table in
+`summary-rccl.md §1.1`. The sweep takes 45–90 min.
 
 ```bash
-# full sweep, foreground
-bash work/run-rccl-tests.sh
-
-# full sweep, background like the Megatron runs
-nohup bash work/run-rccl-tests.sh > log.rccl-tests 2>&1 &
+cd /home/v89592/shaohao/megatron-lm/work
+nohup bash run-rccl-all.sh > log.nccl-all 2>&1 &
+tail -f log.nccl-all
 ```
 
-### Common subsets (fastest debug loop)
+The script auto-detects `work/rccl-tests/build/`. The RCCL env is locked to
+`NCCL_ALGO=Ring,Tree`, `NCCL_PROTO=Simple,LL,LL128`, `RCCL_MSCCL_ENABLE=1`
+so all per-collective numbers stay comparable to the Megatron baseline.
+
+### Sendrecv-only sweep — `run-rccl-sendrecv.sh`
+
+Fills the sendrecv row (footnote ¹ in §1.1). Run this after
+`run-rccl-all.sh` if sendrecv was skipped or killed mid-sweep (as happened
+in the original run due to the `alltoallv` N=5 OOM):
 
 ```bash
-# focus on the suspect arities
-GPU_COUNTS="4 5 6 7 8" bash work/run-rccl-tests.sh
-
-# one collective, one N (smoke test)
-COLLECTIVES=all_reduce GPU_COUNTS=5 bash work/run-rccl-tests.sh
-
-# narrower size range (faster, focuses on the message sizes Megatron actually uses)
-MIN_BYTES=512M MAX_BYTES=4G bash work/run-rccl-tests.sh
+nohup bash run-rccl-sendrecv.sh > log.nccl-sendrecv 2>&1 &
+tail -f log.nccl-sendrecv
 ```
 
-### Env knobs
+Takes ~5 min (one collective × 7 N values).
 
-| var | default | purpose |
-|-----|---------|---------|
+### Subset runs (faster debugging)
+
+Both scripts accept env overrides:
+
+```bash
+# only the arities that show the cliff
+GPU_COUNTS="4 5 6 7 8" bash run-rccl-all.sh
+
+# single collective, single N — smoke test
+COLLECTIVES=all_reduce GPU_COUNTS=8 bash run-rccl-all.sh
+
+# narrower size range (faster, still hits the saturation plateau)
+MIN_BYTES=512M MAX_BYTES=8G bash run-rccl-all.sh
+```
+
+| Variable | Default | Purpose |
+|----------|---------|---------|
 | `GPU_COUNTS` | `2 3 4 5 6 7 8` | which N values to sweep |
-| `COLLECTIVES` | `all_reduce all_gather` | which collectives to probe |
+| `COLLECTIVES` | all 10 | which collectives to run (skips any missing binary) |
 | `MIN_BYTES` / `MAX_BYTES` / `STEP_FACTOR` | `16M` / `8G` / `2` | rccl-tests size sweep |
-| `ITERS` / `WARMUP` | `20` / `5` | rccl-tests timing knobs |
-| `RCCL_TESTS_DIR` | autodetect | force a specific build dir |
+| `ITERS` / `WARMUP` | `20` / `5` | timing iterations |
+| `RCCL_TESTS_DIR` | auto-detect | override binary directory |
 
-## 3. Run the full-collective sweep
+## Regenerating the figure
 
-A separate script, [`run-rccl-all.sh`](run-rccl-all.sh), characterizes **every
-RCCL collective** at a single config (the `run.sh` baseline) across every N.
-Use this when you want a per-collective bandwidth table — AllReduce, AllGather,
-ReduceScatter, Broadcast, Reduce, Gather, Scatter, AllToAll, AllToAllV,
-SendRecv — rather than env-knob comparisons.
-
-Same prerequisites as section 2 — it reuses the same rccl-tests build and the
-same megatron-lm.sif container.
+`plot_rccl_busbw.py` has the busbw numbers hardcoded (extracted from
+`logs/rccl_all_20260602_121713/` and `logs/rccl_sendrecv_20260602_153246/`).
+It requires `matplotlib` on the host Python:
 
 ```bash
-# full sweep: 10 collectives × 7 N values = 70 runs (~45-90 min)
-bash work/run-rccl-all.sh
-
-# background, like the Megatron runs
-nohup bash work/run-rccl-all.sh > log.rccl-all 2>&1 &
+pip install matplotlib          # if not already installed
+python3 /home/v89592/shaohao/megatron-lm/work/plot_rccl_busbw.py
 ```
 
-### Common subsets
+Produces `work/rccl_busbw_8GiB.png` (the figure embedded in `summary-rccl.md §1.1`).
 
-```bash
-# only the MoE-relevant collective on power-of-2 sizes
-COLLECTIVES=alltoall GPU_COUNTS="2 4 8" bash work/run-rccl-all.sh
+To update the figure with new sweep numbers, edit the `data = { ... }` dict
+in `plot_rccl_busbw.py` with values from the new `rccl_all_summary.txt` and
+`rccl_sendrecv_summary.txt`, then re-run the script.
 
-# point-to-point only (the pipeline-parallel primitive)
-COLLECTIVES=sendrecv bash work/run-rccl-all.sh
-
-# all collectives at N=8 only (smoke test the matrix)
-GPU_COUNTS=8 bash work/run-rccl-all.sh
-```
-
-### Env knobs
-
-| var | default | purpose |
-|-----|---------|---------|
-| `COLLECTIVES` | `all_reduce all_gather reduce_scatter broadcast reduce gather scatter alltoall alltoallv sendrecv` | which collectives to run; missing binaries are skipped with a warning |
-| `GPU_COUNTS` | `2 3 4 5 6 7 8` | which N values to sweep |
-| `MIN_BYTES` / `MAX_BYTES` / `STEP_FACTOR` | `16M` / `8G` / `2` | rccl-tests size sweep |
-| `ITERS` / `WARMUP` | `20` / `5` | rccl-tests timing knobs |
-| `RCCL_TESTS_DIR` | autodetect | force a specific build dir |
-
-Unlike [`run-rccl-tests.sh`](run-rccl-tests.sh), this script does **not** sweep
-the RCCL algorithm/protocol configs — it locks `NCCL_ALGO=Ring,Tree`,
-`NCCL_PROTO=Simple,LL,LL128`, `RCCL_MSCCL_ENABLE=1` so the per-collective
-numbers stay directly comparable to the Megatron baseline.
-
-## 4. Where the output lands
+## Output layout
 
 ```
-work/logs/rccl_tests_<stamp>/         # from run-rccl-tests.sh (env-knob sweep)
-  rccl_tests_summary.txt              # one-line-per-(coll,config,N): max_size busbw_GB/s
-  all_reduce_default_n2.log
-  ...
-  all_gather_proto_simple_n8.log
-
-work/logs/rccl_all_<stamp>/           # from run-rccl-all.sh (all-collective sweep)
-  rccl_all_summary.txt                # one-line-per-(coll,N): max_size busbw_GB/s
-  all_reduce_n2.log                   # raw rccl-tests stdout per run
+logs/rccl_all_<stamp>/
+  rccl_all_summary.txt          # one row per (collective, N): max_size busbw_GB/s
+  all_reduce_n2.log             # raw rccl-tests stdout per run
   all_reduce_n3.log
   ...
-  sendrecv_n8.log
+  sendrecv_n8.log               # if sendrecv was not killed
+
+logs/rccl_sendrecv_<stamp>/
+  rccl_sendrecv_summary.txt     # sendrecv rows only
+  sendrecv_n2.log .. sendrecv_n8.log
 ```
 
-`rccl_tests_summary.txt` is what you compare against the Megatron timer table
-in summary-1/2 §2. `rccl_all_summary.txt` feeds the per-collective catalog in
-[`summary-rccl.md`](summary-rccl.md) §5. See [`rccl-tests.md`](rccl-tests.md#how-to-read-the-result)
-for the interpretation patterns.
-
-## Q: What is the GPU-GPU topology on this node? Is it like an NVIDIA DGX? Is there a switch like NVSwitch?
-
-Confirmed from the node itself via `rocm-smi`. Every off-diagonal cell of
-`--showtopotype` is `XGMI`, every `--showtopohops` entry is `1`, every
-`--showtopoweight` entry is `15`, and every `--showtopoaccess` cell is `True`:
-
-| GPU pair (any i ≠ j) | type | hops | weight | P2P access |
-|----------------------|------|------|--------|------------|
-| all 28 pairs across {0..7} | XGMI | 1 | 15 | True |
-
-That's `K₈` — fully-connected 8-way mesh. Each of the 8 GPUs has a direct
-xGMI link to each of the other 7, point-to-point silicon-to-silicon over
-Infinity Fabric. **There is no switch chip** between the GPUs.
-
-This is **not** the NVSwitch model. NVSwitch on DGX H100/H200 is a true
-crossbar — NVLink traffic enters a switch chip (4 per DGX H100) that routes
-any rank to any other at full bandwidth. The collective library sees an
-effectively any-to-any fabric, so the "build a ring on a topology graph"
-problem evaporates and non-power-of-2 N looks smooth.
-
-The closer NVIDIA analogue here is **older NVLink-mesh hardware** (DGX-1
-P100, NVLink-only A100 single-node sub-meshes): point-to-point links forming
-a graph, no central switch, and collective libraries have to do an actual
-graph search to construct ring channels. Those systems also showed
-non-power-of-2 cliffs broadly similar to what RCCL shows here.
-
-**NUMA note (unrelated to the cliff).** `--showtoponuma` reports GPUs 0–3 on
-NUMA node 0 and GPUs 4–7 on NUMA node 1. That is *CPU-side* memory affinity
-(2-socket host, 4 GPUs per socket's PCIe root). It affects host↔device
-staging and PCIe DMA, but **not** GPU↔GPU xGMI — those go silicon-to-silicon
-without traversing the CPU. The uniform `weight=15` / `hops=1` confirms
-inter-socket GPU pairs aren't penalized at the fabric layer.
-
-So briefly:
-
-- **Is it 8-way connected like an NVIDIA DGX?** Topologically yes — every GPU
-  connects to every other. It's `K₈`.
-- **Is there a switch like NVSwitch?** No. Direct point-to-point xGMI silicon
-  links, no central switch chip.
-- **What it most resembles:** an AMD MI300X UBB (Universal Baseboard), the
-  standard 8-GPU module, exposed as a single-node `K₈` mesh.
-
-The second answer is the one that explains the N=5/6/7 cliff observed in
-`summary-rccl.md`. The combination of (point-to-point mesh) × (non-power-of-2
-ring construction not yet tuned for MI355X) is exactly the condition that
-produces the collapse. A future AMD platform with a switched fabric would
-lift this constraint at the hardware layer.
-
-## 5. Troubleshooting
-
-- **"Could not find rccl-tests in the container."** Step 1 didn't run, or
-  built to a non-standard place. Fix: rerun step 1, or set
-  `RCCL_TESTS_DIR=/path/to/build` and rerun the script.
-- **`NCCL WARN NUMA auto balancing enabled ...`** and **`Missing iommu=pt`**.
-  Host-kernel settings, can add jitter to the numbers. Root-only to silence:
-  `sudo sysctl kernel.numa_balancing=0` and add `iommu=pt` to GRUB cmdline.
-  The same warnings appear in the Megatron logs, so the comparison stays fair
-  even if you don't change them.
-- **One N hangs / crashes.** The script does *not* abort the rest of the
-  sweep — it logs `ERR(rc=...)` in the summary row and moves on, same pattern
-  as `run.sh`.
-- **gfx950-native rebuild.** If a future image has gfx950 code objects, drop
-  `HSA_OVERRIDE_GFX_VERSION=9.4.2` from `BASE_CONTAINER_ENV` in the script
-  and rebuild rccl-tests inside that image to get native kernels.
+The `busbw_GB/s` column in each summary file is the **in-place busbw at the
+top-end message size (8 GiB)** — the saturated fabric-ceiling value used
+directly in the `summary-rccl.md §1.1` table.

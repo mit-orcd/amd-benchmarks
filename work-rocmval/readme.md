@@ -1,12 +1,93 @@
-# run_tflops.sh — User Guide
+# RVS TFLOPS Harness — User Guide
 
-A run script that sweeps RVS `gst` (GPU stress test) across `{1, 2, 4, 8}` GPUs
-and every supported precision, and reports achieved TFLOPS per GPU plus an
-aggregate.
+A small set of bash scripts wrapped around the locally-built ROCm Validation
+Suite (`rvs`) GST module to measure achieved GEMM TFLOPS on AMD GPUs.
 
-Auto-detects a locally-built `rvs` binary (typically in a sibling
-`ROCmValidationSuite/install_local/` clone — see the "Local Build" section
-below). No root required.
+| Script | Purpose |
+|--------|---------|
+| [`run_tflops.sh`](#run_tflopssh) | Sweep `gst` across `{1, 2, 4, 8}` GPUs x all 9 precisions, report per-GPU and aggregate TFLOPS. |
+| [`run_tflops_sweep.sh`](#run_tflops_sweepsh--full-18-gpu-sweep) | Thin wrapper that defaults to `1..8` GPUs and tees the run log. |
+| [`bf16_tune.sh`](#bf16_tunesh--single-gpu-bf16-shapelayout-sweep) | Single-GPU BF16 variant sweep (matrix shape, layout, output dtype, rotating, batched) for hipBLASLt tuning. |
+
+All three scripts auto-detect a locally-built `rvs` binary (typically in a
+sibling `ROCmValidationSuite/install_local/` clone — see the
+[Local Build](#local-build-of-rocmvalidationsuite-no-root-no-system-install)
+section). No root required.
+
+---
+
+# Installation
+
+## Prerequisites
+
+- An AMD GPU host with ROCm installed at `/opt/rocm` (read-only is fine, no
+  root needed for the rest of the install). Verify with:
+  ```bash
+  /opt/rocm/bin/rocminfo | grep -E "Name|Marketing Name"
+  ls /opt/rocm/lib/libhipblaslt*       # required by the gst module
+  ```
+- `bash`, `git`, `cmake >= 3.16`, `make`, a working C++ compiler. The default
+  GCC 8.x toolchain on RHEL 8 is sufficient if you skip the three modules
+  noted in [Local Build](#local-build-of-rocmvalidationsuite-no-root-no-system-install)
+  (`pebb`, `pbqt`, `pulse`), which need libstdc++ >= 11.
+- AMD GPUs visible to `rocm-smi` / `rvs -g`.
+
+## 1. Get the harness scripts
+
+The three scripts (`run_tflops.sh`, `run_tflops_sweep.sh`, `bf16_tune.sh`)
+live in a working directory you control — e.g.:
+
+```bash
+mkdir -p ~/shaohao/work-rocmval
+cd       ~/shaohao/work-rocmval
+# Copy run_tflops.sh, run_tflops_sweep.sh, bf16_tune.sh into this directory,
+# then make them executable:
+chmod +x run_tflops.sh run_tflops_sweep.sh bf16_tune.sh
+```
+
+## 2. Download the ROCm Validation Suite source
+
+Clone into a **sibling** directory next to the harness — the scripts'
+auto-detection looks for `../ROCmValidationSuite/install_local/bin/rvs`:
+
+```bash
+cd ~/shaohao                               # parent of work-rocmval
+git clone https://github.com/ROCm/ROCmValidationSuite.git
+cd ROCmValidationSuite
+```
+
+(If you prefer to keep RVS elsewhere, that's fine — see "RVS binary
+auto-detection" below for the alternative locations the scripts probe, or
+export `RVS_BIN=/your/path/to/rvs`.)
+
+## 3. Build RVS locally (no root)
+
+Follow the exact commands in [Local Build of
+ROCmValidationSuite](#local-build-of-rocmvalidationsuite-no-root-no-system-install).
+The end result you want is an executable at:
+
+```
+~/shaohao/ROCmValidationSuite/install_local/bin/rvs
+```
+
+## 4. Smoke-test the harness
+
+```bash
+cd ~/shaohao/work-rocmval
+./run_tflops.sh        # auto-detects rvs, runs the full sweep
+# or, for a 1-minute sanity check:
+GPU_COUNTS=1 PRECISIONS=fp16 DURATION_MS=10000 ./run_tflops.sh
+```
+
+If you see `Using rvs binary: /home/.../ROCmValidationSuite/install_local/bin/rvs`
+and a populated `tflops_runs/<timestamp>/summary.txt`, the install is good.
+
+---
+
+# `run_tflops.sh`
+
+Sweeps RVS `gst` (GPU stress test) across `{1, 2, 4, 8}` GPUs and every
+supported precision, and reports achieved TFLOPS per GPU plus an aggregate.
 
 ## Quick start
 
@@ -95,7 +176,9 @@ GPU_COUNTS=1 PRECISIONS=fp16 DURATION_MS=10000 ./run_tflops.sh
 OUT_DIR=/tmp/my_tflops_run ./run_tflops.sh
 ```
 
-## `run_tflops_sweep.sh` — full 1..8 GPU sweep
+---
+
+# `run_tflops_sweep.sh` — full 1..8 GPU sweep
 
 Thin wrapper around `run_tflops.sh` that defaults `GPU_COUNTS` to every count
 from 1 to 8 (instead of the inner script's `1 2 4 8`) and tees the combined
@@ -121,7 +204,91 @@ Every environment variable accepted by `run_tflops.sh` (`RVS_BIN`,
 `DURATION_MS`, `LOG_INTERVAL_MS`, `PRECISIONS`, `OUT_DIR`, ...) is passed
 through unchanged.
 
-## How aggregation works
+---
+
+# `bf16_tune.sh` — single-GPU BF16 shape/layout sweep
+
+Companion script that sweeps BF16 GEMM variants on **one GPU** to find which
+config knobs squeeze the highest % of peak out of the installed hipBLASLt.
+Useful as a tuning step before plugging the winner back into
+`run_tflops.sh` for a full 1/2/4/8-GPU run.
+
+Why single-GPU only: at 8 GPUs the 11.2 kW OAM tray throttles for the more
+power-dense shapes, masking the kernel-level differences this sweep is
+trying to surface.
+
+## Quick start
+
+```bash
+# Full sweep: 12 variants x 60s each (~12 min)
+./bf16_tune.sh
+
+# Just the layout variants
+VARIANT_FILTER='layout' ./bf16_tune.sh
+
+# Faster smoke run on a specific GPU
+GPU_ID=4 DURATION_MS=20000 ./bf16_tune.sh
+```
+
+Output lands in `bf16_runs/<timestamp>/`:
+
+- `leaderboard.txt` — variants sorted by TFLOPS (descending)
+- `leaderboard.csv` — `variant,tflops,pct_of_peak,vs_baseline_pct,note`
+- `<variant>.conf` — generated RVS config per variant
+- `<variant>.log` — raw `rvs` stdout per variant
+
+## What gets swept
+
+| Variant | What it changes vs baseline |
+|---------|-----------------------------|
+| `baseline`       | 8192 x 8192 x 16384, NT transpose, BF16 out, rotating=512 (matches `run_tflops.sh`) |
+| `fp32_out`       | Removes the BF16 output downcast (`out_data_type: fp32_r`) |
+| `NT_layout`      | `transa=0 transb=1` — common DL forward-pass layout |
+| `TT_layout`      | `transa=1 transb=1` — alternative path |
+| `krich_8k_32k`   | K=32768 — wider K, 2x work per call |
+| `krich_4k_64k`   | 4096 x 4096 x 65536 — K-dominant shape |
+| `squat_16k_8k`   | 16384 x 16384 x 8192 — same work, M/N-heavy |
+| `small_8k_sq`    | 8192^3 — smaller, more cache-friendly |
+| `rotating_256`   | `rotating=256` — more cache-resident |
+| `rotating_2048`  | `rotating=2048` — force HBM working set |
+| `batched_8k_x4`  | `gemm_mode: strided_batched`, batch=4 |
+| `batched_4k_x16` | `strided_batched`, 16 small GEMMs/launch |
+
+Define your own by editing the `VARIANTS=( ... )` array near the top of the
+script (`name|M|N|K|transa|transb|out_dtype|rotating|gemm_mode|batch|hot_calls|note`).
+
+## Tunables (environment variables)
+
+| Variable           | Default                          | Meaning |
+|--------------------|----------------------------------|---------|
+| `RVS_BIN`          | auto-detected                    | path to `rvs` binary |
+| `DURATION_MS`      | `60000`                          | per-test stress duration (ms) |
+| `LOG_INTERVAL_MS`  | `3000`                           | log interval (ms) |
+| `RAMP_INTERVAL_MS` | `5000`                           | warmup window excluded from peak (ms) |
+| `GPU_ID`           | first detected GPU               | single GPU ID to run on |
+| `OUT_DIR`          | `bf16_runs/<timestamp>`          | override output directory |
+| `VARIANT_FILTER`   | (unset)                          | regex; only variants whose name matches are run |
+
+## Reading the leaderboard
+
+```
+variant                TFLOPS    % peak   vs baseline  note
+----------------------------------------------------------------------------------------------
+NT_layout             2105.34     84.2%       +3.1%   common DL forward-pass layout
+baseline              2042.18     81.7%        0.0%   current run_tflops.sh shape
+fp32_out              1987.04     79.5%       -2.7%   removes BF16 downcast on output
+...
+```
+
+- `% peak` is computed against a hard-coded MI355X BF16 peak of `2500` TFLOPS
+  (`BF16_PEAK=2500.0` near the bottom of the script — edit for other parts).
+- `vs baseline` is signed percent delta vs the `baseline` variant's peak.
+- Per-GPU value is the **peak** GFLOPS seen across log intervals (steady-state
+  proxy that ignores ramp-up), converted to TFLOPS.
+
+---
+
+# How aggregation works
 
 - Per-GPU value = **peak** `GFLOPS` value observed across log intervals for that
   GPU ID (a steady-state proxy that ignores ramp-up).
@@ -130,7 +297,9 @@ through unchanged.
   GFLOPS lines vs. the requested count — if it's lower than requested, check
   the corresponding `<n>x_<prec>.log` for errors.
 
-## Requirements
+---
+
+# Requirements
 
 - An executable `rvs` binary at one of the auto-detected locations (see the
   list above) — typically the sibling clone at
@@ -140,7 +309,9 @@ through unchanged.
   `blas_source: hipblaslt` for all precisions).
 - AMD GPUs visible to `rvs -g`.
 
-## Troubleshooting
+---
+
+# Troubleshooting
 
 - **`aggregate=0.00 TFLOPS  reporting=0/N`**: usually means GPU IDs didn't
   match. Check `rvs -g` output and the generated conf's `device:` line.

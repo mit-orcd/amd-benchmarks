@@ -1,0 +1,77 @@
+[NODE-0(localhost.localdomain)] [INFO] ==========Training cluster info==========
+[NODE-0(localhost.localdomain)] [INFO] MASTER_ADDR: localhost
+[NODE-0(localhost.localdomain)] [INFO] MASTER_PORT: 29891
+[NODE-0(localhost.localdomain)] [INFO] NNODES: 1
+[NODE-0(localhost.localdomain)] [INFO] NODE_RANK: 0
+[NODE-0(localhost.localdomain)] [INFO] GPUS_PER_NODE: 7
+
+
+[notice] A new release of pip is available: 25.2 -> 26.1.2
+[notice] To update, run: pip install --upgrade pip
+[NODE-0(localhost.localdomain)] [INFO] ==========Training info==========
+[NODE-0(localhost.localdomain)] [INFO] EXP: examples/megatron/configs/llama2_7B-pretrain.yaml
+[NODE-0(localhost.localdomain)] [INFO] TRAIN_LOG: output/log_torchrun_pretrain_llama2_7B-pretrain.txt
+[NODE-0(localhost.localdomain)] [INFO] PRIMUS_PATH: /workspace/Primus
+[NODE-0(localhost.localdomain)] [INFO] DATA_PATH: /workspace/Primus/data
+[NODE-0(localhost.localdomain)] [INFO] HF_HOME: /workspace/Primus/data/huggingface
+
+Error: No Infiniband devices found!
+[NODE-0(localhost.localdomain)] [INFO] ==========NCCL and Network Settings==========
+[NODE-0(localhost.localdomain)] [INFO] NCCL_DEBUG: 
+[NODE-0(localhost.localdomain)] [INFO] NCCL_CHECKS_DISABLE: 1
+[NODE-0(localhost.localdomain)] [INFO] NCCL_IB_GID_INDEX: 3
+[NODE-0(localhost.localdomain)] [INFO] NCCL_CROSS_NIC: 0
+[NODE-0(localhost.localdomain)] [INFO] NCCL_IB_HCA: 
+[NODE-0(localhost.localdomain)] [INFO] NCCL_SOCKET_IFNAME: enP1s13f0np0
+[NODE-0(localhost.localdomain)] [INFO] GLOO_SOCKET_IFNAME: enP1s13f0np0
+
+[NODE-0(localhost.localdomain)] [INFO] ==========AMD-specific GPU optimizations==========
+[NODE-0(localhost.localdomain)] [INFO] HSA_ENABLE_SDMA: 1
+[NODE-0(localhost.localdomain)] [INFO] HSA_NO_SCRATCH_RECLAIM: 0
+[NODE-0(localhost.localdomain)] [INFO] RCCL_MSCCL_ENABLE: 0
+[NODE-0(localhost.localdomain)] [INFO] RCCL_MSCCLPP_ENABLE: 0
+[NODE-0(localhost.localdomain)] [INFO] RCCL_MSCCLPP_FORCE_ENABLE: 0
+[NODE-0(localhost.localdomain)] [INFO] RCCL_MSCCLPP_THRESHOLD: 1073741824
+[NODE-0(localhost.localdomain)] [INFO] MSCCLPP_DISABLE_CHANNEL_CACHE: FALSE
+[NODE-0(localhost.localdomain)] [INFO] TORCH_NCCL_USE_TENSOR_REGISTER_ALLOCATOR_HOOK: 0
+
+[NODE-0(localhost.localdomain)] [INFO] ==========Performance tuning==========
+[NODE-0(localhost.localdomain)] [INFO] GPU_MAX_HW_QUEUES: 2
+[NODE-0(localhost.localdomain)] [INFO] CUDA_DEVICE_MAX_CONNECTIONS: 1
+[NODE-0(localhost.localdomain)] [INFO] TORCH_NCCL_HIGH_PRIORITY: 1
+[NODE-0(localhost.localdomain)] [INFO] CUDA_DEVICE_MAX_CONNECTIONS: 1
+[NODE-0(localhost.localdomain)] [INFO] TORCH_NCCL_HIGH_PRIORITY: 1
+[NODE-0(localhost.localdomain)] [INFO] NCCL_PXN_DISABLE: 1
+[NODE-0(localhost.localdomain)] [INFO] NCCL_P2P_NET_CHUNKSIZE: 524288
+[NODE-0(localhost.localdomain)] [INFO] NVTE_CK_USES_BWD_V3: 1
+[NODE-0(localhost.localdomain)] [INFO] NVTE_USE_CAST_TRANSPOSE_TRITON: 1
+[NODE-0(localhost.localdomain)] [INFO] NVTE_USE_OPTIMIZED_HIPIFIED_CAST_TRANSPOSE: 0
+
+[NODE-0(localhost.localdomain)] [INFO] Skip bnxt rebuild. REBUILD_BNXT=0, PATH_TO_BNXT_TAR_PACKAGE=
+[NODE-0(localhost.localdomain)] [INFO] ========== Training tuning info ==========
+[NODE-0(localhost.localdomain)] [INFO] TE_HIPBLASLT_TUNING: 
+[NODE-0(localhost.localdomain)] [INFO] TE_HIPBLASLT_TUNING_RUN_COUNT: 10
+[NODE-0(localhost.localdomain)] [INFO] TE_HIPBLASLT_TUNING_ALGO_COUNT: 50
+[NODE-0(localhost.localdomain)] [INFO] PRIMUS_HIPBLASLT_TUNING_STAGE: 
+[NODE-0(localhost.localdomain)] [INFO] HIPBLASLT_LOG_MASK: 
+[NODE-0(localhost.localdomain)] [INFO] HIPBLASLT_LOG_FILE: 
+[NODE-0(localhost.localdomain)] [INFO] HIPBLASLT_LOG_LEVEL: 
+[NODE-0(localhost.localdomain)] [INFO] HIPBLASLT_TUNING_OVERRIDE_FILE: 
+
+Traceback (most recent call last):
+  File "/workspace/Primus/examples/scripts/prepare_experiment.py", line 97, in <module>
+    main()
+  File "/workspace/Primus/examples/scripts/prepare_experiment.py", line 48, in main
+    config = PrimusParser().parse(args)
+  File "/workspace/Primus/primus/core/launcher/parser.py", line 190, in parse
+    self.parse_modules()
+  File "/workspace/Primus/primus/core/launcher/parser.py", line 285, in parse_modules
+    self.parse_trainer_module(module_name)
+  File "/workspace/Primus/primus/core/launcher/parser.py", line 267, in parse_trainer_module
+    model_config = yaml_utils.parse_yaml_to_namespace(model_config_file)
+  File "/workspace/Primus/primus/core/utils/yaml_utils.py", line 118, in parse_yaml_to_namespace
+    return dict_to_nested_namespace(parse_yaml(yaml_file))
+  File "/workspace/Primus/primus/core/utils/yaml_utils.py", line 75, in parse_yaml
+    assert key in base_config, (
+AssertionError: The argument 'global_batch_size' in the a config file '/workspace/Primus/primus/configs/models/megatron/llama2_7B.yaml' cannot be found in the base config file 'llama2_base.yaml'.
+[NODE-0(localhost.localdomain)] [ERROR] /workspace/Primus/examples/scripts/prepare_experiment.py failed, aborting.

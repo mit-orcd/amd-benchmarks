@@ -1,0 +1,8 @@
+[watcher] 2026-06-15T22:23:08-05:00 waiting for /home/v89592/shaohao/primus/logs/sweep-20260615-222308/summary.txt to contain 'Finished'
+[watcher] 2026-06-15T23:12:11-05:00 sweep finished
+[watcher] 2026-06-15T23:12:11-05:00 generating report -> /home/v89592/shaohao/primus/REPORT.md
+  File "/home/v89592/shaohao/primus/generate_report.py", line 6
+    from __future__ import annotations
+    ^
+SyntaxError: future feature annotations is not defined
+[watcher] 2026-06-15T23:12:11-05:00 report generation FAILED rc=0

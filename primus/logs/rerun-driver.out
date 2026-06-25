@@ -1,0 +1,36 @@
+
+================ RERUN 2026-06-16T09:12:15-05:00 ================
+----- RERUN megatron-llama2_7B-bf16 N=1 port=29517 devs=0 2026-06-16T09:12:15-05:00 -----
+  FAIL(rc=1)  duration=80s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N1.log
+----- RERUN megatron-llama2_7B-bf16 N=2 port=29837 devs=0,1 2026-06-16T09:13:35-05:00 -----
+  FAIL(rc=1)  duration=81s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N2.log
+----- RERUN megatron-llama2_7B-bf16 N=3 port=29727 devs=0,1,2 2026-06-16T09:14:56-05:00 -----
+  FAIL(rc=1)  duration=85s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N3.log
+----- RERUN megatron-llama2_7B-bf16 N=4 port=29792 devs=0,1,2,3 2026-06-16T09:16:21-05:00 -----
+  FAIL(rc=1)  duration=88s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N4.log
+----- RERUN megatron-llama2_7B-bf16 N=5 port=29835 devs=0,1,2,3,4 2026-06-16T09:17:49-05:00 -----
+  FAIL(rc=1)  duration=89s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N5.log
+----- RERUN megatron-llama2_7B-bf16 N=6 port=29554 devs=0,1,2,3,4,5 2026-06-16T09:19:18-05:00 -----
+  FAIL(rc=1)  duration=91s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N6.log
+----- RERUN megatron-llama2_7B-bf16 N=7 port=29722 devs=0,1,2,3,4,5,6 2026-06-16T09:20:49-05:00 -----
+  FAIL(rc=1)  duration=93s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N7.log
+----- RERUN megatron-llama2_7B-bf16 N=8 port=29622 devs=0,1,2,3,4,5,6,7 2026-06-16T09:22:22-05:00 -----
+  FAIL(rc=1)  duration=112s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N8.log
+----- RERUN rccl N=2 port=29558 devs=0,1 2026-06-16T09:24:14-05:00 -----
+  OK  duration=10s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N2.log
+----- RERUN rccl N=3 port=29667 devs=0,1,2 2026-06-16T09:24:24-05:00 -----
+  OK  duration=11s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N3.log
+----- RERUN rccl N=4 port=29621 devs=0,1,2,3 2026-06-16T09:24:35-05:00 -----
+  OK  duration=13s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N4.log
+----- RERUN rccl N=5 port=29895 devs=0,1,2,3,4 2026-06-16T09:24:48-05:00 -----
+  OK  duration=14s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N5.log
+----- RERUN rccl N=6 port=29921 devs=0,1,2,3,4,5 2026-06-16T09:25:02-05:00 -----
+  OK  duration=15s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N6.log
+----- RERUN rccl N=7 port=29527 devs=0,1,2,3,4,5,6 2026-06-16T09:25:17-05:00 -----
+  OK  duration=16s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N7.log
+----- RERUN rccl N=8 port=29586 devs=0,1,2,3,4,5,6,7 2026-06-16T09:25:33-05:00 -----
+  OK  duration=24s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N8.log
+Rerun finished : 2026-06-16T09:25:57-05:00
+[rerun] 2026-06-16T09:25:57-05:00 regenerating /home/v89592/shaohao/primus/REPORT.md
+Wrote /home/v89592/shaohao/primus/REPORT.md
+[rerun] 2026-06-16T09:25:57-05:00 DONE

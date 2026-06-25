@@ -1,0 +1,112 @@
+Primus full sweep 20260615-222308
+SIF        : /home/v89592/shaohao/primus/image/primus-v26.3.sif
+Repo       : /home/v89592/shaohao/primus/Primus
+Driver log : /home/v89592/shaohao/primus/logs/sweep-20260615-222308
+Bench out  : /home/v89592/shaohao/primus/Primus/sweep_out_20260615-222308
+Started    : 2026-06-15T22:23:08-05:00
+
+================ N=1 ================
+----- gemm N=1 port=29971 devs=0 2026-06-15T22:23:08-05:00 -----
+  FAIL(rc=1)  duration=19s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm_N1.log
+----- gemm-dense N=1 port=29916 devs=0 2026-06-15T22:23:27-05:00 -----
+  FAIL(rc=1)  duration=90s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-dense_N1.log
+----- gemm-deepseek N=1 port=29864 devs=0 2026-06-15T22:24:57-05:00 -----
+  FAIL(rc=1)  duration=166s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-deepseek_N1.log
+----- attention N=1 port=29924 devs=0 2026-06-15T22:27:43-05:00 -----
+  OK  duration=23s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/attention_N1.log
+----- rccl N=1 SKIPPED (collective needs N>=2) -----
+----- megatron-llama2_7B-bf16 N=1 port=29538 devs=0 2026-06-15T22:28:06-05:00 -----
+  FAIL(rc=1)  duration=30s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N1.log
+================ N=2 ================
+----- gemm N=2 port=29757 devs=0,1 2026-06-15T22:28:36-05:00 -----
+  OK  duration=22s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm_N2.log
+----- gemm-dense N=2 port=29588 devs=0,1 2026-06-15T22:28:58-05:00 -----
+  OK  duration=96s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-dense_N2.log
+----- gemm-deepseek N=2 port=29585 devs=0,1 2026-06-15T22:30:34-05:00 -----
+  OK  duration=171s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-deepseek_N2.log
+----- attention N=2 port=29574 devs=0,1 2026-06-15T22:33:25-05:00 -----
+  OK  duration=21s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/attention_N2.log
+----- rccl N=2 port=29909 devs=0,1 2026-06-15T22:33:46-05:00 -----
+  FAIL(rc=1)  duration=10s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N2.log
+----- megatron-llama2_7B-bf16 N=2 port=29848 devs=0,1 2026-06-15T22:33:56-05:00 -----
+  FAIL(rc=1)  duration=27s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N2.log
+================ N=3 ================
+----- gemm N=3 port=29775 devs=0,1,2 2026-06-15T22:34:23-05:00 -----
+  OK  duration=24s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm_N3.log
+----- gemm-dense N=3 port=29529 devs=0,1,2 2026-06-15T22:34:47-05:00 -----
+  OK  duration=96s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-dense_N3.log
+----- gemm-deepseek N=3 port=29714 devs=0,1,2 2026-06-15T22:36:23-05:00 -----
+  OK  duration=173s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-deepseek_N3.log
+----- attention N=3 port=29918 devs=0,1,2 2026-06-15T22:39:16-05:00 -----
+  OK  duration=20s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/attention_N3.log
+----- rccl N=3 port=29604 devs=0,1,2 2026-06-15T22:39:36-05:00 -----
+  FAIL(rc=1)  duration=10s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N3.log
+----- megatron-llama2_7B-bf16 N=3 port=29605 devs=0,1,2 2026-06-15T22:39:46-05:00 -----
+  FAIL(rc=1)  duration=29s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N3.log
+================ N=4 ================
+----- gemm N=4 port=29597 devs=0,1,2,3 2026-06-15T22:40:15-05:00 -----
+  OK  duration=25s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm_N4.log
+----- gemm-dense N=4 port=29681 devs=0,1,2,3 2026-06-15T22:40:40-05:00 -----
+  OK  duration=99s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-dense_N4.log
+----- gemm-deepseek N=4 port=29791 devs=0,1,2,3 2026-06-15T22:42:19-05:00 -----
+  OK  duration=174s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-deepseek_N4.log
+----- attention N=4 port=29817 devs=0,1,2,3 2026-06-15T22:45:13-05:00 -----
+  OK  duration=20s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/attention_N4.log
+----- rccl N=4 port=29870 devs=0,1,2,3 2026-06-15T22:45:33-05:00 -----
+  FAIL(rc=1)  duration=12s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N4.log
+----- megatron-llama2_7B-bf16 N=4 port=29950 devs=0,1,2,3 2026-06-15T22:45:45-05:00 -----
+  FAIL(rc=1)  duration=30s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N4.log
+================ N=5 ================
+----- gemm N=5 port=29965 devs=0,1,2,3,4 2026-06-15T22:46:15-05:00 -----
+  OK  duration=26s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm_N5.log
+----- gemm-dense N=5 port=29709 devs=0,1,2,3,4 2026-06-15T22:46:41-05:00 -----
+  OK  duration=99s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-dense_N5.log
+----- gemm-deepseek N=5 port=29825 devs=0,1,2,3,4 2026-06-15T22:48:20-05:00 -----
+  OK  duration=176s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-deepseek_N5.log
+----- attention N=5 port=29592 devs=0,1,2,3,4 2026-06-15T22:51:16-05:00 -----
+  OK  duration=20s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/attention_N5.log
+----- rccl N=5 port=29817 devs=0,1,2,3,4 2026-06-15T22:51:36-05:00 -----
+  FAIL(rc=1)  duration=13s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N5.log
+----- megatron-llama2_7B-bf16 N=5 port=29898 devs=0,1,2,3,4 2026-06-15T22:51:49-05:00 -----
+  FAIL(rc=1)  duration=30s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N5.log
+================ N=6 ================
+----- gemm N=6 port=29693 devs=0,1,2,3,4,5 2026-06-15T22:52:19-05:00 -----
+  OK  duration=27s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm_N6.log
+----- gemm-dense N=6 port=29573 devs=0,1,2,3,4,5 2026-06-15T22:52:46-05:00 -----
+  OK  duration=101s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-dense_N6.log
+----- gemm-deepseek N=6 port=29862 devs=0,1,2,3,4,5 2026-06-15T22:54:27-05:00 -----
+  OK  duration=179s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-deepseek_N6.log
+----- attention N=6 port=29997 devs=0,1,2,3,4,5 2026-06-15T22:57:26-05:00 -----
+  OK  duration=21s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/attention_N6.log
+----- rccl N=6 port=29543 devs=0,1,2,3,4,5 2026-06-15T22:57:47-05:00 -----
+  FAIL(rc=1)  duration=14s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N6.log
+----- megatron-llama2_7B-bf16 N=6 port=29642 devs=0,1,2,3,4,5 2026-06-15T22:58:01-05:00 -----
+  FAIL(rc=1)  duration=32s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N6.log
+================ N=7 ================
+----- gemm N=7 port=29539 devs=0,1,2,3,4,5,6 2026-06-15T22:58:33-05:00 -----
+  OK  duration=28s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm_N7.log
+----- gemm-dense N=7 port=29515 devs=0,1,2,3,4,5,6 2026-06-15T22:59:01-05:00 -----
+  OK  duration=103s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-dense_N7.log
+----- gemm-deepseek N=7 port=29857 devs=0,1,2,3,4,5,6 2026-06-15T23:00:44-05:00 -----
+  OK  duration=180s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-deepseek_N7.log
+----- attention N=7 port=29625 devs=0,1,2,3,4,5,6 2026-06-15T23:03:44-05:00 -----
+  OK  duration=22s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/attention_N7.log
+----- rccl N=7 port=29819 devs=0,1,2,3,4,5,6 2026-06-15T23:04:06-05:00 -----
+  FAIL(rc=1)  duration=15s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N7.log
+----- megatron-llama2_7B-bf16 N=7 port=29920 devs=0,1,2,3,4,5,6 2026-06-15T23:04:21-05:00 -----
+  FAIL(rc=1)  duration=32s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N7.log
+================ N=8 ================
+----- gemm N=8 port=29737 devs=0,1,2,3,4,5,6,7 2026-06-15T23:04:53-05:00 -----
+  OK  duration=37s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm_N8.log
+----- gemm-dense N=8 port=29730 devs=0,1,2,3,4,5,6,7 2026-06-15T23:05:30-05:00 -----
+  OK  duration=112s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-dense_N8.log
+----- gemm-deepseek N=8 port=29763 devs=0,1,2,3,4,5,6,7 2026-06-15T23:07:22-05:00 -----
+  OK  duration=188s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/gemm-deepseek_N8.log
+----- attention N=8 port=29783 devs=0,1,2,3,4,5,6,7 2026-06-15T23:10:30-05:00 -----
+  OK  duration=31s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/attention_N8.log
+----- rccl N=8 port=29783 devs=0,1,2,3,4,5,6,7 2026-06-15T23:11:01-05:00 -----
+  FAIL(rc=1)  duration=23s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/rccl_N8.log
+----- megatron-llama2_7B-bf16 N=8 port=29572 devs=0,1,2,3,4,5,6,7 2026-06-15T23:11:24-05:00 -----
+  FAIL(rc=1)  duration=40s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N8.log
+
+Finished   : 2026-06-15T23:12:04-05:00

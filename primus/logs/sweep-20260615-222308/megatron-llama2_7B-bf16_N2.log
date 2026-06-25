@@ -1,0 +1,801 @@
+[NODE-0(localhost.localdomain)] [INFO] ==========Training cluster info==========
+[NODE-0(localhost.localdomain)] [INFO] MASTER_ADDR: localhost
+[NODE-0(localhost.localdomain)] [INFO] MASTER_PORT: 29986
+[NODE-0(localhost.localdomain)] [INFO] NNODES: 1
+[NODE-0(localhost.localdomain)] [INFO] NODE_RANK: 0
+[NODE-0(localhost.localdomain)] [INFO] GPUS_PER_NODE: 2
+
+
+[notice] A new release of pip is available: 25.2 -> 26.1.2
+[notice] To update, run: pip install --upgrade pip
+[NODE-0(localhost.localdomain)] [INFO] ==========Training info==========
+[NODE-0(localhost.localdomain)] [INFO] EXP: examples/megatron/configs/llama2_7B-pretrain.yaml
+[NODE-0(localhost.localdomain)] [INFO] TRAIN_LOG: output/log_torchrun_pretrain_llama2_7B-pretrain.txt
+[NODE-0(localhost.localdomain)] [INFO] PRIMUS_PATH: /workspace/Primus
+[NODE-0(localhost.localdomain)] [INFO] DATA_PATH: /workspace/Primus/data
+[NODE-0(localhost.localdomain)] [INFO] HF_HOME: /workspace/Primus/data/huggingface
+
+Error: No Infiniband devices found!
+[NODE-0(localhost.localdomain)] [INFO] ==========NCCL and Network Settings==========
+[NODE-0(localhost.localdomain)] [INFO] NCCL_DEBUG: 
+[NODE-0(localhost.localdomain)] [INFO] NCCL_CHECKS_DISABLE: 1
+[NODE-0(localhost.localdomain)] [INFO] NCCL_IB_GID_INDEX: 3
+[NODE-0(localhost.localdomain)] [INFO] NCCL_CROSS_NIC: 0
+[NODE-0(localhost.localdomain)] [INFO] NCCL_IB_HCA: 
+[NODE-0(localhost.localdomain)] [INFO] NCCL_SOCKET_IFNAME: enP1s13f0np0
+[NODE-0(localhost.localdomain)] [INFO] GLOO_SOCKET_IFNAME: enP1s13f0np0
+
+[NODE-0(localhost.localdomain)] [INFO] ==========AMD-specific GPU optimizations==========
+[NODE-0(localhost.localdomain)] [INFO] HSA_ENABLE_SDMA: 1
+[NODE-0(localhost.localdomain)] [INFO] HSA_NO_SCRATCH_RECLAIM: 0
+[NODE-0(localhost.localdomain)] [INFO] RCCL_MSCCL_ENABLE: 0
+[NODE-0(localhost.localdomain)] [INFO] RCCL_MSCCLPP_ENABLE: 0
+[NODE-0(localhost.localdomain)] [INFO] RCCL_MSCCLPP_FORCE_ENABLE: 0
+[NODE-0(localhost.localdomain)] [INFO] RCCL_MSCCLPP_THRESHOLD: 1073741824
+[NODE-0(localhost.localdomain)] [INFO] MSCCLPP_DISABLE_CHANNEL_CACHE: FALSE
+[NODE-0(localhost.localdomain)] [INFO] TORCH_NCCL_USE_TENSOR_REGISTER_ALLOCATOR_HOOK: 0
+
+[NODE-0(localhost.localdomain)] [INFO] ==========Performance tuning==========
+[NODE-0(localhost.localdomain)] [INFO] GPU_MAX_HW_QUEUES: 2
+[NODE-0(localhost.localdomain)] [INFO] CUDA_DEVICE_MAX_CONNECTIONS: 1
+[NODE-0(localhost.localdomain)] [INFO] TORCH_NCCL_HIGH_PRIORITY: 1
+[NODE-0(localhost.localdomain)] [INFO] CUDA_DEVICE_MAX_CONNECTIONS: 1
+[NODE-0(localhost.localdomain)] [INFO] TORCH_NCCL_HIGH_PRIORITY: 1
+[NODE-0(localhost.localdomain)] [INFO] NCCL_PXN_DISABLE: 1
+[NODE-0(localhost.localdomain)] [INFO] NCCL_P2P_NET_CHUNKSIZE: 524288
+[NODE-0(localhost.localdomain)] [INFO] NVTE_CK_USES_BWD_V3: 1
+[NODE-0(localhost.localdomain)] [INFO] NVTE_USE_CAST_TRANSPOSE_TRITON: 1
+[NODE-0(localhost.localdomain)] [INFO] NVTE_USE_OPTIMIZED_HIPIFIED_CAST_TRANSPOSE: 0
+
+[NODE-0(localhost.localdomain)] [INFO] Skip bnxt rebuild. REBUILD_BNXT=0, PATH_TO_BNXT_TAR_PACKAGE=
+[NODE-0(localhost.localdomain)] [INFO] ========== Training tuning info ==========
+[NODE-0(localhost.localdomain)] [INFO] TE_HIPBLASLT_TUNING: 
+[NODE-0(localhost.localdomain)] [INFO] TE_HIPBLASLT_TUNING_RUN_COUNT: 10
+[NODE-0(localhost.localdomain)] [INFO] TE_HIPBLASLT_TUNING_ALGO_COUNT: 50
+[NODE-0(localhost.localdomain)] [INFO] PRIMUS_HIPBLASLT_TUNING_STAGE: 
+[NODE-0(localhost.localdomain)] [INFO] HIPBLASLT_LOG_MASK: 
+[NODE-0(localhost.localdomain)] [INFO] HIPBLASLT_LOG_FILE: 
+[NODE-0(localhost.localdomain)] [INFO] HIPBLASLT_LOG_LEVEL: 
+[NODE-0(localhost.localdomain)] [INFO] HIPBLASLT_TUNING_OVERRIDE_FILE: 
+
+[NODE-0(localhost.localdomain)] [INFO] Running backend prepare: /workspace/Primus/examples/megatron/prepare.py
+[NODE-0(localhost.localdomain)] [INFO] ========== Prepare Megatron dataset ==========
+[NODE-0(localhost.localdomain)] [INFO] BACKEND_PATH None
+[NODE-0(localhost.localdomain)] [INFO] PRIMUS_PATH is set to: /workspace/Primus
+[NODE-0(localhost.localdomain)] [INFO] DATA_PATH is set to: /workspace/Primus/data
+[NODE-0(localhost.localdomain)] [INFO] EXP is set to: /workspace/Primus/examples/megatron/configs/llama2_7B-pretrain.yaml
+[NODE-0(localhost.localdomain)] [INFO] PATCH-ARGS is set to: /tmp/primus_patch_args.c5oh7Z.yaml
+[NODE-0(localhost.localdomain)] [INFO] 'mock_data: true', Skipping dataset preparation.
+[NODE-0(localhost.localdomain)] [INFO] No backend_path provided, falling back to: /workspace/Primus/third_party/Megatron-LM
+[NODE-0(localhost.localdomain)] [INFO] Building Megatron dataset helper in /workspace/Primus/third_party/Megatron-LM/megatron/core/datasets
+make: Nothing to be done for 'default'.
+[NODE-0(localhost.localdomain)] [INFO] Loading patch args from /tmp/primus_patch_args.c5oh7Z.yaml
+[NODE-0(localhost.localdomain)] [INFO] Patched TRAIN args:  --backend_path /workspace/Primus/third_party/Megatron-LM
+[NODE-0(localhost.localdomain)] [INFO] Launching distributed training with command: torchrun --nproc_per_node 2 --nnodes 1 --node_rank 0 --master_addr localhost --master_port 29986  primus/cli/main.py train pretrain --config examples/megatron/configs/llama2_7B-pretrain.yaml  --backend_path /workspace/Primus/third_party/Megatron-LM global_batch_size=8
+W0616 11:56:09.791000 439438 torch/distributed/run.py:803] 
+W0616 11:56:09.791000 439438 torch/distributed/run.py:803] *****************************************
+W0616 11:56:09.791000 439438 torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0616 11:56:09.791000 439438 torch/distributed/run.py:803] *****************************************
+[Primus] sys.path.insert: /workspace/Primus/third_party/Megatron-LM[Primus] sys.path.insert: /workspace/Primus/third_party/Megatron-LM
+
+[WARNING  | transformer_engine.pytorch.dot_product_attention.utils]: Supported flash-attn versions are >= 2.1.1, <= 2.8.0.post2. Found flash-attn 2.8.3.
+[WARNING  | transformer_engine.pytorch.dot_product_attention.utils]: Supported flash-attn versions are >= 2.1.1, <= 2.8.0.post2. Found flash-attn 2.8.3.
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+[aiter] WARNING: NUMA balancing is enabled, which may cause errors. It is recommended to disable NUMA balancing by running "sudo sh -c 'echo 0 > /proc/sys/kernel/numa_balancing'" for more details: https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.html#disable-numa-auto-balancing
+/opt/venv/lib/python3.10/site-packages/apex/transformer/functional/fused_rope.py:49: UserWarning: Aiter backend is selected for fused RoPE. This has lower precision. To disable aiter, export USE_ROCM_AITER_ROPE_BACKEND=0
+  warnings.warn("Aiter backend is selected for fused RoPE. This has lower precision. To disable aiter, export USE_ROCM_AITER_ROPE_BACKEND=0", UserWarning)
+/opt/venv/lib/python3.10/site-packages/apex/transformer/functional/fused_rope.py:49: UserWarning: Aiter backend is selected for fused RoPE. This has lower precision. To disable aiter, export USE_ROCM_AITER_ROPE_BACKEND=0
+  warnings.warn("Aiter backend is selected for fused RoPE. This has lower precision. To disable aiter, export USE_ROCM_AITER_ROPE_BACKEND=0", UserWarning)
+/opt/venv/lib/python3.10/site-packages/torchao/utils.py:408: UserWarning: TORCH_VERSION_AT_LEAST_2_5 is deprecated and will be removed in torchao 0.14.0
+  warnings.warn(self.msg)
+/opt/venv/lib/python3.10/site-packages/torchao/utils.py:408: UserWarning: TORCH_VERSION_AT_LEAST_2_5 is deprecated and will be removed in torchao 0.14.0
+  warnings.warn(self.msg)
+[[32m20260616 11:56:18[0m][[36mrank-0/2[0m][[33m[1mWARNING[0m] [33m[1m[trainer.py:425]: MegatronTrainer: monkey patch TopKRouter...[0m
+[[32m20260616 11:56:18[0m][[36mrank-0/2[0m][[33m[1mWARNING[0m] [33m[1m[trainer.py:295]: MegatronTrainer: monkey patch get_extra_te_kwargs...[0m
+[[32m20260616 11:56:18[0m][[36mrank-0/2[0m][[33m[1mWARNING[0m] [33m[1m[trainer.py:528]: MegatronTrainer: Patching FileSystemWriterAsync...[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[33m[1mWARNING[0m] [33m[1m[trainer.py:540]: MegatronTrainer: Patch FileSystemWriterAsync successfully.[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:617] : -run update_primus_config...[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:725] : -rank:              0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:726] : -local_rank:        0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:727] : -world_size:        2[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:744] : -save:              /workspace/Primus/output/amd/v89592/llama2_7B-pretrain/checkpoints[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:751] : -auto_continue_train:False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:787] : -disable_tensorboard:True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:788] :   -tensorboard_dir: None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[---------trainer.py:804] : args.wandb_project is disabled, as args.disable_wandb=True.[0m
+[[32m20260616 11:56:19[0m][[36mrank-1/2[0m][[34m[1mDEBUG[0m] [34m[1m[-----global_vars.py:215] : WARNING: one_logger package is required to enable e2e metrics tracking. please go to https://confluence.nvidia.com/display/MLWFO/Package+Repositories for details to install it[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:805] : -disable_wandb:     True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:811] :   -wandb_project:   None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:812] :   -wandb_exp_name:  None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:813] :   -wandb_save_dir:  None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:814] :   -wandb_entity:    None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:625] : -run initialize_megatron...[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1028] : -load:              None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1029] : -use_checkpoint_args:False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-------arguments.py:364] : using world size: 2, data-parallel size: 2, context-parallel size: 1, hierarchical context-parallel sizes: Nonetensor-model-parallel size: 1, encoder-tensor-model-parallel size: 0, pipeline-model-parallel size: 1, encoder-pipeline-model-parallel size: 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-------arguments.py:529] : Number of virtual stages per pipeline stage: None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-------arguments.py:632] : accumulate and all-reduce gradients in fp32 for bfloat16 data type.[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-------arguments.py:636] : using torch.bfloat16 for parameters ...[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1021] : ------------------------ arguments ------------------------[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   account_for_embedding_in_pipeline_split ......... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   account_for_loss_in_pipeline_split .............. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   accumulate_allreduce_grads_in_fp32 .............. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   adam_beta1 ...................................... 0.9[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   adam_beta2 ...................................... 0.95[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   adam_eps ........................................ 1e-08[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   add_bias_linear ................................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   add_position_embedding .......................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   add_qkv_bias .................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   adlr_autoresume ................................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   adlr_autoresume_interval ........................ 1000[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   align_grad_reduce ............................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   align_param_gather .............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   allow_padding_num_layers ........................ True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   app_tag_run_name ................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   app_tag_run_version ............................. 0.0.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   apply_layernorm_1p .............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   apply_query_key_layer_scaling ................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   apply_residual_connection_post_layernorm ........ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   apply_rope_fusion ............................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   async_save ...................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   async_tensor_model_parallel_allreduce ........... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   attention_backend ............................... auto[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   attention_dropout ............................... 0.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   attention_softmax_in_fp32 ....................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   auto_continue_train ............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   auto_detect_ckpt_format ......................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   auto_offload_time ............................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   barrier_with_L1_time ............................ True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   bert_binary_head ................................ True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   bert_embedder_type .............................. megatron[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   bert_load ....................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   bf16 ............................................ True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   bias_dropout_fusion ............................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   bias_gelu_fusion ................................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   bias_swiglu_fusion .............................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   biencoder_projection_dim ........................ 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   biencoder_shared_query_context_model ............ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   block_data_path ................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   calc_ft_timeouts ................................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   calculate_per_token_loss ........................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   check_for_large_grads ........................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   check_for_nan_in_loss_and_grad .................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   check_for_spiky_loss ............................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   check_weight_hash_across_dp_replicas_interval ... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ckpt_assume_constant_structure .................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ckpt_convert_format ............................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ckpt_convert_save ............................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ckpt_convert_update_legacy_dist_opt_format ...... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ckpt_format ..................................... torch[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ckpt_fully_parallel_load ........................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ckpt_fully_parallel_save ........................ True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ckpt_fully_parallel_save_deprecated ............. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ckpt_step ....................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   classes_fraction ................................ 1.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   clip_grad ....................................... 1.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   clone_scatter_output_in_embedding ............... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   config_logger_dir ............................... [0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   consumed_train_samples .......................... 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   consumed_valid_samples .......................... 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   context_parallel_size ........................... 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   cp_comm_type .................................... p2p[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   cpu_offload ..................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   create_attention_mask_in_dataloader ............. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   cross_entropy_fusion_impl ....................... te[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   cross_entropy_loss_fusion ....................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   cuda_graph_scope ................................ full[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   cuda_graph_warmup_steps ......................... 3[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   data_args_path .................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   data_cache_path ................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   data_parallel_random_init ....................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   data_parallel_sharding_strategy ................. no_shard[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   data_parallel_size .............................. 2[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   data_path ....................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   data_per_class_fraction ......................... 1.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   data_sharding ................................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   dataloader_type ................................. cyclic[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ddp_average_in_collective ....................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ddp_bucket_size ................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ddp_num_buckets ................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ddp_pad_buckets_for_high_nccl_busbw ............. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   debug_scheduler_table ........................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   decoder_first_pipeline_num_layers ............... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   decoder_last_pipeline_num_layers ................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   decoder_num_layers .............................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   decoder_pipeline_manual_split_list .............. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   decoder_seq_length .............................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   decoupled_lr .................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   decoupled_min_lr ................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   decrease_batch_size_if_needed ................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   defer_embedding_wgrad_compute ................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   deprecated_use_mcore_models ..................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   deterministic_mode .............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   dino_bottleneck_size ............................ 256[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   dino_freeze_last_layer .......................... 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   dino_head_hidden_size ........................... 2048[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   dino_local_crops_number ......................... 10[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   dino_local_img_size ............................. 96[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   dino_norm_last_layer ............................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   dino_teacher_temp ............................... 0.07[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   dino_warmup_teacher_temp ........................ 0.04[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   dino_warmup_teacher_temp_epochs ................. 30[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   disable_compile_dependencies .................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   disable_last_saving ............................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   disable_primus_topk_router ...................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   disable_profiler_activity_cpu ................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   disable_straggler_on_startup .................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   disable_tensorboard ............................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   disable_wandb ................................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   dist_ckpt_format_deprecated ..................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   dist_ckpt_strictness ............................ assume_ok_unexpected[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   distribute_saved_activations .................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   distributed_backend ............................. nccl[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   distributed_timeout_minutes ..................... 60[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   dump_pp_data .................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   embedding_path .................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   empty_unused_memory_level ....................... 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   enable_1f1b_v ................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   enable_cuda_graph ............................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   enable_exactly_numeric_match .................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   enable_ft_package ............................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   enable_gloo_process_groups ...................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   enable_one_logger ............................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   enable_optimizer_post_validation ................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   enable_primus_turbo ............................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   enable_turbo_attention_float8 ................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   enable_zb_runtime ............................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   enable_zero_bubble .............................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   encoder_num_layers .............................. 32[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   encoder_pipeline_model_parallel_size ............ 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   encoder_seq_length .............................. 4096[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   encoder_tensor_model_parallel_size .............. 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   end_weight_decay ................................ 0.1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   eod_mask_loss ................................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   error_injection_rate ............................ 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   error_injection_type ............................ transient_error[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   eval_interval ................................... 1000[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   eval_iters ...................................... 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   evidence_data_path .............................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   exit_duration_in_mins ........................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   exit_interval ................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   exit_on_missing_checkpoint ...................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   exit_signal_handler ............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   exp_avg_dtype ................................... torch.float32[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   exp_avg_sq_dtype ................................ torch.float32[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   expert_model_parallel_size ...................... 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   expert_tensor_parallel_size ..................... 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   external_cuda_graph ............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ffn_hidden_size ................................. 11008[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   file_sink_level ................................. DEBUG[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   finetune ........................................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   first_last_layers_bf16 .......................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   flash_decode .................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   fp16 ............................................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   fp16_lm_cross_entropy ........................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   fp32_residual_connection ........................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   fp8 ............................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   fp8_amax_compute_algo ........................... max[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   fp8_amax_history_len ............................ 1024[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   fp8_interval .................................... 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   fp8_margin ...................................... 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   fp8_param_gather ................................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   fp8_recipe ...................................... delayed[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   fp8_wgrad ....................................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   framework ....................................... megatron[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   fused_padded_mla_attention ...................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   global_batch_size ............................... 256[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   grad_reduce_in_bf16 ............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   gradient_accumulation_fusion .................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   gradient_reduce_div_fusion ...................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   group_query_attention ........................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   head_lr_mult .................................... 1.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   heterogeneous_layers_config_encoded_json ........ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   heterogeneous_layers_config_path ................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   hidden_dropout .................................. 0.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   hidden_size ..................................... 4096[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   hierarchical_context_parallel_sizes ............. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   hybrid_attention_ratio .......................... 0.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   hybrid_mlp_ratio ................................ 0.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   hybrid_override_pattern ......................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   hysteresis ...................................... 2[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ict_head_size ................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   ict_load ........................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   img_h ........................................... 224[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   img_w ........................................... 224[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   indexer_batch_size .............................. 128[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   indexer_log_interval ............................ 1000[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   inference_batch_times_seqlen_threshold .......... -1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   inference_dynamic_batching ...................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   inference_dynamic_batching_buffer_guaranteed_fraction  0.2[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   inference_dynamic_batching_buffer_overflow_factor  None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   inference_dynamic_batching_buffer_size_gb ....... 40.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   inference_dynamic_batching_max_requests_override  None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   inference_dynamic_batching_max_tokens_override .. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   inference_max_requests .......................... 8[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   inference_max_seq_length ........................ 2560[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   inference_rng_tracker ........................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   init_method_std ................................. 0.008[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   init_method_xavier_uniform ...................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   init_model_with_meta_device ..................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   initial_loss_scale .............................. 4294967296[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   inprocess_restart ............................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   interleave_group_size ........................... 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   is_hybrid_model ................................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   iter_per_epoch .................................. 1250[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   iterations_to_skip .............................. [][0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   keep_fp8_transpose_cache_when_using_custom_fsdp . False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   kv_channels ..................................... 128[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   kv_lora_rank .................................... 32[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   lazy_mpu_init ................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   load ............................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   local_rank ...................................... 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_avg_reset_interval .......................... 50[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_avg_skip_iterations ......................... 2[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_batch_size_to_tensorboard ................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_interval .................................... 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_learning_rate_to_tensorboard ................ True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_loss_scale_to_tensorboard ................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_memory_to_tensorboard ....................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_num_zeros_in_grad ........................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_params_norm ................................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_progress .................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_straggler ................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_throughput .................................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_timers_to_tensorboard ....................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_validation_ppl_to_tensorboard ............... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   log_world_size_to_tensorboard ................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   logging_level ................................... 10[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   loss_scale ...................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   loss_scale_window ............................... 1000[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   lr .............................................. 1e-05[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   lr_decay_iters .................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   lr_decay_samples ................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   lr_decay_style .................................. cosine[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   lr_warmup_fraction .............................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   lr_warmup_init .................................. 0.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   lr_warmup_iters ................................. 2[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   lr_warmup_samples ............................... 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   lr_wsd_decay_iters .............................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   lr_wsd_decay_samples ............................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   lr_wsd_decay_style .............................. exponential[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   main_grads_dtype ................................ torch.float32[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   main_params_dtype ............................... torch.float32[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   make_vocab_size_divisible_by .................... 128[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   manual_gc ....................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   manual_gc_eval .................................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   manual_gc_interval .............................. 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   mask_factor ..................................... 1.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   mask_prob ....................................... 0.15[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   mask_type ....................................... random[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   masked_softmax_fusion ........................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   max_position_embeddings ......................... 4096[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   max_tokens_to_oom ............................... 12000[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   memory_snapshot_path ............................ snapshot.pickle[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   merge_file ...................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   micro_batch_size ................................ 4[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   microbatch_group_size_per_vp_stage .............. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   min_loss_scale .................................. 1.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   min_lr .......................................... 0.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   mmap_bin_files .................................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   mock_data ....................................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_aux_loss_coeff .............................. 0.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_enable_deepep ............................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_expert_capacity_factor ...................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_extended_tp ................................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_ffn_hidden_size ............................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_grouped_gemm ................................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_input_jitter_eps ............................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_layer_freq .................................. 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_layer_recompute ............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_pad_expert_input_to_capacity ................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_per_layer_logging ........................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_permute_fusion .............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_router_bias_update_rate ..................... 0.001[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_router_dtype ................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_router_enable_expert_bias ................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_router_force_load_balancing ................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_router_group_topk ........................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_router_load_balancing_type .................. aux_loss[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_router_num_groups ........................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_router_pre_softmax .......................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_router_score_function ....................... softmax[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_router_topk ................................. 2[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_router_topk_scaling_factor .................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_shared_expert_intermediate_size ............. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_shared_expert_overlap ....................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_token_dispatcher_type ....................... allgather[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_token_drop_policy ........................... probs[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_use_fused_router_with_aux_score ............. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_use_legacy_grouped_gemm ..................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_use_upcycling ............................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   moe_z_loss_coeff ................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   mscale .......................................... 1.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   mscale_all_dim .................................. 1.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   mtp_loss_scaling_factor ......................... 0.1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   mtp_num_layers .................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   multi_latent_attention .......................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   name ............................................ pre_trainer[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   nccl_communicator_config_path ................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   no_fp8_weight_transpose_cache ................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   no_load_optim ................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   no_load_rng ..................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   no_persist_layer_norm ........................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   no_save_optim ................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   no_save_rng ..................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   non_persistent_ckpt_type ........................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   non_persistent_global_ckpt_dir .................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   non_persistent_local_ckpt_algo .................. fully_parallel[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   non_persistent_local_ckpt_dir ................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   non_persistent_save_interval .................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   norm_epsilon .................................... 1e-06[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   normalization ................................... RMSNorm[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_attention_heads ............................. 32[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_channels .................................... 3[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_classes ..................................... 1000[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_dataset_builder_threads ..................... 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_distributed_optimizer_instances ............. 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_experts ..................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_layers ...................................... 32[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_layers_at_end_in_bf16 ....................... 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_layers_at_start_in_bf16 ..................... 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_layers_per_virtual_pipeline_stage ........... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_query_groups ................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_seq_splits .................................. 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_virtual_stages_per_pipeline_rank ............ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   num_workers ..................................... 8[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   offload_chunk_num ............................... 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   offload_overlap_sr .............................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   offload_time .................................... 1.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   one_logger_async ................................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   one_logger_project .............................. megatron-lm[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   one_logger_run_name ............................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   onnx_safe ....................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   openai_gelu ..................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   optimizer ....................................... adam[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   optimizer_cpu_offload ........................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   optimizer_offload_fraction ...................... 1.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   output_bert_embeddings .......................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   overlap_cpu_optimizer_d2h_h2d ................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   overlap_grad_reduce ............................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   overlap_p2p_comm ................................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   overlap_param_gather ............................ True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   overlap_param_gather_with_optimizer_step ........ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   override_opt_param_scheduler .................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   parallel_output ................................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   params_dtype .................................... torch.bfloat16[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   patch_dim ....................................... 16[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   patch_zero_bubble ............................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   per_split_data_args_path ........................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   perform_initialization .......................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   pin_cpu_grads ................................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   pin_cpu_params .................................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   pipeline_model_parallel_comm_backend ............ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   pipeline_model_parallel_size .................... 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   pipeline_model_parallel_split_rank .............. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   position_embedding_type ......................... rope[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   pp_warmup ....................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   pre_communication_optimization .................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   pretrained_checkpoint ........................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   profile ......................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   profile_memory_iter ............................. -1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   profile_ranks ................................... [0][0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   profile_step_end ................................ 12[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   profile_step_start .............................. 10[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   q_lora_rank ..................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   qk_head_dim ..................................... 128[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   qk_layernorm .................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   qk_pos_emb_head_dim ............................. 64[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   query_in_block_prob ............................. 0.1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   rampup_batch_size ............................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   rank ............................................ 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   recompute_granularity ........................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   recompute_method ................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   recompute_num_layers ............................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   record_memory_history ........................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   replication ..................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   replication_factor .............................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   replication_jump ................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   rerun_mode ...................................... disabled[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   reset_attention_mask ............................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   reset_position_ids .............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   result_rejected_tracker_filename ................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   retriever_report_topk_accuracies ................ [][0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   retriever_score_scaling ......................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   retriever_seq_length ............................ 256[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   retro_add_retriever ............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   retro_attention_gate ............................ 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   retro_cyclic_train_iters ........................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   retro_encoder_attention_dropout ................. 0.1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   retro_encoder_hidden_dropout .................... 0.1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   retro_encoder_layers ............................ 2[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   retro_num_neighbors ............................. 2[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   retro_num_retrieved_chunks ...................... 2[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   retro_project_dir ............................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   retro_verify_neighbor_count ..................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   rope_scaling_factor ............................. 8.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   rotary_base ..................................... 10000[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   rotary_interleaved .............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   rotary_percent .................................. 1.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   rotary_scaling_factor ........................... 40[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   rotary_seq_len_interpolation_factor ............. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   run_workload_inspector_server ................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   s3_cache_path ................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   sample_rate ..................................... 1.0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   save ............................................ /workspace/Primus/output/amd/v89592/llama2_7B-pretrain/checkpoints[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   save_interval ................................... 20000[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   scatter_gather_tensors_in_pipeline .............. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   seed ............................................ 1234[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   seq_length ...................................... 4096[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   sequence_parallel ............................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   sgd_momentum .................................... 0.9[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   short_seq_prob .................................. 0.1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   sink_level ...................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   skip_train ...................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   skipped_train_samples ........................... 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   spec ............................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   split ........................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   squared_relu .................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   standalone_embedding_stage ...................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   start_weight_decay .............................. 0.1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   stderr_sink_level ............................... DEBUG[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   straggler_ctrlr_port ............................ 65535[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   straggler_minmax_count .......................... 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   suggested_communication_unit_size ............... 400000000[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   swiglu .......................................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   swin_backbone_type .............................. tiny[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   te_rng_tracker .................................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tensor_model_parallel_size ...................... 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tensorboard_dir ................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tensorboard_log_interval ........................ 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tensorboard_queue_size .......................... 1000[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   test_data_path .................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   test_mode ....................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tiktoken_num_special_tokens ..................... 1000[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tiktoken_pattern ................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tiktoken_special_tokens ......................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   timing_log_level ................................ 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   timing_log_option ............................... minmax[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   titles_data_path ................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tokenizer_model ................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tokenizer_type .................................. NullTokenizer[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tp_comm_bootstrap_backend ....................... nccl[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tp_comm_bulk_dgrad .............................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tp_comm_bulk_wgrad .............................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tp_comm_overlap ................................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tp_comm_overlap_ag .............................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tp_comm_overlap_cfg ............................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tp_comm_overlap_rs .............................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tp_comm_overlap_rs_dgrad ........................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tp_comm_split_ag ................................ True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   tp_comm_split_rs ................................ True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   train_data_path ................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   train_iters ..................................... 50[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   train_samples ................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   train_sync_interval ............................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   trainable ....................................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   transformer_impl ................................ transformer_engine[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   transformer_pipeline_model_parallel_size ........ 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   untie_embeddings_and_output_weights ............. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_checkpoint_args ............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_checkpoint_opt_param_scheduler .............. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_cpu_initialization .......................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_custom_fsdp ................................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_deprecated_20241209_moe_layer ............... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_dist_ckpt ................................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_dist_ckpt_deprecated ........................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_distributed_optimizer ....................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_flash_attn .................................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_legacy_models ............................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_mp_args_from_checkpoint_args ................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_one_sent_docs ............................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_persistent_ckpt_worker ...................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_precision_aware_optimizer ................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_pytorch_profiler ............................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_ring_exchange_p2p ........................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_rocm_mem_info ............................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_rocm_mem_info_iters ......................... [1, 2][0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_rope_scaling ................................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_rotary_position_embeddings .................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_tokenizer_model_from_checkpoint_args ........ True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_torch_fsdp2 ................................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_torch_optimizer_for_cpu_offload ............. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_tp_pp_dp_mapping ............................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_turbo_attention ............................. True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_turbo_grouped_mlp ........................... True[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   use_turbo_parallel_linear ....................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   v_head_dim ...................................... 128[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   valid_data_path ................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   variable_seq_lengths ............................ False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   virtual_pipeline_model_parallel_size ............ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   vision_backbone_type ............................ vit[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   vision_pretraining .............................. False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   vision_pretraining_type ......................... classify[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   vocab_extra_ids ................................. 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   vocab_file ...................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   vocab_size ...................................... 32000[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   wandb_entity .................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   wandb_exp_name .................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   wandb_project ................................... None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   wandb_save_dir .................................. None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   weight_decay .................................... 0.1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   weight_decay_incr_style ......................... constant[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   wgrad_deferral_limit ............................ 0[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   world_size ...................................... 2[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   yaml_cfg ........................................ None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   zero_bubble_adaptive_memory_limit_percentile .... 85[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   zero_bubble_max_pending_backward ................ auto[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   zero_bubble_pipeline_timers_end_iter ............ 110[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   zero_bubble_pipeline_timers_start_iter .......... 100[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   zero_bubble_v_schedule .......................... False[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1028] :   zero_bubble_v_schedule_mem_setup ................ half[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------arguments.py:1029] : -------------------- end of arguments ---------------------[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1055] : -monkey patch megatron.training.global_vars._set_wandb_writer...[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1060] : -set_global_variables...[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1065] : -build_tokenizer...[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------tokenizer.py:40] : -building NullTokenizer tokenizer...[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[--------tokenizer.py:23] : > building NullTokenizer tokenizer ...[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-------tokenizer.py:117] :  > padded vocab (size: 32001) with 127 dummy tokens (new size: 32128)[0m
+RerunStateMachine initialized in mode disabled
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1118] : -lazy_mpu_init:     None[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1095] : -initialize_distributed...[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------initialize.py:315] : > initializing torch distributed ...[0m
+[Gloo] Rank [Gloo] Rank 0 is connected to 11 is connected to  peer ranks. Expected number of connected peer ranks is : 11 peer ranks. 
+Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1[Gloo] Rank  peer ranks. 0Expected number of connected peer ranks is :  is connected to 11
+ peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------initialize.py:366] : > initialized tensor model parallel with size 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[------initialize.py:370] : > initialized pipeline model parallel with size 1[0m
+[[32m20260616 11:56:19[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1099] : -seeds:             1234[0m
+/opt/venv/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4814: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:676] : time to initialize megatron (seconds): 5.105[0m
+/opt/venv/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4814: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-----------utils.py:364] : [after megatron is initialized] datetime: 2026-06-16 11:56:24 [0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:878] : -setup_model_and_optimizer...[0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1167] : use pt backend...[0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1175] : -run get_model[0m
+/workspace/Primus/third_party/Megatron-LM/megatron/core/models/gpt/gpt_layer_specs.py:94: UserWarning: The fp8 argument in "get_gpt_layer_with_transformer_engine_spec" has been deprecated and will be removed soon. Please update your code accordingly.
+  warnings.warn(
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-----------utils.py:364] : building GPT model ...[0m
+/workspace/Primus/third_party/Megatron-LM/megatron/core/models/gpt/gpt_layer_specs.py:94: UserWarning: The fp8 argument in "get_gpt_layer_with_transformer_engine_spec" has been deprecated and will be removed soon. Please update your code accordingly.
+  warnings.warn(
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-------training.py:1050] :  > number of parameters on (tensor, pipeline) model parallel rank (0, 0): 6739464192[0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1177] : [DistributedDataParallel(
+  (module): Float16Module(
+    (module): GPTModel(
+      (embedding): LanguageModelEmbedding(
+        (word_embeddings): VocabParallelEmbedding()
+        (embedding_dropout): Dropout(p=0.0, inplace=False)
+      )
+      (rotary_pos_emb): RotaryEmbedding()
+      (decoder): TransformerBlock(
+        (layers): ModuleList(
+          (0-31): 32 x TransformerLayer(
+            (input_layernorm): IdentityOp()
+            (self_attention): SelfAttention(
+              (core_attention): PrimusTurboAttention(
+                (flash_attention): FlashAttention()
+                (fused_attention): FusedAttention()
+                (unfused_attention): UnfusedDotProductAttention(
+                  (scale_mask_softmax): FusedScaleMaskSoftmax()
+                  (attention_dropout): Dropout(p=0.0, inplace=False)
+                )
+              )
+              (linear_proj): TERowParallelLinear(in_features=4096, out_features=4096, bias=False, TP=1)
+              (linear_qkv): TELayerNormColumnParallelLinear(in_features=4096, out_features=12288, bias=False, TP=1)
+              (q_layernorm): IdentityOp()
+              (k_layernorm): IdentityOp()
+            )
+            (pre_cross_attn_layernorm): IdentityOp()
+            (cross_attention): IdentityOp()
+            (cross_attn_bda): IdentityFuncOp()
+            (pre_mlp_layernorm): IdentityOp()
+            (mlp): MLP(
+              (linear_fc1): TELayerNormColumnParallelLinear(in_features=4096, out_features=22016, bias=False, TP=1)
+              (linear_fc2): TERowParallelLinear(in_features=11008, out_features=4096, bias=False, TP=1)
+            )
+          )
+        )
+        (final_layernorm): RMSNorm()
+      )
+      (output_layer): ColumnParallelLinear(in_features=4096, out_features=32128, bias=False, TP=1)
+    )
+  )
+)][0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1191] : -run get_megatron_optimizer[0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-----------utils.py:364] : [after model, optimizer, and learning rate scheduler are built] datetime: 2026-06-16 11:56:24 [0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-----------utils.py:364] : > building train, validation, and test datasets ...[0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-----------utils.py:364] :  > datasets target sizes (minimum size):[0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-----------utils.py:364] :     train:      12800[0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-----------utils.py:364] :     validation: 0[0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-----------utils.py:364] :     test:       0[0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:984] : > building train, validation, and test datasets for GPT ...[0m
+Unable to save MockGPTDataset indexes because path_to_cache is None
+Unable to save MockGPTDataset indexes because path_to_cache is None
+Unable to save MockGPTDataset indexes because path_to_cache is None
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:989] : > finished creating GPT datasets ...[0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-----------utils.py:364] : [after dataloaders are built] datetime: 2026-06-16 11:56:24 [0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[---------trainer.py:931] : done with setup ...[0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1321] : training ...[0m
+[[32m20260616 11:56:24[0m][[36mrank-1/2[0m][[34m[1mDEBUG[0m] [34m[1m[----------timers.py:417] : (min, max) time across ranks (ms):
+    model-and-optimizer-setup ......................: (161.94, 162.17)
+    train/valid/test-data-iterators-setup ..........: (9.97, 10.78)[0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[1mINFO [0m] [1m[--------trainer.py:1461] : Setting rerun_state_machine.current_iteration to 0...[0m
+[[32m20260616 11:56:24[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-----------utils.py:364] : [before the start of training step] datetime: 2026-06-16 11:56:24 [0m
+[aiter] type hints mismatch, override to --> rope_fwd_impl(arg0: torch.Tensor, arg1: torch.Tensor, arg2: torch.Tensor, arg3: int, arg4: bool, arg5: bool) -> None
+[aiter] type hints mismatch, override to --> rope_fwd_impl(arg0: torch.Tensor, arg1: torch.Tensor, arg2: torch.Tensor, arg3: int, arg4: bool, arg5: bool) -> None
+[aiter] type hints mismatch, override to --> fmha_v3_fwd(q: torch.Tensor, k: torch.Tensor, v: torch.Tensor, dropout_p: float, softmax_scale: float, is_causal: bool, window_size_left: int, window_size_right: int, return_softmax_lse: bool, return_dropout_randval: bool, out: Optional[torch.Tensor] = None, bias: Optional[torch.Tensor] = None, alibi_slopes: Optional[torch.Tensor] = None, gen: Optional[torch.Generator] = None) -> list[torch.Tensor]
+[aiter] type hints mismatch, override to --> fmha_v3_fwd(q: torch.Tensor, k: torch.Tensor, v: torch.Tensor, dropout_p: float, softmax_scale: float, is_causal: bool, window_size_left: int, window_size_right: int, return_softmax_lse: bool, return_dropout_randval: bool, out: Optional[torch.Tensor] = None, bias: Optional[torch.Tensor] = None, alibi_slopes: Optional[torch.Tensor] = None, gen: Optional[torch.Generator] = None) -> list[torch.Tensor]
+[aiter] type hints mismatch, override to --> fmha_v3_bwd(dout: torch.Tensor, q: torch.Tensor, k: torch.Tensor, v: torch.Tensor, out: torch.Tensor, softmax_lse: torch.Tensor, dropout_p: float, softmax_scale: float, is_causal: bool, window_size_left: int, window_size_right: int, deterministic: bool, is_v3_atomic_fp32: bool, how_v3_bf16_cvt: int, dq: Optional[torch.Tensor] = None, dk: Optional[torch.Tensor] = None, dv: Optional[torch.Tensor] = None, alibi_slopes: Optional[torch.Tensor] = None, rng_state: Optional[torch.Tensor] = None, gen: Optional[torch.Generator] = None) -> list[torch.Tensor]
+[aiter] type hints mismatch, override to --> fmha_v3_bwd(dout: torch.Tensor, q: torch.Tensor, k: torch.Tensor, v: torch.Tensor, out: torch.Tensor, softmax_lse: torch.Tensor, dropout_p: float, softmax_scale: float, is_causal: bool, window_size_left: int, window_size_right: int, deterministic: bool, is_v3_atomic_fp32: bool, how_v3_bf16_cvt: int, dq: Optional[torch.Tensor] = None, dk: Optional[torch.Tensor] = None, dv: Optional[torch.Tensor] = None, alibi_slopes: Optional[torch.Tensor] = None, rng_state: Optional[torch.Tensor] = None, gen: Optional[torch.Generator] = None) -> list[torch.Tensor]
+[aiter] type hints mismatch, override to --> rope_bwd_impl(arg0: torch.Tensor, arg1: torch.Tensor, arg2: torch.Tensor, arg3: int, arg4: bool, arg5: bool) -> None
+[aiter] type hints mismatch, override to --> rope_bwd_impl(arg0: torch.Tensor, arg1: torch.Tensor, arg2: torch.Tensor, arg3: int, arg4: bool, arg5: bool) -> None
+/opt/venv/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4814: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+/opt/venv/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4814: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+[[32m20260616 11:57:05[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration        1/      50 | consumed samples:          256 | elapsed time per iteration (ms): 41560.8/41560.8 | hip mem usage/free/total/usage_ratio: 132.72GB/155.26GB/287.98GB/46.09% | rocm mem usage/free/total/usage_ratio: 133.23GB/154.75GB/287.98GB/46.26% | throughput per GPU (TFLOP/s/GPU): 581.4/581.4 | tokens per GPU (tokens/s/GPU): 12615.0/12615.0 | learning rate: 5.000000E-06 | global batch size:   256 | lm loss: 1.050575E+01 | loss scale: 1.0 | grad norm: 0.000 | num zeros: 114860480.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 11:57:05[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[theoretical_memory_usage.py:136] : Number of parameters in transformer block in billions:  6.48[0m
+[[32m20260616 11:57:05[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[theoretical_memory_usage.py:145] : Number of parameters in embedding layers in billions: 0.26[0m
+[[32m20260616 11:57:05[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[theoretical_memory_usage.py:149] : Total number of parameters in billions: 6.74[0m
+[[32m20260616 11:57:05[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[theoretical_memory_usage.py:162] : Number of parameters in most loaded shard in billions: 6.7397[0m
+[[32m20260616 11:57:05[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[theoretical_memory_usage.py:273] : Theoretical memory footprints: weight and optimizer=77130.09 MB[0m
+[[32m20260616 11:57:05[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-----------utils.py:263] : [Rank 0] (after 1 iterations) memory (MB) | allocated: 77348.3154296875 | max allocated: 123234.5283203125 | reserved: 127458.0 | max reserved: 127458.0[0m
+/opt/venv/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4814: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+/opt/venv/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4814: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+[[32m20260616 11:57:27[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration        2/      50 | consumed samples:          512 | elapsed time per iteration (ms): 21146.6/31353.7 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | rocm mem usage/free/total/usage_ratio: 161.65GB/126.34GB/287.98GB/56.13% | throughput per GPU (TFLOP/s/GPU): 1142.7/862.0 | tokens per GPU (tokens/s/GPU): 24793.0/18704.0 | learning rate: 1.000000E-05 | global batch size:   256 | lm loss: 1.050563E+01 | loss scale: 1.0 | grad norm: 0.000 | num zeros: 114852304.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 11:57:47[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration        3/      50 | consumed samples:          768 | elapsed time per iteration (ms): 20987.9/20987.9 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1151.3/1151.3 | tokens per GPU (tokens/s/GPU): 24980.4/24980.4 | learning rate: 9.989295E-06 | global batch size:   256 | lm loss: 1.037441E+01 | loss scale: 1.0 | grad norm: 0.000 | num zeros: 114908688.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 11:58:09[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration        4/      50 | consumed samples:         1024 | elapsed time per iteration (ms): 21024.7/21006.3 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1149.3/1150.3 | tokens per GPU (tokens/s/GPU): 24936.8/24958.6 | learning rate: 9.957224E-06 | global batch size:   256 | lm loss: 1.003678E+01 | loss scale: 1.0 | grad norm: 0.000 | num zeros: 114887736.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 11:58:30[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration        5/      50 | consumed samples:         1280 | elapsed time per iteration (ms): 21052.7/21021.8 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1147.8/1149.4 | tokens per GPU (tokens/s/GPU): 24903.6/24940.3 | learning rate: 9.903926E-06 | global batch size:   256 | lm loss: 9.822444E+00 | loss scale: 1.0 | grad norm: 0.000 | num zeros: 114838920.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 11:58:51[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration        6/      50 | consumed samples:         1536 | elapsed time per iteration (ms): 21059.5/21031.2 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1147.4/1148.9 | tokens per GPU (tokens/s/GPU): 24895.6/24929.1 | learning rate: 9.829630E-06 | global batch size:   256 | lm loss: 9.599868E+00 | loss scale: 1.0 | grad norm: 0.000 | num zeros: 114863344.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 11:59:12[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration        7/      50 | consumed samples:         1792 | elapsed time per iteration (ms): 21024.6/21029.9 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1149.3/1149.0 | tokens per GPU (tokens/s/GPU): 24936.8/24930.6 | learning rate: 9.734651E-06 | global batch size:   256 | lm loss: 9.340711E+00 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114849920.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 11:59:33[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration        8/      50 | consumed samples:         2048 | elapsed time per iteration (ms): 21070.9/21036.7 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1146.8/1148.6 | tokens per GPU (tokens/s/GPU): 24882.1/24922.5 | learning rate: 9.619398E-06 | global batch size:   256 | lm loss: 9.052122E+00 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114887800.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 11:59:54[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration        9/      50 | consumed samples:         2304 | elapsed time per iteration (ms): 20989.8/21030.0 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1151.2/1149.0 | tokens per GPU (tokens/s/GPU): 24978.2/24930.5 | learning rate: 9.484364E-06 | global batch size:   256 | lm loss: 8.693371E+00 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114848160.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:00:15[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       10/      50 | consumed samples:         2560 | elapsed time per iteration (ms): 21119.6/21041.2 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1144.1/1148.4 | tokens per GPU (tokens/s/GPU): 24824.7/24917.3 | learning rate: 9.330127E-06 | global batch size:   256 | lm loss: 8.277784E+00 | loss scale: 1.0 | grad norm: 0.002 | num zeros: 114853904.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:00:36[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       11/      50 | consumed samples:         2816 | elapsed time per iteration (ms): 21122.4/21050.2 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1144.0/1147.9 | tokens per GPU (tokens/s/GPU): 24821.4/24906.6 | learning rate: 9.157348E-06 | global batch size:   256 | lm loss: 8.176912E+00 | loss scale: 1.0 | grad norm: 0.003 | num zeros: 114855800.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:00:57[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       12/      50 | consumed samples:         3072 | elapsed time per iteration (ms): 21089.6/21054.2 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1145.8/1147.7 | tokens per GPU (tokens/s/GPU): 24860.0/24902.0 | learning rate: 8.966766E-06 | global batch size:   256 | lm loss: 7.685109E+00 | loss scale: 1.0 | grad norm: 0.003 | num zeros: 114880896.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:01:18[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       13/      50 | consumed samples:         3328 | elapsed time per iteration (ms): 21088.2/21057.3 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1145.8/1147.5 | tokens per GPU (tokens/s/GPU): 24861.6/24898.3 | learning rate: 8.759199E-06 | global batch size:   256 | lm loss: 7.364456E+00 | loss scale: 1.0 | grad norm: 0.003 | num zeros: 114832496.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:01:39[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       14/      50 | consumed samples:         3584 | elapsed time per iteration (ms): 21037.3/21055.6 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1148.6/1147.6 | tokens per GPU (tokens/s/GPU): 24921.8/24900.3 | learning rate: 8.535534E-06 | global batch size:   256 | lm loss: 6.775386E+00 | loss scale: 1.0 | grad norm: 0.004 | num zeros: 114836512.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:02:00[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       15/      50 | consumed samples:         3840 | elapsed time per iteration (ms): 20993.2/21050.8 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1151.0/1147.9 | tokens per GPU (tokens/s/GPU): 24974.2/24905.9 | learning rate: 8.296729E-06 | global batch size:   256 | lm loss: 6.403157E+00 | loss scale: 1.0 | grad norm: 0.004 | num zeros: 114864504.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:02:21[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       16/      50 | consumed samples:         4096 | elapsed time per iteration (ms): 21028.2/21049.2 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1149.1/1148.0 | tokens per GPU (tokens/s/GPU): 24932.6/24907.9 | learning rate: 8.043807E-06 | global batch size:   256 | lm loss: 5.976323E+00 | loss scale: 1.0 | grad norm: 0.005 | num zeros: 114880304.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:02:42[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       17/      50 | consumed samples:         4352 | elapsed time per iteration (ms): 21083.2/21051.5 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1146.1/1147.8 | tokens per GPU (tokens/s/GPU): 24867.6/24905.2 | learning rate: 7.777851E-06 | global batch size:   256 | lm loss: 5.532382E+00 | loss scale: 1.0 | grad norm: 0.006 | num zeros: 114851408.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:03:03[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       18/      50 | consumed samples:         4608 | elapsed time per iteration (ms): 21150.9/21057.7 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1142.4/1147.5 | tokens per GPU (tokens/s/GPU): 24787.9/24897.8 | learning rate: 7.500000E-06 | global batch size:   256 | lm loss: 5.111382E+00 | loss scale: 1.0 | grad norm: 0.006 | num zeros: 114868104.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:03:25[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       19/      50 | consumed samples:         4864 | elapsed time per iteration (ms): 21137.4/21062.4 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1143.2/1147.2 | tokens per GPU (tokens/s/GPU): 24803.8/24892.3 | learning rate: 7.211444E-06 | global batch size:   256 | lm loss: 4.584198E+00 | loss scale: 1.0 | grad norm: 0.007 | num zeros: 114896288.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:03:46[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       20/      50 | consumed samples:         5120 | elapsed time per iteration (ms): 21025.2/21060.3 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1149.3/1147.4 | tokens per GPU (tokens/s/GPU): 24936.2/24894.7 | learning rate: 6.913417E-06 | global batch size:   256 | lm loss: 4.198518E+00 | loss scale: 1.0 | grad norm: 0.007 | num zeros: 114835048.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:04:07[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       21/      50 | consumed samples:         5376 | elapsed time per iteration (ms): 20982.4/21056.2 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1151.6/1147.6 | tokens per GPU (tokens/s/GPU): 24987.0/24899.6 | learning rate: 6.607198E-06 | global batch size:   256 | lm loss: 3.794353E+00 | loss scale: 1.0 | grad norm: 0.007 | num zeros: 114859088.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:04:28[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       22/      50 | consumed samples:         5632 | elapsed time per iteration (ms): 21026.1/21054.7 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1149.2/1147.7 | tokens per GPU (tokens/s/GPU): 24935.1/24901.4 | learning rate: 6.294095E-06 | global batch size:   256 | lm loss: 3.188359E+00 | loss scale: 1.0 | grad norm: 0.007 | num zeros: 114859136.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:04:49[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       23/      50 | consumed samples:         5888 | elapsed time per iteration (ms): 21013.3/21052.7 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1149.9/1147.8 | tokens per GPU (tokens/s/GPU): 24950.3/24903.7 | learning rate: 5.975452E-06 | global batch size:   256 | lm loss: 2.888520E+00 | loss scale: 1.0 | grad norm: 0.007 | num zeros: 114830224.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:05:10[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       24/      50 | consumed samples:         6144 | elapsed time per iteration (ms): 21079.1/21053.9 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1146.3/1147.7 | tokens per GPU (tokens/s/GPU): 24872.4/24902.3 | learning rate: 5.652631E-06 | global batch size:   256 | lm loss: 2.432810E+00 | loss scale: 1.0 | grad norm: 0.006 | num zeros: 114830216.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:05:31[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       25/      50 | consumed samples:         6400 | elapsed time per iteration (ms): 21096.4/21055.8 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1145.4/1147.6 | tokens per GPU (tokens/s/GPU): 24852.1/24900.1 | learning rate: 5.327016E-06 | global batch size:   256 | lm loss: 2.207338E+00 | loss scale: 1.0 | grad norm: 0.005 | num zeros: 114834384.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:05:52[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       26/      50 | consumed samples:         6656 | elapsed time per iteration (ms): 21068.3/21056.3 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1146.9/1147.6 | tokens per GPU (tokens/s/GPU): 24885.2/24899.5 | learning rate: 5.000000E-06 | global batch size:   256 | lm loss: 1.808493E+00 | loss scale: 1.0 | grad norm: 0.004 | num zeros: 114859080.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:06:13[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       27/      50 | consumed samples:         6912 | elapsed time per iteration (ms): 20997.3/21053.9 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1150.8/1147.7 | tokens per GPU (tokens/s/GPU): 24969.3/24902.3 | learning rate: 4.672984E-06 | global batch size:   256 | lm loss: 1.653109E+00 | loss scale: 1.0 | grad norm: 0.003 | num zeros: 114834720.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:06:34[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       28/      50 | consumed samples:         7168 | elapsed time per iteration (ms): 20977.4/21051.0 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1151.9/1147.9 | tokens per GPU (tokens/s/GPU): 24993.0/24905.8 | learning rate: 4.347369E-06 | global batch size:   256 | lm loss: 1.422177E+00 | loss scale: 1.0 | grad norm: 0.003 | num zeros: 114842848.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:06:55[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       29/      50 | consumed samples:         7424 | elapsed time per iteration (ms): 21054.2/21051.1 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1147.7/1147.9 | tokens per GPU (tokens/s/GPU): 24901.9/24905.6 | learning rate: 4.024549E-06 | global batch size:   256 | lm loss: 1.358893E+00 | loss scale: 1.0 | grad norm: 0.002 | num zeros: 114834736.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:07:16[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       30/      50 | consumed samples:         7680 | elapsed time per iteration (ms): 21068.4/21051.7 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1146.9/1147.8 | tokens per GPU (tokens/s/GPU): 24885.0/24904.9 | learning rate: 3.705905E-06 | global batch size:   256 | lm loss: 1.220955E+00 | loss scale: 1.0 | grad norm: 0.002 | num zeros: 114834560.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:07:37[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       31/      50 | consumed samples:         7936 | elapsed time per iteration (ms): 21084.4/21052.9 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1146.0/1147.8 | tokens per GPU (tokens/s/GPU): 24866.1/24903.5 | learning rate: 3.392803E-06 | global batch size:   256 | lm loss: 1.269960E+00 | loss scale: 1.0 | grad norm: 0.002 | num zeros: 114830624.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:07:58[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       32/      50 | consumed samples:         8192 | elapsed time per iteration (ms): 21098.3/21054.4 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1145.3/1147.7 | tokens per GPU (tokens/s/GPU): 24849.8/24901.8 | learning rate: 3.086583E-06 | global batch size:   256 | lm loss: 1.041636E+00 | loss scale: 1.0 | grad norm: 0.002 | num zeros: 114847536.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:08:19[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       33/      50 | consumed samples:         8448 | elapsed time per iteration (ms): 21033.1/21053.7 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1148.8/1147.7 | tokens per GPU (tokens/s/GPU): 24926.8/24902.6 | learning rate: 2.788556E-06 | global batch size:   256 | lm loss: 1.041560E+00 | loss scale: 1.0 | grad norm: 0.002 | num zeros: 114855192.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:08:40[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       34/      50 | consumed samples:         8704 | elapsed time per iteration (ms): 20960.3/21050.8 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1152.8/1147.9 | tokens per GPU (tokens/s/GPU): 25013.4/24906.0 | learning rate: 2.500000E-06 | global batch size:   256 | lm loss: 9.861700E-01 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114843352.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:09:01[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       35/      50 | consumed samples:         8960 | elapsed time per iteration (ms): 21038.4/21050.4 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1148.5/1147.9 | tokens per GPU (tokens/s/GPU): 24920.5/24906.5 | learning rate: 2.222149E-06 | global batch size:   256 | lm loss: 8.972982E-01 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114834864.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:09:22[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       36/      50 | consumed samples:         9216 | elapsed time per iteration (ms): 21059.4/21050.7 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1147.4/1147.9 | tokens per GPU (tokens/s/GPU): 24895.7/24906.1 | learning rate: 1.956193E-06 | global batch size:   256 | lm loss: 8.258713E-01 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114892760.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:09:43[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       37/      50 | consumed samples:         9472 | elapsed time per iteration (ms): 21110.2/21052.4 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1144.6/1147.8 | tokens per GPU (tokens/s/GPU): 24835.8/24904.1 | learning rate: 1.703271E-06 | global batch size:   256 | lm loss: 7.692223E-01 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 115028432.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:10:04[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       38/      50 | consumed samples:         9728 | elapsed time per iteration (ms): 21105.3/21053.8 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1144.9/1147.7 | tokens per GPU (tokens/s/GPU): 24841.5/24902.4 | learning rate: 1.464466E-06 | global batch size:   256 | lm loss: 8.499081E-01 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114848032.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:10:25[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       39/      50 | consumed samples:         9984 | elapsed time per iteration (ms): 21020.1/21052.9 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1149.5/1147.8 | tokens per GPU (tokens/s/GPU): 24942.2/24903.5 | learning rate: 1.240801E-06 | global batch size:   256 | lm loss: 7.915317E-01 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114848176.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:10:46[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       40/      50 | consumed samples:        10240 | elapsed time per iteration (ms): 21000.5/21051.5 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1150.6/1147.8 | tokens per GPU (tokens/s/GPU): 24965.6/24905.1 | learning rate: 1.033233E-06 | global batch size:   256 | lm loss: 6.904511E-01 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114865032.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:11:07[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       41/      50 | consumed samples:        10496 | elapsed time per iteration (ms): 21009.2/21050.4 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1150.1/1147.9 | tokens per GPU (tokens/s/GPU): 24955.2/24906.4 | learning rate: 8.426520E-07 | global batch size:   256 | lm loss: 6.710263E-01 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114832480.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:11:29[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       42/      50 | consumed samples:        10752 | elapsed time per iteration (ms): 21051.5/21050.5 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1147.8/1147.9 | tokens per GPU (tokens/s/GPU): 24905.0/24906.4 | learning rate: 6.698730E-07 | global batch size:   256 | lm loss: 7.119076E-01 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114885480.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:11:50[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       43/      50 | consumed samples:        11008 | elapsed time per iteration (ms): 21113.0/21052.0 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1144.5/1147.8 | tokens per GPU (tokens/s/GPU): 24832.5/24904.6 | learning rate: 5.156363E-07 | global batch size:   256 | lm loss: 7.151120E-01 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114857448.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:12:11[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       44/      50 | consumed samples:        11264 | elapsed time per iteration (ms): 21086.7/21052.8 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1145.9/1147.8 | tokens per GPU (tokens/s/GPU): 24863.5/24903.6 | learning rate: 3.806023E-07 | global batch size:   256 | lm loss: 7.159185E-01 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114890480.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:12:32[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       45/      50 | consumed samples:        11520 | elapsed time per iteration (ms): 21068.7/21053.2 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1146.9/1147.7 | tokens per GPU (tokens/s/GPU): 24884.6/24903.1 | learning rate: 2.653493E-07 | global batch size:   256 | lm loss: 6.086202E-01 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114842176.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:12:53[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       46/      50 | consumed samples:        11776 | elapsed time per iteration (ms): 21025.6/21052.6 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1149.2/1147.8 | tokens per GPU (tokens/s/GPU): 24935.7/24903.9 | learning rate: 1.703709E-07 | global batch size:   256 | lm loss: 7.041785E-01 | loss scale: 1.0 | grad norm: 0.001 | num zeros: 114879000.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:13:14[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       47/      50 | consumed samples:        12032 | elapsed time per iteration (ms): 20967.2/21050.7 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1152.4/1147.9 | tokens per GPU (tokens/s/GPU): 25005.2/24906.1 | learning rate: 9.607360E-08 | global batch size:   256 | lm loss: 6.144971E-01 | loss scale: 1.0 | grad norm: 0.000 | num zeros: 114838080.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:13:35[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       48/      50 | consumed samples:        12288 | elapsed time per iteration (ms): 21032.3/21050.3 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1148.9/1147.9 | tokens per GPU (tokens/s/GPU): 24927.7/24906.6 | learning rate: 4.277569E-08 | global batch size:   256 | lm loss: 6.650090E-01 | loss scale: 1.0 | grad norm: 0.000 | num zeros: 114871128.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:13:56[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       49/      50 | consumed samples:        12544 | elapsed time per iteration (ms): 21093.8/21051.2 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1145.5/1147.8 | tokens per GPU (tokens/s/GPU): 24855.1/24905.5 | learning rate: 1.070538E-08 | global batch size:   256 | lm loss: 6.421031E-01 | loss scale: 1.0 | grad norm: 0.000 | num zeros: 114871744.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:14:17[0m][[36mrank-1/2[0m][[1mINFO [0m] [1m[--------trainer.py:2382] :  iteration       50/      50 | consumed samples:        12800 | elapsed time per iteration (ms): 21084.2/21051.9 | hip mem usage/free/total/usage_ratio: 161.14GB/126.85GB/287.98GB/55.95% | throughput per GPU (TFLOP/s/GPU): 1146.0/1147.8 | tokens per GPU (tokens/s/GPU): 24866.4/24904.7 | learning rate: 0.000000E+00 | global batch size:   256 | lm loss: 6.908476E-01 | loss scale: 1.0 | grad norm: 0.000 | num zeros: 114842256.0 | number of skipped iterations:   0 | number of nan iterations:   0 |[0m
+[[32m20260616 12:14:17[0m][[36mrank-0/2[0m][[34m[1mDEBUG[0m] [34m[1m[-----------utils.py:364] : [after training is done] datetime: 2026-06-16 12:14:17 [0m
+[NODE-0(localhost.localdomain)] [INFO] torchrun exited with code 0

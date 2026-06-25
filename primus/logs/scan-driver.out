@@ -1,0 +1,24 @@
+Primus GPU-scan run 20260615-115342
+SIF       : /home/v89592/shaohao/primus/image/primus-v26.3.sif
+Repo      : /home/v89592/shaohao/primus/Primus
+Log dir   : /home/v89592/shaohao/primus/logs/gpu-scan-20260615-115342
+Started   : 2026-06-15T11:53:42-05:00
+
+===== 1 GPU(s) — visible=0 — port=29501 — 2026-06-15T11:53:42-05:00 =====
+  -> FAIL(rc=1)  duration=19s  log=/home/v89592/shaohao/primus/logs/gpu-scan-20260615-115342/scan_1gpu.log
+===== 2 GPU(s) — visible=0,1 — port=29502 — 2026-06-15T11:54:01-05:00 =====
+  -> OK  duration=25s  log=/home/v89592/shaohao/primus/logs/gpu-scan-20260615-115342/scan_2gpu.log
+===== 3 GPU(s) — visible=0,1,2 — port=29503 — 2026-06-15T11:54:26-05:00 =====
+  -> OK  duration=23s  log=/home/v89592/shaohao/primus/logs/gpu-scan-20260615-115342/scan_3gpu.log
+===== 4 GPU(s) — visible=0,1,2,3 — port=29504 — 2026-06-15T11:54:49-05:00 =====
+  -> OK  duration=24s  log=/home/v89592/shaohao/primus/logs/gpu-scan-20260615-115342/scan_4gpu.log
+===== 5 GPU(s) — visible=0,1,2,3,4 — port=29505 — 2026-06-15T11:55:13-05:00 =====
+  -> OK  duration=25s  log=/home/v89592/shaohao/primus/logs/gpu-scan-20260615-115342/scan_5gpu.log
+===== 6 GPU(s) — visible=0,1,2,3,4,5 — port=29506 — 2026-06-15T11:55:38-05:00 =====
+  -> OK  duration=26s  log=/home/v89592/shaohao/primus/logs/gpu-scan-20260615-115342/scan_6gpu.log
+===== 7 GPU(s) — visible=0,1,2,3,4,5,6 — port=29507 — 2026-06-15T11:56:04-05:00 =====
+  -> OK  duration=28s  log=/home/v89592/shaohao/primus/logs/gpu-scan-20260615-115342/scan_7gpu.log
+===== 8 GPU(s) — visible=0,1,2,3,4,5,6,7 — port=29508 — 2026-06-15T11:56:32-05:00 =====
+  -> OK  duration=36s  log=/home/v89592/shaohao/primus/logs/gpu-scan-20260615-115342/scan_8gpu.log
+
+Finished : 2026-06-15T11:57:08-05:00

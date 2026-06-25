@@ -1,0 +1,21 @@
+
+================ MEGATRON gfx950 v2 RERUN 2026-06-16T11:26:03-05:00 ================
+----- GFX950v2 megatron N=1 port=29631 devs=0 2026-06-16T11:26:03-05:00 -----
+  TIMEOUT(1800s)  duration=1801s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N1.log
+----- GFX950v2 megatron N=2 port=29986 devs=0,1 2026-06-16T11:56:04-05:00 -----
+  OK  duration=1139s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N2.log
+----- GFX950v2 megatron N=3 port=29524 devs=0,1,2 2026-06-16T12:15:03-05:00 -----
+  FAIL(rc=1)  duration=16s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N3.log
+----- GFX950v2 megatron N=4 port=29782 devs=0,1,2,3 2026-06-16T12:15:19-05:00 -----
+  OK  duration=624s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N4.log
+----- GFX950v2 megatron N=5 port=29942 devs=0,1,2,3,4 2026-06-16T12:25:43-05:00 -----
+  FAIL(rc=1)  duration=17s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N5.log
+----- GFX950v2 megatron N=6 port=29724 devs=0,1,2,3,4,5 2026-06-16T12:26:00-05:00 -----
+  FAIL(rc=1)  duration=17s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N6.log
+----- GFX950v2 megatron N=7 port=29664 devs=0,1,2,3,4,5,6 2026-06-16T12:26:17-05:00 -----
+  FAIL(rc=1)  duration=19s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N7.log
+----- GFX950v2 megatron N=8 port=29596 devs=0,1,2,3,4,5,6,7 2026-06-16T12:26:36-05:00 -----
+  OK  duration=381s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N8.log
+[ORCH-v2] 2026-06-16T12:32:57-05:00 regenerating /home/v89592/shaohao/primus/REPORT.md
+Wrote /home/v89592/shaohao/primus/REPORT.md
+[ORCH-v2] 2026-06-16T12:32:57-05:00 DONE

@@ -1,0 +1,5 @@
+
+================ MEGATRON missing-N rerun 2026-06-25T09:18:59-05:00 ================
+----- MISSING-N megatron N=3 GBS=252 port=29530 devs=0,1,2 2026-06-25T09:18:59-05:00 -----
+  OK  duration=782s  log=/home/v89592/shaohao/primus/logs/sweep-20260615-222308/megatron-llama2_7B-bf16_N3.log
+----- MISSING-N megatron N=5 GBS=240 port=29791 devs=0,1,2,3,4 2026-06-25T09:32:01-05:00 -----

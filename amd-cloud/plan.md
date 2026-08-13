@@ -549,6 +549,52 @@ $PY analyze_rvs.py $LOG_ROOT/rvs/sweep_* -o $BENCH_ROOT/results
 **Never run two GPU benchmarks concurrently** — they contend for the same 8 GPUs and the
 same power envelope, and every number becomes meaningless.
 
+### A.7 Follow-up — fp4 GPU-count scaling investigation (queued, not yet run)
+
+The completed sweep (`results/rvs_tflops.md`, 2026-08-13) found `fp4` is the only precision
+(of 9) with severely non-uniform multi-GPU scaling: per-GPU spread grows from ~0% at N=1..2
+to **63% at N=8**, with one die still at ~99% of its solo-GPU speed while another sits below
+40% of it. Every other precision — including `fp6`/`bf6`, which share fp4's exact 10,000
+TFLOPS peak class and MX block-scaling mechanism — holds under 1% spread at N=8. That
+contrast rules out ordinary shared power/thermal budget as the sole explanation: tray-level
+power capping depresses every die roughly equally, not one die while leaving its neighbor
+untouched. See `results/rvs_tflops.md` → "Why `fp4` alone gains 1.26x" for the parallel
+finding this connects to (fp4 is also the only precision where AMD Cloud meaningfully
+outperforms the Dell Cloud baseline).
+
+The first sweep cannot resolve *why* — it captured no clock/power telemetry and ran each
+(N, precision) cell exactly once. Two new scripts close that gap:
+
+- **`work-rocmval/investigate_fp4_scaling.sh`** — fp4 only, N ∈ {5,6,7,8} (N=1..4 were
+  clean and are not repeated), **3 repeats each**, with a background `rocm-smi
+  --showclocks --showpower` sampler running at 2 s resolution alongside every run. ~15–20
+  min total. Refuses to start if any GPU is busy.
+- **`work-rocmval/analyze_fp4_scaling.py`** — parses the per-GPU peaks and the concurrent
+  clock/power samples, and reports two things the raw numbers can't show by eye:
+  - **Consistency across repeats**: is the *same* GPU id the low performer every time
+    (→ deterministic, likely hardware/topology-correlated) or does it move between repeats
+    (→ non-deterministic, likely a launch/scheduling race in RVS's parallel `gst` path or
+    the fp4 kernel itself)?
+  - **Clock correlation**: do low-TFLOPS runs also show depressed sclk/power
+    (→ a real thermal/power cause) or do clocks look normal while GFLOPS is low
+    (→ not explained by clocks; points at measurement or scheduling instead)?
+
+  Caveat baked into the script's own output: rocm-smi's GPU index and RVS's internal gpu id
+  are different numbering schemes and are not joined here, so the clock/power columns are a
+  same-run sanity range, not a per-GPU-id correlation — a real limitation, stated so the
+  report isn't read as more precise than it is.
+
+**Run order: after Part B (RCCL) finishes, not before, and not concurrently with anything.**
+This is a follow-up investigation, not a blocker for the rest of the plan — Part B, C, and D
+do not depend on its outcome. **Not started as of this writing** — queued deliberately.
+
+```bash
+source common/env.sh
+cd work-rocmval
+./investigate_fp4_scaling.sh
+$PY analyze_fp4_scaling.py $LOG_ROOT/rvs/fp4_investigation_* -o $BENCH_ROOT/results
+```
+
 ---
 
 ## PART B — RCCL collective sweep → local dir `rccl-tests/`
@@ -1204,9 +1250,10 @@ Everything is **strictly sequential** — all three suites want all 8 GPUs and t
 |------|------|------|
 | 0 | ~~apt dev packages~~ (already installed), venv, clones, `docker pull` | ✅ **done** |
 | 1 | Build RVS + rccl-tests | ✅ **done** |
-| 2 | **A** — RVS smoke → gst sweep → health modules | ~1 h |
-| 3 | **B** — RCCL all-collective sweep | 45–90 min |
-| 4 | **B** — RCCL config sweep (5 configs) | 30–45 min |
+| 2 | **A** — RVS smoke → gst sweep → health modules | ✅ **done** |
+| 3 | **B** — RCCL all-collective sweep | ✅ **done** |
+| 4 | **B** — RCCL config sweep (5 configs) | ✅ **done** |
+| 4a | **A follow-up** — fp4 N≥5 scaling investigation (§A.7) — queued, not started | 15–20 min |
 | 5 | **C** — Primus GPU scan (gate) | 5 min |
 | 6 | **C** — Primus microbench sweep | ~1 h |
 | 7 | **C** — Megatron llama2-7B N=1..8 | 1.5–3 h |

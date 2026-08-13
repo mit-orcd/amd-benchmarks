@@ -26,3 +26,11 @@ Librccl path : /opt/rocm/lib/librccl.so.1
    536870912      67108864     float     sum      -1   4657.4  115.27   57.64      0   4647.2  115.53   57.76      0
   1073741824     134217728     float     sum      -1   9209.5  116.59   58.30      0   9196.1  116.76   58.38      0
   2147483648     268435456     float     sum      -1    18422  116.57   58.28      0    18259  117.62   58.81      0
+  4294967296     536870912     float     sum      -1    36984  116.13   58.06      0    36681  117.09   58.55      0
+  8589934592    1073741824     float     sum      -1    73979  116.11   58.06      0    74365  115.51   57.76      0
+# Errors with asterisks indicate errors that have exceeded the maximum threshold.
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 54.8355 
+#
+# Collective test concluded: reduce_scatter_perf
+

@@ -25,9 +25,15 @@ PEAK = {"fp4": 10000.0, "fp6": 10000.0, "bf6": 10000.0, "fp8": 5000.0,
 
 # NVIDIA B200 per-GPU reference (same figures dell-cloud/work-rocmval/summary.md used).
 # B200_MEASURED is the provided reference measurement; B200_PEAK is published dense spec.
-B200_MEASURED = {"bf16": 1493.0, "fp8": 4103.0}
+# The "fp32" entry (768) is NOT a like-for-like figure -- see NOT_APPLES_TO_APPLES below --
+# but it is included, clearly flagged, because a reader will otherwise assume its absence
+# means "not measured" rather than "not comparable".
+B200_MEASURED = {"bf16": 1493.0, "fp8": 4103.0, "fp32": 768.0}
 B200_PEAK = {"fp64": 40.0, "fp32": 80.0, "bf16": 2250.0, "fp16": 2250.0,
              "fp8": 4500.0, "bf8": 4500.0, "fp4": 9000.0}
+# Precisions where the MI355X and B200 measured figures are different silicon paths, so a
+# ratio between them would misrepresent the comparison rather than inform it.
+NOT_APPLES_TO_APPLES = {"fp32"}
 
 # Dell Cloud MI355X baseline, 1-GPU per-GPU measured TFLOPS, from
 # dell-cloud/work-rocmval/summary.md "Measured vs. dense peak" table.
@@ -223,8 +229,9 @@ def main():
           "| Code objects | gfx942 alias (`HSA_OVERRIDE_GFX_VERSION=9.4.2`) | **native gfx950** |",
           "| Container | Singularity + ext3 overlay | Docker |",
           "| gst duration | ~60 s | 30 s |", "",
-          "B200 reference measurements (provided, per-GPU): 768 TFLOPS FP32 — almost certainly "
-          "TF32 tensor, not IEEE FP32 — 1493 TFLOPS BF16, 4103 TFLOPS FP8.", "",
+          "B200 reference measurements (provided, per-GPU): 768 TFLOPS FP32†, 1493 TFLOPS "
+          "BF16, 4103 TFLOPS FP8. † see the FP32/TF32 note below the table — this is not a "
+          "like-for-like figure and its ratio column is deliberately not computed.", "",
           "| Precision | Dell Cloud MI355X | AMD Cloud MI355X | B200 ref | AMD/Dell | AMD/B200 | MI355X peak | B200 peak |",
           "|---|---:|---:|---:|---:|---:|---:|---:|"]
     for p in precs:
@@ -234,10 +241,13 @@ def main():
         mine = r["avg_per_gpu_tflops"]
         dell, bm = DELL_MEASURED.get(p), B200_MEASURED.get(p)
         mp, bp = PEAK.get(p), B200_PEAK.get(p)
+        apples = p not in NOT_APPLES_TO_APPLES
         vs_dell = f"**{mine / dell:.2f}x**" if dell else "-"
-        vs_b200 = f"**{mine / bm:.2f}x**" if bm else "-"
+        bm_cell = f"{fmt(bm, 0)}†" if bm and not apples else (fmt(bm, 0) if bm else "-")
+        vs_b200 = ("_not comparable†_" if (bm and not apples) else
+                   (f"**{mine / bm:.2f}x**" if bm else "-"))
         L.append(f"| {p} | {fmt(dell, 2) if dell else '-'} | {fmt(mine, 2)} | "
-                 f"{fmt(bm, 0) if bm else '-'} | {vs_dell} | {vs_b200} | "
+                 f"{bm_cell} | {vs_dell} | {vs_b200} | "
                  f"{fmt(mp) if mp else '-'} | {fmt(bp, 0) if bp else '-'} |")
 
     gains = [(p, idx[(p, base)]["avg_per_gpu_tflops"] / DELL_MEASURED[p])
@@ -250,11 +260,55 @@ def main():
               f"attributable to the newer ROCm and to running native gfx950 code objects "
               f"instead of the gfx942 alias — which is exactly why this host does not set "
               f"`HSA_OVERRIDE_GFX_VERSION`."]
-    L += ["", "Only BF16 and FP8 have a like-for-like B200 reference measurement. The FP32 "
-          "comparison is apples-to-oranges: MI355X's 157 TFLOPS is true IEEE-754 FP32 on the "
-          "vector ALUs, while B200's IEEE FP32 peak is only ~80 TFLOPS — the 768 figure is "
-          "TF32 tensor. RVS `gst` has no TF32 config, so that path is unmeasured on either "
-          "MI355X host.", ""]
+
+        # Flag a lone outlier: everything else clustered near parity, one precision far
+        # above it. Worth a dedicated explanation rather than leaving it as a bare number.
+        rest = sorted((g for p, g in gains if p != best[0]), reverse=True)
+        if rest and best[1] > 1.10 and best[1] - rest[0] > 0.10:
+            lo, hi = min(rest), max(rest)
+            L += ["", f"### Why `{best[0]}` alone gains {best[1]:.2f}x", "",
+                  f"Every other precision lands in a tight {lo:.2f}x-{hi:.2f}x band around "
+                  f"Dell Cloud's number — essentially reproduction, not improvement. `{best[0]}` "
+                  f"is the lone outlier, and it is also a low-variance, reproducible measurement "
+                  f"here: 0% per-GPU spread at N={base}, still under 1% at N=2. That combination "
+                  f"— one precision moving, everything else static, and the mover being clean "
+                  f"data rather than noise — points at a specific software cause rather than "
+                  f"run-to-run variance:", "",
+                  f"- **`{best[0]}` is the newest, least mature kernel path in hipBLASLt** "
+                  f"among the precisions tested. MX-block-scaled FP4 has had far less tuning "
+                  f"time than BF16/FP8/FP32, which is exactly where a difference between a "
+                  f"gfx950-native build and a gfx942-emulated one (Dell Cloud's "
+                  f"`HSA_OVERRIDE_GFX_VERSION=9.4.2`) would most plausibly show up — an "
+                  f"emulation layer is more likely to cost performance on a codepath that "
+                  f"hasn't been separately hand-tuned for the emulated target.",
+                  f"- This is inference from the pattern, not a profiled root cause: no "
+                  f"kernel-level trace was captured to confirm gfx942-emulation overhead "
+                  f"specifically. The counter-evidence worth weighing is that `fp6`/`bf6` "
+                  f"share the same MX block-scaling mechanism and the same 10,000 TFLOPS peak "
+                  f"class as `{best[0]}`, yet show **no** such gain (0.97x, i.e. slightly "
+                  f"*below* Dell Cloud) — so \"MX format in general\" is not the explanation; "
+                  f"it would have to be something specific to the fp4 numeric path itself.",
+                  f"- Also see the scaling-efficiency finding below: `{best[0]}` is "
+                  f"simultaneously the only precision with severely non-uniform multi-GPU "
+                  f"scaling on *this* host (N=8 per-GPU spread up to 63%, vs <1% for every "
+                  f"other precision including fp6/bf6). A kernel path immature enough to gain "
+                  f"unusually from native codegen is also a plausible place to find launch or "
+                  f"scheduling instability under concurrent multi-GPU load — the two "
+                  f"observations may share a cause even though neither proves the other."]
+    L += ["", "**† FP32 vs TF32 — this is NOT an apples-to-apples comparison.** The 768 "
+          "TFLOPS B200 figure cannot be IEEE FP32 — B200's IEEE FP32 dense peak is only "
+          "~80 TFLOPS, the number in the \"B200 peak\" column above. 768 is almost certainly "
+          "**TF32 tensor** (NVIDIA's reduced-precision 19-bit format, run on the tensor "
+          "cores), whereas MI355X's 152.8/157.3 TFLOPS is **true IEEE-754 FP32 on the vector "
+          "ALUs**. The two numbers are two different data types on two different execution "
+          "units. It is included in the table only so a reader does not mistake its absence "
+          "for \"not measured\" — the ratio column is deliberately left as "
+          "\"not comparable\" rather than computed, because a 5.0x-looking number here would "
+          "actively mislead: MI355X's true-FP32 is not 5x slower than anything, it is simply "
+          "not the same operation as B200's TF32 path. RVS `gst` has no TF32 config, so that "
+          "path is unmeasured on either MI355X host and no side-by-side TF32 number exists.",
+          "",
+          "Only BF16 and FP8 above are like-for-like B200 reference measurements.", ""]
 
     # ---- auto observations ------------------------------------------------------
     L += ["## Observations (auto-generated)", ""]

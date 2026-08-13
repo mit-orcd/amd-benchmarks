@@ -130,7 +130,7 @@ All three columns are per-GPU at N=1. **Dell Cloud and AMD Cloud are the same si
 | Container | Singularity + ext3 overlay | Docker |
 | gst duration | ~60 s | 30 s |
 
-B200 reference measurements (provided, per-GPU): 768 TFLOPS FP32 — almost certainly TF32 tensor, not IEEE FP32 — 1493 TFLOPS BF16, 4103 TFLOPS FP8.
+B200 reference measurements (provided, per-GPU): 768 TFLOPS FP32†, 1493 TFLOPS BF16, 4103 TFLOPS FP8. † see the FP32/TF32 note below the table — this is not a like-for-like figure and its ratio column is deliberately not computed.
 
 | Precision | Dell Cloud MI355X | AMD Cloud MI355X | B200 ref | AMD/Dell | AMD/B200 | MI355X peak | B200 peak |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -141,12 +141,22 @@ B200 reference measurements (provided, per-GPU): 768 TFLOPS FP32 — almost cert
 | bf8 | 3,238.62 | 3,220.37 | - | **0.99x** | - | 5,000.0 | 4,500 |
 | fp16 | 1,534.56 | 1,521.82 | - | **0.99x** | - | 2,500.0 | 2,250 |
 | bf16 | 1,639.78 | 1,627.98 | 1,493 | **0.99x** | **1.09x** | 2,500.0 | 2,250 |
-| fp32 | 153.76 | 152.82 | - | **0.99x** | - | 157.3 | 80 |
+| fp32 | 153.76 | 152.82 | 768† | **0.99x** | _not comparable†_ | 157.3 | 80 |
 | fp64 | 77.02 | 76.62 | - | **0.99x** | - | 78.6 | 40 |
 
 AMD Cloud vs Dell Cloud ranges from **0.97x** (`fp6`) to **1.26x** (`fp4`). Since the silicon is identical, any gain is attributable to the newer ROCm and to running native gfx950 code objects instead of the gfx942 alias — which is exactly why this host does not set `HSA_OVERRIDE_GFX_VERSION`.
 
-Only BF16 and FP8 have a like-for-like B200 reference measurement. The FP32 comparison is apples-to-oranges: MI355X's 157 TFLOPS is true IEEE-754 FP32 on the vector ALUs, while B200's IEEE FP32 peak is only ~80 TFLOPS — the 768 figure is TF32 tensor. RVS `gst` has no TF32 config, so that path is unmeasured on either MI355X host.
+### Why `fp4` alone gains 1.26x
+
+Every other precision lands in a tight 0.97x-0.99x band around Dell Cloud's number — essentially reproduction, not improvement. `fp4` is the lone outlier, and it is also a low-variance, reproducible measurement here: 0% per-GPU spread at N=1, still under 1% at N=2. That combination — one precision moving, everything else static, and the mover being clean data rather than noise — points at a specific software cause rather than run-to-run variance:
+
+- **`fp4` is the newest, least mature kernel path in hipBLASLt** among the precisions tested. MX-block-scaled FP4 has had far less tuning time than BF16/FP8/FP32, which is exactly where a difference between a gfx950-native build and a gfx942-emulated one (Dell Cloud's `HSA_OVERRIDE_GFX_VERSION=9.4.2`) would most plausibly show up — an emulation layer is more likely to cost performance on a codepath that hasn't been separately hand-tuned for the emulated target.
+- This is inference from the pattern, not a profiled root cause: no kernel-level trace was captured to confirm gfx942-emulation overhead specifically. The counter-evidence worth weighing is that `fp6`/`bf6` share the same MX block-scaling mechanism and the same 10,000 TFLOPS peak class as `fp4`, yet show **no** such gain (0.97x, i.e. slightly *below* Dell Cloud) — so "MX format in general" is not the explanation; it would have to be something specific to the fp4 numeric path itself.
+- Also see the scaling-efficiency finding below: `fp4` is simultaneously the only precision with severely non-uniform multi-GPU scaling on *this* host (N=8 per-GPU spread up to 63%, vs <1% for every other precision including fp6/bf6). A kernel path immature enough to gain unusually from native codegen is also a plausible place to find launch or scheduling instability under concurrent multi-GPU load — the two observations may share a cause even though neither proves the other.
+
+**† FP32 vs TF32 — this is NOT an apples-to-apples comparison.** The 768 TFLOPS B200 figure cannot be IEEE FP32 — B200's IEEE FP32 dense peak is only ~80 TFLOPS, the number in the "B200 peak" column above. 768 is almost certainly **TF32 tensor** (NVIDIA's reduced-precision 19-bit format, run on the tensor cores), whereas MI355X's 152.8/157.3 TFLOPS is **true IEEE-754 FP32 on the vector ALUs**. The two numbers are two different data types on two different execution units. It is included in the table only so a reader does not mistake its absence for "not measured" — the ratio column is deliberately left as "not comparable" rather than computed, because a 5.0x-looking number here would actively mislead: MI355X's true-FP32 is not 5x slower than anything, it is simply not the same operation as B200's TF32 path. RVS `gst` has no TF32 config, so that path is unmeasured on either MI355X host and no side-by-side TF32 number exists.
+
+Only BF16 and FP8 above are like-for-like B200 reference measurements.
 
 ## Observations (auto-generated)
 

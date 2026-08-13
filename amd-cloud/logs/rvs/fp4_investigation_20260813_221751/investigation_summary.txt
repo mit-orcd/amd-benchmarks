@@ -1,0 +1,11 @@
+fp4 scaling investigation 20260813_221751
+repeats=3 duration_ms=30000
+
+----- N=5 repeat=1 -----
+  rc=0
+    gpu17010=3543.27
+    gpu42583=3544.28
+    gpu36479=3793.04
+    gpu1590=3816.89
+    gpu27226=3915.57
+----- N=5 repeat=2 -----

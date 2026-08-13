@@ -1,0 +1,41 @@
+# Collective test starting: alltoall_perf
+# nThread 1 nGpus 8 minBytes 16777216 maxBytes 4294967296 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+rccl-tests: Version develop_deprecated:40b1b17
+# Using devices
+#  Rank  0 Group  0 Pid 1947378 on mi355-gpu-33 device  0 [0000:75:00] AMD Instinct MI355X
+#  Rank  1 Group  0 Pid 1947378 on mi355-gpu-33 device  1 [0000:05:00] AMD Instinct MI355X
+#  Rank  2 Group  0 Pid 1947378 on mi355-gpu-33 device  2 [0000:65:00] AMD Instinct MI355X
+#  Rank  3 Group  0 Pid 1947378 on mi355-gpu-33 device  3 [0000:15:00] AMD Instinct MI355X
+#  Rank  4 Group  0 Pid 1947378 on mi355-gpu-33 device  4 [0000:f5:00] AMD Instinct MI355X
+#  Rank  5 Group  0 Pid 1947378 on mi355-gpu-33 device  5 [0000:85:00] AMD Instinct MI355X
+#  Rank  6 Group  0 Pid 1947378 on mi355-gpu-33 device  6 [0000:e5:00] AMD Instinct MI355X
+#  Rank  7 Group  0 Pid 1947378 on mi355-gpu-33 device  7 [0000:95:00] AMD Instinct MI355X
+
+[2026-08-13 21:28:59] mi355-gpu-33:1947378:1947378 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+RCCL version : 2.30.4-HEAD:2b22ab0
+HIP version  : 7.14.60850-0000000
+ROCm version : 7.14.0.0-9999-2b22ab01
+Hostname     : mi355-gpu-33
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+[2026-08-13 21:29:02] mi355-gpu-33:1947378:1947390 [4] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong                               
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)                                      
+    16777216        524288     float    none      -1    88.38  189.84  166.11      0    72.78  230.53  201.71    N/A
+    33554432       1048576     float    none      -1    108.9  308.05  269.54      0    110.7  303.13  265.24    N/A
+    67108864       2097152     float    none      -1    198.4  338.28  295.99      0    199.0  337.22  295.07    N/A
+   134217728       4194304     float    none      -1    369.5  363.22  317.82      0    378.6  354.50  310.19    N/A
+   268435456       8388608     float    none      -1    707.1  379.62  332.17      0    705.0  380.73  333.14    N/A
+   536870912      16777216     float    none      -1   1387.4  386.97  338.60      0   1383.7  387.99  339.49    N/A
+  1073741824      33554432     float    none      -1   2741.4  391.67  342.71      0   2734.6  392.64  343.56    N/A
+  2147483648      67108864     float    none      -1   5430.2  395.47  346.03      0   5433.4  395.24  345.84    N/A
+  4294967296     134217728     float    none      -1    10790  398.04  348.28      0    10848  395.91  346.42    N/A
+# Errors with asterisks indicate errors that have exceeded the maximum threshold.
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 307.662 
+#
+# Collective test concluded: alltoall_perf
+

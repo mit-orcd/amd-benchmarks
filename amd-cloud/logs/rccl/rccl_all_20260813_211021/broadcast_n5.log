@@ -1,0 +1,39 @@
+# Collective test starting: broadcast_perf
+# nThread 1 nGpus 5 minBytes 16777216 maxBytes 8589934592 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+rccl-tests: Version develop_deprecated:40b1b17
+# Using devices
+#  Rank  0 Group  0 Pid 1911399 on mi355-gpu-33 device  0 [0000:75:00] AMD Instinct MI355X
+#  Rank  1 Group  0 Pid 1911399 on mi355-gpu-33 device  1 [0000:05:00] AMD Instinct MI355X
+#  Rank  2 Group  0 Pid 1911399 on mi355-gpu-33 device  2 [0000:65:00] AMD Instinct MI355X
+#  Rank  3 Group  0 Pid 1911399 on mi355-gpu-33 device  3 [0000:15:00] AMD Instinct MI355X
+#  Rank  4 Group  0 Pid 1911399 on mi355-gpu-33 device  4 [0000:f5:00] AMD Instinct MI355X
+
+[2026-08-13 21:19:29] mi355-gpu-33:1911399:1911399 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+RCCL version : 2.30.4-HEAD:2b22ab0
+HIP version  : 7.14.60850-0000000
+ROCm version : 7.14.0.0-9999-2b22ab01
+Hostname     : mi355-gpu-33
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+[2026-08-13 21:19:32] mi355-gpu-33:1911399:1911496 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong                               
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)                                      
+    16777216       4194304     float    none       0    491.3   34.15   34.15      0    490.4   34.21   34.21      0
+    33554432       8388608     float    none       0    927.6   36.17   36.17      0    926.6   36.21   36.21      0
+    67108864      16777216     float    none       0   1805.3   37.17   37.17      0   1803.7   37.21   37.21      0
+   134217728      33554432     float    none       0   3515.2   38.18   38.18      0   3518.5   38.15   38.15      0
+   268435456      67108864     float    none       0   6957.7   38.58   38.58      0   6946.4   38.64   38.64      0
+   536870912     134217728     float    none       0    13743   39.06   39.06      0    13720   39.13   39.13      0
+  1073741824     268435456     float    none       0    27447   39.12   39.12      0    27276   39.37   39.37      0
+  2147483648     536870912     float    none       0    54524   39.39   39.39      0    54366   39.50   39.50      0
+  4294967296    1073741824     float    none       0   109296   39.30   39.30      0   108629   39.54   39.54      0
+  8589934592    2147483648     float    none       0   218726   39.27   39.27      0   217109   39.57   39.57      0
+# Errors with asterisks indicate errors that have exceeded the maximum threshold.
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 38.0959 
+#
+# Collective test concluded: broadcast_perf
+

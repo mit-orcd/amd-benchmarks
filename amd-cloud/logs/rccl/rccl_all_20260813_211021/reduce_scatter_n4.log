@@ -1,0 +1,38 @@
+# Collective test starting: reduce_scatter_perf
+# nThread 1 nGpus 4 minBytes 16777216 maxBytes 8589934592 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+rccl-tests: Version develop_deprecated:40b1b17
+# Using devices
+#  Rank  0 Group  0 Pid 1901873 on mi355-gpu-33 device  0 [0000:75:00] AMD Instinct MI355X
+#  Rank  1 Group  0 Pid 1901873 on mi355-gpu-33 device  1 [0000:05:00] AMD Instinct MI355X
+#  Rank  2 Group  0 Pid 1901873 on mi355-gpu-33 device  2 [0000:65:00] AMD Instinct MI355X
+#  Rank  3 Group  0 Pid 1901873 on mi355-gpu-33 device  3 [0000:15:00] AMD Instinct MI355X
+
+[2026-08-13 21:16:42] mi355-gpu-33:1901873:1901873 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+RCCL version : 2.30.4-HEAD:2b22ab0
+HIP version  : 7.14.60850-0000000
+ROCm version : 7.14.0.0-9999-2b22ab01
+Hostname     : mi355-gpu-33
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+[2026-08-13 21:16:44] mi355-gpu-33:1901873:1901881 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong                               
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)                                      
+    16777216       1048576     float     sum      -1    99.65  168.36  126.27      0    99.00  169.46  127.10      0
+    33554432       2097152     float     sum      -1    181.1  185.31  138.98      0    180.3  186.06  139.55      0
+    67108864       4194304     float     sum      -1    347.9  192.89  144.67      0    347.0  193.40  145.05      0
+   134217728       8388608     float     sum      -1    659.1  203.64  152.73      0    653.1  205.52  154.14      0
+   268435456      16777216     float     sum      -1   1289.4  208.19  156.14      0   1227.2  218.74  164.06      0
+   536870912      33554432     float     sum      -1   2506.2  214.22  160.67      0   2383.8  225.21  168.91      0
+  1073741824      67108864     float     sum      -1   4917.4  218.36  163.77      0   4679.7  229.44  172.08      0
+  2147483648     134217728     float     sum      -1   9760.3  220.02  165.02      0   9299.0  230.94  173.20      0
+  4294967296     268435456     float     sum      -1    19426  221.10  165.82      0    18852  227.83  170.87      0
+  8589934592     536870912     float     sum      -1    38780  221.50  166.13      0    38665  222.17  166.62      0
+# Errors with asterisks indicate errors that have exceeded the maximum threshold.
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 156.089 
+#
+# Collective test concluded: reduce_scatter_perf
+

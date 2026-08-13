@@ -1,0 +1,39 @@
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 5 minBytes 16777216 maxBytes 8589934592 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+rccl-tests: Version develop_deprecated:40b1b17
+# Using devices
+#  Rank  0 Group  0 Pid 2028568 on mi355-gpu-33 device  0 [0000:75:00] AMD Instinct MI355X
+#  Rank  1 Group  0 Pid 2028568 on mi355-gpu-33 device  1 [0000:05:00] AMD Instinct MI355X
+#  Rank  2 Group  0 Pid 2028568 on mi355-gpu-33 device  2 [0000:65:00] AMD Instinct MI355X
+#  Rank  3 Group  0 Pid 2028568 on mi355-gpu-33 device  3 [0000:15:00] AMD Instinct MI355X
+#  Rank  4 Group  0 Pid 2028568 on mi355-gpu-33 device  4 [0000:f5:00] AMD Instinct MI355X
+
+[2026-08-13 21:50:14] mi355-gpu-33:2028568:2028568 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+RCCL version : 2.30.4-HEAD:2b22ab0
+HIP version  : 7.14.60850-0000000
+ROCm version : 7.14.0.0-9999-2b22ab01
+Hostname     : mi355-gpu-33
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+[2026-08-13 21:50:16] mi355-gpu-33:2028568:2028623 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong                               
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)                                      
+    16777216       4194304     float     sum      -1    587.7   28.55   45.67      0    625.0   26.84   42.95      0
+    33554432       8388608     float     sum      -1   1157.5   28.99   46.38      0   1179.9   28.44   45.50      0
+    67108864      16777216     float     sum      -1   2268.6   29.58   47.33      0   2285.3   29.37   46.99      0
+   134217728      33554432     float     sum      -1   4499.2   29.83   47.73      0   4524.6   29.66   47.46      0
+   268435456      67108864     float     sum      -1   8942.0   30.02   48.03      0   9004.7   29.81   47.70      0
+   536870912     134217728     float     sum      -1    17871   30.04   48.07      0    17959   29.89   47.83      0
+  1073741824     268435456     float     sum      -1    35710   30.07   48.11      0    35846   29.95   47.93      0
+  2147483648     536870912     float     sum      -1    71382   30.08   48.14      0    71742   29.93   47.89      0
+  4294967296    1073741824     float     sum      -1   142662   30.11   48.17      0   143276   29.98   47.96      0
+  8589934592    2147483648     float     sum      -1   285573   30.08   48.13      0   286481   29.98   47.97      0
+# Errors with asterisks indicate errors that have exceeded the maximum threshold.
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 47.2967 
+#
+# Collective test concluded: all_reduce_perf
+

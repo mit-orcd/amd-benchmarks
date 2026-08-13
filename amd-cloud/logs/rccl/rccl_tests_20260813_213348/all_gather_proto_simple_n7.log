@@ -1,0 +1,41 @@
+# Collective test starting: all_gather_perf
+# nThread 1 nGpus 7 minBytes 16777216 maxBytes 8589934592 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+rccl-tests: Version develop_deprecated:40b1b17
+# Using devices
+#  Rank  0 Group  0 Pid 2088347 on mi355-gpu-33 device  0 [0000:75:00] AMD Instinct MI355X
+#  Rank  1 Group  0 Pid 2088347 on mi355-gpu-33 device  1 [0000:05:00] AMD Instinct MI355X
+#  Rank  2 Group  0 Pid 2088347 on mi355-gpu-33 device  2 [0000:65:00] AMD Instinct MI355X
+#  Rank  3 Group  0 Pid 2088347 on mi355-gpu-33 device  3 [0000:15:00] AMD Instinct MI355X
+#  Rank  4 Group  0 Pid 2088347 on mi355-gpu-33 device  4 [0000:f5:00] AMD Instinct MI355X
+#  Rank  5 Group  0 Pid 2088347 on mi355-gpu-33 device  5 [0000:85:00] AMD Instinct MI355X
+#  Rank  6 Group  0 Pid 2088347 on mi355-gpu-33 device  6 [0000:e5:00] AMD Instinct MI355X
+
+[2026-08-13 22:06:12] mi355-gpu-33:2088347:2088347 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+RCCL version : 2.30.4-HEAD:2b22ab0
+HIP version  : 7.14.60850-0000000
+ROCm version : 7.14.0.0-9999-2b22ab01
+Hostname     : mi355-gpu-33
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+[2026-08-13 22:06:15] mi355-gpu-33:2088347:2088355 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong                               
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)                                      
+    16777152        599184     float    none      -1    399.0   42.05   36.04      0    367.7   45.63   39.11      0
+    33554416       1198372     float    none      -1    760.3   44.14   37.83      0    700.5   47.90   41.06      0
+    67108832       2396744     float    none      -1   1473.5   45.54   39.04      0   1356.3   49.48   42.41      0
+   134217664       4793488     float    none      -1   2886.9   46.49   39.85      0   2669.9   50.27   43.09      0
+   268435440       9586980     float    none      -1   5763.2   46.58   39.92      0   5317.7   50.48   43.27      0
+   536870880      19173960     float    none      -1    11460   46.85   40.15      0    10586   50.72   43.47      0
+  1073741760      38347920     float    none      -1    22979   46.73   40.05      0    21252   50.52   43.31      0
+  2147483632      76695844     float    none      -1    45824   46.86   40.17      0    42307   50.76   43.51      0
+  4294967264     153391688     float    none      -1    91408   46.99   40.27      0    84497   50.83   43.57      0
+  8589934528     306783376     float    none      -1   182288   47.12   40.39      0   168327   51.03   43.74      0
+# Errors with asterisks indicate errors that have exceeded the maximum threshold.
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 41.0129 
+#
+# Collective test concluded: all_gather_perf
+

@@ -1,0 +1,42 @@
+# Collective test starting: all_gather_perf
+# nThread 1 nGpus 8 minBytes 16777216 maxBytes 8589934592 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+rccl-tests: Version develop_deprecated:40b1b17
+# Using devices
+#  Rank  0 Group  0 Pid 2043531 on mi355-gpu-33 device  0 [0000:75:00] AMD Instinct MI355X
+#  Rank  1 Group  0 Pid 2043531 on mi355-gpu-33 device  1 [0000:05:00] AMD Instinct MI355X
+#  Rank  2 Group  0 Pid 2043531 on mi355-gpu-33 device  2 [0000:65:00] AMD Instinct MI355X
+#  Rank  3 Group  0 Pid 2043531 on mi355-gpu-33 device  3 [0000:15:00] AMD Instinct MI355X
+#  Rank  4 Group  0 Pid 2043531 on mi355-gpu-33 device  4 [0000:f5:00] AMD Instinct MI355X
+#  Rank  5 Group  0 Pid 2043531 on mi355-gpu-33 device  5 [0000:85:00] AMD Instinct MI355X
+#  Rank  6 Group  0 Pid 2043531 on mi355-gpu-33 device  6 [0000:e5:00] AMD Instinct MI355X
+#  Rank  7 Group  0 Pid 2043531 on mi355-gpu-33 device  7 [0000:95:00] AMD Instinct MI355X
+
+[2026-08-13 21:54:48] mi355-gpu-33:2043531:2043531 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+RCCL version : 2.30.4-HEAD:2b22ab0
+HIP version  : 7.14.60850-0000000
+ROCm version : 7.14.0.0-9999-2b22ab01
+Hostname     : mi355-gpu-33
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+[2026-08-13 21:54:51] mi355-gpu-33:2043531:2043539 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong                               
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)                                      
+    16777216        524288     float    none      -1    87.07  192.68  168.60      0    72.04  232.90  203.78      0
+    33554432       1048576     float    none      -1    106.6  314.77  275.43      0    105.8  317.15  277.51      0
+    67108864       2097152     float    none      -1    178.4  376.12  329.10      0    178.6  375.65  328.69      0
+   134217728       4194304     float    none      -1    327.1  410.35  359.06      0    337.6  397.58  347.88      0
+   268435456       8388608     float    none      -1    628.8  426.90  373.53      0    629.7  426.29  373.01      0
+   536870912      16777216     float    none      -1   1240.3  432.87  378.76      0   1235.7  434.48  380.17      0
+  1073741824      33554432     float    none      -1   2425.9  442.61  387.28      0   2423.4  443.08  387.69      0
+  2147483648      67108864     float    none      -1   4789.7  448.36  392.31      0   4832.1  444.42  388.87      0
+  4294967296     134217728     float    none      -1   9505.4  451.84  395.36      0   9679.6  443.71  388.25      0
+  8589934592     268435456     float    none      -1    18878  455.03  398.15      0    19325  444.50  388.94      0
+# Errors with asterisks indicate errors that have exceeded the maximum threshold.
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 346.119 
+#
+# Collective test concluded: all_gather_perf
+

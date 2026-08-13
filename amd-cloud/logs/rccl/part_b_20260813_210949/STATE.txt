@@ -4,3 +4,14 @@
 [2026-08-13T21:10:21+00:00] smoke rc=0 busbw=395.86 GB/s dir=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rccl/rccl_smoke_20260813_210949
 [2026-08-13T21:10:21+00:00] smoke OK
 [2026-08-13T21:10:21+00:00] STAGE 2/4 all-collective sweep: 10 collectives x N=2..8
+[2026-08-13T21:33:48+00:00] all-collective sweep rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rccl/rccl_all_20260813_211021
+[2026-08-13T21:33:48+00:00] STAGE 3/4 config sweep: 5 configs x {all_reduce,all_gather} x N=2..8
+[2026-08-13T22:07:00+00:00] config sweep rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rccl/rccl_tests_20260813_213348
+[2026-08-13T22:07:00+00:00] STAGE 4/4 analysis
+[2026-08-13T22:07:00+00:00] analyze rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/results/rccl.{md,csv}
+[2026-08-13T22:07:00+00:00] plot rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/results/rccl_busbw.png
+
+ALL_DIR=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rccl/rccl_all_20260813_211021
+CFG_DIR=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rccl/rccl_tests_20260813_213348
+SMOKE_DIR=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rccl/rccl_smoke_20260813_210949
+[2026-08-13T22:07:00+00:00] PART B DONE

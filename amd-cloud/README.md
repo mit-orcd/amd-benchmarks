@@ -17,7 +17,7 @@ download, every run and analysis script, execution order, and risks).
 | CPU / RAM | 2 × AMD EPYC 9575F (256 threads) / 3.0 TiB |
 | OS | Ubuntu 22.04.5, kernel 6.8.0-65 |
 | amdgpu driver | 6.19.14.31400100 |
-| ROCm | 7.14 (`/opt/rocm`) — native gfx950, installed runtime-only |
+| ROCm | 7.14 (`/opt/rocm`) — native gfx950, runtime **and** dev packages installed |
 | Container runtime | Docker 29.7.2 (no singularity/apptainer/podman) |
 | Interconnect | XGMI all-to-all, 1 hop between every GPU pair |
 | Working root | `/home/amd/shaohao/amd-benchmarks/amd-cloud` |
@@ -49,10 +49,90 @@ respective part directories but git-ignored — see [`.gitignore`](.gitignore). 
 regenerable caches (Docker layers, Triton/HF/pip JIT caches, the analysis venv) live at
 `/mnt/scratch/shaohao/`, off-repo.
 
+## Where the suites overlap
+
+Two workloads are measured by more than one suite. That is deliberate: the suites sit at
+different layers of the stack, so the *gap* between them is itself a result. Neither number
+is "more correct" — they answer different questions.
+
+### GEMM — RVS `gst` vs Primus `gemm`
+
+| | RVS `gst` (Part A) | Primus `gemm` family (Part C) |
+|---|---|---|
+| Question it answers | Is the silicon healthy, and what is the ceiling? | What does a training framework actually achieve? |
+| Stack | hipBLASLt called from C++ — no framework | PyTorch → hipBLASLt, launched under `torchrun` |
+| Shapes | Fixed large (8192×8192×16384), `rotating: 512` buffers to defeat L2 reuse | Training-shaped; `gemm-dense` / `gemm-deepseek` use real model layer shapes |
+| Precisions | 9 — `fp4 fp6 bf6 fp8 bf8 fp16 bf16 fp32 fp64` | Mainly bf16 / fp8 |
+| Metric | Per-GPU peak GFLOPS per log interval + a `target_stress` pass/fail | TFLOPS table |
+| Multi-GPU | `parallel: true` — N *independent* stress instances, no communication | N ranks via torchrun; the GEMM itself still does no inter-GPU communication |
+
+Expect **Primus `gemm` < RVS `gst`** at the same precision — the difference is framework and
+dispatch overhead. A small gap is normal; a large one is a software finding, not a hardware
+one. RVS is also the only place fp4/fp6/bf6 get exercised at all.
+
+### Collectives — rccl-tests vs Primus `rccl`
+
+`rccl-tests` is AMD's ROCm port of `nccl-tests` — same benchmark lineage and the same
+`algbw`/`busbw` methodology.
+
+| | rccl-tests (Part B) | Primus `benchmark rccl` (Part C) |
+|---|---|---|
+| Layer | Raw RCCL C API | `torch.distributed`, RCCL underneath |
+| Metric | `algbw` + `busbw` (algorithm-normalized) | `eff_gbps` |
+| Message sizes | Sweeps 16 MiB → 8 GiB, ×2 steps | Fixed training-relevant set |
+| Correctness | Verified (`-c 1`) | Not the focus |
+| Process model | **1 process driving N GPUs** (`-g N`, `MPI=0`) | **N processes, 1 GPU each** (torchrun) |
+
+The process-model row is the one that bites. Single-process-multi-device and
+one-rank-per-process take **different code paths inside RCCL** — different communicator
+setup and stream usage. Real training is the N-process model. So if Part B shows a clean
+curve at some N but Primus `rccl` cliffs at the same N, suspect the process model before the
+fabric.
+
+`busbw` is the more comparable number across N, because it normalizes out the fact that
+different collectives move different amounts of data for the same buffer size — which is why
+the non-power-of-2 cliff analysis in `analyze_rccl.py` keys on it rather than on `algbw`.
+
+### Reading a disagreement
+
+The suites form a ladder, and each rung licenses a conclusion about the one above it:
+
+1. **RVS health** (`pbqt` XGMI, `pebb` PCIe, `babel` HBM, `mem`) — is the fabric and memory
+   sound? A clean result here is what lets a later RCCL cliff be attributed to the
+   *algorithm layer* rather than to hardware.
+2. **RVS `gst`** — the compute ceiling per precision.
+3. **rccl-tests** — the collective ceiling at the RCCL API.
+4. **Primus microbenches** — what PyTorch gets from 2 and 3.
+5. **Megatron llama2-7B** — what a real model gets from all of the above.
+
+A drop between adjacent rungs localizes the problem to that rung. This is the whole reason
+Part A runs first and Part C runs last.
+
+### No overlap
+
+Each suite also owns something the others cannot see: RVS has the low-precision
+(fp4/fp6/bf6) ceiling and the hardware health verdict; rccl-tests has the full message-size
+curve and correctness verification; Primus has attention, the DeepSeek/dense GEMM shapes, and
+the only end-to-end training number.
+
+> Caveat: the RVS rows above were read from the generated `gst` conf in `run_tflops.sh`, and
+> the rccl-tests rows from its CLI. The Primus rows come from the CLI surface and
+> `dell-cloud/primus/REPORT.md` — Primus' `gemm`/`rccl` implementation source has not been
+> read, so treat its exact shapes and the precise definition of `eff_gbps` as unconfirmed
+> until the first run lands.
+
+Primus also ships a **JAX/MaxText** path (`requirements-jax.txt`,
+`examples/maxtext/configs/MI355X/`). It is **not run here** — Part C reproduces the Megatron
+and microbench portions of `dell-cloud/primus/REPORT.md` only. Likewise unused:
+`strided-allgather` (new in v26.5) and the FP8 Megatron config; this is a BF16 reproduction.
+
 ## Status
 
 | Part | State |
 |------|-------|
-| A — ROCm Validation Suite | Planned |
-| B — RCCL collectives | Planned |
-| C — Primus + Megatron-LM | Planned |
+| A — ROCm Validation Suite | **Running** (started 2026-08-13 18:42) — smoke passed at 1544 TFLOPS fp16/1 GPU; `gst` sweep in progress |
+| B — RCCL collectives | Built and staged, not started |
+| C — Primus + Megatron-LM | Image pulled and gated, scripts staged, not started |
+
+Parts run **strictly sequentially** — all three want all 8 GPUs and the full ~11.2 kW tray
+power envelope, so overlapping them would invalidate every number.

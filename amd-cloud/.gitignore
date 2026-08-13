@@ -1,8 +1,19 @@
-# Upstream source trees cloned here for the build — not tracked in this repo.
+# AMD Cloud part-specific ignores. Repo-wide rules live in ../.gitignore.
+
+# Upstream source trees cloned here for the build -- not tracked in this repo.
 work-rocmval/ROCmValidationSuite/
 rccl-tests/src/
 primus/Primus/
+atom/ATOM/
 
 # Build / run detritus
 **/__pycache__/
 *.pyc
+
+# Part D: model weights must live on /mnt/scratch/shaohao/models, never here.
+# Belt-and-braces in case someone points a download at the repo by mistake.
+atom/models/
+atom/**/*.safetensors
+
+# ATOM server/benchmark scratch that is regenerable and can be large
+atom/**/logs_claude/

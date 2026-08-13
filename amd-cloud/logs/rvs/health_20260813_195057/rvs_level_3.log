@@ -1,0 +1,710 @@
+[RESULT] [ 84905.457958] Action name :hbm_mid
+[RESULT] [ 84905.499925] Module name :babel
+[RESULT] [ 84906.72127 ] [hbm_mid] [GPU:: 17010] Starting the Babel memory stress test
+[RESULT] [ 84906.72184 ] [hbm_mid] [GPU:: 42583] Starting the Babel memory stress test
+[RESULT] [ 84906.72205 ] Running kernels 100 times, Precision: double
+[RESULT] [ 84906.72246 ] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84906.72248 ] Running kernels 100 times, Precision: double
+[RESULT] [ 84906.72274 ] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84906.72317 ] [hbm_mid] [GPU:: 36479] Starting the Babel memory stress test
+[RESULT] [ 84906.72378 ] Running kernels 100 times, Precision: double
+[RESULT] [ 84906.72404 ] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84906.72402 ] [hbm_mid] [GPU:: 27226] Starting the Babel memory stress test
+[RESULT] [ 84906.72461 ] Running kernels 100 times, Precision: double
+[RESULT] [ 84906.72484 ] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84906.72498 ] [hbm_mid] [GPU:: 57875] Starting the Babel memory stress test
+[RESULT] [ 84906.72563 ] Running kernels 100 times, Precision: double
+[RESULT] [ 84906.72579 ] [hbm_mid] [GPU:: 1590] Starting the Babel memory stress test
+[RESULT] [ 84906.72590 ] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84906.72644 ] Running kernels 100 times, Precision: double
+[RESULT] [ 84906.72668 ] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84906.72812 ] [hbm_mid] [GPU:: 51771] Starting the Babel memory stress test
+[RESULT] [ 84906.72850 ] [hbm_mid] [GPU:: 11806] Starting the Babel memory stress test
+[RESULT] [ 84906.72879 ] Running kernels 100 times, Precision: double
+[RESULT] [ 84906.72906 ] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84906.72907 ] Running kernels 100 times, Precision: double
+[RESULT] [ 84906.72932 ] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84919.768324] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+1590        Read        7247735.384    7247735.384    6978080.045    7191341.365    
+1590        Write       6645714.895    6645714.895    2362438.849    6192644.761    
+1590        Copy        6363909.105    6363909.105    6173012.721    6315586.470    
+1590        Mul         6373520.875    6373520.875    534615.124     5689937.515    
+1590        Add         6294824.685    6294824.685    6189527.610    6249465.750    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84922.480061] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+17010       Read        7251000.698    7251000.698    7110056.156    7187977.670    
+17010       Write       6728548.636    6728548.636    2511346.927    6338947.288    
+17010       Copy        6382717.252    6382717.252    6259639.957    6332731.716    
+17010       Mul         6392710.726    6392710.726    4314917.718    6307308.543    
+17010       Add         6267082.745    6267082.745    6158026.494    6204689.823    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84923.416693] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+42583       Read        7225261.997    7225261.997    3671330.726    7098251.623    
+42583       Write       6640868.304    6640868.304    6025774.140    6346771.112    
+42583       Copy        6377602.921    6377602.921    6123583.525    6294641.181    
+42583       Mul         6351556.157    6351556.157    4592914.718    6261721.362    
+42583       Add         6306622.471    6306622.471    6174160.056    6226762.718    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84924.506504] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+51771       Read        7243032.432    7243032.432    7050952.560    7168858.069    
+51771       Write       6744088.570    6744088.570    3307676.344    6289911.420    
+51771       Copy        6395073.634    6395073.634    6180675.814    6315505.404    
+51771       Mul         6365398.787    6365398.787    4383502.615    6279122.713    
+51771       Add         6286019.546    6286019.546    6180905.817    6240206.371    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84925.188863] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+36479       Read        7252444.448    7252444.448    7066496.486    7202163.110    
+36479       Write       6757786.256    6757786.256    5871285.462    6431024.226    
+36479       Copy        6583449.961    6583449.961    6353334.591    6516119.070    
+36479       Mul         6599172.410    6599172.410    21206.893      1590516.652    
+36479       Add         6316465.375    6316465.375    6222230.853    6276980.863    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84925.742424] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+11806       Read        7237881.368    7237881.368    7088935.461    7189599.673    
+11806       Write       6667040.708    6667040.708    5990820.299    6346622.604    
+11806       Copy        6356193.834    6356193.834    21378.291      1587764.058    
+11806       Mul         6352459.827    6352459.827    6129193.948    6290548.232    
+11806       Add         6206865.823    6206865.823    6098443.945    6151241.822    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84926.363261] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+27226       Read        7264396.425    7264396.425    6724240.334    7182399.631    
+27226       Write       6770287.673    6770287.673    6040020.911    6427912.858    
+27226       Copy        6431385.406    6431385.406    6204778.071    6358860.918    
+27226       Mul         6434019.244    6434019.244    6317954.074    6360857.807    
+27226       Add         6346487.741    6346487.741    31789.118      2103884.279    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84926.926100] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+57875       Read        7247431.784    7247431.784    7111882.800    7186675.785    
+57875       Write       6638071.980    6638071.980    5988176.629    6331671.065    
+57875       Copy        6354413.799    6354413.799    6208006.286    6294691.119    
+57875       Mul         6351352.138    6351352.138    21251.991      1580555.124    
+57875       Add         6139779.265    6139779.265    6002357.021    6080856.723    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84927.431850] Action name :pcie_d2h_bandwidth
+[RESULT] [ 84927.459880] Module name :pebb
+[RESULT] [ 84927.460165] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] distance:20 PCIe:20
+[RESULT] [ 84927.460180] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] distance:52 PCIe:52
+[RESULT] [ 84927.460182] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] distance:20 PCIe:20
+[RESULT] [ 84927.460184] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] distance:52 PCIe:52
+[RESULT] [ 84927.460185] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] distance:20 PCIe:20
+[RESULT] [ 84927.460187] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] distance:52 PCIe:52
+[RESULT] [ 84927.460188] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] distance:20 PCIe:20
+[RESULT] [ 84927.460189] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] distance:52 PCIe:52
+[RESULT] [ 84927.460190] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:52 PCIe:52
+[RESULT] [ 84927.460192] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:20 PCIe:20
+[RESULT] [ 84927.460193] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] distance:52 PCIe:52
+[RESULT] [ 84927.460194] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] distance:20 PCIe:20
+[RESULT] [ 84927.460196] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:52 PCIe:52
+[RESULT] [ 84927.460197] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:20 PCIe:20
+[RESULT] [ 84927.460198] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] distance:52 PCIe:52
+[RESULT] [ 84927.460199] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] distance:20 PCIe:20
+[RESULT] [ 84958.104745] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.208 GBps duration: 0.075076 secs
+[RESULT] [ 84958.104757] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.214 GBps duration: 0.075068 secs
+[RESULT] [ 84958.104759] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.191 GBps duration: 0.075098 secs
+[RESULT] [ 84958.104760] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.193 GBps duration: 0.075096 secs
+[RESULT] [ 84958.104762] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.229 GBps duration: 0.056287 secs
+[RESULT] [ 84958.104763] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.228 GBps duration: 0.056288 secs
+[RESULT] [ 84958.104765] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.423 GBps duration: 0.057090 secs
+[RESULT] [ 84958.104766] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.423 GBps duration: 0.057091 secs
+[RESULT] [ 84958.104767] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.192 GBps duration: 0.056323 secs
+[RESULT] [ 84958.104769] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.184 GBps duration: 0.056331 secs
+[RESULT] [ 84958.104770] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.185 GBps duration: 0.056329 secs
+[RESULT] [ 84958.104800] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.200 GBps duration: 0.056315 secs
+[RESULT] [ 84958.104801] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.403 GBps duration: 0.057111 secs
+[RESULT] [ 84958.104802] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.365 GBps duration: 0.057150 secs
+[RESULT] [ 84958.104804] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.214 GBps duration: 0.056301 secs
+[RESULT] [ 84958.104805] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps duration: 0.056298 secs
+[RESULT] [ 84958.104833] Action name :pcie_h2d_bandwidth
+[RESULT] [ 84958.104841] Module name :pebb
+[RESULT] [ 84958.105300] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] distance:20 PCIe:20
+[RESULT] [ 84958.105309] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] distance:52 PCIe:52
+[RESULT] [ 84958.105312] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] distance:20 PCIe:20
+[RESULT] [ 84958.105314] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] distance:52 PCIe:52
+[RESULT] [ 84958.105315] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] distance:20 PCIe:20
+[RESULT] [ 84958.105317] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] distance:52 PCIe:52
+[RESULT] [ 84958.105318] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] distance:20 PCIe:20
+[RESULT] [ 84958.105320] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] distance:52 PCIe:52
+[RESULT] [ 84958.105321] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:52 PCIe:52
+[RESULT] [ 84958.105323] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:20 PCIe:20
+[RESULT] [ 84958.105324] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] distance:52 PCIe:52
+[RESULT] [ 84958.105325] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] distance:20 PCIe:20
+[RESULT] [ 84958.105327] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:52 PCIe:52
+[RESULT] [ 84958.105328] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:20 PCIe:20
+[RESULT] [ 84958.105329] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] distance:52 PCIe:52
+[RESULT] [ 84958.105331] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] distance:20 PCIe:20
+[RESULT] [ 84988.524927] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.687 GBps duration: 0.074453 secs
+[RESULT] [ 84988.524939] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.695 GBps duration: 0.074443 secs
+[RESULT] [ 84988.524941] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.717 GBps duration: 0.074414 secs
+[RESULT] [ 84988.524942] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.717 GBps duration: 0.055811 secs
+[RESULT] [ 84988.524944] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.716 GBps duration: 0.055812 secs
+[RESULT] [ 84988.524945] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.715 GBps duration: 0.055812 secs
+[RESULT] [ 84988.524946] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.717 GBps duration: 0.055811 secs
+[RESULT] [ 84988.524978] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.694 GBps duration: 0.055833 secs
+[RESULT] [ 84988.524979] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.694 GBps duration: 0.055833 secs
+[RESULT] [ 84988.524980] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.701 GBps duration: 0.055826 secs
+[RESULT] [ 84988.524981] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.717 GBps duration: 0.055811 secs
+[RESULT] [ 84988.524982] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.707 GBps duration: 0.055820 secs
+[RESULT] [ 84988.524983] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 57.716 GBps duration: 0.055811 secs
+[RESULT] [ 84988.524984] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 57.716 GBps duration: 0.055812 secs
+[RESULT] [ 84988.524986] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.709 GBps duration: 0.055818 secs
+[RESULT] [ 84988.524987] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.708 GBps duration: 0.055819 secs
+[RESULT] [ 84988.525017] Action name :xgmi_d2d_bandwidth
+[RESULT] [ 84988.547046] Module name :pbqt
+[RESULT] [ 84988.547317] [xgmi_d2d_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547321] [xgmi_d2d_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547322] [xgmi_d2d_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547324] [xgmi_d2d_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547325] [xgmi_d2d_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547327] [xgmi_d2d_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547328] [xgmi_d2d_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547329] [xgmi_d2d_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547330] [xgmi_d2d_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547331] [xgmi_d2d_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547332] [xgmi_d2d_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547333] [xgmi_d2d_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547334] [xgmi_d2d_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547335] [xgmi_d2d_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547336] [xgmi_d2d_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547336] [xgmi_d2d_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547337] [xgmi_d2d_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547360] [xgmi_d2d_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547361] [xgmi_d2d_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547362] [xgmi_d2d_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547363] [xgmi_d2d_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547364] [xgmi_d2d_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547365] [xgmi_d2d_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547365] [xgmi_d2d_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547366] [xgmi_d2d_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547367] [xgmi_d2d_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547368] [xgmi_d2d_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547369] [xgmi_d2d_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547370] [xgmi_d2d_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547371] [xgmi_d2d_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547372] [xgmi_d2d_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547372] [xgmi_d2d_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547373] [xgmi_d2d_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547374] [xgmi_d2d_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547375] [xgmi_d2d_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547376] [xgmi_d2d_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547377] [xgmi_d2d_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547378] [xgmi_d2d_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547379] [xgmi_d2d_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547380] [xgmi_d2d_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547381] [xgmi_d2d_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547381] [xgmi_d2d_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547382] [xgmi_d2d_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547383] [xgmi_d2d_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547384] [xgmi_d2d_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547386] [xgmi_d2d_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547387] [xgmi_d2d_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547388] [xgmi_d2d_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547389] [xgmi_d2d_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547390] [xgmi_d2d_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547390] [xgmi_d2d_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547391] [xgmi_d2d_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547392] [xgmi_d2d_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547393] [xgmi_d2d_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547394] [xgmi_d2d_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84988.547395] [xgmi_d2d_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 85018.565019] [xgmi_d2d_bandwidth] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.517 GBps duration: 0.140224 secs
+[RESULT] [ 85018.566094] [xgmi_d2d_bandwidth] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.671 GBps duration: 0.140048 secs
+[RESULT] [ 85018.567160] [xgmi_d2d_bandwidth] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.680 GBps duration: 0.140038 secs
+[RESULT] [ 85018.568183] [xgmi_d2d_bandwidth] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.513 GBps duration: 0.140229 secs
+[RESULT] [ 85018.569210] [xgmi_d2d_bandwidth] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.660 GBps duration: 0.140060 secs
+[RESULT] [ 85018.571034] [xgmi_d2d_bandwidth] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.566 GBps duration: 0.140169 secs
+[RESULT] [ 85018.572093] [xgmi_d2d_bandwidth] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.674 GBps duration: 0.140045 secs
+[RESULT] [ 85018.573117] [xgmi_d2d_bandwidth] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.534 GBps duration: 0.140205 secs
+[RESULT] [ 85018.574145] [xgmi_d2d_bandwidth] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.545 GBps duration: 0.140192 secs
+[RESULT] [ 85018.575186] [xgmi_d2d_bandwidth] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.540 GBps duration: 0.140198 secs
+[RESULT] [ 85018.576211] [xgmi_d2d_bandwidth] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.531 GBps duration: 0.140208 secs
+[RESULT] [ 85018.577248] [xgmi_d2d_bandwidth] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.532 GBps duration: 0.140207 secs
+[RESULT] [ 85018.578347] [xgmi_d2d_bandwidth] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.534 GBps duration: 0.140205 secs
+[RESULT] [ 85018.582023] [xgmi_d2d_bandwidth] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.587 GBps duration: 0.140144 secs
+[RESULT] [ 85018.583097] [xgmi_d2d_bandwidth] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.657 GBps duration: 0.140065 secs
+[RESULT] [ 85018.584159] [xgmi_d2d_bandwidth] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.609 GBps duration: 0.140120 secs
+[RESULT] [ 85018.585230] [xgmi_d2d_bandwidth] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.692 GBps duration: 0.140024 secs
+[RESULT] [ 85018.586587] [xgmi_d2d_bandwidth] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.524 GBps duration: 0.140217 secs
+[RESULT] [ 85018.588679] [xgmi_d2d_bandwidth] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.700 GBps duration: 0.140016 secs
+[RESULT] [ 85018.592008] [xgmi_d2d_bandwidth] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.575 GBps duration: 0.140158 secs
+[RESULT] [ 85018.593072] [xgmi_d2d_bandwidth] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.694 GBps duration: 0.140022 secs
+[RESULT] [ 85018.594134] [xgmi_d2d_bandwidth] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.673 GBps duration: 0.140046 secs
+[RESULT] [ 85018.595194] [xgmi_d2d_bandwidth] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.587 GBps duration: 0.140144 secs
+[RESULT] [ 85018.596253] [xgmi_d2d_bandwidth] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.701 GBps duration: 0.140014 secs
+[RESULT] [ 85018.597313] [xgmi_d2d_bandwidth] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.532 GBps duration: 0.140207 secs
+[RESULT] [ 85018.598371] [xgmi_d2d_bandwidth] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.690 GBps duration: 0.140027 secs
+[RESULT] [ 85018.599429] [xgmi_d2d_bandwidth] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.575 GBps duration: 0.140158 secs
+[RESULT] [ 85018.600485] [xgmi_d2d_bandwidth] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.698 GBps duration: 0.140018 secs
+[RESULT] [ 85018.601545] [xgmi_d2d_bandwidth] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.530 GBps duration: 0.140210 secs
+[RESULT] [ 85018.602604] [xgmi_d2d_bandwidth] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.526 GBps duration: 0.140214 secs
+[RESULT] [ 85018.603663] [xgmi_d2d_bandwidth] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.522 GBps duration: 0.140219 secs
+[RESULT] [ 85018.604720] [xgmi_d2d_bandwidth] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.531 GBps duration: 0.140208 secs
+[RESULT] [ 85018.605781] [xgmi_d2d_bandwidth] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.524 GBps duration: 0.140217 secs
+[RESULT] [ 85018.606840] [xgmi_d2d_bandwidth] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.530 GBps duration: 0.140210 secs
+[RESULT] [ 85018.607899] [xgmi_d2d_bandwidth] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.542 GBps duration: 0.140196 secs
+[RESULT] [ 85018.609012] [xgmi_d2d_bandwidth] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.655 GBps duration: 0.140066 secs
+[RESULT] [ 85018.610074] [xgmi_d2d_bandwidth] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.547 GBps duration: 0.140189 secs
+[RESULT] [ 85018.611131] [xgmi_d2d_bandwidth] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.703 GBps duration: 0.140011 secs
+[RESULT] [ 85018.612196] [xgmi_d2d_bandwidth] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.693 GBps duration: 0.122520 secs
+[RESULT] [ 85018.613254] [xgmi_d2d_bandwidth] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.518 GBps duration: 0.122695 secs
+[RESULT] [ 85018.614313] [xgmi_d2d_bandwidth] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.588 GBps duration: 0.122625 secs
+[RESULT] [ 85018.615370] [xgmi_d2d_bandwidth] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.682 GBps duration: 0.122532 secs
+[RESULT] [ 85018.616429] [xgmi_d2d_bandwidth] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.571 GBps duration: 0.122642 secs
+[RESULT] [ 85018.617487] [xgmi_d2d_bandwidth] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.531 GBps duration: 0.122682 secs
+[RESULT] [ 85018.618546] [xgmi_d2d_bandwidth] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.576 GBps duration: 0.122637 secs
+[RESULT] [ 85018.619605] [xgmi_d2d_bandwidth] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.572 GBps duration: 0.122641 secs
+[RESULT] [ 85018.620662] [xgmi_d2d_bandwidth] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.524 GBps duration: 0.122689 secs
+[RESULT] [ 85018.621725] [xgmi_d2d_bandwidth] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.592 GBps duration: 0.122621 secs
+[RESULT] [ 85018.622782] [xgmi_d2d_bandwidth] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.574 GBps duration: 0.122639 secs
+[RESULT] [ 85018.623842] [xgmi_d2d_bandwidth] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.661 GBps duration: 0.122552 secs
+[RESULT] [ 85018.624901] [xgmi_d2d_bandwidth] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.522 GBps duration: 0.122691 secs
+[RESULT] [ 85018.625960] [xgmi_d2d_bandwidth] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.692 GBps duration: 0.122521 secs
+[RESULT] [ 85018.627006] [xgmi_d2d_bandwidth] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.689 GBps duration: 0.122524 secs
+[RESULT] [ 85018.628062] [xgmi_d2d_bandwidth] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.535 GBps duration: 0.122678 secs
+[RESULT] [ 85018.629123] [xgmi_d2d_bandwidth] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.664 GBps duration: 0.122549 secs
+[RESULT] [ 85018.630185] [xgmi_d2d_bandwidth] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.567 GBps duration: 0.122646 secs
+[RESULT] [ 85018.631308] Action name :compute-fp4-trig
+[RESULT] [ 85018.632612] Module name :gst
+[RESULT] [ 85019.132976] [compute-fp4-trig] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 85019.132978] [compute-fp4-trig] [GPU:: 17010] Start of GPU ramp up
+[RESULT] [ 85019.133094] [compute-fp4-trig] [GPU:: 36479] Start of GPU ramp up
+[RESULT] [ 85019.133102] [compute-fp4-trig] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 85019.133435] [compute-fp4-trig] [GPU:: 57875] Start of GPU ramp up
+[RESULT] [ 85019.133455] [compute-fp4-trig] [GPU::  1590] Start of GPU ramp up
+[RESULT] [ 85019.133557] [compute-fp4-trig] [GPU:: 11806] Start of GPU ramp up
+[RESULT] [ 85019.133730] [compute-fp4-trig] [GPU:: 51771] Start of GPU ramp up
+[RESULT] [ 85024.739297] [compute-fp4-trig] [GPU:: 36479] GFLOPS 232160
+[RESULT] [ 85024.744757] [compute-fp4-trig] [GPU:: 51771] GFLOPS 281637
+[RESULT] [ 85024.751246] [compute-fp4-trig] [GPU:: 27226] GFLOPS 2969
+[RESULT] [ 85024.754815] [compute-fp4-trig] [GPU:: 17010] GFLOPS 232160
+[RESULT] [ 85024.786182] [compute-fp4-trig] [GPU:: 42583] GFLOPS 301401
+[RESULT] [ 85024.909181] [compute-fp4-trig] [GPU::  1590] GFLOPS 195225
+[RESULT] [ 85024.981108] [compute-fp4-trig] [GPU:: 57875] GFLOPS 166794
+[RESULT] [ 85024.994954] [compute-fp4-trig] [GPU:: 11806] GFLOPS 177112
+[RESULT] [ 85025.739251] [compute-fp4-trig] [GPU:: 36479] End of GPU ramp up
+[RESULT] [ 85025.744776] [compute-fp4-trig] [GPU:: 51771] End of GPU ramp up
+[RESULT] [ 85025.748811] [compute-fp4-trig] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 85025.754835] [compute-fp4-trig] [GPU:: 17010] End of GPU ramp up
+[RESULT] [ 85025.786203] [compute-fp4-trig] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 85025.909176] [compute-fp4-trig] [GPU::  1590] End of GPU ramp up
+[RESULT] [ 85025.981103] [compute-fp4-trig] [GPU:: 57875] End of GPU ramp up
+[RESULT] [ 85025.994937] [compute-fp4-trig] [GPU:: 11806] End of GPU ramp up
+[RESULT] [ 85028.758178] [compute-fp4-trig] [GPU:: 36479] GFLOPS 324382
+[RESULT] [ 85028.762593] [compute-fp4-trig] [GPU:: 51771] GFLOPS 324503
+[RESULT] [ 85028.793137] [compute-fp4-trig] [GPU:: 27226] GFLOPS 321677
+[RESULT] [ 85028.793153] [compute-fp4-trig] [GPU:: 17010] GFLOPS 327969
+[RESULT] [ 85028.833490] [compute-fp4-trig] [GPU:: 42583] GFLOPS 321365
+[RESULT] [ 85028.997051] [compute-fp4-trig] [GPU::  1590] GFLOPS 178040
+[RESULT] [ 85029.75808 ] [compute-fp4-trig] [GPU:: 57875] GFLOPS 160993
+[RESULT] [ 85029.85894 ] [compute-fp4-trig] [GPU:: 11806] GFLOPS 161189
+[RESULT] [ 85031.795107] [compute-fp4-trig] [GPU:: 51771] GFLOPS 322929
+[RESULT] [ 85031.801801] [compute-fp4-trig] [GPU:: 36479] GFLOPS 321746
+[RESULT] [ 85031.820984] [compute-fp4-trig] [GPU:: 27226] GFLOPS 312078
+[RESULT] [ 85031.849042] [compute-fp4-trig] [GPU:: 17010] GFLOPS 314834
+[RESULT] [ 85031.879375] [compute-fp4-trig] [GPU:: 42583] GFLOPS 321509
+[RESULT] [ 85032.7701  ] [compute-fp4-trig] [GPU::  1590] GFLOPS 176902
+[RESULT] [ 85032.86730 ] [compute-fp4-trig] [GPU:: 57875] GFLOPS 165473
+[RESULT] [ 85032.102875] [compute-fp4-trig] [GPU:: 11806] GFLOPS 165143
+[RESULT] [ 85034.820569] [compute-fp4-trig] [GPU:: 36479] GFLOPS 318702
+[RESULT] [ 85034.848360] [compute-fp4-trig] [GPU:: 51771] GFLOPS 320731
+[RESULT] [ 85034.858736] [compute-fp4-trig] [GPU:: 27226] GFLOPS 305403
+[RESULT] [ 85034.859073] [compute-fp4-trig] [GPU:: 17010] GFLOPS 308217
+[RESULT] [ 85034.899014] [compute-fp4-trig] [GPU:: 42583] GFLOPS 312925
+[RESULT] [ 85035.39350 ] [compute-fp4-trig] [GPU::  1590] GFLOPS 170008
+[RESULT] [ 85035.118292] [compute-fp4-trig] [GPU:: 57875] GFLOPS 260690
+[RESULT] [ 85035.152202] [compute-fp4-trig] [GPU:: 11806] GFLOPS 157754
+[RESULT] [ 85035.763734] [compute-fp4-trig] [GPU:: 51771] GFLOPS 324503 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85035.771305] [compute-fp4-trig] [GPU:: 36479] GFLOPS 324382 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85035.773948] [compute-fp4-trig] [GPU:: 17010] GFLOPS 327969 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85035.794886] [compute-fp4-trig] [GPU:: 27226] GFLOPS 321677 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85035.812446] [compute-fp4-trig] [GPU:: 42583] GFLOPS 321509 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85035.920260] [compute-fp4-trig] [GPU::  1590] GFLOPS 178040 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85035.995066] [compute-fp4-trig] [GPU:: 57875] GFLOPS 260690 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85036.7733  ] [compute-fp4-trig] [GPU:: 11806] GFLOPS 165143 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85036.132797] Action name :compute-fp6-trig
+[RESULT] [ 85036.132818] Module name :gst
+[RESULT] [ 85036.633943] [compute-fp6-trig] [GPU:: 17010] Start of GPU ramp up
+[RESULT] [ 85036.633949] [compute-fp6-trig] [GPU:: 36479] Start of GPU ramp up
+[RESULT] [ 85036.633965] [compute-fp6-trig] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 85036.634051] [compute-fp6-trig] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 85036.634155] [compute-fp6-trig] [GPU::  1590] Start of GPU ramp up
+[RESULT] [ 85036.634301] [compute-fp6-trig] [GPU:: 57875] Start of GPU ramp up
+[RESULT] [ 85036.634406] [compute-fp6-trig] [GPU:: 11806] Start of GPU ramp up
+[RESULT] [ 85036.634464] [compute-fp6-trig] [GPU:: 51771] Start of GPU ramp up
+[RESULT] [ 85041.317130] [compute-fp6-trig] [GPU:: 17010] GFLOPS 197469
+[RESULT] [ 85041.320028] [compute-fp6-trig] [GPU:: 11806] GFLOPS 330382
+[RESULT] [ 85041.351564] [compute-fp6-trig] [GPU:: 27226] GFLOPS 336860
+[RESULT] [ 85041.352387] [compute-fp6-trig] [GPU:: 51771] GFLOPS 223115
+[RESULT] [ 85041.358805] [compute-fp6-trig] [GPU::  1590] GFLOPS 256415
+[RESULT] [ 85041.427003] [compute-fp6-trig] [GPU:: 57875] GFLOPS 226050
+[RESULT] [ 85041.438899] [compute-fp6-trig] [GPU:: 42583] GFLOPS 223115
+[RESULT] [ 85041.480395] [compute-fp6-trig] [GPU:: 36479] GFLOPS 272696
+[RESULT] [ 85042.317121] [compute-fp6-trig] [GPU:: 17010] End of GPU ramp up
+[RESULT] [ 85042.320052] [compute-fp6-trig] [GPU:: 11806] End of GPU ramp up
+[RESULT] [ 85042.351550] [compute-fp6-trig] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 85042.352361] [compute-fp6-trig] [GPU:: 51771] End of GPU ramp up
+[RESULT] [ 85042.358802] [compute-fp6-trig] [GPU::  1590] End of GPU ramp up
+[RESULT] [ 85042.427011] [compute-fp6-trig] [GPU:: 57875] End of GPU ramp up
+[RESULT] [ 85042.438896] [compute-fp6-trig] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 85042.480418] [compute-fp6-trig] [GPU:: 36479] End of GPU ramp up
+[RESULT] [ 85045.347271] [compute-fp6-trig] [GPU:: 17010] GFLOPS 164424
+[RESULT] [ 85045.351618] [compute-fp6-trig] [GPU:: 11806] GFLOPS 181350
+[RESULT] [ 85045.369898] [compute-fp6-trig] [GPU:: 51771] GFLOPS 313147
+[RESULT] [ 85045.393573] [compute-fp6-trig] [GPU:: 27226] GFLOPS 350160
+[RESULT] [ 85045.396221] [compute-fp6-trig] [GPU::  1590] GFLOPS 339380
+[RESULT] [ 85045.454238] [compute-fp6-trig] [GPU:: 42583] GFLOPS 307676
+[RESULT] [ 85045.498919] [compute-fp6-trig] [GPU:: 36479] GFLOPS 182135
+[RESULT] [ 85045.506751] [compute-fp6-trig] [GPU:: 57875] GFLOPS 184093
+[RESULT] [ 85048.406191] [compute-fp6-trig] [GPU::  1590] GFLOPS 342468
+[RESULT] [ 85048.407241] [compute-fp6-trig] [GPU:: 27226] GFLOPS 353447
+[RESULT] [ 85048.426413] [compute-fp6-trig] [GPU:: 11806] GFLOPS 189974
+[RESULT] [ 85048.431652] [compute-fp6-trig] [GPU:: 17010] GFLOPS 161536
+[RESULT] [ 85048.455959] [compute-fp6-trig] [GPU:: 51771] GFLOPS 222683
+[RESULT] [ 85048.470081] [compute-fp6-trig] [GPU:: 42583] GFLOPS 341803
+[RESULT] [ 85048.536412] [compute-fp6-trig] [GPU:: 57875] GFLOPS 187135
+[RESULT] [ 85048.551445] [compute-fp6-trig] [GPU:: 36479] GFLOPS 191367
+[RESULT] [ 85051.421521] [compute-fp6-trig] [GPU::  1590] GFLOPS 341861
+[RESULT] [ 85051.447328] [compute-fp6-trig] [GPU:: 27226] GFLOPS 322120
+[RESULT] [ 85051.449148] [compute-fp6-trig] [GPU:: 11806] GFLOPS 210296
+[RESULT] [ 85051.472900] [compute-fp6-trig] [GPU:: 17010] GFLOPS 180771
+[RESULT] [ 85051.505598] [compute-fp6-trig] [GPU:: 42583] GFLOPS 345244
+[RESULT] [ 85051.527770] [compute-fp6-trig] [GPU:: 51771] GFLOPS 162197
+[RESULT] [ 85051.586217] [compute-fp6-trig] [GPU:: 57875] GFLOPS 208429
+[RESULT] [ 85051.607453] [compute-fp6-trig] [GPU:: 36479] GFLOPS 168654
+[RESULT] [ 85052.336359] [compute-fp6-trig] [GPU:: 11806] GFLOPS 210296 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85052.381625] [compute-fp6-trig] [GPU:: 27226] GFLOPS 353447 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85052.387451] [compute-fp6-trig] [GPU::  1590] GFLOPS 342468 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85052.391266] [compute-fp6-trig] [GPU:: 17010] GFLOPS 180771 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85052.401913] [compute-fp6-trig] [GPU:: 51771] GFLOPS 313147 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85052.449149] [compute-fp6-trig] [GPU:: 57875] GFLOPS 208429 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85052.456006] [compute-fp6-trig] [GPU:: 42583] GFLOPS 345244 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85052.501807] [compute-fp6-trig] [GPU:: 36479] GFLOPS 191367 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85052.544739] Action name :compute-bf6-trig
+[RESULT] [ 85052.544770] Module name :gst
+[RESULT] [ 85053.45347 ] [compute-bf6-trig] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 85053.45709 ] [compute-bf6-trig] [GPU:: 17010] Start of GPU ramp up
+[RESULT] [ 85053.45808 ] [compute-bf6-trig] [GPU:: 36479] Start of GPU ramp up
+[RESULT] [ 85053.45931 ] [compute-bf6-trig] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 85053.45980 ] [compute-bf6-trig] [GPU:: 57875] Start of GPU ramp up
+[RESULT] [ 85053.46183 ] [compute-bf6-trig] [GPU:: 51771] Start of GPU ramp up
+[RESULT] [ 85053.46207 ] [compute-bf6-trig] [GPU::  1590] Start of GPU ramp up
+[RESULT] [ 85053.46243 ] [compute-bf6-trig] [GPU:: 11806] Start of GPU ramp up
+[RESULT] [ 85057.740781] [compute-bf6-trig] [GPU:: 11806] GFLOPS 306783
+[RESULT] [ 85057.746573] [compute-bf6-trig] [GPU:: 27226] GFLOPS 260301
+[RESULT] [ 85057.756525] [compute-bf6-trig] [GPU:: 17010] GFLOPS 214748
+[RESULT] [ 85057.762637] [compute-bf6-trig] [GPU::  1590] GFLOPS 306783
+[RESULT] [ 85057.864765] [compute-bf6-trig] [GPU:: 42583] GFLOPS 268435
+[RESULT] [ 85057.886191] [compute-bf6-trig] [GPU:: 51771] GFLOPS 209510
+[RESULT] [ 85057.888936] [compute-bf6-trig] [GPU:: 57875] GFLOPS 336860
+[RESULT] [ 85057.891432] [compute-bf6-trig] [GPU:: 36479] GFLOPS 171798
+[RESULT] [ 85058.740824] [compute-bf6-trig] [GPU:: 11806] End of GPU ramp up
+[RESULT] [ 85058.746540] [compute-bf6-trig] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 85058.756548] [compute-bf6-trig] [GPU:: 17010] End of GPU ramp up
+[RESULT] [ 85058.762703] [compute-bf6-trig] [GPU::  1590] End of GPU ramp up
+[RESULT] [ 85058.864759] [compute-bf6-trig] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 85058.886198] [compute-bf6-trig] [GPU:: 51771] End of GPU ramp up
+[RESULT] [ 85058.888973] [compute-bf6-trig] [GPU:: 57875] End of GPU ramp up
+[RESULT] [ 85058.891486] [compute-bf6-trig] [GPU:: 36479] End of GPU ramp up
+[RESULT] [ 85061.767743] [compute-bf6-trig] [GPU:: 11806] GFLOPS 357583
+[RESULT] [ 85061.786884] [compute-bf6-trig] [GPU::  1590] GFLOPS 357908
+[RESULT] [ 85061.796608] [compute-bf6-trig] [GPU:: 27226] GFLOPS 332340
+[RESULT] [ 85061.839121] [compute-bf6-trig] [GPU:: 17010] GFLOPS 183921
+[RESULT] [ 85061.894795] [compute-bf6-trig] [GPU:: 36479] GFLOPS 223098
+[RESULT] [ 85061.902674] [compute-bf6-trig] [GPU:: 42583] GFLOPS 197934
+[RESULT] [ 85061.949321] [compute-bf6-trig] [GPU:: 51771] GFLOPS 162653
+[RESULT] [ 85061.956471] [compute-bf6-trig] [GPU:: 57875] GFLOPS 173623
+[RESULT] [ 85064.772101] [compute-bf6-trig] [GPU:: 11806] GFLOPS 337386
+[RESULT] [ 85064.797770] [compute-bf6-trig] [GPU:: 27226] GFLOPS 332023
+[RESULT] [ 85064.827030] [compute-bf6-trig] [GPU::  1590] GFLOPS 339067
+[RESULT] [ 85064.872244] [compute-bf6-trig] [GPU:: 17010] GFLOPS 175593
+[RESULT] [ 85064.910228] [compute-bf6-trig] [GPU:: 36479] GFLOPS 341847
+[RESULT] [ 85064.970806] [compute-bf6-trig] [GPU:: 57875] GFLOPS 159587
+[RESULT] [ 85064.991389] [compute-bf6-trig] [GPU:: 42583] GFLOPS 183559
+[RESULT] [ 85065.7717  ] [compute-bf6-trig] [GPU:: 51771] GFLOPS 162904
+[RESULT] [ 85067.804123] [compute-bf6-trig] [GPU:: 11806] GFLOPS 334307
+[RESULT] [ 85067.835889] [compute-bf6-trig] [GPU:: 27226] GFLOPS 327982
+[RESULT] [ 85067.836778] [compute-bf6-trig] [GPU::  1590] GFLOPS 336781
+[RESULT] [ 85067.928275] [compute-bf6-trig] [GPU:: 17010] GFLOPS 185517
+[RESULT] [ 85067.941878] [compute-bf6-trig] [GPU:: 36479] GFLOPS 334350
+[RESULT] [ 85067.986582] [compute-bf6-trig] [GPU:: 57875] GFLOPS 159510
+[RESULT] [ 85068.67501 ] [compute-bf6-trig] [GPU:: 51771] GFLOPS 168444
+[RESULT] [ 85068.81247 ] [compute-bf6-trig] [GPU:: 42583] GFLOPS 183486
+[RESULT] [ 85068.747446] [compute-bf6-trig] [GPU:: 11806] GFLOPS 357583 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85068.764776] [compute-bf6-trig] [GPU::  1590] GFLOPS 357908 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85068.764986] [compute-bf6-trig] [GPU:: 17010] GFLOPS 185517 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85068.776749] [compute-bf6-trig] [GPU:: 27226] GFLOPS 332340 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85068.890990] [compute-bf6-trig] [GPU:: 42583] GFLOPS 197934 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85068.894164] [compute-bf6-trig] [GPU:: 36479] GFLOPS 341847 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85068.907250] [compute-bf6-trig] [GPU:: 57875] GFLOPS 173623 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85068.915943] [compute-bf6-trig] [GPU:: 51771] GFLOPS 168444 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 85068.957484] Action name :compute-fp8-trig
+[RESULT] [ 85068.957513] Module name :gst
+[RESULT] [ 85069.458293] [compute-fp8-trig] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 85069.458334] [compute-fp8-trig] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 85069.458354] [compute-fp8-trig] [GPU:: 36479] Start of GPU ramp up
+[RESULT] [ 85069.458440] [compute-fp8-trig] [GPU::  1590] Start of GPU ramp up
+[RESULT] [ 85069.458548] [compute-fp8-trig] [GPU:: 57875] Start of GPU ramp up
+[RESULT] [ 85069.458587] [compute-fp8-trig] [GPU:: 17010] Start of GPU ramp up
+[RESULT] [ 85069.458713] [compute-fp8-trig] [GPU:: 51771] Start of GPU ramp up
+[RESULT] [ 85069.458731] [compute-fp8-trig] [GPU:: 11806] Start of GPU ramp up
+[RESULT] [ 85076.262593] [compute-fp8-trig] [GPU::  1590] GFLOPS 3541100
+[RESULT] [ 85076.416773] [compute-fp8-trig] [GPU:: 42583] GFLOPS 3689636
+[RESULT] [ 85076.422751] [compute-fp8-trig] [GPU:: 27226] GFLOPS 3546811
+[RESULT] [ 85076.431278] [compute-fp8-trig] [GPU:: 51771] GFLOPS 3784893
+[RESULT] [ 85076.433666] [compute-fp8-trig] [GPU:: 17010] GFLOPS 3658940
+[RESULT] [ 85076.436981] [compute-fp8-trig] [GPU:: 36479] GFLOPS 3677296
+[RESULT] [ 85076.437541] [compute-fp8-trig] [GPU:: 57875] GFLOPS 3622773
+[RESULT] [ 85076.440934] [compute-fp8-trig] [GPU:: 11806] GFLOPS 3616814
+[RESULT] [ 85077.262786] [compute-fp8-trig] [GPU::  1590] End of GPU ramp up
+[RESULT] [ 85077.416850] [compute-fp8-trig] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 85077.422938] [compute-fp8-trig] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 85077.431262] [compute-fp8-trig] [GPU:: 51771] End of GPU ramp up
+[RESULT] [ 85077.433417] [compute-fp8-trig] [GPU:: 17010] End of GPU ramp up
+[RESULT] [ 85077.436940] [compute-fp8-trig] [GPU:: 36479] End of GPU ramp up
+[RESULT] [ 85077.437709] [compute-fp8-trig] [GPU:: 57875] End of GPU ramp up
+[RESULT] [ 85077.440708] [compute-fp8-trig] [GPU:: 11806] End of GPU ramp up
+[RESULT] [ 85083.504293] [compute-fp8-trig] [GPU:: 51771] GFLOPS 3620981
+[RESULT] [ 85083.535181] [compute-fp8-trig] [GPU::  1590] GFLOPS 3505887
+[RESULT] [ 85083.574539] [compute-fp8-trig] [GPU:: 17010] GFLOPS 3580832
+[RESULT] [ 85083.598660] [compute-fp8-trig] [GPU:: 11806] GFLOPS 3571040
+[RESULT] [ 85083.634149] [compute-fp8-trig] [GPU:: 42583] GFLOPS 3536956
+[RESULT] [ 85083.639503] [compute-fp8-trig] [GPU:: 57875] GFLOPS 3545795
+[RESULT] [ 85083.646213] [compute-fp8-trig] [GPU:: 36479] GFLOPS 3541525
+[RESULT] [ 85083.701168] [compute-fp8-trig] [GPU:: 27226] GFLOPS 3502630
+[RESULT] [ 85089.590418] [compute-fp8-trig] [GPU:: 51771] GFLOPS 3613199
+[RESULT] [ 85089.590453] [compute-fp8-trig] [GPU:: 51771] GFLOPS 3620981 Target GFLOPS: 2061000 met: TRUE
+[RESULT] [ 85089.726654] [compute-fp8-trig] [GPU:: 17010] GFLOPS 3574446
+[RESULT] [ 85089.726696] [compute-fp8-trig] [GPU:: 17010] GFLOPS 3580832 Target GFLOPS: 2061000 met: TRUE
+[RESULT] [ 85089.765199] [compute-fp8-trig] [GPU:: 11806] GFLOPS 3566080
+[RESULT] [ 85089.765228] [compute-fp8-trig] [GPU:: 11806] GFLOPS 3571040 Target GFLOPS: 2061000 met: TRUE
+[RESULT] [ 85089.817058] [compute-fp8-trig] [GPU::  1590] GFLOPS 3500603
+[RESULT] [ 85089.817091] [compute-fp8-trig] [GPU::  1590] GFLOPS 3505887 Target GFLOPS: 2061000 met: TRUE
+[RESULT] [ 85089.857788] [compute-fp8-trig] [GPU:: 57875] GFLOPS 3536402
+[RESULT] [ 85089.857817] [compute-fp8-trig] [GPU:: 57875] GFLOPS 3545795 Target GFLOPS: 2061000 met: TRUE
+[RESULT] [ 85089.864609] [compute-fp8-trig] [GPU:: 36479] GFLOPS 3536340
+[RESULT] [ 85089.864640] [compute-fp8-trig] [GPU:: 36479] GFLOPS 3541525 Target GFLOPS: 2061000 met: TRUE
+[RESULT] [ 85089.866871] [compute-fp8-trig] [GPU:: 42583] GFLOPS 3528215
+[RESULT] [ 85089.866903] [compute-fp8-trig] [GPU:: 42583] GFLOPS 3536956 Target GFLOPS: 2061000 met: TRUE
+[RESULT] [ 85089.976989] [compute-fp8-trig] [GPU:: 27226] GFLOPS 3503981
+[RESULT] [ 85089.977018] [compute-fp8-trig] [GPU:: 27226] GFLOPS 3503981 Target GFLOPS: 2061000 met: TRUE
+[RESULT] [ 85090.447452] Action name :compute-bf8-trig
+[RESULT] [ 85090.447473] Module name :gst
+[RESULT] [ 85090.947861] [compute-bf8-trig] [GPU:: 17010] Start of GPU ramp up
+[RESULT] [ 85090.947942] [compute-bf8-trig] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 85090.947949] [compute-bf8-trig] [GPU:: 36479] Start of GPU ramp up
+[RESULT] [ 85090.948117] [compute-bf8-trig] [GPU:: 57875] Start of GPU ramp up
+[RESULT] [ 85090.948197] [compute-bf8-trig] [GPU::  1590] Start of GPU ramp up
+[RESULT] [ 85090.948220] [compute-bf8-trig] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 85090.948243] [compute-bf8-trig] [GPU:: 11806] Start of GPU ramp up
+[RESULT] [ 85090.948336] [compute-bf8-trig] [GPU:: 51771] Start of GPU ramp up
+[RESULT] [ 85097.926477] [compute-bf8-trig] [GPU:: 51771] GFLOPS 3347067
+[RESULT] [ 85097.926770] [compute-bf8-trig] [GPU:: 17010] GFLOPS 3383112
+[RESULT] [ 85097.930781] [compute-bf8-trig] [GPU:: 27226] GFLOPS 3398799
+[RESULT] [ 85097.932705] [compute-bf8-trig] [GPU:: 42583] GFLOPS 3287030
+[RESULT] [ 85097.933290] [compute-bf8-trig] [GPU::  1590] GFLOPS 3224374
+[RESULT] [ 85097.933933] [compute-bf8-trig] [GPU:: 36479] GFLOPS 3233857
+[RESULT] [ 85097.934404] [compute-bf8-trig] [GPU:: 11806] GFLOPS 3154983
+[RESULT] [ 85097.934574] [compute-bf8-trig] [GPU:: 57875] GFLOPS 3277232
+[RESULT] [ 85098.926186] [compute-bf8-trig] [GPU:: 51771] End of GPU ramp up
+[RESULT] [ 85098.926769] [compute-bf8-trig] [GPU:: 17010] End of GPU ramp up
+[RESULT] [ 85098.931348] [compute-bf8-trig] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 85098.932783] [compute-bf8-trig] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 85098.933090] [compute-bf8-trig] [GPU::  1590] End of GPU ramp up
+[RESULT] [ 85098.934008] [compute-bf8-trig] [GPU:: 36479] End of GPU ramp up
+[RESULT] [ 85098.934779] [compute-bf8-trig] [GPU:: 11806] End of GPU ramp up
+[RESULT] [ 85098.934826] [compute-bf8-trig] [GPU:: 57875] End of GPU ramp up
+[RESULT] [ 85105.591347] [compute-bf8-trig] [GPU:: 51771] GFLOPS 3299293
+[RESULT] [ 85105.641779] [compute-bf8-trig] [GPU:: 17010] GFLOPS 3274801
+[RESULT] [ 85105.710448] [compute-bf8-trig] [GPU:: 11806] GFLOPS 3245481
+[RESULT] [ 85105.731065] [compute-bf8-trig] [GPU:: 57875] GFLOPS 3235658
+[RESULT] [ 85105.750322] [compute-bf8-trig] [GPU:: 36479] GFLOPS 3226131
+[RESULT] [ 85105.778929] [compute-bf8-trig] [GPU:: 42583] GFLOPS 3212073
+[RESULT] [ 85105.813963] [compute-bf8-trig] [GPU::  1590] GFLOPS 3195862
+[RESULT] [ 85105.845621] [compute-bf8-trig] [GPU:: 27226] GFLOPS 3180423
+[RESULT] [ 85112.263249] [compute-bf8-trig] [GPU:: 51771] GFLOPS 3295965
+[RESULT] [ 85112.263281] [compute-bf8-trig] [GPU:: 51771] GFLOPS 3299293 Target GFLOPS: 1854000 met: TRUE
+[RESULT] [ 85112.371135] [compute-bf8-trig] [GPU:: 17010] GFLOPS 3267824
+[RESULT] [ 85112.371166] [compute-bf8-trig] [GPU:: 17010] GFLOPS 3274801 Target GFLOPS: 1854000 met: TRUE
+[RESULT] [ 85112.494917] [compute-bf8-trig] [GPU:: 11806] GFLOPS 3241279
+[RESULT] [ 85112.494950] [compute-bf8-trig] [GPU:: 11806] GFLOPS 3245481 Target GFLOPS: 1854000 met: TRUE
+[RESULT] [ 85112.544929] [compute-bf8-trig] [GPU:: 57875] GFLOPS 3227298
+[RESULT] [ 85112.544965] [compute-bf8-trig] [GPU:: 57875] GFLOPS 3235658 Target GFLOPS: 1854000 met: TRUE
+[RESULT] [ 85112.564143] [compute-bf8-trig] [GPU:: 36479] GFLOPS 3227319
+[RESULT] [ 85112.564178] [compute-bf8-trig] [GPU:: 36479] GFLOPS 3227319 Target GFLOPS: 1854000 met: TRUE
+[RESULT] [ 85112.616010] [compute-bf8-trig] [GPU:: 42583] GFLOPS 3216340
+[RESULT] [ 85112.616040] [compute-bf8-trig] [GPU:: 42583] GFLOPS 3216340 Target GFLOPS: 1854000 met: TRUE
+[RESULT] [ 85112.691748] [compute-bf8-trig] [GPU::  1590] GFLOPS 3197303
+[RESULT] [ 85112.691780] [compute-bf8-trig] [GPU::  1590] GFLOPS 3197303 Target GFLOPS: 1854000 met: TRUE
+[RESULT] [ 85112.775126] [compute-bf8-trig] [GPU:: 27226] GFLOPS 3173438
+[RESULT] [ 85112.775157] [compute-bf8-trig] [GPU:: 27226] GFLOPS 3180423 Target GFLOPS: 1854000 met: TRUE
+[RESULT] [ 85113.334193] Action name :compute-fp16-trig
+[RESULT] [ 85113.334212] Module name :gst
+[RESULT] [ 85113.834552] [compute-fp16-trig] [GPU:: 17010] Start of GPU ramp up
+[RESULT] [ 85113.834581] [compute-fp16-trig] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 85113.834637] [compute-fp16-trig] [GPU:: 36479] Start of GPU ramp up
+[RESULT] [ 85113.834711] [compute-fp16-trig] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 85113.834794] [compute-fp16-trig] [GPU:: 57875] Start of GPU ramp up
+[RESULT] [ 85113.834886] [compute-fp16-trig] [GPU::  1590] Start of GPU ramp up
+[RESULT] [ 85113.834926] [compute-fp16-trig] [GPU:: 11806] Start of GPU ramp up
+[RESULT] [ 85113.834997] [compute-fp16-trig] [GPU:: 51771] Start of GPU ramp up
+[RESULT] [ 85119.212063] [compute-fp16-trig] [GPU::  1590] GFLOPS 1486831
+[RESULT] [ 85119.268450] [compute-fp16-trig] [GPU:: 36479] GFLOPS 1439151
+[RESULT] [ 85119.289180] [compute-fp16-trig] [GPU:: 27226] GFLOPS 1533489
+[RESULT] [ 85119.322218] [compute-fp16-trig] [GPU:: 57875] GFLOPS 1493901
+[RESULT] [ 85119.351687] [compute-fp16-trig] [GPU:: 42583] GFLOPS 1515522
+[RESULT] [ 85119.359939] [compute-fp16-trig] [GPU:: 17010] GFLOPS 1577491
+[RESULT] [ 85119.366980] [compute-fp16-trig] [GPU:: 51771] GFLOPS 1544257
+[RESULT] [ 85119.368400] [compute-fp16-trig] [GPU:: 11806] GFLOPS 1551886
+[RESULT] [ 85120.211782] [compute-fp16-trig] [GPU::  1590] End of GPU ramp up
+[RESULT] [ 85120.269057] [compute-fp16-trig] [GPU:: 36479] End of GPU ramp up
+[RESULT] [ 85120.289257] [compute-fp16-trig] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 85120.321740] [compute-fp16-trig] [GPU:: 57875] End of GPU ramp up
+[RESULT] [ 85120.350511] [compute-fp16-trig] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 85120.359155] [compute-fp16-trig] [GPU:: 17010] End of GPU ramp up
+[RESULT] [ 85120.365964] [compute-fp16-trig] [GPU:: 51771] End of GPU ramp up
+[RESULT] [ 85120.368617] [compute-fp16-trig] [GPU:: 11806] End of GPU ramp up
+[RESULT] [ 85134.495806] [compute-fp16-trig] [GPU:: 17010] GFLOPS 1555549
+[RESULT] [ 85134.495840] [compute-fp16-trig] [GPU:: 17010] GFLOPS 1555549 Target GFLOPS: 946000 met: TRUE
+[RESULT] [ 85134.560692] [compute-fp16-trig] [GPU:: 51771] GFLOPS 1549185
+[RESULT] [ 85134.560727] [compute-fp16-trig] [GPU:: 51771] GFLOPS 1549185 Target GFLOPS: 946000 met: TRUE
+[RESULT] [ 85134.615066] [compute-fp16-trig] [GPU:: 11806] GFLOPS 1543561
+[RESULT] [ 85134.615097] [compute-fp16-trig] [GPU:: 11806] GFLOPS 1543561 Target GFLOPS: 946000 met: TRUE
+[RESULT] [ 85134.640085] [compute-fp16-trig] [GPU:: 36479] GFLOPS 1530180
+[RESULT] [ 85134.640116] [compute-fp16-trig] [GPU:: 36479] GFLOPS 1530180 Target GFLOPS: 946000 met: TRUE
+[RESULT] [ 85134.701743] [compute-fp16-trig] [GPU:: 27226] GFLOPS 1525778
+[RESULT] [ 85134.701778] [compute-fp16-trig] [GPU:: 27226] GFLOPS 1525778 Target GFLOPS: 946000 met: TRUE
+[RESULT] [ 85134.768426] [compute-fp16-trig] [GPU:: 57875] GFLOPS 1522166
+[RESULT] [ 85134.768460] [compute-fp16-trig] [GPU:: 57875] GFLOPS 1522166 Target GFLOPS: 946000 met: TRUE
+[RESULT] [ 85134.915260] [compute-fp16-trig] [GPU:: 42583] GFLOPS 1509827
+[RESULT] [ 85134.915290] [compute-fp16-trig] [GPU:: 42583] GFLOPS 1509827 Target GFLOPS: 946000 met: TRUE
+[RESULT] [ 85134.927153] [compute-fp16-trig] [GPU::  1590] GFLOPS 1494374
+[RESULT] [ 85134.927186] [compute-fp16-trig] [GPU::  1590] GFLOPS 1494374 Target GFLOPS: 946000 met: TRUE
+[RESULT] [ 85135.575327] Action name :compute-bf16-trig
+[RESULT] [ 85135.575349] Module name :gst
+[RESULT] [ 85136.75736 ] [compute-bf16-trig] [GPU:: 17010] Start of GPU ramp up
+[RESULT] [ 85136.75777 ] [compute-bf16-trig] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 85136.75812 ] [compute-bf16-trig] [GPU:: 36479] Start of GPU ramp up
+[RESULT] [ 85136.75844 ] [compute-bf16-trig] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 85136.75998 ] [compute-bf16-trig] [GPU:: 57875] Start of GPU ramp up
+[RESULT] [ 85136.76048 ] [compute-bf16-trig] [GPU::  1590] Start of GPU ramp up
+[RESULT] [ 85136.76139 ] [compute-bf16-trig] [GPU:: 11806] Start of GPU ramp up
+[RESULT] [ 85136.76174 ] [compute-bf16-trig] [GPU:: 51771] Start of GPU ramp up
+[RESULT] [ 85141.573531] [compute-bf16-trig] [GPU:: 42583] GFLOPS 1625294
+[RESULT] [ 85141.628183] [compute-bf16-trig] [GPU::  1590] GFLOPS 1616928
+[RESULT] [ 85141.702390] [compute-bf16-trig] [GPU:: 17010] GFLOPS 1659640
+[RESULT] [ 85141.709128] [compute-bf16-trig] [GPU:: 51771] GFLOPS 1626496
+[RESULT] [ 85141.714347] [compute-bf16-trig] [GPU:: 36479] GFLOPS 1620503
+[RESULT] [ 85141.749698] [compute-bf16-trig] [GPU:: 57875] GFLOPS 1632533
+[RESULT] [ 85141.756293] [compute-bf16-trig] [GPU:: 27226] GFLOPS 1645975
+[RESULT] [ 85141.760022] [compute-bf16-trig] [GPU:: 11806] GFLOPS 1662149
+[RESULT] [ 85142.572958] [compute-bf16-trig] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 85142.628630] [compute-bf16-trig] [GPU::  1590] End of GPU ramp up
+[RESULT] [ 85142.703083] [compute-bf16-trig] [GPU:: 17010] End of GPU ramp up
+[RESULT] [ 85142.708631] [compute-bf16-trig] [GPU:: 51771] End of GPU ramp up
+[RESULT] [ 85142.714392] [compute-bf16-trig] [GPU:: 36479] End of GPU ramp up
+[RESULT] [ 85142.749468] [compute-bf16-trig] [GPU:: 57875] End of GPU ramp up
+[RESULT] [ 85142.756233] [compute-bf16-trig] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 85142.759270] [compute-bf16-trig] [GPU:: 11806] End of GPU ramp up
+[RESULT] [ 85155.854644] [compute-bf16-trig] [GPU:: 51771] GFLOPS 1672772
+[RESULT] [ 85155.945115] [compute-bf16-trig] [GPU:: 17010] GFLOPS 1660642
+[RESULT] [ 85156.90122 ] [compute-bf16-trig] [GPU:: 11806] GFLOPS 1649577
+[RESULT] [ 85156.107900] [compute-bf16-trig] [GPU:: 42583] GFLOPS 1624704
+[RESULT] [ 85156.183179] [compute-bf16-trig] [GPU:: 27226] GFLOPS 1637772
+[RESULT] [ 85156.196159] [compute-bf16-trig] [GPU:: 36479] GFLOPS 1631112
+[RESULT] [ 85156.240507] [compute-bf16-trig] [GPU:: 57875] GFLOPS 1629990
+[RESULT] [ 85156.328138] [compute-bf16-trig] [GPU::  1590] GFLOPS 1605187
+[RESULT] [ 85169.14283 ] [compute-bf16-trig] [GPU:: 51771] GFLOPS 1671040
+[RESULT] [ 85169.14315 ] [compute-bf16-trig] [GPU:: 51771] GFLOPS 1672772 Target GFLOPS: 956000 met: TRUE
+[RESULT] [ 85169.216899] [compute-bf16-trig] [GPU:: 17010] GFLOPS 1656921
+[RESULT] [ 85169.216933] [compute-bf16-trig] [GPU:: 17010] GFLOPS 1660642 Target GFLOPS: 956000 met: TRUE
+[RESULT] [ 85169.441727] [compute-bf16-trig] [GPU:: 11806] GFLOPS 1647015
+[RESULT] [ 85169.441760] [compute-bf16-trig] [GPU:: 11806] GFLOPS 1649577 Target GFLOPS: 956000 met: TRUE
+[RESULT] [ 85169.623025] [compute-bf16-trig] [GPU:: 27226] GFLOPS 1636201
+[RESULT] [ 85169.623056] [compute-bf16-trig] [GPU:: 27226] GFLOPS 1637772 Target GFLOPS: 956000 met: TRUE
+[RESULT] [ 85169.691885] [compute-bf16-trig] [GPU:: 42583] GFLOPS 1618839
+[RESULT] [ 85169.691919] [compute-bf16-trig] [GPU:: 42583] GFLOPS 1624704 Target GFLOPS: 956000 met: TRUE
+[RESULT] [ 85169.697430] [compute-bf16-trig] [GPU:: 36479] GFLOPS 1628757
+[RESULT] [ 85169.697464] [compute-bf16-trig] [GPU:: 36479] GFLOPS 1631112 Target GFLOPS: 956000 met: TRUE
+[RESULT] [ 85169.746548] [compute-bf16-trig] [GPU:: 57875] GFLOPS 1628182
+[RESULT] [ 85169.746580] [compute-bf16-trig] [GPU:: 57875] GFLOPS 1629990 Target GFLOPS: 956000 met: TRUE
+[RESULT] [ 85170.56117 ] [compute-bf16-trig] [GPU::  1590] GFLOPS 1601859
+[RESULT] [ 85170.56147 ] [compute-bf16-trig] [GPU::  1590] GFLOPS 1605187 Target GFLOPS: 956000 met: TRUE
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| hbm_mid                          | BABEL          | [32mPASS          [0m  |
+| pcie_d2h_bandwidth               | PEBB           | [32mPASS          [0m  |
+| pcie_h2d_bandwidth               | PEBB           | [32mPASS          [0m  |
+| xgmi_d2d_bandwidth               | PBQT           | [32mPASS          [0m  |
+| compute-fp4-trig                 | GST            | [32mPASS          [0m  |
+| compute-fp6-trig                 | GST            | [32mPASS          [0m  |
+| compute-bf6-trig                 | GST            | [32mPASS          [0m  |
+| compute-fp8-trig                 | GST            | [32mPASS          [0m  |
+| compute-bf8-trig                 | GST            | [32mPASS          [0m  |
+| compute-fp16-trig                | GST            | [32mPASS          [0m  |
+| compute-bf16-trig                | GST            | [32mPASS          [0m  |
++---------------------------------------------------------------------+

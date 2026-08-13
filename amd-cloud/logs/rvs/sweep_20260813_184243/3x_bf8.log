@@ -1,0 +1,59 @@
+[RESULT] [ 80235.54501 ] Action name :tflops-bf8
+[RESULT] [ 80235.96423 ] Module name :gst
+[RESULT] [ 80235.674308] [tflops-bf8] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 80235.674486] [tflops-bf8] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 80235.674515] [tflops-bf8] [GPU:: 36479] Start of GPU ramp up
+[RESULT] [ 80242.710750] [tflops-bf8] [GPU:: 42583] GFLOPS 3306801
+[RESULT] [ 80242.718179] [tflops-bf8] [GPU:: 27226] GFLOPS 3352169
+[RESULT] [ 80242.727427] [tflops-bf8] [GPU:: 36479] GFLOPS 3282124
+[RESULT] [ 80243.711288] [tflops-bf8] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 80243.718222] [tflops-bf8] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 80243.727380] [tflops-bf8] [GPU:: 36479] End of GPU ramp up
+[RESULT] [ 80250.522052] [tflops-bf8] [GPU:: 36479] GFLOPS 3236408
+[RESULT] [ 80250.539322] [tflops-bf8] [GPU:: 42583] GFLOPS 3220593
+[RESULT] [ 80250.650839] [tflops-bf8] [GPU:: 27226] GFLOPS 3172010
+[RESULT] [ 80257.327583] [tflops-bf8] [GPU:: 36479] GFLOPS 3231248
+[RESULT] [ 80257.382743] [tflops-bf8] [GPU:: 42583] GFLOPS 3213356
+[RESULT] [ 80257.566539] [tflops-bf8] [GPU:: 27226] GFLOPS 3179773
+[RESULT] [ 80264.146605] [tflops-bf8] [GPU:: 36479] GFLOPS 3224854
+[RESULT] [ 80264.231046] [tflops-bf8] [GPU:: 42583] GFLOPS 3211068
+[RESULT] [ 80264.485812] [tflops-bf8] [GPU:: 27226] GFLOPS 3178130
+[RESULT] [ 80270.976071] [tflops-bf8] [GPU:: 36479] GFLOPS 3219925
+[RESULT] [ 80271.96631 ] [tflops-bf8] [GPU:: 42583] GFLOPS 3202986
+[RESULT] [ 80271.409821] [tflops-bf8] [GPU:: 27226] GFLOPS 3175957
+[RESULT] [ 80277.798925] [tflops-bf8] [GPU:: 36479] GFLOPS 3223047
+[RESULT] [ 80277.798962] [tflops-bf8] [GPU:: 36479] GFLOPS 3236408 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 80277.935683] [tflops-bf8] [GPU:: 42583] GFLOPS 3215414
+[RESULT] [ 80277.935728] [tflops-bf8] [GPU:: 42583] GFLOPS 3220593 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 80278.342494] [tflops-bf8] [GPU:: 27226] GFLOPS 3171989
+[RESULT] [ 80278.342534] [tflops-bf8] [GPU:: 27226] GFLOPS 3179773 Target GFLOPS: 0 met: TRUE
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| tflops-bf8                       | GST            | [32mPASS          [0m  |
++---------------------------------------------------------------------+

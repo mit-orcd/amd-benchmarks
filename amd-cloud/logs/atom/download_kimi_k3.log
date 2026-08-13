@@ -1,0 +1,8 @@
+[2026-08-13T19:49:48+00:00] tier3: moonshotai/Kimi-K3 -> /mnt/scratch/shaohao/models/Kimi-K3 (1.56 TB)
+  free on /mnt/scratch: 6.6T
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Still waiting to acquire lock on /mnt/scratch/shaohao/models/Kimi-K3/.cache/huggingface/.gitignore.lock (elapsed: 0.1 seconds)
+path=/mnt/scratch/shaohao/models/Kimi-K3
+[2026-08-13T20:00:45+00:00] tier3: rc=0 size=1.5T
+[2026-08-13T20:00:45+00:00] downloads done
+/dev/nvme2n1p1  7.0T  1.5T  5.1T  23% /mnt/scratch

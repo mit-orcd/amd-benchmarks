@@ -1,0 +1,1218 @@
+[RESULT] [ 83453.593973] Action name :pcie_h2d_bandwidth
+[RESULT] [ 83453.706025] Module name :pebb
+[INFO  ] [ 83453.706075] Missing 'device_index' key.
+[RESULT] [ 83453.706491] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] distance:20 PCIe:20
+[RESULT] [ 83453.706508] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] distance:52 PCIe:52
+[RESULT] [ 83453.706510] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] distance:20 PCIe:20
+[RESULT] [ 83453.706512] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] distance:52 PCIe:52
+[RESULT] [ 83453.706513] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] distance:20 PCIe:20
+[RESULT] [ 83453.706514] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] distance:52 PCIe:52
+[RESULT] [ 83453.706516] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] distance:20 PCIe:20
+[RESULT] [ 83453.706517] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] distance:52 PCIe:52
+[RESULT] [ 83453.706518] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:52 PCIe:52
+[RESULT] [ 83453.706520] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:20 PCIe:20
+[RESULT] [ 83453.706521] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] distance:52 PCIe:52
+[RESULT] [ 83453.706523] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] distance:20 PCIe:20
+[RESULT] [ 83453.706524] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:52 PCIe:52
+[RESULT] [ 83453.706525] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:20 PCIe:20
+[RESULT] [ 83453.706526] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] distance:52 PCIe:52
+[RESULT] [ 83453.706527] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] distance:20 PCIe:20
+[INFO  ] [ 83454.791608] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps
+[INFO  ] [ 83454.791620] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps
+[INFO  ] [ 83454.791625] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83454.791628] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83454.791629] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83454.791631] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83454.791633] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83454.791634] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83454.791636] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83454.791638] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83454.791639] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83454.791641] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83454.791642] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83454.791644] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83454.791670] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83454.791672] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83455.791526] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83455.791538] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83455.791541] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps
+[INFO  ] [ 83455.791543] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps
+[INFO  ] [ 83455.791545] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83455.791547] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83455.791548] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83455.791550] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83455.791552] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83455.791553] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83455.791555] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83455.791556] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83455.791557] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83455.791559] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83455.791560] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83455.791562] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83456.790891] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83456.790903] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83456.790905] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83456.790908] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83456.790910] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps
+[INFO  ] [ 83456.790912] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.711 GBps
+[INFO  ] [ 83456.790914] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83456.790916] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83456.790917] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83456.790919] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83456.790948] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83456.790949] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83456.790951] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83456.790952] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83456.790954] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83456.790955] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83457.791029] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83457.791048] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83457.791054] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83457.791059] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83457.791064] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83457.791069] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83457.791074] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.715 GBps
+[INFO  ] [ 83457.791079] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.717 GBps
+[INFO  ] [ 83457.791084] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83457.791088] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83457.791093] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83457.791097] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83457.791101] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83457.791106] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83457.791110] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83457.791115] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83458.790375] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83458.790391] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83458.790394] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83458.790397] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83458.790399] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83458.790434] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83458.790437] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83458.790440] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83458.790443] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps
+[INFO  ] [ 83458.790446] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.637 GBps
+[INFO  ] [ 83458.790449] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83458.790451] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83458.790454] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83458.790456] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83458.790458] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83458.790460] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83459.790259] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83459.790270] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83459.790273] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83459.790275] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83459.790277] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83459.790279] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83459.790281] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83459.790282] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83459.790284] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83459.790286] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.637 GBps (*)
+[INFO  ] [ 83459.790288] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.654 GBps
+[INFO  ] [ 83459.790290] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.718 GBps
+[INFO  ] [ 83459.790293] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83459.790294] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83459.790296] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83459.790297] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83460.789925] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83460.790125] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83460.790128] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83460.790132] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83460.790135] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83460.790137] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83460.790140] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83460.790143] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83460.790146] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83460.790149] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.637 GBps (*)
+[INFO  ] [ 83460.790151] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.654 GBps (*)
+[INFO  ] [ 83460.790155] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83460.790158] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.678 GBps
+[INFO  ] [ 83460.790161] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.658 GBps
+[INFO  ] [ 83460.790163] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83460.790166] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false -nan GBps (*)
+[INFO  ] [ 83461.790103] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83461.790118] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83461.790122] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83461.790125] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83461.790128] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83461.790131] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83461.790134] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83461.790137] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83461.790140] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83461.790143] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.637 GBps (*)
+[INFO  ] [ 83461.790146] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.654 GBps (*)
+[INFO  ] [ 83461.790148] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83461.790152] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.678 GBps (*)
+[INFO  ] [ 83461.790192] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.658 GBps (*)
+[INFO  ] [ 83461.790195] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.716 GBps
+[INFO  ] [ 83461.790198] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.655 GBps
+[INFO  ] [ 83462.790107] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.717 GBps
+[INFO  ] [ 83462.790122] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.696 GBps
+[INFO  ] [ 83462.790125] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.664 GBps
+[INFO  ] [ 83462.790130] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83462.790134] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83462.790137] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83462.790140] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83462.790143] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83462.790146] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83462.790149] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.637 GBps (*)
+[INFO  ] [ 83462.790152] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.654 GBps (*)
+[INFO  ] [ 83462.790155] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83462.790160] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.678 GBps (*)
+[INFO  ] [ 83462.790165] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.658 GBps (*)
+[INFO  ] [ 83462.790167] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83462.790170] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.655 GBps (*)
+[INFO  ] [ 83463.789507] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83463.789523] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.705 GBps (*)
+[INFO  ] [ 83463.789529] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.690 GBps (*)
+[INFO  ] [ 83463.789534] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.717 GBps
+[INFO  ] [ 83463.789538] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps
+[INFO  ] [ 83463.789542] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83463.789545] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.715 GBps (*)
+[INFO  ] [ 83463.789548] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83463.789591] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83463.789594] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.637 GBps (*)
+[INFO  ] [ 83463.789597] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.654 GBps (*)
+[INFO  ] [ 83463.789600] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83463.789603] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.678 GBps (*)
+[INFO  ] [ 83463.789606] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.658 GBps (*)
+[INFO  ] [ 83463.789609] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83463.789612] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.655 GBps (*)
+[INFO  ] [ 83464.789604] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83464.789619] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.705 GBps (*)
+[INFO  ] [ 83464.789623] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.690 GBps (*)
+[INFO  ] [ 83464.789626] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83464.789630] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83464.789634] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.715 GBps
+[INFO  ] [ 83464.789637] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.697 GBps
+[INFO  ] [ 83464.789640] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83464.789643] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83464.789646] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.637 GBps (*)
+[INFO  ] [ 83464.789649] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.654 GBps (*)
+[INFO  ] [ 83464.789652] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83464.789655] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.678 GBps (*)
+[INFO  ] [ 83464.789657] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.658 GBps (*)
+[INFO  ] [ 83464.789660] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83464.789662] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.655 GBps (*)
+[INFO  ] [ 83465.789143] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83465.789153] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.705 GBps (*)
+[INFO  ] [ 83465.789154] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.690 GBps (*)
+[INFO  ] [ 83465.789155] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83465.789202] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83465.789204] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.713 GBps (*)
+[INFO  ] [ 83465.789205] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.706 GBps (*)
+[INFO  ] [ 83465.789206] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.715 GBps
+[INFO  ] [ 83465.789207] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.717 GBps
+[INFO  ] [ 83465.789209] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.637 GBps (*)
+[INFO  ] [ 83465.789210] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.654 GBps (*)
+[INFO  ] [ 83465.789212] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83465.789213] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.678 GBps (*)
+[INFO  ] [ 83465.789214] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.658 GBps (*)
+[INFO  ] [ 83465.789214] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83465.789215] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.655 GBps (*)
+[INFO  ] [ 83466.789162] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83466.789178] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.705 GBps (*)
+[INFO  ] [ 83466.789184] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.690 GBps (*)
+[INFO  ] [ 83466.789188] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83466.789191] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83466.789194] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.713 GBps (*)
+[INFO  ] [ 83466.789197] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.706 GBps (*)
+[INFO  ] [ 83466.789202] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83466.789205] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83466.789209] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.702 GBps
+[INFO  ] [ 83466.789212] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.716 GBps
+[INFO  ] [ 83466.789215] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83466.789218] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.678 GBps (*)
+[INFO  ] [ 83466.789221] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.658 GBps (*)
+[INFO  ] [ 83466.789224] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83466.789226] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.655 GBps (*)
+[INFO  ] [ 83467.789016] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83467.789026] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.705 GBps (*)
+[INFO  ] [ 83467.789027] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.690 GBps (*)
+[INFO  ] [ 83467.789028] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83467.789029] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83467.789031] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.713 GBps (*)
+[INFO  ] [ 83467.789032] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.706 GBps (*)
+[INFO  ] [ 83467.789033] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83467.789034] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83467.789035] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.669 GBps (*)
+[INFO  ] [ 83467.789036] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83467.789038] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.622 GBps
+[INFO  ] [ 83467.789039] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.649 GBps
+[INFO  ] [ 83467.789039] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.658 GBps (*)
+[INFO  ] [ 83467.789040] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83467.789041] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.655 GBps (*)
+[INFO  ] [ 83468.789051] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83468.789067] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.705 GBps (*)
+[INFO  ] [ 83468.789071] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.690 GBps (*)
+[INFO  ] [ 83468.789074] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83468.789077] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83468.789080] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.713 GBps (*)
+[INFO  ] [ 83468.789083] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.706 GBps (*)
+[INFO  ] [ 83468.789085] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83468.789088] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83468.789091] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.669 GBps (*)
+[INFO  ] [ 83468.789094] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83468.789138] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.670 GBps (*)
+[INFO  ] [ 83468.789140] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.663 GBps (*)
+[INFO  ] [ 83468.789144] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.648 GBps
+[INFO  ] [ 83468.789147] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps
+[INFO  ] [ 83468.789150] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.655 GBps (*)
+[INFO  ] [ 83469.788773] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.711 GBps
+[INFO  ] [ 83469.788793] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.705 GBps (*)
+[INFO  ] [ 83469.788799] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.690 GBps (*)
+[INFO  ] [ 83469.788805] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83469.788808] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83469.788812] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.713 GBps (*)
+[INFO  ] [ 83469.788815] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.706 GBps (*)
+[INFO  ] [ 83469.788818] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83469.788821] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83469.788824] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.669 GBps (*)
+[INFO  ] [ 83469.788827] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83469.788830] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.670 GBps (*)
+[INFO  ] [ 83469.788833] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.663 GBps (*)
+[INFO  ] [ 83469.788836] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.653 GBps (*)
+[INFO  ] [ 83469.788838] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83469.788841] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.716 GBps
+[INFO  ] [ 83470.788130] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83470.788146] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.716 GBps
+[INFO  ] [ 83470.788151] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.715 GBps
+[INFO  ] [ 83470.788159] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83470.788165] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83470.788170] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.713 GBps (*)
+[INFO  ] [ 83470.788175] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.706 GBps (*)
+[INFO  ] [ 83470.788260] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83470.788266] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83470.788271] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.669 GBps (*)
+[INFO  ] [ 83470.788276] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83470.788281] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.670 GBps (*)
+[INFO  ] [ 83470.788289] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.663 GBps (*)
+[INFO  ] [ 83470.788293] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.653 GBps (*)
+[INFO  ] [ 83470.788298] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83470.788303] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83471.788105] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83471.788121] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.709 GBps (*)
+[INFO  ] [ 83471.788124] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.698 GBps (*)
+[INFO  ] [ 83471.788128] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.673 GBps
+[INFO  ] [ 83471.788131] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.628 GBps
+[INFO  ] [ 83471.788135] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.713 GBps (*)
+[INFO  ] [ 83471.788138] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.706 GBps (*)
+[INFO  ] [ 83471.788141] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.716 GBps (*)
+[INFO  ] [ 83471.788144] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83471.788147] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.669 GBps (*)
+[INFO  ] [ 83471.788150] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83471.788153] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.670 GBps (*)
+[INFO  ] [ 83471.788156] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.663 GBps (*)
+[INFO  ] [ 83471.788159] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.653 GBps (*)
+[INFO  ] [ 83471.788162] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83471.788164] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83472.787901] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83472.787917] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.709 GBps (*)
+[INFO  ] [ 83472.787969] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.698 GBps (*)
+[INFO  ] [ 83472.787972] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.702 GBps (*)
+[INFO  ] [ 83472.787975] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83472.787979] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.511 GBps
+[INFO  ] [ 83472.787982] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.715 GBps
+[INFO  ] [ 83472.787985] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.711 GBps
+[INFO  ] [ 83472.787989] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.718 GBps (*)
+[INFO  ] [ 83472.787992] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.669 GBps (*)
+[INFO  ] [ 83472.787995] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83472.787998] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.670 GBps (*)
+[INFO  ] [ 83472.788009] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.663 GBps (*)
+[INFO  ] [ 83472.788014] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.653 GBps (*)
+[INFO  ] [ 83472.788019] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83472.788024] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83473.787834] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83473.787850] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.709 GBps (*)
+[INFO  ] [ 83473.787854] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.698 GBps (*)
+[INFO  ] [ 83473.787857] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.702 GBps (*)
+[INFO  ] [ 83473.787860] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83473.787863] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.645 GBps (*)
+[INFO  ] [ 83473.787866] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.709 GBps (*)
+[INFO  ] [ 83473.787869] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83473.787873] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.716 GBps
+[INFO  ] [ 83473.787876] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.716 GBps
+[INFO  ] [ 83473.787879] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83473.787882] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.670 GBps (*)
+[INFO  ] [ 83473.787885] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.663 GBps (*)
+[INFO  ] [ 83473.787888] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.653 GBps (*)
+[INFO  ] [ 83473.787943] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83473.787945] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83474.787034] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83474.787054] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.709 GBps (*)
+[INFO  ] [ 83474.787057] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.698 GBps (*)
+[INFO  ] [ 83474.787060] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.702 GBps (*)
+[INFO  ] [ 83474.787064] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83474.787069] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.645 GBps (*)
+[INFO  ] [ 83474.787073] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.709 GBps (*)
+[INFO  ] [ 83474.787076] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83474.787079] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83474.787082] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83474.787086] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.718 GBps
+[INFO  ] [ 83474.787090] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.678 GBps
+[INFO  ] [ 83474.787095] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.663 GBps (*)
+[INFO  ] [ 83474.787098] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.653 GBps (*)
+[INFO  ] [ 83474.787101] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83474.787103] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83475.786872] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83475.786883] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.709 GBps (*)
+[INFO  ] [ 83475.786886] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.698 GBps (*)
+[INFO  ] [ 83475.786887] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.702 GBps (*)
+[INFO  ] [ 83475.786890] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83475.786892] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.645 GBps (*)
+[INFO  ] [ 83475.786894] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.709 GBps (*)
+[INFO  ] [ 83475.786896] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83475.786898] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83475.786936] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83475.786938] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.696 GBps (*)
+[INFO  ] [ 83475.786939] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.673 GBps (*)
+[INFO  ] [ 83475.786941] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 57.622 GBps
+[INFO  ] [ 83475.786943] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.608 GBps
+[INFO  ] [ 83475.786944] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83475.786946] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83476.786834] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83476.786843] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.709 GBps (*)
+[INFO  ] [ 83476.786844] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.698 GBps (*)
+[INFO  ] [ 83476.786845] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.702 GBps (*)
+[INFO  ] [ 83476.786846] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83476.786847] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.645 GBps (*)
+[INFO  ] [ 83476.786848] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.709 GBps (*)
+[INFO  ] [ 83476.786849] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83476.786850] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83476.786851] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83476.786852] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.696 GBps (*)
+[INFO  ] [ 83476.786853] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.673 GBps (*)
+[INFO  ] [ 83476.786854] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 54.921 GBps (*)
+[INFO  ] [ 83476.786854] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.638 GBps (*)
+[INFO  ] [ 83476.786856] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.716 GBps
+[INFO  ] [ 83476.786857] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.716 GBps
+[INFO  ] [ 83477.785986] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.715 GBps
+[INFO  ] [ 83477.786059] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.716 GBps
+[INFO  ] [ 83477.786066] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.698 GBps (*)
+[INFO  ] [ 83477.786072] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.702 GBps (*)
+[INFO  ] [ 83477.786077] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83477.786162] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.645 GBps (*)
+[INFO  ] [ 83477.786167] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.709 GBps (*)
+[INFO  ] [ 83477.786173] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83477.786178] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83477.786184] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83477.786189] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.696 GBps (*)
+[INFO  ] [ 83477.786194] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.673 GBps (*)
+[INFO  ] [ 83477.786199] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 54.921 GBps (*)
+[INFO  ] [ 83477.786204] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.638 GBps (*)
+[INFO  ] [ 83477.786208] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83477.786213] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.696 GBps (*)
+[INFO  ] [ 83478.785622] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83478.785634] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83478.785636] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.714 GBps
+[INFO  ] [ 83478.785638] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.711 GBps
+[INFO  ] [ 83478.785640] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83478.785641] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.645 GBps (*)
+[INFO  ] [ 83478.785643] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.709 GBps (*)
+[INFO  ] [ 83478.785645] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83478.785648] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83478.785650] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83478.785652] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.696 GBps (*)
+[INFO  ] [ 83478.785653] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.673 GBps (*)
+[INFO  ] [ 83478.785655] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 54.921 GBps (*)
+[INFO  ] [ 83478.785657] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.638 GBps (*)
+[INFO  ] [ 83478.785658] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83478.785660] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.696 GBps (*)
+[INFO  ] [ 83479.784876] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83479.784957] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83479.784961] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.702 GBps (*)
+[INFO  ] [ 83479.784963] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.704 GBps (*)
+[INFO  ] [ 83479.784968] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.543 GBps
+[INFO  ] [ 83479.784970] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.713 GBps
+[INFO  ] [ 83479.784973] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.709 GBps (*)
+[INFO  ] [ 83479.784977] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83479.784980] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83479.784983] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83479.784985] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.696 GBps (*)
+[INFO  ] [ 83479.784989] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.673 GBps (*)
+[INFO  ] [ 83479.784998] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 54.921 GBps (*)
+[INFO  ] [ 83479.785009] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.638 GBps (*)
+[INFO  ] [ 83479.785014] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83479.785019] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.696 GBps (*)
+[INFO  ] [ 83480.785105] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83480.785121] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83480.785125] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.702 GBps (*)
+[INFO  ] [ 83480.785127] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.704 GBps (*)
+[INFO  ] [ 83480.785131] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.650 GBps (*)
+[INFO  ] [ 83480.785134] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.662 GBps (*)
+[INFO  ] [ 83480.785138] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.716 GBps
+[INFO  ] [ 83480.785141] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.632 GBps
+[INFO  ] [ 83480.785144] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83480.785147] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.685 GBps (*)
+[INFO  ] [ 83480.785150] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.696 GBps (*)
+[INFO  ] [ 83480.785154] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.673 GBps (*)
+[INFO  ] [ 83480.785222] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 54.921 GBps (*)
+[INFO  ] [ 83480.785225] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.638 GBps (*)
+[INFO  ] [ 83480.785228] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83480.785231] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.696 GBps (*)
+[INFO  ] [ 83481.785165] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83481.785179] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83481.785183] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.702 GBps (*)
+[INFO  ] [ 83481.785186] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.704 GBps (*)
+[INFO  ] [ 83481.785190] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.650 GBps (*)
+[INFO  ] [ 83481.785193] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.662 GBps (*)
+[INFO  ] [ 83481.785196] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83481.785200] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.694 GBps (*)
+[INFO  ] [ 83481.785204] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.649 GBps
+[INFO  ] [ 83481.785208] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.717 GBps
+[INFO  ] [ 83481.785210] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.717 GBps
+[INFO  ] [ 83481.785214] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.673 GBps (*)
+[INFO  ] [ 83481.785216] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 54.921 GBps (*)
+[INFO  ] [ 83481.785219] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.638 GBps (*)
+[INFO  ] [ 83481.785222] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83481.785225] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.696 GBps (*)
+[INFO  ] [ 83482.785166] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83482.785183] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83482.785187] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.702 GBps (*)
+[INFO  ] [ 83482.785190] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.704 GBps (*)
+[INFO  ] [ 83482.785193] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.650 GBps (*)
+[INFO  ] [ 83482.785196] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.662 GBps (*)
+[INFO  ] [ 83482.785200] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83482.785203] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.694 GBps (*)
+[INFO  ] [ 83482.785263] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.700 GBps (*)
+[INFO  ] [ 83482.785266] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.693 GBps (*)
+[INFO  ] [ 83482.785269] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.701 GBps (*)
+[INFO  ] [ 83482.785273] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.717 GBps
+[INFO  ] [ 83482.785276] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 57.716 GBps
+[INFO  ] [ 83482.785279] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.638 GBps (*)
+[INFO  ] [ 83482.785282] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.717 GBps (*)
+[INFO  ] [ 83482.785285] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.696 GBps (*)
+[INFO  ] [ 83483.784393] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps (*)
+[INFO  ] [ 83483.784409] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83483.784413] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.702 GBps (*)
+[INFO  ] [ 83483.784416] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.704 GBps (*)
+[INFO  ] [ 83483.784419] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.650 GBps (*)
+[INFO  ] [ 83483.784422] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.662 GBps (*)
+[INFO  ] [ 83483.784425] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.711 GBps (*)
+[INFO  ] [ 83483.784431] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.694 GBps (*)
+[INFO  ] [ 83483.784434] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.700 GBps (*)
+[INFO  ] [ 83483.784437] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.693 GBps (*)
+[INFO  ] [ 83483.784441] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.701 GBps (*)
+[INFO  ] [ 83483.784444] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.684 GBps (*)
+[INFO  ] [ 83483.784447] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 55.594 GBps (*)
+[INFO  ] [ 83483.784450] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 57.715 GBps
+[INFO  ] [ 83483.784453] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.714 GBps
+[INFO  ] [ 83483.784456] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.696 GBps (*)
+[RESULT] [ 83484.251915] [pcie_h2d_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.714 GBps duration: 0.074418 secs
+[RESULT] [ 83484.251926] [pcie_h2d_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.711 GBps duration: 0.074422 secs
+[RESULT] [ 83484.251927] [pcie_h2d_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.702 GBps duration: 0.074433 secs
+[RESULT] [ 83484.251947] [pcie_h2d_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.704 GBps duration: 0.074431 secs
+[RESULT] [ 83484.251948] [pcie_h2d_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.650 GBps duration: 0.074501 secs
+[RESULT] [ 83484.251949] [pcie_h2d_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.662 GBps duration: 0.074485 secs
+[RESULT] [ 83484.251950] [pcie_h2d_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.711 GBps duration: 0.074422 secs
+[RESULT] [ 83484.251951] [pcie_h2d_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.694 GBps duration: 0.074444 secs
+[RESULT] [ 83484.251952] [pcie_h2d_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.700 GBps duration: 0.074436 secs
+[RESULT] [ 83484.251954] [pcie_h2d_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.693 GBps duration: 0.074445 secs
+[RESULT] [ 83484.251955] [pcie_h2d_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.701 GBps duration: 0.074435 secs
+[RESULT] [ 83484.251956] [pcie_h2d_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.684 GBps duration: 0.074457 secs
+[RESULT] [ 83484.251957] [pcie_h2d_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 55.594 GBps duration: 0.077256 secs
+[RESULT] [ 83484.251958] [pcie_h2d_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 54.603 GBps duration: 0.078659 secs
+[RESULT] [ 83484.251959] [pcie_h2d_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.716 GBps duration: 0.074416 secs
+[RESULT] [ 83484.251960] [pcie_h2d_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.689 GBps duration: 0.074450 secs
+[RESULT] [ 83484.251995] Action name :pcie_d2h_bandwidth
+[RESULT] [ 83484.252011] Module name :pebb
+[INFO  ] [ 83484.252032] Missing 'device_index' key.
+[RESULT] [ 83484.252467] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] distance:20 PCIe:20
+[RESULT] [ 83484.252479] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] distance:52 PCIe:52
+[RESULT] [ 83484.252481] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] distance:20 PCIe:20
+[RESULT] [ 83484.252483] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] distance:52 PCIe:52
+[RESULT] [ 83484.252484] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] distance:20 PCIe:20
+[RESULT] [ 83484.252486] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] distance:52 PCIe:52
+[RESULT] [ 83484.252488] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] distance:20 PCIe:20
+[RESULT] [ 83484.252489] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] distance:52 PCIe:52
+[RESULT] [ 83484.252491] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:52 PCIe:52
+[RESULT] [ 83484.252492] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:20 PCIe:20
+[RESULT] [ 83484.252494] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] distance:52 PCIe:52
+[RESULT] [ 83484.252495] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] distance:20 PCIe:20
+[RESULT] [ 83484.252497] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:52 PCIe:52
+[RESULT] [ 83484.252498] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:20 PCIe:20
+[RESULT] [ 83484.252504] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] distance:52 PCIe:52
+[RESULT] [ 83484.252505] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] distance:20 PCIe:20
+[INFO  ] [ 83485.252547] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.209 GBps
+[INFO  ] [ 83485.252561] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.217 GBps
+[INFO  ] [ 83485.252566] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83485.252570] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83485.252572] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83485.252574] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83485.252577] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83485.252579] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83485.252582] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83485.252584] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83485.252586] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83485.252589] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83485.252591] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83485.252594] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83485.252596] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83485.252598] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83486.251973] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83486.251988] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83486.251993] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.192 GBps
+[INFO  ] [ 83486.251996] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.136 GBps
+[INFO  ] [ 83486.251999] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83486.252034] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83486.252036] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83486.252039] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83486.252041] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83486.252044] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83486.252098] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83486.252101] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83486.252103] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83486.252106] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83486.252108] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83486.252110] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83487.251531] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83487.251546] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83487.251551] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.192 GBps (*)
+[INFO  ] [ 83487.251554] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.136 GBps (*)
+[INFO  ] [ 83487.251558] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps
+[INFO  ] [ 83487.251561] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.193 GBps
+[INFO  ] [ 83487.251564] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83487.251567] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83487.251569] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83487.251572] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83487.251574] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83487.251577] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83487.251580] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83487.251582] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83487.251584] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83487.251587] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83488.251566] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83488.251580] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83488.251584] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.192 GBps (*)
+[INFO  ] [ 83488.251587] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.136 GBps (*)
+[INFO  ] [ 83488.251590] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83488.251592] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.193 GBps (*)
+[INFO  ] [ 83488.251626] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps
+[INFO  ] [ 83488.251628] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.435 GBps
+[INFO  ] [ 83488.251632] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83488.251634] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83488.251637] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83488.251639] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83488.251642] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83488.251644] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83488.251646] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83488.251648] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83489.251480] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83489.251492] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83489.251494] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.192 GBps (*)
+[INFO  ] [ 83489.251497] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.136 GBps (*)
+[INFO  ] [ 83489.251499] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83489.251501] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.193 GBps (*)
+[INFO  ] [ 83489.251502] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83489.251504] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.435 GBps (*)
+[INFO  ] [ 83489.251507] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.188 GBps
+[INFO  ] [ 83489.251509] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps
+[INFO  ] [ 83489.251511] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83489.251512] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83489.251514] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83489.251515] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83489.251517] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83489.251519] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83490.251553] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83490.251568] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83490.251603] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.192 GBps (*)
+[INFO  ] [ 83490.251607] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.136 GBps (*)
+[INFO  ] [ 83490.251610] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83490.251613] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.193 GBps (*)
+[INFO  ] [ 83490.251616] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83490.251619] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.435 GBps (*)
+[INFO  ] [ 83490.251621] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83490.251624] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83490.251628] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.217 GBps
+[INFO  ] [ 83490.251631] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps
+[INFO  ] [ 83490.251635] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83490.251637] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83490.251639] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83490.251642] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83491.250875] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83491.250891] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83491.250895] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.192 GBps (*)
+[INFO  ] [ 83491.250898] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.136 GBps (*)
+[INFO  ] [ 83491.250901] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83491.250904] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.193 GBps (*)
+[INFO  ] [ 83491.250907] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83491.250910] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.435 GBps (*)
+[INFO  ] [ 83491.250913] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83491.250916] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83491.250921] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83491.250924] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83491.250928] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.196 GBps
+[INFO  ] [ 83491.250995] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.399 GBps
+[INFO  ] [ 83491.250998] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83491.251006] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true -nan GBps (*)
+[INFO  ] [ 83492.250812] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83492.250824] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83492.250827] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.192 GBps (*)
+[INFO  ] [ 83492.250829] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.136 GBps (*)
+[INFO  ] [ 83492.250831] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83492.250833] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.193 GBps (*)
+[INFO  ] [ 83492.250835] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83492.250836] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.435 GBps (*)
+[INFO  ] [ 83492.250838] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83492.250840] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83492.250842] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83492.250844] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83492.250845] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.196 GBps (*)
+[INFO  ] [ 83492.250847] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.399 GBps (*)
+[INFO  ] [ 83492.250850] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.142 GBps
+[INFO  ] [ 83492.250851] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps
+[INFO  ] [ 83493.250287] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.215 GBps
+[INFO  ] [ 83493.250302] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps
+[INFO  ] [ 83493.250307] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.192 GBps (*)
+[INFO  ] [ 83493.250311] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.136 GBps (*)
+[INFO  ] [ 83493.250314] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83493.250317] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.193 GBps (*)
+[INFO  ] [ 83493.250320] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83493.250322] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.435 GBps (*)
+[INFO  ] [ 83493.250325] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83493.250371] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83493.250374] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83493.250377] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83493.250380] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.196 GBps (*)
+[INFO  ] [ 83493.250383] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.399 GBps (*)
+[INFO  ] [ 83493.250386] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.142 GBps (*)
+[INFO  ] [ 83493.250388] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83494.249825] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.212 GBps (*)
+[INFO  ] [ 83494.249834] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83494.249835] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.180 GBps
+[INFO  ] [ 83494.249837] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.198 GBps
+[INFO  ] [ 83494.249838] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83494.249839] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.193 GBps (*)
+[INFO  ] [ 83494.249840] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83494.249841] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.435 GBps (*)
+[INFO  ] [ 83494.249842] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83494.249843] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83494.249844] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83494.249845] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83494.249845] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.196 GBps (*)
+[INFO  ] [ 83494.249846] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.399 GBps (*)
+[INFO  ] [ 83494.249847] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.142 GBps (*)
+[INFO  ] [ 83494.249848] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83495.249622] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.212 GBps (*)
+[INFO  ] [ 83495.249637] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83495.249640] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83495.249644] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.167 GBps (*)
+[INFO  ] [ 83495.249647] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps
+[INFO  ] [ 83495.249700] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.220 GBps
+[INFO  ] [ 83495.249703] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83495.249706] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.435 GBps (*)
+[INFO  ] [ 83495.249709] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83495.249712] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83495.249715] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83495.249717] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83495.249720] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.196 GBps (*)
+[INFO  ] [ 83495.249723] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.399 GBps (*)
+[INFO  ] [ 83495.249726] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.142 GBps (*)
+[INFO  ] [ 83495.249729] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83496.249740] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.212 GBps (*)
+[INFO  ] [ 83496.249756] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83496.249759] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83496.249763] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.167 GBps (*)
+[INFO  ] [ 83496.249766] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83496.249768] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.206 GBps (*)
+[INFO  ] [ 83496.249772] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.437 GBps
+[INFO  ] [ 83496.249775] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.432 GBps
+[INFO  ] [ 83496.249778] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83496.249782] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83496.249787] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83496.249792] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83496.249795] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.196 GBps (*)
+[INFO  ] [ 83496.249798] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.399 GBps (*)
+[INFO  ] [ 83496.249801] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.142 GBps (*)
+[INFO  ] [ 83496.249803] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83497.249447] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.212 GBps (*)
+[INFO  ] [ 83497.249462] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83497.249466] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83497.249469] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.167 GBps (*)
+[INFO  ] [ 83497.249472] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83497.249475] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.206 GBps (*)
+[INFO  ] [ 83497.249478] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83497.249481] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83497.249484] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.184 GBps
+[INFO  ] [ 83497.249487] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.179 GBps
+[INFO  ] [ 83497.249490] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps
+[INFO  ] [ 83497.249493] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83497.249496] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.196 GBps (*)
+[INFO  ] [ 83497.249499] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.399 GBps (*)
+[INFO  ] [ 83497.249502] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.142 GBps (*)
+[INFO  ] [ 83497.249504] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83498.248849] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.212 GBps (*)
+[INFO  ] [ 83498.248865] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83498.248869] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83498.248872] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.167 GBps (*)
+[INFO  ] [ 83498.248875] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83498.248878] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.206 GBps (*)
+[INFO  ] [ 83498.248881] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83498.248883] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83498.248886] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83498.248889] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83498.248893] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83498.248896] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.213 GBps
+[INFO  ] [ 83498.248935] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.302 GBps
+[INFO  ] [ 83498.248938] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.399 GBps (*)
+[INFO  ] [ 83498.248941] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.142 GBps (*)
+[INFO  ] [ 83498.248944] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83499.249032] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.212 GBps (*)
+[INFO  ] [ 83499.249048] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83499.249052] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83499.249055] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.167 GBps (*)
+[INFO  ] [ 83499.249058] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83499.249061] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.206 GBps (*)
+[INFO  ] [ 83499.249064] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83499.249066] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83499.249069] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83499.249072] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83499.249076] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83499.249079] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83499.249082] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.249 GBps (*)
+[INFO  ] [ 83499.249086] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.299 GBps
+[INFO  ] [ 83499.249088] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.215 GBps
+[INFO  ] [ 83499.249091] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83500.248220] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.215 GBps
+[INFO  ] [ 83500.248235] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83500.248239] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83500.248242] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.167 GBps (*)
+[INFO  ] [ 83500.248245] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83500.248247] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.206 GBps (*)
+[INFO  ] [ 83500.248250] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83500.248298] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83500.248301] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83500.248304] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83500.248307] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83500.248310] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83500.248313] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.249 GBps (*)
+[INFO  ] [ 83500.248316] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.349 GBps (*)
+[INFO  ] [ 83500.248318] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.179 GBps (*)
+[INFO  ] [ 83500.248321] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.218 GBps
+[INFO  ] [ 83501.248232] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83501.248248] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.209 GBps
+[INFO  ] [ 83501.248252] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.192 GBps
+[INFO  ] [ 83501.248256] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.167 GBps (*)
+[INFO  ] [ 83501.248260] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83501.248263] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.206 GBps (*)
+[INFO  ] [ 83501.248266] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83501.248269] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83501.248272] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83501.248274] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83501.248278] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83501.248281] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83501.248284] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.249 GBps (*)
+[INFO  ] [ 83501.248287] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.349 GBps (*)
+[INFO  ] [ 83501.248289] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.179 GBps (*)
+[INFO  ] [ 83501.248292] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83502.247399] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83502.247417] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83502.247424] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83502.247486] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.199 GBps
+[INFO  ] [ 83502.247491] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.215 GBps
+[INFO  ] [ 83502.247496] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.206 GBps (*)
+[INFO  ] [ 83502.247499] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83502.247502] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83502.247505] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83502.247509] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83502.247514] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83502.247519] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83502.247525] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.249 GBps (*)
+[INFO  ] [ 83502.247528] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.349 GBps (*)
+[INFO  ] [ 83502.247531] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.179 GBps (*)
+[INFO  ] [ 83502.247535] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83503.246919] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83503.246935] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83503.246939] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83503.246942] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.177 GBps (*)
+[INFO  ] [ 83503.246945] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83503.246948] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.213 GBps
+[INFO  ] [ 83503.246951] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.435 GBps
+[INFO  ] [ 83503.246954] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83503.246957] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83503.246960] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83503.246963] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83503.246966] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83503.246969] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.249 GBps (*)
+[INFO  ] [ 83503.246971] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.349 GBps (*)
+[INFO  ] [ 83503.246974] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.179 GBps (*)
+[INFO  ] [ 83503.247038] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83504.246695] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83504.246712] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83504.246715] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83504.246718] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.177 GBps (*)
+[INFO  ] [ 83504.246722] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83504.246725] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83504.246727] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83504.246731] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.435 GBps
+[INFO  ] [ 83504.246734] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.189 GBps
+[INFO  ] [ 83504.246737] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.180 GBps (*)
+[INFO  ] [ 83504.246740] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83504.246743] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83504.246746] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.249 GBps (*)
+[INFO  ] [ 83504.246749] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.349 GBps (*)
+[INFO  ] [ 83504.246752] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.179 GBps (*)
+[INFO  ] [ 83504.246755] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83505.246841] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83505.246857] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83505.246861] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83505.246864] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.177 GBps (*)
+[INFO  ] [ 83505.246867] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83505.246870] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83505.246873] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83505.246876] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83505.246884] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.187 GBps (*)
+[INFO  ] [ 83505.246888] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.188 GBps
+[INFO  ] [ 83505.246951] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps
+[INFO  ] [ 83505.246955] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83505.246958] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.249 GBps (*)
+[INFO  ] [ 83505.246963] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.349 GBps (*)
+[INFO  ] [ 83505.246967] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.179 GBps (*)
+[INFO  ] [ 83505.246970] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83506.246610] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83506.246625] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83506.246629] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83506.246632] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.177 GBps (*)
+[INFO  ] [ 83506.246636] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83506.246638] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83506.246641] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83506.246644] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83506.246648] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.187 GBps (*)
+[INFO  ] [ 83506.246650] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.182 GBps (*)
+[INFO  ] [ 83506.246654] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83506.246658] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.218 GBps
+[INFO  ] [ 83506.246661] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.274 GBps
+[INFO  ] [ 83506.246663] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.349 GBps (*)
+[INFO  ] [ 83506.246666] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.179 GBps (*)
+[INFO  ] [ 83506.246669] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83507.245841] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83507.245857] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83507.245860] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83507.245863] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.177 GBps (*)
+[INFO  ] [ 83507.245866] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83507.245869] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83507.245921] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83507.245923] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83507.245927] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.187 GBps (*)
+[INFO  ] [ 83507.245929] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.182 GBps (*)
+[INFO  ] [ 83507.245932] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83507.245935] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83507.245938] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.257 GBps (*)
+[INFO  ] [ 83507.245941] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.291 GBps
+[INFO  ] [ 83507.245944] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.212 GBps
+[INFO  ] [ 83507.245947] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.217 GBps (*)
+[INFO  ] [ 83508.245571] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.215 GBps
+[INFO  ] [ 83508.245587] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83508.245591] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.188 GBps (*)
+[INFO  ] [ 83508.245595] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.177 GBps (*)
+[INFO  ] [ 83508.245598] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83508.245601] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83508.245603] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83508.245606] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83508.245609] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.187 GBps (*)
+[INFO  ] [ 83508.245612] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.182 GBps (*)
+[INFO  ] [ 83508.245615] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83508.245618] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83508.245621] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.257 GBps (*)
+[INFO  ] [ 83508.245624] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.330 GBps (*)
+[INFO  ] [ 83508.245626] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.190 GBps (*)
+[INFO  ] [ 83508.245629] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.210 GBps
+[INFO  ] [ 83509.245056] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83509.245292] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.212 GBps
+[INFO  ] [ 83509.245296] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.185 GBps
+[INFO  ] [ 83509.245300] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.177 GBps (*)
+[INFO  ] [ 83509.245304] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83509.245306] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83509.245310] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83509.245312] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83509.245315] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.187 GBps (*)
+[INFO  ] [ 83509.245318] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.182 GBps (*)
+[INFO  ] [ 83509.245321] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83509.245324] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83509.245326] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.257 GBps (*)
+[INFO  ] [ 83509.245329] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.330 GBps (*)
+[INFO  ] [ 83509.245332] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.190 GBps (*)
+[INFO  ] [ 83509.245335] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83510.245165] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83510.245182] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83510.245186] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.187 GBps (*)
+[INFO  ] [ 83510.245190] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.192 GBps
+[INFO  ] [ 83510.245193] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.216 GBps
+[INFO  ] [ 83510.245196] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.209 GBps (*)
+[INFO  ] [ 83510.245200] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.436 GBps (*)
+[INFO  ] [ 83510.245202] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83510.245206] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.187 GBps (*)
+[INFO  ] [ 83510.245209] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.182 GBps (*)
+[INFO  ] [ 83510.245212] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83510.245215] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83510.245217] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.257 GBps (*)
+[INFO  ] [ 83510.245264] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.330 GBps (*)
+[INFO  ] [ 83510.245267] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.190 GBps (*)
+[INFO  ] [ 83510.245270] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83511.245016] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83511.245032] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83511.245035] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.187 GBps (*)
+[INFO  ] [ 83511.245038] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.181 GBps (*)
+[INFO  ] [ 83511.245041] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83511.245045] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.214 GBps
+[INFO  ] [ 83511.245048] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.427 GBps
+[INFO  ] [ 83511.245051] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83511.245054] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.187 GBps (*)
+[INFO  ] [ 83511.245058] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.182 GBps (*)
+[INFO  ] [ 83511.245061] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83511.245064] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83511.245066] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.257 GBps (*)
+[INFO  ] [ 83511.245069] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.330 GBps (*)
+[INFO  ] [ 83511.245072] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.190 GBps (*)
+[INFO  ] [ 83511.245075] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83512.244789] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83512.244805] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83512.244809] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.187 GBps (*)
+[INFO  ] [ 83512.244812] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.181 GBps (*)
+[INFO  ] [ 83512.244815] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83512.244818] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.210 GBps (*)
+[INFO  ] [ 83512.244821] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83512.244825] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.437 GBps
+[INFO  ] [ 83512.244831] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.185 GBps
+[INFO  ] [ 83512.244872] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.182 GBps (*)
+[INFO  ] [ 83512.244878] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps (*)
+[INFO  ] [ 83512.244881] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83512.244884] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.257 GBps (*)
+[INFO  ] [ 83512.244887] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.330 GBps (*)
+[INFO  ] [ 83512.244889] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.190 GBps (*)
+[INFO  ] [ 83512.244892] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83513.244549] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83513.244565] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83513.244568] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.187 GBps (*)
+[INFO  ] [ 83513.244571] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.181 GBps (*)
+[INFO  ] [ 83513.244574] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83513.244577] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.210 GBps (*)
+[INFO  ] [ 83513.244580] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83513.244583] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.435 GBps (*)
+[INFO  ] [ 83513.244586] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83513.244589] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.175 GBps
+[INFO  ] [ 83513.244592] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps
+[INFO  ] [ 83513.244595] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83513.244598] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.257 GBps (*)
+[INFO  ] [ 83513.244601] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.330 GBps (*)
+[INFO  ] [ 83513.244604] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.190 GBps (*)
+[INFO  ] [ 83513.244607] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83514.243800] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83514.243815] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps (*)
+[INFO  ] [ 83514.243819] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.187 GBps (*)
+[INFO  ] [ 83514.243822] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.181 GBps (*)
+[INFO  ] [ 83514.243883] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.214 GBps (*)
+[INFO  ] [ 83514.243886] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.210 GBps (*)
+[INFO  ] [ 83514.243889] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps (*)
+[INFO  ] [ 83514.243892] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.435 GBps (*)
+[INFO  ] [ 83514.243895] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.186 GBps (*)
+[INFO  ] [ 83514.243898] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.181 GBps (*)
+[INFO  ] [ 83514.243901] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps (*)
+[INFO  ] [ 83514.243905] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.220 GBps
+[INFO  ] [ 83514.243908] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.294 GBps
+[INFO  ] [ 83514.243911] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.330 GBps (*)
+[INFO  ] [ 83514.243914] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.190 GBps (*)
+[INFO  ] [ 83514.243917] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.215 GBps (*)
+[RESULT] [ 83514.263027] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps duration: 0.075069 secs
+[RESULT] [ 83514.263038] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.213 GBps duration: 0.075070 secs
+[RESULT] [ 83514.263040] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.187 GBps duration: 0.075104 secs
+[RESULT] [ 83514.263043] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.181 GBps duration: 0.075112 secs
+[RESULT] [ 83514.263044] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.214 GBps duration: 0.075068 secs
+[RESULT] [ 83514.263046] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.210 GBps duration: 0.075074 secs
+[RESULT] [ 83514.263048] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.434 GBps duration: 0.076106 secs
+[RESULT] [ 83514.263049] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.435 GBps duration: 0.076105 secs
+[RESULT] [ 83514.263050] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.186 GBps duration: 0.075105 secs
+[RESULT] [ 83514.263052] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.181 GBps duration: 0.075112 secs
+[RESULT] [ 83514.263054] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps duration: 0.075067 secs
+[RESULT] [ 83514.263056] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.216 GBps duration: 0.075065 secs
+[RESULT] [ 83514.263057] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.266 GBps duration: 0.076333 secs
+[RESULT] [ 83514.263058] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.323 GBps duration: 0.076257 secs
+[RESULT] [ 83514.263095] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.190 GBps duration: 0.056325 secs
+[RESULT] [ 83514.263097] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.215 GBps duration: 0.056300 secs
+[RESULT] [ 83514.263126] Action name :pcie_h2d_bandwidth_tb_dma
+[RESULT] [ 83514.263134] Module name :pebb
+[INFO  ] [ 83514.263158] Missing 'device_index' key.
+[RESULT] [ 83514.263602] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] distance:20 PCIe:20
+[RESULT] [ 83514.263613] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] distance:52 PCIe:52
+[RESULT] [ 83514.263616] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] distance:20 PCIe:20
+[RESULT] [ 83514.263618] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] distance:52 PCIe:52
+[RESULT] [ 83514.263620] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] distance:20 PCIe:20
+[RESULT] [ 83514.263622] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] distance:52 PCIe:52
+[RESULT] [ 83514.263624] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] distance:20 PCIe:20
+[RESULT] [ 83514.263626] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] distance:52 PCIe:52
+[RESULT] [ 83514.263628] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:52 PCIe:52
+[RESULT] [ 83514.263630] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:20 PCIe:20
+[RESULT] [ 83514.263632] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] distance:52 PCIe:52
+[RESULT] [ 83514.263634] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] distance:20 PCIe:20
+[RESULT] [ 83514.263636] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:52 PCIe:52
+[RESULT] [ 83514.263637] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:20 PCIe:20
+[RESULT] [ 83514.263640] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] distance:52 PCIe:52
+[RESULT] [ 83514.263641] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] distance:20 PCIe:20
+[RESULT] [ 83552.418568] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.296 GBps duration: 0.187404 secs
+[RESULT] [ 83552.418581] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.268 GBps duration: 0.187496 secs
+[RESULT] [ 83552.418584] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.251 GBps duration: 0.187551 secs
+[RESULT] [ 83552.418586] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.303 GBps duration: 0.187379 secs
+[RESULT] [ 83552.418588] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.292 GBps duration: 0.187417 secs
+[RESULT] [ 83552.418590] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.260 GBps duration: 0.187519 secs
+[RESULT] [ 83552.418592] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.293 GBps duration: 0.187412 secs
+[RESULT] [ 83552.418594] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 57.251 GBps duration: 0.187549 secs
+[RESULT] [ 83552.418630] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.299 GBps duration: 0.187391 secs
+[RESULT] [ 83552.418632] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.312 GBps duration: 0.187349 secs
+[RESULT] [ 83552.418634] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.234 GBps duration: 0.187607 secs
+[RESULT] [ 83552.418635] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.279 GBps duration: 0.187459 secs
+[RESULT] [ 83552.418637] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 57.329 GBps duration: 0.187296 secs
+[RESULT] [ 83552.418639] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.278 GBps duration: 0.201537 secs
+[RESULT] [ 83552.418640] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.315 GBps duration: 0.187340 secs
+[RESULT] [ 83552.418642] [pcie_h2d_bandwidth_tb_dma] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 57.286 GBps duration: 0.187437 secs
+[RESULT] [ 83552.418675] Action name :pcie_d2h_bandwidth_tb_dma
+[RESULT] [ 83552.418683] Module name :pebb
+[INFO  ] [ 83552.418714] Missing 'device_index' key.
+[RESULT] [ 83552.419353] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] distance:20 PCIe:20
+[RESULT] [ 83552.419370] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] distance:52 PCIe:52
+[RESULT] [ 83552.419374] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] distance:20 PCIe:20
+[RESULT] [ 83552.419376] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] distance:52 PCIe:52
+[RESULT] [ 83552.419379] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] distance:20 PCIe:20
+[RESULT] [ 83552.419382] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] distance:52 PCIe:52
+[RESULT] [ 83552.419385] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] distance:20 PCIe:20
+[RESULT] [ 83552.419388] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] distance:52 PCIe:52
+[RESULT] [ 83552.419390] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:52 PCIe:52
+[RESULT] [ 83552.419393] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:20 PCIe:20
+[RESULT] [ 83552.419396] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] distance:52 PCIe:52
+[RESULT] [ 83552.419399] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] distance:20 PCIe:20
+[RESULT] [ 83552.419401] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:52 PCIe:52
+[RESULT] [ 83552.419402] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:20 PCIe:20
+[RESULT] [ 83552.419405] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] distance:52 PCIe:52
+[RESULT] [ 83552.419406] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] distance:20 PCIe:20
+[RESULT] [ 83591.62752 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.010 GBps duration: 0.188341 secs
+[RESULT] [ 83591.62763 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.014 GBps duration: 0.188330 secs
+[RESULT] [ 83591.62765 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 56.972 GBps duration: 0.188469 secs
+[RESULT] [ 83591.62799 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.007 GBps duration: 0.188351 secs
+[RESULT] [ 83591.62800 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.008 GBps duration: 0.188349 secs
+[RESULT] [ 83591.62802 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.018 GBps duration: 0.188318 secs
+[RESULT] [ 83591.62803 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.222 GBps duration: 0.190983 secs
+[RESULT] [ 83591.62804 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.199 GBps duration: 0.191059 secs
+[RESULT] [ 83591.62805 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 56.997 GBps duration: 0.188385 secs
+[RESULT] [ 83591.62807 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 56.973 GBps duration: 0.188466 secs
+[RESULT] [ 83591.62808 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.027 GBps duration: 0.188288 secs
+[RESULT] [ 83591.62809 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.023 GBps duration: 0.188300 secs
+[RESULT] [ 83591.62811 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.154 GBps duration: 0.191213 secs
+[RESULT] [ 83591.62812 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.166 GBps duration: 0.191174 secs
+[RESULT] [ 83591.62813 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.022 GBps duration: 0.188302 secs
+[RESULT] [ 83591.62814 ] [pcie_d2h_bandwidth_tb_dma] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.015 GBps duration: 0.188325 secs
+[RESULT] [ 83591.62848 ] Action name :pcie_h2d_bandwidth_tb_gfx
+[RESULT] [ 83591.62856 ] Module name :pebb
+[INFO  ] [ 83591.62881 ] Missing 'device_index' key.
+[RESULT] [ 83591.63378 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] distance:20 PCIe:20
+[RESULT] [ 83591.63389 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] distance:52 PCIe:52
+[RESULT] [ 83591.63392 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] distance:20 PCIe:20
+[RESULT] [ 83591.63393 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] distance:52 PCIe:52
+[RESULT] [ 83591.63395 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] distance:20 PCIe:20
+[RESULT] [ 83591.63397 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] distance:52 PCIe:52
+[RESULT] [ 83591.63398 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] distance:20 PCIe:20
+[RESULT] [ 83591.63400 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] distance:52 PCIe:52
+[RESULT] [ 83591.63401 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:52 PCIe:52
+[RESULT] [ 83591.63403 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:20 PCIe:20
+[RESULT] [ 83591.63405 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] distance:52 PCIe:52
+[RESULT] [ 83591.63407 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] distance:20 PCIe:20
+[RESULT] [ 83591.63415 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:52 PCIe:52
+[RESULT] [ 83591.63416 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:20 PCIe:20
+[RESULT] [ 83591.63418 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] distance:52 PCIe:52
+[RESULT] [ 83591.63419 ] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] distance:20 PCIe:20
+RVS-ERROR [PEBB] [pcie_h2d_bandwidth_tb_gfx] Transferbench error: 125232 out of 262144 pages for memory allocation were not on NUMA node 1. This could be due to hardware memory issues, or the use of numa-rebalancing daemons such as numad [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:1607 in AllocateMemory] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:4255 in PrepareExecutor] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:5894 in RunTransfers]
+RVS-ERROR [PEBB] [pcie_h2d_bandwidth_tb_gfx] Transferbench error: 227266 out of 262144 pages for memory allocation were not on NUMA node 1. This could be due to hardware memory issues, or the use of numa-rebalancing daemons such as numad [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:1607 in AllocateMemory] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:4255 in PrepareExecutor] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:5894 in RunTransfers]
+RVS-ERROR [PEBB] [pcie_h2d_bandwidth_tb_gfx] Transferbench error: 239767 out of 262144 pages for memory allocation were not on NUMA node 1. This could be due to hardware memory issues, or the use of numa-rebalancing daemons such as numad [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:1607 in AllocateMemory] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:4255 in PrepareExecutor] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:5894 in RunTransfers]
+RVS-ERROR [PEBB] [pcie_h2d_bandwidth_tb_gfx] Transferbench error: 212543 out of 262144 pages for memory allocation were not on NUMA node 1. This could be due to hardware memory issues, or the use of numa-rebalancing daemons such as numad [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:1607 in AllocateMemory] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:4255 in PrepareExecutor] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:5894 in RunTransfers]
+RVS-ERROR [PEBB] [pcie_h2d_bandwidth_tb_gfx] Transferbench error: 232177 out of 262144 pages for memory allocation were not on NUMA node 1. This could be due to hardware memory issues, or the use of numa-rebalancing daemons such as numad [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:1607 in AllocateMemory] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:4255 in PrepareExecutor] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:5894 in RunTransfers]
+[RESULT] [ 83617.597357] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.308 GBps duration: 0.187363 secs
+[RESULT] [ 83617.597363] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 57.478 GBps duration: 0.186808 secs
+[RESULT] [ 83617.597364] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 57.613 GBps duration: 0.186371 secs
+[RESULT] [ 83617.597366] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 56.585 GBps duration: 0.189758 secs
+[RESULT] [ 83617.597367] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.201 GBps duration: 0.187714 secs
+[RESULT] [ 83617.597368] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 57.364 GBps duration: 0.187179 secs
+[RESULT] [ 83617.597369] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 56.717 GBps duration: 0.189316 secs
+[RESULT] [ 83617.597370] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false (not measured) duration: 0.000000 secs
+[RESULT] [ 83617.597372] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 57.485 GBps duration: 0.186787 secs
+[RESULT] [ 83617.597373] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false (not measured) duration: 0.000000 secs
+[RESULT] [ 83617.597375] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 57.434 GBps duration: 0.186952 secs
+[RESULT] [ 83617.597376] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false (not measured) duration: 0.000000 secs
+[RESULT] [ 83617.597377] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 53.375 GBps duration: 0.201169 secs
+[RESULT] [ 83617.597378] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false (not measured) duration: 0.000000 secs
+[RESULT] [ 83617.597379] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 56.467 GBps duration: 0.190153 secs
+[RESULT] [ 83617.597380] [pcie_h2d_bandwidth_tb_gfx] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false (not measured) duration: 0.000000 secs
+[RESULT] [ 83617.597412] Action name :pcie_d2h_bandwidth_tb_gfx
+[RESULT] [ 83617.597418] Module name :pebb
+[INFO  ] [ 83617.597442] Missing 'device_index' key.
+[RESULT] [ 83617.597874] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] distance:20 PCIe:20
+[RESULT] [ 83617.597886] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] distance:52 PCIe:52
+[RESULT] [ 83617.597889] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] distance:20 PCIe:20
+[RESULT] [ 83617.597890] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] distance:52 PCIe:52
+[RESULT] [ 83617.597891] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] distance:20 PCIe:20
+[RESULT] [ 83617.597893] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] distance:52 PCIe:52
+[RESULT] [ 83617.597895] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] distance:20 PCIe:20
+[RESULT] [ 83617.597896] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] distance:52 PCIe:52
+[RESULT] [ 83617.597897] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:52 PCIe:52
+[RESULT] [ 83617.597911] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:20 PCIe:20
+[RESULT] [ 83617.597913] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] distance:52 PCIe:52
+[RESULT] [ 83617.597914] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] distance:20 PCIe:20
+[RESULT] [ 83617.597916] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:52 PCIe:52
+[RESULT] [ 83617.597917] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:20 PCIe:20
+[RESULT] [ 83617.597918] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] distance:52 PCIe:52
+[RESULT] [ 83617.597920] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] distance:20 PCIe:20
+RVS-ERROR [PEBB] [pcie_d2h_bandwidth_tb_gfx] Transferbench error: 262144 out of 262144 pages for memory allocation were not on NUMA node 1. This could be due to hardware memory issues, or the use of numa-rebalancing daemons such as numad [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:1607 in AllocateMemory] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:4299 in PrepareExecutor] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:5894 in RunTransfers]
+RVS-ERROR [PEBB] [pcie_d2h_bandwidth_tb_gfx] Transferbench error: 258626 out of 262144 pages for memory allocation were not on NUMA node 1. This could be due to hardware memory issues, or the use of numa-rebalancing daemons such as numad [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:1607 in AllocateMemory] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:4299 in PrepareExecutor] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:5894 in RunTransfers]
+RVS-ERROR [PEBB] [pcie_d2h_bandwidth_tb_gfx] Transferbench error: 256583 out of 262144 pages for memory allocation were not on NUMA node 1. This could be due to hardware memory issues, or the use of numa-rebalancing daemons such as numad [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:1607 in AllocateMemory] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:4299 in PrepareExecutor] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:5894 in RunTransfers]
+RVS-ERROR [PEBB] [pcie_d2h_bandwidth_tb_gfx] Transferbench error: 254192 out of 262144 pages for memory allocation were not on NUMA node 1. This could be due to hardware memory issues, or the use of numa-rebalancing daemons such as numad [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:1607 in AllocateMemory] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:4299 in PrepareExecutor] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:5894 in RunTransfers]
+RVS-ERROR [PEBB] [pcie_d2h_bandwidth_tb_gfx] Transferbench error: 227909 out of 262144 pages for memory allocation were not on NUMA node 1. This could be due to hardware memory issues, or the use of numa-rebalancing daemons such as numad [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:1607 in AllocateMemory] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:4299 in PrepareExecutor] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:5894 in RunTransfers]
+RVS-ERROR [PEBB] [pcie_d2h_bandwidth_tb_gfx] Transferbench error: 260134 out of 262144 pages for memory allocation were not on NUMA node 1. This could be due to hardware memory issues, or the use of numa-rebalancing daemons such as numad [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:1607 in AllocateMemory] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:4299 in PrepareExecutor] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:5894 in RunTransfers]
+RVS-ERROR [PEBB] [pcie_d2h_bandwidth_tb_gfx] Transferbench error: 262144 out of 262144 pages for memory allocation were not on NUMA node 1. This could be due to hardware memory issues, or the use of numa-rebalancing daemons such as numad [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:1607 in AllocateMemory] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:4299 in PrepareExecutor] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:5894 in RunTransfers]
+RVS-ERROR [PEBB] [pcie_d2h_bandwidth_tb_gfx] Transferbench error: 262080 out of 262144 pages for memory allocation were not on NUMA node 1. This could be due to hardware memory issues, or the use of numa-rebalancing daemons such as numad [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:1607 in AllocateMemory] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:4299 in PrepareExecutor] [/home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/external/TransferBench/src/header/TransferBench.hpp:5894 in RunTransfers]
+[RESULT] [ 83631.402600] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.181 GBps duration: 0.187778 secs
+[RESULT] [ 83631.402605] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true (not measured) duration: 0.000000 secs
+[RESULT] [ 83631.402607] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.184 GBps duration: 0.187770 secs
+[RESULT] [ 83631.402608] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true (not measured) duration: 0.000000 secs
+[RESULT] [ 83631.402610] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.185 GBps duration: 0.187766 secs
+[RESULT] [ 83631.402611] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true (not measured) duration: 0.000000 secs
+[RESULT] [ 83631.402612] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.393 GBps duration: 0.190403 secs
+[RESULT] [ 83631.402613] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true (not measured) duration: 0.000000 secs
+[RESULT] [ 83631.402615] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.122 GBps duration: 0.187974 secs
+[RESULT] [ 83631.402616] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true (not measured) duration: 0.000000 secs
+[RESULT] [ 83631.402617] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 56.712 GBps duration: 0.189334 secs
+[RESULT] [ 83631.402618] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true (not measured) duration: 0.000000 secs
+[RESULT] [ 83631.402619] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.383 GBps duration: 0.190438 secs
+[RESULT] [ 83631.402620] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true (not measured) duration: 0.000000 secs
+[RESULT] [ 83631.402621] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 56.304 GBps duration: 0.190705 secs
+[RESULT] [ 83631.402622] [pcie_d2h_bandwidth_tb_gfx] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true (not measured) duration: 0.000000 secs
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| pcie_h2d_bandwidth               | PEBB           | [32mPASS          [0m  |
+| pcie_d2h_bandwidth               | PEBB           | [32mPASS          [0m  |
+| pcie_h2d_bandwidth_tb_dma        | PEBB           | [32mPASS          [0m  |
+| pcie_d2h_bandwidth_tb_dma        | PEBB           | [32mPASS          [0m  |
+| pcie_h2d_bandwidth_tb_gfx        | PEBB           | [32mPASS          [0m  |
+| pcie_d2h_bandwidth_tb_gfx        | PEBB           | [32mPASS          [0m  |
++---------------------------------------------------------------------+

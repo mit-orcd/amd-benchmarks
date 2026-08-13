@@ -1,0 +1,10 @@
+[2026-08-13T18:42:43+00:00] PART A start (driver log: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/part_a_20260813_184243)
+[2026-08-13T18:42:43+00:00] rvs: /home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/install_local/bin/rvs
+[2026-08-13T18:42:43+00:00] all 8 GPUs idle, proceeding
+[2026-08-13T18:42:43+00:00] STAGE 1/4 smoke: 1 GPU x fp16 x 10s
+[2026-08-13T18:43:06+00:00] smoke rc=0 aggregate=1544.26 TFLOPS
+[2026-08-13T18:43:06+00:00] smoke OK
+[2026-08-13T18:43:06+00:00] STAGE 2/4 gst sweep: N=1..8 x 9 precisions x 30s
+[2026-08-13T19:50:57+00:00] sweep rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/sweep_20260813_184243
+[2026-08-13T19:50:57+00:00] sweep rows: 72
+[2026-08-13T19:50:57+00:00] STAGE 3/4 health modules

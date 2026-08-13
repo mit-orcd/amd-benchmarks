@@ -1,0 +1,88 @@
+[RESULT] [ 82953.246980] Action name :tflops-bf16
+[RESULT] [ 82953.288518] Module name :gst
+[RESULT] [ 82953.865706] [tflops-bf16] [GPU:: 17010] Start of GPU ramp up
+[RESULT] [ 82953.865720] [tflops-bf16] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 82953.865882] [tflops-bf16] [GPU:: 36479] Start of GPU ramp up
+[RESULT] [ 82953.865988] [tflops-bf16] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 82953.866177] [tflops-bf16] [GPU:: 57875] Start of GPU ramp up
+[RESULT] [ 82953.866323] [tflops-bf16] [GPU::  1590] Start of GPU ramp up
+[RESULT] [ 82953.866519] [tflops-bf16] [GPU:: 51771] Start of GPU ramp up
+[RESULT] [ 82953.866614] [tflops-bf16] [GPU:: 11806] Start of GPU ramp up
+[RESULT] [ 82959.756657] [tflops-bf16] [GPU:: 42583] GFLOPS 1637396
+[RESULT] [ 82960.6358  ] [tflops-bf16] [GPU:: 11806] GFLOPS 1621698
+[RESULT] [ 82960.59338 ] [tflops-bf16] [GPU:: 36479] GFLOPS 1593495
+[RESULT] [ 82960.137125] [tflops-bf16] [GPU:: 27226] GFLOPS 1612187
+[RESULT] [ 82960.222811] [tflops-bf16] [GPU::  1590] GFLOPS 1601619
+[RESULT] [ 82960.248724] [tflops-bf16] [GPU:: 57875] GFLOPS 1632533
+[RESULT] [ 82960.265315] [tflops-bf16] [GPU:: 51771] GFLOPS 1663406
+[RESULT] [ 82960.270742] [tflops-bf16] [GPU:: 17010] GFLOPS 1643515
+[RESULT] [ 82960.756645] [tflops-bf16] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 82961.7071  ] [tflops-bf16] [GPU:: 11806] End of GPU ramp up
+[RESULT] [ 82961.58656 ] [tflops-bf16] [GPU:: 36479] End of GPU ramp up
+[RESULT] [ 82961.136451] [tflops-bf16] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 82961.222226] [tflops-bf16] [GPU::  1590] End of GPU ramp up
+[RESULT] [ 82961.249111] [tflops-bf16] [GPU:: 57875] End of GPU ramp up
+[RESULT] [ 82961.264775] [tflops-bf16] [GPU:: 51771] End of GPU ramp up
+[RESULT] [ 82961.271238] [tflops-bf16] [GPU:: 17010] End of GPU ramp up
+[RESULT] [ 82974.311933] [tflops-bf16] [GPU:: 42583] GFLOPS 1622264
+[RESULT] [ 82974.352748] [tflops-bf16] [GPU:: 11806] GFLOPS 1647745
+[RESULT] [ 82974.421281] [tflops-bf16] [GPU:: 51771] GFLOPS 1671437
+[RESULT] [ 82974.543315] [tflops-bf16] [GPU:: 17010] GFLOPS 1656883
+[RESULT] [ 82974.581067] [tflops-bf16] [GPU:: 36479] GFLOPS 1626208
+[RESULT] [ 82974.599777] [tflops-bf16] [GPU:: 27226] GFLOPS 1633345
+[RESULT] [ 82974.744328] [tflops-bf16] [GPU:: 57875] GFLOPS 1629485
+[RESULT] [ 82974.895631] [tflops-bf16] [GPU::  1590] GFLOPS 1608250
+[RESULT] [ 82987.596016] [tflops-bf16] [GPU:: 51771] GFLOPS 1669127
+[RESULT] [ 82987.717645] [tflops-bf16] [GPU:: 11806] GFLOPS 1645377
+[RESULT] [ 82987.819301] [tflops-bf16] [GPU:: 17010] GFLOPS 1656396
+[RESULT] [ 82987.857817] [tflops-bf16] [GPU:: 42583] GFLOPS 1623391
+[RESULT] [ 82988.79583 ] [tflops-bf16] [GPU:: 27226] GFLOPS 1631350
+[RESULT] [ 82988.117767] [tflops-bf16] [GPU:: 36479] GFLOPS 1624493
+[RESULT] [ 82988.268197] [tflops-bf16] [GPU:: 57875] GFLOPS 1626035
+[RESULT] [ 82988.594188] [tflops-bf16] [GPU::  1590] GFLOPS 1605298
+[RESULT] [ 83000.771674] [tflops-bf16] [GPU:: 51771] GFLOPS 1669010
+[RESULT] [ 83000.771709] [tflops-bf16] [GPU:: 51771] GFLOPS 1671437 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 83001.85810 ] [tflops-bf16] [GPU:: 11806] GFLOPS 1644975
+[RESULT] [ 83001.85842 ] [tflops-bf16] [GPU:: 11806] GFLOPS 1647745 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 83001.118177] [tflops-bf16] [GPU:: 17010] GFLOPS 1653546
+[RESULT] [ 83001.118209] [tflops-bf16] [GPU:: 17010] GFLOPS 1656883 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 83001.443667] [tflops-bf16] [GPU:: 42583] GFLOPS 1618616
+[RESULT] [ 83001.443690] [tflops-bf16] [GPU:: 42583] GFLOPS 1623391 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 83001.564471] [tflops-bf16] [GPU:: 27226] GFLOPS 1630735
+[RESULT] [ 83001.564497] [tflops-bf16] [GPU:: 27226] GFLOPS 1633345 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 83001.661638] [tflops-bf16] [GPU:: 36479] GFLOPS 1623633
+[RESULT] [ 83001.661660] [tflops-bf16] [GPU:: 36479] GFLOPS 1626208 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 83001.791715] [tflops-bf16] [GPU:: 57875] GFLOPS 1626077
+[RESULT] [ 83001.791745] [tflops-bf16] [GPU:: 57875] GFLOPS 1629485 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 83002.307585] [tflops-bf16] [GPU::  1590] GFLOPS 1603561
+[RESULT] [ 83002.307637] [tflops-bf16] [GPU::  1590] GFLOPS 1608250 Target GFLOPS: 0 met: TRUE
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| tflops-bf16                      | GST            | [32mPASS          [0m  |
++---------------------------------------------------------------------+

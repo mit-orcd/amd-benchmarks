@@ -1,0 +1,280 @@
+[RESULT] [ 84840.616870] Action name :metapackage-validation
+[RESULT] [ 84840.617122] Module name :rcqt
+Meta package rocm-hip-sdk :
+dpkg-query: package 'rocm-hip-sdk' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Meta package not installed or no dependencies present !!!
+
+Meta package rocm-hip-libraries :
+dpkg-query: package 'rocm-hip-libraries' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Meta package not installed or no dependencies present !!!
+
+Meta package rocm-ml-libraries :
+dpkg-query: package 'rocm-ml-libraries' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Meta package not installed or no dependencies present !!!
+
+Meta package rocm-ml-sdk :
+dpkg-query: package 'rocm-ml-sdk' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Meta package not installed or no dependencies present !!!
+
+Meta package amdgpu-dkms :
+json log file is /var/tmp/rvs_1786652373670.json
+dpkg-query: package 'libc-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package libc-dev,libc6-dev installed version is 2.35
+Package amdgpu-dkms-firmware installed version is 1:31.40.1.0.31400100
+Package autoconf installed version is 2.71
+Package automake installed version is 1:1.16.5
+Package dkms installed version is 2.8.7
+Package initramfs-tools installed version is 0.140ubuntu13.5
+Meta package validation complete : 
+	Total packages validated     : 6
+	Installed packages           : 6
+	Missing packages             : 0
+	Version mismatch packages    : 0
+
+Meta package rocm-language-runtime :
+dpkg-query: package 'rocm-language-runtime' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Meta package not installed or no dependencies present !!!
+
+Meta package rocm-openmp-sdk :
+dpkg-query: package 'rocm-openmp-sdk' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Meta package not installed or no dependencies present !!!
+
+Meta package rocm-utils :
+dpkg-query: package 'rocm-utils' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Meta package not installed or no dependencies present !!!
+
+Meta package rocm-opencl-sdk :
+dpkg-query: package 'rocm-opencl-sdk' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Meta package not installed or no dependencies present !!!
+
+Meta package rocm-opencl-runtime :
+dpkg-query: package 'rocm-opencl-runtime' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Meta package not installed or no dependencies present !!!
+
+Meta package rocm-hip-runtime :
+dpkg-query: package 'rocm-hip-runtime' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Meta package not installed or no dependencies present !!!
+
+Meta package rocm-developer-tools :
+dpkg-query: package 'rocm-developer-tools' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Meta package not installed or no dependencies present !!!
+
+dpkg-query: package 'rocm-hip-libraries' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+[RESULT] [ 84840.797856] Action name :packagelist-install-validation
+[RESULT] [ 84840.797871] Module name :rcqt
+Package rocm-hip-libraries not installed 
+dpkg-query: package 'rocm-core' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-core not installed 
+dpkg-query: package 'rocm-hip-runtime-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-hip-runtime-dev not installed 
+dpkg-query: package 'rocm-language-runtime' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-language-runtime not installed 
+dpkg-query: package 'rocm-hip-runtime' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-hip-runtime not installed 
+dpkg-query: package 'rocm-hip-sdk' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-hip-sdk not installed 
+dpkg-query: package 'rocm-utils' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-utils not installed 
+dpkg-query: package 'rocm-smi-lib' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-smi-lib not installed 
+dpkg-query: package 'rocalution' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocalution not installed 
+dpkg-query: package 'rocm-debug-agent' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-debug-agent not installed 
+dpkg-query: package 'rocm-device-libs' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-device-libs not installed 
+dpkg-query: package 'hsa-rocr-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hsa-rocr-dev not installed 
+dpkg-query: package 'hipcub-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hipcub-dev not installed 
+dpkg-query: package 'rocsolver' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocsolver not installed 
+dpkg-query: package 'rocsparse' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocsparse not installed 
+dpkg-query: package 'rocsolver-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocsolver-dev not installed 
+dpkg-query: package 'rocminfo' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocminfo not installed 
+dpkg-query: package 'hipfft-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hipfft-dev not installed 
+dpkg-query: package 'rocm-gdb' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-gdb not installed 
+dpkg-query: package 'rocm-dbgapi' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-dbgapi not installed 
+dpkg-query: package 'rocfft' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocfft not installed 
+dpkg-query: package 'hipblas-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hipblas-dev not installed 
+dpkg-query: package 'rocthrust-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocthrust-dev not installed 
+dpkg-query: package 'openmp-extras-runtime' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package openmp-extras-runtime not installed 
+dpkg-query: package 'openmp-extras-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package openmp-extras-dev not installed 
+dpkg-query: package 'comgr' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package comgr not installed 
+dpkg-query: package 'rccl' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rccl not installed 
+dpkg-query: package 'rocblas' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocblas not installed 
+dpkg-query: package 'hipblas' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hipblas not installed 
+dpkg-query: package 'roctracer-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package roctracer-dev not installed 
+dpkg-query: package 'hip-doc' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hip-doc not installed 
+dpkg-query: package 'rocrand' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocrand not installed 
+dpkg-query: package 'hsa-rocr' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hsa-rocr not installed 
+dpkg-query: package 'hipfft' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hipfft not installed 
+dpkg-query: package 'hipsparse-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hipsparse-dev not installed 
+dpkg-query: package 'rocsparse-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocsparse-dev not installed 
+dpkg-query: package 'rocrand-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocrand-dev not installed 
+dpkg-query: package 'rocm-opencl' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-opencl not installed 
+dpkg-query: package 'hip-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hip-dev not installed 
+dpkg-query: package 'rocprim-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocprim-dev not installed 
+dpkg-query: package 'hipsolver-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hipsolver-dev not installed 
+dpkg-query: package 'rocfft-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocfft-dev not installed 
+dpkg-query: package 'hsa-amd-aqlprofile' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hsa-amd-aqlprofile not installed 
+dpkg-query: package 'hipify-clang' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hipify-clang not installed 
+dpkg-query: package 'miopen-hip-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package miopen-hip-dev not installed 
+dpkg-query: package 'rocm-llvm' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-llvm not installed 
+dpkg-query: package 'hip-runtime-amd' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hip-runtime-amd not installed 
+dpkg-query: package 'hip-samples' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hip-samples not installed 
+dpkg-query: package 'rocalution-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocalution-dev not installed 
+dpkg-query: package 'rccl-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rccl-dev not installed 
+dpkg-query: package 'hipsolver' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hipsolver not installed 
+dpkg-query: package 'rocprofiler-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocprofiler-dev not installed 
+dpkg-query: package 'miopen-hip' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package miopen-hip not installed 
+dpkg-query: package 'rocm-cmake' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-cmake not installed 
+dpkg-query: package 'hipsparse' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package hipsparse not installed 
+dpkg-query: package 'rocblas-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocblas-dev not installed 
+dpkg-query: package 'rocm-opencl-dev' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+Package rocm-opencl-dev not installed 
+Packages install validation complete : 
+	Missing packages      : 57
+	Installed packages    : 0
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| metapackage-validation           | RCQT           | [32mPASS          [0m  |
+| packagelist-install-validation   | RCQT           | [32mPASS          [0m  |
++---------------------------------------------------------------------+

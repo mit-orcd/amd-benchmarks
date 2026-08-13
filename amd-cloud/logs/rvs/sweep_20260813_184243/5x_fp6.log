@@ -1,0 +1,62 @@
+[RESULT] [ 81066.324609] Action name :tflops-fp6
+[RESULT] [ 81066.365604] Module name :gst
+[RESULT] [ 81066.940500] [tflops-fp6] [GPU:: 17010] Start of GPU ramp up
+[RESULT] [ 81066.940542] [tflops-fp6] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 81066.940683] [tflops-fp6] [GPU:: 36479] Start of GPU ramp up
+[RESULT] [ 81066.940821] [tflops-fp6] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 81066.940939] [tflops-fp6] [GPU::  1590] Start of GPU ramp up
+[RESULT] [ 81093.729109] [tflops-fp6] [GPU:: 42583] GFLOPS 1029505
+[RESULT] [ 81094.254547] [tflops-fp6] [GPU:: 27226] GFLOPS 1174691
+[RESULT] [ 81094.728209] [tflops-fp6] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 81094.737887] [tflops-fp6] [GPU:: 17010] GFLOPS 767815
+[RESULT] [ 81094.795752] [tflops-fp6] [GPU:: 36479] GFLOPS 838042
+[RESULT] [ 81094.954554] [tflops-fp6] [GPU::  1590] GFLOPS 857988
+[RESULT] [ 81095.252955] [tflops-fp6] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 81095.738109] [tflops-fp6] [GPU:: 17010] End of GPU ramp up
+[RESULT] [ 81095.797679] [tflops-fp6] [GPU:: 36479] End of GPU ramp up
+[RESULT] [ 81095.954494] [tflops-fp6] [GPU::  1590] End of GPU ramp up
+[RESULT] [ 81112.485564] [tflops-fp6] [GPU:: 42583] GFLOPS 1238375
+[RESULT] [ 81113.13353 ] [tflops-fp6] [GPU:: 27226] GFLOPS 1238162
+[RESULT] [ 81113.478307] [tflops-fp6] [GPU:: 17010] GFLOPS 1239572
+[RESULT] [ 81113.520386] [tflops-fp6] [GPU:: 36479] GFLOPS 1240795
+[RESULT] [ 81113.707159] [tflops-fp6] [GPU::  1590] GFLOPS 1238701
+[RESULT] [ 81130.249744] [tflops-fp6] [GPU:: 42583] GFLOPS 1237898
+[RESULT] [ 81130.249760] [tflops-fp6] [GPU:: 42583] GFLOPS 1238375 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 81130.784376] [tflops-fp6] [GPU:: 27226] GFLOPS 1237423
+[RESULT] [ 81130.784397] [tflops-fp6] [GPU:: 27226] GFLOPS 1238162 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 81131.219107] [tflops-fp6] [GPU:: 17010] GFLOPS 1239531
+[RESULT] [ 81131.219127] [tflops-fp6] [GPU:: 17010] GFLOPS 1239572 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 81131.247415] [tflops-fp6] [GPU:: 36479] GFLOPS 1240493
+[RESULT] [ 81131.248434] [tflops-fp6] [GPU:: 36479] GFLOPS 1240795 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 81131.478047] [tflops-fp6] [GPU::  1590] GFLOPS 1237432
+[RESULT] [ 81131.478066] [tflops-fp6] [GPU::  1590] GFLOPS 1238701 Target GFLOPS: 0 met: TRUE
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| tflops-fp6                       | GST            | [32mPASS          [0m  |
++---------------------------------------------------------------------+

@@ -1,0 +1,1861 @@
+[RESULT] [ 83125.353911] Action name :pcie_act_1
+[RESULT] [ 83125.395359] Module name :peqt
+[INFO  ] [ 83125.395385] Missing 'device_index' key.
+[INFO  ] [ 83125.395999] [pcie_act_1] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.396005] [pcie_act_1] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.396006] [pcie_act_1] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.396007] [pcie_act_1] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.396009] [pcie_act_1] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.396010] [pcie_act_1] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.396010] [pcie_act_1] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.396010] [pcie_act_1] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.396015] [pcie_act_1] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.396015] [pcie_act_1] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.396016] [pcie_act_1] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.396016] [pcie_act_1] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.396016] [pcie_act_1] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.396017] [pcie_act_1] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.396017] [pcie_act_1] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.396018] [pcie_act_1] peqt vendor_id 4098
+[INFO  ] [ 83125.398316] [pcie_act_1] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.398316] [pcie_act_1] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.398317] [pcie_act_1] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.398318] [pcie_act_1] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.398318] [pcie_act_1] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.398318] [pcie_act_1] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.398319] [pcie_act_1] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.398319] [pcie_act_1] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.398322] [pcie_act_1] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.398322] [pcie_act_1] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.398323] [pcie_act_1] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.398323] [pcie_act_1] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.398323] [pcie_act_1] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.398323] [pcie_act_1] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.398324] [pcie_act_1] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.398324] [pcie_act_1] peqt vendor_id 4098
+[INFO  ] [ 83125.401143] [pcie_act_1] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.401144] [pcie_act_1] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.401144] [pcie_act_1] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.401145] [pcie_act_1] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.401145] [pcie_act_1] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.401146] [pcie_act_1] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.401146] [pcie_act_1] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.401146] [pcie_act_1] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.401149] [pcie_act_1] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.401149] [pcie_act_1] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.401150] [pcie_act_1] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.401150] [pcie_act_1] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.401150] [pcie_act_1] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.401150] [pcie_act_1] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.401150] [pcie_act_1] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.401151] [pcie_act_1] peqt vendor_id 4098
+[INFO  ] [ 83125.401775] [pcie_act_1] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.401776] [pcie_act_1] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.401776] [pcie_act_1] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.401777] [pcie_act_1] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.401778] [pcie_act_1] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.401800] [pcie_act_1] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.401800] [pcie_act_1] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.401801] [pcie_act_1] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.401804] [pcie_act_1] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.401804] [pcie_act_1] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.401804] [pcie_act_1] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.401804] [pcie_act_1] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.401805] [pcie_act_1] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.401805] [pcie_act_1] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.401805] [pcie_act_1] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.401805] [pcie_act_1] peqt vendor_id 4098
+[INFO  ] [ 83125.402986] [pcie_act_1] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.402987] [pcie_act_1] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.402987] [pcie_act_1] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.402988] [pcie_act_1] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.402988] [pcie_act_1] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.402989] [pcie_act_1] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.402989] [pcie_act_1] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.402989] [pcie_act_1] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.402992] [pcie_act_1] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.402993] [pcie_act_1] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.402993] [pcie_act_1] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.402993] [pcie_act_1] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.402993] [pcie_act_1] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.402994] [pcie_act_1] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.402994] [pcie_act_1] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.402994] [pcie_act_1] peqt vendor_id 4098
+[INFO  ] [ 83125.404641] [pcie_act_1] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.404642] [pcie_act_1] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.404643] [pcie_act_1] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.404643] [pcie_act_1] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.404644] [pcie_act_1] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.404644] [pcie_act_1] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.404644] [pcie_act_1] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.404644] [pcie_act_1] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.404647] [pcie_act_1] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.404648] [pcie_act_1] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.404648] [pcie_act_1] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.404648] [pcie_act_1] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.404648] [pcie_act_1] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.404648] [pcie_act_1] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.404649] [pcie_act_1] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.404649] [pcie_act_1] peqt vendor_id 4098
+[INFO  ] [ 83125.405967] [pcie_act_1] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.405968] [pcie_act_1] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.405968] [pcie_act_1] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.405969] [pcie_act_1] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.405969] [pcie_act_1] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.405970] [pcie_act_1] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.405970] [pcie_act_1] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.405970] [pcie_act_1] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.405973] [pcie_act_1] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.405973] [pcie_act_1] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.405973] [pcie_act_1] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.405980] [pcie_act_1] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.405980] [pcie_act_1] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.405981] [pcie_act_1] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.405981] [pcie_act_1] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.405981] [pcie_act_1] peqt vendor_id 4098
+[INFO  ] [ 83125.406678] [pcie_act_1] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.406678] [pcie_act_1] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.406679] [pcie_act_1] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.406680] [pcie_act_1] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.406680] [pcie_act_1] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.406680] [pcie_act_1] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.406681] [pcie_act_1] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.406681] [pcie_act_1] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.406684] [pcie_act_1] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.406684] [pcie_act_1] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.406684] [pcie_act_1] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.406684] [pcie_act_1] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.406685] [pcie_act_1] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.406685] [pcie_act_1] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.406685] [pcie_act_1] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.406685] [pcie_act_1] peqt vendor_id 4098
+[RESULT] [ 83125.409168] [pcie_act_1] peqt true
+[RESULT] [ 83125.409180] Action name :pcie_act_2
+[RESULT] [ 83125.409182] Module name :peqt
+[INFO  ] [ 83125.409191] Missing 'device_index' key.
+[INFO  ] [ 83125.409525] [pcie_act_2] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.409526] [pcie_act_2] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.409527] [pcie_act_2] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.409528] [pcie_act_2] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.409530] [pcie_act_2] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.409530] [pcie_act_2] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.409531] [pcie_act_2] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.409531] [pcie_act_2] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.409531] [pcie_act_2] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.409531] [pcie_act_2] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.409532] [pcie_act_2] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.409532] [pcie_act_2] peqt vendor_id 4098
+[INFO  ] [ 83125.409968] [pcie_act_2] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.409969] [pcie_act_2] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.409969] [pcie_act_2] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.409970] [pcie_act_2] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.409972] [pcie_act_2] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.409972] [pcie_act_2] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.409973] [pcie_act_2] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.409973] [pcie_act_2] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.409973] [pcie_act_2] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.409973] [pcie_act_2] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.409973] [pcie_act_2] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.409974] [pcie_act_2] peqt vendor_id 4098
+[INFO  ] [ 83125.412196] [pcie_act_2] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.412196] [pcie_act_2] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.412197] [pcie_act_2] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.412197] [pcie_act_2] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.412200] [pcie_act_2] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.412200] [pcie_act_2] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.412200] [pcie_act_2] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.412205] [pcie_act_2] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.412205] [pcie_act_2] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.412205] [pcie_act_2] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.412205] [pcie_act_2] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.412206] [pcie_act_2] peqt vendor_id 4098
+[INFO  ] [ 83125.412721] [pcie_act_2] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.412722] [pcie_act_2] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.412722] [pcie_act_2] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.412723] [pcie_act_2] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.412725] [pcie_act_2] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.412725] [pcie_act_2] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.412725] [pcie_act_2] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.412726] [pcie_act_2] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.412726] [pcie_act_2] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.412726] [pcie_act_2] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.412726] [pcie_act_2] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.412727] [pcie_act_2] peqt vendor_id 4098
+[INFO  ] [ 83125.413682] [pcie_act_2] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.413683] [pcie_act_2] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.413683] [pcie_act_2] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.413684] [pcie_act_2] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.413686] [pcie_act_2] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.413686] [pcie_act_2] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.413686] [pcie_act_2] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.413687] [pcie_act_2] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.413687] [pcie_act_2] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.413687] [pcie_act_2] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.413687] [pcie_act_2] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.413687] [pcie_act_2] peqt vendor_id 4098
+[INFO  ] [ 83125.415018] [pcie_act_2] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.415018] [pcie_act_2] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.415019] [pcie_act_2] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.415019] [pcie_act_2] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.415022] [pcie_act_2] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.415022] [pcie_act_2] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.415022] [pcie_act_2] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.415023] [pcie_act_2] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.415023] [pcie_act_2] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.415023] [pcie_act_2] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.415023] [pcie_act_2] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.415023] [pcie_act_2] peqt vendor_id 4098
+[INFO  ] [ 83125.416112] [pcie_act_2] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.416112] [pcie_act_2] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.416113] [pcie_act_2] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.416113] [pcie_act_2] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.416116] [pcie_act_2] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.416116] [pcie_act_2] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.416116] [pcie_act_2] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.416116] [pcie_act_2] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.416117] [pcie_act_2] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.416117] [pcie_act_2] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.416117] [pcie_act_2] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.416117] [pcie_act_2] peqt vendor_id 4098
+[INFO  ] [ 83125.416688] [pcie_act_2] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.416688] [pcie_act_2] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.416689] [pcie_act_2] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.416693] [pcie_act_2] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.416695] [pcie_act_2] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.416695] [pcie_act_2] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.416696] [pcie_act_2] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.416696] [pcie_act_2] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.416696] [pcie_act_2] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.416696] [pcie_act_2] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.416696] [pcie_act_2] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.416697] [pcie_act_2] peqt vendor_id 4098
+[RESULT] [ 83125.420178] [pcie_act_2] peqt true
+[RESULT] [ 83125.420181] Action name :pcie_act_3
+[RESULT] [ 83125.420182] Module name :peqt
+[INFO  ] [ 83125.420191] Missing 'device_index' key.
+[INFO  ] [ 83125.420519] [pcie_act_3] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.420520] [pcie_act_3] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.420521] [pcie_act_3] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.420521] [pcie_act_3] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.420522] [pcie_act_3] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.420522] [pcie_act_3] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.420522] [pcie_act_3] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.420523] [pcie_act_3] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.420525] [pcie_act_3] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.420525] [pcie_act_3] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.420525] [pcie_act_3] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.420526] [pcie_act_3] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.420526] [pcie_act_3] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.420526] [pcie_act_3] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.420526] [pcie_act_3] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.420527] [pcie_act_3] peqt vendor_id 4098
+[INFO  ] [ 83125.420958] [pcie_act_3] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.420959] [pcie_act_3] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.420959] [pcie_act_3] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.420960] [pcie_act_3] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.420960] [pcie_act_3] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.420961] [pcie_act_3] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.420961] [pcie_act_3] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.420961] [pcie_act_3] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.420963] [pcie_act_3] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.420963] [pcie_act_3] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.420964] [pcie_act_3] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.420964] [pcie_act_3] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.420964] [pcie_act_3] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.420964] [pcie_act_3] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.420964] [pcie_act_3] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.420965] [pcie_act_3] peqt vendor_id 4098
+[INFO  ] [ 83125.424814] [pcie_act_3] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.424815] [pcie_act_3] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.424815] [pcie_act_3] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.424816] [pcie_act_3] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.424816] [pcie_act_3] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.424817] [pcie_act_3] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.424817] [pcie_act_3] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.424817] [pcie_act_3] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.424819] [pcie_act_3] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.424819] [pcie_act_3] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.424820] [pcie_act_3] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.424823] [pcie_act_3] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.424824] [pcie_act_3] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.424824] [pcie_act_3] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.424824] [pcie_act_3] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.424824] [pcie_act_3] peqt vendor_id 4098
+[INFO  ] [ 83125.425328] [pcie_act_3] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.425329] [pcie_act_3] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.425330] [pcie_act_3] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.425330] [pcie_act_3] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.425331] [pcie_act_3] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.425331] [pcie_act_3] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.425331] [pcie_act_3] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.425332] [pcie_act_3] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.425334] [pcie_act_3] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.425334] [pcie_act_3] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.425334] [pcie_act_3] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.425334] [pcie_act_3] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.425335] [pcie_act_3] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.425335] [pcie_act_3] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.425335] [pcie_act_3] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.425335] [pcie_act_3] peqt vendor_id 4098
+[INFO  ] [ 83125.426294] [pcie_act_3] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.426295] [pcie_act_3] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.426296] [pcie_act_3] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.426296] [pcie_act_3] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.426297] [pcie_act_3] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.426297] [pcie_act_3] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.426297] [pcie_act_3] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.426298] [pcie_act_3] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.426300] [pcie_act_3] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.426300] [pcie_act_3] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.426300] [pcie_act_3] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.426300] [pcie_act_3] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.426301] [pcie_act_3] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.426301] [pcie_act_3] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.426301] [pcie_act_3] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.426301] [pcie_act_3] peqt vendor_id 4098
+[INFO  ] [ 83125.427611] [pcie_act_3] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.427612] [pcie_act_3] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.427613] [pcie_act_3] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.427613] [pcie_act_3] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.427614] [pcie_act_3] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.427614] [pcie_act_3] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.427614] [pcie_act_3] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.427614] [pcie_act_3] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.427617] [pcie_act_3] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.427617] [pcie_act_3] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.427617] [pcie_act_3] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.427617] [pcie_act_3] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.427617] [pcie_act_3] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.427618] [pcie_act_3] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.427618] [pcie_act_3] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.427618] [pcie_act_3] peqt vendor_id 4098
+[INFO  ] [ 83125.428722] [pcie_act_3] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.428726] [pcie_act_3] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.428726] [pcie_act_3] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.428727] [pcie_act_3] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.428727] [pcie_act_3] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.428728] [pcie_act_3] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.428728] [pcie_act_3] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.428728] [pcie_act_3] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.428730] [pcie_act_3] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.428730] [pcie_act_3] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.428731] [pcie_act_3] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.428731] [pcie_act_3] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.428731] [pcie_act_3] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.428731] [pcie_act_3] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.428732] [pcie_act_3] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.428732] [pcie_act_3] peqt vendor_id 4098
+[INFO  ] [ 83125.429315] [pcie_act_3] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.429315] [pcie_act_3] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.429316] [pcie_act_3] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.429317] [pcie_act_3] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.429317] [pcie_act_3] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.429317] [pcie_act_3] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.429318] [pcie_act_3] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.429318] [pcie_act_3] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.429320] [pcie_act_3] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.429320] [pcie_act_3] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.429321] [pcie_act_3] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.429321] [pcie_act_3] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.429321] [pcie_act_3] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.429321] [pcie_act_3] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.429322] [pcie_act_3] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.429322] [pcie_act_3] peqt vendor_id 4098
+[RESULT] [ 83125.433327] [pcie_act_3] peqt true
+[RESULT] [ 83125.433330] Action name :pcie_act_4
+[RESULT] [ 83125.433331] Module name :peqt
+[INFO  ] [ 83125.433340] Missing 'device_index' key.
+[INFO  ] [ 83125.433668] [pcie_act_4] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.433669] [pcie_act_4] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.433669] [pcie_act_4] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.433670] [pcie_act_4] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.433670] [pcie_act_4] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.433671] [pcie_act_4] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.433671] [pcie_act_4] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.433671] [pcie_act_4] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.433673] [pcie_act_4] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.433674] [pcie_act_4] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.433674] [pcie_act_4] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.433674] [pcie_act_4] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.433674] [pcie_act_4] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.433675] [pcie_act_4] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.433675] [pcie_act_4] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.433675] [pcie_act_4] peqt vendor_id 4098
+[INFO  ] [ 83125.434111] [pcie_act_4] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.434112] [pcie_act_4] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.434112] [pcie_act_4] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.434113] [pcie_act_4] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.434113] [pcie_act_4] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.434118] [pcie_act_4] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.434118] [pcie_act_4] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.434118] [pcie_act_4] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.434120] [pcie_act_4] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.434120] [pcie_act_4] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.434121] [pcie_act_4] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.434121] [pcie_act_4] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.434121] [pcie_act_4] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.434121] [pcie_act_4] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.434122] [pcie_act_4] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.434122] [pcie_act_4] peqt vendor_id 4098
+[INFO  ] [ 83125.436310] [pcie_act_4] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.436311] [pcie_act_4] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.436311] [pcie_act_4] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.436312] [pcie_act_4] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.436312] [pcie_act_4] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.436313] [pcie_act_4] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.436313] [pcie_act_4] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.436313] [pcie_act_4] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.436315] [pcie_act_4] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.436315] [pcie_act_4] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.436316] [pcie_act_4] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.436316] [pcie_act_4] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.436316] [pcie_act_4] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.436316] [pcie_act_4] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.436317] [pcie_act_4] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.436317] [pcie_act_4] peqt vendor_id 4098
+[INFO  ] [ 83125.436808] [pcie_act_4] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.436809] [pcie_act_4] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.436810] [pcie_act_4] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.436810] [pcie_act_4] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.436811] [pcie_act_4] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.436811] [pcie_act_4] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.436811] [pcie_act_4] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.436812] [pcie_act_4] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.436814] [pcie_act_4] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.436814] [pcie_act_4] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.436814] [pcie_act_4] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.436814] [pcie_act_4] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.436815] [pcie_act_4] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.436815] [pcie_act_4] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.436815] [pcie_act_4] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.436815] [pcie_act_4] peqt vendor_id 4098
+[INFO  ] [ 83125.437764] [pcie_act_4] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.437764] [pcie_act_4] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.437765] [pcie_act_4] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.437765] [pcie_act_4] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.437766] [pcie_act_4] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.437766] [pcie_act_4] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.437766] [pcie_act_4] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.437767] [pcie_act_4] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.437769] [pcie_act_4] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.437769] [pcie_act_4] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.437769] [pcie_act_4] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.437772] [pcie_act_4] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.437772] [pcie_act_4] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.437772] [pcie_act_4] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.437772] [pcie_act_4] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.437773] [pcie_act_4] peqt vendor_id 4098
+[INFO  ] [ 83125.439092] [pcie_act_4] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.439093] [pcie_act_4] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.439094] [pcie_act_4] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.439094] [pcie_act_4] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.439095] [pcie_act_4] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.439095] [pcie_act_4] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.439095] [pcie_act_4] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.439096] [pcie_act_4] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.439098] [pcie_act_4] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.439098] [pcie_act_4] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.439098] [pcie_act_4] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.439098] [pcie_act_4] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.439099] [pcie_act_4] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.439099] [pcie_act_4] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.439099] [pcie_act_4] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.439099] [pcie_act_4] peqt vendor_id 4098
+[INFO  ] [ 83125.441241] [pcie_act_4] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.441242] [pcie_act_4] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.441242] [pcie_act_4] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.441243] [pcie_act_4] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.441243] [pcie_act_4] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.441244] [pcie_act_4] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.441244] [pcie_act_4] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.441244] [pcie_act_4] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.441246] [pcie_act_4] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.441247] [pcie_act_4] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.441247] [pcie_act_4] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.441247] [pcie_act_4] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.441247] [pcie_act_4] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.441247] [pcie_act_4] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.441248] [pcie_act_4] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.441248] [pcie_act_4] peqt vendor_id 4098
+[INFO  ] [ 83125.441817] [pcie_act_4] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.441817] [pcie_act_4] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.441818] [pcie_act_4] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.441818] [pcie_act_4] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.441819] [pcie_act_4] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.441819] [pcie_act_4] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.441819] [pcie_act_4] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.441820] [pcie_act_4] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.441822] [pcie_act_4] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.441822] [pcie_act_4] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.441822] [pcie_act_4] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.441822] [pcie_act_4] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.441823] [pcie_act_4] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.441823] [pcie_act_4] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.441823] [pcie_act_4] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.441823] [pcie_act_4] peqt vendor_id 4098
+[RESULT] [ 83125.443812] [pcie_act_4] peqt true
+[RESULT] [ 83125.443814] Action name :pcie_act_5
+[RESULT] [ 83125.443824] Module name :peqt
+[INFO  ] [ 83125.443832] Missing 'device_index' key.
+[INFO  ] [ 83125.444162] [pcie_act_5] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.444162] [pcie_act_5] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.444162] [pcie_act_5] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.444163] [pcie_act_5] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.444163] [pcie_act_5] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.444163] [pcie_act_5] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.444163] [pcie_act_5] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.444164] [pcie_act_5] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.444594] [pcie_act_5] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.444594] [pcie_act_5] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.444594] [pcie_act_5] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.444595] [pcie_act_5] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.444595] [pcie_act_5] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.444595] [pcie_act_5] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.444595] [pcie_act_5] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.444595] [pcie_act_5] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.446772] [pcie_act_5] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.446772] [pcie_act_5] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.446773] [pcie_act_5] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.446773] [pcie_act_5] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.446773] [pcie_act_5] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.446773] [pcie_act_5] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.446774] [pcie_act_5] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.446774] [pcie_act_5] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.447268] [pcie_act_5] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.447268] [pcie_act_5] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.447269] [pcie_act_5] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.447269] [pcie_act_5] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.447269] [pcie_act_5] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.447269] [pcie_act_5] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.447270] [pcie_act_5] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.447270] [pcie_act_5] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.448233] [pcie_act_5] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.448234] [pcie_act_5] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.448234] [pcie_act_5] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.448234] [pcie_act_5] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.448235] [pcie_act_5] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.448235] [pcie_act_5] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.448235] [pcie_act_5] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.448235] [pcie_act_5] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.449543] [pcie_act_5] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.449544] [pcie_act_5] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.449544] [pcie_act_5] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.449544] [pcie_act_5] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.449545] [pcie_act_5] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.449545] [pcie_act_5] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.449545] [pcie_act_5] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.449545] [pcie_act_5] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.450628] [pcie_act_5] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.450628] [pcie_act_5] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.450629] [pcie_act_5] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.450629] [pcie_act_5] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.450632] [pcie_act_5] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.450633] [pcie_act_5] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.450633] [pcie_act_5] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.450633] [pcie_act_5] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.451208] [pcie_act_5] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.451208] [pcie_act_5] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.451209] [pcie_act_5] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.451209] [pcie_act_5] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.451209] [pcie_act_5] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.451210] [pcie_act_5] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.451210] [pcie_act_5] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.451210] [pcie_act_5] peqt link_stat_neg_width NOT SUPPORTED
+[RESULT] [ 83125.453203] [pcie_act_5] peqt true
+[RESULT] [ 83125.453205] Action name :pcie_act_6
+[RESULT] [ 83125.453205] Module name :peqt
+[INFO  ] [ 83125.453215] Missing 'device_index' key.
+[INFO  ] [ 83125.453540] [pcie_act_6] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.453541] [pcie_act_6] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.453541] [pcie_act_6] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.453542] [pcie_act_6] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.453542] [pcie_act_6] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.453543] [pcie_act_6] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.453543] [pcie_act_6] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.453543] [pcie_act_6] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.453545] [pcie_act_6] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.453546] [pcie_act_6] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.453571] [pcie_act_6] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.453571] [pcie_act_6] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.453571] [pcie_act_6] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.453571] [pcie_act_6] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.453572] [pcie_act_6] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.453572] [pcie_act_6] peqt vendor_id 4098
+[INFO  ] [ 83125.454004] [pcie_act_6] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.454005] [pcie_act_6] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.454005] [pcie_act_6] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.454006] [pcie_act_6] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.454007] [pcie_act_6] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.454007] [pcie_act_6] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.454007] [pcie_act_6] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.454007] [pcie_act_6] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.454010] [pcie_act_6] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.454010] [pcie_act_6] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.454019] [pcie_act_6] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.454019] [pcie_act_6] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.454019] [pcie_act_6] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.454019] [pcie_act_6] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.454020] [pcie_act_6] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.454020] [pcie_act_6] peqt vendor_id 4098
+[INFO  ] [ 83125.456214] [pcie_act_6] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.456214] [pcie_act_6] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.456215] [pcie_act_6] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.456216] [pcie_act_6] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.456216] [pcie_act_6] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.456216] [pcie_act_6] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.456217] [pcie_act_6] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.456217] [pcie_act_6] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.456222] [pcie_act_6] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.456222] [pcie_act_6] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.456231] [pcie_act_6] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.456231] [pcie_act_6] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.456232] [pcie_act_6] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.456232] [pcie_act_6] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.456232] [pcie_act_6] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.456232] [pcie_act_6] peqt vendor_id 4098
+[INFO  ] [ 83125.456723] [pcie_act_6] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.456724] [pcie_act_6] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.456724] [pcie_act_6] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.456725] [pcie_act_6] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.456725] [pcie_act_6] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.456726] [pcie_act_6] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.456726] [pcie_act_6] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.456726] [pcie_act_6] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.456728] [pcie_act_6] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.456729] [pcie_act_6] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.456737] [pcie_act_6] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.456737] [pcie_act_6] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.456737] [pcie_act_6] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.456738] [pcie_act_6] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.456738] [pcie_act_6] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.456738] [pcie_act_6] peqt vendor_id 4098
+[INFO  ] [ 83125.457681] [pcie_act_6] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.457682] [pcie_act_6] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.457682] [pcie_act_6] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.457683] [pcie_act_6] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.457683] [pcie_act_6] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.457684] [pcie_act_6] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.457684] [pcie_act_6] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.457684] [pcie_act_6] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.457686] [pcie_act_6] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.457687] [pcie_act_6] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.457695] [pcie_act_6] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.457695] [pcie_act_6] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.457695] [pcie_act_6] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.457695] [pcie_act_6] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.457696] [pcie_act_6] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.457696] [pcie_act_6] peqt vendor_id 4098
+[INFO  ] [ 83125.460842] [pcie_act_6] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.460843] [pcie_act_6] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.460844] [pcie_act_6] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.460844] [pcie_act_6] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.460845] [pcie_act_6] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.460845] [pcie_act_6] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.460845] [pcie_act_6] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.460846] [pcie_act_6] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.460848] [pcie_act_6] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.460848] [pcie_act_6] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.460857] [pcie_act_6] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.460857] [pcie_act_6] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.460857] [pcie_act_6] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.460857] [pcie_act_6] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.460862] [pcie_act_6] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.460862] [pcie_act_6] peqt vendor_id 4098
+[INFO  ] [ 83125.461935] [pcie_act_6] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.461935] [pcie_act_6] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.461936] [pcie_act_6] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.461937] [pcie_act_6] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.461937] [pcie_act_6] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.461937] [pcie_act_6] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.461938] [pcie_act_6] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.461938] [pcie_act_6] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.461940] [pcie_act_6] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.461940] [pcie_act_6] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.461949] [pcie_act_6] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.461949] [pcie_act_6] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.461949] [pcie_act_6] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.461949] [pcie_act_6] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.461949] [pcie_act_6] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.461950] [pcie_act_6] peqt vendor_id 4098
+[INFO  ] [ 83125.464016] [pcie_act_6] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.464017] [pcie_act_6] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.464018] [pcie_act_6] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.464018] [pcie_act_6] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.464019] [pcie_act_6] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.464019] [pcie_act_6] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.464019] [pcie_act_6] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.464019] [pcie_act_6] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.464022] [pcie_act_6] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.464022] [pcie_act_6] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.464030] [pcie_act_6] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.464030] [pcie_act_6] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.464031] [pcie_act_6] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.464031] [pcie_act_6] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.464031] [pcie_act_6] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.464031] [pcie_act_6] peqt vendor_id 4098
+[RESULT] [ 83125.466015] [pcie_act_6] peqt false
+RVS-ERROR [peqt] [pcie_act_6] Action failed to run successfully.
+[RESULT] [ 83125.466031] Action name :pcie_act_7
+[RESULT] [ 83125.466032] Module name :peqt
+[INFO  ] [ 83125.466040] Missing 'device_index' key.
+[INFO  ] [ 83125.466364] [pcie_act_7] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.466365] [pcie_act_7] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.466365] [pcie_act_7] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.466366] [pcie_act_7] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.466367] [pcie_act_7] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.466367] [pcie_act_7] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.466367] [pcie_act_7] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.466367] [pcie_act_7] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.466369] [pcie_act_7] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.466370] [pcie_act_7] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.466378] [pcie_act_7] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.466379] [pcie_act_7] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.466387] [pcie_act_7] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.466387] [pcie_act_7] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.466387] [pcie_act_7] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.466388] [pcie_act_7] peqt vendor_id 4098
+[INFO  ] [ 83125.466815] [pcie_act_7] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.466816] [pcie_act_7] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.466817] [pcie_act_7] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.466817] [pcie_act_7] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.466818] [pcie_act_7] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.466818] [pcie_act_7] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.466818] [pcie_act_7] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.466818] [pcie_act_7] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.466820] [pcie_act_7] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.466821] [pcie_act_7] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.466829] [pcie_act_7] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.466829] [pcie_act_7] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.466837] [pcie_act_7] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.466838] [pcie_act_7] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.466838] [pcie_act_7] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.466838] [pcie_act_7] peqt vendor_id 4098
+[INFO  ] [ 83125.469026] [pcie_act_7] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.469026] [pcie_act_7] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.469027] [pcie_act_7] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.469027] [pcie_act_7] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.469028] [pcie_act_7] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.469028] [pcie_act_7] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.469029] [pcie_act_7] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.469029] [pcie_act_7] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.469031] [pcie_act_7] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.469031] [pcie_act_7] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.469040] [pcie_act_7] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.469040] [pcie_act_7] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.469048] [pcie_act_7] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.469049] [pcie_act_7] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.469049] [pcie_act_7] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.469049] [pcie_act_7] peqt vendor_id 4098
+[INFO  ] [ 83125.469541] [pcie_act_7] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.469542] [pcie_act_7] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.469543] [pcie_act_7] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.469543] [pcie_act_7] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.469544] [pcie_act_7] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.469547] [pcie_act_7] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.469548] [pcie_act_7] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.469548] [pcie_act_7] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.469550] [pcie_act_7] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.469550] [pcie_act_7] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.469559] [pcie_act_7] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.469559] [pcie_act_7] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.469567] [pcie_act_7] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.469567] [pcie_act_7] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.469567] [pcie_act_7] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.469568] [pcie_act_7] peqt vendor_id 4098
+[INFO  ] [ 83125.470515] [pcie_act_7] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.470516] [pcie_act_7] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.470516] [pcie_act_7] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.470517] [pcie_act_7] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.470517] [pcie_act_7] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.470518] [pcie_act_7] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.470518] [pcie_act_7] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.470518] [pcie_act_7] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.470520] [pcie_act_7] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.470521] [pcie_act_7] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.470529] [pcie_act_7] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.470529] [pcie_act_7] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.470537] [pcie_act_7] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.470537] [pcie_act_7] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.470538] [pcie_act_7] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.470538] [pcie_act_7] peqt vendor_id 4098
+[INFO  ] [ 83125.473472] [pcie_act_7] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.473473] [pcie_act_7] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.473474] [pcie_act_7] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.473474] [pcie_act_7] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.473475] [pcie_act_7] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.473475] [pcie_act_7] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.473475] [pcie_act_7] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.473476] [pcie_act_7] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.473478] [pcie_act_7] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.473478] [pcie_act_7] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.473486] [pcie_act_7] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.473487] [pcie_act_7] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.473495] [pcie_act_7] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.473495] [pcie_act_7] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.473495] [pcie_act_7] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.473495] [pcie_act_7] peqt vendor_id 4098
+[INFO  ] [ 83125.474574] [pcie_act_7] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.474575] [pcie_act_7] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.474575] [pcie_act_7] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.474576] [pcie_act_7] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.474576] [pcie_act_7] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.474577] [pcie_act_7] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.474577] [pcie_act_7] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.474577] [pcie_act_7] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.474579] [pcie_act_7] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.474580] [pcie_act_7] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.474588] [pcie_act_7] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.474591] [pcie_act_7] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.474599] [pcie_act_7] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.474600] [pcie_act_7] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.474600] [pcie_act_7] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.474600] [pcie_act_7] peqt vendor_id 4098
+[INFO  ] [ 83125.475174] [pcie_act_7] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.475175] [pcie_act_7] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.475175] [pcie_act_7] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.475176] [pcie_act_7] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.475176] [pcie_act_7] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.475177] [pcie_act_7] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.475177] [pcie_act_7] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.475177] [pcie_act_7] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.475179] [pcie_act_7] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.475180] [pcie_act_7] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.475188] [pcie_act_7] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.475188] [pcie_act_7] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.475196] [pcie_act_7] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.475196] [pcie_act_7] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.475197] [pcie_act_7] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.475197] [pcie_act_7] peqt vendor_id 4098
+[RESULT] [ 83125.477197] [pcie_act_7] peqt false
+RVS-ERROR [peqt] [pcie_act_7] Action failed to run successfully.
+[RESULT] [ 83125.477205] Action name :pcie_act_8
+[RESULT] [ 83125.477206] Module name :peqt
+[INFO  ] [ 83125.477215] Missing 'device_index' key.
+[INFO  ] [ 83125.477542] [pcie_act_8] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.477543] [pcie_act_8] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.477543] [pcie_act_8] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.477544] [pcie_act_8] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.477545] [pcie_act_8] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.477545] [pcie_act_8] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.477545] [pcie_act_8] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.477545] [pcie_act_8] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.477548] [pcie_act_8] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.477548] [pcie_act_8] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.477556] [pcie_act_8] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.477557] [pcie_act_8] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.477565] [pcie_act_8] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.477565] [pcie_act_8] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.477565] [pcie_act_8] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.477566] [pcie_act_8] peqt vendor_id 4098
+[INFO  ] [ 83125.477998] [pcie_act_8] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.477998] [pcie_act_8] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.477999] [pcie_act_8] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.478005] [pcie_act_8] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.478005] [pcie_act_8] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.478006] [pcie_act_8] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.478006] [pcie_act_8] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.478006] [pcie_act_8] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.478008] [pcie_act_8] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.478009] [pcie_act_8] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.478017] [pcie_act_8] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.478017] [pcie_act_8] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.478025] [pcie_act_8] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.478026] [pcie_act_8] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.478026] [pcie_act_8] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.478026] [pcie_act_8] peqt vendor_id 4098
+[INFO  ] [ 83125.481424] [pcie_act_8] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.481425] [pcie_act_8] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.481425] [pcie_act_8] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.481426] [pcie_act_8] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.481426] [pcie_act_8] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.481427] [pcie_act_8] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.481427] [pcie_act_8] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.481427] [pcie_act_8] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.481429] [pcie_act_8] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.481430] [pcie_act_8] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.481438] [pcie_act_8] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.481438] [pcie_act_8] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.481446] [pcie_act_8] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.481447] [pcie_act_8] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.481447] [pcie_act_8] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.481447] [pcie_act_8] peqt vendor_id 4098
+[INFO  ] [ 83125.481942] [pcie_act_8] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.481943] [pcie_act_8] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.481944] [pcie_act_8] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.481944] [pcie_act_8] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.481945] [pcie_act_8] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.481948] [pcie_act_8] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.481948] [pcie_act_8] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.481949] [pcie_act_8] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.481951] [pcie_act_8] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.481951] [pcie_act_8] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.481960] [pcie_act_8] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.481960] [pcie_act_8] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.481968] [pcie_act_8] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.481968] [pcie_act_8] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.481969] [pcie_act_8] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.481969] [pcie_act_8] peqt vendor_id 4098
+[INFO  ] [ 83125.482915] [pcie_act_8] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.482915] [pcie_act_8] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.482916] [pcie_act_8] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.482917] [pcie_act_8] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.482917] [pcie_act_8] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.482917] [pcie_act_8] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.482918] [pcie_act_8] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.482918] [pcie_act_8] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.482920] [pcie_act_8] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.482920] [pcie_act_8] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.482928] [pcie_act_8] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.482929] [pcie_act_8] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.482937] [pcie_act_8] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.482937] [pcie_act_8] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.482937] [pcie_act_8] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.482937] [pcie_act_8] peqt vendor_id 4098
+[INFO  ] [ 83125.484248] [pcie_act_8] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.484249] [pcie_act_8] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.484249] [pcie_act_8] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.484250] [pcie_act_8] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.484250] [pcie_act_8] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.484251] [pcie_act_8] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.484251] [pcie_act_8] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.484251] [pcie_act_8] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.484253] [pcie_act_8] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.484253] [pcie_act_8] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.484262] [pcie_act_8] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.484262] [pcie_act_8] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.484270] [pcie_act_8] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.484270] [pcie_act_8] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.484271] [pcie_act_8] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.484271] [pcie_act_8] peqt vendor_id 4098
+[INFO  ] [ 83125.485354] [pcie_act_8] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.485355] [pcie_act_8] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.485355] [pcie_act_8] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.485356] [pcie_act_8] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.485356] [pcie_act_8] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.485357] [pcie_act_8] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.485357] [pcie_act_8] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.485357] [pcie_act_8] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.485359] [pcie_act_8] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.485360] [pcie_act_8] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.485368] [pcie_act_8] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.485371] [pcie_act_8] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.485379] [pcie_act_8] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.485380] [pcie_act_8] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.485380] [pcie_act_8] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.485380] [pcie_act_8] peqt vendor_id 4098
+[INFO  ] [ 83125.485945] [pcie_act_8] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.485946] [pcie_act_8] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.485947] [pcie_act_8] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.485947] [pcie_act_8] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.485948] [pcie_act_8] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.485948] [pcie_act_8] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.485948] [pcie_act_8] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.485948] [pcie_act_8] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.485950] [pcie_act_8] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.485951] [pcie_act_8] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.485959] [pcie_act_8] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.485959] [pcie_act_8] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.485967] [pcie_act_8] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.485968] [pcie_act_8] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.485968] [pcie_act_8] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.485968] [pcie_act_8] peqt vendor_id 4098
+[RESULT] [ 83125.487967] [pcie_act_8] peqt false
+RVS-ERROR [peqt] [pcie_act_8] Action failed to run successfully.
+[RESULT] [ 83125.487971] Action name :pcie_act_9
+[RESULT] [ 83125.487972] Module name :peqt
+[INFO  ] [ 83125.487980] Missing 'device_index' key.
+[INFO  ] [ 83125.488324] [pcie_act_9] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.488325] [pcie_act_9] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.488325] [pcie_act_9] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.488326] [pcie_act_9] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.488326] [pcie_act_9] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.488327] [pcie_act_9] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.488327] [pcie_act_9] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.488327] [pcie_act_9] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.488329] [pcie_act_9] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.488330] [pcie_act_9] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.488338] [pcie_act_9] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.488338] [pcie_act_9] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.488347] [pcie_act_9] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.488347] [pcie_act_9] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.488347] [pcie_act_9] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.488347] [pcie_act_9] peqt vendor_id 4098
+[INFO  ] [ 83125.488776] [pcie_act_9] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.488777] [pcie_act_9] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.488778] [pcie_act_9] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.488778] [pcie_act_9] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.488779] [pcie_act_9] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.488779] [pcie_act_9] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.488779] [pcie_act_9] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.488779] [pcie_act_9] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.488781] [pcie_act_9] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.488782] [pcie_act_9] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.488790] [pcie_act_9] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.488790] [pcie_act_9] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.488798] [pcie_act_9] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.488799] [pcie_act_9] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.488799] [pcie_act_9] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.488799] [pcie_act_9] peqt vendor_id 4098
+[INFO  ] [ 83125.490975] [pcie_act_9] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.490975] [pcie_act_9] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.490976] [pcie_act_9] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.490976] [pcie_act_9] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.490977] [pcie_act_9] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.490977] [pcie_act_9] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.490978] [pcie_act_9] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.490978] [pcie_act_9] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.490980] [pcie_act_9] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.490980] [pcie_act_9] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.490989] [pcie_act_9] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.490989] [pcie_act_9] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.490997] [pcie_act_9] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.490997] [pcie_act_9] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.490998] [pcie_act_9] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.490998] [pcie_act_9] peqt vendor_id 4098
+[INFO  ] [ 83125.491494] [pcie_act_9] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.491494] [pcie_act_9] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.491495] [pcie_act_9] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.491496] [pcie_act_9] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.491496] [pcie_act_9] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.491499] [pcie_act_9] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.491499] [pcie_act_9] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.491500] [pcie_act_9] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.491502] [pcie_act_9] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.491502] [pcie_act_9] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.491510] [pcie_act_9] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.491510] [pcie_act_9] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.491519] [pcie_act_9] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.491519] [pcie_act_9] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.491519] [pcie_act_9] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.491519] [pcie_act_9] peqt vendor_id 4098
+[INFO  ] [ 83125.492465] [pcie_act_9] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.492465] [pcie_act_9] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.492466] [pcie_act_9] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.492467] [pcie_act_9] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.492467] [pcie_act_9] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.492467] [pcie_act_9] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.492468] [pcie_act_9] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.492468] [pcie_act_9] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.492470] [pcie_act_9] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.492470] [pcie_act_9] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.492478] [pcie_act_9] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.492479] [pcie_act_9] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.492487] [pcie_act_9] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.492487] [pcie_act_9] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.492487] [pcie_act_9] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.492488] [pcie_act_9] peqt vendor_id 4098
+[INFO  ] [ 83125.493795] [pcie_act_9] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.493796] [pcie_act_9] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.493796] [pcie_act_9] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.493797] [pcie_act_9] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.493797] [pcie_act_9] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.493798] [pcie_act_9] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.493798] [pcie_act_9] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.493798] [pcie_act_9] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.493800] [pcie_act_9] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.493801] [pcie_act_9] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.493809] [pcie_act_9] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.493809] [pcie_act_9] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.493817] [pcie_act_9] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.493818] [pcie_act_9] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.493818] [pcie_act_9] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.493818] [pcie_act_9] peqt vendor_id 4098
+[INFO  ] [ 83125.494904] [pcie_act_9] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.494904] [pcie_act_9] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.494905] [pcie_act_9] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.494905] [pcie_act_9] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.494906] [pcie_act_9] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.494906] [pcie_act_9] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.494906] [pcie_act_9] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.494907] [pcie_act_9] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.494909] [pcie_act_9] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.494909] [pcie_act_9] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.494917] [pcie_act_9] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.494921] [pcie_act_9] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.494930] [pcie_act_9] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.494930] [pcie_act_9] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.494930] [pcie_act_9] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.494930] [pcie_act_9] peqt vendor_id 4098
+[INFO  ] [ 83125.495498] [pcie_act_9] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.495499] [pcie_act_9] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.495500] [pcie_act_9] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.495500] [pcie_act_9] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.495501] [pcie_act_9] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.495501] [pcie_act_9] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.495501] [pcie_act_9] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.495501] [pcie_act_9] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.495504] [pcie_act_9] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.495504] [pcie_act_9] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.495512] [pcie_act_9] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.495512] [pcie_act_9] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.495520] [pcie_act_9] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.495521] [pcie_act_9] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.495521] [pcie_act_9] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.495521] [pcie_act_9] peqt vendor_id 4098
+[RESULT] [ 83125.497508] [pcie_act_9] peqt false
+RVS-ERROR [peqt] [pcie_act_9] Action failed to run successfully.
+[RESULT] [ 83125.497513] Action name :pcie_act_10
+[RESULT] [ 83125.497513] Module name :peqt
+[INFO  ] [ 83125.497523] Missing 'device_index' key.
+[INFO  ] [ 83125.497848] [pcie_act_10] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.497849] [pcie_act_10] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.497849] [pcie_act_10] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.497849] [pcie_act_10] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.497852] [pcie_act_10] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.497853] [pcie_act_10] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.497862] [pcie_act_10] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.497862] [pcie_act_10] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.497870] [pcie_act_10] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.497871] [pcie_act_10] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.497871] [pcie_act_10] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.497871] [pcie_act_10] peqt vendor_id 4098
+[INFO  ] [ 83125.498318] [pcie_act_10] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.498318] [pcie_act_10] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.498318] [pcie_act_10] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.498319] [pcie_act_10] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.498321] [pcie_act_10] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.498322] [pcie_act_10] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.498330] [pcie_act_10] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.498330] [pcie_act_10] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.498339] [pcie_act_10] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.498339] [pcie_act_10] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.498339] [pcie_act_10] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.498339] [pcie_act_10] peqt vendor_id 4098
+[INFO  ] [ 83125.501558] [pcie_act_10] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.501558] [pcie_act_10] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.501558] [pcie_act_10] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.501559] [pcie_act_10] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.501561] [pcie_act_10] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.501562] [pcie_act_10] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.501570] [pcie_act_10] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.501571] [pcie_act_10] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.501579] [pcie_act_10] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.501579] [pcie_act_10] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.501579] [pcie_act_10] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.501579] [pcie_act_10] peqt vendor_id 4098
+[INFO  ] [ 83125.503266] [pcie_act_10] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.503267] [pcie_act_10] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.503267] [pcie_act_10] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.503267] [pcie_act_10] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.503269] [pcie_act_10] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.503270] [pcie_act_10] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.503278] [pcie_act_10] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.503279] [pcie_act_10] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.503287] [pcie_act_10] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.503287] [pcie_act_10] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.503287] [pcie_act_10] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.503288] [pcie_act_10] peqt vendor_id 4098
+[INFO  ] [ 83125.504233] [pcie_act_10] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.504233] [pcie_act_10] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.504233] [pcie_act_10] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.504234] [pcie_act_10] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.504236] [pcie_act_10] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.504240] [pcie_act_10] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.504249] [pcie_act_10] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.504249] [pcie_act_10] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.504257] [pcie_act_10] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.504257] [pcie_act_10] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.504257] [pcie_act_10] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.504258] [pcie_act_10] peqt vendor_id 4098
+[INFO  ] [ 83125.505551] [pcie_act_10] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.505552] [pcie_act_10] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.505552] [pcie_act_10] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.505552] [pcie_act_10] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.505555] [pcie_act_10] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.505555] [pcie_act_10] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.505564] [pcie_act_10] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.505564] [pcie_act_10] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.505572] [pcie_act_10] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.505572] [pcie_act_10] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.505572] [pcie_act_10] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.505573] [pcie_act_10] peqt vendor_id 4098
+[INFO  ] [ 83125.506649] [pcie_act_10] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.506649] [pcie_act_10] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.506650] [pcie_act_10] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.506650] [pcie_act_10] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.506652] [pcie_act_10] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.506653] [pcie_act_10] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.506661] [pcie_act_10] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.506661] [pcie_act_10] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.506670] [pcie_act_10] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.506670] [pcie_act_10] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.506670] [pcie_act_10] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.506671] [pcie_act_10] peqt vendor_id 4098
+[INFO  ] [ 83125.507241] [pcie_act_10] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.507241] [pcie_act_10] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.507241] [pcie_act_10] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.507242] [pcie_act_10] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.507244] [pcie_act_10] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.507245] [pcie_act_10] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.507253] [pcie_act_10] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.507253] [pcie_act_10] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.507261] [pcie_act_10] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.507261] [pcie_act_10] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.507262] [pcie_act_10] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.507262] [pcie_act_10] peqt vendor_id 4098
+[RESULT] [ 83125.509251] [pcie_act_10] peqt false
+RVS-ERROR [peqt] [pcie_act_10] Action failed to run successfully.
+[RESULT] [ 83125.509257] Action name :pcie_act_11
+[RESULT] [ 83125.509258] Module name :peqt
+[INFO  ] [ 83125.509268] Missing 'device_index' key.
+[INFO  ] [ 83125.509597] [pcie_act_11] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.509598] [pcie_act_11] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.509599] [pcie_act_11] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.509600] [pcie_act_11] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.509600] [pcie_act_11] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.509601] [pcie_act_11] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.509601] [pcie_act_11] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.509601] [pcie_act_11] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.509604] [pcie_act_11] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.509605] [pcie_act_11] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.509614] [pcie_act_11] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.509614] [pcie_act_11] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.509622] [pcie_act_11] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.509622] [pcie_act_11] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.509623] [pcie_act_11] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.509623] [pcie_act_11] peqt vendor_id 4098
+[INFO  ] [ 83125.510061] [pcie_act_11] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.510062] [pcie_act_11] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.510062] [pcie_act_11] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.510063] [pcie_act_11] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.510063] [pcie_act_11] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.510064] [pcie_act_11] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.510064] [pcie_act_11] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.510064] [pcie_act_11] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.510066] [pcie_act_11] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.510067] [pcie_act_11] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.510075] [pcie_act_11] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.510076] [pcie_act_11] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.510084] [pcie_act_11] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.510084] [pcie_act_11] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.510084] [pcie_act_11] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.510085] [pcie_act_11] peqt vendor_id 4098
+[INFO  ] [ 83125.513592] [pcie_act_11] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.513593] [pcie_act_11] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.513594] [pcie_act_11] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.513594] [pcie_act_11] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.513595] [pcie_act_11] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.513595] [pcie_act_11] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.513595] [pcie_act_11] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.513596] [pcie_act_11] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.513598] [pcie_act_11] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.513599] [pcie_act_11] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.513607] [pcie_act_11] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.513607] [pcie_act_11] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.513615] [pcie_act_11] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.513616] [pcie_act_11] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.513616] [pcie_act_11] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.513616] [pcie_act_11] peqt vendor_id 4098
+[INFO  ] [ 83125.514110] [pcie_act_11] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.514111] [pcie_act_11] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.514111] [pcie_act_11] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.514112] [pcie_act_11] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.514116] [pcie_act_11] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.514116] [pcie_act_11] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.514116] [pcie_act_11] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.514117] [pcie_act_11] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.514119] [pcie_act_11] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.514120] [pcie_act_11] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.514128] [pcie_act_11] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.514128] [pcie_act_11] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.514136] [pcie_act_11] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.514136] [pcie_act_11] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.514137] [pcie_act_11] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.514137] [pcie_act_11] peqt vendor_id 4098
+[INFO  ] [ 83125.515087] [pcie_act_11] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.515087] [pcie_act_11] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.515088] [pcie_act_11] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.515088] [pcie_act_11] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.515089] [pcie_act_11] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.515089] [pcie_act_11] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.515089] [pcie_act_11] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.515090] [pcie_act_11] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.515092] [pcie_act_11] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.515093] [pcie_act_11] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.515101] [pcie_act_11] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.515101] [pcie_act_11] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.515109] [pcie_act_11] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.515109] [pcie_act_11] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.515110] [pcie_act_11] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.515110] [pcie_act_11] peqt vendor_id 4098
+[INFO  ] [ 83125.516411] [pcie_act_11] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.516412] [pcie_act_11] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.516413] [pcie_act_11] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.516413] [pcie_act_11] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.516414] [pcie_act_11] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.516414] [pcie_act_11] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.516414] [pcie_act_11] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.516415] [pcie_act_11] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.516417] [pcie_act_11] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.516418] [pcie_act_11] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.516426] [pcie_act_11] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.516426] [pcie_act_11] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.516434] [pcie_act_11] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.516435] [pcie_act_11] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.516435] [pcie_act_11] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.516435] [pcie_act_11] peqt vendor_id 4098
+[INFO  ] [ 83125.517540] [pcie_act_11] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.517541] [pcie_act_11] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.517541] [pcie_act_11] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.517542] [pcie_act_11] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.517543] [pcie_act_11] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.517543] [pcie_act_11] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.517543] [pcie_act_11] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.517543] [pcie_act_11] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.517545] [pcie_act_11] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.517546] [pcie_act_11] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.517558] [pcie_act_11] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.517558] [pcie_act_11] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.517566] [pcie_act_11] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.517566] [pcie_act_11] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.517566] [pcie_act_11] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.517567] [pcie_act_11] peqt vendor_id 4098
+[INFO  ] [ 83125.518158] [pcie_act_11] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.518159] [pcie_act_11] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.518159] [pcie_act_11] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.518160] [pcie_act_11] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.518160] [pcie_act_11] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.518161] [pcie_act_11] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.518161] [pcie_act_11] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.518161] [pcie_act_11] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.518163] [pcie_act_11] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.518164] [pcie_act_11] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.518172] [pcie_act_11] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.518173] [pcie_act_11] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.518181] [pcie_act_11] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.518181] [pcie_act_11] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.518181] [pcie_act_11] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.518181] [pcie_act_11] peqt vendor_id 4098
+[RESULT] [ 83125.521612] [pcie_act_11] peqt false
+RVS-ERROR [peqt] [pcie_act_11] Action failed to run successfully.
+[RESULT] [ 83125.521619] Action name :pcie_act_12
+[RESULT] [ 83125.521619] Module name :peqt
+[INFO  ] [ 83125.521625] Missing 'device_index' key.
+[INFO  ] [ 83125.521956] [pcie_act_12] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.521956] [pcie_act_12] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.521957] [pcie_act_12] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.521959] [pcie_act_12] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.521960] [pcie_act_12] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.521968] [pcie_act_12] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.521969] [pcie_act_12] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.521977] [pcie_act_12] peqt vendor_id 4098
+[INFO  ] [ 83125.522419] [pcie_act_12] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.522419] [pcie_act_12] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.522420] [pcie_act_12] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.522422] [pcie_act_12] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.522423] [pcie_act_12] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.522431] [pcie_act_12] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.522431] [pcie_act_12] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.522439] [pcie_act_12] peqt vendor_id 4098
+[INFO  ] [ 83125.524657] [pcie_act_12] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.524657] [pcie_act_12] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.524658] [pcie_act_12] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.524660] [pcie_act_12] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.524661] [pcie_act_12] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.524669] [pcie_act_12] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.524669] [pcie_act_12] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.524678] [pcie_act_12] peqt vendor_id 4098
+[INFO  ] [ 83125.525174] [pcie_act_12] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.525174] [pcie_act_12] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.525174] [pcie_act_12] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.525176] [pcie_act_12] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.525177] [pcie_act_12] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.525185] [pcie_act_12] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.525185] [pcie_act_12] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.525193] [pcie_act_12] peqt vendor_id 4098
+[INFO  ] [ 83125.526140] [pcie_act_12] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.526140] [pcie_act_12] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.526140] [pcie_act_12] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.526142] [pcie_act_12] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.526143] [pcie_act_12] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.526151] [pcie_act_12] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.526151] [pcie_act_12] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.526160] [pcie_act_12] peqt vendor_id 4098
+[INFO  ] [ 83125.527468] [pcie_act_12] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.527468] [pcie_act_12] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.527469] [pcie_act_12] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.527471] [pcie_act_12] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.527472] [pcie_act_12] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.527480] [pcie_act_12] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.527480] [pcie_act_12] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.527488] [pcie_act_12] peqt vendor_id 4098
+[INFO  ] [ 83125.528575] [pcie_act_12] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.528575] [pcie_act_12] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.528576] [pcie_act_12] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.528577] [pcie_act_12] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.528578] [pcie_act_12] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.528586] [pcie_act_12] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.528591] [pcie_act_12] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.528600] [pcie_act_12] peqt vendor_id 4098
+[INFO  ] [ 83125.529184] [pcie_act_12] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.529184] [pcie_act_12] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.529184] [pcie_act_12] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.529186] [pcie_act_12] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.529187] [pcie_act_12] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.529195] [pcie_act_12] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.529195] [pcie_act_12] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.529204] [pcie_act_12] peqt vendor_id 4098
+[RESULT] [ 83125.531191] [pcie_act_12] peqt false
+RVS-ERROR [peqt] [pcie_act_12] Action failed to run successfully.
+[RESULT] [ 83125.531195] Action name :pcie_act_13
+[RESULT] [ 83125.531195] Module name :peqt
+[INFO  ] [ 83125.531204] Missing 'device_index' key.
+[INFO  ] [ 83125.531528] [pcie_act_13] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.531529] [pcie_act_13] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.531530] [pcie_act_13] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.531530] [pcie_act_13] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.531531] [pcie_act_13] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.531531] [pcie_act_13] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.531532] [pcie_act_13] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.531532] [pcie_act_13] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.531534] [pcie_act_13] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.531536] [pcie_act_13] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.531544] [pcie_act_13] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.531545] [pcie_act_13] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.531554] [pcie_act_13] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.531555] [pcie_act_13] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.531555] [pcie_act_13] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.531556] [pcie_act_13] peqt vendor_id 4098
+[INFO  ] [ 83125.531984] [pcie_act_13] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.531985] [pcie_act_13] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.531986] [pcie_act_13] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.531986] [pcie_act_13] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.531987] [pcie_act_13] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.531987] [pcie_act_13] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.531987] [pcie_act_13] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.531987] [pcie_act_13] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.531990] [pcie_act_13] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.531990] [pcie_act_13] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.531999] [pcie_act_13] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.532004] [pcie_act_13] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.532012] [pcie_act_13] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.532013] [pcie_act_13] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.532013] [pcie_act_13] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.532013] [pcie_act_13] peqt vendor_id 4098
+[INFO  ] [ 83125.534189] [pcie_act_13] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.534190] [pcie_act_13] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.534190] [pcie_act_13] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.534191] [pcie_act_13] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.534192] [pcie_act_13] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.534192] [pcie_act_13] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.534192] [pcie_act_13] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.534193] [pcie_act_13] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.534195] [pcie_act_13] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.534196] [pcie_act_13] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.534204] [pcie_act_13] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.534205] [pcie_act_13] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.534213] [pcie_act_13] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.534214] [pcie_act_13] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.534214] [pcie_act_13] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.534215] [pcie_act_13] peqt vendor_id 4098
+[INFO  ] [ 83125.534704] [pcie_act_13] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.534704] [pcie_act_13] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.534705] [pcie_act_13] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.534706] [pcie_act_13] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.534709] [pcie_act_13] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.534709] [pcie_act_13] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.534709] [pcie_act_13] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.534710] [pcie_act_13] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.534712] [pcie_act_13] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.534713] [pcie_act_13] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.534721] [pcie_act_13] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.534722] [pcie_act_13] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.534730] [pcie_act_13] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.534731] [pcie_act_13] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.534731] [pcie_act_13] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.534731] [pcie_act_13] peqt vendor_id 4098
+[INFO  ] [ 83125.535676] [pcie_act_13] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.535677] [pcie_act_13] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.535678] [pcie_act_13] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.535679] [pcie_act_13] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.535679] [pcie_act_13] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.535679] [pcie_act_13] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.535680] [pcie_act_13] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.535680] [pcie_act_13] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.535682] [pcie_act_13] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.535683] [pcie_act_13] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.535691] [pcie_act_13] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.535692] [pcie_act_13] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.535700] [pcie_act_13] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.535701] [pcie_act_13] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.535701] [pcie_act_13] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.535702] [pcie_act_13] peqt vendor_id 4098
+[INFO  ] [ 83125.537010] [pcie_act_13] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.537010] [pcie_act_13] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.537011] [pcie_act_13] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.537012] [pcie_act_13] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.537012] [pcie_act_13] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.537013] [pcie_act_13] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.537013] [pcie_act_13] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.537013] [pcie_act_13] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.537015] [pcie_act_13] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.537016] [pcie_act_13] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.537024] [pcie_act_13] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.537025] [pcie_act_13] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.537034] [pcie_act_13] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.537035] [pcie_act_13] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.537035] [pcie_act_13] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.537035] [pcie_act_13] peqt vendor_id 4098
+[INFO  ] [ 83125.539434] [pcie_act_13] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.539434] [pcie_act_13] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.539435] [pcie_act_13] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.539435] [pcie_act_13] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.539436] [pcie_act_13] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.539436] [pcie_act_13] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.539436] [pcie_act_13] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.539437] [pcie_act_13] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.539439] [pcie_act_13] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.539440] [pcie_act_13] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.539451] [pcie_act_13] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.539452] [pcie_act_13] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.539460] [pcie_act_13] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.539461] [pcie_act_13] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.539461] [pcie_act_13] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.539461] [pcie_act_13] peqt vendor_id 4098
+[INFO  ] [ 83125.540030] [pcie_act_13] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.540031] [pcie_act_13] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.540032] [pcie_act_13] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.540032] [pcie_act_13] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.540033] [pcie_act_13] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.540033] [pcie_act_13] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.540033] [pcie_act_13] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.540033] [pcie_act_13] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.540035] [pcie_act_13] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.540036] [pcie_act_13] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.540044] [pcie_act_13] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.540045] [pcie_act_13] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.540054] [pcie_act_13] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.540054] [pcie_act_13] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.540055] [pcie_act_13] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.540055] [pcie_act_13] peqt vendor_id 4098
+[RESULT] [ 83125.543096] [pcie_act_13] peqt false
+RVS-ERROR [peqt] [pcie_act_13] Action failed to run successfully.
+[RESULT] [ 83125.543100] Action name :pcie_act_14
+[RESULT] [ 83125.543100] Module name :peqt
+[INFO  ] [ 83125.543110] Missing 'device_index' key.
+[INFO  ] [ 83125.543432] [pcie_act_14] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.543433] [pcie_act_14] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.543434] [pcie_act_14] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.543434] [pcie_act_14] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.543435] [pcie_act_14] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.543452] [pcie_act_14] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.543455] [pcie_act_14] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.543458] [pcie_act_14] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.543460] [pcie_act_14] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.543461] [pcie_act_14] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.543470] [pcie_act_14] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.543471] [pcie_act_14] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.543479] [pcie_act_14] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.543480] [pcie_act_14] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.543480] [pcie_act_14] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.543481] [pcie_act_14] peqt vendor_id 4098
+[INFO  ] [ 83125.543910] [pcie_act_14] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.543911] [pcie_act_14] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.543911] [pcie_act_14] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.543912] [pcie_act_14] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.543912] [pcie_act_14] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.543915] [pcie_act_14] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.543917] [pcie_act_14] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.543919] [pcie_act_14] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.543921] [pcie_act_14] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.543922] [pcie_act_14] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.543930] [pcie_act_14] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.543931] [pcie_act_14] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.543939] [pcie_act_14] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.543940] [pcie_act_14] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.543940] [pcie_act_14] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.543940] [pcie_act_14] peqt vendor_id 4098
+[INFO  ] [ 83125.546133] [pcie_act_14] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.546134] [pcie_act_14] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.546135] [pcie_act_14] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.546135] [pcie_act_14] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.546136] [pcie_act_14] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.546138] [pcie_act_14] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.546140] [pcie_act_14] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.546142] [pcie_act_14] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.546145] [pcie_act_14] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.546145] [pcie_act_14] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.546154] [pcie_act_14] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.546155] [pcie_act_14] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.546163] [pcie_act_14] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.546164] [pcie_act_14] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.546164] [pcie_act_14] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.546164] [pcie_act_14] peqt vendor_id 4098
+[INFO  ] [ 83125.546656] [pcie_act_14] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.546656] [pcie_act_14] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.546657] [pcie_act_14] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.546658] [pcie_act_14] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.546661] [pcie_act_14] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.546663] [pcie_act_14] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.546665] [pcie_act_14] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.546667] [pcie_act_14] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.546670] [pcie_act_14] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.546670] [pcie_act_14] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.546679] [pcie_act_14] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.546679] [pcie_act_14] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.546688] [pcie_act_14] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.546689] [pcie_act_14] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.546689] [pcie_act_14] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.546689] [pcie_act_14] peqt vendor_id 4098
+[INFO  ] [ 83125.547637] [pcie_act_14] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.547637] [pcie_act_14] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.547638] [pcie_act_14] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.547639] [pcie_act_14] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.547640] [pcie_act_14] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.547642] [pcie_act_14] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.547644] [pcie_act_14] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.547646] [pcie_act_14] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.547648] [pcie_act_14] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.547649] [pcie_act_14] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.547657] [pcie_act_14] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.547658] [pcie_act_14] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.547666] [pcie_act_14] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.547667] [pcie_act_14] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.547667] [pcie_act_14] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.547667] [pcie_act_14] peqt vendor_id 4098
+[INFO  ] [ 83125.548988] [pcie_act_14] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.548989] [pcie_act_14] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.548990] [pcie_act_14] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.548991] [pcie_act_14] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.548991] [pcie_act_14] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.548993] [pcie_act_14] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.548995] [pcie_act_14] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.548997] [pcie_act_14] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.549005] [pcie_act_14] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.549006] [pcie_act_14] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.549014] [pcie_act_14] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.549015] [pcie_act_14] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.549023] [pcie_act_14] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.549024] [pcie_act_14] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.549025] [pcie_act_14] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.549025] [pcie_act_14] peqt vendor_id 4098
+[INFO  ] [ 83125.550119] [pcie_act_14] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.550119] [pcie_act_14] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.550120] [pcie_act_14] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.550120] [pcie_act_14] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.550121] [pcie_act_14] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.550123] [pcie_act_14] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.550125] [pcie_act_14] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.550127] [pcie_act_14] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.550129] [pcie_act_14] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.550130] [pcie_act_14] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.550142] [pcie_act_14] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.550143] [pcie_act_14] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.550152] [pcie_act_14] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.550152] [pcie_act_14] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.550153] [pcie_act_14] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.550153] [pcie_act_14] peqt vendor_id 4098
+[INFO  ] [ 83125.550721] [pcie_act_14] peqt D0_Maximum_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.550722] [pcie_act_14] peqt D0_Maximum_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.550723] [pcie_act_14] peqt D0_Sustained_Power_12V NOT SUPPORTED
+[INFO  ] [ 83125.550723] [pcie_act_14] peqt D0_Sustained_Power_3_3V NOT SUPPORTED
+[INFO  ] [ 83125.550724] [pcie_act_14] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.550726] [pcie_act_14] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.550728] [pcie_act_14] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.550730] [pcie_act_14] peqt dev_serial_num NOT SUPPORTED
+[INFO  ] [ 83125.550732] [pcie_act_14] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.550733] [pcie_act_14] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.550741] [pcie_act_14] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.550742] [pcie_act_14] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.550750] [pcie_act_14] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.550751] [pcie_act_14] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.550751] [pcie_act_14] peqt slot_pwr_limit_value NOT SUPPORTED
+[INFO  ] [ 83125.550751] [pcie_act_14] peqt vendor_id 4098
+[RESULT] [ 83125.553944] [pcie_act_14] peqt false
+RVS-ERROR [peqt] [pcie_act_14] Action failed to run successfully.
+[RESULT] [ 83125.553951] Action name :pcie_act_15
+[RESULT] [ 83125.553951] Module name :peqt
+[INFO  ] [ 83125.553957] Missing 'device_index' key.
+[INFO  ] [ 83125.554290] [pcie_act_15] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.554293] [pcie_act_15] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.554297] [pcie_act_15] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.554298] [pcie_act_15] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.554306] [pcie_act_15] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.554307] [pcie_act_15] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.554316] [pcie_act_15] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.554748] [pcie_act_15] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.554750] [pcie_act_15] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.554754] [pcie_act_15] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.554755] [pcie_act_15] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.554763] [pcie_act_15] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.554764] [pcie_act_15] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.554773] [pcie_act_15] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.556950] [pcie_act_15] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.556952] [pcie_act_15] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.556956] [pcie_act_15] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.556957] [pcie_act_15] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.556965] [pcie_act_15] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.556966] [pcie_act_15] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.556974] [pcie_act_15] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.557473] [pcie_act_15] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.557475] [pcie_act_15] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.557479] [pcie_act_15] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.557480] [pcie_act_15] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.557488] [pcie_act_15] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.557489] [pcie_act_15] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.557497] [pcie_act_15] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.558442] [pcie_act_15] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.558444] [pcie_act_15] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.558448] [pcie_act_15] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.558449] [pcie_act_15] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.558457] [pcie_act_15] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.558458] [pcie_act_15] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.558466] [pcie_act_15] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.561395] [pcie_act_15] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.561398] [pcie_act_15] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.561401] [pcie_act_15] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.561402] [pcie_act_15] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.561411] [pcie_act_15] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.561412] [pcie_act_15] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.561420] [pcie_act_15] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.562509] [pcie_act_15] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.562511] [pcie_act_15] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.562515] [pcie_act_15] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.562516] [pcie_act_15] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.562524] [pcie_act_15] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.562525] [pcie_act_15] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.562533] [pcie_act_15] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.563109] [pcie_act_15] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.563111] [pcie_act_15] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.563115] [pcie_act_15] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.563116] [pcie_act_15] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.563129] [pcie_act_15] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.563130] [pcie_act_15] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.563138] [pcie_act_15] peqt link_stat_neg_width NOT SUPPORTED
+[RESULT] [ 83125.565134] [pcie_act_15] peqt false
+RVS-ERROR [peqt] [pcie_act_15] Action failed to run successfully.
+[RESULT] [ 83125.565138] Action name :pcie_act_16
+[RESULT] [ 83125.565139] Module name :peqt
+[INFO  ] [ 83125.565144] Missing 'device_index' key.
+[INFO  ] [ 83125.565470] [pcie_act_16] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.565473] [pcie_act_16] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.565475] [pcie_act_16] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.565479] [pcie_act_16] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.565480] [pcie_act_16] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.565489] [pcie_act_16] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.565490] [pcie_act_16] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.565498] [pcie_act_16] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.565930] [pcie_act_16] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.565932] [pcie_act_16] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.565934] [pcie_act_16] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.565938] [pcie_act_16] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.565938] [pcie_act_16] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.565947] [pcie_act_16] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.565948] [pcie_act_16] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.565956] [pcie_act_16] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.568146] [pcie_act_16] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.568148] [pcie_act_16] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.568150] [pcie_act_16] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.568154] [pcie_act_16] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.568155] [pcie_act_16] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.568163] [pcie_act_16] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.568164] [pcie_act_16] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.568173] [pcie_act_16] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.568666] [pcie_act_16] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.568668] [pcie_act_16] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.568670] [pcie_act_16] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.568674] [pcie_act_16] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.568674] [pcie_act_16] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.568683] [pcie_act_16] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.568684] [pcie_act_16] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.568692] [pcie_act_16] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.569641] [pcie_act_16] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.569643] [pcie_act_16] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.569645] [pcie_act_16] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.569649] [pcie_act_16] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.569650] [pcie_act_16] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.569658] [pcie_act_16] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.569659] [pcie_act_16] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.569667] [pcie_act_16] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.570974] [pcie_act_16] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.570976] [pcie_act_16] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.570978] [pcie_act_16] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.570982] [pcie_act_16] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.570983] [pcie_act_16] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.570991] [pcie_act_16] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.570992] [pcie_act_16] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.571008] [pcie_act_16] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.572091] [pcie_act_16] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.572093] [pcie_act_16] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.572095] [pcie_act_16] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.572098] [pcie_act_16] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.572102] [pcie_act_16] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.572110] [pcie_act_16] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.572111] [pcie_act_16] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.572120] [pcie_act_16] peqt link_stat_neg_width NOT SUPPORTED
+[INFO  ] [ 83125.572688] [pcie_act_16] peqt atomic_op_32_completer NOT SUPPORTED
+[INFO  ] [ 83125.572690] [pcie_act_16] peqt atomic_op_64_completer NOT SUPPORTED
+[INFO  ] [ 83125.572692] [pcie_act_16] peqt atomic_op_routing NOT SUPPORTED
+[INFO  ] [ 83125.572696] [pcie_act_16] peqt kernel_driver amdgpu
+[INFO  ] [ 83125.572697] [pcie_act_16] peqt link_cap_max_speed NOT SUPPORTED
+[INFO  ] [ 83125.572705] [pcie_act_16] peqt link_cap_max_width NOT SUPPORTED
+[INFO  ] [ 83125.572706] [pcie_act_16] peqt link_stat_cur_speed NOT SUPPORTED
+[INFO  ] [ 83125.572714] [pcie_act_16] peqt link_stat_neg_width NOT SUPPORTED
+[RESULT] [ 83125.574705] [pcie_act_16] peqt false
+RVS-ERROR [peqt] [pcie_act_16] Action failed to run successfully.
+[RESULT] [ 83125.574710] Action name :pcie_act_17
+[RESULT] [ 83125.574711] Module name :peqt
+[INFO  ] [ 83125.574714] Missing 'device_index' key.
+[INFO  ] [ 83125.575042] [pcie_act_17] peqt bus_id 15
+[INFO  ] [ 83125.575042] [pcie_act_17] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.575472] [pcie_act_17] peqt bus_id 85
+[INFO  ] [ 83125.575472] [pcie_act_17] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.577656] [pcie_act_17] peqt bus_id 5
+[INFO  ] [ 83125.577657] [pcie_act_17] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.578154] [pcie_act_17] peqt bus_id 75
+[INFO  ] [ 83125.578154] [pcie_act_17] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.580565] [pcie_act_17] peqt bus_id F5
+[INFO  ] [ 83125.580566] [pcie_act_17] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.581871] [pcie_act_17] peqt bus_id 65
+[INFO  ] [ 83125.581871] [pcie_act_17] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.584628] [pcie_act_17] peqt bus_id E5
+[INFO  ] [ 83125.584629] [pcie_act_17] peqt slot_physical_num NOT SUPPORTED
+[INFO  ] [ 83125.585203] [pcie_act_17] peqt bus_id 95
+[INFO  ] [ 83125.585203] [pcie_act_17] peqt slot_physical_num NOT SUPPORTED
+[RESULT] [ 83125.587203] [pcie_act_17] peqt true
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| pcie_act_1                       | PEQT           | [32mPASS          [0m  |
+| pcie_act_2                       | PEQT           | [32mPASS          [0m  |
+| pcie_act_3                       | PEQT           | [32mPASS          [0m  |
+| pcie_act_4                       | PEQT           | [32mPASS          [0m  |
+| pcie_act_5                       | PEQT           | [32mPASS          [0m  |
+| pcie_act_6                       | PEQT           | [31mFAIL          [0m  |
+| pcie_act_7                       | PEQT           | [31mFAIL          [0m  |
+| pcie_act_8                       | PEQT           | [31mFAIL          [0m  |
+| pcie_act_9                       | PEQT           | [31mFAIL          [0m  |
+| pcie_act_10                      | PEQT           | [31mFAIL          [0m  |
+| pcie_act_11                      | PEQT           | [31mFAIL          [0m  |
+| pcie_act_12                      | PEQT           | [31mFAIL          [0m  |
+| pcie_act_13                      | PEQT           | [31mFAIL          [0m  |
+| pcie_act_14                      | PEQT           | [31mFAIL          [0m  |
+| pcie_act_15                      | PEQT           | [31mFAIL          [0m  |
+| pcie_act_16                      | PEQT           | [31mFAIL          [0m  |
+| pcie_act_17                      | PEQT           | [32mPASS          [0m  |
++---------------------------------------------------------------------+

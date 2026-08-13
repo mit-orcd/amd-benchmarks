@@ -1,0 +1,2 @@
+gpus,precision,per_gpu_peak_tflops,aggregate_tflops,gpus_reporting
+1,fp16,"gpu42583=1544.26",1544.26,1

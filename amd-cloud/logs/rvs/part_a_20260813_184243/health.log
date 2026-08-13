@@ -1,0 +1,32 @@
+RVS health run 20260813_195057
+rvs : /home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/install_local/bin/rvs
+conf: /home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/install_local/share/rocm-validation-suite/conf
+
+----- gpup (GPU properties / config registers) conf=gpup_single.conf -----
+  rc=0 pass_lines=0 error_lines=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/gpup.log
+----- peqt (PCIe qualification (capabilities match expectations)) conf=peqt_single.conf -----
+  rc=0 pass_lines=0 error_lines=22 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/peqt.log
+----- smqt (SBIOS / VRAM BAR mapping) conf=smqt_single.conf -----
+  rc=0 pass_lines=0 error_lines=2 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/smqt.log
+----- rcqt (ROCm package + user/group checks) conf=rcqt_single.conf -----
+  rc=0 pass_lines=0 error_lines=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/rcqt.log
+----- mem (HBM error / pattern test) conf=mem.conf -----
+  rc=0 pass_lines=88 error_lines=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/mem.log
+----- babel (HBM bandwidth) conf=MI355X/babel.conf -----
+  rc=0 pass_lines=0 error_lines=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/babel.log
+----- pebb (PCIe host<->device bandwidth) conf=MI355X/pebb_single.conf -----
+  rc=0 pass_lines=0 error_lines=13 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/pebb.log
+----- pbqt (peer-to-peer XGMI device<->device bandwidth) conf=MI355X/pbqt_single.conf -----
+  rc=0 pass_lines=0 error_lines=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/pbqt.log
+----- iet (sustained power / EDP) conf=iet_single.conf -----
+  rc=124 pass_lines=38 error_lines=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/iet.log
+----- rvs_level_1 -----
+  rc=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/rvs_level_1.log
+----- rvs_level_2 -----
+  rc=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/rvs_level_2.log
+----- rvs_level_3 -----
+  rc=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/rvs_level_3.log
+----- rvs_level_4 -----
+./run_rvs_health.sh: line 61: 1714902 Segmentation fault      timeout 1800 "$RVS" -c "$lvl" > "$OUT/$n.log" 2>&1
+  rc=139 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/rvs_level_4.log
+----- rvs_level_5 -----

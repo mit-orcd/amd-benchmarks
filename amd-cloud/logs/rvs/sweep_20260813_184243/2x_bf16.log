@@ -1,0 +1,46 @@
+[RESULT] [ 79841.533041] Action name :tflops-bf16
+[RESULT] [ 79841.574758] Module name :gst
+[RESULT] [ 79842.152620] [tflops-bf16] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 79842.152621] [tflops-bf16] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 79847.765336] [tflops-bf16] [GPU:: 27226] GFLOPS 1637396
+[RESULT] [ 79847.784977] [tflops-bf16] [GPU:: 42583] GFLOPS 1650918
+[RESULT] [ 79848.765681] [tflops-bf16] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 79848.785301] [tflops-bf16] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 79862.208096] [tflops-bf16] [GPU:: 27226] GFLOPS 1635886
+[RESULT] [ 79862.306147] [tflops-bf16] [GPU:: 42583] GFLOPS 1626398
+[RESULT] [ 79875.655328] [tflops-bf16] [GPU:: 27226] GFLOPS 1635301
+[RESULT] [ 79875.847052] [tflops-bf16] [GPU:: 42583] GFLOPS 1623991
+[RESULT] [ 79889.113190] [tflops-bf16] [GPU:: 27226] GFLOPS 1634009
+[RESULT] [ 79889.113214] [tflops-bf16] [GPU:: 27226] GFLOPS 1635886 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 79889.386603] [tflops-bf16] [GPU:: 42583] GFLOPS 1624153
+[RESULT] [ 79889.386641] [tflops-bf16] [GPU:: 42583] GFLOPS 1626398 Target GFLOPS: 0 met: TRUE
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| tflops-bf16                      | GST            | [32mPASS          [0m  |
++---------------------------------------------------------------------+

@@ -1,0 +1,99 @@
+[RESULT] [ 83126.572664] Action name :bar_qualification
+[RESULT] [ 83126.613672] Module name :smqt
+[INFO  ] [ 83126.613692] Missing 'device_index' key.
+json log file is /var/tmp/rvs_1786650659618.json
+[INFO  ] [ 83126.614214] [bar_qualification]  smqt 27226 bar1_size      549755813888 (512.00 GB)
+[INFO  ] [ 83126.614214] [bar_qualification]  smqt 27226 bar1_base_addr 19000000000C
+[INFO  ] [ 83126.614214] [bar_qualification]  smqt 27226 bar2_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.614214] [bar_qualification]  smqt 27226 bar2_base_addr 19800020000C
+[INFO  ] [ 83126.614214] [bar_qualification]  smqt 27226 bar4_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.614214] [bar_qualification]  smqt 27226 bar4_base_addr D8800000
+[INFO  ] [ 83126.614214] [bar_qualification]  smqt 27226 bar5_size      131072 (128.00 KB)
+[RESULT] [ 83126.614263] [bar_qualification]  smqt 27226 false
+[INFO  ] [ 83126.614785] [bar_qualification]  smqt 1590 bar1_size      549755813888 (512.00 GB)
+[INFO  ] [ 83126.614785] [bar_qualification]  smqt 1590 bar1_base_addr 34000000000C
+[INFO  ] [ 83126.614785] [bar_qualification]  smqt 1590 bar2_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.614785] [bar_qualification]  smqt 1590 bar2_base_addr 34800020000C
+[INFO  ] [ 83126.614785] [bar_qualification]  smqt 1590 bar4_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.614785] [bar_qualification]  smqt 1590 bar4_base_addr BD800000
+[INFO  ] [ 83126.614785] [bar_qualification]  smqt 1590 bar5_size      131072 (128.00 KB)
+[RESULT] [ 83126.614789] [bar_qualification]  smqt 1590 false
+[INFO  ] [ 83126.618787] [bar_qualification]  smqt 42583 bar1_size      549755813888 (512.00 GB)
+[INFO  ] [ 83126.618787] [bar_qualification]  smqt 42583 bar1_base_addr 15800000000C
+[INFO  ] [ 83126.618787] [bar_qualification]  smqt 42583 bar2_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.618787] [bar_qualification]  smqt 42583 bar2_base_addr 16000020000C
+[INFO  ] [ 83126.618787] [bar_qualification]  smqt 42583 bar4_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.618787] [bar_qualification]  smqt 42583 bar4_base_addr ED800000
+[INFO  ] [ 83126.618787] [bar_qualification]  smqt 42583 bar5_size      131072 (128.00 KB)
+[RESULT] [ 83126.618791] [bar_qualification]  smqt 42583 false
+[INFO  ] [ 83126.619384] [bar_qualification]  smqt 17010 bar1_size      549755813888 (512.00 GB)
+[INFO  ] [ 83126.619384] [bar_qualification]  smqt 17010 bar1_base_addr 6000000000C
+[INFO  ] [ 83126.619384] [bar_qualification]  smqt 17010 bar2_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.619384] [bar_qualification]  smqt 17010 bar2_base_addr 6800020000C
+[INFO  ] [ 83126.619384] [bar_qualification]  smqt 17010 bar4_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.619384] [bar_qualification]  smqt 17010 bar4_base_addr E8800000
+[INFO  ] [ 83126.619384] [bar_qualification]  smqt 17010 bar5_size      131072 (128.00 KB)
+[RESULT] [ 83126.619387] [bar_qualification]  smqt 17010 false
+[INFO  ] [ 83126.620510] [bar_qualification]  smqt 57875 bar1_size      549755813888 (512.00 GB)
+[INFO  ] [ 83126.620510] [bar_qualification]  smqt 57875 bar1_base_addr 24800000000C
+[INFO  ] [ 83126.620510] [bar_qualification]  smqt 57875 bar2_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.620510] [bar_qualification]  smqt 57875 bar2_base_addr 25000020000C
+[INFO  ] [ 83126.620510] [bar_qualification]  smqt 57875 bar4_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.620510] [bar_qualification]  smqt 57875 bar4_base_addr CD800000
+[INFO  ] [ 83126.620510] [bar_qualification]  smqt 57875 bar5_size      131072 (128.00 KB)
+[RESULT] [ 83126.620513] [bar_qualification]  smqt 57875 false
+[INFO  ] [ 83126.622075] [bar_qualification]  smqt 36479 bar1_size      549755813888 (512.00 GB)
+[INFO  ] [ 83126.622075] [bar_qualification]  smqt 36479 bar1_base_addr A000000000C
+[INFO  ] [ 83126.622075] [bar_qualification]  smqt 36479 bar2_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.622075] [bar_qualification]  smqt 36479 bar2_base_addr A800020000C
+[INFO  ] [ 83126.622075] [bar_qualification]  smqt 36479 bar4_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.622075] [bar_qualification]  smqt 36479 bar4_base_addr E5800000
+[INFO  ] [ 83126.622075] [bar_qualification]  smqt 36479 bar5_size      131072 (128.00 KB)
+[RESULT] [ 83126.622078] [bar_qualification]  smqt 36479 false
+[INFO  ] [ 83126.623341] [bar_qualification]  smqt 11806 bar1_size      549755813888 (512.00 GB)
+[INFO  ] [ 83126.623341] [bar_qualification]  smqt 11806 bar1_base_addr 28800000000C
+[INFO  ] [ 83126.623341] [bar_qualification]  smqt 11806 bar2_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.623341] [bar_qualification]  smqt 11806 bar2_base_addr 29000020000C
+[INFO  ] [ 83126.623341] [bar_qualification]  smqt 11806 bar4_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.623341] [bar_qualification]  smqt 11806 bar4_base_addr C8800000
+[INFO  ] [ 83126.623341] [bar_qualification]  smqt 11806 bar5_size      131072 (128.00 KB)
+[RESULT] [ 83126.623351] [bar_qualification]  smqt 11806 false
+[INFO  ] [ 83126.624013] [bar_qualification]  smqt 51771 bar1_size      549755813888 (512.00 GB)
+[INFO  ] [ 83126.624013] [bar_qualification]  smqt 51771 bar1_base_addr 37800000000C
+[INFO  ] [ 83126.624013] [bar_qualification]  smqt 51771 bar2_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.624013] [bar_qualification]  smqt 51771 bar2_base_addr 38000020000C
+[INFO  ] [ 83126.624013] [bar_qualification]  smqt 51771 bar4_size      2097152 (2.00 MB)
+[INFO  ] [ 83126.624013] [bar_qualification]  smqt 51771 bar4_base_addr B8800000
+[INFO  ] [ 83126.624013] [bar_qualification]  smqt 51771 bar5_size      131072 (128.00 KB)
+[RESULT] [ 83126.624016] [bar_qualification]  smqt 51771 false
+RVS-ERROR [smqt] [bar_qualification] Action failed to run successfully.
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| bar_qualification                | SMQT           | [31mFAIL          [0m  |
++---------------------------------------------------------------------+

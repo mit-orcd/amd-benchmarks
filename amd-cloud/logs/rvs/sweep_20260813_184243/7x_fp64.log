@@ -1,0 +1,74 @@
+[RESULT] [ 82505.835503] Action name :tflops-fp64
+[RESULT] [ 82505.877341] Module name :gst
+[RESULT] [ 82506.450947] [tflops-fp64] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 82506.450999] [tflops-fp64] [GPU:: 17010] Start of GPU ramp up
+[RESULT] [ 82506.451105] [tflops-fp64] [GPU::  1590] Start of GPU ramp up
+[RESULT] [ 82506.451143] [tflops-fp64] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 82506.451231] [tflops-fp64] [GPU:: 36479] Start of GPU ramp up
+[RESULT] [ 82506.451301] [tflops-fp64] [GPU:: 11806] Start of GPU ramp up
+[RESULT] [ 82506.451549] [tflops-fp64] [GPU:: 51771] Start of GPU ramp up
+[RESULT] [ 82511.664642] [tflops-fp64] [GPU:: 51771] GFLOPS 76765
+[RESULT] [ 82511.888207] [tflops-fp64] [GPU:: 36479] GFLOPS 77072
+[RESULT] [ 82511.890627] [tflops-fp64] [GPU::  1590] GFLOPS 76445
+[RESULT] [ 82511.905337] [tflops-fp64] [GPU:: 27226] GFLOPS 76701
+[RESULT] [ 82511.924444] [tflops-fp64] [GPU:: 11806] GFLOPS 76894
+[RESULT] [ 82511.931697] [tflops-fp64] [GPU:: 17010] GFLOPS 76975
+[RESULT] [ 82511.932133] [tflops-fp64] [GPU:: 42583] GFLOPS 76621
+[RESULT] [ 82512.667685] [tflops-fp64] [GPU:: 51771] End of GPU ramp up
+[RESULT] [ 82512.888471] [tflops-fp64] [GPU:: 36479] End of GPU ramp up
+[RESULT] [ 82512.896700] [tflops-fp64] [GPU::  1590] End of GPU ramp up
+[RESULT] [ 82512.909763] [tflops-fp64] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 82512.923588] [tflops-fp64] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 82512.927522] [tflops-fp64] [GPU:: 11806] End of GPU ramp up
+[RESULT] [ 82512.930601] [tflops-fp64] [GPU:: 17010] End of GPU ramp up
+[RESULT] [ 82541.330650] [tflops-fp64] [GPU:: 51771] GFLOPS 76720
+[RESULT] [ 82541.459799] [tflops-fp64] [GPU:: 17010] GFLOPS 77079
+[RESULT] [ 82541.503515] [tflops-fp64] [GPU:: 36479] GFLOPS 76848
+[RESULT] [ 82541.529895] [tflops-fp64] [GPU:: 11806] GFLOPS 76882
+[RESULT] [ 82541.581853] [tflops-fp64] [GPU::  1590] GFLOPS 76660
+[RESULT] [ 82541.585005] [tflops-fp64] [GPU:: 27226] GFLOPS 76687
+[RESULT] [ 82541.634459] [tflops-fp64] [GPU:: 42583] GFLOPS 76592
+[RESULT] [ 82569.980094] [tflops-fp64] [GPU:: 17010] GFLOPS 77103
+[RESULT] [ 82569.980113] [tflops-fp64] [GPU:: 17010] GFLOPS 77103 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 82569.999838] [tflops-fp64] [GPU:: 51771] GFLOPS 76703
+[RESULT] [ 82569.999855] [tflops-fp64] [GPU:: 51771] GFLOPS 76720 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 82570.106247] [tflops-fp64] [GPU:: 36479] GFLOPS 76881
+[RESULT] [ 82570.106273] [tflops-fp64] [GPU:: 36479] GFLOPS 76881 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 82570.141108] [tflops-fp64] [GPU:: 11806] GFLOPS 76858
+[RESULT] [ 82570.141135] [tflops-fp64] [GPU:: 11806] GFLOPS 76882 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 82570.259529] [tflops-fp64] [GPU:: 27226] GFLOPS 76689
+[RESULT] [ 82570.259553] [tflops-fp64] [GPU:: 27226] GFLOPS 76689 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 82570.277114] [tflops-fp64] [GPU::  1590] GFLOPS 76633
+[RESULT] [ 82570.277139] [tflops-fp64] [GPU::  1590] GFLOPS 76660 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 82570.351993] [tflops-fp64] [GPU:: 42583] GFLOPS 76574
+[RESULT] [ 82570.352023] [tflops-fp64] [GPU:: 42583] GFLOPS 76592 Target GFLOPS: 0 met: TRUE
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| tflops-fp64                      | GST            | [32mPASS          [0m  |
++---------------------------------------------------------------------+

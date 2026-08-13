@@ -1,0 +1,282 @@
+[RESULT] [ 84842.575609] Action name :pcie_capability
+[RESULT] [ 84842.617005] Module name :peqt
+[RESULT] [ 84842.630088] [pcie_capability] peqt true
+[RESULT] [ 84842.630099] Action name :hbm_basic
+[RESULT] [ 84842.631123] Module name :babel
+[RESULT] [ 84843.203282] [hbm_basic] [GPU:: 42583] Starting the Babel memory stress test
+[RESULT] [ 84843.203308] [hbm_basic] [GPU:: 17010] Starting the Babel memory stress test
+[RESULT] [ 84843.203354] Running kernels 100 times, Precision: double
+[RESULT] [ 84843.203364] Running kernels 100 times, Precision: double
+[RESULT] [ 84843.203394] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84843.203400] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84843.203503] [hbm_basic] [GPU:: 36479] Starting the Babel memory stress test
+[RESULT] [ 84843.203562] Running kernels 100 times, Precision: double
+[RESULT] [ 84843.203587] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84843.203704] [hbm_basic] [GPU:: 1590] Starting the Babel memory stress test
+[RESULT] [ 84843.203767] Running kernels 100 times, Precision: double
+[RESULT] [ 84843.203794] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84843.203785] [hbm_basic] [GPU:: 11806] Starting the Babel memory stress test
+[RESULT] [ 84843.203852] Running kernels 100 times, Precision: double
+[RESULT] [ 84843.203858] [hbm_basic] [GPU:: 27226] Starting the Babel memory stress test
+[RESULT] [ 84843.203879] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84843.203878] [hbm_basic] [GPU:: 57875] Starting the Babel memory stress test
+[RESULT] [ 84843.203893] Running kernels 100 times, Precision: double
+[RESULT] [ 84843.203923] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84843.203945] Running kernels 100 times, Precision: double
+[RESULT] [ 84843.203972] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84843.204091] [hbm_basic] [GPU:: 51771] Starting the Babel memory stress test
+[RESULT] [ 84843.204131] Running kernels 100 times, Precision: double
+[RESULT] [ 84843.204145] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 84854.673890] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+42583       Read        7254725.225    7254725.225    7060447.891    7179457.295    
+42583       Write       6721425.595    6721425.595    6001158.158    6390172.369    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84855.464057] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+17010       Read        7248190.833    7248190.833    7038754.127    7183046.314    
+17010       Write       6678035.323    6678035.323    5878516.908    6404951.685    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84858.513342] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+51771       Read        7239024.574    7239024.574    7035104.968    7153371.738    
+51771       Write       6641633.086    6641633.086    5901123.504    6350336.212    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84859.452265] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+57875       Read        7250165.105    7250165.105    1025899.578    6677623.390    
+57875       Write       6680226.992    6680226.992    1259127.490    5827810.885    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84860.108776] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+11806       Read        7240759.000    7240759.000    1876479.185    6969209.584    
+11806       Write       6634889.968    6634889.968    410439.170     5092790.045    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84860.763351] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+36479       Read        7262261.977    7262261.977    2550306.729    7077268.885    
+36479       Write       6783287.511    6783287.511    729626.436     5542352.456    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84861.824705] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+27226       Read        7261804.758    7261804.758    7076033.758    7186172.785    
+27226       Write       6678235.092    6678235.092    5690675.832    6374332.092    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84862.475285] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+1590        Read        7250089.152    7250089.152    7110786.701    7192842.251    
+1590        Write       6629481.192    6629481.192    5816315.869    6326445.192    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 84862.992101] Action name :xgmi_interface
+[RESULT] [ 84863.67568 ] Module name :pbqt
+[RESULT] [ 84863.68194 ] [xgmi_interface] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68199 ] [xgmi_interface] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68202 ] [xgmi_interface] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68204 ] [xgmi_interface] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68206 ] [xgmi_interface] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68209 ] [xgmi_interface] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68211 ] [xgmi_interface] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68213 ] [xgmi_interface] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68215 ] [xgmi_interface] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68218 ] [xgmi_interface] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68219 ] [xgmi_interface] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68221 ] [xgmi_interface] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68255 ] [xgmi_interface] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68257 ] [xgmi_interface] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68259 ] [xgmi_interface] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68261 ] [xgmi_interface] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68263 ] [xgmi_interface] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68265 ] [xgmi_interface] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68267 ] [xgmi_interface] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68269 ] [xgmi_interface] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68271 ] [xgmi_interface] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68273 ] [xgmi_interface] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68274 ] [xgmi_interface] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68276 ] [xgmi_interface] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68278 ] [xgmi_interface] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68280 ] [xgmi_interface] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68282 ] [xgmi_interface] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68283 ] [xgmi_interface] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68285 ] [xgmi_interface] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68287 ] [xgmi_interface] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68289 ] [xgmi_interface] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68291 ] [xgmi_interface] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68293 ] [xgmi_interface] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68295 ] [xgmi_interface] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68297 ] [xgmi_interface] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68299 ] [xgmi_interface] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68301 ] [xgmi_interface] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68302 ] [xgmi_interface] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68304 ] [xgmi_interface] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68306 ] [xgmi_interface] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68310 ] [xgmi_interface] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68312 ] [xgmi_interface] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68314 ] [xgmi_interface] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68316 ] [xgmi_interface] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68318 ] [xgmi_interface] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68320 ] [xgmi_interface] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68321 ] [xgmi_interface] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68323 ] [xgmi_interface] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68325 ] [xgmi_interface] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68327 ] [xgmi_interface] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68329 ] [xgmi_interface] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68330 ] [xgmi_interface] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68332 ] [xgmi_interface] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68334 ] [xgmi_interface] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68336 ] [xgmi_interface] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84863.68338 ] [xgmi_interface] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 84883.160663] [xgmi_interface] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 60.571 GBps duration: 0.147357 secs
+[RESULT] [ 84883.161739] [xgmi_interface] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 60.563 GBps duration: 0.144051 secs
+[RESULT] [ 84883.162801] [xgmi_interface] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 60.634 GBps duration: 0.148309 secs
+[RESULT] [ 84883.163863] [xgmi_interface] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 60.523 GBps duration: 0.145255 secs
+[RESULT] [ 84883.164924] [xgmi_interface] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 60.635 GBps duration: 0.146094 secs
+[RESULT] [ 84883.165984] [xgmi_interface] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 60.487 GBps duration: 0.142013 secs
+[RESULT] [ 84883.167017] [xgmi_interface] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 60.514 GBps duration: 0.141949 secs
+[RESULT] [ 84883.168076] [xgmi_interface] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 60.483 GBps duration: 0.144242 secs
+[RESULT] [ 84883.169136] [xgmi_interface] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 60.577 GBps duration: 0.148449 secs
+[RESULT] [ 84883.170196] [xgmi_interface] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 60.492 GBps duration: 0.146438 secs
+[RESULT] [ 84883.171296] [xgmi_interface] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 60.540 GBps duration: 0.145213 secs
+[RESULT] [ 84883.172357] [xgmi_interface] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 60.485 GBps duration: 0.140907 secs
+[RESULT] [ 84883.173418] [xgmi_interface] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 60.474 GBps duration: 0.142043 secs
+[RESULT] [ 84883.174477] [xgmi_interface] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 60.458 GBps duration: 0.143190 secs
+[RESULT] [ 84883.175537] [xgmi_interface] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 60.554 GBps duration: 0.144072 secs
+[RESULT] [ 84883.176598] [xgmi_interface] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 60.660 GBps duration: 0.144926 secs
+[RESULT] [ 84883.177661] [xgmi_interface] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 60.486 GBps duration: 0.147564 secs
+[RESULT] [ 84883.178722] [xgmi_interface] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 60.520 GBps duration: 0.144154 secs
+[RESULT] [ 84883.179782] [xgmi_interface] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 60.598 GBps duration: 0.147290 secs
+[RESULT] [ 84883.180842] [xgmi_interface] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 60.532 GBps duration: 0.144124 secs
+[RESULT] [ 84883.181902] [xgmi_interface] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 60.516 GBps duration: 0.140836 secs
+[RESULT] [ 84883.182963] [xgmi_interface] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 60.587 GBps duration: 0.146208 secs
+[RESULT] [ 84883.184012] [xgmi_interface] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 60.561 GBps duration: 0.148488 secs
+[RESULT] [ 84883.185073] [xgmi_interface] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 60.587 GBps duration: 0.139563 secs
+[RESULT] [ 84883.186133] [xgmi_interface] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 60.625 GBps duration: 0.150544 secs
+[RESULT] [ 84883.187193] [xgmi_interface] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 60.601 GBps duration: 0.145068 secs
+[RESULT] [ 84883.188253] [xgmi_interface] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 60.544 GBps duration: 0.145205 secs
+[RESULT] [ 84883.189316] [xgmi_interface] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 60.488 GBps duration: 0.144230 secs
+[RESULT] [ 84883.190380] [xgmi_interface] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 60.464 GBps duration: 0.146506 secs
+[RESULT] [ 84883.191443] [xgmi_interface] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 60.456 GBps duration: 0.148746 secs
+[RESULT] [ 84883.192504] [xgmi_interface] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 60.439 GBps duration: 0.145457 secs
+[RESULT] [ 84883.193565] [xgmi_interface] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 60.416 GBps duration: 0.144400 secs
+[RESULT] [ 84883.194635] [xgmi_interface] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 60.456 GBps duration: 0.145415 secs
+[RESULT] [ 84883.195697] [xgmi_interface] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 60.511 GBps duration: 0.147503 secs
+[RESULT] [ 84883.196757] [xgmi_interface] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 60.544 GBps duration: 0.140770 secs
+[RESULT] [ 84883.197818] [xgmi_interface] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 60.561 GBps duration: 0.145165 secs
+[RESULT] [ 84883.198879] [xgmi_interface] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 60.526 GBps duration: 0.149682 secs
+[RESULT] [ 84883.199940] [xgmi_interface] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 60.513 GBps duration: 0.145278 secs
+[RESULT] [ 84883.200999] [xgmi_interface] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 60.557 GBps duration: 0.138525 secs
+[RESULT] [ 84883.202087] [xgmi_interface] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 60.524 GBps duration: 0.144144 secs
+[RESULT] [ 84883.203149] [xgmi_interface] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 60.622 GBps duration: 0.146124 secs
+[RESULT] [ 84883.204209] [xgmi_interface] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 60.571 GBps duration: 0.146247 secs
+[RESULT] [ 84883.205270] [xgmi_interface] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 60.418 GBps duration: 0.143285 secs
+[RESULT] [ 84883.206333] [xgmi_interface] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 60.444 GBps duration: 0.143225 secs
+[RESULT] [ 84883.207396] [xgmi_interface] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 60.460 GBps duration: 0.146517 secs
+[RESULT] [ 84883.208457] [xgmi_interface] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 60.503 GBps duration: 0.146411 secs
+[RESULT] [ 84883.209518] [xgmi_interface] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 60.521 GBps duration: 0.146370 secs
+[RESULT] [ 84883.210579] [xgmi_interface] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 60.537 GBps duration: 0.143005 secs
+[RESULT] [ 84883.211641] [xgmi_interface] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 60.518 GBps duration: 0.145266 secs
+[RESULT] [ 84883.212704] [xgmi_interface] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 60.616 GBps duration: 0.147245 secs
+[RESULT] [ 84883.213769] [xgmi_interface] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 60.479 GBps duration: 0.139813 secs
+[RESULT] [ 84883.214832] [xgmi_interface] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 60.572 GBps duration: 0.142922 secs
+[RESULT] [ 84883.215896] [xgmi_interface] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 60.527 GBps duration: 0.141920 secs
+[RESULT] [ 84883.216959] [xgmi_interface] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 60.688 GBps duration: 0.139332 secs
+[RESULT] [ 84883.218027] [xgmi_interface] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 60.543 GBps duration: 0.144099 secs
+[RESULT] [ 84883.219085] [xgmi_interface] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 60.564 GBps duration: 0.137400 secs
+[RESULT] [ 84883.220185] Action name :pcie_interface
+[RESULT] [ 84883.246661] Module name :pebb
+[RESULT] [ 84883.247006] [pcie_interface] pcie-bandwidth [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] distance:20 PCIe:20
+[RESULT] [ 84883.247022] [pcie_interface] pcie-bandwidth [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] distance:52 PCIe:52
+[RESULT] [ 84883.247026] [pcie_interface] pcie-bandwidth [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] distance:20 PCIe:20
+[RESULT] [ 84883.247028] [pcie_interface] pcie-bandwidth [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] distance:52 PCIe:52
+[RESULT] [ 84883.247030] [pcie_interface] pcie-bandwidth [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] distance:20 PCIe:20
+[RESULT] [ 84883.247032] [pcie_interface] pcie-bandwidth [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] distance:52 PCIe:52
+[RESULT] [ 84883.247034] [pcie_interface] pcie-bandwidth [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] distance:20 PCIe:20
+[RESULT] [ 84883.247036] [pcie_interface] pcie-bandwidth [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] distance:52 PCIe:52
+[RESULT] [ 84883.247038] [pcie_interface] pcie-bandwidth [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:52 PCIe:52
+[RESULT] [ 84883.247040] [pcie_interface] pcie-bandwidth [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:20 PCIe:20
+[RESULT] [ 84883.247042] [pcie_interface] pcie-bandwidth [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] distance:52 PCIe:52
+[RESULT] [ 84883.247044] [pcie_interface] pcie-bandwidth [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] distance:20 PCIe:20
+[RESULT] [ 84883.247046] [pcie_interface] pcie-bandwidth [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:52 PCIe:52
+[RESULT] [ 84883.247047] [pcie_interface] pcie-bandwidth [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:20 PCIe:20
+[RESULT] [ 84883.247049] [pcie_interface] pcie-bandwidth [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] distance:52 PCIe:52
+[RESULT] [ 84883.247051] [pcie_interface] pcie-bandwidth [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] distance:20 PCIe:20
+[RESULT] [ 84903.862912] [pcie_interface] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 56.995 GBps duration: 0.017662 secs
+[RESULT] [ 84903.862932] [pcie_interface] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::true d2h::false 55.475 GBps duration: 0.019355 secs
+[RESULT] [ 84903.862937] [pcie_interface] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 56.077 GBps duration: 0.017951 secs
+[RESULT] [ 84903.862942] [pcie_interface] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::true d2h::false 54.926 GBps duration: 0.018327 secs
+[RESULT] [ 84903.862946] [pcie_interface] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 56.268 GBps duration: 0.017890 secs
+[RESULT] [ 84903.862950] [pcie_interface] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::true d2h::false 55.730 GBps duration: 0.016859 secs
+[RESULT] [ 84903.862953] [pcie_interface] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 55.772 GBps duration: 0.018049 secs
+[RESULT] [ 84903.862957] [pcie_interface] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::true d2h::false 55.553 GBps duration: 0.018120 secs
+[RESULT] [ 84903.862960] [pcie_interface] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 56.465 GBps duration: 0.016639 secs
+[RESULT] [ 84903.862964] [pcie_interface] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::true d2h::false 56.213 GBps duration: 0.017907 secs
+[RESULT] [ 84903.862968] [pcie_interface] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 55.952 GBps duration: 0.017991 secs
+[RESULT] [ 84903.863010] [pcie_interface] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::true d2h::false 56.494 GBps duration: 0.017818 secs
+[RESULT] [ 84903.863014] [pcie_interface] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 55.176 GBps duration: 0.018244 secs
+[RESULT] [ 84903.863018] [pcie_interface] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::true d2h::false 56.279 GBps duration: 0.017887 secs
+[RESULT] [ 84903.863022] [pcie_interface] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 55.561 GBps duration: 0.016910 secs
+[RESULT] [ 84903.863025] [pcie_interface] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::true d2h::false 56.346 GBps duration: 0.017865 secs
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| pcie_capability                  | PEQT           | [32mPASS          [0m  |
+| hbm_basic                        | BABEL          | [32mPASS          [0m  |
+| xgmi_interface                   | PBQT           | [32mPASS          [0m  |
+| pcie_interface                   | PEBB           | [32mPASS          [0m  |
++---------------------------------------------------------------------+

@@ -1,0 +1,1180 @@
+[RESULT] [ 83633.597773] Action name :xgmi_d2d_unidir_bandwidth
+[RESULT] [ 83633.710201] Module name :pbqt
+[INFO  ] [ 83633.710255] Missing 'device_index' key.
+[RESULT] [ 83633.710696] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710700] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710701] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710703] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710704] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710706] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710707] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710708] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710709] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710710] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710711] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710712] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710713] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710714] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710715] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710716] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710717] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710718] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710719] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710720] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710721] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710722] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710723] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710724] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710725] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710726] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710760] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710761] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710762] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710762] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710763] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710764] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710765] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710767] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710768] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710769] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710770] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710771] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710772] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710773] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710773] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710774] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710775] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710776] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710777] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710778] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710779] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710780] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710781] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710781] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710782] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710783] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710784] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710792] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710793] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83633.710794] [xgmi_d2d_unidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[INFO  ] [ 83638.710942] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.332 GBps
+[INFO  ] [ 83638.710961] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.354 GBps
+[INFO  ] [ 83638.710965] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.343 GBps
+[INFO  ] [ 83638.710968] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.350 GBps
+[INFO  ] [ 83638.710971] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.345 GBps
+[INFO  ] [ 83638.710974] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.327 GBps
+[INFO  ] [ 83638.710976] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.342 GBps
+[INFO  ] [ 83638.710979] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.269 GBps
+[INFO  ] [ 83638.710982] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.277 GBps
+[INFO  ] [ 83638.710985] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.278 GBps
+[INFO  ] [ 83638.710988] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.270 GBps
+[INFO  ] [ 83638.710991] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.274 GBps
+[INFO  ] [ 83638.710994] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.271 GBps
+[INFO  ] [ 83638.710997] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.273 GBps
+[INFO  ] [ 83638.711011] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.349 GBps
+[INFO  ] [ 83638.711015] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.359 GBps
+[INFO  ] [ 83638.711018] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83638.711021] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83638.711023] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.354 GBps
+[INFO  ] [ 83638.711026] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.353 GBps
+[INFO  ] [ 83638.711029] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.348 GBps
+[INFO  ] [ 83638.711077] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.373 GBps
+[INFO  ] [ 83638.711079] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.362 GBps
+[INFO  ] [ 83638.711082] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.366 GBps
+[INFO  ] [ 83638.711085] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.368 GBps
+[INFO  ] [ 83638.711087] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.365 GBps
+[INFO  ] [ 83638.711090] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.359 GBps
+[INFO  ] [ 83638.711092] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.369 GBps
+[INFO  ] [ 83638.711095] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.250 GBps
+[INFO  ] [ 83638.711097] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.266 GBps
+[INFO  ] [ 83638.711100] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.247 GBps
+[INFO  ] [ 83638.711102] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.249 GBps
+[INFO  ] [ 83638.711105] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.249 GBps
+[INFO  ] [ 83638.711108] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.250 GBps
+[INFO  ] [ 83638.711110] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.254 GBps
+[INFO  ] [ 83638.711113] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.329 GBps
+[INFO  ] [ 83638.711116] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.344 GBps
+[INFO  ] [ 83638.711118] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.343 GBps
+[INFO  ] [ 83638.711121] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.330 GBps
+[INFO  ] [ 83638.711123] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.327 GBps
+[INFO  ] [ 83638.711126] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.346 GBps
+[INFO  ] [ 83638.711128] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.331 GBps
+[INFO  ] [ 83638.711131] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.292 GBps
+[INFO  ] [ 83638.711134] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.289 GBps
+[INFO  ] [ 83638.711141] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.278 GBps
+[INFO  ] [ 83638.711144] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.293 GBps
+[INFO  ] [ 83638.711146] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.290 GBps
+[INFO  ] [ 83638.711149] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.301 GBps
+[INFO  ] [ 83638.711152] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.282 GBps
+[INFO  ] [ 83638.711154] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.353 GBps
+[INFO  ] [ 83638.711157] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.342 GBps
+[INFO  ] [ 83638.711159] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83638.711162] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.347 GBps
+[INFO  ] [ 83638.711164] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.360 GBps
+[INFO  ] [ 83638.711167] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.351 GBps
+[INFO  ] [ 83638.711169] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.351 GBps
+[INFO  ] [ 83643.711054] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.332 GBps
+[INFO  ] [ 83643.711070] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.357 GBps
+[INFO  ] [ 83643.711075] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.337 GBps
+[INFO  ] [ 83643.711078] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.353 GBps
+[INFO  ] [ 83643.711081] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.354 GBps
+[INFO  ] [ 83643.711084] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.336 GBps
+[INFO  ] [ 83643.711087] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.341 GBps
+[INFO  ] [ 83643.711089] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.274 GBps
+[INFO  ] [ 83643.711092] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.282 GBps
+[INFO  ] [ 83643.711095] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.271 GBps
+[INFO  ] [ 83643.711098] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.271 GBps
+[INFO  ] [ 83643.711101] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.258 GBps
+[INFO  ] [ 83643.711166] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.272 GBps
+[INFO  ] [ 83643.711169] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.268 GBps
+[INFO  ] [ 83643.711173] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.353 GBps
+[INFO  ] [ 83643.711175] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.360 GBps
+[INFO  ] [ 83643.711178] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.353 GBps
+[INFO  ] [ 83643.711180] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.351 GBps
+[INFO  ] [ 83643.711183] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.354 GBps
+[INFO  ] [ 83643.711186] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.353 GBps
+[INFO  ] [ 83643.711188] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.350 GBps
+[INFO  ] [ 83643.711191] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.372 GBps
+[INFO  ] [ 83643.711194] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.364 GBps
+[INFO  ] [ 83643.711196] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.353 GBps
+[INFO  ] [ 83643.711199] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.355 GBps
+[INFO  ] [ 83643.711201] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.363 GBps
+[INFO  ] [ 83643.711204] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83643.711206] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83643.711209] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.250 GBps
+[INFO  ] [ 83643.711211] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.248 GBps
+[INFO  ] [ 83643.711214] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.249 GBps
+[INFO  ] [ 83643.711216] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.251 GBps
+[INFO  ] [ 83643.711219] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.247 GBps
+[INFO  ] [ 83643.711221] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.254 GBps
+[INFO  ] [ 83643.711224] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.254 GBps
+[INFO  ] [ 83643.711226] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.330 GBps
+[INFO  ] [ 83643.711234] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.330 GBps
+[INFO  ] [ 83643.711236] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.339 GBps
+[INFO  ] [ 83643.711239] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.327 GBps
+[INFO  ] [ 83643.711242] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.326 GBps
+[INFO  ] [ 83643.711247] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.347 GBps
+[INFO  ] [ 83643.711250] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.323 GBps
+[INFO  ] [ 83643.711252] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.287 GBps
+[INFO  ] [ 83643.711255] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.291 GBps
+[INFO  ] [ 83643.711258] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.286 GBps
+[INFO  ] [ 83643.711261] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.294 GBps
+[INFO  ] [ 83643.711266] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.287 GBps
+[INFO  ] [ 83643.711270] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.303 GBps
+[INFO  ] [ 83643.711273] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.293 GBps
+[INFO  ] [ 83643.711276] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.353 GBps
+[INFO  ] [ 83643.711278] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.343 GBps
+[INFO  ] [ 83643.711281] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.348 GBps
+[INFO  ] [ 83643.711284] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.351 GBps
+[INFO  ] [ 83643.711286] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.355 GBps
+[INFO  ] [ 83643.711288] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.346 GBps
+[INFO  ] [ 83643.711292] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83648.710846] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.334 GBps
+[INFO  ] [ 83648.710859] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.356 GBps
+[INFO  ] [ 83648.710862] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.340 GBps
+[INFO  ] [ 83648.711044] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83648.711046] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.354 GBps
+[INFO  ] [ 83648.711049] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.331 GBps
+[INFO  ] [ 83648.711051] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.340 GBps
+[INFO  ] [ 83648.711053] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.267 GBps
+[INFO  ] [ 83648.711055] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.283 GBps
+[INFO  ] [ 83648.711057] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.268 GBps
+[INFO  ] [ 83648.711059] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.269 GBps
+[INFO  ] [ 83648.711060] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.274 GBps
+[INFO  ] [ 83648.711063] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.279 GBps
+[INFO  ] [ 83648.711064] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.272 GBps
+[INFO  ] [ 83648.711066] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.354 GBps
+[INFO  ] [ 83648.711068] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.360 GBps
+[INFO  ] [ 83648.711070] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.351 GBps
+[INFO  ] [ 83648.711071] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.349 GBps
+[INFO  ] [ 83648.711073] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.358 GBps
+[INFO  ] [ 83648.711075] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.353 GBps
+[INFO  ] [ 83648.711076] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.350 GBps
+[INFO  ] [ 83648.711078] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.369 GBps
+[INFO  ] [ 83648.711079] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.366 GBps
+[INFO  ] [ 83648.711081] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83648.711083] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.355 GBps
+[INFO  ] [ 83648.711084] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.363 GBps
+[INFO  ] [ 83648.711085] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.353 GBps
+[INFO  ] [ 83648.711092] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.347 GBps
+[INFO  ] [ 83648.711093] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.242 GBps
+[INFO  ] [ 83648.711095] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.248 GBps
+[INFO  ] [ 83648.711096] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.249 GBps
+[INFO  ] [ 83648.711098] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.248 GBps
+[INFO  ] [ 83648.711100] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.253 GBps
+[INFO  ] [ 83648.711101] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.247 GBps
+[INFO  ] [ 83648.711103] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.263 GBps
+[INFO  ] [ 83648.711104] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.333 GBps
+[INFO  ] [ 83648.711106] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.336 GBps
+[INFO  ] [ 83648.711107] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.335 GBps
+[INFO  ] [ 83648.711109] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.330 GBps
+[INFO  ] [ 83648.711110] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.333 GBps
+[INFO  ] [ 83648.711112] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.342 GBps
+[INFO  ] [ 83648.711113] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.330 GBps
+[INFO  ] [ 83648.711115] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.286 GBps
+[INFO  ] [ 83648.711117] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.292 GBps
+[INFO  ] [ 83648.711119] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.288 GBps
+[INFO  ] [ 83648.711120] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.285 GBps
+[INFO  ] [ 83648.711122] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.292 GBps
+[INFO  ] [ 83648.711123] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.300 GBps
+[INFO  ] [ 83648.711125] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.292 GBps
+[INFO  ] [ 83648.711126] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.353 GBps
+[INFO  ] [ 83648.711128] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.348 GBps
+[INFO  ] [ 83648.711132] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.348 GBps
+[INFO  ] [ 83648.711133] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.351 GBps
+[INFO  ] [ 83648.711135] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.357 GBps
+[INFO  ] [ 83648.711136] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.348 GBps
+[INFO  ] [ 83648.711138] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.348 GBps
+[INFO  ] [ 83653.711208] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.329 GBps
+[INFO  ] [ 83653.711221] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83653.711225] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.343 GBps
+[INFO  ] [ 83653.711227] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.354 GBps
+[INFO  ] [ 83653.711229] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.357 GBps
+[INFO  ] [ 83653.711233] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.332 GBps
+[INFO  ] [ 83653.711235] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.340 GBps
+[INFO  ] [ 83653.711237] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.264 GBps
+[INFO  ] [ 83653.711239] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.280 GBps
+[INFO  ] [ 83653.711242] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.268 GBps
+[INFO  ] [ 83653.711244] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.271 GBps
+[INFO  ] [ 83653.711246] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.270 GBps
+[INFO  ] [ 83653.711247] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.272 GBps
+[INFO  ] [ 83653.711249] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.264 GBps
+[INFO  ] [ 83653.711251] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.347 GBps
+[INFO  ] [ 83653.711253] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.359 GBps
+[INFO  ] [ 83653.711255] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.354 GBps
+[INFO  ] [ 83653.711256] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83653.711304] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.356 GBps
+[INFO  ] [ 83653.711306] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.355 GBps
+[INFO  ] [ 83653.711307] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.348 GBps
+[INFO  ] [ 83653.711309] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.370 GBps
+[INFO  ] [ 83653.711311] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.364 GBps
+[INFO  ] [ 83653.711313] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.350 GBps
+[INFO  ] [ 83653.711314] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83653.711316] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.362 GBps
+[INFO  ] [ 83653.711318] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.351 GBps
+[INFO  ] [ 83653.711319] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.350 GBps
+[INFO  ] [ 83653.711321] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.249 GBps
+[INFO  ] [ 83653.711323] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.247 GBps
+[INFO  ] [ 83653.711325] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.254 GBps
+[INFO  ] [ 83653.711326] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.252 GBps
+[INFO  ] [ 83653.711329] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.249 GBps
+[INFO  ] [ 83653.711330] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.252 GBps
+[INFO  ] [ 83653.711332] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.255 GBps
+[INFO  ] [ 83653.711333] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.328 GBps
+[INFO  ] [ 83653.711335] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.336 GBps
+[INFO  ] [ 83653.711337] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.339 GBps
+[INFO  ] [ 83653.711339] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.329 GBps
+[INFO  ] [ 83653.711340] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.324 GBps
+[INFO  ] [ 83653.711342] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.343 GBps
+[INFO  ] [ 83653.711344] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.332 GBps
+[INFO  ] [ 83653.711349] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.280 GBps
+[INFO  ] [ 83653.711351] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.297 GBps
+[INFO  ] [ 83653.711353] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.292 GBps
+[INFO  ] [ 83653.711354] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.289 GBps
+[INFO  ] [ 83653.711356] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.291 GBps
+[INFO  ] [ 83653.711358] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.301 GBps
+[INFO  ] [ 83653.711360] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.294 GBps
+[INFO  ] [ 83653.711362] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83653.711363] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.347 GBps
+[INFO  ] [ 83653.711365] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.348 GBps
+[INFO  ] [ 83653.711367] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.350 GBps
+[INFO  ] [ 83653.711368] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.355 GBps
+[INFO  ] [ 83653.711370] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83653.711372] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83658.711055] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.334 GBps
+[INFO  ] [ 83658.711072] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.355 GBps
+[INFO  ] [ 83658.711076] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.339 GBps
+[INFO  ] [ 83658.711079] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.350 GBps
+[INFO  ] [ 83658.711083] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.355 GBps
+[INFO  ] [ 83658.711086] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.335 GBps
+[INFO  ] [ 83658.711089] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.338 GBps
+[INFO  ] [ 83658.711092] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.269 GBps
+[INFO  ] [ 83658.711095] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.281 GBps
+[INFO  ] [ 83658.711098] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.268 GBps
+[INFO  ] [ 83658.711163] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.271 GBps
+[INFO  ] [ 83658.711166] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.269 GBps
+[INFO  ] [ 83658.711169] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.273 GBps
+[INFO  ] [ 83658.711172] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.265 GBps
+[INFO  ] [ 83658.711175] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.351 GBps
+[INFO  ] [ 83658.711177] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.358 GBps
+[INFO  ] [ 83658.711180] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.350 GBps
+[INFO  ] [ 83658.711182] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.352 GBps
+[INFO  ] [ 83658.711185] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.356 GBps
+[INFO  ] [ 83658.711188] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.353 GBps
+[INFO  ] [ 83658.711190] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.351 GBps
+[INFO  ] [ 83658.711193] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.374 GBps
+[INFO  ] [ 83658.711195] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.366 GBps
+[INFO  ] [ 83658.711198] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.349 GBps
+[INFO  ] [ 83658.711200] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.355 GBps
+[INFO  ] [ 83658.711203] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.358 GBps
+[INFO  ] [ 83658.711205] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.353 GBps
+[INFO  ] [ 83658.711208] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.350 GBps
+[INFO  ] [ 83658.711210] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.254 GBps
+[INFO  ] [ 83658.711213] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.246 GBps
+[INFO  ] [ 83658.711215] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.246 GBps
+[INFO  ] [ 83658.711218] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.248 GBps
+[INFO  ] [ 83658.711221] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.255 GBps
+[INFO  ] [ 83658.711223] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.248 GBps
+[INFO  ] [ 83658.711230] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.254 GBps
+[INFO  ] [ 83658.711233] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.331 GBps
+[INFO  ] [ 83658.711235] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.340 GBps
+[INFO  ] [ 83658.711238] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.335 GBps
+[INFO  ] [ 83658.711240] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.326 GBps
+[INFO  ] [ 83658.711243] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.333 GBps
+[INFO  ] [ 83658.711245] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.341 GBps
+[INFO  ] [ 83658.711248] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.328 GBps
+[INFO  ] [ 83658.711250] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.286 GBps
+[INFO  ] [ 83658.711277] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.289 GBps
+[INFO  ] [ 83658.711280] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.292 GBps
+[INFO  ] [ 83658.711282] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.288 GBps
+[INFO  ] [ 83658.711285] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.288 GBps
+[INFO  ] [ 83658.711288] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.299 GBps
+[INFO  ] [ 83658.711290] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.284 GBps
+[INFO  ] [ 83658.711293] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.355 GBps
+[INFO  ] [ 83658.711296] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.350 GBps
+[INFO  ] [ 83658.711299] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.351 GBps
+[INFO  ] [ 83658.711301] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.351 GBps
+[INFO  ] [ 83658.711304] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.358 GBps
+[INFO  ] [ 83658.711306] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.351 GBps
+[INFO  ] [ 83658.711309] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.348 GBps
+[RESULT] [ 83663.716592] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.332 GBps duration: 0.245099 secs
+[RESULT] [ 83663.717677] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.354 GBps duration: 0.245009 secs
+[RESULT] [ 83663.718732] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.340 GBps duration: 0.245066 secs
+[RESULT] [ 83663.719786] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.352 GBps duration: 0.245018 secs
+[RESULT] [ 83663.720840] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.353 GBps duration: 0.245015 secs
+[RESULT] [ 83663.721894] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.332 GBps duration: 0.245099 secs
+[RESULT] [ 83663.722949] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.340 GBps duration: 0.245068 secs
+[RESULT] [ 83663.724009] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.269 GBps duration: 0.245352 secs
+[RESULT] [ 83663.725062] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.281 GBps duration: 0.245303 secs
+[RESULT] [ 83663.726117] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.271 GBps duration: 0.245342 secs
+[RESULT] [ 83663.727170] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.271 GBps duration: 0.245342 secs
+[RESULT] [ 83663.728224] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.270 GBps duration: 0.245346 secs
+[RESULT] [ 83663.729279] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.273 GBps duration: 0.245335 secs
+[RESULT] [ 83663.730334] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.267 GBps duration: 0.245357 secs
+[RESULT] [ 83663.731388] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.350 GBps duration: 0.245026 secs
+[RESULT] [ 83663.732442] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.360 GBps duration: 0.244987 secs
+[RESULT] [ 83663.733496] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.353 GBps duration: 0.245017 secs
+[RESULT] [ 83663.734550] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.351 GBps duration: 0.245023 secs
+[RESULT] [ 83663.735604] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.355 GBps duration: 0.245007 secs
+[RESULT] [ 83663.736660] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.353 GBps duration: 0.245013 secs
+[RESULT] [ 83663.737713] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.348 GBps duration: 0.245033 secs
+[RESULT] [ 83663.738768] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.372 GBps duration: 0.244937 secs
+[RESULT] [ 83663.739826] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.365 GBps duration: 0.244967 secs
+[RESULT] [ 83663.740880] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.353 GBps duration: 0.245016 secs
+[RESULT] [ 83663.741934] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.355 GBps duration: 0.245005 secs
+[RESULT] [ 83663.742988] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.363 GBps duration: 0.244975 secs
+[RESULT] [ 83663.744008] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.352 GBps duration: 0.245017 secs
+[RESULT] [ 83663.745061] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.352 GBps duration: 0.245019 secs
+[RESULT] [ 83663.746115] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.250 GBps duration: 0.245428 secs
+[RESULT] [ 83663.747169] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.250 GBps duration: 0.245425 secs
+[RESULT] [ 83663.748223] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.250 GBps duration: 0.227896 secs
+[RESULT] [ 83663.749276] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.251 GBps duration: 0.227892 secs
+[RESULT] [ 83663.750331] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.249 GBps duration: 0.227902 secs
+[RESULT] [ 83663.751386] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.252 GBps duration: 0.227890 secs
+[RESULT] [ 83663.752440] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.254 GBps duration: 0.227880 secs
+[RESULT] [ 83663.753495] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.330 GBps duration: 0.227597 secs
+[RESULT] [ 83663.754550] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.337 GBps duration: 0.227574 secs
+[RESULT] [ 83663.755604] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.337 GBps duration: 0.227572 secs
+[RESULT] [ 83663.756658] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.327 GBps duration: 0.227610 secs
+[RESULT] [ 83663.757713] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.328 GBps duration: 0.227606 secs
+[RESULT] [ 83663.758767] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.344 GBps duration: 0.227546 secs
+[RESULT] [ 83663.759820] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.327 GBps duration: 0.227610 secs
+[RESULT] [ 83663.760874] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.285 GBps duration: 0.227764 secs
+[RESULT] [ 83663.761932] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.292 GBps duration: 0.227741 secs
+[RESULT] [ 83663.762985] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.289 GBps duration: 0.227751 secs
+[RESULT] [ 83663.764007] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.289 GBps duration: 0.227751 secs
+[RESULT] [ 83663.765061] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.290 GBps duration: 0.227748 secs
+[RESULT] [ 83663.766118] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.301 GBps duration: 0.227707 secs
+[RESULT] [ 83663.767174] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.290 GBps duration: 0.227748 secs
+[RESULT] [ 83663.768230] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.353 GBps duration: 0.227512 secs
+[RESULT] [ 83663.769288] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.346 GBps duration: 0.227539 secs
+[RESULT] [ 83663.770345] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.349 GBps duration: 0.227527 secs
+[RESULT] [ 83663.771403] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.351 GBps duration: 0.227522 secs
+[RESULT] [ 83663.772460] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.357 GBps duration: 0.227498 secs
+[RESULT] [ 83663.773518] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.349 GBps duration: 0.227527 secs
+[RESULT] [ 83663.774574] [xgmi_d2d_unidir_bandwidth] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.350 GBps duration: 0.227526 secs
+[RESULT] [ 83663.775685] Action name :xgmi_d2d_bidir_bandwidth
+[RESULT] [ 83663.775693] Module name :pbqt
+[INFO  ] [ 83663.775725] Missing 'device_index' key.
+[RESULT] [ 83663.776533] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776541] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776545] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776548] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776552] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776556] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776559] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776562] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776577] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776581] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776584] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776587] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776590] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776593] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776596] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776599] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776602] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776606] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776609] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776612] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776615] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776618] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776621] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776624] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776627] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776630] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776633] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776636] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776639] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776642] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776645] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776648] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776651] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776655] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776658] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776664] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776667] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776671] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776674] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776676] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776679] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776682] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776685] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776688] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776691] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776694] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776697] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776700] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776703] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776706] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776709] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776712] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776715] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776718] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776721] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83663.776724] [xgmi_d2d_bidir_bandwidth] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[INFO  ] [ 83668.776833] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.522 GBps
+[INFO  ] [ 83668.776849] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.684 GBps
+[INFO  ] [ 83668.776854] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.665 GBps
+[INFO  ] [ 83668.776857] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.479 GBps
+[INFO  ] [ 83668.776859] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.643 GBps
+[INFO  ] [ 83668.776899] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.569 GBps
+[INFO  ] [ 83668.776903] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.671 GBps
+[INFO  ] [ 83668.776905] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.529 GBps
+[INFO  ] [ 83668.776909] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.538 GBps
+[INFO  ] [ 83668.776912] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.532 GBps
+[INFO  ] [ 83668.776914] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.484 GBps
+[INFO  ] [ 83668.776917] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.528 GBps
+[INFO  ] [ 83668.776920] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.535 GBps
+[INFO  ] [ 83668.776923] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.554 GBps
+[INFO  ] [ 83668.776925] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.662 GBps
+[INFO  ] [ 83668.776928] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.619 GBps
+[INFO  ] [ 83668.776931] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.694 GBps
+[INFO  ] [ 83668.776933] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.488 GBps
+[INFO  ] [ 83668.776936] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.661 GBps
+[INFO  ] [ 83668.776938] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.561 GBps
+[INFO  ] [ 83668.776941] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.671 GBps
+[INFO  ] [ 83668.776943] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.683 GBps
+[INFO  ] [ 83668.776946] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.598 GBps
+[INFO  ] [ 83668.776949] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.693 GBps
+[INFO  ] [ 83668.776951] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.484 GBps
+[INFO  ] [ 83668.776954] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.647 GBps
+[INFO  ] [ 83668.776956] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.569 GBps
+[INFO  ] [ 83668.776959] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.686 GBps
+[INFO  ] [ 83668.776961] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.513 GBps
+[INFO  ] [ 83668.776969] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.506 GBps
+[INFO  ] [ 83668.776971] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.500 GBps
+[INFO  ] [ 83668.776974] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.468 GBps
+[INFO  ] [ 83668.776977] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.470 GBps
+[INFO  ] [ 83668.776979] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.503 GBps
+[INFO  ] [ 83668.776982] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.504 GBps
+[INFO  ] [ 83668.776985] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.646 GBps
+[INFO  ] [ 83668.776987] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.538 GBps
+[INFO  ] [ 83668.776990] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.687 GBps
+[INFO  ] [ 83668.776992] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.655 GBps
+[INFO  ] [ 83668.776995] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.498 GBps
+[INFO  ] [ 83668.776997] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.581 GBps
+[INFO  ] [ 83668.777008] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.647 GBps
+[INFO  ] [ 83668.777011] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.572 GBps
+[INFO  ] [ 83668.777014] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.549 GBps
+[INFO  ] [ 83668.777016] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.577 GBps
+[INFO  ] [ 83668.777019] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.572 GBps
+[INFO  ] [ 83668.777021] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.489 GBps
+[INFO  ] [ 83668.777024] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.602 GBps
+[INFO  ] [ 83668.777026] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.567 GBps
+[INFO  ] [ 83668.777029] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.695 GBps
+[INFO  ] [ 83668.777032] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.520 GBps
+[INFO  ] [ 83668.777035] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.700 GBps
+[INFO  ] [ 83668.777038] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.702 GBps
+[INFO  ] [ 83668.777046] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.514 GBps
+[INFO  ] [ 83668.777048] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.636 GBps
+[INFO  ] [ 83668.777051] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.572 GBps
+[INFO  ] [ 83673.776598] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.517 GBps
+[INFO  ] [ 83673.776609] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.690 GBps
+[INFO  ] [ 83673.776612] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.683 GBps
+[INFO  ] [ 83673.776614] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.498 GBps
+[INFO  ] [ 83673.776616] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.669 GBps
+[INFO  ] [ 83673.776618] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.565 GBps
+[INFO  ] [ 83673.776620] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.671 GBps
+[INFO  ] [ 83673.776622] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.503 GBps
+[INFO  ] [ 83673.776624] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.542 GBps
+[INFO  ] [ 83673.776626] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.542 GBps
+[INFO  ] [ 83673.776628] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.498 GBps
+[INFO  ] [ 83673.776630] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.539 GBps
+[INFO  ] [ 83673.776632] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.534 GBps
+[INFO  ] [ 83673.776634] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.604 GBps
+[INFO  ] [ 83673.776635] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.666 GBps
+[INFO  ] [ 83673.776637] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.624 GBps
+[INFO  ] [ 83673.776639] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.688 GBps
+[INFO  ] [ 83673.776641] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.474 GBps
+[INFO  ] [ 83673.776642] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.663 GBps
+[INFO  ] [ 83673.776644] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.562 GBps
+[INFO  ] [ 83673.776646] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.684 GBps
+[INFO  ] [ 83673.776666] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.708 GBps
+[INFO  ] [ 83673.776667] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.602 GBps
+[INFO  ] [ 83673.776669] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.683 GBps
+[INFO  ] [ 83673.776671] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.491 GBps
+[INFO  ] [ 83673.776673] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.654 GBps
+[INFO  ] [ 83673.776675] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.569 GBps
+[INFO  ] [ 83673.776676] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.692 GBps
+[INFO  ] [ 83673.776678] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.509 GBps
+[INFO  ] [ 83673.776680] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.491 GBps
+[INFO  ] [ 83673.776682] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.490 GBps
+[INFO  ] [ 83673.776683] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.504 GBps
+[INFO  ] [ 83673.776685] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.494 GBps
+[INFO  ] [ 83673.776687] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.495 GBps
+[INFO  ] [ 83673.776689] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.506 GBps
+[INFO  ] [ 83673.776691] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.661 GBps
+[INFO  ] [ 83673.776692] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.508 GBps
+[INFO  ] [ 83673.776694] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.657 GBps
+[INFO  ] [ 83673.776696] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.667 GBps
+[INFO  ] [ 83673.776697] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.487 GBps
+[INFO  ] [ 83673.776699] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.565 GBps
+[INFO  ] [ 83673.776701] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.661 GBps
+[INFO  ] [ 83673.776702] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.578 GBps
+[INFO  ] [ 83673.776704] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.527 GBps
+[INFO  ] [ 83673.776705] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.576 GBps
+[INFO  ] [ 83673.776709] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.572 GBps
+[INFO  ] [ 83673.776711] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.477 GBps
+[INFO  ] [ 83673.776713] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.597 GBps
+[INFO  ] [ 83673.776715] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.588 GBps
+[INFO  ] [ 83673.776716] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.694 GBps
+[INFO  ] [ 83673.776718] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.517 GBps
+[INFO  ] [ 83673.776721] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.688 GBps
+[INFO  ] [ 83673.776722] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.707 GBps
+[INFO  ] [ 83673.776724] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.463 GBps
+[INFO  ] [ 83673.776725] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.659 GBps
+[INFO  ] [ 83673.776727] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.574 GBps
+[INFO  ] [ 83678.776786] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.509 GBps
+[INFO  ] [ 83678.776801] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.681 GBps
+[INFO  ] [ 83678.776804] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.665 GBps
+[INFO  ] [ 83678.776807] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.464 GBps
+[INFO  ] [ 83678.776810] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.630 GBps
+[INFO  ] [ 83678.776813] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.550 GBps
+[INFO  ] [ 83678.776816] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.665 GBps
+[INFO  ] [ 83678.776819] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.535 GBps
+[INFO  ] [ 83678.776822] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.537 GBps
+[INFO  ] [ 83678.776824] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.536 GBps
+[INFO  ] [ 83678.776827] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.491 GBps
+[INFO  ] [ 83678.776830] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.541 GBps
+[INFO  ] [ 83678.776871] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.535 GBps
+[INFO  ] [ 83678.776874] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.598 GBps
+[INFO  ] [ 83678.776876] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.642 GBps
+[INFO  ] [ 83678.776879] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.618 GBps
+[INFO  ] [ 83678.776882] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.661 GBps
+[INFO  ] [ 83678.776884] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.476 GBps
+[INFO  ] [ 83678.776887] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.678 GBps
+[INFO  ] [ 83678.776890] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.560 GBps
+[INFO  ] [ 83678.776892] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.683 GBps
+[INFO  ] [ 83678.776895] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.714 GBps
+[INFO  ] [ 83678.776897] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.593 GBps
+[INFO  ] [ 83678.776900] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.697 GBps
+[INFO  ] [ 83678.776902] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.487 GBps
+[INFO  ] [ 83678.776904] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.623 GBps
+[INFO  ] [ 83678.776907] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.551 GBps
+[INFO  ] [ 83678.776909] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.695 GBps
+[INFO  ] [ 83678.776911] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.465 GBps
+[INFO  ] [ 83678.776914] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.501 GBps
+[INFO  ] [ 83678.776916] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.484 GBps
+[INFO  ] [ 83678.776919] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.482 GBps
+[INFO  ] [ 83678.776921] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.476 GBps
+[INFO  ] [ 83678.776924] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.494 GBps
+[INFO  ] [ 83678.776926] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.493 GBps
+[INFO  ] [ 83678.776929] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.661 GBps
+[INFO  ] [ 83678.776936] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.528 GBps
+[INFO  ] [ 83678.776938] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.680 GBps
+[INFO  ] [ 83678.776941] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.658 GBps
+[INFO  ] [ 83678.776943] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.494 GBps
+[INFO  ] [ 83678.776946] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.581 GBps
+[INFO  ] [ 83678.776948] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.661 GBps
+[INFO  ] [ 83678.776951] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.589 GBps
+[INFO  ] [ 83678.776954] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.518 GBps
+[INFO  ] [ 83678.776956] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.574 GBps
+[INFO  ] [ 83678.776959] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.567 GBps
+[INFO  ] [ 83678.776961] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.500 GBps
+[INFO  ] [ 83678.776964] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.593 GBps
+[INFO  ] [ 83678.776966] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.565 GBps
+[INFO  ] [ 83678.776969] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.698 GBps
+[INFO  ] [ 83678.776971] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.509 GBps
+[INFO  ] [ 83678.776974] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.692 GBps
+[INFO  ] [ 83678.776976] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.695 GBps
+[INFO  ] [ 83678.776979] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.506 GBps
+[INFO  ] [ 83678.776981] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.642 GBps
+[INFO  ] [ 83678.776984] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.547 GBps
+[INFO  ] [ 83683.776838] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.516 GBps
+[INFO  ] [ 83683.776855] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.683 GBps
+[INFO  ] [ 83683.776859] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.684 GBps
+[INFO  ] [ 83683.776862] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.489 GBps
+[INFO  ] [ 83683.776905] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.657 GBps
+[INFO  ] [ 83683.776908] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.552 GBps
+[INFO  ] [ 83683.776912] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.679 GBps
+[INFO  ] [ 83683.776914] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.541 GBps
+[INFO  ] [ 83683.776918] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.543 GBps
+[INFO  ] [ 83683.776921] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.525 GBps
+[INFO  ] [ 83683.776923] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.473 GBps
+[INFO  ] [ 83683.776927] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.530 GBps
+[INFO  ] [ 83683.776929] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.546 GBps
+[INFO  ] [ 83683.776932] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.605 GBps
+[INFO  ] [ 83683.776934] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.663 GBps
+[INFO  ] [ 83683.776937] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.619 GBps
+[INFO  ] [ 83683.776940] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.689 GBps
+[INFO  ] [ 83683.776943] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.478 GBps
+[INFO  ] [ 83683.776945] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.676 GBps
+[INFO  ] [ 83683.776948] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.581 GBps
+[INFO  ] [ 83683.776950] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.685 GBps
+[INFO  ] [ 83683.776953] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.704 GBps
+[INFO  ] [ 83683.776955] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.614 GBps
+[INFO  ] [ 83683.776958] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.696 GBps
+[INFO  ] [ 83683.776960] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.469 GBps
+[INFO  ] [ 83683.776963] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.633 GBps
+[INFO  ] [ 83683.776965] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.568 GBps
+[INFO  ] [ 83683.776968] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.689 GBps
+[INFO  ] [ 83683.776975] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.490 GBps
+[INFO  ] [ 83683.776978] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.503 GBps
+[INFO  ] [ 83683.776980] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.495 GBps
+[INFO  ] [ 83683.776983] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.499 GBps
+[INFO  ] [ 83683.776985] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.463 GBps
+[INFO  ] [ 83683.776988] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.503 GBps
+[INFO  ] [ 83683.776990] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.496 GBps
+[INFO  ] [ 83683.776993] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.647 GBps
+[INFO  ] [ 83683.776995] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.526 GBps
+[INFO  ] [ 83683.776998] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.684 GBps
+[INFO  ] [ 83683.777030] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.661 GBps
+[INFO  ] [ 83683.777051] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.480 GBps
+[INFO  ] [ 83683.777054] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.592 GBps
+[INFO  ] [ 83683.777057] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.658 GBps
+[INFO  ] [ 83683.777060] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.567 GBps
+[INFO  ] [ 83683.777062] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.537 GBps
+[INFO  ] [ 83683.777065] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.562 GBps
+[INFO  ] [ 83683.777067] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.567 GBps
+[INFO  ] [ 83683.777071] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.493 GBps
+[INFO  ] [ 83683.777073] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.579 GBps
+[INFO  ] [ 83683.777076] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.578 GBps
+[INFO  ] [ 83683.777078] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.700 GBps
+[INFO  ] [ 83683.777081] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.518 GBps
+[INFO  ] [ 83683.777084] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.685 GBps
+[INFO  ] [ 83683.777092] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.702 GBps
+[INFO  ] [ 83683.777094] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.486 GBps
+[INFO  ] [ 83683.777097] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.641 GBps
+[INFO  ] [ 83683.777099] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.563 GBps
+[INFO  ] [ 83688.777057] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.515 GBps
+[INFO  ] [ 83688.777073] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.691 GBps
+[INFO  ] [ 83688.777077] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.683 GBps
+[INFO  ] [ 83688.777081] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.492 GBps
+[INFO  ] [ 83688.777084] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.641 GBps
+[INFO  ] [ 83688.777088] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.562 GBps
+[INFO  ] [ 83688.777091] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.667 GBps
+[INFO  ] [ 83688.777094] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.514 GBps
+[INFO  ] [ 83688.777098] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.556 GBps
+[INFO  ] [ 83688.777101] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.541 GBps
+[INFO  ] [ 83688.777104] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.504 GBps
+[INFO  ] [ 83688.777107] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.518 GBps
+[INFO  ] [ 83688.777109] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.561 GBps
+[INFO  ] [ 83688.777112] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.593 GBps
+[INFO  ] [ 83688.777114] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.655 GBps
+[INFO  ] [ 83688.777117] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.612 GBps
+[INFO  ] [ 83688.777120] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.676 GBps
+[INFO  ] [ 83688.777123] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.494 GBps
+[INFO  ] [ 83688.777126] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.684 GBps
+[INFO  ] [ 83688.777128] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.575 GBps
+[INFO  ] [ 83688.777195] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.699 GBps
+[INFO  ] [ 83688.777198] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.599 GBps
+[INFO  ] [ 83688.777200] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.605 GBps
+[INFO  ] [ 83688.777203] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.678 GBps
+[INFO  ] [ 83688.777205] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.472 GBps
+[INFO  ] [ 83688.777208] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.647 GBps
+[INFO  ] [ 83688.777211] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.566 GBps
+[INFO  ] [ 83688.777213] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.698 GBps
+[INFO  ] [ 83688.777216] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.479 GBps
+[INFO  ] [ 83688.777219] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.503 GBps
+[INFO  ] [ 83688.777221] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.504 GBps
+[INFO  ] [ 83688.777224] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.506 GBps
+[INFO  ] [ 83688.777227] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.469 GBps
+[INFO  ] [ 83688.777229] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.496 GBps
+[INFO  ] [ 83688.777232] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.492 GBps
+[INFO  ] [ 83688.777235] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.648 GBps
+[INFO  ] [ 83688.777237] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.584 GBps
+[INFO  ] [ 83688.777240] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.683 GBps
+[INFO  ] [ 83688.777243] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.636 GBps
+[INFO  ] [ 83688.777245] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.483 GBps
+[INFO  ] [ 83688.777248] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.581 GBps
+[INFO  ] [ 83688.777250] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.647 GBps
+[INFO  ] [ 83688.777253] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.565 GBps
+[INFO  ] [ 83688.777261] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.516 GBps
+[INFO  ] [ 83688.777264] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.570 GBps
+[INFO  ] [ 83688.777266] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.573 GBps
+[INFO  ] [ 83688.777269] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.463 GBps
+[INFO  ] [ 83688.777272] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.580 GBps
+[INFO  ] [ 83688.777274] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.574 GBps
+[INFO  ] [ 83688.777277] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.670 GBps
+[INFO  ] [ 83688.777280] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.519 GBps
+[INFO  ] [ 83688.777282] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.685 GBps
+[INFO  ] [ 83688.777286] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.697 GBps
+[INFO  ] [ 83688.777288] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.492 GBps
+[INFO  ] [ 83688.777291] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.652 GBps
+[INFO  ] [ 83688.777294] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.552 GBps
+[RESULT] [ 83694.98611 ] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.516 GBps duration: 0.140226 secs
+[RESULT] [ 83694.99677 ] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.686 GBps duration: 0.140031 secs
+[RESULT] [ 83694.100731] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.675 GBps duration: 0.140043 secs
+[RESULT] [ 83694.101785] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.483 GBps duration: 0.140264 secs
+[RESULT] [ 83694.102840] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.645 GBps duration: 0.140078 secs
+[RESULT] [ 83694.103898] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.562 GBps duration: 0.140173 secs
+[RESULT] [ 83694.104954] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.669 GBps duration: 0.140051 secs
+[RESULT] [ 83694.106005] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.521 GBps duration: 0.140220 secs
+[RESULT] [ 83694.107059] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.543 GBps duration: 0.140194 secs
+[RESULT] [ 83694.108114] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.536 GBps duration: 0.140203 secs
+[RESULT] [ 83694.109209] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.491 GBps duration: 0.140254 secs
+[RESULT] [ 83694.110264] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.534 GBps duration: 0.140205 secs
+[RESULT] [ 83694.111317] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.543 GBps duration: 0.140195 secs
+[RESULT] [ 83694.112371] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.588 GBps duration: 0.140143 secs
+[RESULT] [ 83694.113426] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.660 GBps duration: 0.140061 secs
+[RESULT] [ 83694.114480] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.622 GBps duration: 0.140104 secs
+[RESULT] [ 83694.115534] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.686 GBps duration: 0.140032 secs
+[RESULT] [ 83694.116589] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.486 GBps duration: 0.140260 secs
+[RESULT] [ 83694.117647] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.670 GBps duration: 0.140050 secs
+[RESULT] [ 83694.118706] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.565 GBps duration: 0.140170 secs
+[RESULT] [ 83694.119761] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.681 GBps duration: 0.140037 secs
+[RESULT] [ 83694.120815] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.680 GBps duration: 0.140038 secs
+[RESULT] [ 83694.121869] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.604 GBps duration: 0.140125 secs
+[RESULT] [ 83694.122922] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.685 GBps duration: 0.140032 secs
+[RESULT] [ 83694.123975] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.480 GBps duration: 0.140267 secs
+[RESULT] [ 83694.125006] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.643 GBps duration: 0.140080 secs
+[RESULT] [ 83694.126060] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.567 GBps duration: 0.140167 secs
+[RESULT] [ 83694.127116] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.692 GBps duration: 0.140025 secs
+[RESULT] [ 83694.128170] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.493 GBps duration: 0.140252 secs
+[RESULT] [ 83694.129229] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.496 GBps duration: 0.140248 secs
+[RESULT] [ 83694.130284] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.488 GBps duration: 0.140258 secs
+[RESULT] [ 83694.131345] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.496 GBps duration: 0.140248 secs
+[RESULT] [ 83694.132400] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.483 GBps duration: 0.140263 secs
+[RESULT] [ 83694.133454] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.496 GBps duration: 0.140249 secs
+[RESULT] [ 83694.134509] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.499 GBps duration: 0.140245 secs
+[RESULT] [ 83694.135564] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.655 GBps duration: 0.140067 secs
+[RESULT] [ 83694.136626] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.550 GBps duration: 0.140186 secs
+[RESULT] [ 83694.137680] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.679 GBps duration: 0.140039 secs
+[RESULT] [ 83694.138735] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.655 GBps duration: 0.140067 secs
+[RESULT] [ 83694.139790] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.489 GBps duration: 0.140257 secs
+[RESULT] [ 83694.140844] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.582 GBps duration: 0.140150 secs
+[RESULT] [ 83694.141898] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.656 GBps duration: 0.140066 secs
+[RESULT] [ 83694.142953] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.573 GBps duration: 0.140160 secs
+[RESULT] [ 83694.144004] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.533 GBps duration: 0.140206 secs
+[RESULT] [ 83694.145058] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.569 GBps duration: 0.140165 secs
+[RESULT] [ 83694.146113] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.575 GBps duration: 0.140158 secs
+[RESULT] [ 83694.147167] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.492 GBps duration: 0.140253 secs
+[RESULT] [ 83694.148221] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.589 GBps duration: 0.140142 secs
+[RESULT] [ 83694.149276] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: true 122.571 GBps duration: 0.140162 secs
+[RESULT] [ 83694.150331] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: true 122.690 GBps duration: 0.140027 secs
+[RESULT] [ 83694.151385] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: true 122.519 GBps duration: 0.140223 secs
+[RESULT] [ 83694.152439] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: true 122.689 GBps duration: 0.140028 secs
+[RESULT] [ 83694.153498] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: true 122.699 GBps duration: 0.140017 secs
+[RESULT] [ 83694.154553] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: true 122.496 GBps duration: 0.140249 secs
+[RESULT] [ 83694.155608] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: true 122.650 GBps duration: 0.140073 secs
+[RESULT] [ 83694.156664] [xgmi_d2d_bidir_bandwidth] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: true 122.558 GBps duration: 0.140177 secs
+[RESULT] [ 83694.157751] Action name :xgmi_d2d_unidir_tb_dma
+[RESULT] [ 83694.157757] Module name :pbqt
+[INFO  ] [ 83694.157780] Missing 'device_index' key.
+[RESULT] [ 83694.158268] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158272] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158275] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158277] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158278] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158280] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158281] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158282] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158283] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158285] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158286] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158286] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158287] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158288] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158289] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158290] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158291] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158292] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158293] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158294] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158300] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158301] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158302] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158302] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158303] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158304] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158305] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158306] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158307] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158308] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158308] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158309] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158310] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158312] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158313] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158314] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158315] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158315] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158316] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158317] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158318] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158319] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158320] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158321] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158322] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158323] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158324] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158326] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158327] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158328] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158328] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158329] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158330] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158331] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158332] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83694.158333] [xgmi_d2d_unidir_tb_dma] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.54157 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.220 GBps duration: 0.087695 secs
+[RESULT] [ 83815.55224 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.213 GBps duration: 0.087706 secs
+[RESULT] [ 83815.56278 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.231 GBps duration: 0.087680 secs
+[RESULT] [ 83815.57331 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.237 GBps duration: 0.087670 secs
+[RESULT] [ 83815.58384 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.230 GBps duration: 0.087682 secs
+[RESULT] [ 83815.59438 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.197 GBps duration: 0.087728 secs
+[RESULT] [ 83815.60491 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.199 GBps duration: 0.087726 secs
+[RESULT] [ 83815.61544 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.127 GBps duration: 0.087828 secs
+[RESULT] [ 83815.62598 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.149 GBps duration: 0.087797 secs
+[RESULT] [ 83815.63650 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.161 GBps duration: 0.087781 secs
+[RESULT] [ 83815.64705 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.204 GBps duration: 0.087719 secs
+[RESULT] [ 83815.65758 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.173 GBps duration: 0.087762 secs
+[RESULT] [ 83815.66812 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.154 GBps duration: 0.087790 secs
+[RESULT] [ 83815.67866 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.167 GBps duration: 0.087772 secs
+[RESULT] [ 83815.68918 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.221 GBps duration: 0.087694 secs
+[RESULT] [ 83815.70004 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.243 GBps duration: 0.087663 secs
+[RESULT] [ 83815.71058 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.211 GBps duration: 0.087708 secs
+[RESULT] [ 83815.72110 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.190 GBps duration: 0.087738 secs
+[RESULT] [ 83815.73163 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.242 GBps duration: 0.087663 secs
+[RESULT] [ 83815.74216 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.209 GBps duration: 0.087712 secs
+[RESULT] [ 83815.75268 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.255 GBps duration: 0.087645 secs
+[RESULT] [ 83815.76320 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.285 GBps duration: 0.087602 secs
+[RESULT] [ 83815.77375 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.220 GBps duration: 0.087695 secs
+[RESULT] [ 83815.78428 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.238 GBps duration: 0.087669 secs
+[RESULT] [ 83815.79481 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.283 GBps duration: 0.087605 secs
+[RESULT] [ 83815.80533 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.242 GBps duration: 0.087663 secs
+[RESULT] [ 83815.81586 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.251 GBps duration: 0.087651 secs
+[RESULT] [ 83815.82640 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.256 GBps duration: 0.087644 secs
+[RESULT] [ 83815.83694 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.129 GBps duration: 0.087826 secs
+[RESULT] [ 83815.84746 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.176 GBps duration: 0.087758 secs
+[RESULT] [ 83815.85799 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.092 GBps duration: 0.087879 secs
+[RESULT] [ 83815.86851 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.133 GBps duration: 0.087820 secs
+[RESULT] [ 83815.87906 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.138 GBps duration: 0.087814 secs
+[RESULT] [ 83815.88958 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.099 GBps duration: 0.087868 secs
+[RESULT] [ 83815.90004 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.155 GBps duration: 0.087788 secs
+[RESULT] [ 83815.91057 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.190 GBps duration: 0.087738 secs
+[RESULT] [ 83815.92112 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.231 GBps duration: 0.087680 secs
+[RESULT] [ 83815.93165 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.225 GBps duration: 0.087688 secs
+[RESULT] [ 83815.94217 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.235 GBps duration: 0.087674 secs
+[RESULT] [ 83815.95271 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.200 GBps duration: 0.087724 secs
+[RESULT] [ 83815.96323 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.192 GBps duration: 0.087735 secs
+[RESULT] [ 83815.97376 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.179 GBps duration: 0.087754 secs
+[RESULT] [ 83815.98428 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.164 GBps duration: 0.087776 secs
+[RESULT] [ 83815.99480 ] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.173 GBps duration: 0.087763 secs
+[RESULT] [ 83815.100532] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.150 GBps duration: 0.087796 secs
+[RESULT] [ 83815.101585] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.174 GBps duration: 0.087761 secs
+[RESULT] [ 83815.102637] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.151 GBps duration: 0.087794 secs
+[RESULT] [ 83815.103692] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.131 GBps duration: 0.087823 secs
+[RESULT] [ 83815.104747] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.176 GBps duration: 0.087759 secs
+[RESULT] [ 83815.105801] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.256 GBps duration: 0.087644 secs
+[RESULT] [ 83815.106853] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.184 GBps duration: 0.087747 secs
+[RESULT] [ 83815.107905] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.239 GBps duration: 0.087668 secs
+[RESULT] [ 83815.108958] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.262 GBps duration: 0.087636 secs
+[RESULT] [ 83815.110002] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.230 GBps duration: 0.087681 secs
+[RESULT] [ 83815.111058] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.199 GBps duration: 0.087726 secs
+[RESULT] [ 83815.112111] [xgmi_d2d_unidir_tb_dma] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.212 GBps duration: 0.087707 secs
+[RESULT] [ 83815.113196] Action name :xgmi_d2d_unidir_tb_gfx
+[RESULT] [ 83815.113208] Module name :pbqt
+[INFO  ] [ 83815.113244] Missing 'device_index' key.
+[RESULT] [ 83815.113774] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113779] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113781] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113783] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113786] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113788] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113790] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113791] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113792] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113793] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113794] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113795] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113796] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113797] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113798] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113799] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113799] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113801] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113802] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113803] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113804] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113805] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113805] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113806] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113807] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113808] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113809] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113814] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113814] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113815] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113816] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113817] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113818] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113819] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113820] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113821] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113822] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113823] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113824] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113824] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113825] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113826] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113827] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113828] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113829] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113830] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113831] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113831] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113832] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113833] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113834] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113835] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113836] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113837] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113839] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83815.113839] [xgmi_d2d_unidir_tb_gfx] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.863741] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.117 GBps duration: 0.087844 secs
+[RESULT] [ 83934.864814] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.339 GBps duration: 0.087525 secs
+[RESULT] [ 83934.865873] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 60.237 GBps duration: 0.089127 secs
+[RESULT] [ 83934.866931] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.206 GBps duration: 0.087716 secs
+[RESULT] [ 83934.868044] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.966 GBps duration: 0.086639 secs
+[RESULT] [ 83934.869224] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.177 GBps duration: 0.087757 secs
+[RESULT] [ 83934.870397] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.164 GBps duration: 0.087775 secs
+[RESULT] [ 83934.871483] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 60.918 GBps duration: 0.088130 secs
+[RESULT] [ 83934.872520] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 60.261 GBps duration: 0.089090 secs
+[RESULT] [ 83934.873578] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.303 GBps duration: 0.087576 secs
+[RESULT] [ 83934.874634] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 60.978 GBps duration: 0.088044 secs
+[RESULT] [ 83934.875655] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.775 GBps duration: 0.086908 secs
+[RESULT] [ 83934.876711] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.288 GBps duration: 0.087598 secs
+[RESULT] [ 83934.877765] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.180 GBps duration: 0.087753 secs
+[RESULT] [ 83934.878820] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.204 GBps duration: 0.087718 secs
+[RESULT] [ 83934.879875] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 60.126 GBps duration: 0.089291 secs
+[RESULT] [ 83934.880930] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.140 GBps duration: 0.087809 secs
+[RESULT] [ 83934.881996] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.133 GBps duration: 0.087821 secs
+[RESULT] [ 83934.883008] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.293 GBps duration: 0.087591 secs
+[RESULT] [ 83934.884065] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.237 GBps duration: 0.087671 secs
+[RESULT] [ 83934.885155] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.902 GBps duration: 0.086730 secs
+[RESULT] [ 83934.886213] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 59.958 GBps duration: 0.089542 secs
+[RESULT] [ 83934.887276] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.356 GBps duration: 0.087501 secs
+[RESULT] [ 83934.888332] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.381 GBps duration: 0.087465 secs
+[RESULT] [ 83934.889387] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.200 GBps duration: 0.087725 secs
+[RESULT] [ 83934.890441] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.202 GBps duration: 0.087721 secs
+[RESULT] [ 83934.891485] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.275 GBps duration: 0.087616 secs
+[RESULT] [ 83934.892517] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 61.213 GBps duration: 0.087706 secs
+[RESULT] [ 83934.893572] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.367 GBps duration: 0.087486 secs
+[RESULT] [ 83934.894626] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.969 GBps duration: 0.086636 secs
+[RESULT] [ 83934.895680] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.512 GBps duration: 0.087278 secs
+[RESULT] [ 83934.896745] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.335 GBps duration: 0.087531 secs
+[RESULT] [ 83934.897799] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.187 GBps duration: 0.087742 secs
+[RESULT] [ 83934.898853] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.389 GBps duration: 0.087454 secs
+[RESULT] [ 83934.899908] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 60.166 GBps duration: 0.089231 secs
+[RESULT] [ 83934.900963] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.860 GBps duration: 0.086788 secs
+[RESULT] [ 83934.902008] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 60.889 GBps duration: 0.088172 secs
+[RESULT] [ 83934.903062] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.701 GBps duration: 0.087012 secs
+[RESULT] [ 83934.904116] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.910 GBps duration: 0.086717 secs
+[RESULT] [ 83934.905171] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 60.944 GBps duration: 0.088093 secs
+[RESULT] [ 83934.906226] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 60.780 GBps duration: 0.088330 secs
+[RESULT] [ 83934.907304] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 60.950 GBps duration: 0.088083 secs
+[RESULT] [ 83934.908360] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.210 GBps duration: 0.087710 secs
+[RESULT] [ 83934.909394] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.255 GBps duration: 0.087645 secs
+[RESULT] [ 83934.910451] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.835 GBps duration: 0.086823 secs
+[RESULT] [ 83934.911507] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.179 GBps duration: 0.087753 secs
+[RESULT] [ 83934.912563] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 61.244 GBps duration: 0.087661 secs
+[RESULT] [ 83934.913618] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 60.490 GBps duration: 0.088753 secs
+[RESULT] [ 83934.914675] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] bidirectional: false 60.938 GBps duration: 0.088101 secs
+[RESULT] [ 83934.915729] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] bidirectional: false 61.881 GBps duration: 0.086758 secs
+[RESULT] [ 83934.916766] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false 61.226 GBps duration: 0.087686 secs
+[RESULT] [ 83934.917823] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] bidirectional: false 61.317 GBps duration: 0.087556 secs
+[RESULT] [ 83934.918878] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] bidirectional: false 61.261 GBps duration: 0.087637 secs
+[RESULT] [ 83934.919932] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] bidirectional: false 60.032 GBps duration: 0.089430 secs
+[RESULT] [ 83934.920986] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] bidirectional: false 61.298 GBps duration: 0.087584 secs
+[RESULT] [ 83934.922036] [xgmi_d2d_unidir_tb_gfx] p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] bidirectional: false 61.211 GBps duration: 0.087708 secs
+[RESULT] [ 83934.923162] Action name :xgmi_d2d_unidir_tb_a2a
+[RESULT] [ 83934.923173] Module name :pbqt
+[INFO  ] [ 83934.923214] Missing 'device_index' key.
+[RESULT] [ 83934.924054] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924061] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924064] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924068] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924071] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924075] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924098] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924101] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924103] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924106] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924107] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924110] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924112] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924113] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924115] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924117] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924119] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924122] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924124] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924126] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924128] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924130] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924132] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924133] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924135] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924137] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924139] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924141] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924143] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924144] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924146] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924148] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924150] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924152] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924157] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924159] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924161] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924163] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924164] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924166] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924168] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924170] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924172] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924174] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924175] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924177] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924179] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924181] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924183] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924185] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924186] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924188] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924190] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924192] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924194] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] peers:true distance:15 xGMI:15
+[RESULT] [ 83934.924196] [xgmi_d2d_unidir_tb_a2a] p2p [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] peers:true distance:15 xGMI:15
+[INFO  ] [ 83935.924027] [xgmi_d2d_unidir_tb_a2a] p2p-bandwidth[ 1/1] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false (pending)
+[INFO  ] [ 83936.923959] [xgmi_d2d_unidir_tb_a2a] p2p-bandwidth[ 1/1] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] bidirectional: false (pending)
+[RESULT] [ 83937.680524] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[ 1/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] 53.561 GBps
+[RESULT] [ 83937.680532] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[ 2/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] 54.055 GBps
+[RESULT] [ 83937.680554] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[ 3/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] 54.802 GBps
+[RESULT] [ 83937.680555] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[ 4/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] 53.534 GBps
+[RESULT] [ 83937.680555] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[ 5/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] 54.250 GBps
+[RESULT] [ 83937.680557] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[ 6/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] 53.377 GBps
+[RESULT] [ 83937.680558] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[ 7/56] [GPU:: 2 - 17010 - 0000:75:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] 53.646 GBps
+[RESULT] [ 83937.680559] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[ 8/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] 53.470 GBps
+[RESULT] [ 83937.680559] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[ 9/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] 54.489 GBps
+[RESULT] [ 83937.680560] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[10/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] 53.423 GBps
+[RESULT] [ 83937.680561] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[11/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] 53.211 GBps
+[RESULT] [ 83937.680561] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[12/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] 53.355 GBps
+[RESULT] [ 83937.680562] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[13/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] 53.486 GBps
+[RESULT] [ 83937.680562] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[14/56] [GPU:: 3 - 42583 - 0000:05:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] 53.194 GBps
+[RESULT] [ 83937.680563] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[15/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] 53.459 GBps
+[RESULT] [ 83937.680564] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[16/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] 54.612 GBps
+[RESULT] [ 83937.680565] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[17/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] 53.523 GBps
+[RESULT] [ 83937.680565] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[18/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] 53.508 GBps
+[RESULT] [ 83937.680566] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[19/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] 53.327 GBps
+[RESULT] [ 83937.680566] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[20/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] 53.321 GBps
+[RESULT] [ 83937.680567] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[21/56] [GPU:: 4 - 36479 - 0000:65:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] 53.726 GBps
+[RESULT] [ 83937.680568] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[22/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] 54.396 GBps
+[RESULT] [ 83937.680568] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[23/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] 53.170 GBps
+[RESULT] [ 83937.680569] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[24/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] 53.214 GBps
+[RESULT] [ 83937.680569] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[25/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] 52.843 GBps
+[RESULT] [ 83937.680570] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[26/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] 53.015 GBps
+[RESULT] [ 83937.680571] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[27/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] 53.048 GBps
+[RESULT] [ 83937.680571] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[28/56] [GPU:: 5 - 27226 - 0000:15:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] 53.288 GBps
+[RESULT] [ 83937.680572] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[29/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] 53.214 GBps
+[RESULT] [ 83937.680574] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[30/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] 53.412 GBps
+[RESULT] [ 83937.680575] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[31/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] 53.275 GBps
+[RESULT] [ 83937.680575] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[32/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] 53.658 GBps
+[RESULT] [ 83937.680576] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[33/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] 53.376 GBps
+[RESULT] [ 83937.680576] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[34/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] 53.290 GBps
+[RESULT] [ 83937.680577] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[35/56] [GPU:: 6 - 57875 - 0000:f5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] 54.757 GBps
+[RESULT] [ 83937.680578] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[36/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] 53.559 GBps
+[RESULT] [ 83937.680578] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[37/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] 53.163 GBps
+[RESULT] [ 83937.680579] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[38/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] 53.332 GBps
+[RESULT] [ 83937.680580] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[39/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] 53.388 GBps
+[RESULT] [ 83937.680580] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[40/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] 53.641 GBps
+[RESULT] [ 83937.680581] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[41/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] 54.584 GBps
+[RESULT] [ 83937.680581] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[42/56] [GPU:: 7 -  1590 - 0000:85:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] 53.536 GBps
+[RESULT] [ 83937.680582] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[43/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] 53.267 GBps
+[RESULT] [ 83937.680583] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[44/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] 53.379 GBps
+[RESULT] [ 83937.680583] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[45/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] 53.458 GBps
+[RESULT] [ 83937.680584] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[46/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] 52.978 GBps
+[RESULT] [ 83937.680584] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[47/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] 53.503 GBps
+[RESULT] [ 83937.680585] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[48/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] 54.431 GBps
+[RESULT] [ 83937.680586] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[49/56] [GPU:: 8 - 11806 - 0000:e5:00.0] [GPU:: 9 - 51771 - 0000:95:00.0] 53.569 GBps
+[RESULT] [ 83937.680586] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[50/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 2 - 17010 - 0000:75:00.0] 53.985 GBps
+[RESULT] [ 83937.680587] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[51/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 3 - 42583 - 0000:05:00.0] 53.492 GBps
+[RESULT] [ 83937.680588] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[52/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 4 - 36479 - 0000:65:00.0] 53.624 GBps
+[RESULT] [ 83937.680588] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[53/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 5 - 27226 - 0000:15:00.0] 53.431 GBps
+[RESULT] [ 83937.680589] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[54/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 6 - 57875 - 0000:f5:00.0] 54.994 GBps
+[RESULT] [ 83937.680589] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[55/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 7 -  1590 - 0000:85:00.0] 53.571 GBps
+[RESULT] [ 83937.680590] [xgmi_d2d_unidir_tb_a2a] a2a-p2p-bandwidth[56/56] [GPU:: 9 - 51771 - 0000:95:00.0] [GPU:: 8 - 11806 - 0000:e5:00.0] 53.453 GBps
+[RESULT] [ 83937.680620] [xgmi_d2d_unidir_tb_a2a] a2a-gpu-bandwidth [GPU:: 2 - 17010 - 0000:75:00.0] Aggregate peer bandwidth: 377.225 GBps
+[RESULT] [ 83937.680643] [xgmi_d2d_unidir_tb_a2a] a2a-gpu-bandwidth [GPU:: 3 - 42583 - 0000:05:00.0] Aggregate peer bandwidth: 374.628 GBps
+[RESULT] [ 83937.680673] [xgmi_d2d_unidir_tb_a2a] a2a-gpu-bandwidth [GPU:: 4 - 36479 - 0000:65:00.0] Aggregate peer bandwidth: 375.475 GBps
+[RESULT] [ 83937.680710] [xgmi_d2d_unidir_tb_a2a] a2a-gpu-bandwidth [GPU:: 5 - 27226 - 0000:15:00.0] Aggregate peer bandwidth: 372.974 GBps
+[RESULT] [ 83937.680753] [xgmi_d2d_unidir_tb_a2a] a2a-gpu-bandwidth [GPU:: 6 - 57875 - 0000:f5:00.0] Aggregate peer bandwidth: 374.982 GBps
+[RESULT] [ 83937.680803] [xgmi_d2d_unidir_tb_a2a] a2a-gpu-bandwidth [GPU:: 7 -  1590 - 0000:85:00.0] Aggregate peer bandwidth: 375.203 GBps
+[RESULT] [ 83937.680860] [xgmi_d2d_unidir_tb_a2a] a2a-gpu-bandwidth [GPU:: 8 - 11806 - 0000:e5:00.0] Aggregate peer bandwidth: 374.583 GBps
+[RESULT] [ 83937.680924] [xgmi_d2d_unidir_tb_a2a] a2a-gpu-bandwidth [GPU:: 9 - 51771 - 0000:95:00.0] Aggregate peer bandwidth: 376.549 GBps
+[RESULT] [ 83937.680925] [xgmi_d2d_unidir_tb_a2a] a2a-bandwidth [8 GPUs][56 p2p transfers] Aggregate bandwidth: 3001.620 GBps
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| xgmi_d2d_unidir_bandwidth        | PBQT           | [32mPASS          [0m  |
+| xgmi_d2d_bidir_bandwidth         | PBQT           | [32mPASS          [0m  |
+| xgmi_d2d_unidir_tb_dma           | PBQT           | [32mPASS          [0m  |
+| xgmi_d2d_unidir_tb_gfx           | PBQT           | [32mPASS          [0m  |
+| xgmi_d2d_unidir_tb_a2a           | PBQT           | [32mPASS          [0m  |
++---------------------------------------------------------------------+

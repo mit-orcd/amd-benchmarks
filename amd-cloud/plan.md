@@ -10,6 +10,7 @@ reference material and the source of the comparison baselines.
 | A | ROCm Validation Suite (RVS) | `work-rocmval/` | `work-rocmval/` | `gst` TFLOPS sweep + health modules |
 | B | RCCL collective sweep | `rccl-tests/` | `rccl-tests/` | `rccl-tests` collectives × N=2..8, algo/proto configs |
 | C | Primus | `primus/` | `primus/` | GEMM / attention / RCCL microbenches **+ Megatron-LM llama2-7B pretrain** |
+| D | ATOM | `atom/` | *(none — new)* | LLM **inference** serving throughput / latency sweep |
 
 **Explicitly out of scope:** the standalone Megatron-LM training sweep in
 `dell-cloud/megatron-lm/` (`run.sh`, `summary*.md`). Part B reproduces
@@ -209,11 +210,17 @@ since they are regenerable and would otherwise dwarf the repo.
     │   ├── run_full_sweep.sh    # NEW (docker port)
     │   ├── run_megatron.sh      # NEW (docker port, GBS bug fixed up front)
     │   └── generate_report.py   # copied from ../../dell-cloud/primus/, unmodified
-    ├── logs/{rvs,rccl,primus}/  # per-run driver logs + summaries (tracked)
+    ├── atom/                    # PART D — LLM inference
+    │   ├── ATOM/                # cloned upstream  [ignored]
+    │   ├── run_atom_server.sh   # NEW (start server in container, refuses if GPUs busy)
+    │   ├── run_atom_bench.sh    # NEW (concurrency sweep driver)
+    │   └── analyze_atom.py      # NEW
+    ├── logs/{rvs,rccl,primus,atom}/  # per-run driver logs + summaries (tracked)
     └── results/                 # final markdown/CSV/PNG deliverables (tracked)
 
 /mnt/scratch/shaohao/            # regenerable bulk only — never the source of truth
 ├── cache/{triton,hf,torch,pip}/ # bind-mounted into containers
+├── models/                      # ATOM model weights (Part D) — NEVER on /
 └── venv/                        # analysis python
 ```
 
@@ -452,7 +459,8 @@ from collections import defaultdict
 from pathlib import Path
 
 # MI355X vendor peaks (TFLOPS, dense, no sparsity) — used for % of peak.
-PEAK = {"fp4": 10000.0, "fp6": 5000.0, "bf6": 5000.0, "fp8": 5000.0,
+# CORRECTED: fp6/bf6 are 10000, not 5000 -- CDNA 4 runs MX-FP6 at the FP4 rate.
+PEAK = {"fp4": 10000.0, "fp6": 10000.0, "bf6": 10000.0, "fp8": 5000.0,
         "bf8": 5000.0, "fp16": 2500.0, "bf16": 2500.0, "fp32": 157.3, "fp64": 78.6}
 GFLOPS_RE = re.compile(r"\[GPU::\s*(\d+)\]\s+.*?GFLOPS\s+([\d.]+)")
 
@@ -1053,6 +1061,140 @@ $PY generate_report.py $LOG_ROOT/primus/sweep-$RUN_ID \
 
 ---
 
+---
+
+## PART D — ATOM (LLM inference)
+
+`https://github.com/ROCm/ATOM` — cloned to `atom/ATOM` (93 MB, HEAD `6a756fdb`).
+
+**ATOM is a different kind of benchmark from A–C.** Parts A–C measure the machine
+(FLOPS, fabric bandwidth, training throughput). ATOM is a *vLLM-like inference engine* built
+on AITER kernels: you start an OpenAI-compatible server, then drive it with a load generator
+and measure serving metrics — throughput, TTFT, TPOT — at varying concurrency. Three
+consequences follow, and they are the whole reason this part needs its own design:
+
+1. **It requires model weights.** §2's "no datasets and no model weights are downloaded"
+   does not hold for Part D. There is no mock-data escape hatch for an inference server.
+2. **There is no `dell-cloud/` baseline.** Parts A–C reproduce prior runs; Part D is net-new
+   characterization. The comparison points are ATOM's own public dashboard
+   (`https://rocm.github.io/ATOM/benchmark-dashboard/`) and vLLM-on-MI355X figures, not
+   anything in this repo.
+3. **The metric is latency/throughput under load, not FLOPS.** Results are not comparable to
+   the Part A–C tables and belong in their own deliverable.
+
+### D.1 What is already on the host
+
+`rocm/atom-dev:latest` (106 GB, image `b750c5fbe4b7`) is **already pulled** — it is the image
+§1.3's disk warning flagged as "not ours". It is exactly the recommended ATOM image, so
+Part D needs **no new image pull**, which matters given `/` has ~161 GB free.
+
+> ⚠️ Still do **not** `docker system prune`. The separate stopped container holding 283 GB is
+> unrelated to this image and is not ours to delete. And since another user may be running
+> ATOM on this box, `assert_gpus_idle` before every Part D step is not optional.
+
+### D.2 Install — no build required
+
+The nightly image ships AITER + ATOM preinstalled; Part D runs it directly.
+
+```bash
+docker run --rm -it $(dgpu_args) \
+  -v $BENCH_ROOT/atom:/work -v $SCRATCH/models:/models \
+  rocm/atom-dev:latest bash -c 'python -c "import atom, aiter; print(atom.__version__)"'
+```
+
+Option B in ATOM's README (build from `rocm/pytorch:rocm7.0.2...` + `pip install ./ATOM`)
+is the fallback **only** if the nightly image turns out to predate gfx950 support. Gate it
+the same way Part C is gated:
+
+```bash
+docker run --rm $(dgpu_args) rocm/atom-dev:latest \
+  python -c "import torch; print(torch.cuda.get_arch_list()); print(torch.cuda.device_count())"
+# must contain gfx950 and report 8
+```
+
+### D.3 Model selection — start small, ungated
+
+Weights go to **`$SCRATCH/models`** (`/mnt/scratch`, 6.6 TB free), never to `/`.
+
+| Tier | Model | Size | TP | Status | Why |
+|------|-------|------|----|--------|----|
+| 1 (smoke) | `Qwen/Qwen3-8B-FP8` | 8.9 GB | 1 | ✅ **downloaded** | Ungated, single GPU, minutes to fetch. Proves the whole path. |
+| 2 (headline) | `RedHatAI/Meta-Llama-3.1-70B-Instruct-FP8` | ~70 GB | 8 | ✅ **downloaded** | Dense, widely benchmarked, **exercises TP8 → RCCL in the inference critical path** |
+| 3 (frontier) | `moonshotai/Kimi-K3` | **1.56 TB** | 8 | ✅ **downloaded** | 2.78T-param hybrid-attention MoE — the largest model this node can hold |
+
+**All three tiers will be run**, in order, via `atom/run_part_d.sh all`.
+
+Each answers a different question. Tier 1 is the gate: a single-GPU smoke test that proves
+the serving path but says nothing about this 8-GPU box. **Tier 2 is the dense TP8 case** —
+every layer all-reduces, so Part D's latency becomes coupled to Part B's collective results;
+if Part B finds a non-power-of-2 cliff, TP8 serving is where it surfaces as user-visible
+latency. **Tier 3 is the capability statement**: 2.78T parameters resident on a single node,
+which is what 288 GB/GPU of HBM exists to make possible, and it stresses a completely
+different path (MXFP4 grouped-MoE + KDA/MLA hybrid attention) from tiers 1–2.
+
+Tier 3 is ungated and needed no token. Its launch flags come verbatim from
+`ATOM/recipes/Kimi-K3.md` and are **correctness requirements, not tuning** — in particular
+`--no-enable_prefix_caching`, because the KDA recurrent state is per-request and cannot be
+reconstructed from the paged MLA cache, so prefix reuse would be silently wrong. See
+`atom/README.md` for the full flag rationale.
+
+> **Model-choice correction.** This plan originally named `meta-llama/Llama-3.1-70B-Instruct`.
+> That repo is `gated: manual` — it needs an `HF_TOKEN` *and* per-account license approval,
+> which would have blocked the run. **`RedHatAI/Meta-Llama-3.1-70B-Instruct-FP8` is ungated**
+> (`gated: false`), is the canonical vLLM-ecosystem FP8 W8A8 quantization of the same
+> weights, and declares `quant_method: compressed-tensors` — which ATOM supports (its
+> quantization dispatch recognizes `compressed-tensors`, `fp8`, `quark`, `mxfp4`). No token
+> was needed. `nvidia/Llama-3.1-70B-Instruct-FP8` is also ungated but ships a
+> TensorRT-LLM/ModelOpt-flavoured quant, so it was not chosen.
+
+Weights live on `$SCRATCH/models` (6.6 TB free), never on `/`. Part D needs HF **online** at
+download time; the benchmark run itself is offline.
+
+### D.4 Scripts to write — `atom/`
+
+ATOM's own `scripts/` do the real work, but they are not directly reusable as-is:
+
+- `OUTPUT_DIR=/app/logs_claude` is hardcoded in `run_benchmark.sh`.
+- `start_atom_server.sh` hardcodes `KINETO_CONFIG=/home/ljin1/dk/libkineto.conf` — another
+  user's path.
+- `start_atom_server.sh` opens with `pkill -f 'atom.entrypoints'` and `pkill -9 -f
+  'multiprocessing.spawn'`. On a shared box **that can kill another user's inference server.**
+  Our wrapper must check for foreign ATOM processes and refuse rather than pkill blindly.
+
+So Part D gets thin wrappers, mirroring Parts A–C:
+
+| Script | Does |
+|--------|------|
+| `atom/run_atom_server.sh` | Start the server in a container: model, TP, port. Refuses if a foreign ATOM process or busy GPU is detected. Waits for `/v1/models` + VRAM. |
+| `atom/stop_atom_server.sh` | Stop/remove **our** container by name — never a pattern-based `pkill`. |
+| `atom/run_atom_bench.sh` | Concurrency sweep via `atom.benchmarks.benchmark_serving`; one `c<N>.json` + `c<N>.log` per point into `$LOG_ROOT/atom/`. |
+| `atom/run_part_d.sh` | **Unattended driver**: gate → tier 1 → tier 2 → analysis, strictly sequential, one server at a time. Runs under `nohup`. |
+| `atom/analyze_atom.py` | Parse the sweep JSON into `results/atom.{md,csv}` — throughput vs concurrency, TTFT/TPOT percentiles, and the throughput/latency knee. |
+
+Benchmark matrix (one model, one pass ≈ 30–45 min):
+
+```
+ISL/OSL : 1024/1024  (the ATOM default; add 1024/8192 for a decode-heavy point)
+Concurrency: 1 2 4 8 16 32 64 128 256
+TP      : 1 for tier 1, 8 for tier 2
+```
+
+### D.5 Part D run order
+
+```bash
+source common/env.sh; cd atom
+./run_atom_server.sh $SCRATCH/models/Qwen3-8B-FP8 1 8000 &   # tier-1 gate
+./run_atom_bench.sh  $SCRATCH/models/Qwen3-8B-FP8 8000 1024 1024 "1 4 16 64"
+$PY analyze_atom.py $LOG_ROOT/atom/sweep_* -o $BENCH_ROOT/results
+```
+
+Server and load generator run **on the same box**, so the load generator competes for CPU
+with the server. Keep concurrency generation cheap and note it as a caveat — this measures
+a co-located client, which is the normal ATOM/vLLM benchmarking convention but is not a
+clean client-server separation.
+
+---
+
 ## 5. Execution order and wall-clock budget
 
 Everything is **strictly sequential** — all three suites want all 8 GPUs and the whole
@@ -1068,8 +1210,13 @@ Everything is **strictly sequential** — all three suites want all 8 GPUs and t
 | 5 | **C** — Primus GPU scan (gate) | 5 min |
 | 6 | **C** — Primus microbench sweep | ~1 h |
 | 7 | **C** — Megatron llama2-7B N=1..8 | 1.5–3 h |
-| 8 | Analysis + report assembly | 20 min |
-| | **Total** | **6–9 h** |
+| 8 | **D** — ATOM tier 1 (8B, TP1) serve + sweep | 45 min |
+| 9 | **D** — ATOM tier 2 (70B FP8, TP8) serve + sweep | 1–1.5 h |
+| 10 | **D** — ATOM tier 3 (Kimi-K3 1.56 TB, TP8) load + sweep | 1.5–2.5 h |
+| 11 | Analysis + report assembly | 20 min |
+| | **Total** | **10–15 h** |
+
+Model downloads (1.6 TB total) are already complete and cost no wall clock here.
 
 Long steps run under `nohup` and are polled, so the session is not blocked.
 
@@ -1082,6 +1229,7 @@ Long steps run under `nohup` and are polled, so the session is not blocked.
 | `rccl.md` / `.csv` | `analyze_rccl.py` — busbw per collective × N, config comparison, cliff flags |
 | `rccl_busbw.png` | `plot_rccl_busbw.py` |
 | `PRIMUS_REPORT.md` | `generate_report.py` — GEMM / attention / RCCL / **Megatron TF/s/GPU × N** |
+| `atom.md` / `.csv` | `analyze_atom.py` — serving throughput vs concurrency, TTFT/TPOT, latency knee |
 | `SUMMARY.md` | Hand-written: cross-suite findings + deltas vs the Dell Cloud published numbers |
 
 ## 7. Risks and open items
@@ -1104,6 +1252,27 @@ Long steps run under `nohup` and are polled, so the session is not blocked.
    11.2 kW tray throttles. A per-GPU TFLOPS drop from N=1 to N=8 is expected physics, not a bug.
 6. **`alltoallv` OOM at N=5** killed the reference sweep mid-run. Capped at 4 GiB via
    `ALLTOALL_MAX`; if it still OOMs, drop to 2 GiB — the plateau is reached well before then.
+7. **Part D needs model weights and network egress to HuggingFace.** This breaks the
+   otherwise-offline character of the plan. Weights land on `/mnt/scratch` (6.6 TB), never on
+   `/`. Llama checkpoints are **gated** and need an `HF_TOKEN` you must supply; the tier-1
+   Qwen3 model is ungated specifically so the path can be proven without one.
+8. **Part D's upstream scripts `pkill` ATOM processes by name.** On a shared box this can
+   kill someone else's inference server. Our wrappers must detect and refuse, never blind-kill
+   — see §D.4. Given `rocm/atom-dev` was already here before us, assume the box is shared.
+9. **Part D has no `dell-cloud/` baseline**, so its numbers are absolute, not comparative.
+   Sanity-check them against ATOM's public dashboard rather than against anything in this repo.
+10. **The first RVS health pass overlapped the 1.56 TB Kimi-K3 download.** Sustained NVMe
+    writes and NIC traffic consume PCIe lanes and host memory bandwidth, so `pebb`
+    (host↔device PCIe), and to a lesser degree `babel` (HBM) and `pbqt` (P2P XGMI), may read
+    low in `logs/rvs/health_20260813_195057/`. Mitigation:
+    **`work-rocmval/rerun_bandwidth_health.sh`** re-runs exactly those three modules on a
+    quiet machine and refuses to start while a download is in flight. This matters because
+    Part B's "algorithm, not fabric" attribution rests on a clean `pbqt`. The `gst` TFLOPS
+    sweep finished *before* the download started and is unaffected.
+11. **Kimi-K3 at 1.56 TB leaves little headroom.** 8 × 288 GB = 2304 GB total HBM, so weights
+    alone are ~68% of the box. `--gpu-memory-utilization 0.93` and `--max-num-seqs 64` come
+    from the recipe for that reason. If the server OOMs on load, reduce `max-model-len`
+    before touching `gpu-memory-utilization`.
 
 ---
 
@@ -1120,7 +1289,7 @@ waiting on the go-ahead.
 | 0.2 | `venv` at `/mnt/scratch/shaohao/venv` | Python 3.10.12 + matplotlib, pandas, tabulate ✔ |
 | 0.3 | Clone RVS / rccl-tests / Primus | 17 MB / 772 K / 163 MB ✔ |
 | 0.4 | `docker pull rocm/primus:v26.5` | 54.8 GB; gfx950 gate **passed**, fallback image not needed |
-| 0.5 | `common/env.sh`, cache dirs, log dirs | sources clean; `RCCL_TESTS_DIR` added to the plan's version |
+| 0.5 | `common/env.sh`, cache dirs, log dirs | env.sh already present from the skeleton commit (unchanged); sources clean, cache + log dirs created |
 | 1.1 | Build + install RVS | all **15** modules incl. `pebb`/`pbqt`/`pulse`; `rvs -g` → 8 MI355X ✔ |
 | 1.2 | Build rccl-tests | **12** `*_perf` binaries, native gfx950 ✔ |
 | 1.3 | Write all 13 scripts | `bash -n` + `py_compile` clean on every one |

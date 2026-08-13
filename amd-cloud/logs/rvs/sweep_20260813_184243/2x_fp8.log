@@ -1,0 +1,50 @@
+[RESULT] [ 79703.604843] Action name :tflops-fp8
+[RESULT] [ 79703.646690] Module name :gst
+[RESULT] [ 79704.220516] [tflops-fp8] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 79704.220524] [tflops-fp8] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 79711.230619] [tflops-fp8] [GPU:: 42583] GFLOPS 3689636
+[RESULT] [ 79711.259316] [tflops-fp8] [GPU:: 27226] GFLOPS 3683456
+[RESULT] [ 79712.230717] [tflops-fp8] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 79712.259346] [tflops-fp8] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 79718.454349] [tflops-fp8] [GPU:: 42583] GFLOPS 3533354
+[RESULT] [ 79718.537577] [tflops-fp8] [GPU:: 27226] GFLOPS 3502626
+[RESULT] [ 79724.690420] [tflops-fp8] [GPU:: 42583] GFLOPS 3526311
+[RESULT] [ 79724.811784] [tflops-fp8] [GPU:: 27226] GFLOPS 3504878
+[RESULT] [ 79730.936586] [tflops-fp8] [GPU:: 42583] GFLOPS 3520612
+[RESULT] [ 79731.95596 ] [tflops-fp8] [GPU:: 27226] GFLOPS 3499522
+[RESULT] [ 79737.192796] [tflops-fp8] [GPU:: 42583] GFLOPS 3514962
+[RESULT] [ 79737.383947] [tflops-fp8] [GPU:: 27226] GFLOPS 3496996
+[RESULT] [ 79743.433455] [tflops-fp8] [GPU:: 42583] GFLOPS 3523721
+[RESULT] [ 79743.433480] [tflops-fp8] [GPU:: 42583] GFLOPS 3533354 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 79743.677356] [tflops-fp8] [GPU:: 27226] GFLOPS 3494186
+[RESULT] [ 79743.677384] [tflops-fp8] [GPU:: 27226] GFLOPS 3504878 Target GFLOPS: 0 met: TRUE
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| tflops-fp8                       | GST            | [32mPASS          [0m  |
++---------------------------------------------------------------------+

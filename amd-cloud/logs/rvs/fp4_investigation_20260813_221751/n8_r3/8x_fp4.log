@@ -1,0 +1,84 @@
+[RESULT] [ 92774.239719] Action name :tflops-fp4
+[RESULT] [ 92774.281207] Module name :gst
+[RESULT] [ 92774.856117] [tflops-fp4] [GPU:: 17010] Start of GPU ramp up
+[RESULT] [ 92774.856281] [tflops-fp4] [GPU:: 42583] Start of GPU ramp up
+[RESULT] [ 92774.856464] [tflops-fp4] [GPU:: 36479] Start of GPU ramp up
+[RESULT] [ 92774.856626] [tflops-fp4] [GPU:: 27226] Start of GPU ramp up
+[RESULT] [ 92774.856844] [tflops-fp4] [GPU::  1590] Start of GPU ramp up
+[RESULT] [ 92774.857209] [tflops-fp4] [GPU:: 57875] Start of GPU ramp up
+[RESULT] [ 92774.857483] [tflops-fp4] [GPU:: 11806] Start of GPU ramp up
+[RESULT] [ 92774.857669] [tflops-fp4] [GPU:: 51771] Start of GPU ramp up
+[RESULT] [ 92810.835895] [tflops-fp4] [GPU:: 42583] GFLOPS 3362420
+[RESULT] [ 92811.836270] [tflops-fp4] [GPU:: 42583] End of GPU ramp up
+[RESULT] [ 92811.863850] [tflops-fp4] [GPU:: 27226] GFLOPS 2322094
+[RESULT] [ 92811.943543] [tflops-fp4] [GPU:: 11806] GFLOPS 2593187
+[RESULT] [ 92811.945868] [tflops-fp4] [GPU:: 51771] GFLOPS 2429859
+[RESULT] [ 92812.863934] [tflops-fp4] [GPU:: 27226] End of GPU ramp up
+[RESULT] [ 92812.942983] [tflops-fp4] [GPU:: 11806] End of GPU ramp up
+[RESULT] [ 92812.946058] [tflops-fp4] [GPU:: 51771] End of GPU ramp up
+[RESULT] [ 92815.815530] [tflops-fp4] [GPU:: 17010] GFLOPS 705946
+[RESULT] [ 92816.90371 ] [tflops-fp4] [GPU:: 57875] GFLOPS 755678
+[RESULT] [ 92816.528707] [tflops-fp4] [GPU::  1590] GFLOPS 817176
+[RESULT] [ 92816.650290] [tflops-fp4] [GPU:: 36479] GFLOPS 689781
+[RESULT] [ 92816.816181] [tflops-fp4] [GPU:: 17010] End of GPU ramp up
+[RESULT] [ 92817.90494 ] [tflops-fp4] [GPU:: 57875] End of GPU ramp up
+[RESULT] [ 92817.527353] [tflops-fp4] [GPU::  1590] End of GPU ramp up
+[RESULT] [ 92817.652319] [tflops-fp4] [GPU:: 36479] End of GPU ramp up
+[RESULT] [ 92819.311621] [tflops-fp4] [GPU:: 42583] GFLOPS 2941706
+[RESULT] [ 92823.341465] [tflops-fp4] [GPU:: 27226] GFLOPS 2098802
+[RESULT] [ 92823.810660] [tflops-fp4] [GPU:: 11806] GFLOPS 2023455
+[RESULT] [ 92824.401479] [tflops-fp4] [GPU:: 51771] GFLOPS 1919638
+[RESULT] [ 92830.396688] [tflops-fp4] [GPU:: 42583] GFLOPS 1983773
+[RESULT] [ 92833.767212] [tflops-fp4] [GPU:: 27226] GFLOPS 2109227
+[RESULT] [ 92834.519248] [tflops-fp4] [GPU:: 11806] GFLOPS 2053518
+[RESULT] [ 92839.984130] [tflops-fp4] [GPU::  1590] GFLOPS 979225
+[RESULT] [ 92841.58854 ] [tflops-fp4] [GPU:: 42583] GFLOPS 2062457
+[RESULT] [ 92841.394689] [tflops-fp4] [GPU:: 57875] GFLOPS 904792
+[RESULT] [ 92842.979296] [tflops-fp4] [GPU:: 17010] GFLOPS 840505
+[RESULT] [ 92844.227617] [tflops-fp4] [GPU:: 36479] GFLOPS 827469
+[RESULT] [ 92844.322700] [tflops-fp4] [GPU:: 27226] GFLOPS 2083302
+[RESULT] [ 92844.322715] [tflops-fp4] [GPU:: 27226] GFLOPS 2109227 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 92844.851342] [tflops-fp4] [GPU:: 11806] GFLOPS 2128346
+[RESULT] [ 92844.851357] [tflops-fp4] [GPU:: 11806] GFLOPS 2128346 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 92845.550267] [tflops-fp4] [GPU:: 51771] GFLOPS 1039787
+[RESULT] [ 92845.550287] [tflops-fp4] [GPU:: 51771] GFLOPS 1919638 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 92848.607593] [tflops-fp4] [GPU:: 42583] GFLOPS 2913107
+[RESULT] [ 92848.607609] [tflops-fp4] [GPU:: 42583] GFLOPS 2941706 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 92852.122910] [tflops-fp4] [GPU::  1590] GFLOPS 1811571
+[RESULT] [ 92852.122929] [tflops-fp4] [GPU::  1590] GFLOPS 1811571 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 92852.806859] [tflops-fp4] [GPU:: 57875] GFLOPS 1926913
+[RESULT] [ 92852.806878] [tflops-fp4] [GPU:: 57875] GFLOPS 1926913 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 92853.524863] [tflops-fp4] [GPU:: 17010] GFLOPS 2085263
+[RESULT] [ 92853.524884] [tflops-fp4] [GPU:: 17010] GFLOPS 2085263 Target GFLOPS: 0 met: TRUE
+[RESULT] [ 92853.841472] [tflops-fp4] [GPU:: 36479] GFLOPS 2287354
+[RESULT] [ 92853.841490] [tflops-fp4] [GPU:: 36479] GFLOPS 2287354 Target GFLOPS: 0 met: TRUE
++=====================================================================+
+|                 ROCm Validation Suite (RVS) Summary                 |
++=====================================================================+
+|                           System Overview                           |
++---------------------------------------------------------------------+
+| Operating System                 | Ubuntu 22.04.5 LTS               |
+| RVS version                      | 1.7.8                            |
+| ROCm version                     | N/A                              |
+| amdgpu version                   | 6.19.14                          |
+| GPUs                             | 8                                |
++---------------------------------------------------------------------+
+| GPU Name - GPU ID                |                                  |
+| ID - Node ID - BDF               |                                  |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 42583      | AMD Instinct MI355X - 27226      |
+| 0 - 3 - 0000:05:00.0             | 1 - 5 - 0000:15:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 36479      | AMD Instinct MI355X - 17010      |
+| 2 - 4 - 0000:65:00.0             | 3 - 2 - 0000:75:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 1590       | AMD Instinct MI355X - 51771      |
+| 4 - 7 - 0000:85:00.0             | 5 - 9 - 0000:95:00.0             |
++---------------------------------------------------------------------+
+| AMD Instinct MI355X - 11806      | AMD Instinct MI355X - 57875      |
+| 6 - 8 - 0000:e5:00.0             | 7 - 6 - 0000:f5:00.0             |
++=====================================================================+
+| Action Name                      | Module         | Result          |
++=====================================================================+
+| tflops-fp4                       | GST            | [32mPASS          [0m  |
++---------------------------------------------------------------------+

@@ -1,0 +1,2 @@
+gpus,precision,per_gpu_peak_tflops,aggregate_tflops,gpus_reporting
+8,fp4,"gpu1590=2136.92;gpu11806=2082.07;gpu17010=1774.62;gpu27226=3243.40;gpu36479=2121.68;gpu42583=2564.18;gpu51771=3257.81;gpu57875=3301.84",20482.51,8

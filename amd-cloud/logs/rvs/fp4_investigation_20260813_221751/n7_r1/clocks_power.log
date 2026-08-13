@@ -1,0 +1,1476 @@
+=== 1786659912.086662747 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (329Mhz)
+GPU[0]		: socclk clock level: S: (43Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (387Mhz)
+GPU[1]		: socclk clock level: S: (45Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (355Mhz)
+GPU[2]		: socclk clock level: S: (44Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (303Mhz)
+GPU[3]		: socclk clock level: S: (42Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (430Mhz)
+GPU[4]		: socclk clock level: S: (46Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 0: (500Mhz)
+GPU[5]		: socclk clock level: S: (48Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: S: (239Mhz)
+GPU[6]		: socclk clock level: S: (40Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (229Mhz)
+GPU[7]		: socclk clock level: S: (40Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 262.0
+GPU[1]		: Current Socket Graphics Package Power (W): 258.0
+GPU[2]		: Current Socket Graphics Package Power (W): 263.0
+GPU[3]		: Current Socket Graphics Package Power (W): 261.0
+GPU[4]		: Current Socket Graphics Package Power (W): 272.0
+GPU[5]		: Current Socket Graphics Package Power (W): 260.0
+GPU[6]		: Current Socket Graphics Package Power (W): 254.0
+GPU[7]		: Current Socket Graphics Package Power (W): 265.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659914.188240765 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2400Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2400Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2400Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2400Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2400Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2400Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2400Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (156Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 300.0
+GPU[1]		: Current Socket Graphics Package Power (W): 296.0
+GPU[2]		: Current Socket Graphics Package Power (W): 302.0
+GPU[3]		: Current Socket Graphics Package Power (W): 300.0
+GPU[4]		: Current Socket Graphics Package Power (W): 307.0
+GPU[5]		: Current Socket Graphics Package Power (W): 294.0
+GPU[6]		: Current Socket Graphics Package Power (W): 294.0
+GPU[7]		: Current Socket Graphics Package Power (W): 264.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659916.283563239 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2400Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2400Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2400Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2400Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2400Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2400Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2400Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (157Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 300.0
+GPU[1]		: Current Socket Graphics Package Power (W): 297.0
+GPU[2]		: Current Socket Graphics Package Power (W): 302.0
+GPU[3]		: Current Socket Graphics Package Power (W): 300.0
+GPU[4]		: Current Socket Graphics Package Power (W): 306.0
+GPU[5]		: Current Socket Graphics Package Power (W): 294.0
+GPU[6]		: Current Socket Graphics Package Power (W): 294.0
+GPU[7]		: Current Socket Graphics Package Power (W): 264.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659918.379776988 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (1662Mhz)
+GPU[0]		: socclk clock level: S: (39Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (1641Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (1620Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (1619Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (1637Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (1608Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (1604Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (107Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 274.0
+GPU[1]		: Current Socket Graphics Package Power (W): 268.0
+GPU[2]		: Current Socket Graphics Package Power (W): 273.0
+GPU[3]		: Current Socket Graphics Package Power (W): 273.0
+GPU[4]		: Current Socket Graphics Package Power (W): 279.0
+GPU[5]		: Current Socket Graphics Package Power (W): 267.0
+GPU[6]		: Current Socket Graphics Package Power (W): 266.0
+GPU[7]		: Current Socket Graphics Package Power (W): 256.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659920.476865002 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (1414Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (1391Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (1405Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (1399Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (1409Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (1398Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (1392Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 266.0
+GPU[1]		: Current Socket Graphics Package Power (W): 260.0
+GPU[2]		: Current Socket Graphics Package Power (W): 265.0
+GPU[3]		: Current Socket Graphics Package Power (W): 266.0
+GPU[4]		: Current Socket Graphics Package Power (W): 272.0
+GPU[5]		: Current Socket Graphics Package Power (W): 260.0
+GPU[6]		: Current Socket Graphics Package Power (W): 259.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659922.574884341 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (1413Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (1390Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (1405Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (1400Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (1408Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (1398Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (1392Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 266.0
+GPU[1]		: Current Socket Graphics Package Power (W): 260.0
+GPU[2]		: Current Socket Graphics Package Power (W): 264.0
+GPU[3]		: Current Socket Graphics Package Power (W): 266.0
+GPU[4]		: Current Socket Graphics Package Power (W): 272.0
+GPU[5]		: Current Socket Graphics Package Power (W): 260.0
+GPU[6]		: Current Socket Graphics Package Power (W): 259.0
+GPU[7]		: Current Socket Graphics Package Power (W): 254.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659924.671923686 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (1412Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (1389Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (1406Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (1400Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (1408Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (1398Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (1392Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 266.0
+GPU[1]		: Current Socket Graphics Package Power (W): 259.0
+GPU[2]		: Current Socket Graphics Package Power (W): 264.0
+GPU[3]		: Current Socket Graphics Package Power (W): 266.0
+GPU[4]		: Current Socket Graphics Package Power (W): 271.0
+GPU[5]		: Current Socket Graphics Package Power (W): 259.0
+GPU[6]		: Current Socket Graphics Package Power (W): 259.0
+GPU[7]		: Current Socket Graphics Package Power (W): 254.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659926.771533587 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (1413Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (1390Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (1406Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (1399Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (1406Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (1398Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (1393Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 266.0
+GPU[1]		: Current Socket Graphics Package Power (W): 259.0
+GPU[2]		: Current Socket Graphics Package Power (W): 265.0
+GPU[3]		: Current Socket Graphics Package Power (W): 266.0
+GPU[4]		: Current Socket Graphics Package Power (W): 271.0
+GPU[5]		: Current Socket Graphics Package Power (W): 259.0
+GPU[6]		: Current Socket Graphics Package Power (W): 259.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659928.868162819 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (1413Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (1390Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (1405Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (1400Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (1407Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (1399Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (1391Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 266.0
+GPU[1]		: Current Socket Graphics Package Power (W): 260.0
+GPU[2]		: Current Socket Graphics Package Power (W): 264.0
+GPU[3]		: Current Socket Graphics Package Power (W): 265.0
+GPU[4]		: Current Socket Graphics Package Power (W): 271.0
+GPU[5]		: Current Socket Graphics Package Power (W): 259.0
+GPU[6]		: Current Socket Graphics Package Power (W): 258.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659930.966834087 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (1413Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (1389Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (1405Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (1400Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (1406Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (1399Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (1392Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 266.0
+GPU[1]		: Current Socket Graphics Package Power (W): 260.0
+GPU[2]		: Current Socket Graphics Package Power (W): 264.0
+GPU[3]		: Current Socket Graphics Package Power (W): 265.0
+GPU[4]		: Current Socket Graphics Package Power (W): 271.0
+GPU[5]		: Current Socket Graphics Package Power (W): 259.0
+GPU[6]		: Current Socket Graphics Package Power (W): 259.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659933.063871512 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (1413Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (1390Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (1406Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (1399Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (1408Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (1399Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (1392Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 266.0
+GPU[1]		: Current Socket Graphics Package Power (W): 259.0
+GPU[2]		: Current Socket Graphics Package Power (W): 264.0
+GPU[3]		: Current Socket Graphics Package Power (W): 265.0
+GPU[4]		: Current Socket Graphics Package Power (W): 271.0
+GPU[5]		: Current Socket Graphics Package Power (W): 259.0
+GPU[6]		: Current Socket Graphics Package Power (W): 259.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659935.162125876 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (1413Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (1388Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (1404Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (1400Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (1406Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (1398Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (1391Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 266.0
+GPU[1]		: Current Socket Graphics Package Power (W): 259.0
+GPU[2]		: Current Socket Graphics Package Power (W): 264.0
+GPU[3]		: Current Socket Graphics Package Power (W): 265.0
+GPU[4]		: Current Socket Graphics Package Power (W): 271.0
+GPU[5]		: Current Socket Graphics Package Power (W): 259.0
+GPU[6]		: Current Socket Graphics Package Power (W): 258.0
+GPU[7]		: Current Socket Graphics Package Power (W): 254.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659937.260608757 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (1413Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (1387Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (1405Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (1399Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (1407Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (1398Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (1392Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 266.0
+GPU[1]		: Current Socket Graphics Package Power (W): 259.0
+GPU[2]		: Current Socket Graphics Package Power (W): 263.0
+GPU[3]		: Current Socket Graphics Package Power (W): 266.0
+GPU[4]		: Current Socket Graphics Package Power (W): 271.0
+GPU[5]		: Current Socket Graphics Package Power (W): 259.0
+GPU[6]		: Current Socket Graphics Package Power (W): 258.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659939.358349090 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (1413Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: S: (246Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: S: (228Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (1400Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (1405Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (1398Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: S: (210Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 266.0
+GPU[1]		: Current Socket Graphics Package Power (W): 252.0
+GPU[2]		: Current Socket Graphics Package Power (W): 257.0
+GPU[3]		: Current Socket Graphics Package Power (W): 264.0
+GPU[4]		: Current Socket Graphics Package Power (W): 271.0
+GPU[5]		: Current Socket Graphics Package Power (W): 259.0
+GPU[6]		: Current Socket Graphics Package Power (W): 252.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659941.459453136 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2400Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: S: (156Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: S: (157Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2400Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: S: (157Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2400Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: S: (156Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (156Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 298.0
+GPU[1]		: Current Socket Graphics Package Power (W): 252.0
+GPU[2]		: Current Socket Graphics Package Power (W): 257.0
+GPU[3]		: Current Socket Graphics Package Power (W): 300.0
+GPU[4]		: Current Socket Graphics Package Power (W): 264.0
+GPU[5]		: Current Socket Graphics Package Power (W): 293.0
+GPU[6]		: Current Socket Graphics Package Power (W): 252.0
+GPU[7]		: Current Socket Graphics Package Power (W): 263.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659943.556552260 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: S: (178Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: S: (157Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: S: (157Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: S: (159Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: S: (157Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: S: (159Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: S: (156Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (156Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 257.0
+GPU[1]		: Current Socket Graphics Package Power (W): 251.0
+GPU[2]		: Current Socket Graphics Package Power (W): 257.0
+GPU[3]		: Current Socket Graphics Package Power (W): 257.0
+GPU[4]		: Current Socket Graphics Package Power (W): 263.0
+GPU[5]		: Current Socket Graphics Package Power (W): 252.0
+GPU[6]		: Current Socket Graphics Package Power (W): 252.0
+GPU[7]		: Current Socket Graphics Package Power (W): 264.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659945.667171985 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: S: (168Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2178Mhz)
+GPU[1]		: socclk clock level: S: (48Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2150Mhz)
+GPU[2]		: socclk clock level: S: (56Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: S: (158Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2161Mhz)
+GPU[4]		: socclk clock level: S: (56Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: S: (156Mhz)
+GPU[5]		: socclk clock level: S: (38Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2074Mhz)
+GPU[6]		: socclk clock level: S: (48Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (156Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 257.0
+GPU[1]		: Current Socket Graphics Package Power (W): 944.0
+GPU[2]		: Current Socket Graphics Package Power (W): 1025.0
+GPU[3]		: Current Socket Graphics Package Power (W): 257.0
+GPU[4]		: Current Socket Graphics Package Power (W): 930.0
+GPU[5]		: Current Socket Graphics Package Power (W): 252.0
+GPU[6]		: Current Socket Graphics Package Power (W): 985.0
+GPU[7]		: Current Socket Graphics Package Power (W): 263.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659947.771427918 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: S: (166Mhz)
+GPU[0]		: socclk clock level: S: (39Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2141Mhz)
+GPU[1]		: socclk clock level: S: (48Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2146Mhz)
+GPU[2]		: socclk clock level: S: (54Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: S: (158Mhz)
+GPU[3]		: socclk clock level: S: (39Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2135Mhz)
+GPU[4]		: socclk clock level: S: (52Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: S: (157Mhz)
+GPU[5]		: socclk clock level: S: (39Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2074Mhz)
+GPU[6]		: socclk clock level: S: (50Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (156Mhz)
+GPU[7]		: socclk clock level: S: (39Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 257.0
+GPU[1]		: Current Socket Graphics Package Power (W): 1064.0
+GPU[2]		: Current Socket Graphics Package Power (W): 1051.0
+GPU[3]		: Current Socket Graphics Package Power (W): 257.0
+GPU[4]		: Current Socket Graphics Package Power (W): 1058.0
+GPU[5]		: Current Socket Graphics Package Power (W): 252.0
+GPU[6]		: Current Socket Graphics Package Power (W): 1001.0
+GPU[7]		: Current Socket Graphics Package Power (W): 263.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659949.866825351 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2302Mhz)
+GPU[0]		: socclk clock level: S: (41Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2245Mhz)
+GPU[1]		: socclk clock level: S: (43Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2269Mhz)
+GPU[2]		: socclk clock level: S: (43Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2310Mhz)
+GPU[3]		: socclk clock level: S: (40Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2243Mhz)
+GPU[4]		: socclk clock level: S: (43Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2300Mhz)
+GPU[5]		: socclk clock level: S: (40Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2170Mhz)
+GPU[6]		: socclk clock level: S: (43Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (156Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 509.0
+GPU[1]		: Current Socket Graphics Package Power (W): 934.0
+GPU[2]		: Current Socket Graphics Package Power (W): 964.0
+GPU[3]		: Current Socket Graphics Package Power (W): 489.0
+GPU[4]		: Current Socket Graphics Package Power (W): 965.0
+GPU[5]		: Current Socket Graphics Package Power (W): 466.0
+GPU[6]		: Current Socket Graphics Package Power (W): 927.0
+GPU[7]		: Current Socket Graphics Package Power (W): 264.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659951.959646597 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2301Mhz)
+GPU[0]		: socclk clock level: S: (41Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2246Mhz)
+GPU[1]		: socclk clock level: S: (43Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2267Mhz)
+GPU[2]		: socclk clock level: S: (43Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2305Mhz)
+GPU[3]		: socclk clock level: S: (40Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2240Mhz)
+GPU[4]		: socclk clock level: S: (43Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2298Mhz)
+GPU[5]		: socclk clock level: S: (50Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2172Mhz)
+GPU[6]		: socclk clock level: S: (43Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (156Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 512.0
+GPU[1]		: Current Socket Graphics Package Power (W): 957.0
+GPU[2]		: Current Socket Graphics Package Power (W): 971.0
+GPU[3]		: Current Socket Graphics Package Power (W): 501.0
+GPU[4]		: Current Socket Graphics Package Power (W): 978.0
+GPU[5]		: Current Socket Graphics Package Power (W): 471.0
+GPU[6]		: Current Socket Graphics Package Power (W): 936.0
+GPU[7]		: Current Socket Graphics Package Power (W): 264.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659954.055430974 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2315Mhz)
+GPU[0]		: socclk clock level: S: (40Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2265Mhz)
+GPU[1]		: socclk clock level: S: (42Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2283Mhz)
+GPU[2]		: socclk clock level: S: (42Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2296Mhz)
+GPU[3]		: socclk clock level: S: (40Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2262Mhz)
+GPU[4]		: socclk clock level: S: (42Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2288Mhz)
+GPU[5]		: socclk clock level: S: (40Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2193Mhz)
+GPU[6]		: socclk clock level: S: (42Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 569.0
+GPU[1]		: Current Socket Graphics Package Power (W): 903.0
+GPU[2]		: Current Socket Graphics Package Power (W): 927.0
+GPU[3]		: Current Socket Graphics Package Power (W): 539.0
+GPU[4]		: Current Socket Graphics Package Power (W): 923.0
+GPU[5]		: Current Socket Graphics Package Power (W): 524.0
+GPU[6]		: Current Socket Graphics Package Power (W): 890.0
+GPU[7]		: Current Socket Graphics Package Power (W): 254.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659956.162729175 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2302Mhz)
+GPU[0]		: socclk clock level: S: (40Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2273Mhz)
+GPU[1]		: socclk clock level: S: (42Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2292Mhz)
+GPU[2]		: socclk clock level: S: (42Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2314Mhz)
+GPU[3]		: socclk clock level: S: (39Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2271Mhz)
+GPU[4]		: socclk clock level: S: (42Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2282Mhz)
+GPU[5]		: socclk clock level: S: (40Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2208Mhz)
+GPU[6]		: socclk clock level: S: (42Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 557.0
+GPU[1]		: Current Socket Graphics Package Power (W): 866.0
+GPU[2]		: Current Socket Graphics Package Power (W): 899.0
+GPU[3]		: Current Socket Graphics Package Power (W): 503.0
+GPU[4]		: Current Socket Graphics Package Power (W): 888.0
+GPU[5]		: Current Socket Graphics Package Power (W): 533.0
+GPU[6]		: Current Socket Graphics Package Power (W): 850.0
+GPU[7]		: Current Socket Graphics Package Power (W): 254.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659958.271026909 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2304Mhz)
+GPU[0]		: socclk clock level: S: (40Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2269Mhz)
+GPU[1]		: socclk clock level: S: (42Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2285Mhz)
+GPU[2]		: socclk clock level: S: (43Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2333Mhz)
+GPU[3]		: socclk clock level: S: (40Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2262Mhz)
+GPU[4]		: socclk clock level: S: (42Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2272Mhz)
+GPU[5]		: socclk clock level: S: (40Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2198Mhz)
+GPU[6]		: socclk clock level: S: (42Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 569.0
+GPU[1]		: Current Socket Graphics Package Power (W): 903.0
+GPU[2]		: Current Socket Graphics Package Power (W): 924.0
+GPU[3]		: Current Socket Graphics Package Power (W): 552.0
+GPU[4]		: Current Socket Graphics Package Power (W): 925.0
+GPU[5]		: Current Socket Graphics Package Power (W): 551.0
+GPU[6]		: Current Socket Graphics Package Power (W): 887.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659960.367339977 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2299Mhz)
+GPU[0]		: socclk clock level: S: (40Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2272Mhz)
+GPU[1]		: socclk clock level: S: (42Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2288Mhz)
+GPU[2]		: socclk clock level: S: (42Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2300Mhz)
+GPU[3]		: socclk clock level: S: (40Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2263Mhz)
+GPU[4]		: socclk clock level: S: (42Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2277Mhz)
+GPU[5]		: socclk clock level: S: (40Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2198Mhz)
+GPU[6]		: socclk clock level: S: (42Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 565.0
+GPU[1]		: Current Socket Graphics Package Power (W): 902.0
+GPU[2]		: Current Socket Graphics Package Power (W): 919.0
+GPU[3]		: Current Socket Graphics Package Power (W): 547.0
+GPU[4]		: Current Socket Graphics Package Power (W): 917.0
+GPU[5]		: Current Socket Graphics Package Power (W): 543.0
+GPU[6]		: Current Socket Graphics Package Power (W): 881.0
+GPU[7]		: Current Socket Graphics Package Power (W): 256.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659962.465796488 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2296Mhz)
+GPU[0]		: socclk clock level: S: (40Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2270Mhz)
+GPU[1]		: socclk clock level: S: (42Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2290Mhz)
+GPU[2]		: socclk clock level: S: (42Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2301Mhz)
+GPU[3]		: socclk clock level: S: (40Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2264Mhz)
+GPU[4]		: socclk clock level: S: (42Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2282Mhz)
+GPU[5]		: socclk clock level: S: (40Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2198Mhz)
+GPU[6]		: socclk clock level: S: (42Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (93Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 570.0
+GPU[1]		: Current Socket Graphics Package Power (W): 903.0
+GPU[2]		: Current Socket Graphics Package Power (W): 923.0
+GPU[3]		: Current Socket Graphics Package Power (W): 546.0
+GPU[4]		: Current Socket Graphics Package Power (W): 922.0
+GPU[5]		: Current Socket Graphics Package Power (W): 550.0
+GPU[6]		: Current Socket Graphics Package Power (W): 883.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659964.562389270 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2299Mhz)
+GPU[0]		: socclk clock level: S: (40Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2274Mhz)
+GPU[1]		: socclk clock level: S: (42Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2292Mhz)
+GPU[2]		: socclk clock level: S: (42Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2301Mhz)
+GPU[3]		: socclk clock level: S: (40Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2267Mhz)
+GPU[4]		: socclk clock level: S: (42Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2274Mhz)
+GPU[5]		: socclk clock level: S: (40Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2203Mhz)
+GPU[6]		: socclk clock level: S: (42Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 539.0
+GPU[1]		: Current Socket Graphics Package Power (W): 905.0
+GPU[2]		: Current Socket Graphics Package Power (W): 913.0
+GPU[3]		: Current Socket Graphics Package Power (W): 548.0
+GPU[4]		: Current Socket Graphics Package Power (W): 917.0
+GPU[5]		: Current Socket Graphics Package Power (W): 548.0
+GPU[6]		: Current Socket Graphics Package Power (W): 875.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659966.656257589 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2297Mhz)
+GPU[0]		: socclk clock level: S: (40Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2267Mhz)
+GPU[1]		: socclk clock level: S: (42Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2284Mhz)
+GPU[2]		: socclk clock level: S: (43Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2308Mhz)
+GPU[3]		: socclk clock level: S: (39Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2255Mhz)
+GPU[4]		: socclk clock level: S: (42Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2349Mhz)
+GPU[5]		: socclk clock level: S: (40Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2200Mhz)
+GPU[6]		: socclk clock level: S: (42Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 550.0
+GPU[1]		: Current Socket Graphics Package Power (W): 910.0
+GPU[2]		: Current Socket Graphics Package Power (W): 952.0
+GPU[3]		: Current Socket Graphics Package Power (W): 521.0
+GPU[4]		: Current Socket Graphics Package Power (W): 950.0
+GPU[5]		: Current Socket Graphics Package Power (W): 565.0
+GPU[6]		: Current Socket Graphics Package Power (W): 887.0
+GPU[7]		: Current Socket Graphics Package Power (W): 254.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659968.752987619 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2287Mhz)
+GPU[0]		: socclk clock level: S: (40Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2252Mhz)
+GPU[1]		: socclk clock level: S: (43Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2283Mhz)
+GPU[2]		: socclk clock level: S: (40Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2301Mhz)
+GPU[3]		: socclk clock level: S: (40Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2238Mhz)
+GPU[4]		: socclk clock level: S: (43Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2343Mhz)
+GPU[5]		: socclk clock level: S: (40Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2245Mhz)
+GPU[6]		: socclk clock level: S: (40Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 592.0
+GPU[1]		: Current Socket Graphics Package Power (W): 973.0
+GPU[2]		: Current Socket Graphics Package Power (W): 642.0
+GPU[3]		: Current Socket Graphics Package Power (W): 542.0
+GPU[4]		: Current Socket Graphics Package Power (W): 1003.0
+GPU[5]		: Current Socket Graphics Package Power (W): 597.0
+GPU[6]		: Current Socket Graphics Package Power (W): 629.0
+GPU[7]		: Current Socket Graphics Package Power (W): 256.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659970.849987144 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2286Mhz)
+GPU[0]		: socclk clock level: S: (40Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2270Mhz)
+GPU[1]		: socclk clock level: S: (42Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2291Mhz)
+GPU[2]		: socclk clock level: S: (42Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2305Mhz)
+GPU[3]		: socclk clock level: S: (39Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2259Mhz)
+GPU[4]		: socclk clock level: S: (42Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2284Mhz)
+GPU[5]		: socclk clock level: S: (40Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2192Mhz)
+GPU[6]		: socclk clock level: S: (42Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 558.0
+GPU[1]		: Current Socket Graphics Package Power (W): 925.0
+GPU[2]		: Current Socket Graphics Package Power (W): 925.0
+GPU[3]		: Current Socket Graphics Package Power (W): 520.0
+GPU[4]		: Current Socket Graphics Package Power (W): 946.0
+GPU[5]		: Current Socket Graphics Package Power (W): 514.0
+GPU[6]		: Current Socket Graphics Package Power (W): 900.0
+GPU[7]		: Current Socket Graphics Package Power (W): 254.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659972.948561003 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2295Mhz)
+GPU[0]		: socclk clock level: S: (40Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2269Mhz)
+GPU[1]		: socclk clock level: S: (42Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2291Mhz)
+GPU[2]		: socclk clock level: S: (42Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2307Mhz)
+GPU[3]		: socclk clock level: S: (39Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2262Mhz)
+GPU[4]		: socclk clock level: S: (42Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2288Mhz)
+GPU[5]		: socclk clock level: S: (39Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2192Mhz)
+GPU[6]		: socclk clock level: S: (42Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 579.0
+GPU[1]		: Current Socket Graphics Package Power (W): 924.0
+GPU[2]		: Current Socket Graphics Package Power (W): 926.0
+GPU[3]		: Current Socket Graphics Package Power (W): 523.0
+GPU[4]		: Current Socket Graphics Package Power (W): 940.0
+GPU[5]		: Current Socket Graphics Package Power (W): 505.0
+GPU[6]		: Current Socket Graphics Package Power (W): 915.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659975.047330959 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2326Mhz)
+GPU[0]		: socclk clock level: S: (40Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2271Mhz)
+GPU[1]		: socclk clock level: S: (43Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2293Mhz)
+GPU[2]		: socclk clock level: S: (42Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2308Mhz)
+GPU[3]		: socclk clock level: S: (39Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2260Mhz)
+GPU[4]		: socclk clock level: S: (42Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2291Mhz)
+GPU[5]		: socclk clock level: S: (39Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2205Mhz)
+GPU[6]		: socclk clock level: S: (42Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 571.0
+GPU[1]		: Current Socket Graphics Package Power (W): 922.0
+GPU[2]		: Current Socket Graphics Package Power (W): 918.0
+GPU[3]		: Current Socket Graphics Package Power (W): 517.0
+GPU[4]		: Current Socket Graphics Package Power (W): 950.0
+GPU[5]		: Current Socket Graphics Package Power (W): 504.0
+GPU[6]		: Current Socket Graphics Package Power (W): 875.0
+GPU[7]		: Current Socket Graphics Package Power (W): 254.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659977.148012102 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2327Mhz)
+GPU[0]		: socclk clock level: S: (40Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2265Mhz)
+GPU[1]		: socclk clock level: S: (43Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2292Mhz)
+GPU[2]		: socclk clock level: S: (42Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2309Mhz)
+GPU[3]		: socclk clock level: S: (39Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2261Mhz)
+GPU[4]		: socclk clock level: S: (42Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2292Mhz)
+GPU[5]		: socclk clock level: S: (39Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2203Mhz)
+GPU[6]		: socclk clock level: S: (42Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 571.0
+GPU[1]		: Current Socket Graphics Package Power (W): 947.0
+GPU[2]		: Current Socket Graphics Package Power (W): 932.0
+GPU[3]		: Current Socket Graphics Package Power (W): 521.0
+GPU[4]		: Current Socket Graphics Package Power (W): 946.0
+GPU[5]		: Current Socket Graphics Package Power (W): 506.0
+GPU[6]		: Current Socket Graphics Package Power (W): 897.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659979.247575904 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2323Mhz)
+GPU[0]		: socclk clock level: S: (40Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2270Mhz)
+GPU[1]		: socclk clock level: S: (43Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2294Mhz)
+GPU[2]		: socclk clock level: S: (42Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2310Mhz)
+GPU[3]		: socclk clock level: S: (39Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2269Mhz)
+GPU[4]		: socclk clock level: S: (42Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2294Mhz)
+GPU[5]		: socclk clock level: S: (39Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2207Mhz)
+GPU[6]		: socclk clock level: S: (42Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 568.0
+GPU[1]		: Current Socket Graphics Package Power (W): 922.0
+GPU[2]		: Current Socket Graphics Package Power (W): 928.0
+GPU[3]		: Current Socket Graphics Package Power (W): 516.0
+GPU[4]		: Current Socket Graphics Package Power (W): 925.0
+GPU[5]		: Current Socket Graphics Package Power (W): 503.0
+GPU[6]		: Current Socket Graphics Package Power (W): 883.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659981.338191658 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2119Mhz)
+GPU[0]		: socclk clock level: S: (46Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2400Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2400Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2120Mhz)
+GPU[3]		: socclk clock level: S: (46Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2400Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2204Mhz)
+GPU[5]		: socclk clock level: S: (45Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2400Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 1357.0
+GPU[1]		: Current Socket Graphics Package Power (W): 298.0
+GPU[2]		: Current Socket Graphics Package Power (W): 302.0
+GPU[3]		: Current Socket Graphics Package Power (W): 1346.0
+GPU[4]		: Current Socket Graphics Package Power (W): 307.0
+GPU[5]		: Current Socket Graphics Package Power (W): 1213.0
+GPU[6]		: Current Socket Graphics Package Power (W): 297.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659983.435862953 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2085Mhz)
+GPU[0]		: socclk clock level: S: (46Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2400Mhz)
+GPU[1]		: socclk clock level: S: (38Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2400Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2120Mhz)
+GPU[3]		: socclk clock level: S: (46Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2400Mhz)
+GPU[4]		: socclk clock level: S: (38Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2211Mhz)
+GPU[5]		: socclk clock level: S: (45Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2400Mhz)
+GPU[6]		: socclk clock level: S: (38Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (94Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 1355.0
+GPU[1]		: Current Socket Graphics Package Power (W): 298.0
+GPU[2]		: Current Socket Graphics Package Power (W): 302.0
+GPU[3]		: Current Socket Graphics Package Power (W): 1357.0
+GPU[4]		: Current Socket Graphics Package Power (W): 307.0
+GPU[5]		: Current Socket Graphics Package Power (W): 1224.0
+GPU[6]		: Current Socket Graphics Package Power (W): 296.0
+GPU[7]		: Current Socket Graphics Package Power (W): 255.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+=== 1786659985.533292541 ===
+
+
+============================ ROCm System Management Interface ============================
+=============================== Current clock frequencies ================================
+GPU[0]		: mclk clock level: 0: (2000Mhz)
+GPU[0]		: sclk clock level: 1: (2400Mhz)
+GPU[0]		: socclk clock level: S: (38Mhz)
+GPU[1]		: mclk clock level: 0: (2000Mhz)
+GPU[1]		: sclk clock level: 1: (2400Mhz)
+GPU[1]		: socclk clock level: S: (39Mhz)
+GPU[2]		: mclk clock level: 0: (2000Mhz)
+GPU[2]		: sclk clock level: 1: (2400Mhz)
+GPU[2]		: socclk clock level: S: (38Mhz)
+GPU[3]		: mclk clock level: 0: (2000Mhz)
+GPU[3]		: sclk clock level: 1: (2400Mhz)
+GPU[3]		: socclk clock level: S: (38Mhz)
+GPU[4]		: mclk clock level: 0: (2000Mhz)
+GPU[4]		: sclk clock level: 1: (2400Mhz)
+GPU[4]		: socclk clock level: S: (39Mhz)
+GPU[5]		: mclk clock level: 0: (2000Mhz)
+GPU[5]		: sclk clock level: 1: (2400Mhz)
+GPU[5]		: socclk clock level: S: (43Mhz)
+GPU[6]		: mclk clock level: 0: (2000Mhz)
+GPU[6]		: sclk clock level: 1: (2400Mhz)
+GPU[6]		: socclk clock level: S: (41Mhz)
+GPU[7]		: mclk clock level: 0: (2000Mhz)
+GPU[7]		: sclk clock level: S: (157Mhz)
+GPU[7]		: socclk clock level: S: (38Mhz)
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Current Socket Graphics Package Power (W): 299.0
+GPU[1]		: Current Socket Graphics Package Power (W): 296.0
+GPU[2]		: Current Socket Graphics Package Power (W): 302.0
+GPU[3]		: Current Socket Graphics Package Power (W): 300.0
+GPU[4]		: Current Socket Graphics Package Power (W): 305.0
+GPU[5]		: Current Socket Graphics Package Power (W): 295.0
+GPU[6]		: Current Socket Graphics Package Power (W): 296.0
+GPU[7]		: Current Socket Graphics Package Power (W): 263.0
+==========================================================================================
+================================== End of ROCm SMI Log ===================================

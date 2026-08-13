@@ -1,0 +1,16 @@
+Using rvs binary: /home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/install_local/bin/rvs
+Detected 8 GPU(s): 42583 27226 36479 17010 1590 51771 11806 57875
+Output dir: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/fp4_investigation_20260813_221751/n8_r3
+
+=== 8 GPU(s) | fp4 | devices=[42583 27226 36479 17010 1590 51771 11806 57875] ===
+  -> aggregate=18818.66 TFLOPS  avg/GPU=2352.33 TFLOPS  reporting=8/8
+
+=== Done ===
+Summary:
+GPUs  Prec   Aggregate    Avg/GPU         Per-GPU peaks (TFLOPS)
+--------------------------------------------------------------------------------
+8     fp4    18818.66     2352.33         gpu1590=1811.57;gpu11806=2593.19;gpu17010=2085.26;gpu27226=2322.09;gpu36479=2287.35;gpu42583=3362.42;gpu51771=2429.86;gpu57875=1926.91
+
+CSV:    /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/fp4_investigation_20260813_221751/n8_r3/summary.csv
+Logs:   /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/fp4_investigation_20260813_221751/n8_r3/*.log
+Confs:  /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/fp4_investigation_20260813_221751/n8_r3/*.conf

@@ -158,6 +158,23 @@ Every other precision lands in a tight 0.97x-0.99x band around Dell Cloud's numb
 
 Only BF16 and FP8 above are like-for-like B200 reference measurements.
 
+<!-- BEGIN fp4-investigation-result (auto-generated, do not edit by hand) -->
+
+### fp4 N>=5 scaling investigation — result
+
+Follow-up to the finding above (§A.7 of `plan.md`): 3 repeats each at N=5,6,7,8, with concurrent `rocm-smi` clock/power sampling. Full detail: `results/fp4_investigation.md`.
+
+| N | GPU-ids low in every repeat | Overlap | Verdict |
+|---:|---|---:|---|
+| 5 | {none} | 0% | inconsistent — likely non-deterministic/software-correlated |
+| 6 | {none} | 0% | inconsistent — likely non-deterministic/software-correlated |
+| 7 | {51771} | 20% | inconsistent — likely non-deterministic/software-correlated |
+| 8 | {17010} | 14% | inconsistent — likely non-deterministic/software-correlated |
+
+**Bottom line**: 0/4 tested GPU-counts showed a consistent (same-GPU-every-repeat) low performer. None of the tested GPU-counts showed a consistent low performer across repeats — the low performer moved between runs, which points at non-determinism in RVS's parallel `gst` launch or the fp4 kernel path under concurrent multi-GPU load, not a specific die.
+
+<!-- END fp4-investigation-result -->
+
 ## Observations (auto-generated)
 
 - `fp4`: N=8 scaling efficiency **56%** -- below the ~95% expected for an embarrassingly-parallel GEMM. Power sharing on the 11.2 kW tray is the leading explanation.

@@ -28,11 +28,51 @@ RING_COLLS = {"all_reduce", "all_gather", "reduce_scatter", "broadcast", "reduce
 PAIRWISE_COLLS = {"gather", "scatter", "alltoall", "alltoallv", "hypercube"}
 
 # Dell Cloud MI355X baseline, busbw at 8 GiB, from dell-cloud/rccl-tests/summary-rccl.md
-# section 1.2. Same silicon and same fabric as this host -- only the software stack differs
-# (ROCm 7.2.3 + gfx942 alias there, ROCm 7.14 native gfx950 here).
+# section 1.2 (anchor points only). Same silicon and same fabric as this host -- only the
+# software stack differs (ROCm 7.2.3 + gfx942 alias there, ROCm 7.14 native gfx950 here).
 DELL_RCCL = {("sendrecv", 2): 59.21, ("all_reduce", 4): 166.48, ("all_reduce", 8): 381.27,
              ("reduce_scatter", 8): 407.69, ("gather", 8): 444.15, ("scatter", 8): 426.40}
 DELL_CLIFF_NOTE = "~38 GB/s at N=5/6/7 (~7% of ceiling)"
+
+# Dell Cloud's FULL all-collective sweep, busbw (GB/s) at 8 GiB, from
+# dell-cloud/rccl-tests/summary-rccl.md section 1.1. sendrecv was captured there by a
+# separate standalone sweep on the same env/config; alltoallv is Dell's own omission (their
+# run OOMed at N=5, see their §1.1 note) so it is not compared here either -- our sweep caps
+# alltoallv smaller for the same reason (ALLTOALL_MAX), so there is no valid 8 GiB point on
+# either side to compare.
+DELL_FULL_SWEEP = {
+    ("all_reduce",     2): 61.28, ("all_reduce",     3): 75.02, ("all_reduce",     4): 166.48,
+    ("all_reduce",     5): 38.36, ("all_reduce",     6): 38.42, ("all_reduce",     7): 38.21,
+    ("all_reduce",     8): 381.27,
+    ("all_gather",     2): 60.58, ("all_gather",     3): 71.09, ("all_gather",     4): 158.72,
+    ("all_gather",     5): 35.41, ("all_gather",     6): 34.90, ("all_gather",     7): 34.85,
+    ("all_gather",     8): 365.75,
+    ("reduce_scatter", 2): 60.65, ("reduce_scatter", 3): 71.04, ("reduce_scatter", 4): 165.06,
+    ("reduce_scatter", 5): 39.57, ("reduce_scatter", 6): 39.65, ("reduce_scatter", 7): 40.47,
+    ("reduce_scatter", 8): 407.69,
+    ("broadcast",      2): 63.52, ("broadcast",      3): 68.09, ("broadcast",      4): 169.19,
+    ("broadcast",      5): 34.10, ("broadcast",      6): 33.92, ("broadcast",      7): 33.83,
+    ("broadcast",      8): 377.27,
+    ("reduce",         2): 72.87, ("reduce",         3): 86.46, ("reduce",         4): 197.44,
+    ("reduce",         5): 43.60, ("reduce",         6): 42.93, ("reduce",         7): 43.08,
+    ("reduce",         8): 358.49,
+    ("gather",         2): 72.07, ("gather",         3): 78.27, ("gather",         4): 211.64,
+    ("gather",         5): 69.38, ("gather",         6): 68.83, ("gather",         7): 70.29,
+    ("gather",         8): 444.15,
+    ("scatter",        2): 63.11, ("scatter",        3): 71.48, ("scatter",        4): 191.63,
+    ("scatter",        5): 65.35, ("scatter",        6): 65.61, ("scatter",        7): 66.36,
+    ("scatter",        8): 426.40,
+    ("alltoall",       2): 58.40, ("alltoall",       3): 61.79, ("alltoall",       4): 155.21,
+    ("alltoall",       5): 44.14, ("alltoall",       6): 45.62, ("alltoall",       7): 44.26,
+    ("alltoall",       8): 360.90,
+    ("sendrecv",       2): 59.21, ("sendrecv",       3): 60.32, ("sendrecv",       4): 60.59,
+    ("sendrecv",       5): 43.83, ("sendrecv",       6): 43.77, ("sendrecv",       7): 43.44,
+    ("sendrecv",       8): 53.24,
+}
+# Our sweep caps alltoall/alltoallv at ALLTOALL_MAX (default 4 GiB, see run-rccl-all.sh)
+# instead of 8 GiB, to survive the N=5 OOM that killed Dell Cloud's alltoallv run. Flag it
+# in the comparison rather than silently comparing different message sizes.
+SMALLER_TOP_SIZE = {"alltoall", "alltoallv"}
 
 # NVIDIA reference fabrics -- PUBLISHED SPEC ONLY, not measured. No NCCL run exists on
 # either machine in this repo, so the measured column is deliberately empty: quoting a
@@ -139,6 +179,51 @@ def main():
          "## 1. Measured results", ""]
 
     L += table(lambda r: r["config"] == "default", "collective", "1.1 Full collective sweep")
+
+    # ---- Dell Cloud vs AMD Cloud, full sweep, one table --------------------------
+    dflt_all = {(r["collective"], r["gpus"]): r["busbw_at_max_GBps"]
+                for r in rows if r["config"] == "default"}
+    common = sorted({c for c, n in DELL_FULL_SWEEP} & {c for c, n in dflt_all})
+    if common:
+        ns_full = sorted({n for c, n in DELL_FULL_SWEEP if c in common})
+        L += ["### 1.1a Dell Cloud vs AMD Cloud — full sweep (busbw GB/s at top message size)",
+              "",
+              "Same silicon, same fabric (8 x MI355X, XGMI 4th gen K8 mesh) on both hosts; "
+              "the only difference is software (ROCm 7.2.3 + gfx942 alias on Dell Cloud vs "
+              "ROCm 7.14 native gfx950 here). Each cell is `Dell / AMD (AMD÷Dell)`.",
+              "",
+              "| Collective | " + " | ".join(f"N={n}" for n in ns_full) + " |",
+              "|---|" + "---|" * len(ns_full)]
+        for c in common:
+            note = "‡" if c in SMALLER_TOP_SIZE else ""
+            cells = []
+            for n in ns_full:
+                d, m = DELL_FULL_SWEEP.get((c, n)), dflt_all.get((c, n))
+                if d is None or m is None:
+                    cells.append("-")
+                    continue
+                ratio = m / d
+                flag = "**" if ratio < 0.85 or ratio > 1.5 else ""
+                cells.append(f"{d:.1f}/{flag}{m:.1f}{flag} ({ratio:.2f}x)")
+            L.append(f"| {c}{note} | " + " | ".join(cells) + " |")
+        if any(c in SMALLER_TOP_SIZE for c in common):
+            L += ["", "‡ measured here at a smaller top message size than Dell Cloud's 8 GiB "
+                  "(both sides cap `alltoall`/`alltoallv` early to survive the N=5 OOM that "
+                  "killed Dell Cloud's alltoallv run — see run-rccl-all.sh `ALLTOALL_MAX`). "
+                  "busbw plateaus well before 8 GiB for every collective measured (Dell "
+                  "Cloud's own finding, summary-rccl.md §1.1), so the smaller cap should "
+                  "still land in the flat region, but it is not a strictly identical "
+                  "measurement and is flagged rather than presented as one."]
+        gap = [(c, n, dflt_all[(c, n)] / DELL_FULL_SWEEP[(c, n)])
+               for c in common for n in ns_full
+               if (c, n) in dflt_all and (c, n) in DELL_FULL_SWEEP]
+        if gap:
+            best = max(gap, key=lambda t: t[2])
+            worst = min(gap, key=lambda t: t[2])
+            L += ["", f"Ratio ranges from **{worst[2]:.2f}x** (`{worst[0]}` N={worst[1]}) to "
+                  f"**{best[2]:.2f}x** (`{best[0]}` N={best[1]}). Bold cells are >1.5x or "
+                  f"<0.85x — outside what run-to-run noise on identical hardware would "
+                  f"explain.", ""]
 
     # ---- Infinity Fabric spec vs measured ---------------------------------------
     L += ["### 1.2 Infinity Fabric paper spec vs measured ceilings", "",

@@ -3,3 +3,14 @@ Detected 8 GPU(s): 42583 27226 36479 17010 1590 51771 11806 57875
 Output dir: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/fp4_investigation_20260813_221751/n5_r2
 
 === 5 GPU(s) | fp4 | devices=[42583 27226 36479 17010 1590] ===
+  -> aggregate=15355.22 TFLOPS  avg/GPU=3071.04 TFLOPS  reporting=5/5
+
+=== Done ===
+Summary:
+GPUs  Prec   Aggregate    Avg/GPU         Per-GPU peaks (TFLOPS)
+--------------------------------------------------------------------------------
+5     fp4    15355.22     3071.04         gpu1590=2344.86;gpu17010=3618.15;gpu27226=3392.03;gpu36479=2622.27;gpu42583=3377.91
+
+CSV:    /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/fp4_investigation_20260813_221751/n5_r2/summary.csv
+Logs:   /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/fp4_investigation_20260813_221751/n5_r2/*.log
+Confs:  /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/fp4_investigation_20260813_221751/n5_r2/*.conf

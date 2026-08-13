@@ -23,6 +23,26 @@ Source runs: rccl_all_20260813_211021, rccl_tests_20260813_213348
 | scatter | 61.4 | 122.5 | 180.0 | 69.4 | 74.5 | 73.6 | 396.6 | **67% down** |
 | sendrecv | 58.4 | 60.9 | 60.4 | 60.3 | 60.6 | 60.3 | 60.2 | none |
 
+### 1.1a Dell Cloud vs AMD Cloud — full sweep (busbw GB/s at top message size)
+
+Same silicon, same fabric (8 x MI355X, XGMI 4th gen K8 mesh) on both hosts; the only difference is software (ROCm 7.2.3 + gfx942 alias on Dell Cloud vs ROCm 7.14 native gfx950 here). Each cell is `Dell / AMD (AMD÷Dell)`.
+
+| Collective | N=2 | N=3 | N=4 | N=5 | N=6 | N=7 | N=8 |
+|---|---|---|---|---|---|---|---|
+| all_gather | 60.6/59.6 (0.98x) | 71.1/90.4 (1.27x) | 158.7/167.6 (1.06x) | 35.4/45.8 (1.29x) | 34.9/44.5 (1.28x) | 34.9/43.8 (1.26x) | 365.8/388.1 (1.06x) |
+| all_reduce | 61.3/59.6 (0.97x) | 75.0/92.4 (1.23x) | 166.5/169.5 (1.02x) | 38.4/48.0 (1.25x) | 38.4/47.7 (1.24x) | 38.2/47.6 (1.25x) | 381.3/396.3 (1.04x) |
+| alltoall‡ | 58.4/58.2 (1.00x) | 61.8/**116.2** (1.88x) | 155.2/154.1 (0.99x) | 44.1/61.4 (1.39x) | 45.6/61.5 (1.35x) | 44.3/62.1 (1.40x) | 360.9/346.4 (0.96x) |
+| broadcast | 63.5/62.0 (0.98x) | 68.1/88.9 (1.31x) | 169.2/175.0 (1.03x) | 34.1/39.6 (1.16x) | 33.9/39.4 (1.16x) | 33.8/39.3 (1.16x) | 377.3/389.6 (1.03x) |
+| gather | 72.1/61.6 (0.85x) | 78.3/**122.3** (1.56x) | 211.6/182.8 (0.86x) | 69.4/78.3 (1.13x) | 68.8/73.4 (1.07x) | 70.3/79.2 (1.13x) | 444.1/426.0 (0.96x) |
+| reduce | 72.9/62.1 (0.85x) | 86.5/99.3 (1.15x) | 197.4/170.9 (0.87x) | 43.6/45.7 (1.05x) | 42.9/45.8 (1.07x) | 43.1/45.5 (1.06x) | 358.5/330.4 (0.92x) |
+| reduce_scatter | 60.6/57.8 (0.95x) | 71.0/81.4 (1.15x) | 165.1/166.6 (1.01x) | 39.6/46.3 (1.17x) | 39.6/47.2 (1.19x) | 40.5/47.8 (1.18x) | 407.7/387.3 (0.95x) |
+| scatter | 63.1/61.4 (0.97x) | 71.5/**122.5** (1.71x) | 191.6/180.0 (0.94x) | 65.3/69.4 (1.06x) | 65.6/74.5 (1.14x) | 66.4/73.6 (1.11x) | 426.4/396.6 (0.93x) |
+| sendrecv | 59.2/58.4 (0.99x) | 60.3/60.9 (1.01x) | 60.6/60.4 (1.00x) | 43.8/60.3 (1.38x) | 43.8/60.6 (1.39x) | 43.4/60.3 (1.39x) | 53.2/60.2 (1.13x) |
+
+‡ measured here at a smaller top message size than Dell Cloud's 8 GiB (both sides cap `alltoall`/`alltoallv` early to survive the N=5 OOM that killed Dell Cloud's alltoallv run — see run-rccl-all.sh `ALLTOALL_MAX`). busbw plateaus well before 8 GiB for every collective measured (Dell Cloud's own finding, summary-rccl.md §1.1), so the smaller cap should still land in the flat region, but it is not a strictly identical measurement and is flagged rather than presented as one.
+
+Ratio ranges from **0.85x** (`reduce` N=2) to **1.88x** (`alltoall` N=3). Bold cells are >1.5x or <0.85x — outside what run-to-run noise on identical hardware would explain.
+
 ### 1.2 Infinity Fabric paper spec vs measured ceilings
 
 Each GPU has 7 xGMI links wired point-to-point to the other 7 GPUs. On-node bandwidth telemetry reports N/A on this driver build, so these are AMD's published MI350-series peaks:

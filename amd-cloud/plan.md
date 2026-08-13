@@ -18,6 +18,11 @@ reference material and the source of the comparison baselines.
 
 No benchmark in this plan has been executed yet — only read-only probing of the host.
 
+> **Status 2026-08-13: setup complete, awaiting go.** Steps 0 and 1 of §5 are done —
+> packages, venv, clones, image pull, both builds, and all 13 scripts are in place and
+> syntax-checked. **No benchmark has been run.** See [§8 Setup log](#8-setup-log-2026-08-13)
+> for what was actually done and the five places reality differed from this plan.
+
 ---
 
 ## 0. Host inventory (measured, 2026-08-13)
@@ -68,8 +73,15 @@ No benchmark in this plan has been executed yet — only read-only probing of th
 
 ### 1.1 Host packages (`sudo apt`)
 
-ROCm 7.14 is installed **runtime-only** — `/opt/rocm/include/hip/hip_runtime.h` and
-`rccl.h` are absent, so nothing HIP can compile today. Both RVS and rccl-tests need them.
+> ✅ **Done 2026-08-13 — and it turned out to be a no-op.** All five packages were
+> *already installed* (`7.14.0-3`), and `/opt/rocm/include/hip/hip_runtime.h` +
+> `/opt/rocm/include/rccl/rccl.h` were both already present. The "runtime-only, dev
+> headers missing" finding in §0 was wrong — either the earlier probe checked the wrong
+> path or the box was provisioned in between. `hipcc --version` → HIP 7.14.60850,
+> AMD clang 23.0.0. No `apt-get` was run.
+
+ROCm 7.14 was believed to be installed **runtime-only** — `/opt/rocm/include/hip/hip_runtime.h`
+and `rccl.h` absent, so nothing HIP could compile. Both RVS and rccl-tests need them.
 Verified available from `repo.amd.com`:
 
 ```bash
@@ -115,6 +127,19 @@ this host, so try **one image for everything** first — that is 14 GB instead o
 removes the two-image split that made the Dell Cloud Megatron runs a separate rerun script.
 
 Parts A and B need **no image at all** — they build native gfx950 binaries on the host.
+
+> ✅ **Done 2026-08-13.** `rocm/primus:v26.5` pulled — **54.8 GB on disk**, not the
+> 35–45 GB estimated. `/` went 214 G → 161 G free. The go/no-go gate passed on the first
+> try, so **`v25.9_gfx950` was never pulled and is not needed**:
+>
+> ```
+> torch 2.12.0+rocm7.15.0a20260720
+> arch_list contains gfx950 ✔   (also gfx942, gfx90a, gfx1100+…)
+> torch.cuda.device_count() = 8 ✔
+> ```
+>
+> Note the image ships ROCm **7.15**, one minor ahead of the host's 7.14 — forward-compatible
+> with the 6.19 driver, and it is the reason the gfx950 code objects are native.
 
 > ⚠ **Disk is the tightest constraint.** `/` has 216 GB free and `/var/lib/docker` lives
 > there. `docker system df` reports an existing `rocm/atom-dev` image (106 GB) plus a
@@ -269,10 +294,21 @@ Reproduces `work-rocmval/summary.md` and `summary-sweep.md`.
 RVS is not shipped in this ROCm install (`/opt/rocm/bin/rvs` absent), so build from source
 into a local prefix, no root:
 
+> ✅ **Done 2026-08-13 — built clean, all 15 modules.** One extra step the plan missed:
+> RVS 1.7.8's `CMakeLists.txt:644` hard-fails with *"TransferBench submodule not
+> initialised"*, so `git submodule update --init --recursive` is **required** before cmake
+> (pulls TransferBench `5fbfa95`, ~rocm-7.2.4). Added to the block below.
+>
+> The GCC-12 bet paid off: `pebb`, `pbqt` and `pulse` all compiled, so we get the PCIe/P2P
+> bandwidth tests the Dell Cloud run had to `sed` out. No `sed` workaround was needed.
+> Modules built: `babel gm gpup gst iet mem pbqt pebb peqt perf pesm pulse rcqt smqt tst`.
+> `rvs -g` lists all 8 MI355X (device 30115). Build log: `scratchpad/rvs_build.log`.
+
 ```bash
 cd $BENCH_ROOT/work-rocmval
 git clone https://github.com/ROCm/ROCmValidationSuite.git
 cd ROCmValidationSuite
+git submodule update --init --recursive   # REQUIRED: TransferBench, else cmake fails
 mkdir -p build_local install_local
 cmake -S . -B build_local \
   -DROCM_PATH=/opt/rocm \
@@ -336,6 +372,24 @@ echo "results: $OUT"
 The TFLOPS sweep only exercises `gst`. This is the "is the box healthy" gate that
 `dell-cloud/rccl-tests/rccl-tests.md §Q` argues for — it validates the floor *beneath* RCCL, so a
 clean result here means a later RCCL cliff is an algorithm problem, not hardware.
+
+> ⚠️ **Two corrections applied to the script as written below** (the committed
+> `run_rvs_health.sh` has them; this listing is kept for the record):
+>
+> 1. **There is no `pqt` module in RVS 1.7.8.** The plan's `"pqt:pqt_single.conf:peer-to-peer
+>    XGMI bandwidth"` entry names a module and a conf that do not exist — it would have
+>    silently `SKIP`ped, and the `find` fallback can't rescue it either (`pqt*` doesn't match
+>    `pbqt`). Peer-to-peer / XGMI bandwidth is **`pbqt`** (P2P Benchmark and Qualification
+>    Tool); `pebb` is host↔device. The plan also mislabelled `pbqt` as "PCIe bidirectional".
+>    This matters: `pbqt` is the module Part B's cliff attribution depends on, so as written
+>    the plan would have skipped the one test that licenses the "algorithm, not fabric"
+>    conclusion. The `pqt` entry is dropped and the two descriptions corrected.
+> 2. **Confs resolve MI355X-first.** `conf/MI355X/` ships tuned `babel.conf`,
+>    `pebb_single.conf`, `pbqt_single.conf`, `gst_single.conf`, `iet_stress.conf` — prefer
+>    those over the generic ones, falling back to `conf/<name>` then a glob.
+>
+> Confirmed present: `conf/MI355X/levels/rvs_level_{1..5}.conf`, so the level-config loop at
+> the end of the script will fire.
 
 ```bash
 #!/usr/bin/env bash
@@ -511,6 +565,10 @@ git clone --depth=1 https://github.com/ROCm/rccl-tests.git src
 cd src && make MPI=0 HIP_HOME=/opt/rocm -j"$(nproc)"
 ls build/*_perf   # all_reduce_perf, all_gather_perf, alltoall_perf, ... 10 binaries
 ```
+
+> ✅ **Done 2026-08-13.** Built clean against host ROCm 7.14 → **12** `*_perf` binaries
+> (plan said 10; the extras are `all_reduce_bias_perf` and `hypercube_perf`). All 10
+> collectives named in `run-rccl-all.sh` have a binary. Build log: `scratchpad/rccl_build.log`.
 
 `MPI=0` is correct — single node, and rccl-tests spawns N threads/GPUs itself via `-g N`.
 Building on the host against ROCm 7.14 gives **native gfx950 code objects**, which is
@@ -780,12 +838,30 @@ That last command is the **go/no-go gate**: the arch list must contain `gfx950`.
 not, fall back to `docker pull rocm/primus:v25.9_gfx950` and use it for Megatron (the Dell Cloud
 proven path), keeping v26.5 for the microbenches.
 
+> ✅ **Gate passed 2026-08-13** (see §1.3). Also probed the image's actual CLI surface:
+> all five subcommands the sweep uses exist —
+> `{gemm, attention, gemm-dense, gemm-deepseek, strided-allgather, rccl}`. `strided-allgather`
+> is new and unused here.
+>
+> ⚠️ **Corrected: the Megatron `EXP` path in §C.4 does not exist.** The plan's
+> `examples/megatron/configs/llama2_7B-pretrain.yaml` is gone — configs are now per-arch.
+> The correct path, present in both the image and upstream HEAD, is
+> **`examples/megatron/configs/MI355X/llama2_7B-BF16-pretrain.yaml`** — which is better than
+> what the plan asked for, since it is MI355X-tuned. `primus/configs/models/megatron/llama2_7B.yaml`
+> (the tokenizer-sed target) *does* exist, unchanged, so the offline-tokenizer trick stands.
+>
+> ⚠️ **Corrected: do not bind-mount the host clone at `/workspace`.** The plan's §C.2/§C.3
+> scripts mount `$PRIMUS:/workspace`, but the host clone (HEAD `abc46648`) has drifted from
+> the image's pinned tree (`b511d1b6`) — that is precisely the API-drift failure the next
+> bullet warns about, reintroduced by the mount. The committed scripts instead run the
+> image's own `/workspace/Primus` and bind-mount **only an output dir at `/out`**.
+
 Two rules carried over from dell-cloud's troubleshooting notes, both of which cost real runs:
 
-- **Do not bind-mount the cloned `Primus/` over the image's `/workspace/Primus`** when using
-  a `_gfx950` image. Its API is pinned to `primus_turbo v0.1.0`; HEAD has drifted and
-  `PrimusTurboAttention` fails to import. The host clone is for reading configs and for
-  `--output-file` targets only.
+- **Do not bind-mount the cloned `Primus/` over the image's `/workspace/Primus`.** Its API is
+  pinned to a specific `primus_turbo`; HEAD has drifted and `PrimusTurboAttention` fails to
+  import. The host clone is for reading configs only — **not** a mount source. (Applies to
+  v26.5 as well as `_gfx950`; see the correction above.)
 - **Drop `--op all_reduce` from the rccl bench.** Primus' argparse advertises `all_reduce`
   but the backend expects `allreduce`; omitting the flag uses the correct default.
 
@@ -910,7 +986,7 @@ run_megatron() {
   echo "----- megatron N=$N GBS=$GBS devs=$devs $(date -Iseconds) -----" | tee -a "$SUM"
   timeout --signal=TERM --kill-after=30s "$TIMEOUT" \
     docker run $(dgpu_args) -w /workspace/Primus \
-      -e EXP=examples/megatron/configs/llama2_7B-pretrain.yaml \
+      -e EXP="${EXP:-examples/megatron/configs/MI355X/llama2_7B-BF16-pretrain.yaml}" \
       -e HIP_VISIBLE_DEVICES="$devs" -e ROCR_VISIBLE_DEVICES="$devs" \
       -e GPUS_PER_NODE="$N" -e NNODES=1 -e NODE_RANK=0 \
       -e MASTER_ADDR=localhost -e MASTER_PORT="$port" \
@@ -984,8 +1060,8 @@ Everything is **strictly sequential** — all three suites want all 8 GPUs and t
 
 | Step | Task | Est. |
 |------|------|------|
-| 0 | apt dev packages, venv, clones, `docker pull` | 30–45 min |
-| 1 | Build RVS + rccl-tests | 20–30 min |
+| 0 | ~~apt dev packages~~ (already installed), venv, clones, `docker pull` | ✅ **done** |
+| 1 | Build RVS + rccl-tests | ✅ **done** |
 | 2 | **A** — RVS smoke → gst sweep → health modules | ~1 h |
 | 3 | **B** — RCCL all-collective sweep | 45–90 min |
 | 4 | **B** — RCCL config sweep (5 configs) | 30–45 min |
@@ -1028,3 +1104,61 @@ Long steps run under `nohup` and are polled, so the session is not blocked.
    11.2 kW tray throttles. A per-GPU TFLOPS drop from N=1 to N=8 is expected physics, not a bug.
 6. **`alltoallv` OOM at N=5** killed the reference sweep mid-run. Capped at 4 GiB via
    `ALLTOALL_MAX`; if it still OOMs, drop to 2 GiB — the plateau is reached well before then.
+
+---
+
+## 8. Setup log (2026-08-13)
+
+Steps 0 and 1 executed. **No benchmark has been run** — the box is staged and idle,
+waiting on the go-ahead.
+
+### What was done
+
+| # | Action | Result |
+|---|--------|--------|
+| 0.1 | Host dev packages | **No-op** — all 5 already installed at `7.14.0-3`; headers + `hipcc` verified |
+| 0.2 | `venv` at `/mnt/scratch/shaohao/venv` | Python 3.10.12 + matplotlib, pandas, tabulate ✔ |
+| 0.3 | Clone RVS / rccl-tests / Primus | 17 MB / 772 K / 163 MB ✔ |
+| 0.4 | `docker pull rocm/primus:v26.5` | 54.8 GB; gfx950 gate **passed**, fallback image not needed |
+| 0.5 | `common/env.sh`, cache dirs, log dirs | sources clean; `RCCL_TESTS_DIR` added to the plan's version |
+| 1.1 | Build + install RVS | all **15** modules incl. `pebb`/`pbqt`/`pulse`; `rvs -g` → 8 MI355X ✔ |
+| 1.2 | Build rccl-tests | **12** `*_perf` binaries, native gfx950 ✔ |
+| 1.3 | Write all 13 scripts | `bash -n` + `py_compile` clean on every one |
+
+### Five places reality differed from the plan
+
+1. **The dev-headers premise was false** (§1.1). Everything was already installed; no `apt`
+   run was needed. §0's "runtime only, dev headers missing" row is wrong.
+2. **RVS needs `git submodule update --init --recursive`** (§A.1) or cmake hard-fails on
+   TransferBench. The plan omitted it.
+3. **RVS has no `pqt` module** (§A.4). The health script's P2P/XGMI entry pointed at a
+   nonexistent module — the one test that Part B's cliff attribution rests on. Now `pbqt`.
+4. **The Megatron `EXP` config path no longer exists** (§C.1/§C.4). Now the MI355X-specific
+   `examples/megatron/configs/MI355X/llama2_7B-BF16-pretrain.yaml`.
+5. **The Primus microbench scripts must not mount the host clone over `/workspace`**
+   (§C.2/§C.3) — it reintroduces the exact API drift the plan warns about two paragraphs
+   later. Output-only mount at `/out` instead.
+
+Items 3–5 were plan bugs that would each have cost a run or silently voided a conclusion.
+
+### Disk
+
+`/` is at **161 G free** (was 214 G) after the 54.8 GB image. Since `v25.9_gfx950` is not
+needed, no further large pull is planned, and the risk in §7.1 is largely retired. The
+foreign 283 GB stopped container was **not** touched.
+
+### Not yet done — deliberately
+
+- No smoke tests run (they are GPU workloads; §A.6/§B.7/§C.6 start them).
+- Untested at runtime: the Primus microbench **flag surface** (`--duration`, `--mbs-list`,
+  `--report-csv-path`) is carried over from the older v26.3/v25.9 images and has not been
+  validated against v26.5. `run_gpu_scan.sh` is the 5-minute gate that will catch any drift
+  before the 1-hour sweep commits to it.
+- `results/` is empty; nothing is committed to git yet.
+
+### To start, on your go
+
+```bash
+cd /home/amd/shaohao/amd-benchmarks/amd-cloud && source common/env.sh
+cd work-rocmval && GPU_COUNTS=1 PRECISIONS=fp16 DURATION_MS=10000 ./run_tflops.sh
+```

@@ -1,0 +1,8 @@
+# Upstream source trees cloned here for the build — not tracked in this repo.
+work-rocmval/ROCmValidationSuite/
+rccl-tests/src/
+primus/Primus/
+
+# Build / run detritus
+**/__pycache__/
+*.pyc

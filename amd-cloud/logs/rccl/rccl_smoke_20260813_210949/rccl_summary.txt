@@ -1,0 +1,7 @@
+RCCL all-collective sweep 20260813_210949
+bins: /home/amd/shaohao/amd-benchmarks/amd-cloud/rccl-tests/src/build
+env : NCCL_IB_DISABLE=1 NCCL_SOCKET_IFNAME=lo NCCL_P2P_DISABLE=0 NCCL_SHM_DISABLE=0 RCCL_MSCCL_ENABLE=1 NCCL_PROTO=Simple,LL,LL128 NCCL_ALGO=Ring,Tree NCCL_DEBUG=WARN 
+
+collective       N     max_size     busbw_GB/s
+all_reduce       8   8589934592         395.86   rc=0
+results: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rccl/rccl_smoke_20260813_210949

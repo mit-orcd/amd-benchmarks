@@ -1,0 +1,189 @@
+[RESULT] [ 85478.980732] Action name :hbm_full
+[RESULT] [ 85479.22964 ] Module name :babel
+[RESULT] [ 85479.594359] [hbm_full] [GPU:: 17010] Starting the Babel memory stress test
+[RESULT] [ 85479.594392] [hbm_full] [GPU:: 42583] Starting the Babel memory stress test
+[RESULT] [ 85479.594444] Running kernels 10000 times, Precision: double
+[RESULT] [ 85479.594454] Running kernels 10000 times, Precision: double
+[RESULT] [ 85479.594487] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 85479.594488] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 85479.594475] [hbm_full] [GPU:: 36479] Starting the Babel memory stress test
+[RESULT] [ 85479.594540] Running kernels 10000 times, Precision: double
+[RESULT] [ 85479.594536] [hbm_full] [GPU:: 27226] Starting the Babel memory stress test
+[RESULT] [ 85479.594567] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 85479.594592] Running kernels 10000 times, Precision: double
+[RESULT] [ 85479.594617] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 85479.594666] [hbm_full] [GPU:: 57875] Starting the Babel memory stress test
+[RESULT] [ 85479.594721] Running kernels 10000 times, Precision: double
+[RESULT] [ 85479.594747] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 85479.594758] [hbm_full] [GPU:: 1590] Starting the Babel memory stress test
+[RESULT] [ 85479.594820] Running kernels 10000 times, Precision: double
+[RESULT] [ 85479.594844] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 85479.594924] [hbm_full] [GPU:: 11806] Starting the Babel memory stress test
+[RESULT] [ 85479.594985] Running kernels 10000 times, Precision: double
+[RESULT] [ 85479.594977] [hbm_full] [GPU:: 51771] Starting the Babel memory stress test
+[RESULT] [ 85479.595021] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 85479.595053] Running kernels 10000 times, Precision: double
+[RESULT] [ 85479.595077] Array size: 6920.6 MB (=6.9 GB), Total size: 20761.8 MB (=20.8 GB)
+
+[RESULT] [ 85646.650880] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+36479       Read        7260745.756    7260745.756    6671468.936    7190214.183    
+36479       Write       6973369.084    6973369.084    6151749.763    6609266.448    
+36479       Copy        6494394.005    6494394.005    2071323.847    6407386.418    
+36479       Mul         6571537.934    6571537.934    5749992.294    6488019.395    
+36479       Add         6263566.049    6263566.049    6035299.596    6198500.199    
+36479       Triad       6162980.272    6162980.272    5960228.065    6099297.503    
+36479       Dot         5946399.927    5946399.927    3850726.970    5874002.227    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 85648.81399 ] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+42583       Read        7244473.010    7244473.010    4799853.520    7147187.603    
+42583       Write       6932018.635    6932018.635    5964128.369    6599029.244    
+42583       Copy        6489917.683    6489917.683    6125288.072    6395371.791    
+42583       Mul         6421512.051    6421512.051    6007411.912    6326876.517    
+42583       Add         6303805.728    6303805.728    6016079.966    6226959.692    
+42583       Triad       6281586.295    6281586.295    6009636.813    6200069.370    
+42583       Dot         5885040.456    5885040.456    4459097.363    5815509.741    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 85649.286581] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+1590        Read        7248798.187    7248798.187    1402906.358    7167529.369    
+1590        Write       6767632.796    6767632.796    5502370.982    6327778.212    
+1590        Copy        6424462.822    6424462.822    5935641.285    6315480.764    
+1590        Mul         6421240.955    6421240.955    2571538.994    6309035.777    
+1590        Add         6321773.694    6321773.694    4157627.843    6240004.411    
+1590        Triad       6262451.362    6262451.362    2567066.802    6167682.788    
+1590        Dot         5918762.299    5918762.299    1977605.451    5862615.262    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 85650.215021] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+27226       Read        7261499.978    7261499.978    6369271.122    7171098.398    
+27226       Write       6779566.283    6779566.283    475469.363     6371031.444    
+27226       Copy        6436352.933    6436352.933    5348748.757    6332041.002    
+27226       Mul         6453726.143    6453726.143    1884314.149    6339029.104    
+27226       Add         6355638.317    6355638.317    1408051.373    6266307.126    
+27226       Triad       6252493.492    6252493.492    1457324.754    6151096.954    
+27226       Dot         5914485.512    5914485.512    2719355.333    5860628.970    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 85651.25844 ] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+11806       Read        7251152.644    7251152.644    6207702.802    7175348.205    
+11806       Write       6740804.131    6740804.131    5464576.201    6329424.021    
+11806       Copy        6425473.861    6425473.861    5930478.553    6319835.302    
+11806       Mul         6403505.707    6403505.707    5911252.312    6311536.570    
+11806       Add         6326375.677    6326375.677    4894540.728    6248257.693    
+11806       Triad       6300039.326    6300039.326    3304297.218    6222119.630    
+11806       Dot         5907669.614    5907669.614    4014372.525    5849756.912    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 85652.282615] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+57875       Read        7263633.978    7263633.978    3811470.648    7186329.636    
+57875       Write       6784225.107    6784225.107    5687734.054    6359673.091    
+57875       Copy        6423717.422    6423717.422    6001160.759    6319301.770    
+57875       Mul         6430880.410    6430880.410    4240012.621    6319472.230    
+57875       Add         6151020.741    6151020.741    4750793.744    6034492.227    
+57875       Triad       6098497.685    6098497.685    5347734.764    6004040.586    
+57875       Dot         5940328.578    5940328.578    23240.167      5747615.268    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 85653.59953 ] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+51771       Read        7243714.740    7243714.740    10951.087      6708023.538    
+51771       Write       6772268.601    6772268.601    5525611.297    6357693.145    
+51771       Copy        6409792.422    6409792.422    23337.670      6142511.953    
+51771       Mul         6426759.741    6426759.741    5855413.968    6310603.618    
+51771       Add         6192557.110    6192557.110    5916256.008    6098594.086    
+51771       Triad       6252286.373    6252286.373    5904293.578    6165320.841    
+51771       Dot         5925274.063    5925274.063    4026787.212    5860412.143    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 85653.747223] 
+---------------------------------------------------------------------------------
+GPU Id      Function    MBytes/sec     Max MB/s       Min MB/s       Avg MB/s       
+---------------------------------------------------------------------------------
+17010       Read        7261423.787    7261423.787    6492962.128    7187860.777    
+17010       Write       6764986.613    6764986.613    1875878.998    6359571.538    
+17010       Copy        6413329.670    6413329.670    6061817.809    6318696.369    
+17010       Mul         6414132.108    6414132.108    1945998.074    6316541.917    
+17010       Add         6112142.411    6112142.411    32183.242      5810550.753    
+17010       Triad       6247883.638    6247883.638    34482.908      6048561.129    
+17010       Dot         5810946.216    5810946.216    2468128.109    5759112.220    
+---------------------------------------------------------------------------------
+
+[RESULT] [ 85654.266615] Action name :pcie_d2h_bandwidth
+[RESULT] [ 85654.323788] Module name :pebb
+[RESULT] [ 85654.324322] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] distance:20 PCIe:20
+[RESULT] [ 85654.324339] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] distance:52 PCIe:52
+[RESULT] [ 85654.324343] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] distance:20 PCIe:20
+[RESULT] [ 85654.324345] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] distance:52 PCIe:52
+[RESULT] [ 85654.324348] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] distance:20 PCIe:20
+[RESULT] [ 85654.324350] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] distance:52 PCIe:52
+[RESULT] [ 85654.324353] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] distance:20 PCIe:20
+[RESULT] [ 85654.324355] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] distance:52 PCIe:52
+[RESULT] [ 85654.324357] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:52 PCIe:52
+[RESULT] [ 85654.324360] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:20 PCIe:20
+[RESULT] [ 85654.324362] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] distance:52 PCIe:52
+[RESULT] [ 85654.324364] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] distance:20 PCIe:20
+[RESULT] [ 85654.324367] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:52 PCIe:52
+[RESULT] [ 85654.324369] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:20 PCIe:20
+[RESULT] [ 85654.324371] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] distance:52 PCIe:52
+[RESULT] [ 85654.324374] [pcie_d2h_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] distance:20 PCIe:20
+[RESULT] [ 86554.422165] [pcie_d2h_bandwidth] pcie-bandwidth [ 1/16] [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.220 GBps duration: 1.763916 secs
+[RESULT] [ 86554.422177] [pcie_d2h_bandwidth] pcie-bandwidth [ 2/16] [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] h2d::false d2h::true 57.223 GBps duration: 1.745064 secs
+[RESULT] [ 86554.422179] [pcie_d2h_bandwidth] pcie-bandwidth [ 3/16] [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.225 GBps duration: 1.745016 secs
+[RESULT] [ 86554.422212] [pcie_d2h_bandwidth] pcie-bandwidth [ 4/16] [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] h2d::false d2h::true 57.221 GBps duration: 1.745121 secs
+[RESULT] [ 86554.422213] [pcie_d2h_bandwidth] pcie-bandwidth [ 5/16] [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.211 GBps duration: 1.745442 secs
+[RESULT] [ 86554.422214] [pcie_d2h_bandwidth] pcie-bandwidth [ 6/16] [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] h2d::false d2h::true 57.215 GBps duration: 1.745322 secs
+[RESULT] [ 86554.422216] [pcie_d2h_bandwidth] pcie-bandwidth [ 7/16] [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.425 GBps duration: 1.769754 secs
+[RESULT] [ 86554.422217] [pcie_d2h_bandwidth] pcie-bandwidth [ 8/16] [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] h2d::false d2h::true 56.422 GBps duration: 1.769840 secs
+[RESULT] [ 86554.422218] [pcie_d2h_bandwidth] pcie-bandwidth [ 9/16] [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.224 GBps duration: 1.745034 secs
+[RESULT] [ 86554.422219] [pcie_d2h_bandwidth] pcie-bandwidth [10/16] [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] h2d::false d2h::true 57.224 GBps duration: 1.745046 secs
+[RESULT] [ 86554.422220] [pcie_d2h_bandwidth] pcie-bandwidth [11/16] [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.212 GBps duration: 1.745415 secs
+[RESULT] [ 86554.422221] [pcie_d2h_bandwidth] pcie-bandwidth [12/16] [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] h2d::false d2h::true 57.215 GBps duration: 1.745304 secs
+[RESULT] [ 86554.422222] [pcie_d2h_bandwidth] pcie-bandwidth [13/16] [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.421 GBps duration: 1.769858 secs
+[RESULT] [ 86554.422223] [pcie_d2h_bandwidth] pcie-bandwidth [14/16] [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] h2d::false d2h::true 56.423 GBps duration: 1.769809 secs
+[RESULT] [ 86554.422224] [pcie_d2h_bandwidth] pcie-bandwidth [15/16] [CPU:: 0] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.222 GBps duration: 1.745111 secs
+[RESULT] [ 86554.422225] [pcie_d2h_bandwidth] pcie-bandwidth [16/16] [CPU:: 1] [GPU:: 9 - 51771 - 0000:95:00.0] h2d::false d2h::true 57.223 GBps duration: 1.745072 secs
+[RESULT] [ 86554.422249] Action name :pcie_h2d_bandwidth
+[RESULT] [ 86554.422256] Module name :pebb
+[RESULT] [ 86554.422701] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 2 - 17010 - 0000:75:00.0] distance:20 PCIe:20
+[RESULT] [ 86554.422712] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 2 - 17010 - 0000:75:00.0] distance:52 PCIe:52
+[RESULT] [ 86554.422714] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 3 - 42583 - 0000:05:00.0] distance:20 PCIe:20
+[RESULT] [ 86554.422716] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 3 - 42583 - 0000:05:00.0] distance:52 PCIe:52
+[RESULT] [ 86554.422717] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 4 - 36479 - 0000:65:00.0] distance:20 PCIe:20
+[RESULT] [ 86554.422719] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 4 - 36479 - 0000:65:00.0] distance:52 PCIe:52
+[RESULT] [ 86554.422720] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 5 - 27226 - 0000:15:00.0] distance:20 PCIe:20
+[RESULT] [ 86554.422721] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 5 - 27226 - 0000:15:00.0] distance:52 PCIe:52
+[RESULT] [ 86554.422723] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:52 PCIe:52
+[RESULT] [ 86554.422725] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 6 - 57875 - 0000:f5:00.0] distance:20 PCIe:20
+[RESULT] [ 86554.422726] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 7 -  1590 - 0000:85:00.0] distance:52 PCIe:52
+[RESULT] [ 86554.422727] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 7 -  1590 - 0000:85:00.0] distance:20 PCIe:20
+[RESULT] [ 86554.422729] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 0] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:52 PCIe:52
+[RESULT] [ 86554.422730] [pcie_h2d_bandwidth] pcie-bandwidth [CPU:: 1] [GPU:: 8 - 11806 - 0000:e5:00.0] distance:20 PCIe:20
+[RESULT] [ 86554.42273

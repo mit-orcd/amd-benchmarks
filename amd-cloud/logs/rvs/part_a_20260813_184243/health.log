@@ -30,3 +30,5 @@ conf: /home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuit
 ./run_rvs_health.sh: line 61: 1714902 Segmentation fault      timeout 1800 "$RVS" -c "$lvl" > "$OUT/$n.log" 2>&1
   rc=139 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/rvs_level_4.log
 ----- rvs_level_5 -----
+  rc=124 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/rvs_level_5.log
+results: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057

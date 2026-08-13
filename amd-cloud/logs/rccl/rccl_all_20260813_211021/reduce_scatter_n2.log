@@ -1,0 +1,28 @@
+# Collective test starting: reduce_scatter_perf
+# nThread 1 nGpus 2 minBytes 16777216 maxBytes 8589934592 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+rccl-tests: Version develop_deprecated:40b1b17
+# Using devices
+#  Rank  0 Group  0 Pid 1900701 on mi355-gpu-33 device  0 [0000:75:00] AMD Instinct MI355X
+#  Rank  1 Group  0 Pid 1900701 on mi355-gpu-33 device  1 [0000:05:00] AMD Instinct MI355X
+
+[2026-08-13 21:16:14] mi355-gpu-33:1900701:1900701 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+RCCL version : 2.30.4-HEAD:2b22ab0
+HIP version  : 7.14.60850-0000000
+ROCm version : 7.14.0.0-9999-2b22ab01
+Hostname     : mi355-gpu-33
+Librccl path : /opt/rocm/lib/librccl.so.1
+
+[2026-08-13 21:16:17] mi355-gpu-33:1900701:1900727 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong                               
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)                                      
+    16777216       2097152     float     sum      -1    180.3   93.03   46.51      0    180.1   93.15   46.57      0
+    33554432       4194304     float     sum      -1    350.1   95.84   47.92      0    349.2   96.09   48.05      0
+    67108864       8388608     float     sum      -1    636.6  105.43   52.71      0    636.1  105.51   52.75      0
+   134217728      16777216     float     sum      -1   1232.6  108.89   54.44      0   1231.1  109.02   54.51      0
+   268435456      33554432     float     sum      -1   2399.8  111.86   55.93      0   2408.8  111.44   55.72      0
+   536870912      67108864     float     sum      -1   4657.4  115.27   57.64      0   4647.2  115.53   57.76      0
+  1073741824     134217728     float     sum      -1   9209.5  116.59   58.30      0   9196.1  116.76   58.38      0
+  2147483648     268435456     float     sum      -1    18422  116.57   58.28      0    18259  117.62   58.81      0

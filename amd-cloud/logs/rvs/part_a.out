@@ -8,3 +8,8 @@
 [2026-08-13T19:50:57+00:00] sweep rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/sweep_20260813_184243
 [2026-08-13T19:50:57+00:00] sweep rows: 72
 [2026-08-13T19:50:57+00:00] STAGE 3/4 health modules
+[2026-08-13T21:00:12+00:00] health rc=0
+[2026-08-13T21:00:12+00:00] health dir: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057
+[2026-08-13T21:00:12+00:00] STAGE 4/4 analysis
+[2026-08-13T21:00:12+00:00] analyze rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/results/rvs_tflops.{md,csv}
+[2026-08-13T21:00:12+00:00] PART A DONE

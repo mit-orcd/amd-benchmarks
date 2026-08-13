@@ -7,6 +7,12 @@ export LOG_ROOT=$BENCH_ROOT/logs          # tracked in-repo, like dell-cloud/*/l
 export CACHE_ROOT=$SCRATCH/cache          # regenerable bulk, off-repo
 export PY=$SCRATCH/venv/bin/python
 export ROCM_PATH=/opt/rocm
+# rccl-tests binaries are built with NO RPATH (unlike RVS, which bakes one in via cmake),
+# and libhsa-runtime64.so.1 is not in ldconfig's cache on this host despite living at
+# /opt/rocm/lib. Without this, every rccl-tests binary fails at exec with
+# "error while loading shared libraries: libhsa-runtime64.so.1: cannot open shared object
+# file" (rc=127) -- discovered when the Part B smoke test aborted on it.
+export LD_LIBRARY_PATH="/opt/rocm/lib:${LD_LIBRARY_PATH:-}"
 export NGPU=8
 export RVS_BIN=$BENCH_ROOT/work-rocmval/ROCmValidationSuite/install_local/bin/rvs
 export RCCL_TESTS_DIR=$BENCH_ROOT/rccl-tests/src/build

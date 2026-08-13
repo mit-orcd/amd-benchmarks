@@ -29,3 +29,5 @@ conf: /home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuit
 ----- rvs_level_4 -----
   rc=139 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/rvs_level_4.log
 ----- rvs_level_5 -----
+  rc=124 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057/rvs_level_5.log
+results: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_20260813_195057

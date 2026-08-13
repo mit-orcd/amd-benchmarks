@@ -1,0 +1,6 @@
+[2026-08-13T21:09:49+00:00] PART B start (driver log: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rccl/part_b_20260813_210949)
+[2026-08-13T21:09:49+00:00] all 8 GPUs idle, proceeding
+[2026-08-13T21:09:49+00:00] STAGE 1/4 smoke: all_reduce N=8
+[2026-08-13T21:10:21+00:00] smoke rc=0 busbw=395.86 GB/s dir=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rccl/rccl_smoke_20260813_210949
+[2026-08-13T21:10:21+00:00] smoke OK
+[2026-08-13T21:10:21+00:00] STAGE 2/4 all-collective sweep: 10 collectives x N=2..8

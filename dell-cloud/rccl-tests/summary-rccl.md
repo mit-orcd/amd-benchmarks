@@ -82,7 +82,7 @@ Reading:
 
 ### 1.3 Cross-check against Megatron-LM application timers
 
-The Megatron sweeps ([summary.md](summary.md)) report two collective-bearing timers at iter 45:
+The Megatron sweeps ([summary.md](../megatron-lm/summary.md)) report two collective-bearing timers at iter 45:
 
 - `all-grads-sync` — ReduceScatter + the kernel-level reduce. Bounded by ReduceScatter bandwidth.
 - `params-all-gather` — straight AllGather of the post-step parameters.

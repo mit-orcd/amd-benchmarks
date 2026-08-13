@@ -1,7 +1,14 @@
 # Megatron-LM MI355X Benchmark — v26.1
 
 Scripts and instructions to reproduce `summary.md` on a single node of 8× AMD
-Instinct MI355X (gfx950, 288 GB HBM3e).
+Instinct MI355X (gfx950, 288 GB HBM3e). Run on the Dell Cloud server — see
+[`../README.md`](../README.md).
+
+> The RCCL collective sweeps that used to live here have moved to
+> [`../rccl-tests/`](../rccl-tests/). They ran from this same working directory and
+> container, so their documents still reference `work/` paths; the split is by subject —
+> RCCL collectives there, Megatron-LM training here. The N=5/6/7 cliff analysis
+> (`summary-power2.md`, `summary-rccl.md`, `notes-amd.md`) is in that directory.
 
 `summary.md` is produced by three sweeps run in order:
 

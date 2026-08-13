@@ -7,7 +7,7 @@
 - Hardware/software: 1 node × up to 8 × AMD Instinct MI355X (gfx950) inside `megatron-lm.sif` (ROCm 6.4.3, RCCL 2.22.3, librccl `/opt/rocm/lib/librccl.so.1`). Same env as `run.sh` — IB off, xGMI peer-to-peer, `HSA_OVERRIDE_GFX_VERSION=9.4.2`.
 - Sweep: collectives `all_reduce_perf`, `all_gather_perf`; sizes 16 MiB → 8 GiB ×2; iters=20 warmup=5; single-process multi-GPU (`-g N`).
 
-The purpose of this sweep is to answer the open question from [summary-1.md](summary-1.md) and [summary-2.md](summary-2.md): is the N=5/6/7 collective cliff a Megatron-LM regression or does it live in the RCCL/xGMI layer below it?
+The purpose of this sweep is to answer the open question from [summary-1.md](../megatron-lm/summary-1.md) and [summary-2.md](../megatron-lm/summary-2.md): is the N=5/6/7 collective cliff a Megatron-LM regression or does it live in the RCCL/xGMI layer below it?
 
 ---
 

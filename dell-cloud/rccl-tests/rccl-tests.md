@@ -1,7 +1,7 @@
 # RCCL-tests sweep — isolating the non-power-of-2 collective cliff
 
 Standalone collective-bandwidth probe to isolate whether the N=5/6/7 slowdown
-observed in [summary-1.md](summary-1.md) and [summary-2.md](summary-2.md) lives
+observed in [summary-1.md](../megatron-lm/summary-1.md) and [summary-2.md](../megatron-lm/summary-2.md) lives
 in RCCL itself or somewhere in the Megatron-LM stack on top of it.
 
 Driver: [`run-rccl-tests.sh`](run-rccl-tests.sh) (does not touch `run.sh`).

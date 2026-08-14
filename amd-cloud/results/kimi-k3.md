@@ -83,7 +83,10 @@ fixed recurrent state), and **KV is replicated across TP ranks, not sharded**. C
 **HBM ~29%** (2287 GB/s of 8000). The mechanism is a MoE subtlety worth highlighting: at
 batch 64, tokens route independently, so **610 of 896 experts activate per layer**, not 16.
 Weight traffic per step goes 3.4 GB → 116 GB. MXFP4 is load-bearing here — at BF16 this would
-demand ~9.1 TB/s and exceed HBM outright.
+demand ~9.1 TB/s and exceed HBM outright. **~29% is not the ceiling**: a pure streaming read
+(`babel`) reaches 91% on this box, and the gap is because each expert processes only ~1.7
+tokens at batch 64 — a GEMV, which cannot saturate HBM. Raising `max-num-seqs` is the lever;
+50–65% looks reachable, 90% does not.
 
 **§4 Communication** — XGMI carries **only activations**: 186 all-reduces/token, 2.67 MB/token,
 **5.87 GB/s per GPU (1.1% of ceiling)**. No all-to-all, because EP is off. No gradients
@@ -216,28 +219,93 @@ alone, far past the `max_num_seqs=64` limit.
 Compute and interconnect are both ~1% utilized; HBM traffic is two orders of magnitude
 closer to its ceiling. The ranking is unambiguous even with generous error bars.
 
-### Why HBM, and the MoE batching subtlety
+### 3.1 Why HBM — the MoE batching mechanism
 
 At **batch 1**, only 16+2 experts fire per layer → ~3.4 GB/GPU of weights read per step. At
 **batch 64**, the 64 tokens route independently, so the expected number of *distinct* experts
 touched per layer is `E × (1 − (1−1/E)^(B·topk))` = **610 of 896** — not 16. Weight reads
-jump to **116 GB/GPU per step**:
+jump to **116 GB/GPU per step**, which is the ~2287 GB/s in the table above.
 
-| Concurrency | Distinct experts/layer | Weight bytes/GPU/step | Sustained HBM |
+This is the defining property of sparse MoE: **compute grows with batch, but weight traffic
+grows much faster** until nearly every expert is touched every step.
+
+MXFP4 is what makes this tractable at all. At BF16 the same reads would be **4× larger**
+(~9.1 TB/s demanded), exceeding HBM bandwidth outright and making the model
+bandwidth-*starved* rather than merely bandwidth-dominated.
+
+### 3.2 How to improve it — raising HBM utilization above the current ~28%
+
+The bottleneck is HBM, but the box is **not** delivering all the HBM it has: 2287 of
+8000 GB/s. So the optimization target is clear — **close the gap between 28% and what the
+memory system can actually sustain.** Two questions follow: what is the real ceiling, and
+what moves us toward it.
+
+**What "full" means here.** RVS `babel` — a pure streaming-read kernel with no compute, no
+routing, no attention — measured **7,260 GB/s = 91% of the 8 TB/s spec** on this same box
+(Part A, `logs/rvs/health_*/babel.log`). So **~91% is the practical hardware ceiling**, and
+the engine is currently delivering roughly **one third of what the memory system can do**.
+
+**Why the shortfall: the MoE GEMMs are too thin.** With ~610 experts fired across 64 tokens,
+each expert sees only:
+
+```
+tokens per expert = B x topk / distinct_experts = 64 x 16 / 610 = 1.7
+```
+
+Each expert's ~16.5 MB weight matrix is read to do arithmetic on **1.7 tokens** — a
+matrix-*vector* product, not matrix-matrix. A GEMV cannot issue enough concurrent memory
+requests to saturate HBM: it is memory-bound *and* latency-bound simultaneously. That is
+where the missing ~62 percentage points go — not to any other consumer.
+
+**The lever is batch size, and MoE has a favourable asymmetry.** Past a certain batch every
+expert activates anyway, so weight bytes **plateau** while tokens keep growing — each weight
+read amortizes over more work:
+
+| Batch | Experts fired/layer | Tokens per expert | Weights read/GPU | KV used/GPU |
+|---:|---:|---:|---:|---:|
+| 64 *(measured today)* | 610 | **1.7** | 116 GB | 1.8 GB |
+| 256 | 887 | 4.6 | 169 GB | 7.2 GB |
+| 512 | 896 (all) | 9.1 | 170 GB | 14.5 GB |
+| 1024 | 896 (all) | **18.3** | **171 GB** (flat) | 29.0 GB |
+
+From batch 512 upward weight traffic is **constant at ~170 GB/GPU** — every additional token
+is nearly free in bandwidth terms. Projecting with plausible utilization gains as the GEMMs
+widen:
+
+| Batch | Assumed HBM util | Step time | Projected tok/s |
 |---:|---:|---:|---:|
-| 1 | 18 | 3.4 GB | ~156 GB/s |
-| 64 | **610** | **116 GB** | **~2287 GB/s** |
+| 64 *(measured)* | **28.5%** | 50.9 ms | **1,259** |
+| 256 | ~45% | ~47 ms | ~5,500 |
+| 1024 | ~60% | ~36 ms | ~29,000 |
 
-This is the defining property of sparse MoE at scale: **compute grows with batch, but weight
-traffic grows much faster** until nearly every expert is touched every step. Past ~batch 128
-essentially all 896 experts fire and weight traffic saturates — beyond that point batching
-becomes nearly free, which is exactly why the TPOT curve is still gentle at c=64.
+**The memory is already allocated**: at batch 1024 the KV cache needs 29 GB/GPU against the
+**57.7 GB pool** carved out at startup — over half of it sits idle today (§2). The binding
+limit is **`--max-num-seqs 64`** inherited from the recipe, not hardware.
 
-MXFP4 is what makes this tractable. At BF16 the same reads would be **4× larger** (~9.1 TB/s
-demanded), exceeding HBM bandwidth outright and making the model bandwidth-starved rather
-than merely bandwidth-dominated.
+**Could it reach 90%?** Realistically no. 91% is what a pure streaming read achieves with
+nothing else in the loop. A real engine must also do MXFP4 dequantization, expert
+gather/scatter routing, MLA and KDA attention, 186 all-reduces per token, and interleaved
+prefill — all of which consume step time without reading weights. **50–65% is the plausible
+target**, which on the projection above is still a ~4–20× throughput gain over today.
 
-### Why TTFT is flat but TPOT rises
+Ranked, the ways to raise HBM utilization:
+
+1. **Raise `--max-num-seqs`** (64 → 256 or higher). Biggest lever, costs nothing, memory
+   already provisioned. Untested only because the recipe's value was taken as given.
+2. **Speculative decoding / MTP** — verifies several tokens per weight read, which widens
+   the GEMM exactly like a larger batch does.
+3. **Expert parallelism** — would make each GPU read fewer, whole experts. **Tested and
+   unavailable**: ATOM raises `NotImplementedError` for EP with the MXFP4 SiTUv2 kernel
+   (§5, item 1).
+4. **Prefill/decode disaggregation** — removes interleaved prefill from the decode step so
+   the measured window is closer to pure weight streaming.
+
+> The projected rows are arithmetic under an *assumed* utilization curve, not measurements —
+> the batch/expert/byte columns are exact, the utilization guesses are not. Testing is cheap
+> and is the obvious next experiment: re-run tier 3 with `MAX_NUM_SEQS=256` and `KIMI_CONC`
+> extended past 64, then read the real numbers off the sweep.
+
+### 3.3 Why TTFT is flat but TPOT rises
 
 TTFT stays ~225→286 ms across a 64× concurrency increase because prefill is genuinely
 compute-dense (1024 tokens/request in parallel) and has compute headroom. TPOT rises 2.3×

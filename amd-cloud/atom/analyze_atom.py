@@ -224,11 +224,21 @@ def main():
             roof_rows.append((m, tp, B, tps, per_gpu, step_ms, wgb, roof, 100 * tps / roof))
         if roof_rows:
             L += ["### Are these numbers what the hardware should give?", "",
-                  "A decode step must read every weight it activates. That sets a hard "
-                  "ceiling: `tok/s <= batch x (HBM bandwidth x GPUs) / weight-bytes-read`. "
-                  "MI355X has 8 TB/s of HBM per GPU. Comparing measured against that "
-                  "ceiling says whether a model is bandwidth-limited or limited by "
-                  "something else.", "",
+                  "**Roofline tok/s** = the most tokens/s possible if reading weights from "
+                  "HBM were the *only* cost. One decode step emits `batch` tokens and must "
+                  "read every weight it activates once, so:", "",
+                  "```",
+                  "step_time >= weight_bytes / (HBM_BW_per_GPU x GPUs)",
+                  "roofline  =  batch / step_time",
+                  "          =  batch x (HBM_BW_per_GPU x GPUs) / weight_bytes",
+                  "```", "",
+                  "e.g. Llama-70B: 256 x (8000 GB/s x 8) / 68 GB = **240,941 tok/s**.", "",
+                  "`weight_bytes` is what is *actually read*, not model size — identical for "
+                  "dense models, but for Kimi-K3 it is **931 GB**, not 1.5 TB and not the "
+                  "~84 B active params, because at batch 64 roughly 610 of 896 experts fire "
+                  "per layer. It deliberately ignores KV reads, compute, collectives and "
+                  "prefill, so it is a *loose upper bound*: far below it means weight traffic "
+                  "is not the constraint; near it means it is.", "",
                   "| Model | GPUs | Peak tok/s | tok/s **per GPU** | step (ms) | weights read/step | roofline tok/s | % of roofline |",
                   "|---|---:|---:|---:|---:|---:|---:|---:|"]
             for (m, tp, B, tps, per_gpu, step_ms, wgb, roof, pct) in roof_rows:
@@ -241,12 +251,43 @@ def main():
                   "**bandwidth-bound** while Qwen and Llama are not. It also matches, "
                   "independently, the ~29% HBM utilization measured in `kimi-k3.md` §3 — two "
                   "different routes to the same number.", "",
-                  "For the dense models the weights are small (8 GB and 68 GB) so weight "
-                  "traffic is a rounding error; what actually limits them is prefill work "
-                  "(ISL=1024 means 262K prompt tokens to chew through at c=256), attention "
-                  "over a growing KV cache, and per-step framework overhead. Their distance "
-                  "from the roofline is expected, not a defect — a pure-decode roofline is "
-                  "simply the wrong yardstick for a mixed prefill+decode serving benchmark.", ""]
+                  "To be precise about *which* bandwidth: this is **intra-GPU HBM** — each "
+                  "GPU reading weights out of its own 8 TB/s on-package memory. It is **not** "
+                  "the XGMI GPU-to-GPU interconnect, which in the same run carries only "
+                  "activation all-reduces and sits at ~1% utilized. The two are often "
+                  "conflated; here they differ by roughly 390:1 in traffic. "
+                  "**See [`kimi-k3.md`](kimi-k3.md) for the full breakdown** — §3 ranks the "
+                  "three candidate bottlenecks (compute 1.1%, HBM ~29%, XGMI ~1.1%), §4 "
+                  "gives the per-step byte volumes on each path, and the terminology section "
+                  "at the top defines HBM vs XGMI.", "",
+                  "#### If the dense models are not bandwidth-bound, what limits them?", "",
+                  "**Not compute either.** Accounting for a Llama-70B decode step at c=256 "
+                  "(measured step time 27.4 ms):", "",
+                  "| Candidate cost | Estimated per step | Share of step |",
+                  "|---|---:|---:|",
+                  "| Weight reads (68 GB / 8 GPUs at 8 TB/s) | ~1.1 ms | ~4% |",
+                  "| KV-cache reads (~7.9 GB/GPU) | ~1.0 ms | ~4% |",
+                  "| Decode compute (2 x 70e9 x 256 FLOP) | ~3.4 ms | ~12% |",
+                  "| TP all-reduce (160 calls/step) | ~2-3 ms | ~10% |",
+                  "| **Unaccounted** | **~19 ms** | **~70%** |", "",
+                  "No single hardware resource is saturated: bandwidth ~4%, compute ~12%, "
+                  "interconnect ~10%. Calling these models \"compute-bound\" would be wrong. "
+                  "The ~70% residual is almost certainly **prefill interleaved with decode** "
+                  "— at c=256 with ISL=1024 there are ~262K prompt tokens to process, and "
+                  "TTFT p99 climbing to 5,470 ms shows requests queueing behind that work — "
+                  "plus scheduler and framework overhead per step.", "",
+                  "So the three tiers are limited by three different things: **Kimi-K3 by "
+                  "memory bandwidth**, and **Qwen / Llama by prefill throughput and "
+                  "scheduling**, with no hardware unit near its ceiling. Their distance from "
+                  "the roofline is therefore expected rather than a defect — a *pure-decode* "
+                  "roofline is the wrong yardstick for a **mixed prefill+decode** serving "
+                  "benchmark.", "",
+                  "> **This last part is inference, not measurement.** The residual is what "
+                  "is left after subtracting four estimated costs; it is not a profiled "
+                  "breakdown, and the individual estimates carry their own error. Settling "
+                  "it properly needs a profiler trace, or a decode-only run (short ISL, or "
+                  "prefill and decode measured separately) to isolate the prefill "
+                  "contribution.", ""]
         if notes:
             L += ["### Reading the comparison", ""] + notes + [""]
         L += ["> **Caveat: different TP.** Tier 1 is TP=1 (single GPU), tiers 2 and 3 are "

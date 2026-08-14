@@ -544,6 +544,22 @@ def main() -> int:
     m8 = (mlm.get(8) or {}).get("last_compute_tflops")
     g8 = (gemm.get(8) or {}).get("mean_tflops")
     gd8 = (gemm_dense.get(8) or {}).get("mean_tflops")
+
+    # Part A's RVS gst bf16 ceiling, read live from results/rvs_tflops.csv if Part A has
+    # run. This is the silicon ceiling (no framework at all) and sits above both Primus
+    # rows. Deliberately not hardcoded so it tracks a re-run of Part A.
+    rvs8 = None
+    try:
+        rvs_csv = report_path.parent / "rvs_tflops.csv"
+        if rvs_csv.exists():
+            import csv as _csv
+            with rvs_csv.open() as fh:
+                for row in _csv.DictReader(fh):
+                    if row.get("precision") == "bf16" and row.get("gpus") == "8":
+                        rvs8 = float(row["avg_per_gpu_tflops"])
+                        break
+    except Exception:
+        rvs8 = None
     if m8 and (g8 or gd8):
         parts.append("## 6a. Megatron vs the GEMM ceilings (N=8, BF16, same host)\n")
         parts.append(
@@ -553,25 +569,62 @@ def main() -> int:
         )
         rows = ["| Ceiling | TF/s/GPU | Megatron as % | What the gap costs |",
                 "|---|---:|---:|---|"]
+        if rvs8:
+            rows.append(f"| RVS `gst` bf16 — silicon, no framework (Part A) | {fmt(rvs8)} | "
+                        f"**{100*m8/rvs8:.0f}%** | PyTorch/framework dispatch, then everything below |")
         if g8:
             rows.append(f"| Primus `gemm` — square 4096^3 | {fmt(g8)} | "
                         f"**{100*m8/g8:.0f}%** | off-peak shapes + everything non-GEMM |")
         if gd8:
-            rows.append(f"| Primus `gemm-dense` — llama shape mix | {fmt(gd8)} | "
+            rows.append(f"| Primus `gemm-dense` — dense-model shape mix | {fmt(gd8)} | "
                         f"**{100*m8/gd8:.0f}%** | non-GEMM work only (shape penalty already priced in) |")
         rows.append(f"| Megatron llama2-7B (compute per GPU) | **{fmt(m8)}** | 100% | — |")
         parts.append("\n".join(rows))
         parts.append("")
         if gd8:
             parts.append(
-                f"**`gemm-dense` is the right baseline.** It runs the llama shape mix — the "
-                f"same QKV / O / FFN-gate / up / down GEMMs Megatron issues — so the "
-                f"{100*m8/gd8:.0f}% figure isolates *non-GEMM* overhead: attention, RMSNorm, "
-                f"RoPE, optimizer, and the gradient all-reduce. The square-GEMM row is a "
-                f"looser ceiling because 4096^3 is a shape Megatron never actually runs.\n\n"
+                f"**`gemm-dense` is the right baseline.** It runs a dense-transformer shape "
+                f"mix — the kind of QKV / O / FFN-gate / up / down GEMMs Megatron issues — "
+                f"so the {100*m8/gd8:.0f}% figure isolates *non-GEMM* overhead: attention, "
+                f"RMSNorm, RoPE, optimizer, and the gradient all-reduce. The square-GEMM row "
+                f"is a looser ceiling because 4096^3 is a shape Megatron never actually "
+                f"runs.\n\n"
                 f"**`gemm-deepseek` is deliberately excluded.** Those are MoE expert shapes "
                 f"with small, skewed K-dimensions; llama2-7B is dense and never issues them, "
                 f"so a percentage against it would be meaningless.\n"
+            )
+        if rvs8 and g8:
+            parts.append(
+                f"**RVS `gst` vs Primus `gemm` — what actually differs.** Both measure BF16 "
+                f"matrix multiply on this same host, and the {100*(1-g8/rvs8):.0f}% gap "
+                f"between them ({fmt(rvs8)} -> {fmt(g8)}) is worth understanding, because it "
+                f"is *not* only shape:\n\n"
+                f"| | RVS `gst` (Part A) | Primus `gemm` (Part C) |\n"
+                f"|---|---|---|\n"
+                f"| Stack | hipBLASLt called **directly from C++** | **PyTorch** -> hipBLASLt |\n"
+                f"| Shape | 8192 x 8192 x 16384 | 4096 x 4096 x 4096 |\n"
+                f"| Cache defeat | `rotating: 512` buffers | 2 GB rotating buffer |\n"
+                f"| Metric | **peak** across log intervals | **mean** across ranks |\n"
+                f"| Duration | 30 s | 10 s |\n\n"
+                f"Two effects dominate. **Framework dispatch**: RVS has no Python, no "
+                f"autograd, no tensor wrapper — it is the closest thing to a pure library "
+                f"number. **Matrix size**: RVS' GEMM is 8x larger in K and 4x in M/N, so "
+                f"fixed per-call overhead amortizes far better. The *peak-vs-mean* metric "
+                f"choice also flatters RVS slightly. So the RVS row is a genuine silicon "
+                f"ceiling, but it is a deliberately favourable one — the Primus rows are "
+                f"closer to what any real framework can reach.\n"
+            )
+        if gd8:
+            parts.append(
+                "> **Note on the name — \"dense\" means dense *model*, not dense *matrix*.** "
+                "The contrast is with its sibling `gemm-deepseek` (a MoE / sparse-expert "
+                "model), not with sparse matrices — all of these GEMMs are fully dense. So "
+                "plain `gemm` is not \"denser\" than `gemm-dense` despite the name; it is "
+                "simply one arbitrary shape (`--M --N --K`, here 4096^3) rather than a "
+                "model-derived set. Caveat: that `gemm-dense` specifically uses *llama* "
+                "shapes is an inference from the dense-vs-DeepSeek pairing, not verified "
+                "against Primus' source — what is certain is that it is a dense-transformer "
+                "shape set, which is what makes it the right ceiling for llama2-7B.\n"
             )
         parts.append(
             "> **Three caveats.** (1) Megatron's TFLOPs are an *analytical* count "

@@ -166,13 +166,28 @@ How much of the achievable matrix-multiply rate does real training actually real
 
 | Ceiling | TF/s/GPU | Megatron as % | What the gap costs |
 |---|---:|---:|---|
+| RVS `gst` bf16 — silicon, no framework (Part A) | 1639.22 | **69%** | PyTorch/framework dispatch, then everything below |
 | Primus `gemm` — square 4096^3 | 1443.51 | **79%** | off-peak shapes + everything non-GEMM |
-| Primus `gemm-dense` — llama shape mix | 1308.57 | **87%** | non-GEMM work only (shape penalty already priced in) |
+| Primus `gemm-dense` — dense-model shape mix | 1308.57 | **87%** | non-GEMM work only (shape penalty already priced in) |
 | Megatron llama2-7B (compute per GPU) | **1135.20** | 100% | — |
 
-**`gemm-dense` is the right baseline.** It runs the llama shape mix — the same QKV / O / FFN-gate / up / down GEMMs Megatron issues — so the 87% figure isolates *non-GEMM* overhead: attention, RMSNorm, RoPE, optimizer, and the gradient all-reduce. The square-GEMM row is a looser ceiling because 4096^3 is a shape Megatron never actually runs.
+**`gemm-dense` is the right baseline.** It runs a dense-transformer shape mix — the kind of QKV / O / FFN-gate / up / down GEMMs Megatron issues — so the 87% figure isolates *non-GEMM* overhead: attention, RMSNorm, RoPE, optimizer, and the gradient all-reduce. The square-GEMM row is a looser ceiling because 4096^3 is a shape Megatron never actually runs.
 
 **`gemm-deepseek` is deliberately excluded.** Those are MoE expert shapes with small, skewed K-dimensions; llama2-7B is dense and never issues them, so a percentage against it would be meaningless.
+
+**RVS `gst` vs Primus `gemm` — what actually differs.** Both measure BF16 matrix multiply on this same host, and the 12% gap between them (1639.22 -> 1443.51) is worth understanding, because it is *not* only shape:
+
+| | RVS `gst` (Part A) | Primus `gemm` (Part C) |
+|---|---|---|
+| Stack | hipBLASLt called **directly from C++** | **PyTorch** -> hipBLASLt |
+| Shape | 8192 x 8192 x 16384 | 4096 x 4096 x 4096 |
+| Cache defeat | `rotating: 512` buffers | 2 GB rotating buffer |
+| Metric | **peak** across log intervals | **mean** across ranks |
+| Duration | 30 s | 10 s |
+
+Two effects dominate. **Framework dispatch**: RVS has no Python, no autograd, no tensor wrapper — it is the closest thing to a pure library number. **Matrix size**: RVS' GEMM is 8x larger in K and 4x in M/N, so fixed per-call overhead amortizes far better. The *peak-vs-mean* metric choice also flatters RVS slightly. So the RVS row is a genuine silicon ceiling, but it is a deliberately favourable one — the Primus rows are closer to what any real framework can reach.
+
+> **Note on the name — "dense" means dense *model*, not dense *matrix*.** The contrast is with its sibling `gemm-deepseek` (a MoE / sparse-expert model), not with sparse matrices — all of these GEMMs are fully dense. So plain `gemm` is not "denser" than `gemm-dense` despite the name; it is simply one arbitrary shape (`--M --N --K`, here 4096^3) rather than a model-derived set. Caveat: that `gemm-dense` specifically uses *llama* shapes is an inference from the dense-vs-DeepSeek pairing, not verified against Primus' source — what is certain is that it is a dense-transformer shape set, which is what makes it the right ceiling for llama2-7B.
 
 > **Three caveats.** (1) Megatron's TFLOPs are an *analytical* count (~6·params·tokens), not measured FLOPs — so this is model-FLOPs utilization, not a literal hardware efficiency. (2) The microbenches are pure compute with no collectives; Megatron includes a gradient all-reduce per step. (3) Both numbers must be kernel-time (`compute per GPU`); mixing in the wall-clock figure invalidates the ratio entirely.
 

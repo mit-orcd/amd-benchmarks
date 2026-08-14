@@ -6,16 +6,82 @@ Unlike Parts A-C this measures **inference serving**, not raw FLOPS or fabric ba
 
 ## Summary — three models at a glance
 
-| Tier | Model | TP | Peak tok/s | @ conc | TTFT med @c=1 (ms) | TPOT med @c=1 (ms) | Knee |
-|---|---|---:|---:|---:|---:|---:|---:|
-| tier 1 | `Qwen3-8B-FP8` | 1 | **14,962.7** | 256 | 45.8 | 6.24 | none in range |
-| tier 2 | `Llama-3.1-70B-Instruct-FP8` | 8 | **9,342.4** | 256 | 71.9 | 9.81 | none in range |
-| tier 3 | `Kimi-K3` | 8 | **1,258.5** | 64 | 224.9 | 21.48 | none in range |
+| Tier | Model | Params (total / active) | On disk | TP | Peak tok/s | @ conc | TTFT med @c=1 (ms) | TPOT med @c=1 (ms) | Knee |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| tier 1 | `Qwen3-8B-FP8` | 8 B / 8 B | 8.9 GB | 1 | **14,962.7** | 256 | 45.8 | 6.24 | none in range |
+| tier 2 | `Llama-3.1-70B-Instruct-FP8` | 70 B / 70 B | 68 GB | 8 | **9,342.4** | 256 | 71.9 | 9.81 | none in range |
+| tier 3 | `Kimi-K3` | 2.78 T / ~84 B | 1.5 TB | 8 | **1,258.5** | 64 | 224.9 | 21.48 | none in range |
+
+*Active* params are what actually fire per token — identical to total for a dense model, but only ~3% of total for Kimi-K3's MoE. That distinction drives most of the throughput differences below.
+
+## The three models
+
+### Tier 1 — `Qwen3-8B-FP8`
+
+[`Qwen/Qwen3-8B-FP8`](https://huggingface.co/Qwen/Qwen3-8B-FP8) · `Qwen3ForCausalLM` · **dense**
+
+| | |
+|---|---|
+| Parameters | **8 B** total, 8 B active per token |
+| Checkpoint on disk | 8.9 GB |
+| Quantization | FP8 (block 128) |
+| Layers / hidden | 36 / 4096 |
+| Attn heads / KV heads | 32 / 8 |
+| Vocab / max context | 151,936 / 40K |
+| Tensor parallel | TP=1 |
+
+Smallest tier and the only single-GPU run. Ungated on HF, so it proves the serving path without a token. GQA 32:8.
+
+### Tier 2 — `Llama-3.1-70B-Instruct-FP8`
+
+[`RedHatAI/Meta-Llama-3.1-70B-Instruct-FP8`](https://huggingface.co/RedHatAI/Meta-Llama-3.1-70B-Instruct-FP8) · `LlamaForCausalLM` · **dense**
+
+| | |
+|---|---|
+| Parameters | **70 B** total, 70 B active per token |
+| Checkpoint on disk | 68 GB |
+| Quantization | FP8 W8A8 (compressed-tensors) |
+| Layers / hidden | 80 / 8192 |
+| Attn heads / KV heads | 64 / 8 |
+| Vocab / max context | 128,256 / 131K |
+| Tensor parallel | TP=8 |
+
+The dense headline. At TP=8 every layer all-reduces, so this is the tier that puts RCCL in the per-token critical path. RedHatAI quant chosen because meta-llama is gated.
+
+### Tier 3 — `Kimi-K3`
+
+[`moonshotai/Kimi-K3`](https://huggingface.co/moonshotai/Kimi-K3) · `KimiK3ForConditionalGeneration` · **MoE (hybrid attn)**
+
+| | |
+|---|---|
+| Parameters | **2.78 T** total, ~84 B active per token |
+| Checkpoint on disk | 1.5 TB |
+| Quantization | MXFP4 experts + PTPC-FP8 rest |
+| Layers / hidden | 93 / 7168 |
+| Attn heads / KV heads | 96 / 96 |
+| Vocab / max context | 163,840 / 1M |
+| Tensor parallel | TP=8 |
+
+Frontier MoE: 896 routed experts, top-16 + 2 shared, so only ~3% of the model fires per token. 24 MLA full-attention layers + 69 KDA linear-attention layers — only the 24 keep a growing KV cache.
+
+### Are these numbers what the hardware should give?
+
+A decode step must read every weight it activates. That sets a hard ceiling: `tok/s <= batch x (HBM bandwidth x GPUs) / weight-bytes-read`. MI355X has 8 TB/s of HBM per GPU. Comparing measured against that ceiling says whether a model is bandwidth-limited or limited by something else.
+
+| Model | GPUs | Peak tok/s | tok/s **per GPU** | step (ms) | weights read/step | roofline tok/s | % of roofline |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `Qwen3-8B-FP8` | 1 | 14,962.7 | **14,962.7** | 17.1 | 8.0 GB | 256,000.0 | **5.8%** |
+| `Llama-3.1-70B-Instruct-FP8` | 8 | 9,342.4 | **1,167.8** | 27.4 | 68.0 GB | 240,941.2 | **3.9%** |
+| `Kimi-K3` | 8 | 1,258.5 | **157.3** | 50.9 | 931.0 GB | 4,399.6 | **28.6%** |
+
+**Yes — and the % column is the interesting part.** Kimi-K3 sits at ~29% of its weight-bandwidth ceiling while the two dense models sit at 4-6%. That is not Kimi doing better; it means Kimi is genuinely **bandwidth-bound** while Qwen and Llama are not. It also matches, independently, the ~29% HBM utilization measured in `kimi-k3.md` §3 — two different routes to the same number.
+
+For the dense models the weights are small (8 GB and 68 GB) so weight traffic is a rounding error; what actually limits them is prefill work (ISL=1024 means 262K prompt tokens to chew through at c=256), attention over a growing KV cache, and per-step framework overhead. Their distance from the roofline is expected, not a defect — a pure-decode roofline is simply the wrong yardstick for a mixed prefill+decode serving benchmark.
 
 ### Reading the comparison
 
-- **8B (TP=1) vs 70B (TP=8): 1.60x.** An ~8.75x larger model costs only ~1.6x throughput, because TP=8 spreads it across the whole box. Note the 8B runs on **one** GPU and the 70B on **eight**, so this is a serving-capability comparison, not a per-GPU efficiency one.
-- **70B vs Kimi-K3: 7.4x.** Both TP=8. Kimi-K3 is 2.78T total parameters but only ~84B *active* per token (MoE, top-16 of 896 experts), so its active size is comparable to the 70B — yet it is 7.4x slower. That is the real cost of MoE: sparse activation saves FLOPs but not weight *traffic*, and traffic is the binding constraint. See `kimi-k3.md` for the full bandwidth analysis.
+- **8B vs 70B — tracks model size, roughly.** Raw throughput differs only 1.60x, but that hides the GPU count: **per GPU** it is 14,963 vs 1,168 tok/s, a **12.8x** gap against an 8.8x active-parameter ratio. So the 70B recovers most of what its size costs by using 8 GPUs; the residual ~1.5x beyond pure size scaling is TP communication, a larger KV cache per token, and lower per-GPU efficiency. That is the expected shape.
+- **70B vs Kimi-K3 — does NOT track model size, and that is the finding.** Both are TP=8, so per GPU it is 1,168 vs 157 tok/s — **7.4x** apart for only a **1.2x** difference in *active* parameters (70 B vs ~84 B). Size does not explain it; **weight traffic** does. At batch 64 Kimi's tokens route independently across 896 experts, so 610 of them fire per layer and the engine reads **931 GB per step vs the 70B's 68 GB — 13.7x more traffic for 1.2x more active parameters.** A 7.4x slowdown from 13.7x more traffic is actually *better* than linear, because Kimi converts bandwidth to tokens more efficiently (29% of roofline vs 4%). This is the central cost of MoE: sparse activation saves FLOPs but not bytes, and bytes are the binding constraint. Full analysis in `kimi-k3.md`.
 
 > **Caveat: different TP.** Tier 1 is TP=1 (single GPU), tiers 2 and 3 are TP=8. Throughput is therefore not normalized per GPU, and the tiers answer "what can this box serve for this model" rather than "which model is more efficient per GPU".
 

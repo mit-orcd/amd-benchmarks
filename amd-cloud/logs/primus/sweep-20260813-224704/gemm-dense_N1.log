@@ -1,0 +1,155 @@
+[2026-08-13 22:50:32] [NODE-0(mi355-gpu-33)] [INFO] [main] Loaded config: /workspace/Primus/runner/.primus.yaml
+[2026-08-13 22:50:32] [NODE-0(mi355-gpu-33)] [INFO] [main] Would execute: bash /workspace/Primus/runner/primus-cli-direct.sh -- benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:32] [NODE-0(mi355-gpu-33)] [INFO] [main] Executing: bash /workspace/Primus/runner/primus-cli-direct.sh -- benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:32] [NODE-0(mi355-gpu-33)] [INFO] -----------------------------------------------
+[2026-08-13 22:50:32] [NODE-0(mi355-gpu-33)] [INFO] primus-cli-direct.sh
+[2026-08-13 22:50:32] [NODE-0(mi355-gpu-33)] [INFO] -----------------------------------------------
+[2026-08-13 22:50:32] [NODE-0(mi355-gpu-33)] [INFO] [direct] PRE_PARSE_ARGS (runner options): 
+[2026-08-13 22:50:32] [NODE-0(mi355-gpu-33)] [INFO] [direct] PRIMUS_ARGS (python module args): benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:32] [NODE-0(mi355-gpu-33)] [INFO] [direct] Combined args for second pass: -- benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:32] [NODE-0(mi355-gpu-33)] [INFO] [direct] Loaded config: /workspace/Primus/runner/.primus.yaml
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] ========== Training Cluster Info ==========
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     MASTER_ADDR=localhost
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     MASTER_PORT=29539
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NNODES=1
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NODE_RANK=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     GPUS_PER_NODE=1
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] ========== Python Path and Data Paths ==========
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     PRIMUS_PATH=/workspace/Primus
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     PRIMUS_IMPORT_ROOT=/workspace/Primus
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     DATA_PATH=/workspace/Primus/data
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     HF_HOME=/workspace/Primus/data/huggingface
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     PYTHONPATH=/workspace/Primus:/opt/venv/lib/python3.12/site-packages:
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] ========== NCCL and Network Settings ==========
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     HIP_VISIBLE_DEVICES=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NCCL_DEBUG=WARN
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NCCL_CHECKS_DISABLE=1
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NCCL_IB_GID_INDEX=3
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NCCL_CROSS_NIC=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NCCL_IB_HCA=rocep105s0:1,rocep121s0:1,rocep137s0:1,rocep153s0:1,rocep193s0f0:1,rocep193s0f1:1,rocep233s0:1,rocep249s0:1,rocep25s0:1,rocep9s0:1
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     IP_INTERFACE=enp193s0f0np0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NCCL_SOCKET_IFNAME=enp193s0f0np0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     GLOO_SOCKET_IFNAME=enp193s0f0np0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] ========== RCCL Settings ==========
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     RCCL_MSCCL_ENABLE=1
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     RCCL_MSCCLPP_ENABLE=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     RCCL_MSCCLPP_FORCE_ENABLE=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     RCCL_MSCCLPP_THRESHOLD=1073741824
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     MSCCLPP_DISABLE_CHANNEL_CACHE=FALSE
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     TORCH_NCCL_USE_TENSOR_REGISTER_ALLOCATOR_HOOK=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] ========== AMD GPU Optimizations ==========
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     HSA_ENABLE_SDMA=1
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     HSA_NO_SCRATCH_RECLAIM=1
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] ========== General Performance Tuning ==========
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     GPU_MAX_HW_QUEUES=2
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     ENABLE_NUMA_BINDING=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     HSA_KERNARG_POOL_SIZE=<unset>
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     CUDA_DEVICE_MAX_CONNECTIONS=1
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     TORCH_NCCL_HIGH_PRIORITY=1
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NCCL_PXN_DISABLE=1
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NCCL_P2P_NET_CHUNKSIZE=524288
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] ========== Transformer Engine Optimizations ==========
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NVTE_USE_CAST_TRANSPOSE_TRITON=1
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NVTE_USE_OPTIMIZED_HIPIFIED_CAST_TRANSPOSE=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NVTE_CK_USES_BWD_V3=1
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NVTE_DEBUG=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NVTE_DEBUG_LEVEL=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NVTE_FUSED_ATTN_LOG_CONFIG=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     PATCH_TE_FLASH_ATTN=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     PRIMUS_DETERMINISTIC=<unset>
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NCCL_ALGO=<unset>
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     NVTE_ALLOW_NONDETERMINISTIC_ALGO=<unset>
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     ROCBLAS_DEFAULT_ATOMICS_MODE=<unset>
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     TORCH_COMPILE_DISABLE=<unset>
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO]     PRIMUS_TURBO_DEEPEP_TIMEOUT=600
+
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] === Loading Primus Environment Configuration ===
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] Detected GPU model: MI355X
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] Loading GPU-specific configuration: /workspace/Primus/runner/helpers/envs/MI355X.sh
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] Loading MI355X-specific optimizations...
+
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] === Validating Configuration ===
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] ✓ Configuration validation passed
+
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] === Environment Configuration Complete ===
+
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Detected hooks directory: /workspace/Primus/runner/helpers/hooks
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Executing hook: /workspace/Primus/runner/helpers/hooks/00_rebuild_primus_turbo.sh benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Hook /workspace/Primus/runner/helpers/hooks/00_rebuild_primus_turbo.sh finished in 0s
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Executing hook: /workspace/Primus/runner/helpers/hooks/01_patch_te_flash_attn_max_version.sh benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Hook /workspace/Primus/runner/helpers/hooks/01_patch_te_flash_attn_max_version.sh finished in 0s
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Executing hook: /workspace/Primus/runner/helpers/hooks/02_rebuild_bnxt.sh benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Hook /workspace/Primus/runner/helpers/hooks/02_rebuild_bnxt.sh finished in 0s
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Executing hook: /workspace/Primus/runner/helpers/hooks/03_detect_nccl_ib_tc.sh benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Hook /workspace/Primus/runner/helpers/hooks/03_detect_nccl_ib_tc.sh finished in 0s
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Executing hook: /workspace/Primus/runner/helpers/hooks/03_enable_ainic.sh benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Hook /workspace/Primus/runner/helpers/hooks/03_enable_ainic.sh finished in 0s
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Executing hook: /workspace/Primus/runner/helpers/hooks/03_enable_aiter.sh benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] exported env from hook: AITER_LOG_LEVEL=ERROR
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Hook /workspace/Primus/runner/helpers/hooks/03_enable_aiter.sh finished in 0s
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Executing hook: /workspace/Primus/runner/helpers/hooks/04_rebuild_uep.sh benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Hook /workspace/Primus/runner/helpers/hooks/04_rebuild_uep.sh finished in 0s
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Executing hook: /workspace/Primus/runner/helpers/hooks/05_check_primus_requirements.sh benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+
+[WARN] Primus requirements not satisfied. Missing packages:
+         - git+https://github.com/mlcommons/logging.git@6.0.0-rc5
+
+       To install:  pip install -r /workspace/Primus/requirements.txt
+
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Hook /workspace/Primus/runner/helpers/hooks/05_check_primus_requirements.sh finished in 0s
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Executing hook: /workspace/Primus/runner/helpers/hooks/05_deterministic.sh benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Hook /workspace/Primus/runner/helpers/hooks/05_deterministic.sh finished in 0s
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Executing hook: /workspace/Primus/runner/helpers/hooks/05_using_uep.sh benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] USING_UEP is disabled. PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND set to TURBO
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] exported env from hook: PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND=TURBO
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Hook /workspace/Primus/runner/helpers/hooks/05_using_uep.sh finished in 0s
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Executing hook: /workspace/Primus/runner/helpers/hooks/06_enable_sdma_all_gather.sh benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Hook /workspace/Primus/runner/helpers/hooks/06_enable_sdma_all_gather.sh finished in 0s
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Executing hook: /workspace/Primus/runner/helpers/hooks/06_fix_aiter_asm_dir.sh benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[fix_aiter_asm_dir] Symlink update done in /opt/venv/lib/python3.12/site-packages/aiter_meta/hsa: created=15, repaired=0
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Hook /workspace/Primus/runner/helpers/hooks/06_fix_aiter_asm_dir.sh finished in 0s
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Executing hook: /workspace/Primus/runner/helpers/hooks/10_auto_nccl_net.sh benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] Hook /workspace/Primus/runner/helpers/hooks/10_auto_nccl_net.sh finished in 0s
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] No hook directory for [benchmark/gemm-dense]
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [Hooks] All hooks executed successfully
+[2026-08-13 22:50:33] [NODE-0(mi355-gpu-33)] [INFO] [direct] NUMA binding: AUTO (default OFF)
+
+==========================================
+  Primus Direct Launch Configuration
+==========================================
+  Run Mode        : torchrun
+  Script Path     : primus/cli/main.py
+  Config File     : <none>
+  Log File        : logs/log_20260813_225032.txt
+  NUMA Binding    : auto
+  Patch Scripts   : <none>
+  Primus Args     : benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md
+
+  Distributed Settings:
+    NNODES          : 1
+    NODE_RANK       : 0
+    GPUS_PER_NODE   : 1
+    MASTER_ADDR     : localhost
+    MASTER_PORT     : 29539
+
+========== System Information ==========
+    Hostname: mi355-gpu-33
+    Kernel: 6.8.0-65-generic
+    CPUs: 256
+    Memory: 3023 GB
+    Container: Yes
+    Slurm Job: No
+    GPUs: 8
+  Full Command:
+    Executing: torchrun --nproc_per_node 1 --nnodes 1 --node_rank 0 --master_addr localhost --master_port 29539 --local-ranks-filter 0 primus/cli/main.py benchmark gemm-dense --duration 5 --output-file /out/gemm-dense_N1.md 2>&1 | tee logs/log_20260813_225032.txt
+
+==========================================
+  
+==========================================
+[Primus:Benchmark] suite=gemm-dense args=Namespace(debug=False, command='benchmark', suite='gemm-dense', func=<function run at 0x7110955f60c0>, model=None, seqlen=2048, hidden_size=4096, intermediate_size=11008, num_attention_heads=32, num_key_value_heads=32, head_dim=128, vocab_size=32000, dtype='bf16', mbs=1, output_file='/out/gemm-dense_N1.md', duration=5)
+[INFO] No model specified. Using CLI-provided parameters.
+Dense GEMM:   0%|          | 0/15 [00:00<?, ?it/s]Dense GEMM:   7%|▋         | 1/15 [00:08<01:57,  8.40s/it]Dense GEMM:  13%|█▎        | 2/15 [00:14<01:34,  7.24s/it]Dense GEMM:  20%|██        | 3/15 [00:21<01:22,  6.92s/it]Dense GEMM:  27%|██▋       | 4/15 [00:26<01:07,  6.16s/it]Dense GEMM:  33%|███▎      | 5/15 [00:31<00:57,  5.74s/it]Dense GEMM:  40%|████      | 6/15 [00:36<00:49,  5.49s/it]Dense GEMM:  47%|████▋     | 7/15 [00:41<00:42,  5.33s/it]Dense GEMM:  53%|█████▎    | 8/15 [00:46<00:36,  5.23s/it]Dense GEMM:  60%|██████    | 9/15 [00:51<00:30,  5.16s/it]Dense GEMM:  67%|██████▋   | 10/15 [00:56<00:25,  5.11s/it]Dense GEMM:  73%|███████▎  | 11/15 [01:01<00:20,  5.08s/it]Dense GEMM:  80%|████████  | 12/15 [01:06<00:15,  5.06s/it]Dense GEMM:  87%|████████▋ | 13/15 [01:11<00:10,  5.04s/it]Dense GEMM:  93%|█████████▎| 14/15 [01:16<00:05,  5.03s/it]Dense GEMM: 100%|██████████| 15/15 [01:21<00:00,  5.02s/it]Dense GEMM: 100%|██████████| 15/15 [01:21<00:00,  5.43s/it]
+[BENCH] Markdown saved: /out/gemm-dense_N1.md (overwrite)
+[✔] DENSE GEMM benchmark finished. Results saved to /out/gemm-dense_N1.md
+[2026-08-13 22:52:00] [NODE-0(mi355-gpu-33)] [INFO] [direct] torchrun finished successfully (code 0)

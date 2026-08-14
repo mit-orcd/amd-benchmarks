@@ -1,0 +1,6 @@
+torch 2.13.0+rocm7.14.0
+arch_list ['gfx942']
+gcnArchName gfx950:sramecc+:xnack-
+devices 8
+rel_err 3.012e-03
+TFLOPS 1319.8

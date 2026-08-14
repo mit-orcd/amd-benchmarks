@@ -1,0 +1,17 @@
+ATOM serving sweep 20260814_155031
+model   : /mnt/scratch/shaohao/models/Kimi-K3
+port    : 8002
+ISL/OSL : 1024/1024
+conc    : 1 2 4 8 16 32 64
+image   : rocm/atom-dev:latest
+started : 2026-08-14T15:50:31+00:00
+
+  conc        req/s    out_tok/s  ttft_ms_med  tpot_ms_med
+     1         0.00          0.0          0.0         0.00   rc=0 4s
+     2         0.00          0.0          0.0         0.00   rc=0 4s
+     4         0.00          0.0          0.0         0.00   rc=0 4s
+     8         0.00          0.0          0.0         0.00   rc=0 5s
+    16         0.00          0.0          0.0         0.00   rc=0 4s
+    32         0.00          0.0          0.0         0.00   rc=0 5s
+    64         0.00          0.0          0.0         0.00   rc=0 7s
+results: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/sweep_20260814_155031

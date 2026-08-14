@@ -1,0 +1,16 @@
+[2026-08-14T18:31:29+00:00] Kimi-K3 EP A/B start (driver log: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_ep_ab_20260814_183129)
+[2026-08-14T18:31:29+00:00] GPUs idle, proceeding
+[2026-08-14T18:31:29+00:00] starting server: TP=8 + EP enabled, port=8003
+[2026-08-14T18:34:50+00:00] EP SERVER FAILED TO START (rc=1) — this is itself a finding: EP is not in the
+[2026-08-14T18:34:50+00:00] validated recipe set and may be unsupported for the KDA/MLA hybrid.
+Starting ATOM server
+  image  : rocm/atom-dev:latest
+  model  : /mnt/scratch/shaohao/models/Kimi-K3
+  TP     : 8  (devices 0,1,2,3,4,5,6,7)
+  port   : 8003
+  logs   : /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/server_20260814_183129
+  cmd    : /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/server_20260814_183129/server_cmd.sh
+  container: 5f268a47341d
+Waiting for server 15s 30s 45s 60s 75s 90s 105s 120s 135s 150s 165s 180s
+ERROR: container exited before becoming ready. Last 40 lines:
+Error response from daemon: No such container: atom-bench

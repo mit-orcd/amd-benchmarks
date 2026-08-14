@@ -1,0 +1,42 @@
+[atom 16:03:54] Raised RLIMIT_NOFILE soft limit 1024 -> 65535 (hard=524288)
+  0%|          | 0/4 [00:00<?, ?it/s]Namespace(backend='vllm', base_url='http://localhost:8000', host='127.0.0.1', port=8000, endpoint='/v1/completions', dataset_name='random', dataset_path=None, max_concurrency=2, model='/model', tokenizer=None, best_of=1, use_beam_search=False, num_prompts=20, logprobs=None, request_rate=inf, burstiness=1.0, seed=0, trust_remote_code=True, disable_tqdm=False, profile=False, save_result=True, save_detailed=False, metadata=None, result_dir=None, result_filename='/out/c2.json', ignore_eos=True, percentile_metrics='ttft,tpot,itl,e2el', metric_percentiles='99', goodput=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, random_input_len=1024, random_output_len=1024, random_range_ratio=0.8, random_prefix_len=0, use_chat_template=False, hf_subset=None, hf_split=None, hf_output_len=None, tokenizer_mode='auto', served_model_name=None, lora_modules=None, num_warmups=4)
+-------------------  Input/Output Length Statistics  -------------------
+ input_lens : min=828   max=1014  mean=918.15   avg_token_mismatch=0.00  
+ output_lens: min=828   max=1016  mean=935.25  
+------------------------------------------------------------------------ 
+
+Starting initial single prompt test run...
+Warming up with 4 requests...
+ 25%|██▌       | 1/4 [00:05<00:17,  5.96s/it] 75%|███████▌  | 3/4 [00:11<00:03,  3.76s/it]100%|██████████| 4/4 [00:11<00:00,  2.98s/it]
+Warmup completed.
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 2
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:05<01:53,  5.97s/it] 10%|█         | 2/20 [00:06<00:50,  2.79s/it] 15%|█▌        | 3/20 [00:11<01:04,  3.79s/it] 20%|██        | 4/20 [00:12<00:42,  2.66s/it] 25%|██▌       | 5/20 [00:17<00:52,  3.49s/it] 30%|███       | 6/20 [00:17<00:34,  2.47s/it] 35%|███▌      | 7/20 [00:23<00:46,  3.58s/it] 40%|████      | 8/20 [00:24<00:30,  2.53s/it] 45%|████▌     | 9/20 [00:29<00:39,  3.57s/it] 50%|█████     | 10/20 [00:30<00:26,  2.63s/it] 55%|█████▌    | 11/20 [00:36<00:33,  3.68s/it] 60%|██████    | 12/20 [00:37<00:22,  2.77s/it] 65%|██████▌   | 13/20 [00:42<00:24,  3.56s/it] 70%|███████   | 14/20 [00:43<00:16,  2.72s/it] 75%|███████▌  | 15/20 [00:48<00:17,  3.60s/it] 80%|████████  | 16/20 [00:49<00:10,  2.59s/it] 85%|████████▌ | 17/20 [00:55<00:10,  3.67s/it] 90%|█████████ | 18/20 [00:55<00:05,  2.64s/it] 95%|█████████▌| 19/20 [01:01<00:03,  3.69s/it]100%|██████████| 20/20 [01:02<00:00,  2.70s/it]100%|██████████| 20/20 [01:02<00:00,  3.11s/it]
+Starting main benchmark run...
+============ Serving Benchmark Result ============
+Successful requests:                     20        
+Benchmark duration (s):                  62.14     
+Total input tokens:                      18363     
+Total generated tokens:                  18705     
+Request throughput (req/s):              0.32      
+Output token throughput (tok/s):         301.03    
+Total Token throughput (tok/s):          596.56    
+Concurrency:                             1.99      
+---------------Time to First Token----------------
+Mean TTFT (ms):                          43.80     
+Median TTFT (ms):                        36.51     
+P99 TTFT (ms):                           97.57     
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          6.58      
+Median TPOT (ms):                        6.57      
+P99 TPOT (ms):                           6.67      
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           6.58      
+Median ITL (ms):                         6.55      
+P99 ITL (ms):                            7.97      
+----------------End-to-end Latency----------------
+Mean E2EL (ms):                          6194.16   
+Median E2EL (ms):                        6253.79   
+P99 E2EL (ms):                           6719.98   
+==================================================

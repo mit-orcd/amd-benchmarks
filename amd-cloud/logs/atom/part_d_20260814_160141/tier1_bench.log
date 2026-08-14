@@ -1,0 +1,19 @@
+ATOM serving sweep 20260814_160237
+model   : /mnt/scratch/shaohao/models/Qwen3-8B-FP8
+port    : 8000
+ISL/OSL : 1024/1024
+conc    : 1 2 4 8 16 32 64 128 256
+image   : rocm/atom-dev:latest
+started : 2026-08-14T16:02:37+00:00
+
+  conc        req/s    out_tok/s  ttft_ms_med  tpot_ms_med
+     1         0.17        159.3         45.8         6.24   rc=0 74s completed=10
+     2         0.32        301.0         36.5         6.57   rc=0 78s completed=20
+     4         0.63        573.6         42.7         6.71   rc=0 80s completed=40
+     8         1.23       1146.3         42.3         6.77   rc=0 82s completed=80
+    16         2.38       2183.4         43.1         7.11   rc=0 83s completed=160
+    32         4.36       4028.9         43.1         7.67   rc=0 91s completed=320
+    64         7.87       7258.5         53.3         8.41   rc=0 102s completed=640
+   128        12.08      11110.8         68.2        11.14   rc=0 132s completed=1280
+   256        16.23      14962.7        182.2        16.34   rc=0 195s completed=2560
+results: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/sweep_20260814_160237

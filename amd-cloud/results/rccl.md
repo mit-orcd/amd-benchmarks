@@ -23,6 +23,10 @@ Source runs: rccl_all_20260813_211021, rccl_tests_20260813_213348
 | scatter | 61.4 | 122.5 | 180.0 | 69.4 | 74.5 | 73.6 | 396.6 | **67% down** |
 | sendrecv | 58.4 | 60.9 | 60.4 | 60.3 | 60.6 | 60.3 | 60.2 | none |
 
+![RCCL busbw vs GPU count — the non-power-of-2 cliff](rccl_busbw.png)
+
+Blue = ring-based collectives (need a complete ring across the mesh); orange = pairwise-sendrecv collectives (route directly to/from a root, no ring required). The shaded band is N=5,6,7. Ring-based collectives collapse ~3.5-5x inside it and snap back at N=8; `sendrecv` is flat throughout because a single point-to-point exchange never depends on ring construction. Regenerate with `plot_rccl_busbw.py results/rccl.csv results/rccl_busbw.png`.
+
 ### 1.1a Dell Cloud vs AMD Cloud — full sweep (busbw GB/s at top message size)
 
 Same silicon, same fabric (8 x MI355X, XGMI 4th gen K8 mesh) on both hosts; the only difference is software (ROCm 7.2.3 + gfx942 alias on Dell Cloud vs ROCm 7.14 native gfx950 here). Each cell is `Dell / AMD (AMD÷Dell)`.

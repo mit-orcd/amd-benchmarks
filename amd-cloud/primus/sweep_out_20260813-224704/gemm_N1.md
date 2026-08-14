@@ -1,6 +1,6 @@
 # Base GEMM Benchmark Report
 
-- Date: 2026-08-13 22:47:21
+- Date: 2026-08-13 22:50:31
 - Cluster: amd-aig-poolside
 - Benchmark Duration: 10 sec
 
@@ -25,4 +25,4 @@
 
 | host | world | rank | avg_time_ms | tflop | tflops | bandwidth_gbps | arith_intensity |
 |---|---|---|---|---|---|---|---|
-| mi355-gpu-33 | 1 | 0 | 0.094822 | 0.14 | 1449.44 | 1061.60 | 1365.33 |
+| mi355-gpu-33 | 1 | 0 | 0.094185 | 0.14 | 1459.24 | 1068.78 | 1365.33 |

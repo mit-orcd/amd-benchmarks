@@ -43,3 +43,25 @@ Only large/regenerable things go here — never `/`:
 | Model weights (Part D) | `models/` — Qwen3-8B-FP8 (8.9 GB), Llama-3.1-70B-Instruct-FP8 (68 GB), Kimi-K3 (1.5 TB) |
 | Analysis venv | `venv/` |
 | Container/JIT caches | `cache/{triton,hf,torch,pip}/` |
+
+## Why Part D (ATOM) uses tensor parallelism, not PP/DP/EP
+
+For single-node inference serving, TP is the right — and largely only sensible — choice:
+
+- **PP** (pipeline parallel) pipelines layers across GPUs, adding bubble overhead. It only
+  pays off across nodes or when a model won't fit otherwise. On one node with fast XGMI,
+  it's strictly worse for latency than TP.
+- **DP** (data parallel) replicates the whole model per GPU — impossible for the 70B/Kimi-K3
+  tiers (weights alone don't fit on one GPU), and for the 8B tier it would just measure 8
+  independent servers, not one scaled server.
+- **EP** (expert parallel) only applies to MoE layers, and it's a *complement* to TP, not a
+  replacement — ATOM uses MoE-specific paths for Kimi-K3 under the hood, alongside TP.
+
+TP shards every layer's weights across GPUs and all-reduces activations each layer, which is
+both the standard serving configuration and the reason Part D matters as a benchmark: it puts
+**RCCL in the per-token critical path**, connecting Part D's latency directly to Part B's
+collective results (see [[amd-cloud-plan]] for the RCCL non-power-of-2 cliff finding).
+
+Tier 1 (Qwen3-8B) runs at **TP=1 deliberately** — single GPU, no collectives at all — as the
+control, so tiers 2 (Llama-70B) and 3 (Kimi-K3) at **TP=8** isolate what tensor parallelism
+costs relative to that baseline.

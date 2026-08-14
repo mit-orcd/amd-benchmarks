@@ -339,14 +339,41 @@ def main() -> int:
     # --- Section 1: Megatron-LM ---
     parts.append("## 1. Megatron-LM (via Primus `train pretrain`)\n")
     parts.append(
-        "Workload: `examples/megatron/configs/llama2_7B-pretrain.yaml` "
-        "(llama2-7B, seq 4096, MBS=4, TP=PP=1, mock data, 50 iters, primus-turbo ON: "
+        "Workload: `examples/megatron/configs/MI355X/llama2_7B-BF16-pretrain.yaml` "
+        "(llama2-7B, seq 4096, MBS=4, mock data, primus-turbo ON: "
         "`use_turbo_attention`, `use_turbo_grouped_mlp`). "
-        "Default `global_batch_size: 256` (override under `overrides:`). "
-        "Non-power-of-2 N (3, 5, 6, 7) cannot use GBS=256 because Megatron requires "
-        "`GBS % (MBS·DP) == 0`; for those the override was set to the nearest valid "
-        "value (252 for N=3/7, 240 for N=5/6). The `last TF/s/GPU` column is the "
-        "steady-state value of the final logged iteration (after JIT warmup); `GBS` is parsed from the log.\n"
+        "The `last TF/s/GPU` column is the steady-state value of the final logged "
+        "iteration (after JIT warmup); `GBS` is parsed from the log.\n"
+    )
+    parts.append("#### Parallelism: pure data parallel (DP=N, TP=PP=CP=EP=1)\n")
+    parts.append(
+        "Verified from the run logs (`data_parallel_size=8, sequence_parallel_size=0`, "
+        "`world_size=8`) and the config (`tensor_model_parallel_size: 1`, "
+        "`pipeline_model_parallel_size: 1`, `expert_model_parallel_size: 1`, "
+        "`sequence_parallel` commented out).\n\n"
+        "Every GPU holds a **full llama2-7B replica** and processes its own micro-batches; "
+        "gradients are all-reduced once per step. This is a **weak-scaling** study, so the "
+        "driver computes `GBS(N) = MBS x N x GRAD_ACC = 4 x N x 8 = 32N` — constant work "
+        "per GPU as N grows, and divisible by `MBS x DP` by construction. That last point "
+        "matters: a fixed GBS=256 is *not* divisible by `MBS(4) x DP(N)` for N in "
+        "{3,5,6,7}, which is what forced the reference Dell Cloud run into three separate "
+        "rerun scripts. Computing GBS per N up front makes it one clean sweep.\n\n"
+        "**Why DP and not TP/PP/CP/EP here:**\n\n"
+        "- **DP is viable at all only because llama2-7B fits in one GPU's HBM** (288 GB on "
+        "MI355X). Any model that did not fit would have forced TP or PP.\n"
+        "- **TP** would shard each layer and all-reduce activations *every layer*, adding "
+        "collective traffic that is unnecessary when the model already fits.\n"
+        "- **PP** adds pipeline-bubble overhead and mainly earns its keep across nodes or "
+        "when the model does not fit; on one node with fast XGMI it is strictly worse.\n"
+        "- **CP** (context parallel) targets very long sequences; at seq 4096 it is "
+        "unnecessary.\n"
+        "- **EP** (expert parallel) applies only to MoE models; llama2-7B is dense.\n\n"
+        "This is the deliberate opposite of Part D (ATOM inference), which runs **TP=8** "
+        "because a 70B / 1.5 TB model cannot fit on one GPU. The contrast explains the "
+        "collective-sensitivity result in section 7: Megatron here issues **one gradient "
+        "all-reduce per ~5 s iteration**, so even the degraded N=5/6/7 RCCL bandwidth is "
+        "negligible against per-iteration compute. TP=8 inference has no such insulation — "
+        "its collectives sit in the **per-token critical path**.\n"
     )
     parts.append("### 1.1 TF/s/GPU vs #GPUs (Primus → Megatron-LM, llama2-7B BF16, turbo ON)\n")
     parts.append(build_megatron_table(mlm))

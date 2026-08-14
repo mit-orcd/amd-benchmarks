@@ -1,0 +1,43 @@
+[atom 16:21:51] Raised RLIMIT_NOFILE soft limit 1024 -> 65535 (hard=524288)
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+  0%|          | 0/4 [00:00<?, ?it/s]Namespace(backend='vllm', base_url='http://localhost:8001', host='127.0.0.1', port=8000, endpoint='/v1/completions', dataset_name='random', dataset_path=None, max_concurrency=2, model='/model', tokenizer=None, best_of=1, use_beam_search=False, num_prompts=20, logprobs=None, request_rate=inf, burstiness=1.0, seed=0, trust_remote_code=True, disable_tqdm=False, profile=False, save_result=True, save_detailed=False, metadata=None, result_dir=None, result_filename='/out/c2.json', ignore_eos=True, percentile_metrics='ttft,tpot,itl,e2el', metric_percentiles='99', goodput=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, random_input_len=1024, random_output_len=1024, random_range_ratio=0.8, random_prefix_len=0, use_chat_template=False, hf_subset=None, hf_split=None, hf_output_len=None, tokenizer_mode='auto', served_model_name=None, lora_modules=None, num_warmups=4)
+-------------------  Input/Output Length Statistics  -------------------
+ input_lens : min=828   max=1014  mean=918.15   avg_token_mismatch=0.00  
+ output_lens: min=828   max=1016  mean=935.25  
+------------------------------------------------------------------------ 
+
+Starting initial single prompt test run...
+Warming up with 4 requests...
+ 25%|██▌       | 1/4 [00:16<00:50, 16.80s/it] 75%|███████▌  | 3/4 [00:26<00:07,  7.85s/it]100%|██████████| 4/4 [00:26<00:00,  6.56s/it]
+Warmup completed.
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 2
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:09<02:59,  9.42s/it] 10%|█         | 2/20 [00:10<01:19,  4.42s/it] 15%|█▌        | 3/20 [00:18<01:42,  6.01s/it] 20%|██        | 4/20 [00:19<01:07,  4.22s/it] 25%|██▌       | 5/20 [00:27<01:22,  5.53s/it] 30%|███       | 6/20 [00:28<00:54,  3.92s/it] 35%|███▌      | 7/20 [00:37<01:13,  5.69s/it] 40%|████      | 8/20 [00:38<00:48,  4.03s/it] 45%|████▌     | 9/20 [00:47<01:02,  5.67s/it] 50%|█████     | 10/20 [00:48<00:41,  4.19s/it] 55%|█████▌    | 11/20 [00:57<00:52,  5.81s/it] 60%|██████    | 12/20 [00:58<00:34,  4.36s/it] 65%|██████▌   | 13/20 [01:07<00:38,  5.56s/it] 70%|███████   | 14/20 [01:08<00:25,  4.25s/it] 75%|███████▌  | 15/20 [01:17<00:28,  5.63s/it] 80%|████████  | 16/20 [01:17<00:16,  4.05s/it] 85%|████████▌ | 17/20 [01:27<00:17,  5.73s/it] 90%|█████████ | 18/20 [01:27<00:08,  4.13s/it] 95%|█████████▌| 19/20 [01:37<00:05,  5.79s/it]100%|██████████| 20/20 [01:37<00:00,  4.23s/it]100%|██████████| 20/20 [01:37<00:00,  4.89s/it]
+Starting main benchmark run...
+============ Serving Benchmark Result ============
+Successful requests:                     20        
+Benchmark duration (s):                  97.89     
+Total input tokens:                      18363     
+Total generated tokens:                  18705     
+Request throughput (req/s):              0.20      
+Output token throughput (tok/s):         191.08    
+Total Token throughput (tok/s):          378.67    
+Concurrency:                             1.99      
+---------------Time to First Token----------------
+Mean TTFT (ms):                          77.12     
+Median TTFT (ms):                        71.25     
+P99 TTFT (ms):                           140.95    
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          10.36     
+Median TPOT (ms):                        10.36     
+P99 TPOT (ms):                           10.43     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           10.35     
+Median ITL (ms):                         10.30     
+P99 ITL (ms):                            12.07     
+----------------End-to-end Latency----------------
+Mean E2EL (ms):                          9758.89   
+Median E2EL (ms):                        9914.70   
+P99 E2EL (ms):                           10594.63  
+==================================================

@@ -54,15 +54,26 @@ for C in $CONC_LIST; do
     " >"$log" 2>&1
   rc=$?; dur=$(($(date +%s)-start))
   if [[ -f "$json" ]]; then
-    read -r rps ots ttft tpot < <($PY - "$json" <<'PY'
+    read -r rps ots ttft tpot completed < <($PY - "$json" <<'PY'
 import json, sys
 d = json.load(open(sys.argv[1]))
 print(d.get("request_throughput", 0), d.get("output_throughput", 0),
-      d.get("median_ttft_ms", 0), d.get("median_tpot_ms", 0))
+      d.get("median_ttft_ms", 0), d.get("median_tpot_ms", 0), d.get("completed", 0))
 PY
 )
-    printf '%6s %12.2f %12.1f %12.1f %12.2f   rc=%s %ss\n' \
-      "$C" "$rps" "$ots" "$ttft" "$tpot" "$rc" "$dur" | tee -a "$SUM"
+    printf '%6s %12.2f %12.1f %12.1f %12.2f   rc=%s %ss completed=%s\n' \
+      "$C" "$rps" "$ots" "$ttft" "$tpot" "$rc" "$dur" "$completed" | tee -a "$SUM"
+    # benchmark_serving exits 0 even when EVERY request fails -- it just warns and writes
+    # zeros. Without this check a totally dead server yields a full sweep of 0.00 rows and
+    # a cheerful rc=0. Treat "no request completed" as fatal and stop immediately rather
+    # than burning the remaining concurrency points and the later tiers.
+    if [[ "${completed:-0}" -eq 0 ]]; then
+      echo "FATAL: 0 requests completed at concurrency $C — the server is rejecting requests." | tee -a "$SUM"
+      echo "       Check the server log for HTTP 4xx/5xx (a model-id mismatch returns 400" | tee -a "$SUM"
+      echo "       while /v1/models still answers 200). Aborting sweep." | tee -a "$SUM"
+      echo "       bench log: $log" | tee -a "$SUM"
+      exit 1
+    fi
   else
     printf '%6s %12s %12s %12s %12s   rc=%s %ss (no json)\n' \
       "$C" - - - - "$rc" "$dur" | tee -a "$SUM"

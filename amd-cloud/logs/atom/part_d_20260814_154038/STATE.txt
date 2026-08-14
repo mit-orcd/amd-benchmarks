@@ -1,0 +1,19 @@
+[2026-08-14T15:40:38+00:00] PART D start (which=all, driver log: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/part_d_20260814_154038)
+[2026-08-14T15:40:38+00:00] GPUs idle, no foreign ATOM server
+[2026-08-14T15:40:38+00:00] STAGE 0 functional + throughput gate
+[2026-08-14T15:40:44+00:00] gate OK: gfx950:sramecc+:xnack-, 8 devices, 1326.5 TF/s BF16, rel_err=2.792e-03
+[2026-08-14T15:40:44+00:00] ----- tier1: Qwen3-8B-FP8 TP=1 port=8000 -----
+[2026-08-14T15:41:36+00:00] tier1: server up
+[2026-08-14T15:42:41+00:00] tier1: bench rc=0 sweep=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/sweep_20260814_154136
+[2026-08-14T15:43:15+00:00] tier1: server stopped
+[2026-08-14T15:43:25+00:00] ----- tier2: Llama-3.1-70B-Instruct-FP8 TP=8 port=8001 -----
+[2026-08-14T15:44:44+00:00] tier2: server up
+[2026-08-14T15:45:45+00:00] tier2: bench rc=0 sweep=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/sweep_20260814_154444
+[2026-08-14T15:46:19+00:00] tier2: server stopped
+[2026-08-14T15:46:29+00:00] ----- tier3: Kimi-K3 TP=8 port=8002 -----
+[2026-08-14T15:50:30+00:00] tier3: server up
+[2026-08-14T15:51:05+00:00] tier3: bench rc=0 sweep=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/sweep_20260814_155031
+[2026-08-14T15:51:40+00:00] tier3: server stopped
+[2026-08-14T15:51:50+00:00] STAGE analysis
+[2026-08-14T15:51:50+00:00] analyze rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/results/atom.{md,csv}
+[2026-08-14T15:51:50+00:00] PART D DONE

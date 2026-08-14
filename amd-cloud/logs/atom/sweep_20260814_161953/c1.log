@@ -1,0 +1,43 @@
+[atom 16:19:57] Raised RLIMIT_NOFILE soft limit 1024 -> 65535 (hard=524288)
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+  0%|          | 0/2 [00:00<?, ?it/s]Namespace(backend='vllm', base_url='http://localhost:8001', host='127.0.0.1', port=8000, endpoint='/v1/completions', dataset_name='random', dataset_path=None, max_concurrency=1, model='/model', tokenizer=None, best_of=1, use_beam_search=False, num_prompts=10, logprobs=None, request_rate=inf, burstiness=1.0, seed=0, trust_remote_code=True, disable_tqdm=False, profile=False, save_result=True, save_detailed=False, metadata=None, result_dir=None, result_filename='/out/c1.json', ignore_eos=True, percentile_metrics='ttft,tpot,itl,e2el', metric_percentiles='99', goodput=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, random_input_len=1024, random_output_len=1024, random_range_ratio=0.8, random_prefix_len=0, use_chat_template=False, hf_subset=None, hf_split=None, hf_output_len=None, tokenizer_mode='auto', served_model_name=None, lora_modules=None, num_warmups=2)
+-------------------  Input/Output Length Statistics  -------------------
+ input_lens : min=828   max=1014  mean=914.90   avg_token_mismatch=0.00  
+ output_lens: min=858   max=1012  mean=921.40  
+------------------------------------------------------------------------ 
+
+Starting initial single prompt test run...
+Warming up with 2 requests...
+ 50%|█████     | 1/2 [00:09<00:09,  9.04s/it]100%|██████████| 2/2 [00:18<00:00,  9.09s/it]100%|██████████| 2/2 [00:18<00:00,  9.08s/it]
+Warmup completed.
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 1
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:08<01:20,  8.98s/it] 20%|██        | 2/10 [00:17<01:10,  8.84s/it] 30%|███       | 3/10 [00:26<01:02,  8.89s/it] 40%|████      | 4/10 [00:36<00:54,  9.12s/it] 50%|█████     | 5/10 [00:44<00:44,  8.97s/it] 60%|██████    | 6/10 [00:54<00:37,  9.35s/it] 70%|███████   | 7/10 [01:03<00:27,  9.07s/it] 80%|████████  | 8/10 [01:12<00:18,  9.03s/it] 90%|█████████ | 9/10 [01:22<00:09,  9.28s/it]100%|██████████| 10/10 [01:31<00:00,  9.18s/it]100%|██████████| 10/10 [01:31<00:00,  9.11s/it]
+Starting main benchmark run...
+============ Serving Benchmark Result ============
+Successful requests:                     10        
+Benchmark duration (s):                  91.14     
+Total input tokens:                      9149      
+Total generated tokens:                  9214      
+Request throughput (req/s):              0.11      
+Output token throughput (tok/s):         101.09    
+Total Token throughput (tok/s):          201.48    
+Concurrency:                             1.00      
+---------------Time to First Token----------------
+Mean TTFT (ms):                          78.52     
+Median TTFT (ms):                        71.89     
+P99 TTFT (ms):                           129.57    
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          9.82      
+Median TPOT (ms):                        9.81      
+P99 TPOT (ms):                           9.90      
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           9.81      
+Median ITL (ms):                         9.78      
+P99 ITL (ms):                            10.99     
+----------------End-to-end Latency----------------
+Mean E2EL (ms):                          9113.49   
+Median E2EL (ms):                        8945.76   
+P99 E2EL (ms):                           10059.75  
+==================================================

@@ -1,0 +1,1891 @@
+[atom 15:46:33] Raised RLIMIT_NOFILE soft limit 1024 -> 65535 (hard=524288)
+[atom 15:46:33] Loading tokenizer from /model...
+[atom 15:46:33] Initializing engine with model /model...
+[atom 15:46:33] Engine kwargs: {'trust_remote_code': True, 'tensor_parallel_size': 8, 'decode_context_parallel_size': 1, 'pipeline_parallel_size': 1, 'prefill_context_parallel_size': 1, 'data_parallel_size': 1, 'enforce_eager': False, 'enable_prefix_caching': False, 'port': 8006, 'kv_cache_dtype': 'fp8', 'index_cache_dtype': 'fp8', 'max_model_len': 16384, 'max_num_batched_tokens': 16384, 'long_prefill_token_threshold': 0, 'attn_prefill_chunk_size': 16384, 'state_checkpoint_interval_tokens': 8192, 'enable_chunked_prefill': True, 'scheduler_delay_factor': 0.0, 'max_num_seqs': 64, 'gpu_memory_utilization': 0.93, 'load_dummy': None, 'enable_expert_parallel': False, 'torch_profiler_dir': None, 'enable_dp_attention': False, 'dp_load_balance': 'least_requests', 'kv_transfer_config': '{}', 'mark_trace': False, 'enable_rapidserve': False, 'disagg_prefill_max_num_seqs': None, 'disagg_constrained': False, 'online_quant_config': {'global_quant_config': 'ptpc_fp8', 'exclude_layer': ['lm_head', 'model.embed_tokens', '*self_attn.[qkv]_conv1d*', '*block_sparse_moe.experts*', '*block_sparse_moe.routed_expert_*', '*vision_tower*', '*mm_projector*']}, 'hf_overrides': None, 'eplb_enable': False, 'kv_cache_block_size': 128, 'compilation_config': CompilationConfig(level=3, use_cudagraph=True, local_cache_dir=None, cudagraph_capture_sizes=[1, 2, 4, 8, 16, 32, 48, 64, 128, 256, 512], cuda_graph_sizes=[512], debug_dump_path='', traced_files=set(), cache_dir='', use_inductor=True, cudagraph_mode=<CUDAGraphMode.FULL: 2>, compilation_time=0.0, splitting_ops=None, cudagraph_copy_inputs=False, inductor_compile_config={}, compile_sizes=None, static_forward_context={}), 'speculative_config': None, 'enable_tbo': False, 'enable_tbo_decode': False, 'enable_low_latency': False, 'dspark': DSparkConfig(confidence_schedule=False, ragged=False, ragged_graph_sizes='', q_buckets='', disable_sps_calib=False), 'eplb_config': EPLBConfig(load_window_size=1000, rebalance_interval=3000, rebalance_layers_per_chunk=64, num_redundant_experts=0, rebalance_min_balancedness=2.0, rebalance_balancedness_agg='min', p2p_batch_chunk_size=32, placement_policy='naive')}
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[atom 15:46:37] Online quant with compressed-tensors is not fully supported. Be careful about the online quant config setting when launching the server.
+[atom 15:46:37] Engine Core Mgr: Creating EngineCore engine 0 (dp=0, pp=0) of 1
+[atom 15:46:37] Creating EngineCore process: DP rank 0, will use GPUs 0 to 7
+[atom 15:46:37] Engine Core Mgr: Starting EngineCore for DP rank 0/1
+[atom 15:46:52] Create lazy wrapper for FusedMoE to change the naming
+[atom 15:46:52] ModelRunner rank=0, dp_rank_local=0, pp_rank=0, local_device_rank=0, device=cuda:0
+[atom 15:46:54] Create lazy wrapper for FusedMoE to change the naming
+[atom 15:46:54] ModelRunner rank=1, dp_rank_local=0, pp_rank=0, local_device_rank=1, device=cuda:1
+[atom 15:46:57] Create lazy wrapper for FusedMoE to change the naming
+[atom 15:46:58] ModelRunner rank=2, dp_rank_local=0, pp_rank=0, local_device_rank=2, device=cuda:2
+[atom 15:47:01] Create lazy wrapper for FusedMoE to change the naming
+[atom 15:47:01] ModelRunner rank=3, dp_rank_local=0, pp_rank=0, local_device_rank=3, device=cuda:3
+[atom 15:47:04] Create lazy wrapper for FusedMoE to change the naming
+[atom 15:47:04] ModelRunner rank=4, dp_rank_local=0, pp_rank=0, local_device_rank=4, device=cuda:4
+[atom 15:47:07] Create lazy wrapper for FusedMoE to change the naming
+[atom 15:47:07] ModelRunner rank=5, dp_rank_local=0, pp_rank=0, local_device_rank=5, device=cuda:5
+[atom 15:47:10] Create lazy wrapper for FusedMoE to change the naming
+[atom 15:47:10] ModelRunner rank=6, dp_rank_local=0, pp_rank=0, local_device_rank=6, device=cuda:6
+[atom 15:47:13] Create lazy wrapper for FusedMoE to change the naming
+[atom 15:47:14] ModelRunner rank=7, dp_rank_local=0, pp_rank=0, local_device_rank=7, device=cuda:7
+[atom 15:47:23] disable_mmap: False
+[atom 15:47:23] disable_mmap: False
+[atom 15:47:23] disable_mmap: False
+[atom 15:47:23] disable_mmap: False
+[atom 15:47:23] disable_mmap: False
+[atom 15:47:23] disable_mmap: False
+[atom 15:47:23] disable_mmap: False
+[atom 15:47:24] disable_mmap: False
+[atom 15:47:24] Prefetching 12/96 shards into page cache in the background (node-local rank 0 of 8, 4 threads, 16 MiB blocks)
+Loading safetensors shards[/model]:   0%|          | 0/96 [00:00<?, ?it/s][atom 15:47:24] Prefetching 12/96 shards into page cache in the background (node-local rank 4 of 8, 4 threads, 16 MiB blocks)
+[atom 15:47:24] Prefetching 12/96 shards into page cache in the background (node-local rank 5 of 8, 4 threads, 16 MiB blocks)
+[atom 15:47:24] Prefetching 12/96 shards into page cache in the background (node-local rank 1 of 8, 4 threads, 16 MiB blocks)
+[atom 15:47:25] Prefetching 12/96 shards into page cache in the background (node-local rank 3 of 8, 4 threads, 16 MiB blocks)
+[atom 15:47:25] Prefetching 12/96 shards into page cache in the background (node-local rank 2 of 8, 4 threads, 16 MiB blocks)
+[atom 15:47:25] Prefetching 12/96 shards into page cache in the background (node-local rank 7 of 8, 4 threads, 16 MiB blocks)
+[atom 15:47:25] Prefetching 12/96 shards into page cache in the background (node-local rank 6 of 8, 4 threads, 16 MiB blocks)
+Loading safetensors shards[/model]:   2%|▏         | 2/96 [00:01<01:19,  1.19it/s]Loading safetensors shards[/model]:   3%|▎         | 3/96 [00:04<02:31,  1.62s/it]Loading safetensors shards[/model]:   4%|▍         | 4/96 [00:06<02:53,  1.89s/it]Loading safetensors shards[/model]:   5%|▌         | 5/96 [00:08<02:43,  1.79s/it]Loading safetensors shards[/model]:   6%|▋         | 6/96 [00:09<02:23,  1.59s/it]Loading safetensors shards[/model]:   7%|▋         | 7/96 [00:11<02:41,  1.81s/it]Loading safetensors shards[/model]:   8%|▊         | 8/96 [00:14<02:50,  1.94s/it]Loading safetensors shards[/model]:   9%|▉         | 9/96 [00:15<02:39,  1.84s/it][atom 15:47:40] Checkpoint prefetch finished: 12/96 shards in 15.4s
+[atom 15:47:40] Checkpoint prefetch finished: 12/96 shards in 15.5s
+[atom 15:47:41] Checkpoint prefetch finished: 12/96 shards in 16.0s
+Loading safetensors shards[/model]:  10%|█         | 10/96 [00:16<02:14,  1.56s/it][atom 15:47:41] Checkpoint prefetch finished: 12/96 shards in 16.3s
+[atom 15:47:41] Checkpoint prefetch finished: 12/96 shards in 16.3s
+[atom 15:47:41] Checkpoint prefetch finished: 12/96 shards in 17.0s
+[atom 15:47:41] Checkpoint prefetch finished: 12/96 shards in 16.7s
+Loading safetensors shards[/model]:  11%|█▏        | 11/96 [00:17<02:00,  1.42s/it][atom 15:47:42] Checkpoint prefetch finished: 12/96 shards in 17.3s
+Loading safetensors shards[/model]:  12%|█▎        | 12/96 [00:19<02:17,  1.64s/it]Loading safetensors shards[/model]:  14%|█▎        | 13/96 [00:21<02:11,  1.58s/it]Loading safetensors shards[/model]:  15%|█▍        | 14/96 [00:22<01:56,  1.42s/it]Loading safetensors shards[/model]:  16%|█▌        | 15/96 [00:23<01:55,  1.42s/it]Loading safetensors shards[/model]:  17%|█▋        | 16/96 [00:25<01:55,  1.44s/it]Loading safetensors shards[/model]:  18%|█▊        | 17/96 [00:26<01:57,  1.49s/it]Loading safetensors shards[/model]:  19%|█▉        | 18/96 [00:28<02:06,  1.62s/it]Loading safetensors shards[/model]:  20%|█▉        | 19/96 [00:30<01:57,  1.52s/it]Loading safetensors shards[/model]:  21%|██        | 20/96 [00:31<01:46,  1.40s/it]Loading safetensors shards[/model]:  22%|██▏       | 21/96 [00:32<01:41,  1.36s/it]Loading safetensors shards[/model]:  23%|██▎       | 22/96 [00:33<01:36,  1.30s/it]Loading safetensors shards[/model]:  24%|██▍       | 23/96 [00:34<01:35,  1.31s/it]Loading safetensors shards[/model]:  25%|██▌       | 24/96 [00:36<01:36,  1.33s/it]Loading safetensors shards[/model]:  26%|██▌       | 25/96 [00:37<01:30,  1.28s/it]Loading safetensors shards[/model]:  27%|██▋       | 26/96 [00:39<01:41,  1.45s/it]Loading safetensors shards[/model]:  28%|██▊       | 27/96 [00:40<01:32,  1.34s/it]Loading safetensors shards[/model]:  29%|██▉       | 28/96 [00:41<01:26,  1.27s/it]Loading safetensors shards[/model]:  30%|███       | 29/96 [00:42<01:28,  1.32s/it]Loading safetensors shards[/model]:  31%|███▏      | 30/96 [00:44<01:24,  1.29s/it]Loading safetensors shards[/model]:  32%|███▏      | 31/96 [00:45<01:20,  1.23s/it]Loading safetensors shards[/model]:  33%|███▎      | 32/96 [00:46<01:18,  1.23s/it]Loading safetensors shards[/model]:  34%|███▍      | 33/96 [00:47<01:15,  1.20s/it]Loading safetensors shards[/model]:  35%|███▌      | 34/96 [00:48<01:15,  1.21s/it]Loading safetensors shards[/model]:  36%|███▋      | 35/96 [00:50<01:30,  1.49s/it]Loading safetensors shards[/model]:  38%|███▊      | 36/96 [00:52<01:22,  1.38s/it]Loading safetensors shards[/model]:  39%|███▊      | 37/96 [00:53<01:19,  1.35s/it]Loading safetensors shards[/model]:  40%|███▉      | 38/96 [00:54<01:19,  1.37s/it]Loading safetensors shards[/model]:  41%|████      | 39/96 [00:55<01:14,  1.30s/it]Loading safetensors shards[/model]:  42%|████▏     | 40/96 [00:57<01:11,  1.28s/it]Loading safetensors shards[/model]:  43%|████▎     | 41/96 [00:58<01:11,  1.29s/it]Loading safetensors shards[/model]:  44%|████▍     | 42/96 [00:59<01:07,  1.25s/it]Loading safetensors shards[/model]:  45%|████▍     | 43/96 [01:01<01:11,  1.35s/it]Loading safetensors shards[/model]:  46%|████▌     | 44/96 [01:02<01:05,  1.27s/it]Loading safetensors shards[/model]:  47%|████▋     | 45/96 [01:03<01:04,  1.26s/it]Loading safetensors shards[/model]:  48%|████▊     | 46/96 [01:06<01:26,  1.74s/it]Loading safetensors shards[/model]:  49%|████▉     | 47/96 [01:07<01:16,  1.56s/it]Loading safetensors shards[/model]:  50%|█████     | 48/96 [01:08<01:10,  1.47s/it]Loading safetensors shards[/model]:  51%|█████     | 49/96 [01:10<01:05,  1.40s/it]Loading safetensors shards[/model]:  52%|█████▏    | 50/96 [01:11<00:58,  1.27s/it]Loading safetensors shards[/model]:  53%|█████▎    | 51/96 [01:12<00:55,  1.22s/it]Loading safetensors shards[/model]:  54%|█████▍    | 52/96 [01:13<00:53,  1.22s/it]Loading safetensors shards[/model]:  55%|█████▌    | 53/96 [01:14<00:54,  1.26s/it]Loading safetensors shards[/model]:  56%|█████▋    | 54/96 [01:15<00:52,  1.26s/it]Loading safetensors shards[/model]:  57%|█████▋    | 55/96 [01:17<00:50,  1.24s/it]Loading safetensors shards[/model]:  58%|█████▊    | 56/96 [01:18<00:46,  1.17s/it]Loading safetensors shards[/model]:  59%|█████▉    | 57/96 [01:19<00:44,  1.13s/it]Loading safetensors shards[/model]:  60%|██████    | 58/96 [01:20<00:42,  1.12s/it]Loading safetensors shards[/model]:  61%|██████▏   | 59/96 [01:21<00:41,  1.11s/it]Loading safetensors shards[/model]:  62%|██████▎   | 60/96 [01:23<00:54,  1.52s/it]Loading safetensors shards[/model]:  64%|██████▎   | 61/96 [01:25<00:49,  1.42s/it]Loading safetensors shards[/model]:  65%|██████▍   | 62/96 [01:26<00:47,  1.39s/it]Loading safetensors shards[/model]:  66%|██████▌   | 63/96 [01:27<00:42,  1.29s/it]Loading safetensors shards[/model]:  67%|██████▋   | 64/96 [01:28<00:40,  1.25s/it]Loading safetensors shards[/model]:  68%|██████▊   | 65/96 [01:29<00:40,  1.30s/it]Loading safetensors shards[/model]:  69%|██████▉   | 66/96 [01:31<00:38,  1.30s/it]Loading safetensors shards[/model]:  70%|██████▉   | 67/96 [01:32<00:35,  1.23s/it]Loading safetensors shards[/model]:  71%|███████   | 68/96 [01:33<00:34,  1.23s/it]Loading safetensors shards[/model]:  72%|███████▏  | 69/96 [01:34<00:31,  1.17s/it]Loading safetensors shards[/model]:  73%|███████▎  | 70/96 [01:35<00:28,  1.11s/it]Loading safetensors shards[/model]:  74%|███████▍  | 71/96 [01:36<00:29,  1.18s/it]Loading safetensors shards[/model]:  75%|███████▌  | 72/96 [01:38<00:30,  1.29s/it]Loading safetensors shards[/model]:  76%|███████▌  | 73/96 [01:39<00:30,  1.34s/it]Loading safetensors shards[/model]:  77%|███████▋  | 74/96 [01:41<00:27,  1.27s/it]Loading safetensors shards[/model]:  78%|███████▊  | 75/96 [01:42<00:26,  1.25s/it]Loading safetensors shards[/model]:  79%|███████▉  | 76/96 [01:43<00:24,  1.22s/it]Loading safetensors shards[/model]:  80%|████████  | 77/96 [01:46<00:35,  1.88s/it]Loading safetensors shards[/model]:  81%|████████▏ | 78/96 [01:47<00:28,  1.58s/it]Loading safetensors shards[/model]:  82%|████████▏ | 79/96 [01:48<00:25,  1.49s/it]Loading safetensors shards[/model]:  83%|████████▎ | 80/96 [01:50<00:23,  1.45s/it]Loading safetensors shards[/model]:  84%|████████▍ | 81/96 [01:51<00:20,  1.36s/it]Loading safetensors shards[/model]:  85%|████████▌ | 82/96 [01:52<00:18,  1.32s/it]Loading safetensors shards[/model]:  86%|████████▋ | 83/96 [01:54<00:18,  1.43s/it]Loading safetensors shards[/model]:  88%|████████▊ | 84/96 [01:55<00:16,  1.36s/it]Loading safetensors shards[/model]:  89%|████████▊ | 85/96 [01:56<00:14,  1.32s/it]Loading safetensors shards[/model]:  90%|████████▉ | 86/96 [01:58<00:13,  1.32s/it]Loading safetensors shards[/model]:  91%|█████████ | 87/96 [01:59<00:11,  1.24s/it]Loading safetensors shards[/model]:  92%|█████████▏| 88/96 [02:00<00:10,  1.30s/it]Loading safetensors shards[/model]:  93%|█████████▎| 89/96 [02:02<00:09,  1.35s/it]Loading safetensors shards[/model]:  94%|█████████▍| 90/96 [02:03<00:07,  1.32s/it]Loading safetensors shards[/model]:  95%|█████████▍| 91/96 [02:04<00:06,  1.30s/it]Loading safetensors shards[/model]:  96%|█████████▌| 92/96 [02:05<00:05,  1.25s/it]Loading safetensors shards[/model]:  97%|█████████▋| 93/96 [02:06<00:03,  1.24s/it]Loading safetensors shards[/model]: 100%|██████████| 96/96 [02:06<00:00,  1.32s/it]
+[atom 15:49:32] Staging buffers: 368 allocated (168.4 GiB, 21.62s pinning)
+[atom 15:49:32] [rank_6] load phases: read+queue 126.84s (497220 tensors) | drain 1.84s | staging flush 0.00s | threads 16
+[atom 15:49:33] Weight post-processing started (includes online quantization)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 15:49:33] Staging buffers: 368 allocated (168.4 GiB, 19.59s pinning)
+[atom 15:49:33] [rank_4] load phases: read+queue 127.62s (497220 tensors) | drain 1.85s | staging flush 0.00s | threads 16
+[atom 15:49:33] Staging buffers: 368 allocated (168.4 GiB, 15.61s pinning)
+[atom 15:49:33] Staging buffers: 368 allocated (168.4 GiB, 17.63s pinning)
+[atom 15:49:33] [rank_0] load phases: read+queue 127.59s (497220 tensors) | drain 2.16s | staging flush 0.00s | threads 16
+[atom 15:49:33] [rank_3] load phases: read+queue 127.92s (497220 tensors) | drain 1.75s | staging flush 0.00s | threads 16
+[atom 15:49:33] Weight post-processing started (includes online quantization)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 15:49:33] Staging buffers: 368 allocated (168.4 GiB, 18.38s pinning)
+[atom 15:49:33] [rank_7] load phases: read+queue 127.62s (497220 tensors) | drain 2.36s | staging flush 0.00s | threads 16
+[atom 15:49:34] Weight post-processing started (includes online quantization)
+[atom 15:49:34] Staging buffers: 368 allocated (168.4 GiB, 17.54s pinning)
+[atom 15:49:34] [rank_1] load phases: read+queue 127.90s (497220 tensors) | drain 2.28s | staging flush 0.00s | threads 16
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 15:49:34] Weight post-processing started (includes online quantization)
+[atom 15:49:34] Weight post-processing started (includes online quantization)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 15:49:34] Weight post-processing started (includes online quantization)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 15:49:35] Staging buffers: 368 allocated (168.4 GiB, 19.86s pinning)
+[atom 15:49:35] [rank_5] load phases: read+queue 129.82s (497220 tensors) | drain 1.87s | staging flush 0.00s | threads 16
+[atom 15:49:36] Weight post-processing started (includes online quantization)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 15:49:39] Staging buffers: 368 allocated (168.4 GiB, 17.88s pinning)
+[atom 15:49:39] [rank_2] load phases: read+queue 133.23s (497220 tensors) | drain 2.53s | staging flush 0.00s | threads 16
+[atom 15:49:40] Weight post-processing started (includes online quantization)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 15:49:41] [rank_0] Weight post-processing done: 7.46 seconds, 607 layers online-quantized
+[atom 15:49:41] Online quantization info saved to /online_quant_info_20260814_154941_841997280.json
+[atom 15:49:41] [rank_0] Model load done: /model (weights loaded in 138.16s)
+[atom 15:49:41] [rank_1] Weight post-processing done: 7.21 seconds, 607 layers online-quantized
+[atom 15:49:41] [rank_1] Model load done: /model (weights loaded in 138.13s)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 15:49:42] [rank_2] Weight post-processing done: 2.05 seconds, 607 layers online-quantized
+[atom 15:49:42] [rank_2] Model load done: /model (weights loaded in 138.58s)
+[atom 15:49:42] [rank_7] Weight post-processing done: 7.84 seconds, 607 layers online-quantized
+[atom 15:49:42] [rank_7] Model load done: /model (weights loaded in 138.57s)
+[atom 15:49:42] [rank_3] Weight post-processing done: 8.17 seconds, 607 layers online-quantized
+[atom 15:49:42] [rank_3] Model load done: /model (weights loaded in 138.51s)
+[atom 15:49:42] [rank_4] Weight post-processing done: 8.41 seconds, 607 layers online-quantized
+[atom 15:49:42] [rank_4] Model load done: /model (weights loaded in 138.62s)
+[atom 15:49:42] [rank_6] Weight post-processing done: 9.12 seconds, 607 layers online-quantized
+[atom 15:49:42] [rank_6] Model load done: /model (weights loaded in 138.57s)
+[atom 15:49:42] [rank_5] Weight post-processing done: 6.19 seconds, 607 layers online-quantized
+[atom 15:49:42] [rank_5] Model load done: /model (weights loaded in 138.60s)
+[atom 15:49:42] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 15:49:42] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 15:49:42] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 15:49:42] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 15:49:42] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 15:49:42] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 15:49:42] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 15:49:42] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 15:49:42] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 15:49:42] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 15:49:42] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 15:49:42] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 15:49:42] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 15:49:42] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 15:49:42] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 15:49:42] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 15:49:48] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_2/backbone for vLLM's torch.compile
+[atom 15:49:48] Dynamo bytecode transform time: 4.70 s
+[atom 15:49:48] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_7/backbone for vLLM's torch.compile
+[atom 15:49:48] Dynamo bytecode transform time: 4.72 s
+[atom 15:49:48] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_1/backbone for vLLM's torch.compile
+[atom 15:49:48] Dynamo bytecode transform time: 5.08 s
+[atom 15:49:48] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_0/backbone for vLLM's torch.compile
+[atom 15:49:48] Dynamo bytecode transform time: 5.09 s
+[atom 15:49:48] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_5/backbone for vLLM's torch.compile
+[atom 15:49:48] Dynamo bytecode transform time: 5.10 s
+[atom 15:49:48] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_6/backbone for vLLM's torch.compile
+[atom 15:49:48] Dynamo bytecode transform time: 5.39 s
+[atom 15:49:49] Cache the graph for dynamic shape for later use
+[atom 15:49:49] Cache the graph for dynamic shape for later use
+[atom 15:49:49] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_3/backbone for vLLM's torch.compile
+[atom 15:49:49] Dynamo bytecode transform time: 5.84 s
+[atom 15:49:49] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_4/backbone for vLLM's torch.compile
+[atom 15:49:49] Dynamo bytecode transform time: 5.87 s
+[atom 15:49:49] Cache the graph for dynamic shape for later use
+[atom 15:49:49] Cache the graph for dynamic shape for later use
+[atom 15:49:49] Cache the graph for dynamic shape for later use
+[atom 15:49:49] Cache the graph for dynamic shape for later use
+[atom 15:49:50] Cache the graph for dynamic shape for later use
+[atom 15:49:50] Cache the graph for dynamic shape for later use
+[atom 15:50:05] Compiling a graph for dynamic shape takes 16.79 s
+[atom 15:50:05] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_5/backbone/computation_graph.py
+[atom 15:50:06] Compiling a graph for dynamic shape takes 17.43 s
+[atom 15:50:06] Compiling a graph for dynamic shape takes 16.98 s
+[atom 15:50:06] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_6/backbone/computation_graph.py
+[atom 15:50:06] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_3/backbone/computation_graph.py
+[atom 15:50:06] Compiling a graph for dynamic shape takes 17.41 s
+[atom 15:50:06] Compiling a graph for dynamic shape takes 18.27 s
+[atom 15:50:06] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_2/backbone/computation_graph.py
+[atom 15:50:06] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_7/backbone/computation_graph.py
+[atom 15:50:07] Compiling a graph for dynamic shape takes 18.43 s
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[atom 15:50:07] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_0/backbone/computation_graph.py
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[atom 15:50:07] Compiling a graph for dynamic shape takes 17.88 s
+[atom 15:50:07] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_4/backbone/computation_graph.py
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[atom 15:50:07] Compiling a graph for dynamic shape takes 18.88 s
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[atom 15:50:07] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_1/backbone/computation_graph.py
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[atom 15:50:16] Model Runner6/8: warmup_model 34.38 seconds with 1 reqs 16384 tokens
+[atom 15:50:16] Model warmup done: /model
+[atom 15:50:16] sub-pool kv: entries=33210, entry_bytes=1769472, reserved=54.73GB
+[atom 15:50:16] sub-pool state: entries=64, entry_bytes=56171520, reserved=3.35GB
+[atom 15:50:16] Memory budget: total_gpu=287.98GB, free=84.94GB, utilization=0.93, budget=267.83GB, peak_torch=190.36GB, non_torch=12.79GB, cudagraph_est=0.84GB, safety=5.76GB, available_for_kv=58.08GB, block_bytes=1769472, num_kvcache_blocks=33210
+[atom 15:50:16] Concurrent capacity vs context length (max_model_len=16384, block_size=128, max_slots=64, pool_blocks=33210):
+   10% (   1638 tok):     13 blk/req → max_concurrent=64    (bound by slots)
+   30% (   4915 tok):     39 blk/req → max_concurrent=64    (bound by slots)
+   50% (   8192 tok):     64 blk/req → max_concurrent=64    (bound by slots)
+   70% (  11468 tok):     90 blk/req → max_concurrent=64    (bound by slots)
+   90% (  14745 tok):    116 blk/req → max_concurrent=64    (bound by slots)
+  100% (  16384 tok):    128 blk/req → max_concurrent=64    (bound by slots)
+[atom 15:50:16] Model Runner3/8: warmup_model 34.38 seconds with 1 reqs 16384 tokens
+[atom 15:50:16] Model warmup done: /model
+[atom 15:50:16] Model Runner7/8: warmup_model 34.36 seconds with 1 reqs 16384 tokens
+[atom 15:50:16] Model Runner5/8: warmup_model 34.37 seconds with 1 reqs 16384 tokens
+[atom 15:50:16] Model warmup done: /model
+[atom 15:50:16] Model warmup done: /model
+[atom 15:50:16] sub-pool kv: entries=32988, entry_bytes=1769472, reserved=54.36GB
+[atom 15:50:16] sub-pool state: entries=64, entry_bytes=56171520, reserved=3.35GB
+[atom 15:50:16] Memory budget: total_gpu=287.98GB, free=84.58GB, utilization=0.93, budget=267.83GB, peak_torch=190.36GB, non_torch=13.15GB, cudagraph_est=0.84GB, safety=5.76GB, available_for_kv=57.71GB, block_bytes=1769472, num_kvcache_blocks=32988
+[atom 15:50:16] Concurrent capacity vs context length (max_model_len=16384, block_size=128, max_slots=64, pool_blocks=32988):
+   10% (   1638 tok):     13 blk/req → max_concurrent=64    (bound by slots)
+   30% (   4915 tok):     39 blk/req → max_concurrent=64    (bound by slots)
+   50% (   8192 tok):     64 blk/req → max_concurrent=64    (bound by slots)
+   70% (  11468 tok):     90 blk/req → max_concurrent=64    (bound by slots)
+   90% (  14745 tok):    116 blk/req → max_concurrent=64    (bound by slots)
+  100% (  16384 tok):    128 blk/req → max_concurrent=64    (bound by slots)
+[atom 15:50:16] Model Runner0/8: warmup_model 34.37 seconds with 1 reqs 16384 tokens
+[atom 15:50:16] sub-pool kv: entries=33100, entry_bytes=1769472, reserved=54.55GB
+[atom 15:50:16] Model warmup done: /model
+[atom 15:50:16] sub-pool state: entries=64, entry_bytes=56171520, reserved=3.35GB
+[atom 15:50:16] Memory budget: total_gpu=287.98GB, free=84.76GB, utilization=0.93, budget=267.83GB, peak_torch=190.36GB, non_torch=12.97GB, cudagraph_est=0.84GB, safety=5.76GB, available_for_kv=57.90GB, block_bytes=1769472, num_kvcache_blocks=33100
+[atom 15:50:16] Concurrent capacity vs context length (max_model_len=16384, block_size=128, max_slots=64, pool_blocks=33100):
+   10% (   1638 tok):     13 blk/req → max_concurrent=64    (bound by slots)
+   30% (   4915 tok):     39 blk/req → max_concurrent=64    (bound by slots)
+   50% (   8192 tok):     64 blk/req → max_concurrent=64    (bound by slots)
+   70% (  11468 tok):     90 blk/req → max_concurrent=64    (bound by slots)
+   90% (  14745 tok):    116 blk/req → max_concurrent=64    (bound by slots)
+  100% (  16384 tok):    128 blk/req → max_concurrent=64    (bound by slots)
+[atom 15:50:16] sub-pool kv: entries=33203, entry_bytes=1769472, reserved=54.72GB
+[atom 15:50:16] sub-pool state: entries=64, entry_bytes=56171520, reserved=3.35GB
+[atom 15:50:16] Memory budget: total_gpu=287.98GB, free=84.93GB, utilization=0.93, budget=267.83GB, peak_torch=190.36GB, non_torch=12.80GB, cudagraph_est=0.84GB, safety=5.76GB, available_for_kv=58.07GB, block_bytes=1769472, num_kvcache_blocks=33203
+[atom 15:50:16] Model Runner1/8: warmup_model 34.38 seconds with 1 reqs 16384 tokens
+[atom 15:50:16] Concurrent capacity vs context length (max_model_len=16384, block_size=128, max_slots=64, pool_blocks=33203):
+   10% (   1638 tok):     13 blk/req → max_concurrent=64    (bound by slots)
+   30% (   4915 tok):     39 blk/req → max_concurrent=64    (bound by slots)
+   50% (   8192 tok):     64 blk/req → max_concurrent=64    (bound by slots)
+   70% (  11468 tok):     90 blk/req → max_concurrent=64    (bound by slots)
+   90% (  14745 tok):    116 blk/req → max_concurrent=64    (bound by slots)
+  100% (  16384 tok):    128 blk/req → max_concurrent=64    (bound by slots)
+[atom 15:50:16] Model warmup done: /model
+[atom 15:50:16] Model Runner4/8: warmup_model 34.39 seconds with 1 reqs 16384 tokens
+[atom 15:50:16] Model warmup done: /model
+[atom 15:50:16] sub-pool kv: entries=32974, entry_bytes=1769472, reserved=54.34GB
+[atom 15:50:16] sub-pool state: entries=64, entry_bytes=56171520, reserved=3.35GB
+[atom 15:50:16] Memory budget: total_gpu=287.98GB, free=84.55GB, utilization=0.93, budget=267.83GB, peak_torch=190.36GB, non_torch=13.17GB, cudagraph_est=0.84GB, safety=5.76GB, available_for_kv=57.69GB, block_bytes=1769472, num_kvcache_blocks=32974
+[atom 15:50:16] Concurrent capacity vs context length (max_model_len=16384, block_size=128, max_slots=64, pool_blocks=32974):
+   10% (   1638 tok):     13 blk/req → max_concurrent=64    (bound by slots)
+   30% (   4915 tok):     39 blk/req → max_concurrent=64    (bound by slots)
+   50% (   8192 tok):     64 blk/req → max_concurrent=64    (bound by slots)
+   70% (  11468 tok):     90 blk/req → max_concurrent=64    (bound by slots)
+   90% (  14745 tok):    116 blk/req → max_concurrent=64    (bound by slots)
+  100% (  16384 tok):    128 blk/req → max_concurrent=64    (bound by slots)
+[atom 15:50:16] sub-pool kv: entries=33776, entry_bytes=1769472, reserved=55.66GB
+[atom 15:50:16] sub-pool state: entries=64, entry_bytes=56171520, reserved=3.35GB
+[atom 15:50:16] Memory budget: total_gpu=287.98GB, free=85.88GB, utilization=0.93, budget=267.83GB, peak_torch=190.36GB, non_torch=11.85GB, cudagraph_est=0.84GB, safety=5.76GB, available_for_kv=59.01GB, block_bytes=1769472, num_kvcache_blocks=33776
+[atom 15:50:16] Concurrent capacity vs context length (max_model_len=16384, block_size=128, max_slots=64, pool_blocks=33776):
+   10% (   1638 tok):     13 blk/req → max_concurrent=64    (bound by slots)
+   30% (   4915 tok):     39 blk/req → max_concurrent=64    (bound by slots)
+   50% (   8192 tok):     64 blk/req → max_concurrent=64    (bound by slots)
+   70% (  11468 tok):     90 blk/req → max_concurrent=64    (bound by slots)
+   90% (  14745 tok):    116 blk/req → max_concurrent=64    (bound by slots)
+  100% (  16384 tok):    128 blk/req → max_concurrent=64    (bound by slots)
+[atom 15:50:16] sub-pool kv: entries=33203, entry_bytes=1769472, reserved=54.72GB
+[atom 15:50:16] sub-pool state: entries=64, entry_bytes=56171520, reserved=3.35GB
+[atom 15:50:16] Memory budget: total_gpu=287.98GB, free=84.93GB, utilization=0.93, budget=267.83GB, peak_torch=190.36GB, non_torch=12.80GB, cudagraph_est=0.84GB, safety=5.76GB, available_for_kv=58.07GB, block_bytes=1769472, num_kvcache_blocks=33203
+[atom 15:50:16] Concurrent capacity vs context length (max_model_len=16384, block_size=128, max_slots=64, pool_blocks=33203):
+   10% (   1638 tok):     13 blk/req → max_concurrent=64    (bound by slots)
+   30% (   4915 tok):     39 blk/req → max_concurrent=64    (bound by slots)
+   50% (   8192 tok):     64 blk/req → max_concurrent=64    (bound by slots)
+   70% (  11468 tok):     90 blk/req → max_concurrent=64    (bound by slots)
+   90% (  14745 tok):    116 blk/req → max_concurrent=64    (bound by slots)
+  100% (  16384 tok):    128 blk/req → max_concurrent=64    (bound by slots)
+[atom 15:50:16] Binding KV cache for target model starting at layer_id=0
+[atom 15:50:16] Binding KV cache for target model starting at layer_id=0
+[atom 15:50:16] Model Runner2/8: warmup_model 34.41 seconds with 1 reqs 16384 tokens
+[atom 15:50:16] Model warmup done: /model
+[atom 15:50:16] sub-pool kv: entries=32989, entry_bytes=1769472, reserved=54.36GB
+[atom 15:50:16] sub-pool state: entries=64, entry_bytes=56171520, reserved=3.35GB
+[atom 15:50:16] Memory budget: total_gpu=287.98GB, free=84.58GB, utilization=0.93, budget=267.83GB, peak_torch=190.36GB, non_torch=13.15GB, cudagraph_est=0.84GB, safety=5.76GB, available_for_kv=57.71GB, block_bytes=1769472, num_kvcache_blocks=32989
+[atom 15:50:16] Concurrent capacity vs context length (max_model_len=16384, block_size=128, max_slots=64, pool_blocks=32989):
+   10% (   1638 tok):     13 blk/req → max_concurrent=64    (bound by slots)
+   30% (   4915 tok):     39 blk/req → max_concurrent=64    (bound by slots)
+   50% (   8192 tok):     64 blk/req → max_concurrent=64    (bound by slots)
+   70% (  11468 tok):     90 blk/req → max_concurrent=64    (bound by slots)
+   90% (  14745 tok):    116 blk/req → max_concurrent=64    (bound by slots)
+  100% (  16384 tok):    128 blk/req → max_concurrent=64    (bound by slots)
+[atom 15:50:16] Binding KV cache for target model starting at layer_id=0
+[atom 15:50:17] Binding KV cache for target model starting at layer_id=0
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+
+[2026-08-14 15:47:14] mi355-gpu-33:527:527 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+RCCL version : 2.30.4-HEAD:2b22ab0
+HIP version  : 7.14.60850-0000000
+ROCm version : 7.14.0.0-9999-2b22ab01
+Hostname     : mi355-gpu-33
+Librccl path : /opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries/lib/librccl.so.1
+
+[2026-08-14 15:47:18] mi355-gpu-33:527:527 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+[rank0]:[W814 15:50:17.253375227 ProcessGroupNCCL.cpp:5276] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+[atom 15:50:17] Binding KV cache for target model starting at layer_id=0
+[atom 15:50:17] Binding KV cache for target model starting at layer_id=0
+[atom 15:50:17] Binding KV cache for target model starting at layer_id=0
+[atom 15:50:17] Binding KV cache for target model starting at layer_id=0
+[atom 15:50:18] cudagraph capture sizes [512, 256, 128] exceed the schedulable batch size min(max_num_seqs=64, max_num_batched_tokens=16384 // (mtp_k+1)=1 = 16384) = 64; dropping. Remaining: [64, 48, 32, 16, 8, 4, 2, 1]
+[atom 15:50:18] cudagraph capture sizes [512, 256, 128] exceed the schedulable batch size min(max_num_seqs=64, max_num_batched_tokens=16384 // (mtp_k+1)=1 = 16384) = 64; dropping. Remaining: [64, 48, 32, 16, 8, 4, 2, 1]
+[atom 15:50:18] cudagraph capture sizes [512, 256, 128] exceed the schedulable batch size min(max_num_seqs=64, max_num_batched_tokens=16384 // (mtp_k+1)=1 = 16384) = 64; dropping. Remaining: [64, 48, 32, 16, 8, 4, 2, 1]
+[atom 15:50:18] cudagraph capture sizes [512, 256, 128] exceed the schedulable batch size min(max_num_seqs=64, max_num_batched_tokens=16384 // (mtp_k+1)=1 = 16384) = 64; dropping. Remaining: [64, 48, 32, 16, 8, 4, 2, 1]
+[atom 15:50:18] cudagraph capture sizes [512, 256, 128] exceed the schedulable batch size min(max_num_seqs=64, max_num_batched_tokens=16384 // (mtp_k+1)=1 = 16384) = 64; dropping. Remaining: [64, 48, 32, 16, 8, 4, 2, 1]
+[atom 15:50:18] cudagraph capture sizes [512, 256, 128] exceed the schedulable batch size min(max_num_seqs=64, max_num_batched_tokens=16384 // (mtp_k+1)=1 = 16384) = 64; dropping. Remaining: [64, 48, 32, 16, 8, 4, 2, 1]
+[atom 15:50:18] cudagraph capture sizes [512, 256, 128] exceed the schedulable batch size min(max_num_seqs=64, max_num_batched_tokens=16384 // (mtp_k+1)=1 = 16384) = 64; dropping. Remaining: [64, 48, 32, 16, 8, 4, 2, 1]
+[atom 15:50:18] cudagraph capture sizes [512, 256, 128] exceed the schedulable batch size min(max_num_seqs=64, max_num_batched_tokens=16384 // (mtp_k+1)=1 = 16384) = 64; dropping. Remaining: [64, 48, 32, 16, 8, 4, 2, 1]
+  0%|          | 0/8 [00:00<?, ?it/s]Capturing bs=64, max_q_len=1:   0%|          | 0/8 [00:00<?, ?it/s]Capturing bs=64, max_q_len=1:  12%|█▎        | 1/8 [00:03<00:24,  3.56s/it]Capturing bs=48, max_q_len=1:  12%|█▎        | 1/8 [00:03<00:24,  3.56s/it]Capturing bs=48, max_q_len=1:  25%|██▌       | 2/8 [00:04<00:10,  1.83s/it]Capturing bs=32, max_q_len=1:  25%|██▌       | 2/8 [00:04<00:10,  1.83s/it]Capturing bs=32, max_q_len=1:  38%|███▊      | 3/8 [00:05<00:06,  1.38s/it]Capturing bs=16, max_q_len=1:  38%|███▊      | 3/8 [00:05<00:06,  1.38s/it]Capturing bs=16, max_q_len=1:  50%|█████     | 4/8 [00:05<00:04,  1.15s/it]Capturing bs=8, max_q_len=1:  50%|█████     | 4/8 [00:05<00:04,  1.15s/it] Capturing bs=8, max_q_len=1:  62%|██████▎   | 5/8 [00:08<00:05,  1.75s/it]Capturing bs=4, max_q_len=1:  62%|██████▎   | 5/8 [00:08<00:05,  1.75s/it]Capturing bs=4, max_q_len=1:  75%|███████▌  | 6/8 [00:09<00:02,  1.33s/it]Capturing bs=2, max_q_len=1:  75%|███████▌  | 6/8 [00:09<00:02,  1.33s/it]Capturing bs=2, max_q_len=1:  88%|████████▊ | 7/8 [00:09<00:01,  1.11s/it]Capturing bs=1, max_q_len=1:  88%|████████▊ | 7/8 [00:09<00:01,  1.11s/it]Capturing bs=1, max_q_len=1: 100%|██████████| 8/8 [00:10<00:00,  1.02it/s]Capturing bs=1, max_q_len=1: 100%|██████████| 8/8 [00:10<00:00,  1.31s/it]
+[atom 15:50:30] Post-init memory: actual=263.82GB (91.6%), target=267.83GB (93%), reserved=248.05GB, allocated=243.92GB
+[atom 15:50:30] Post-init memory: actual=263.32GB (91.4%), target=267.83GB (93%), reserved=248.05GB, allocated=243.92GB
+[atom 15:50:30] CUDA graph capture memory: 8 graphs | pool(reserved)=0.22GB allocated=0.07GB
+[atom 15:50:30] Post-init memory: actual=263.82GB (91.6%), target=267.83GB (93%), reserved=248.05GB, allocated=243.92GB
+[atom 15:50:30] Engine Core: cudagraph capture[1, 2, 4, 8, 16, 32, 48, 64] cost: 11.99 seconds, pool: 0.22GB
+[atom 15:50:30] Engine Core: load model runner success
+[atom 15:50:30] Post-init memory: actual=263.32GB (91.4%), target=267.83GB (93%), reserved=248.05GB, allocated=243.92GB
+[atom 15:50:30] Engine Core: EngineCore fully initialized and ready
+[atom 15:50:30] Engine Core Mgr: DP rank 0 is fully initialized and ready
+[atom 15:50:30] Engine Core Mgr: All EngineCores are fully initialized and ready
+[atom 15:50:30] Engine Core Mgr: All 1 EngineCores initialized and ready
+[atom 15:50:30] KV transfer config loaded: {}
+[atom 15:50:30] LLMEngine init with 1 data parallel ranks
+[atom 15:50:30] LLMEngine init with 1 data parallel ranks
+[atom 15:50:30] Starting server on 0.0.0.0:8002 (loop=uvloop)...
+[atom 15:50:30] Post-init memory: actual=263.58GB (91.5%), target=267.83GB (93%), reserved=248.05GB, allocated=243.92GB
+[atom 15:50:30] Post-init memory: actual=263.32GB (91.4%), target=267.83GB (93%), reserved=248.05GB, allocated=243.92GB
+INFO:     Started server process [7]
+INFO:     Waiting for application startup.
+[atom 15:50:30] Server started successfully and ready to accept requests
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit)
+[atom 15:50:30] Post-init memory: actual=262.07GB (91.0%), target=267.83GB (93%), reserved=248.05GB, allocated=243.92GB
+[atom 15:50:30] Post-init memory: actual=263.82GB (91.6%), target=267.83GB (93%), reserved=248.05GB, allocated=243.92GB
+INFO:     127.0.0.1:54418 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54420 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54436 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54442 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54446 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54460 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54474 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54486 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54490 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54506 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54508 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54518 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54524 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54540 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+[atom 15:50:34] Engine Core: executing utility command: get_mtp_statistics
+[atom 15:50:34] Engine Core: utility command 'get_mtp_statistics' finished in 0.00s
+INFO:     127.0.0.1:54554 - "GET /debug/mtp_stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54564 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54568 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54576 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54580 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54584 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54598 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54600 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54616 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54622 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54624 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54634 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54638 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54644 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54656 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54660 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54674 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54684 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54686 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54702 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54714 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54730 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54738 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54744 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:54748 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+[atom 15:50:39] Engine Core: executing utility command: get_mtp_statistics
+[atom 15:50:39] Engine Core: utility command 'get_mtp_statistics' finished in 0.00s
+INFO:     127.0.0.1:54754 - "GET /debug/mtp_stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60048 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60056 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60072 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60086 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60096 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60098 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60102 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60118 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60134 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60138 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60140 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60148 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60158 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60164 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60168 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60172 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60184 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60194 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60210 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60212 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60214 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60220 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60224 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60234 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60240 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60244 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60250 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60266 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60268 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60274 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60280 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60288 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60292 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60294 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60304 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60308 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60314 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60328 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60336 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60340 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60352 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60366 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60372 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60376 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60378 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60386 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60388 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60390 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+[atom 15:50:43] Engine Core: executing utility command: get_mtp_statistics
+[atom 15:50:43] Engine Core: utility command 'get_mtp_statistics' finished in 0.00s
+INFO:     127.0.0.1:60406 - "GET /debug/mtp_stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60412 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60418 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60420 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60424 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60434 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60436 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60452 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60454 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60468 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60484 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60490 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60504 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60510 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60512 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60516 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60520 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60528 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60536 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60546 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60560 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60564 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60580 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60596 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60602 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60612 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60618 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60634 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60650 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60652 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60656 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60660 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60662 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60666 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60674 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60690 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60694 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60710 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60724 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60730 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60736 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60746 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60760 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60768 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60770 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60778 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60786 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60802 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60814 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60828 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60834 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60848 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60860 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60862 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60876 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60884 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60888 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60902 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60914 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60918 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60932 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60944 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60952 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60956 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60962 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60970 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60984 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60996 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32768 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32772 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32782 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32790 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32804 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32818 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32824 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32828 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32844 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32846 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32854 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32856 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32860 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32872 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32886 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32888 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32900 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32910 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32924 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32926 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32932 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32936 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32940 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32950 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32960 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32968 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32978 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32980 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32986 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+[atom 15:50:48] Engine Core: executing utility command: get_mtp_statistics
+[atom 15:50:48] Engine Core: utility command 'get_mtp_statistics' finished in 0.00s
+INFO:     127.0.0.1:33000 - "GET /debug/mtp_stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57954 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57962 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57974 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57990 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57996 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58012 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58018 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58020 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58032 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58034 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58044 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58052 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58060 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58066 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58080 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58084 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58086 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58088 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58096 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58110 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58124 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58136 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58142 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58144 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58150 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58156 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58168 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58178 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58184 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58190 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58198 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58208 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58212 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58218 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58234 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58236 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58248 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58252 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58266 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58272 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58288 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58300 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58314 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58326 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58332 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58336 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58342 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58348 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58364 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58374 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58376 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58386 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58392 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58406 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58422 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58428 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58434 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58444 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58454 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58464 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58466 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58478 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58486 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58496 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58512 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58528 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58542 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58550 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58564 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58576 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58592 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58596 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58610 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58626 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58638 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58642 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58658 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58668 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58672 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58676 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58692 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58704 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58706 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58710 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58722 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58732 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58734 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58748 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58764 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58776 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58790 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58806 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58814 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58826 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58828 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58832 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58844 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58854 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58860 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58868 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58870 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58876 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58890 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58894 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58908 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58914 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58928 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58930 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58932 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58934 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58948 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58958 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58964 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58974 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58988 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59002 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59010 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59012 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59028 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59044 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59046 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59056 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59072 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59088 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59102 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59112 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59120 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59132 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59134 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59144 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59152 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59154 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59156 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59164 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59172 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59180 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59194 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59206 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59212 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59216 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59224 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59226 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59240 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59256 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59272 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59280 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59288 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59296 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59304 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59318 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59320 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59334 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59350 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59352 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59366 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59380 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59396 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59398 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59408 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59410 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59418 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59420 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59428 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59442 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59456 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59464 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59466 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59470 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59486 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59498 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59508 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59522 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59528 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59538 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59552 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59568 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59572 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59582 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59594 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59608 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59616 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59620 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59634 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59636 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59642 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59646 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59658 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59674 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59690 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59692 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59708 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59710 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+[atom 15:50:52] Engine Core: executing utility command: get_mtp_statistics
+[atom 15:50:52] Engine Core: utility command 'get_mtp_statistics' finished in 0.00s
+INFO:     127.0.0.1:59724 - "GET /debug/mtp_stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59732 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59748 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59764 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59772 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59780 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59786 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59790 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59802 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59806 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59812 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59814 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59830 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59832 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59836 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59840 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59856 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59858 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59860 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59868 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59878 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59892 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59898 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59910 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59922 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59928 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59932 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59942 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59954 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59968 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59972 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59982 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59998 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60010 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60022 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60024 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60036 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60048 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60056 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60062 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60064 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60076 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60090 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60098 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60104 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60110 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60116 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60126 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60136 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60146 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60152 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60160 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60166 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60172 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60184 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60188 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60204 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60216 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60230 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60240 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60256 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60262 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60272 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60284 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60286 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60294 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60298 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60314 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60322 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60334 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60336 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60346 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60348 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60354 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60356 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60370 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60374 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60390 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60400 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60406 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60414 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60430 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60442 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60446 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60454 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60466 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60468 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60474 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60490 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60494 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60502 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60510 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60526 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60528 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60534 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60546 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60562 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60570 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60574 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60590 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60594 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60596 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60608 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60620 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60632 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60642 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60646 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60660 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60668 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60684 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60688 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60702 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60708 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60720 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60736 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60738 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60744 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60750 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60760 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60764 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60774 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60778 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60790 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60798 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60808 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60820 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60834 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60850 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60856 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60870 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60878 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60890 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60892 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60896 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60910 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60924 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60940 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60948 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60956 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60966 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60974 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60982 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60988 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60992 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32772 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32788 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32796 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32806 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32814 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32818 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32820 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32830 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32832 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32840 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32842 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32852 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32868 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32884 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32894 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32906 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32914 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32918 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32928 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32936 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32946 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32950 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32954 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32960 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32976 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32980 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32992 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32996 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33002 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33012 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33016 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33020 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33034 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33046 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33054 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33056 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33058 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33062 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33076 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33084 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33088 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33092 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33100 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33114 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33118 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33120 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33126 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33140 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33144 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33154 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33162 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33170 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33176 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33178 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33194 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33206 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33222 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33224 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33236 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33246 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33252 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33266 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33268 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33282 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33296 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33304 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33306 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33320 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33328 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33334 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33344 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33348 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33364 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33372 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33388 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33392 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33398 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33402 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33410 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33416 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33426 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33442 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33446 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33450 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33452 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33464 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33468 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33480 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33486 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33488 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33492 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33498 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33506 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33516 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33526 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33530 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33536 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33540 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33552 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33554 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33568 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33582 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33584 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33590 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33604 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33616 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33628 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33630 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33638 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33652 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33662 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33676 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33688 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33704 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33716 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33726 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33734 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33742 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33746 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33758 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33760 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33762 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33776 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33790 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33796 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33808 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33822 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33824 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33840 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33850 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33852 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33860 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33874 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33888 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33890 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33900 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33902 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33916 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33922 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33924 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33932 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33948 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33958 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33968 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33984 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33988 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34002 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34008 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34016 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34028 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34034 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34040 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34044 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34050 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34052 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34062 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34074 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34080 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34084 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34098 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34102 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34110 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34116 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34126 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34128 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34132 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34138 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34140 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34156 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34172 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34176 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34180 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34196 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34202 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34204 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34220 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34224 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34232 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34246 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34250 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34262 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34278 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34294 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34298 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34314 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34328 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34336 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34342 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34344 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34356 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34372 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34384 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34398 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34410 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34412 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34426 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34440 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34452 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34462 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34464 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34470 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34484 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34490 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34502 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34516 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34524 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34540 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34554 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34556 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34568 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34572 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34584 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34594 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34598 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34610 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34626 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34628 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34636 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34640 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34656 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34672 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34682 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34696 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34698 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34706 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34716 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34732 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34734 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34742 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34756 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34762 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34778 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34790 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34798 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34808 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34810 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34826 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34838 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34844 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34856 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34868 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+[atom 15:50:58] Engine Core: executing utility command: get_mtp_statistics
+[atom 15:50:58] Engine Core: utility command 'get_mtp_statistics' finished in 0.00s
+INFO:     127.0.0.1:34884 - "GET /debug/mtp_stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57058 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57070 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57072 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57088 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57092 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57096 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57104 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57120 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57132 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57146 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57156 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57166 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57176 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57188 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57192 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57200 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57208 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57210 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57214 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57230 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57234 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57236 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57246 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57262 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57266 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57278 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57288 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57304 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57308 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57316 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57326 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57340 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57356 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57358 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57372 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57374 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57390 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57398 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57406 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57418 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57420 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57430 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57440 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57442 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57458 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57470 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57472 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57474 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57478 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57480 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57488 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57496 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57500 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57508 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57510 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57522 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57532 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57538 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57548 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57550 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57564 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57578 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57592 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57596 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57598 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57614 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57616 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57622 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57632 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57642 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57652 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57658 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57660 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57674 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57688 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57696 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57706 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57720 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57724 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57740 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57756 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57758 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57762 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57766 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57770 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57774 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57788 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57794 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57806 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57814 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57820 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57824 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57840 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57850 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57864 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57868 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57876 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57886 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57896 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57910 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57914 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57924 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57940 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57952 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57956 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57962 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57976 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57984 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57996 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:57998 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58006 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58008 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58018 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58032 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58038 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58042 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58054 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58058 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58062 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58076 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58082 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58096 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58100 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58102 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58110 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58118 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58124 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58132 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58142 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58158 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58162 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58174 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58178 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58188 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58198 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58210 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58224 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58230 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58238 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58246 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58260 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58272 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58286 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58294 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58310 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58326 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58330 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58334 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58336 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58340 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58352 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58354 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58366 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58370 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58382 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58388 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58398 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58410 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58422 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58434 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58448 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58460 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58468 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58472 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58484 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58500 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58510 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58520 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58526 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58534 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58538 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58548 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58556 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58562 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58568 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58572 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58578 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58582 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58588 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58596 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58610 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58614 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58616 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58628 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58640 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58644 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58650 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58666 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58676 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58680 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58696 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58708 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58718 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58722 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58736 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58750 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58758 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58768 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58770 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58780 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58794 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58796 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58802 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58814 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58822 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58826 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58840 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58844 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58856 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58860 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58874 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58886 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58898 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58912 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58926 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58938 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58944 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58950 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58966 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58976 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58986 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58990 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59006 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59018 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59034 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59036 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59038 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59044 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59046 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59060 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59064 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59080 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59096 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59110 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59126 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59134 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59138 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59148 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59158 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59166 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59180 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59182 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59192 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59196 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59208 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59220 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59230 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59242 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59254 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59268 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59272 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59288 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59298 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59312 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59314 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59330 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59342 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59344 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59348 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59364 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59376 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59378 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59388 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59398 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59408 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59422 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59434 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59450 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59454 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59470 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59480 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59492 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59494 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59502 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59518 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59524 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59538 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59548 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59550 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59558 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59566 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59582 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59588 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59604 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59614 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59622 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59636 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59648 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59650 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59658 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59674 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59676 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59684 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59690 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59702 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59714 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59730 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59742 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59748 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59758 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59774 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59782 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59786 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59802 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59818 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59822 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59828 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59834 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59836 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59852 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59856 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59866 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59874 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59880 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59890 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59900 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59902 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59916 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59924 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59932 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59938 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59940 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59954 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59962 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59976 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59988 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59998 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60014 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60016 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60032 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60034 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60038 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60044 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60052 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60064 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60072 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60082 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60092 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60102 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60108 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60118 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60122 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60132 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60136 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60148 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60154 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60170 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60172 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60188 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60194 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60200 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60204 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60206 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60208 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60216 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60232 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60236 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60244 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60248 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60260 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60272 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60276 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60286 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60288 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60300 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60302 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60314 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60316 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60326 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60342 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60350 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60352 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60358 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60368 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60380 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60388 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60400 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60408 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60424 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60432 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60434 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60442 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60458 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60464 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60472 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60474 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60480 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60482 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60488 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60496 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60508 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60524 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60530 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60544 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60556 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60572 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60582 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60598 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60606 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60616 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60622 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60638 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60648 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60662 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60664 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60666 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60670 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60682 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60692 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60704 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60706 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60712 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60726 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60728 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60744 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60756 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60758 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60766 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60772 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60776 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60782 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60788 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60804 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60814 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60824 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60838 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60842 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60852 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60866 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60872 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60884 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60900 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60902 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60904 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60920 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60936 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60948 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60964 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60968 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60976 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60990 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60992 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32774 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32786 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32802 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32810 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32816 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32820 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32824 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32840 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32844 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32846 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32858 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32872 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32880 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32890 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32902 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32912 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32916 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32930 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32940 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32946 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32958 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32966 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32970 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32982 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:32992 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33002 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33018 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33024 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33036 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33052 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33058 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33064 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33080 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33082 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33088 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33100 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33114 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33120 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33134 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33140 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33144 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33156 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33168 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33184 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33186 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33202 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33212 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33218 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33222 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33232 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33240 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33244 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33256 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33258 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33266 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33280 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33288 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33302 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33308 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33320 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33334 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33346 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33354 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33364 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33368 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33382 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33384 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33390 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33392 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33408 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33414 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33418 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33428 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33436 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33452 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33460 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33476 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33480 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33482 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33490 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33496 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33500 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33510 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33512 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33522 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33530 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33534 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33544 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33546 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33548 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33562 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33570 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33576 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33578 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33586 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33594 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33606 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33608 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33620 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33630 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33634 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33650 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33656 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33664 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33676 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33686 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33696 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33698 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33706 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33722 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33734 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33740 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33750 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33752 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33766 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33776 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33780 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33788 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33790 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33794 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33808 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33816 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33824 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33836 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33840 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33852 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33858 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33864 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33880 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33884 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33894 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33904 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33912 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33926 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33928 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33932 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33940 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33954 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33962 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33978 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33982 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33988 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33990 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33992 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34008 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34016 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34018 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34024 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34026 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34036 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34048 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34052 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34066 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34076 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34086 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34100 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34102 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34110 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34114 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34120 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34134 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34144 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34160 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34162 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34170 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34174 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34182 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34194 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34210 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34224 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34240 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34252 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34262 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34272 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34278 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34290 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34300 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34304 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34320 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34334 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34344 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34360 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34376 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34384 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34394 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34408 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34410 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34418 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34434 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34446 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34454 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34462 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34476 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34492 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34498 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34514 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34528 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34530 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34546 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34556 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34568 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34572 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34580 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34582 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34588 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34594 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34596 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34602 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34606 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34612 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34624 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34630 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34644 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34652 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34662 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34678 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34684 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34700 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34714 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34728 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34738 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34754 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34770 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34774 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34780 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34784 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34790 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34804 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34818 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34820 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34834 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34836 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34844 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34848 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34850 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34862 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34870 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34886 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34892 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34898 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34902 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34916 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34922 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34932 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34942 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34948 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34962 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34976 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34978 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34980 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34982 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34998 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35012 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35022 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35036 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35040 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35052 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35058 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35070 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35072 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35074 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35088 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35092 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35094 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35106 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35114 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35116 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35120 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35136 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35146 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35158 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35160 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35170 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35184 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35196 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35200 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35210 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35216 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35230 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35246 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35256 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35260 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35272 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35274 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35282 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35298 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35306 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35310 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35318 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35328 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35332 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35336 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35348 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35358 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35370 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35374 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35390 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35398 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35410 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35422 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35432 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35442 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35446 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35460 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35464 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35476 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35488 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35494 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35498 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35500 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35516 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35520 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35526 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35532 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35540 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35552 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35556 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35570 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35584 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35588 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35590 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35592 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35602 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35616 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35626 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:35636 - "POST /v1/completions HTTP/1.1" 400 Bad Request
+[atom 15:51:05] Engine Core: executing utility command: get_mtp_statistics
+[atom 15:51:05] Engine Core: utility command 'get_mtp_statistics' finished in 0.00s
+INFO:     127.0.0.1:35652 - "GET /debug/mtp_stats HTTP/1.1" 200 OK

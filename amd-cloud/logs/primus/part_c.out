@@ -1,3 +1,12 @@
 [2026-08-13T22:47:04+00:00] PART C start (RUN_ID=20260813-224704, driver log: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/part_c_20260813_224704)
 [2026-08-13T22:47:04+00:00] all 8 GPUs idle, proceeding
 [2026-08-13T22:47:04+00:00] STAGE 1/4 GPU scan gate (gemm, N=1..8)
+[2026-08-13T22:50:14+00:00] gpu scan rc=0, produced 8/8 gemm output files
+[2026-08-13T22:50:14+00:00] gate OK
+[2026-08-13T22:50:14+00:00] STAGE 2/4 microbench sweep (gemm, gemm-dense, gemm-deepseek, attention, rccl x N=1..8)
+[2026-08-13T23:32:12+00:00] full sweep rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/sweep-20260813-224704
+[2026-08-13T23:32:12+00:00] STAGE 3/4 Megatron llama2-7B BF16, N=1..8
+[2026-08-14T00:23:00+00:00] megatron rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/sweep-20260813-224704
+[2026-08-14T00:23:00+00:00] STAGE 4/4 generate_report.py
+[2026-08-14T00:23:01+00:00] report rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/results/PRIMUS_REPORT.md
+[2026-08-14T00:23:01+00:00] PART C DONE

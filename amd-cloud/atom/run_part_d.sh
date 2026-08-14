@@ -55,17 +55,53 @@ fi
 say "GPUs idle, no foreign ATOM server"
 
 # ---- stage 0: image gate --------------------------------------------------------
-say "STAGE 0 gfx950 gate"
-docker run --rm $(dgpu_args) "$IMG" \
-  python -c "import torch;print(torch.__version__);print(torch.cuda.get_arch_list());print('devices',torch.cuda.device_count())" \
-  >"$DRV/gate.log" 2>&1
+# NOT a `gfx950 in torch.cuda.get_arch_list()` string check. rocm/atom-dev ships torch
+# built for gfx942 only, yet measured 1309.6 TF/s BF16 4096^3 here vs 1323.2 TF/s for the
+# gfx950-native rocm/primus:v26.5 image on the SAME microbenchmark -- 99%, within noise.
+# Reason: PyTorch matmul dispatches to hipBLASLt, which carries its own gfx950-tuned
+# kernels independently of torch's compiled arch list, so arch_list is the wrong signal.
+# Gate on what actually matters instead: the device is really gfx950, all 8 are visible,
+# a real matmul produces correct results, and throughput clears a floor.
+say "STAGE 0 functional + throughput gate"
+docker run --rm $(dgpu_args) "$IMG" python -c "
+import torch, time
+props = torch.cuda.get_device_properties(0)
+print('torch', torch.__version__)
+print('arch_list', torch.cuda.get_arch_list())
+print('gcnArchName', props.gcnArchName)
+print('devices', torch.cuda.device_count())
+a = torch.randn(4096, 4096, device='cuda', dtype=torch.bfloat16)
+b = torch.randn(4096, 4096, device='cuda', dtype=torch.bfloat16)
+ref = (a.float() @ b.float())
+c = a @ b
+err = (c.float() - ref).abs().max().item() / ref.abs().max().item()
+print('rel_err %.3e' % err)
+for _ in range(20): c = a @ b
+torch.cuda.synchronize()
+n = 200; t0 = time.perf_counter()
+for _ in range(n): c = a @ b
+torch.cuda.synchronize()
+tf = 2 * 4096**3 * n / (time.perf_counter() - t0) / 1e12
+print('TFLOPS %.1f' % tf)
+" >"$DRV/gate.log" 2>&1
 rc=$?
-if [[ $rc -ne 0 ]] || ! grep -q gfx950 "$DRV/gate.log"; then
-  say "ABORT: gate failed (rc=$rc) or gfx950 missing from arch list — see $DRV/gate.log"
-  tail -5 "$DRV/gate.log" | tee -a "$STATE"
+gcn=$(grep -oP 'gcnArchName \K\S+' "$DRV/gate.log" | head -1)
+ndev=$(grep -oP '^devices \K[0-9]+' "$DRV/gate.log" | head -1)
+tflops=$(grep -oP '^TFLOPS \K[0-9.]+' "$DRV/gate.log" | head -1)
+relerr=$(grep -oP '^rel_err \K\S+' "$DRV/gate.log" | head -1)
+ok=1
+[[ $rc -ne 0 ]] && ok=0
+[[ "$gcn" == gfx950* ]] || ok=0
+[[ "${ndev:-0}" -eq 8 ]] || ok=0
+# 1000 TF/s floor: ~75% of the 1323 TF/s gfx950-native reference on this shape. Well
+# clear of noise, but low enough that it only trips on a genuinely broken kernel path.
+awk -v t="${tflops:-0}" 'BEGIN{exit !(t>1000)}' || ok=0
+if [[ $ok -ne 1 ]]; then
+  say "ABORT: gate failed (rc=$rc gcn=$gcn devices=$ndev tflops=$tflops rel_err=$relerr)"
+  tail -10 "$DRV/gate.log" | tee -a "$STATE"
   exit 1
 fi
-say "gate OK: $(grep -o 'devices [0-9]*' "$DRV/gate.log")"
+say "gate OK: $gcn, $ndev devices, ${tflops} TF/s BF16, rel_err=$relerr"
 
 run_tier() {
   local tag=$1 model=$2 tp=$3 port=$4 conc=$5; shift 5
@@ -84,9 +120,15 @@ run_tier() {
   fi
   say "$tag: server up"
   ./run_atom_bench.sh "$model" "$port" "$ISL" "$OSL" "$conc" >"$DRV/${tag}_bench.log" 2>&1
-  say "$tag: bench rc=$? sweep=$(cat "$LOG_ROOT/atom/CURRENT_SWEEP_DIR.txt" 2>/dev/null)"
+  local brc=$?
+  say "$tag: bench rc=$brc sweep=$(cat "$LOG_ROOT/atom/CURRENT_SWEEP_DIR.txt" 2>/dev/null)"
   ./stop_atom_server.sh >"$DRV/${tag}_stop.log" 2>&1
   say "$tag: server stopped"
+  if [[ $brc -ne 0 ]]; then
+    say "$tag: FAILED — see $DRV/${tag}_bench.log"
+    tail -6 "$DRV/${tag}_bench.log" | tee -a "$STATE"
+    FAILED_TIERS="${FAILED_TIERS:-} $tag"
+  fi
   sleep 10   # let VRAM drain before the next tier
 }
 
@@ -100,6 +142,12 @@ if [[ "$WHICH" == "all" || "$WHICH" == "tier3" ]]; then
 fi
 
 # ---- analysis -------------------------------------------------------------------
+if [[ -n "${FAILED_TIERS:-}" ]]; then
+  say "ABORT: tier(s) failed:${FAILED_TIERS}. Not running analysis on empty data —"
+  say "       a report full of 0.00 rows is worse than no report."
+  exit 1
+fi
+
 say "STAGE analysis"
 $PY analyze_atom.py "$LOG_ROOT"/atom/sweep_* -o "$BENCH_ROOT/results" >"$DRV/analyze.log" 2>&1
 say "analyze rc=$? -> $BENCH_ROOT/results/atom.{md,csv}"

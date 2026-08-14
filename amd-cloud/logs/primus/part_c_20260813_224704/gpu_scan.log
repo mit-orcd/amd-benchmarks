@@ -7,3 +7,17 @@ Started   : 2026-08-13T22:47:04+00:00
 ----- gemm N=1 devs=0 2026-08-13T22:47:04+00:00 -----
   rc=0 duration=18s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/gpu-scan-20260813-224704/scan_1gpu.log
 ----- gemm N=2 devs=0,1 2026-08-13T22:47:22+00:00 -----
+  rc=0 duration=21s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/gpu-scan-20260813-224704/scan_2gpu.log
+----- gemm N=3 devs=0,1,2 2026-08-13T22:47:43+00:00 -----
+  rc=0 duration=22s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/gpu-scan-20260813-224704/scan_3gpu.log
+----- gemm N=4 devs=0,1,2,3 2026-08-13T22:48:05+00:00 -----
+  rc=0 duration=22s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/gpu-scan-20260813-224704/scan_4gpu.log
+----- gemm N=5 devs=0,1,2,3,4 2026-08-13T22:48:27+00:00 -----
+  rc=0 duration=25s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/gpu-scan-20260813-224704/scan_5gpu.log
+----- gemm N=6 devs=0,1,2,3,4,5 2026-08-13T22:48:52+00:00 -----
+  rc=0 duration=25s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/gpu-scan-20260813-224704/scan_6gpu.log
+----- gemm N=7 devs=0,1,2,3,4,5,6 2026-08-13T22:49:17+00:00 -----
+  rc=0 duration=27s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/gpu-scan-20260813-224704/scan_7gpu.log
+----- gemm N=8 devs=0,1,2,3,4,5,6,7 2026-08-13T22:49:44+00:00 -----
+  rc=0 duration=30s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/gpu-scan-20260813-224704/scan_8gpu.log
+Finished  : 2026-08-13T22:50:14+00:00

@@ -1,0 +1,10 @@
+Starting ATOM server
+  image  : rocm/atom-dev:latest
+  model  : /mnt/scratch/shaohao/models/Qwen3-8B-FP8
+  TP     : 1  (devices 0)
+  port   : 8000
+  logs   : /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/server_20260814_154044
+  cmd    : /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/server_20260814_154044/server_cmd.sh
+  container: 4a29c11835c2
+Waiting for server 15s 30s 45s
+Server READY on port 8000 (VRAM loaded on 1 GPU(s))

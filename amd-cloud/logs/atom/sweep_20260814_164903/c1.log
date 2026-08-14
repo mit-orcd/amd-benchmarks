@@ -1,0 +1,72 @@
+[atom 16:49:07] Raised RLIMIT_NOFILE soft limit 1024 -> 65535 (hard=524288)
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+  0%|          | 0/2 [00:00<?, ?it/s]Namespace(backend='vllm', base_url='http://localhost:8002', host='127.0.0.1', port=8000, endpoint='/v1/completions', dataset_name='random', dataset_path=None, max_concurrency=1, model='/model', tokenizer=None, best_of=1, use_beam_search=False, num_prompts=10, logprobs=None, request_rate=inf, burstiness=1.0, seed=0, trust_remote_code=True, disable_tqdm=False, profile=False, save_result=True, save_detailed=False, metadata=None, result_dir=None, result_filename='/out/c1.json', ignore_eos=True, percentile_metrics='ttft,tpot,itl,e2el', metric_percentiles='99', goodput=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, random_input_len=1024, random_output_len=1024, random_range_ratio=0.8, random_prefix_len=0, use_chat_template=False, hf_subset=None, hf_split=None, hf_output_len=None, tokenizer_mode='auto', served_model_name=None, lora_modules=None, num_warmups=2)
+-------------------  Input/Output Length Statistics  -------------------
+ input_lens : min=828   max=1014  mean=914.90   avg_token_mismatch=0.00  
+ output_lens: min=858   max=1012  mean=921.40  
+------------------------------------------------------------------------ 
+
+Starting initial single prompt test run...
+Warming up with 2 requests...
+ 50%|█████     | 1/2 [01:05<01:05, 65.04s/it]100%|██████████| 2/2 [01:24<00:00, 38.37s/it]100%|██████████| 2/2 [01:24<00:00, 42.37s/it]
+Warmup completed.
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 1
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:19<02:57, 19.73s/it] 20%|██        | 2/10 [00:39<02:36, 19.51s/it] 30%|███       | 3/10 [00:58<02:17, 19.63s/it] 40%|████      | 4/10 [01:19<02:00, 20.07s/it] 50%|█████     | 5/10 [01:38<01:38, 19.69s/it] 60%|██████    | 6/10 [02:00<01:21, 20.45s/it] 70%|███████   | 7/10 [02:19<00:59, 19.84s/it] 80%|████████  | 8/10 [02:38<00:39, 19.79s/it] 90%|█████████ | 9/10 [03:00<00:20, 20.35s/it]100%|██████████| 10/10 [03:20<00:00, 20.14s/it]100%|██████████| 10/10 [03:20<00:00, 20.01s/it]
+Starting main benchmark run...
+============ Serving Benchmark Result ============
+Successful requests:                     10        
+Benchmark duration (s):                  200.08    
+Total input tokens:                      9149      
+Total generated tokens:                  9214      
+Request throughput (req/s):              0.05      
+Output token throughput (tok/s):         46.05     
+Total Token throughput (tok/s):          91.78     
+Concurrency:                             1.00      
+---------------Time to First Token----------------
+Mean TTFT (ms):                          230.45    
+Median TTFT (ms):                        224.93    
+P99 TTFT (ms):                           273.83    
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          21.49     
+Median TPOT (ms):                        21.48     
+P99 TPOT (ms):                           21.56     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           21.46     
+Median ITL (ms):                         21.48     
+P99 ITL (ms):                            24.73     
+----------------End-to-end Latency----------------
+Mean E2EL (ms):                          20006.81  
+Median E2EL (ms):                        19705.18  
+P99 E2EL (ms):                           21900.62  
+==================================================

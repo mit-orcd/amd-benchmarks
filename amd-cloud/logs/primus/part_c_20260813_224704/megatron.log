@@ -1,0 +1,19 @@
+WARNING: 2 GPU(s) busy — another workload is running
+================ MEGATRON 2026-08-13T23:32:12+00:00 image=rocm/primus:v26.5 exp=examples/megatron/configs/MI355X/llama2_7B-BF16-pretrain.yaml ================
+----- megatron N=1 GBS=32 MBS=4 devs=0 2026-08-13T23:32:12+00:00 -----
+  OK duration=361s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/sweep-20260813-224704/megatron-llama2_7B-bf16_N1.log
+----- megatron N=2 GBS=64 MBS=4 devs=0,1 2026-08-13T23:38:13+00:00 -----
+  OK duration=369s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/sweep-20260813-224704/megatron-llama2_7B-bf16_N2.log
+----- megatron N=3 GBS=96 MBS=4 devs=0,1,2 2026-08-13T23:44:22+00:00 -----
+  OK duration=369s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/sweep-20260813-224704/megatron-llama2_7B-bf16_N3.log
+----- megatron N=4 GBS=128 MBS=4 devs=0,1,2,3 2026-08-13T23:50:31+00:00 -----
+  OK duration=378s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/sweep-20260813-224704/megatron-llama2_7B-bf16_N4.log
+----- megatron N=5 GBS=160 MBS=4 devs=0,1,2,3,4 2026-08-13T23:56:49+00:00 -----
+  OK duration=381s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/sweep-20260813-224704/megatron-llama2_7B-bf16_N5.log
+----- megatron N=6 GBS=192 MBS=4 devs=0,1,2,3,4,5 2026-08-14T00:03:10+00:00 -----
+  OK duration=411s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/sweep-20260813-224704/megatron-llama2_7B-bf16_N6.log
+----- megatron N=7 GBS=224 MBS=4 devs=0,1,2,3,4,5,6 2026-08-14T00:10:01+00:00 -----
+  OK duration=392s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/sweep-20260813-224704/megatron-llama2_7B-bf16_N7.log
+----- megatron N=8 GBS=256 MBS=4 devs=0,1,2,3,4,5,6,7 2026-08-14T00:16:33+00:00 -----
+  OK duration=387s log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/sweep-20260813-224704/megatron-llama2_7B-bf16_N8.log
+[megatron] 2026-08-14T00:23:00+00:00 DONE

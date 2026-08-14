@@ -1,0 +1,7 @@
+[2026-08-14T15:38:03+00:00] PART D start (which=all, driver log: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/part_d_20260814_153803)
+[2026-08-14T15:38:03+00:00] GPUs idle, no foreign ATOM server
+[2026-08-14T15:38:03+00:00] STAGE 0 gfx950 gate
+[2026-08-14T15:38:04+00:00] ABORT: gate failed (rc=0) or gfx950 missing from arch list — see /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/part_d_20260814_153803/gate.log
+2.13.0+rocm7.14.0
+['gfx942']
+devices 8

@@ -1,0 +1,42 @@
+[atom 16:05:12] Raised RLIMIT_NOFILE soft limit 1024 -> 65535 (hard=524288)
+  0%|          | 0/8 [00:00<?, ?it/s]Namespace(backend='vllm', base_url='http://localhost:8000', host='127.0.0.1', port=8000, endpoint='/v1/completions', dataset_name='random', dataset_path=None, max_concurrency=4, model='/model', tokenizer=None, best_of=1, use_beam_search=False, num_prompts=40, logprobs=None, request_rate=inf, burstiness=1.0, seed=0, trust_remote_code=True, disable_tqdm=False, profile=False, save_result=True, save_detailed=False, metadata=None, result_dir=None, result_filename='/out/c4.json', ignore_eos=True, percentile_metrics='ttft,tpot,itl,e2el', metric_percentiles='99', goodput=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, random_input_len=1024, random_output_len=1024, random_range_ratio=0.8, random_prefix_len=0, use_chat_template=False, hf_subset=None, hf_split=None, hf_output_len=None, tokenizer_mode='auto', served_model_name=None, lora_modules=None, num_warmups=8)
+-------------------  Input/Output Length Statistics  -------------------
+ input_lens : min=828   max=1016  mean=926.70   avg_token_mismatch=0.00  
+ output_lens: min=820   max=1022  mean=917.73  
+------------------------------------------------------------------------ 
+
+Starting initial single prompt test run...
+Warming up with 8 requests...
+ 12%|█▎        | 1/8 [00:05<00:39,  5.68s/it] 62%|██████▎   | 5/8 [00:11<00:06,  2.05s/it]100%|██████████| 8/8 [00:11<00:00,  1.42s/it]
+Warmup completed.
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 4
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:05<03:36,  5.55s/it]  5%|▌         | 2/40 [00:05<01:30,  2.39s/it]  8%|▊         | 3/40 [00:06<01:05,  1.78s/it] 12%|█▎        | 5/40 [00:11<01:13,  2.10s/it] 15%|█▌        | 6/40 [00:11<00:55,  1.64s/it] 18%|█▊        | 7/40 [00:12<00:43,  1.33s/it] 20%|██        | 8/40 [00:13<00:41,  1.29s/it] 22%|██▎       | 9/40 [00:18<01:07,  2.18s/it] 25%|██▌       | 10/40 [00:18<00:51,  1.70s/it] 28%|██▊       | 11/40 [00:19<00:41,  1.44s/it] 30%|███       | 12/40 [00:20<00:33,  1.20s/it] 32%|███▎      | 13/40 [00:24<00:56,  2.11s/it] 35%|███▌      | 14/40 [00:24<00:42,  1.62s/it] 38%|███▊      | 15/40 [00:25<00:31,  1.25s/it] 40%|████      | 16/40 [00:26<00:29,  1.24s/it] 42%|████▎     | 17/40 [00:30<00:49,  2.15s/it] 45%|████▌     | 18/40 [00:31<00:35,  1.62s/it] 48%|████▊     | 19/40 [00:31<00:26,  1.25s/it] 50%|█████     | 20/40 [00:32<00:25,  1.29s/it] 52%|█████▎    | 21/40 [00:36<00:37,  2.00s/it] 55%|█████▌    | 22/40 [00:36<00:26,  1.47s/it] 57%|█████▊    | 23/40 [00:37<00:21,  1.27s/it] 60%|██████    | 24/40 [00:39<00:22,  1.41s/it] 62%|██████▎   | 25/40 [00:42<00:29,  1.96s/it] 65%|██████▌   | 26/40 [00:42<00:20,  1.44s/it] 68%|██████▊   | 27/40 [00:44<00:19,  1.47s/it] 70%|███████   | 28/40 [00:44<00:14,  1.24s/it] 72%|███████▎  | 29/40 [00:48<00:20,  1.84s/it] 75%|███████▌  | 30/40 [00:48<00:14,  1.46s/it] 78%|███████▊  | 31/40 [00:50<00:12,  1.44s/it] 80%|████████  | 32/40 [00:51<00:11,  1.43s/it] 82%|████████▎ | 33/40 [00:54<00:12,  1.75s/it] 85%|████████▌ | 34/40 [00:54<00:08,  1.37s/it] 88%|████████▊ | 35/40 [00:56<00:07,  1.51s/it] 90%|█████████ | 36/40 [00:57<00:06,  1.52s/it] 92%|█████████▎| 37/40 [00:59<00:04,  1.61s/it] 95%|█████████▌| 38/40 [01:01<00:03,  1.59s/it] 98%|█████████▊| 39/40 [01:02<00:01,  1.48s/it]100%|██████████| 40/40 [01:03<00:00,  1.48s/it]100%|██████████| 40/40 [01:03<00:00,  1.60s/it]
+Starting main benchmark run...
+============ Serving Benchmark Result ============
+Successful requests:                     40        
+Benchmark duration (s):                  63.99     
+Total input tokens:                      37068     
+Total generated tokens:                  36709     
+Request throughput (req/s):              0.63      
+Output token throughput (tok/s):         573.65    
+Total Token throughput (tok/s):          1152.91   
+Concurrency:                             3.87      
+---------------Time to First Token----------------
+Mean TTFT (ms):                          45.32     
+Median TTFT (ms):                        42.68     
+P99 TTFT (ms):                           89.43     
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          6.70      
+Median TPOT (ms):                        6.71      
+P99 TPOT (ms):                           6.77      
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           6.69      
+Median ITL (ms):                         6.64      
+P99 ITL (ms):                            8.77      
+----------------End-to-end Latency----------------
+Mean E2EL (ms):                          6187.36   
+Median E2EL (ms):                        6233.97   
+P99 E2EL (ms):                           6900.96   
+==================================================

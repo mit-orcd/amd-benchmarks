@@ -1,0 +1,19 @@
+ATOM serving sweep 20260814_161953
+model   : /mnt/scratch/shaohao/models/Llama-3.1-70B-Instruct-FP8
+port    : 8001
+ISL/OSL : 1024/1024
+conc    : 1 2 4 8 16 32 64 128 256
+image   : rocm/atom-dev:latest
+started : 2026-08-14T16:19:53+00:00
+
+  conc        req/s    out_tok/s  ttft_ms_med  tpot_ms_med
+     1         0.11        101.1         71.9         9.81   rc=0 115s completed=10
+     2         0.20        191.1         71.2        10.36   rc=0 128s completed=20
+     4         0.41        373.7         72.1        10.28   rc=0 121s completed=40
+     8         0.77        711.0         71.9        10.93   rc=0 130s completed=80
+    16         1.48       1352.1         71.8        11.49   rc=0 131s completed=160
+    32         2.63       2432.4         72.8        12.74   rc=0 146s completed=320
+    64         4.47       4124.8         91.9        15.00   rc=0 174s completed=640
+   128         6.97       6412.5        110.3        19.47   rc=0 222s completed=1280
+   256        10.13       9342.4        154.5        26.74   rc=0 302s completed=2560
+results: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/sweep_20260814_161953

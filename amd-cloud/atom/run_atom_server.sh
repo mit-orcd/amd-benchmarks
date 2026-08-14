@@ -81,7 +81,12 @@ CMD="$OUT/server_cmd.sh"
   echo 'set -uo pipefail'
   echo 'exec python -m atom.entrypoints.openai_server \'
   echo '  --model /model \'
-  echo '  --served-model-name atom-bench \'
+  # NO --served-model-name. The benchmark client (run_atom_bench.sh) passes
+  # `--model=/model` because it also loads the tokenizer from that path, and it sends that
+  # same string as the OpenAI `model` field. If the server registers a different id
+  # (e.g. "atom-bench"), every request comes back HTTP 400 while /v1/models and the health
+  # endpoints still answer 200 -- so the readiness check passes and the whole sweep silently
+  # records 0.00 for every metric. Serving under the path keeps client and server aligned.
   echo "  --tensor-parallel-size $TP \\"
   echo "  --server-port $PORT \\"
   echo "  --kv_cache_dtype $KV_CACHE_DTYPE \\"

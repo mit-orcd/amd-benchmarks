@@ -1,0 +1,10 @@
+Stopping container 'atom-bench'...
+Stopped and removed 'atom-bench'.
+GPU[0]		: GPU Memory Allocated (VRAM%): 84
+GPU[1]		: GPU Memory Allocated (VRAM%): 84
+GPU[2]		: GPU Memory Allocated (VRAM%): 85
+GPU[3]		: GPU Memory Allocated (VRAM%): 84
+GPU[4]		: GPU Memory Allocated (VRAM%): 82
+GPU[5]		: GPU Memory Allocated (VRAM%): 84
+GPU[6]		: GPU Memory Allocated (VRAM%): 85
+GPU[7]		: GPU Memory Allocated (VRAM%): 85

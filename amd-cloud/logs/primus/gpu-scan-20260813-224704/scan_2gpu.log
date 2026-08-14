@@ -152,3 +152,6 @@ W0813 22:47:25.137000 419 torch/distributed/run.py:862] ************************
 W0813 22:47:25.137000 419 torch/distributed/run.py:862] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
 W0813 22:47:25.137000 419 torch/distributed/run.py:862] *****************************************
 [Primus:Benchmark] suite=gemm args=Namespace(debug=False, command='benchmark', suite='gemm', func=<function run at 0x743fda2f1f80>, M=4096, N=4096, K=4096, trans_a=False, trans_b=False, dtype='bf16', duration=10, output_file='/out/gemm_N2.md')
+[BENCH] Markdown saved: /out/gemm_N2.md (overwrite)
+[✔] GEMM benchmark finished. Results saved to /out/gemm_N2.md
+[2026-08-13 22:47:43] [NODE-0(mi355-gpu-33)] [INFO] [direct] torchrun finished successfully (code 0)

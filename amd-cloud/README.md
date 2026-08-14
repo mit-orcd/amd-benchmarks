@@ -30,24 +30,66 @@ gfx950-native — the gfx942 alias would undercount this hardware.
 
 ## Layout
 
-| Path | Contents |
-|------|----------|
-| `plan.md` | The benchmark plan |
-| `common/env.sh` | Shared paths, RCCL env, docker helper, GPU-idle check |
-| `work-rocmval/` | **Part A** — ROCm Validation Suite: `gst` TFLOPS sweep + health modules |
-| `rccl-tests/` | **Part B** — RCCL collective sweep. RCCL **only**; no Megatron here |
-| `primus/` | **Part C** — Primus GEMM/attention/RCCL microbenches **and** Megatron-LM llama2-7B |
-| `logs/{rvs,rccl,primus}/` | Per-run driver logs and summaries |
-| `results/` | Final markdown / CSV / PNG deliverables |
+```
+amd-cloud/
+├── plan.md                    the benchmark plan
+├── notes.md                   host notes: where images/source/executables/weights live
+├── common/env.sh              shared paths, RCCL env, docker helper, GPU-idle check
+│
+├── work-rocmval/              Part A — ROCm Validation Suite
+│   ├── ROCmValidationSuite/       cloned upstream + build   [git-ignored]
+│   ├── run_part_a.sh              driver: smoke → sweep → health → analysis
+│   ├── run_tflops.sh, run_tflops_sweep.sh, run_rvs_health.sh
+│   ├── analyze_rvs.py             → results/rvs_tflops.{md,csv}
+│   ├── rerun_bandwidth_health.sh  re-check pebb/pbqt/babel on a quiet machine
+│   ├── investigate_fp4_scaling.sh + analyze_fp4_scaling.py   fp4 N≥5 scaling follow-up
+│   ├── run_fp4_investigation_and_update.sh                   chains the two + folds
+│   │                                                          the verdict into rvs_tflops.md
+│   └── update_rvs_summary_with_investigation.py
+│
+├── rccl-tests/                 Part B — RCCL collectives (RCCL only; no Megatron here)
+│   ├── src/                       cloned upstream + build   [git-ignored]
+│   ├── run_part_b.sh              driver: smoke → all-collective → config sweep → analysis
+│   ├── run-rccl-all.sh, run-rccl-configs.sh, run-rccl-sendrecv.sh
+│   └── analyze_rccl.py, plot_rccl_busbw.py   → results/rccl.{md,csv}, rccl_busbw.png
+│
+├── primus/                     Part C — GEMM/attention/RCCL microbenches + Megatron-LM
+│   ├── Primus/                     cloned upstream          [git-ignored]
+│   ├── run_part_c.sh               driver: gate → sweep → Megatron → report
+│   ├── run_gpu_scan.sh, run_full_sweep.sh, run_megatron.sh
+│   ├── generate_report.py          → results/PRIMUS_REPORT.md
+│   └── sweep_out_<RUN_ID>/         bench output the container writes out
+│
+├── atom/                       Part D — ATOM LLM inference serving (3 model tiers)
+│   ├── ATOM/                       cloned upstream          [git-ignored]
+│   ├── README.md                   Part D docs — tiers, why TP, safety design
+│   ├── run_part_d.sh               driver: gate → tier1 → tier2 → tier3 → analysis
+│   ├── download_models.sh          resumable weight fetch → /mnt/scratch/shaohao/models/
+│   ├── run_atom_server.sh, stop_atom_server.sh, run_atom_bench.sh
+│   ├── analyze_atom.py             → results/atom.{md,csv}
+│   └── run_kimi_ep_ab.sh + analyze_kimi_ep.py   expert-parallelism A/B experiment
+│
+├── logs/{rvs,rccl,primus,atom}/   per-run driver logs, STATE.txt, raw benchmark output
+└── results/                    final deliverables
+    ├── rvs_tflops.{md,csv}         Part A
+    ├── fp4_investigation.md        Part A follow-up
+    ├── rccl.{md,csv}, rccl_busbw.png   Part B
+    ├── PRIMUS_REPORT.md            Part C
+    ├── atom.{md,csv}               Part D
+    └── kimi-k3.md                  Part D deep-dive: compute/memory/bandwidth/comms
+```
 
 Megatron-LM is benchmarked **only** through Primus (Part C). Part B mirrors
 [`../dell-cloud/rccl-tests/`](../dell-cloud/rccl-tests/); the Megatron-LM training sweep in
-`dell-cloud/megatron-lm/` is not reproduced.
+`dell-cloud/megatron-lm/` is not reproduced. Part D has no dell-cloud counterpart — it's
+net-new LLM-inference characterization, not a reproduction.
 
-Cloned upstream sources (ROCmValidationSuite, rccl-tests, Primus) are placed inside their
-respective part directories but git-ignored — see [`.gitignore`](.gitignore). Bulk
-regenerable caches (Docker layers, Triton/HF/pip JIT caches, the analysis venv) live at
-`/mnt/scratch/shaohao/`, off-repo.
+Each part's `run_part_*.sh` is a self-contained driver: idle-GPU guard, every stage in
+order, analysis at the end, safe to run under `nohup`/`setsid` unattended. Cloned upstream
+sources (ROCmValidationSuite, rccl-tests, Primus, ATOM) sit inside their part directories but
+are git-ignored — see [`.gitignore`](.gitignore). Bulk regenerable caches (Docker layers,
+Triton/HF/pip JIT caches, the analysis venv, **model weights**) live at
+`/mnt/scratch/shaohao/`, off-repo — see [`notes.md`](notes.md) for exactly what's where.
 
 ## Where the suites overlap
 
@@ -130,9 +172,10 @@ and microbench portions of `dell-cloud/primus/REPORT.md` only. Likewise unused:
 
 | Part | State |
 |------|-------|
-| A — ROCm Validation Suite | **Running** (started 2026-08-13 18:42) — smoke passed at 1544 TFLOPS fp16/1 GPU; `gst` sweep in progress |
-| B — RCCL collectives | Built and staged, not started |
-| C — Primus + Megatron-LM | Image pulled and gated, scripts staged, not started |
+| A — ROCm Validation Suite | ✅ Complete — `gst` sweep, health modules, fp4 N≥5 follow-up |
+| B — RCCL collectives | ✅ Complete — full sweep + config sweep |
+| C — Primus + Megatron-LM | ✅ Complete — microbench sweep + Megatron llama2-7B N=1..8 |
+| D — ATOM (LLM inference) | ✅ Complete — 3 tiers (Qwen3-8B, Llama-70B, Kimi-K3); EP experiment run (unsupported on this build) |
 
-Parts run **strictly sequentially** — all three want all 8 GPUs and the full ~11.2 kW tray
-power envelope, so overlapping them would invalidate every number.
+All four parts ran **strictly sequentially** — each wants all 8 GPUs and the full
+~11.2 kW tray power envelope, so overlapping them would invalidate every number.

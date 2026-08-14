@@ -1,7 +1,7 @@
 # Primus Sweep Report — MI355X (1..8 GPUs)
 
-- Sweep dir: `/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/primus/sweep-20260813-224704`
-- Bench output dir: `/home/amd/shaohao/amd-benchmarks/amd-cloud/primus/sweep_out_20260813-224704`
+- Sweep dir: `logs/primus/sweep-20260813-224704`
+- Bench output dir: `primus/sweep_out_20260813-224704`
 - Image: `rocm/primus:v26.3` (singularity SIF)
 - Hardware: 1 node × 8 × AMD Instinct MI355X (gfx950)
 
@@ -27,16 +27,37 @@ This is the deliberate opposite of Part D (ATOM inference), which runs **TP=8** 
 
 ### 1.1 TF/s/GPU vs #GPUs (Primus → Megatron-LM, llama2-7B BF16, turbo ON)
 
-| N | GBS | last TF/s/GPU | mean TF/s/GPU | last iter (ms) | notes |
-|--:|----:|--------------:|--------------:|---------------:|:------|
-| 1 | 32 | 354.40 | 287.45 | 4840.20 |  |
-| 2 | 64 | 376.00 | 304.75 | 5007.00 |  |
-| 3 | 96 | 341.30 | 274.15 | 4981.50 |  |
-| 4 | 128 | 309.40 | 245.70 | 4930.80 |  |
-| 5 | 160 | 332.60 | 265.60 | 5163.40 |  |
-| 6 | 192 | 323.60 | 257.90 | 5217.50 |  |
-| 7 | 224 | 301.30 | 238.80 | 5252.20 |  |
-| 8 | 256 | 294.40 | 232.10 | 4949.30 |  |
+| N | GBS | compute TF/s/GPU | wall-clock TF/s/GPU | mean TF/s/GPU | last iter (ms) | notes |
+|--:|----:|-----------------:|--------------------:|--------------:|---------------:|:------|
+| 1 | 32 | 1160.80 | 354.40 | 287.45 | 4840.20 |  |
+| 2 | 64 | 1122.20 | 376.00 | 304.75 | 5007.00 |  |
+| 3 | 96 | 1127.90 | 341.30 | 274.15 | 4981.50 |  |
+| 4 | 128 | 1139.50 | 309.40 | 245.70 | 4930.80 |  |
+| 5 | 160 | 1088.20 | 332.60 | 265.60 | 5163.40 |  |
+| 6 | 192 | 1076.90 | 323.60 | 257.90 | 5217.50 |  |
+| 7 | 224 | 1069.80 | 301.30 | 238.80 | 5252.20 |  |
+| 8 | 256 | 1135.20 | 294.40 | 232.10 | 4949.30 |  |
+
+### 1.1a Dell Cloud Primus vs AMD Cloud Primus (same llama2-7B path)
+
+Both hosts are 8 x MI355X running the same Primus -> Megatron-LM llama2-7B BF16 workload with primus-turbo ON, MBS=4, seq 4096. **Compared on `compute per GPU`, which is the metric Dell Cloud's REPORT.md section 1.1 reports** — see the metric note below, this distinction matters enormously.
+
+| N | GBS Dell | GBS AMD | Dell compute TF/s/GPU | AMD compute TF/s/GPU | AMD/Dell | comparable? |
+|--:|--------:|--------:|---------------------:|--------------------:|--------:|:------------|
+| 1 | 256 | 32 | 1160.60 | 1160.80 | **1.00x** | no — GBS differs (256 vs 32) |
+| 2 | 256 | 64 | 1146.00 | 1122.20 | **0.98x** | no — GBS differs (256 vs 64) |
+| 3 | 252 | 96 | 1143.60 | 1127.90 | **0.99x** | no — GBS differs (252 vs 96) |
+| 4 | 256 | 128 | 1139.10 | 1139.50 | **1.00x** | no — GBS differs (256 vs 128) |
+| 5 | — | 160 | — (run failed) | 1088.20 | — | no — Dell has no data |
+| 6 | — | 192 | — (run failed) | 1076.90 | — | no — Dell has no data |
+| 7 | — | 224 | — (run failed) | 1069.80 | — | no — Dell has no data |
+| 8 | 256 | 256 | 1132.00 | 1135.20 | **1.00x** | **YES — matched GBS** |
+
+**Only N=8 is a valid head-to-head** — it is the one point where both runs used GBS=256 (ours as 32x8, theirs fixed). There the two machines are **1.00x** apart: 1132.0 vs 1135.2 TF/s/GPU. Same silicon, essentially identical result — which is the expected outcome and a good cross-machine validation.
+
+At N=1..4 the GBS differs (Dell fixed 256; ours 32N = 32/64/96/128), so those rows are not comparable — a smaller global batch means fewer tokens per iteration and different efficiency. At N=5/6/7 Dell has no data at all: fixed GBS=256 is not divisible by MBS(4) x DP(N) for those arities, which is exactly the failure our per-N `GBS=32N` scheme was designed to avoid. **Our sweep is 8/8; theirs is 5/8.**
+
+> **Metric warning — two different TFLOP/s/GPU numbers exist.** The Megatron iteration line emits both `compute per GPU` (kernel-time throughput) and `throughput per GPU` (wall-clock, includes pipeline bubbles and idle). They differ by ~4x on this workload. Dell Cloud's REPORT.md section 1.1 column is the **compute** figure; a naive parse of the newer v26.5 log picks up the **wall-clock** figure instead. Comparing one against the other manufactures a spurious ~3.8x regression that does not exist. Section 1.1 above now reports both, explicitly labelled.
 
 ### 1.2 vs NVIDIA B200 (Megatron-LM, context only)
 
@@ -138,6 +159,36 @@ All-reduce bandwidth sweep across message sizes (1K..128M, log2 sweep). Peak bus
 | 6 | 45.29 | 17.47 | 18 |
 | 7 | 45.13 | 17.03 | 18 |
 | 8 | 356.34 | 87.60 | 18 |
+
+## 6a. Megatron vs the GEMM ceilings (N=8, BF16, same host)
+
+How much of the achievable matrix-multiply rate does real training actually realize? Each row is a progressively more realistic ceiling, so each gap attributes a specific loss.
+
+| Ceiling | TF/s/GPU | Megatron as % | What the gap costs |
+|---|---:|---:|---|
+| Primus `gemm` — square 4096^3 | 1443.51 | **79%** | off-peak shapes + everything non-GEMM |
+| Primus `gemm-dense` — llama shape mix | 1308.57 | **87%** | non-GEMM work only (shape penalty already priced in) |
+| Megatron llama2-7B (compute per GPU) | **1135.20** | 100% | — |
+
+**`gemm-dense` is the right baseline.** It runs the llama shape mix — the same QKV / O / FFN-gate / up / down GEMMs Megatron issues — so the 87% figure isolates *non-GEMM* overhead: attention, RMSNorm, RoPE, optimizer, and the gradient all-reduce. The square-GEMM row is a looser ceiling because 4096^3 is a shape Megatron never actually runs.
+
+**`gemm-deepseek` is deliberately excluded.** Those are MoE expert shapes with small, skewed K-dimensions; llama2-7B is dense and never issues them, so a percentage against it would be meaningless.
+
+> **Three caveats.** (1) Megatron's TFLOPs are an *analytical* count (~6·params·tokens), not measured FLOPs — so this is model-FLOPs utilization, not a literal hardware efficiency. (2) The microbenches are pure compute with no collectives; Megatron includes a gradient all-reduce per step. (3) Both numbers must be kernel-time (`compute per GPU`); mixing in the wall-clock figure invalidates the ratio entirely.
+
+## 6b. Where the remaining gap goes — attention
+
+Attention is **not** compared as a percentage of Megatron: it measures a *component*, not a substitute workload, so "Megatron as % of attention" would be a category error. It is reported here because it is the leading explanation for why end-to-end training lands below the GEMM ceiling above.
+
+| Kernel class (N=8) | TF/s/GPU | vs `gemm-dense` |
+|---|---:|---:|
+| `gemm-dense` (the GEMM path) | 1308.57 | 100% |
+| attention **forward** | 720.51 | 55% |
+| attention **backward** | 219.65 | 17% |
+
+Attention forward runs at roughly half the GEMM rate and **backward at 30% of forward** (219.65 vs 720.51 TF/s/GPU). Backward is dominated by gradient recomputation plus extra matmuls, and the asymmetry matches what is reported for flash-attention-class kernels generally.
+
+Since a transformer step spends a substantial fraction of its time in attention — and backward is ~2x the cost of forward in a training step — a kernel class running at 17% of GEMM rate is sufficient on its own to explain most of the residual between the `gemm-dense` ceiling and measured end-to-end throughput. Attention is also flat across N (each rank runs independently, no collective), so this is a per-GPU kernel property, not a scaling effect.
 
 ## 7. Analysis
 

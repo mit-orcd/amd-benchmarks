@@ -170,6 +170,18 @@ _MLM_ITER_TIME_RE = re.compile(
 )
 _MLM_GBS_RE = re.compile(r"global batch size\s*:?\s*(\d+)", re.IGNORECASE)
 
+# The Megatron iteration line emits TWO different TFLOP/s/GPU figures, and conflating them
+# is a real trap (it produced a spurious 3.8x "regression" vs the Dell Cloud Primus run):
+#   compute per GPU (TFLOP/s/GPU): 1135.2   <- kernel-time throughput; what dell-cloud's
+#                                              REPORT.md "last TF/s/GPU" column actually is
+#   throughput per GPU (TFLOP/s/GPU): 294.4 <- wall-clock throughput, includes bubbles/idle
+# _MLM_TFLOPS_RE is permissive enough to match both and keeps the last, so parse the
+# compute figure separately and report both, explicitly labelled.
+_MLM_COMPUTE_RE = re.compile(
+    r"compute per GPU \(TFLOPs?/?s?/GPU\)\s*[:=]\s*(\d+\.\d+|\d+)", re.IGNORECASE)
+_MLM_WALL_RE = re.compile(
+    r"throughput per GPU \(TFLOPs?/?s?/GPU\)\s*[:=]\s*(\d+\.\d+|\d+)", re.IGNORECASE)
+
 
 def parse_megatron(path: Path) -> dict:
     text = _read(path)
@@ -196,6 +208,12 @@ def parse_megatron(path: Path) -> dict:
         usable = iter_ms[2:] if len(iter_ms) > 4 else iter_ms
         out["last_iter_ms"] = iter_ms[-1]
         out["mean_iter_ms"] = mean(usable)
+    comp = [float(m.group(1)) for m in _MLM_COMPUTE_RE.finditer(text)]
+    wall = [float(m.group(1)) for m in _MLM_WALL_RE.finditer(text)]
+    if comp:
+        out["last_compute_tflops"] = comp[-1]
+    if wall:
+        out["last_wall_tflops"] = wall[-1]
     return out
 
 
@@ -256,8 +274,11 @@ def build_tflops_table(bench_name: str, parsed: dict[int, dict], gbs_for_n=None)
 
 
 def build_megatron_table(parsed: dict[int, dict]) -> str:
-    rows = ["| N | GBS | last TF/s/GPU | mean TF/s/GPU | last iter (ms) | notes |",
-            "|--:|----:|--------------:|--------------:|---------------:|:------|"]
+    # Two TFLOP/s/GPU metrics are reported side by side deliberately -- see the metric
+    # warning in section 1.1a. "compute" is kernel-time (comparable to dell-cloud's
+    # REPORT.md column); "wall-clock" includes bubbles/idle and is the lower number.
+    rows = ["| N | GBS | compute TF/s/GPU | wall-clock TF/s/GPU | mean TF/s/GPU | last iter (ms) | notes |",
+            "|--:|----:|-----------------:|--------------------:|--------------:|---------------:|:------|"]
     for N in GPU_RANGE:
         d = parsed.get(N) or {}
         gbs = d.get("gbs") or "—"
@@ -274,8 +295,10 @@ def build_megatron_table(parsed: dict[int, dict]) -> str:
             note = "ran then failed"
         else:
             note = ""
+        comp = d.get("last_compute_tflops")
+        wall = d.get("last_wall_tflops")
         rows.append(
-            f"| {N} | {gbs} | {fmt(last)} | {fmt(meanv)} | {fmt(it_ms)} | {note} |"
+            f"| {N} | {gbs} | {fmt(comp)} | {fmt(wall)} | {fmt(meanv)} | {fmt(it_ms)} | {note} |"
         )
     return "\n".join(rows)
 
@@ -379,6 +402,69 @@ def main() -> int:
     parts.append(build_megatron_table(mlm))
     parts.append("")
 
+    # ---- 1.1a Dell Cloud Primus vs AMD Cloud Primus ----
+    # Dell Cloud's REPORT.md section 1.1, same Primus -> Megatron llama2-7B BF16 path.
+    # Their run fixed GBS at 256 (252/240 fudged for non-power-of-2, and N=5/6/7 failed
+    # outright); ours computes GBS=32N. The two therefore only coincide at N=8.
+    DELL_PRIMUS = {1: (256, 1160.60, 41640.70), 2: (256, 1146.00, 21084.20),
+                   3: (252, 1143.60, 13865.70), 4: (256, 1139.10, 10606.40),
+                   5: None, 6: None, 7: None, 8: (256, 1132.00, 5336.50)}
+    parts.append("### 1.1a Dell Cloud Primus vs AMD Cloud Primus (same llama2-7B path)\n")
+    parts.append(
+        "Both hosts are 8 x MI355X running the same Primus -> Megatron-LM llama2-7B BF16 "
+        "workload with primus-turbo ON, MBS=4, seq 4096. **Compared on `compute per GPU`, "
+        "which is the metric Dell Cloud's REPORT.md section 1.1 reports** — see the metric "
+        "note below, this distinction matters enormously.\n"
+    )
+    rows = ["| N | GBS Dell | GBS AMD | Dell compute TF/s/GPU | AMD compute TF/s/GPU | AMD/Dell | comparable? |",
+            "|--:|--------:|--------:|---------------------:|--------------------:|--------:|:------------|"]
+    for N in GPU_RANGE:
+        d = mlm.get(N) or {}
+        ours = d.get("last_compute_tflops")
+        ours_gbs = d.get("gbs")
+        dell = DELL_PRIMUS.get(N)
+        if dell is None:
+            rows.append(f"| {N} | — | {fmt(ours_gbs)} | — (run failed) | {fmt(ours)} | — | "
+                        f"no — Dell has no data |")
+            continue
+        dgbs, dtf, _ = dell
+        if ours is None:
+            rows.append(f"| {N} | {dgbs} | — | {fmt(dtf)} | — | — | no — AMD has no data |")
+            continue
+        ratio = ours / dtf if dtf else None
+        same_gbs = (ours_gbs == dgbs)
+        verdict = "**YES — matched GBS**" if same_gbs else f"no — GBS differs ({dgbs} vs {fmt(ours_gbs)})"
+        rows.append(f"| {N} | {dgbs} | {fmt(ours_gbs)} | {fmt(dtf)} | {fmt(ours)} | "
+                    f"{('**%.2fx**' % ratio) if ratio else '—'} | {verdict} |")
+    parts.append("\n".join(rows))
+    parts.append("")
+    n8 = mlm.get(8) or {}
+    if n8.get("last_compute_tflops") and DELL_PRIMUS.get(8):
+        r = n8["last_compute_tflops"] / DELL_PRIMUS[8][1]
+        parts.append(
+            f"**Only N=8 is a valid head-to-head** — it is the one point where both runs used "
+            f"GBS=256 (ours as 32x8, theirs fixed). There the two machines are "
+            f"**{r:.2f}x** apart: {DELL_PRIMUS[8][1]:.1f} vs "
+            f"{n8['last_compute_tflops']:.1f} TF/s/GPU. Same silicon, essentially identical "
+            f"result — which is the expected outcome and a good cross-machine validation.\n\n"
+            f"At N=1..4 the GBS differs (Dell fixed 256; ours 32N = 32/64/96/128), so those "
+            f"rows are not comparable — a smaller global batch means fewer tokens per "
+            f"iteration and different efficiency. At N=5/6/7 Dell has no data at all: fixed "
+            f"GBS=256 is not divisible by MBS(4) x DP(N) for those arities, which is exactly "
+            f"the failure our per-N `GBS=32N` scheme was designed to avoid. **Our sweep is "
+            f"8/8; theirs is 5/8.**\n"
+        )
+    parts.append(
+        "> **Metric warning — two different TFLOP/s/GPU numbers exist.** The Megatron "
+        "iteration line emits both `compute per GPU` (kernel-time throughput) and "
+        "`throughput per GPU` (wall-clock, includes pipeline bubbles and idle). They differ "
+        "by ~4x on this workload. Dell Cloud's REPORT.md section 1.1 column is the "
+        "**compute** figure; a naive parse of the newer v26.5 log picks up the **wall-clock** "
+        "figure instead. Comparing one against the other manufactures a spurious ~3.8x "
+        "regression that does not exist. Section 1.1 above now reports both, explicitly "
+        "labelled.\n"
+    )
+
     parts.append("### 1.2 vs NVIDIA B200 (Megatron-LM, context only)\n")
     if b200_table:
         parts.append(
@@ -450,6 +536,85 @@ def main() -> int:
         rows.append(f"| {N} | {fmt(d.get('peak_bw_gbps'))} | {fmt(d.get('mean_bw_gbps'))} | {d.get('n_sizes','—')} |")
     parts.append("\n".join(rows))
     parts.append("")
+
+    # --- 6a/6b: Megatron measured against the microbench ceilings on this same host ---
+    # All figures below are N=8, BF16, same machine, same run. The Megatron figure MUST be
+    # the `compute per GPU` metric -- using the wall-clock one compares different quantities
+    # (see the metric warning in 1.1a) and produces a nonsense percentage.
+    m8 = (mlm.get(8) or {}).get("last_compute_tflops")
+    g8 = (gemm.get(8) or {}).get("mean_tflops")
+    gd8 = (gemm_dense.get(8) or {}).get("mean_tflops")
+    if m8 and (g8 or gd8):
+        parts.append("## 6a. Megatron vs the GEMM ceilings (N=8, BF16, same host)\n")
+        parts.append(
+            "How much of the achievable matrix-multiply rate does real training actually "
+            "realize? Each row is a progressively more realistic ceiling, so each gap "
+            "attributes a specific loss.\n"
+        )
+        rows = ["| Ceiling | TF/s/GPU | Megatron as % | What the gap costs |",
+                "|---|---:|---:|---|"]
+        if g8:
+            rows.append(f"| Primus `gemm` — square 4096^3 | {fmt(g8)} | "
+                        f"**{100*m8/g8:.0f}%** | off-peak shapes + everything non-GEMM |")
+        if gd8:
+            rows.append(f"| Primus `gemm-dense` — llama shape mix | {fmt(gd8)} | "
+                        f"**{100*m8/gd8:.0f}%** | non-GEMM work only (shape penalty already priced in) |")
+        rows.append(f"| Megatron llama2-7B (compute per GPU) | **{fmt(m8)}** | 100% | — |")
+        parts.append("\n".join(rows))
+        parts.append("")
+        if gd8:
+            parts.append(
+                f"**`gemm-dense` is the right baseline.** It runs the llama shape mix — the "
+                f"same QKV / O / FFN-gate / up / down GEMMs Megatron issues — so the "
+                f"{100*m8/gd8:.0f}% figure isolates *non-GEMM* overhead: attention, RMSNorm, "
+                f"RoPE, optimizer, and the gradient all-reduce. The square-GEMM row is a "
+                f"looser ceiling because 4096^3 is a shape Megatron never actually runs.\n\n"
+                f"**`gemm-deepseek` is deliberately excluded.** Those are MoE expert shapes "
+                f"with small, skewed K-dimensions; llama2-7B is dense and never issues them, "
+                f"so a percentage against it would be meaningless.\n"
+            )
+        parts.append(
+            "> **Three caveats.** (1) Megatron's TFLOPs are an *analytical* count "
+            "(~6·params·tokens), not measured FLOPs — so this is model-FLOPs utilization, "
+            "not a literal hardware efficiency. (2) The microbenches are pure compute with "
+            "no collectives; Megatron includes a gradient all-reduce per step. (3) Both "
+            "numbers must be kernel-time (`compute per GPU`); mixing in the wall-clock "
+            "figure invalidates the ratio entirely.\n"
+        )
+
+    # --- 6b: attention, as decomposition rather than a ratio ---
+    a8 = attn.get(8) or {}
+    fwd8 = (a8.get("fwd_tflops") or {}).get("mean")
+    bwd8 = (a8.get("bwd_tflops") or {}).get("mean")
+    if m8 and fwd8 and bwd8:
+        parts.append("## 6b. Where the remaining gap goes — attention\n")
+        parts.append(
+            "Attention is **not** compared as a percentage of Megatron: it measures a "
+            "*component*, not a substitute workload, so \"Megatron as % of attention\" would "
+            "be a category error. It is reported here because it is the leading explanation "
+            "for why end-to-end training lands below the GEMM ceiling above.\n"
+        )
+        rows = ["| Kernel class (N=8) | TF/s/GPU | vs `gemm-dense` |", "|---|---:|---:|"]
+        if gd8:
+            rows.append(f"| `gemm-dense` (the GEMM path) | {fmt(gd8)} | 100% |")
+            rows.append(f"| attention **forward** | {fmt(fwd8)} | {100*fwd8/gd8:.0f}% |")
+            rows.append(f"| attention **backward** | {fmt(bwd8)} | {100*bwd8/gd8:.0f}% |")
+        parts.append("\n".join(rows))
+        parts.append("")
+        parts.append(
+            f"Attention forward runs at roughly half the GEMM rate and **backward at "
+            f"{bwd8/fwd8*100:.0f}% of forward** ({fmt(bwd8)} vs {fmt(fwd8)} TF/s/GPU). "
+            f"Backward is dominated by gradient recomputation plus extra matmuls, and the "
+            f"asymmetry matches what is reported for flash-attention-class kernels "
+            f"generally.\n\n"
+            f"Since a transformer step spends a substantial fraction of its time in "
+            f"attention — and backward is ~2x the cost of forward in a training step — a "
+            f"kernel class running at {100*bwd8/gd8:.0f}% of GEMM rate is sufficient on its "
+            f"own to explain most of the residual between the `gemm-dense` ceiling and "
+            f"measured end-to-end throughput. Attention is also flat across N (each rank "
+            f"runs independently, no collective), so this is a per-GPU kernel property, not "
+            f"a scaling effect.\n"
+        )
 
     # --- Analysis ---
     parts.append("## 7. Analysis\n")

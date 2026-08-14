@@ -1,0 +1,301 @@
+v26.1: Pulling from rocm/megatron-lm
+4a864aabbea5: Pulling fs layer
+fec8666e50bc: Pulling fs layer
+4a857829713f: Pulling fs layer
+829864482637: Pulling fs layer
+cc3b92dca4a2: Pulling fs layer
+ad224d2ea914: Pulling fs layer
+6bdda737dbc1: Pulling fs layer
+dc0964f8cf69: Pulling fs layer
+0f247eac875c: Pulling fs layer
+b4fab8b90eba: Pulling fs layer
+e43b8ffd5ec3: Pulling fs layer
+b90ef104dbf7: Pulling fs layer
+eb9dd0dcd8f1: Pulling fs layer
+6e841773b664: Pulling fs layer
+aa96bccfda79: Pulling fs layer
+4a7d12842ca7: Pulling fs layer
+af6eca94c810: Pulling fs layer
+9055a50b4049: Pulling fs layer
+9fd7ced6488c: Pulling fs layer
+d58183f80031: Pulling fs layer
+737cebb0894e: Pulling fs layer
+d090b3834d46: Pulling fs layer
+7d617ce2949b: Pulling fs layer
+155bc913ad15: Pulling fs layer
+856f913fb312: Pulling fs layer
+f3ba904234ad: Pulling fs layer
+93ff80da3aa1: Pulling fs layer
+7c96edcbdb48: Pulling fs layer
+92e8f69544e4: Pulling fs layer
+1ed896a043be: Pulling fs layer
+ea87920f3b99: Pulling fs layer
+8cc4d4275b62: Pulling fs layer
+e21471fb3cae: Pulling fs layer
+9eccdfbbc41d: Pulling fs layer
+6fb694f830fa: Pulling fs layer
+8d7f30ea6d6f: Pulling fs layer
+337b0e6d2f82: Pulling fs layer
+29db4935c7e2: Pulling fs layer
+dd8cbffc91d4: Pulling fs layer
+27a503cce46e: Pulling fs layer
+f170cfb1c342: Pulling fs layer
+38c94f4b86d0: Pulling fs layer
+0849462d06d2: Pulling fs layer
+125339275467: Pulling fs layer
+c87dc415fffc: Pulling fs layer
+2ace45f5cfb6: Pulling fs layer
+3b54fde5c2ec: Pulling fs layer
+6bb35cd3544f: Pulling fs layer
+61f568915d2e: Pulling fs layer
+eb265a9f6874: Pulling fs layer
+fbf89e7ee8cb: Pulling fs layer
+7f7b22097b17: Pulling fs layer
+fe3d9e4d708e: Pulling fs layer
+d3be606775b8: Pulling fs layer
+f72e7cf5df2a: Pulling fs layer
+47fc24cce6b6: Pulling fs layer
+f528cab61d95: Pulling fs layer
+5fd635951481: Pulling fs layer
+032bc61b0aa2: Pulling fs layer
+63e64ea99bb9: Pulling fs layer
+5143234ac15e: Pulling fs layer
+bef3a535d6e3: Pulling fs layer
+21fed65cbecb: Pulling fs layer
+0bac5065358d: Pulling fs layer
+219058f978cd: Pulling fs layer
+989f666bae1a: Pulling fs layer
+e1f6d2fc6716: Pulling fs layer
+304442b058cb: Pulling fs layer
+e59db616fcdd: Pulling fs layer
+4999e90458d0: Pulling fs layer
+0637bec280e0: Pulling fs layer
+174d882273ec: Pulling fs layer
+fe73e09a854b: Pulling fs layer
+21da4f0ee882: Pulling fs layer
+0fea38430018: Pulling fs layer
+80ba67439e1f: Pulling fs layer
+edf1142e6058: Pulling fs layer
+5e60950cd7ce: Pulling fs layer
+c7fde1141f3b: Pulling fs layer
+6c34dc16f190: Pulling fs layer
+441ea2fe4ce9: Pulling fs layer
+b600e8b2cdfa: Pulling fs layer
+80747fe0c2cb: Pulling fs layer
+c09482c768c4: Pulling fs layer
+1fef52074a56: Pulling fs layer
+6d53a545e71f: Pulling fs layer
+b422e7db48a1: Pulling fs layer
+5da7bf0bd85c: Pulling fs layer
+908613bb7d95: Pulling fs layer
+ebcc828fcd00: Pulling fs layer
+96c73168e002: Pulling fs layer
+46b63a9f72fd: Pulling fs layer
+967d780765f0: Pulling fs layer
+1f7493df6aff: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+622859c032ad: Pulling fs layer
+b5d052ba219d: Pulling fs layer
+df1806226ed6: Pulling fs layer
+8bcda928e277: Pulling fs layer
+4f4fb700ef54: Already exists
+4a857829713f: Download complete
+1ed896a043be: Download complete
+b90ef104dbf7: Download complete
+0f247eac875c: Download complete
+fec8666e50bc: Download complete
+dc0964f8cf69: Download complete
+cc3b92dca4a2: Download complete
+829864482637: Download complete
+b4fab8b90eba: Download complete
+aa96bccfda79: Download complete
+7c96edcbdb48: Download complete
+eb9dd0dcd8f1: Download complete
+6e841773b664: Download complete
+6bdda737dbc1: Download complete
+9055a50b4049: Download complete
+d090b3834d46: Download complete
+9fd7ced6488c: Download complete
+d58183f80031: Download complete
+af6eca94c810: Download complete
+93ff80da3aa1: Download complete
+ea87920f3b99: Download complete
+ad224d2ea914: Download complete
+af6eca94c810: Pull complete
+7d617ce2949b: Download complete
+f3ba904234ad: Download complete
+92e8f69544e4: Download complete
+856f913fb312: Download complete
+4a864aabbea5: Download complete
+e21471fb3cae: Download complete
+737cebb0894e: Download complete
+8cc4d4275b62: Download complete
+4a864aabbea5: Pull complete
+155bc913ad15: Download complete
+337b0e6d2f82: Download complete
+9eccdfbbc41d: Download complete
+29db4935c7e2: Download complete
+e43b8ffd5ec3: Download complete
+c87dc415fffc: Download complete
+dd8cbffc91d4: Download complete
+f170cfb1c342: Download complete
+0849462d06d2: Download complete
+2ace45f5cfb6: Download complete
+4a7d12842ca7: Download complete
+125339275467: Download complete
+3b54fde5c2ec: Download complete
+27a503cce46e: Download complete
+6bb35cd3544f: Download complete
+eb265a9f6874: Download complete
+61f568915d2e: Download complete
+38c94f4b86d0: Download complete
+7f7b22097b17: Download complete
+d3be606775b8: Download complete
+8d7f30ea6d6f: Download complete
+f528cab61d95: Download complete
+47fc24cce6b6: Download complete
+5fd635951481: Download complete
+fe3d9e4d708e: Download complete
+5143234ac15e: Download complete
+bef3a535d6e3: Download complete
+219058f978cd: Download complete
+989f666bae1a: Download complete
+f72e7cf5df2a: Download complete
+0bac5065358d: Download complete
+304442b058cb: Download complete
+63e64ea99bb9: Download complete
+0637bec280e0: Download complete
+6fb694f830fa: Download complete
+fbf89e7ee8cb: Download complete
+21da4f0ee882: Download complete
+e59db616fcdd: Download complete
+4999e90458d0: Download complete
+fe73e09a854b: Download complete
+e1f6d2fc6716: Download complete
+80ba67439e1f: Download complete
+0fea38430018: Download complete
+21fed65cbecb: Download complete
+edf1142e6058: Download complete
+c7fde1141f3b: Download complete
+174d882273ec: Download complete
+6c34dc16f190: Download complete
+b600e8b2cdfa: Download complete
+5e60950cd7ce: Download complete
+1fef52074a56: Download complete
+441ea2fe4ce9: Download complete
+c09482c768c4: Download complete
+5da7bf0bd85c: Download complete
+908613bb7d95: Download complete
+8bcda928e277: Download complete
+96c73168e002: Download complete
+b422e7db48a1: Download complete
+ebcc828fcd00: Download complete
+967d780765f0: Download complete
+6d53a545e71f: Download complete
+b5d052ba219d: Download complete
+46b63a9f72fd: Download complete
+df1806226ed6: Download complete
+622859c032ad: Download complete
+032bc61b0aa2: Download complete
+df1806226ed6: Pull complete
+1f7493df6aff: Download complete
+e21471fb3cae: Pull complete
+8bcda928e277: Pull complete
+ea87920f3b99: Pull complete
+f72e7cf5df2a: Pull complete
+80747fe0c2cb: Download complete
+e43b8ffd5ec3: Pull complete
+737cebb0894e: Pull complete
+155bc913ad15: Pull complete
+c87dc415fffc: Pull complete
+38c94f4b86d0: Pull complete
+4a7d12842ca7: Pull complete
+9fd7ced6488c: Pull complete
+93ff80da3aa1: Pull complete
+4a857829713f: Pull complete
+dc0964f8cf69: Pull complete
+3b54fde5c2ec: Pull complete
+f170cfb1c342: Pull complete
+125339275467: Pull complete
+829864482637: Pull complete
+cc3b92dca4a2: Pull complete
+9055a50b4049: Pull complete
+0849462d06d2: Pull complete
+27a503cce46e: Pull complete
+eb265a9f6874: Pull complete
+8d7f30ea6d6f: Pull complete
+ad224d2ea914: Pull complete
+dd8cbffc91d4: Pull complete
+fec8666e50bc: Pull complete
+fbf89e7ee8cb: Pull complete
+032bc61b0aa2: Pull complete
+8cc4d4275b62: Pull complete
+219058f978cd: Pull complete
+174d882273ec: Pull complete
+f528cab61d95: Pull complete
+6bdda737dbc1: Pull complete
+5143234ac15e: Pull complete
+d090b3834d46: Pull complete
+7f7b22097b17: Pull complete
+d3be606775b8: Pull complete
+47fc24cce6b6: Pull complete
+5fd635951481: Pull complete
+337b0e6d2f82: Pull complete
+0bac5065358d: Pull complete
+5e60950cd7ce: Pull complete
+6bb35cd3544f: Pull complete
+622859c032ad: Pull complete
+eb9dd0dcd8f1: Pull complete
+46b63a9f72fd: Pull complete
+967d780765f0: Pull complete
+4f4fb700ef54: Pull complete
+6e841773b664: Pull complete
+b5d052ba219d: Pull complete
+1ed896a043be: Pull complete
+92e8f69544e4: Pull complete
+29db4935c7e2: Pull complete
+aa96bccfda79: Pull complete
+1f7493df6aff: Pull complete
+b600e8b2cdfa: Pull complete
+c09482c768c4: Pull complete
+ebcc828fcd00: Pull complete
+6d53a545e71f: Pull complete
+b4fab8b90eba: Pull complete
+2ace45f5cfb6: Pull complete
+61f568915d2e: Pull complete
+b90ef104dbf7: Pull complete
+21fed65cbecb: Pull complete
+7d617ce2949b: Pull complete
+bef3a535d6e3: Pull complete
+fe3d9e4d708e: Pull complete
+989f666bae1a: Pull complete
+4999e90458d0: Pull complete
+fe73e09a854b: Pull complete
+0fea38430018: Pull complete
+6fb694f830fa: Pull complete
+6c34dc16f190: Pull complete
+1fef52074a56: Pull complete
+441ea2fe4ce9: Pull complete
+c7fde1141f3b: Pull complete
+5da7bf0bd85c: Pull complete
+96c73168e002: Pull complete
+80747fe0c2cb: Pull complete
+f3ba904234ad: Pull complete
+304442b058cb: Pull complete
+0637bec280e0: Pull complete
+e59db616fcdd: Pull complete
+0f247eac875c: Pull complete
+21da4f0ee882: Pull complete
+80ba67439e1f: Pull complete
+edf1142e6058: Pull complete
+e1f6d2fc6716: Pull complete
+9eccdfbbc41d: Pull complete
+908613bb7d95: Pull complete
+b422e7db48a1: Pull complete
+856f913fb312: Pull complete
+7c96edcbdb48: Pull complete
+d58183f80031: Pull complete
+63e64ea99bb9: Pull complete
+Digest: sha256:4fc8808bdb14117c6af7f38d79c809056e6fdbfd530c1fabbb61d097ddaf820d
+Status: Downloaded newer image for rocm/megatron-lm:v26.1
+docker.io/rocm/megatron-lm:v26.1

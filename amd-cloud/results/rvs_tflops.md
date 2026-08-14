@@ -175,6 +175,68 @@ Follow-up to the finding above (§A.7 of `plan.md`): 3 repeats each at N=5,6,7,8
 
 <!-- END fp4-investigation-result -->
 
+## Why fp4 / fp6 / bf6 land so far below peak
+
+**Short version.** Not memory bandwidth — these GEMMs use only 1-8% of HBM. Three causes, in increasing severity:
+
+1. **MX block scaling** (fp4, fp6, bf6 only) — an E8M0 scale per 32-element block is real work the theoretical peak ignores. Costs roughly the fp4 40% vs fp8 71% gap.
+2. **FP6 is not byte-aligned** (4 values per 3 bytes) — cross-byte unpacking, and likely no native full-rate MFMA path. This is why **fp6 is absolutely slower than fp8 (0.35x) despite twice the nominal peak**.
+3. **Kernel maturity** — but only partly: native gfx950 codegen improved fp4 by **26%** while fp6 did not move **at all** (0.97x). So fp4 is under-tuned; fp6 hits a structural floor that better codegen does not touch.
+
+The rest of this section is the evidence for each.
+
+### It is not memory bandwidth
+
+For the `gst` shape (8192x8192x16384, ~2.20 TFLOP per GEMM), required HBM bandwidth at the measured rates is:
+
+| Precision | Bytes/GEMM | Bandwidth needed | % of 8 TB/s HBM |
+|---|---:|---:|---:|
+| fp4 | 277 MB | 500 GB/s | 6.3% |
+| fp6 / bf6 | 344 MB | 194 GB/s | 2.4% |
+| fp8 | 403 MB | 653 GB/s | 8.2% |
+| bf16 | 671 MB | 497 GB/s | 6.2% |
+| fp64 | 2282 MB | 80 GB/s | 1.0% |
+
+Every precision uses **1-8% of HBM bandwidth**. These GEMMs have arithmetic intensity in the thousands of FLOP/byte — they are firmly compute-bound. Memory bandwidth is conclusively not the limiter, so the answer lies in the kernels.
+
+### Cause 1 — MX block scaling costs throughput (fp4, fp6, bf6)
+
+Exactly the three low outliers carry `scale_a: block, scale_b: block` in their generated conf; fp8/bf8/fp16/bf16 do not. MX formats attach an E8M0 scale per 32-element block, and applying those scales is real work that the theoretical peak number does not account for. fp4 at **39.8%** vs fp8 at **71.3%** is roughly the size of that tax.
+
+### Cause 2 — FP6 is not byte-aligned, and pays much more (fp6, bf6 only)
+
+Block scaling alone cannot explain fp6, because fp4 and fp6 share the same mechanism *and the same 10,000 TFLOPS nominal peak*, yet differ 3.2x. The absolute cross-precision ratios are the tell:
+
+| Comparison | Measured | Nominal peak ratio |
+|---|---:|---:|
+| fp4 / fp8 | 1.12x | 2.00x |
+| **fp6 / fp8** | **0.35x** | 2.00x |
+| **fp4 / fp6** | **3.21x** | 1.00x |
+
+**fp6 is slower in absolute terms than fp8** — 1238 vs 3564 TFLOPS — despite nominally having twice the peak. A format cannot be 2x faster on paper and 3x slower in practice unless it is not running on the fast path at all.
+
+The most likely mechanism is packing: fp4 is 2 values per byte (clean nibbles) and fp8 is 1 value per byte, but **fp6 is 4 values per 3 bytes** — not byte-aligned. Feeding packed 6-bit operands into the matrix engine requires cross-byte bit extraction, and if the MFMA instruction cannot consume packed FP6 natively the kernel must widen it first, at which point throughput is set by the wider format, not by FP6's nominal rate. Consistent with that, measured fp6 (1238) sits at 0.81x measured fp16 (1522) — roughly bf16-class throughput minus unpack overhead.
+
+### Cause 3 — kernel maturity, and the evidence that separates it from the above
+
+Comparing the two MI355X hosts isolates software from silicon. Dell Cloud ran ROCm 7.2.3 with the gfx942 alias; this host runs ROCm 7.14 with native gfx950 code objects. **Identical hardware.** Only one precision responded:
+
+| Precision | AMD Cloud / Dell Cloud |
+|---|---:|
+| **fp4** | **1.26x** |
+| fp6, bf6 | 0.97x |
+| fp8, bf8, fp16, bf16, fp32, fp64 | 0.99x |
+
+fp4 gained 26% from native gfx950 codegen while **fp6 did not move at all**. That asymmetry is informative in both directions: fp4's shortfall is partly a *tuning* problem (it improves when the compiler targets the real architecture), whereas fp6's shortfall is a *structural* floor that better codegen does not touch — consistent with Cause 2 rather than with immature tuning.
+
+### Caveat on the fp6 peak figure
+
+The 10,000 TFLOPS peak used for fp6/bf6 comes from AMD's claim that CDNA 4 processes FP6 at the FP4 rate (a stated differentiator vs competitors that run FP6 at FP8 rate). If that claim does not hold for this silicon/stack, the correct denominator would be 5,000 and fp6 would read **24.8%** rather than 12.4% of peak. Either way it is the worst precision measured, and either way fp6 being absolutely slower than fp8 is the anomaly worth explaining. This is flagged because the percentage — unlike the measured TFLOPS — depends on a vendor claim this benchmark cannot verify.
+
+### What would settle it
+
+None of the above is a profiled root cause. Confirming Cause 2 requires kernel-level inspection — `rocprof` on a single fp6 GEMM to see which MFMA variant is issued and whether an unpack/convert kernel precedes it, or hipBLASLt's heuristic log to see which algorithm it selects for `fp6_e3m2_r`. That is a worthwhile follow-up if low-precision throughput matters for a real workload.
+
 ## Observations (auto-generated)
 
 - `fp4`: N=8 scaling efficiency **56%** -- below the ~95% expected for an embarrassingly-parallel GEMM. Power sharing on the 11.2 kW tray is the leading explanation.

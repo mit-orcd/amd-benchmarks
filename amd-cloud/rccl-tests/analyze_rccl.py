@@ -176,6 +176,16 @@ def main():
          "`busbw` is steady-state bytes crossing the wire per unit time, normalized for each "
          "algorithm's theoretical data movement -- the comparable metric across N and across "
          "collectives. All figures below are busbw at the top message size.", "",
+         "> **Headline: the non-power-of-2 cliff reproduces on this machine.** Every "
+         "ring-based collective loses 67-81% of its bandwidth at N=5/6/7 versus the "
+         "power-of-2 arities either side of it. The newer ROCm 7.14 / RCCL 2.30.4 stack "
+         "makes it ~20% shallower than the Dell Cloud baseline but does **not** fix it. "
+         "Root-cause analysis lives in the Dell Cloud writeups — "
+         "[`summary-power2.md`](../../dell-cloud/rccl-tests/summary-power2.md) (the "
+         "investigation), [`summary-rccl.md`](../../dell-cloud/rccl-tests/summary-rccl.md) "
+         "(measured vs fabric spec), and "
+         "[`notes-amd.md`](../../dell-cloud/rccl-tests/notes-amd.md) (why it shipped). This "
+         "report reproduces and quantifies the cliff; it does not re-derive it.", "",
          "## 1. Measured results", ""]
 
     L += table(lambda r: r["config"] == "default", "collective", "1.1 Full collective sweep")
@@ -235,6 +245,103 @@ def main():
                   f"**{best[2]:.2f}x** (`{best[0]}` N={best[1]}). Bold cells are >1.5x or "
                   f"<0.85x — outside what run-to-run noise on identical hardware would "
                   f"explain.", ""]
+
+            # Group the ratios by whether N is a power of 2. The headline "AMD Cloud is a
+            # bit faster" is misleading until split this way -- the gain is entirely
+            # concentrated in the arities that cliff.
+            import statistics
+            byN = {}
+            for c, n, r in gap:
+                byN.setdefault(n, []).append(r)
+            p2 = {n: v for n, v in byN.items() if (n & (n - 1)) == 0}
+            np2 = {n: v for n, v in byN.items() if (n & (n - 1)) != 0}
+            if p2 and np2:
+                p2_mean = statistics.mean([r for v in p2.values() for r in v])
+                np2_mean = statistics.mean([r for v in np2.values() for r in v])
+                L += ["#### Why is AMD Cloud faster? Only where the ring breaks.", "",
+                      "Averaging the ratio per GPU count separates two very different "
+                      "stories:", "",
+                      "| N | mean AMD/Dell | power of 2? |", "|---:|---:|---|"]
+                for n in sorted(byN):
+                    m = statistics.mean(byN[n])
+                    tag = "**yes**" if (n & (n - 1)) == 0 else "no"
+                    L.append(f"| {n} | {m:.2f}x | {tag} |")
+                L += ["",
+                      f"**Power-of-2 arities (N=2,4,8): {p2_mean:.2f}x — parity.** "
+                      f"**Non-power-of-2 (N=3,5,6,7): {np2_mean:.2f}x — a real gain.**", "",
+                      "The interpretation: at power-of-2 N, RCCL builds a clean ring that "
+                      "already saturates the fabric on both hosts, so there is nothing left "
+                      "for a newer stack to win — and indeed AMD Cloud is fractionally "
+                      "*slower* at N=2/4 (0.95-0.98x), within run-to-run noise. The gain "
+                      "appears exclusively where RCCL falls back to a degraded path. Newer "
+                      "ROCm/RCCL (7.14 vs 7.2.3) evidently improved that fallback, not the "
+                      "optimal path.", "",
+                      "**The cliff still exists — the newer stack only makes it ~20% "
+                      "shallower.** all_reduce still collapses from 169.5 GB/s at N=4 to "
+                      "48.0 GB/s at N=5 on this host (a **3.5x drop**); it was 166.5 -> 38.4 "
+                      "on Dell Cloud (4.3x). Every ring-based collective still shows a "
+                      "67-81% drop in the cliff column of section 1.1. The structural "
+                      "problem — no clean ring at non-power-of-2 arities on a K8 mesh — is "
+                      "unchanged, and is a topology/algorithm limitation rather than "
+                      "something a stack upgrade resolves.", "",
+                      "> **Root cause is analysed in the Dell Cloud writeups, not repeated "
+                      "here.** This run reproduces the cliff on a second machine with a "
+                      "newer stack; it does not re-derive why it happens. See:",
+                      ">",
+                      "> - [`../../dell-cloud/rccl-tests/summary-power2.md`]"
+                      "(../../dell-cloud/rccl-tests/summary-power2.md) — the empirical "
+                      "investigation: 5 configs x 2 collectives x N=2..8, establishing that "
+                      "the cliff lives in the RCCL/xGMI layer rather than in Megatron-LM, "
+                      "and that no algorithm knob recovers it.",
+                      "> - [`../../dell-cloud/rccl-tests/summary-rccl.md`]"
+                      "(../../dell-cloud/rccl-tests/summary-rccl.md) sections 1 and 7 — the "
+                      "measured gap against Infinity Fabric paper spec, and why "
+                      "gather/scatter/sendrecv escape it (pairwise sendrecv needs no closed "
+                      "ring).",
+                      "> - [`../../dell-cloud/rccl-tests/notes-amd.md`]"
+                      "(../../dell-cloud/rccl-tests/notes-amd.md) — why the gap shipped: "
+                      "MSCCL plans only exist for `-8n-` arities, AMD's customers run at "
+                      "whole-node multiples of 8, and the structural fix is UALink in MI400 "
+                      "rather than multi-year MSCCL plan authoring.", "",
+                      "Note this also means the *headline* comparison is not 'newer software "
+                      "is uniformly faster'. On the paths that matter most for real "
+                      "workloads (TP=8, DP=8 — both power-of-2) the two stacks are "
+                      "equivalent.", "",
+                      "##### Which component is responsible?", "",
+                      "**Most likely the RCCL library version — 2.27.7 (Dell) -> 2.30.4 "
+                      "(here) — specifically its ring-construction logic.**", "",
+                      "The reasoning is that *the gain is arity-specific*. If the cause were "
+                      "faster kernels (gfx950 codegen, newer compiler, newer driver), the "
+                      "speedup would show up at every N — the same reduction kernels run at "
+                      "N=8 as at N=5. It does not: N=8 is 1.00x. Something that helps only "
+                      "where a clean ring cannot be built is topology/algorithm selection "
+                      "logic, which lives in `librccl`, not in codegen.", "",
+                      "Two candidates are ruled out by the config sweep in section 2:", "",
+                      "- **MSCCL — not it.** `no_mscll` is identical to `default` at every N, "
+                      "and this host has **no MSCCL plans installed at all** "
+                      "(`/opt/rocm/share/rccl/msccl-algorithms/` is empty). Dell Cloud "
+                      "documented having them, so if anything Dell held the advantage.",
+                      "- **Algorithm knobs — not it.** `ring` and `proto_simple` also match "
+                      "`default` exactly; `tree` is dramatically *worse* (167 vs 396 GB/s at "
+                      "N=8). None of these knobs explain the delta.", "",
+                      "What cannot be separated from this data — genuinely confounded "
+                      "between the two hosts:", "",
+                      "| Variable | Dell Cloud | AMD Cloud |",
+                      "|---|---|---|",
+                      "| RCCL | 2.27.7 | **2.30.4** |",
+                      "| ROCm | 7.2.3 | 7.14 |",
+                      "| RCCL kernels | gfx942 alias (`HSA_OVERRIDE_GFX_VERSION`) | native gfx950 |",
+                      "| Execution | Singularity container | host-native |",
+                      "| amdgpu driver | 6.16.13 | 6.19.14 |", "",
+                      "RCCL ships *with* ROCm, so \"ROCm version\" and \"RCCL version\" moved "
+                      "together and cannot be separated by observation alone.", "",
+                      "**The decisive test**, if the attribution matters: run the same "
+                      "rccl-tests binary against a different RCCL while holding hardware and "
+                      "driver fixed — e.g. inside `rocm/primus:v26.5`, which carries its own "
+                      "RCCL. If non-power-of-2 tracks the RCCL version while power-of-2 does "
+                      "not move, that confirms library logic. ~20 min. The practical "
+                      "conclusion is unchanged either way, since production configs are all "
+                      "power-of-2 where the two stacks are equivalent.", ""]
 
     # ---- Infinity Fabric spec vs measured ---------------------------------------
     L += ["### 1.2 Infinity Fabric paper spec vs measured ceilings", "",

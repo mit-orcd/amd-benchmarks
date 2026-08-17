@@ -22,50 +22,6 @@ expert hidden 3584 → 3072. Computed total ≈ **2.76 T params**, matching the 
 
 ---
 
-## Terminology — HBM and XGMI
-
-Two different data paths, constantly confused, and the whole bottleneck analysis turns on
-telling them apart.
-
-**HBM — High Bandwidth Memory.** The GPU's own on-package memory ("VRAM"), where weights,
-KV cache, and activations live. Stacked DRAM dies sitting on the same package as the compute
-die, connected by an extremely wide bus (8192 bits on MI355X). Every time a kernel reads a
-weight matrix, it reads it *from HBM*. This is the **intra-GPU** path — inside one GPU, no
-other GPU involved.
-
-| | MI355X |
-|---|---|
-| Capacity | 288 GB per GPU (2304 GB across 8) |
-| Bandwidth | **8 TB/s per GPU** (8000 GB/s) |
-| Type | HBM3E, on-package |
-| Carries here | model weights, KV cache, activations |
-
-**XGMI — the GPU↔GPU interconnect** (AMD Infinity Fabric; "xGMI" = inter-chip Global Memory
-Interconnect). Dedicated high-speed links wired directly between GPUs so one GPU can read or
-send data to another **without going through the CPU or PCIe**. This is the **intra-node**
-path — between GPUs inside the same server. It is AMD's counterpart to NVIDIA's NVLink.
-
-| | MI355X node |
-|---|---|
-| Topology | all-to-all mesh (K₈) — every GPU has a direct link to all 7 others, 1 hop |
-| Per link | 153.6 GB/s bidirectional (76.8 GB/s each direction) |
-| Per GPU aggregate | 1075 GB/s bidirectional (**~537 GB/s per direction**, ×7 links) |
-| Carries here | activation all-reduces only (see §4) |
-
-**Why the distinction decides everything.** HBM is ~15× faster than XGMI per GPU (8000 vs
-537 GB/s), so the instinct is that HBM can never be the constraint. That is exactly backwards
-for this workload: HBM has to move **~116 GB per step** (every activated expert's weights)
-while XGMI moves **~0.3 GB** (a few activation vectors). Bandwidth ratio 15:1, traffic ratio
-390:1 — so the *slower* link is the idle one. That inversion is the core finding of §3.
-
-Two other paths appear in this report for contrast but carry no significant traffic here:
-
-- **PCIe Gen5 ×16** (64 GB/s/direction) — host↔GPU. Used only to load the checkpoint from
-  NVMe at startup (~4 min for 1.5 TB); idle during serving.
-- **Inter-node network** — not applicable. This is a single-node run; nothing leaves the box.
-
----
-
 ## 0. Overview — the short version
 
 **§1 Compute** — 1,259 tok/s at c=64 (27× scaling from c=1, TPOT only 2.3× worse). Achieved
@@ -491,3 +447,47 @@ of it activates per token. Against Llama-70B (comparable *active* size, 84 B vs 
 Derived figures (active params, FLOP/s, HBM and XGMI volumes) are computed from the measured
 throughput and the parsed architecture; the memory table is read directly from the server's
 own budget line.
+
+---
+
+## Terminology — HBM and XGMI
+
+Two different data paths, constantly confused, and the whole bottleneck analysis turns on
+telling them apart.
+
+**HBM — High Bandwidth Memory.** The GPU's own on-package memory ("VRAM"), where weights,
+KV cache, and activations live. Stacked DRAM dies sitting on the same package as the compute
+die, connected by an extremely wide bus (8192 bits on MI355X). Every time a kernel reads a
+weight matrix, it reads it *from HBM*. This is the **intra-GPU** path — inside one GPU, no
+other GPU involved.
+
+| | MI355X |
+|---|---|
+| Capacity | 288 GB per GPU (2304 GB across 8) |
+| Bandwidth | **8 TB/s per GPU** (8000 GB/s) |
+| Type | HBM3E, on-package |
+| Carries here | model weights, KV cache, activations |
+
+**XGMI — the GPU↔GPU interconnect** (AMD Infinity Fabric; "xGMI" = inter-chip Global Memory
+Interconnect). Dedicated high-speed links wired directly between GPUs so one GPU can read or
+send data to another **without going through the CPU or PCIe**. This is the **intra-node**
+path — between GPUs inside the same server. It is AMD's counterpart to NVIDIA's NVLink.
+
+| | MI355X node |
+|---|---|
+| Topology | all-to-all mesh (K₈) — every GPU has a direct link to all 7 others, 1 hop |
+| Per link | 153.6 GB/s bidirectional (76.8 GB/s each direction) |
+| Per GPU aggregate | 1075 GB/s bidirectional (**~537 GB/s per direction**, ×7 links) |
+| Carries here | activation all-reduces only (see §4) |
+
+**Why the distinction decides everything.** HBM is ~15× faster than XGMI per GPU (8000 vs
+537 GB/s), so the instinct is that HBM can never be the constraint. That is exactly backwards
+for this workload: HBM has to move **~116 GB per step** (every activated expert's weights)
+while XGMI moves **~0.3 GB** (a few activation vectors). Bandwidth ratio 15:1, traffic ratio
+390:1 — so the *slower* link is the idle one. That inversion is the core finding of §3.
+
+Two other paths appear in this report for contrast but carry no significant traffic here:
+
+- **PCIe Gen5 ×16** (64 GB/s/direction) — host↔GPU. Used only to load the checkpoint from
+  NVMe at startup (~4 min for 1.5 TB); idle during serving.
+- **Inter-node network** — not applicable. This is a single-node run; nothing leaves the box.

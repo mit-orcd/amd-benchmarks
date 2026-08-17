@@ -1,0 +1,41 @@
+[2026-08-17T18:38:16+00:00] Megatron-LM reference reproduction (Dell-matched) start
+[2026-08-17T18:38:16+00:00] image=rocm/megatron-lm:v26.1 N=8 MBS=4 GBS=32 seq=4096 L=40 H=6144
+[2026-08-17T18:38:16+00:00] GPUs idle
+[2026-08-17T18:38:16+00:00] launching (timeout 3600s)
+[2026-08-17T18:38:42+00:00] run rc=1 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/megatron-ref/run_20260817_183816/megatron_ref_N8.log
+[2026-08-17T18:38:42+00:00] parsed TF/s/GPU = none
+N=8
+TFLOPS=
+RC=1
+[2026-08-17T18:38:42+00:00] FAILED or no throughput parsed — not updating the report.
+[2026-08-17T18:38:42+00:00] last 30 lines:
+  time      : 2026-08-17_18:38:41
+  host      : mi355-gpu-33
+  rank      : 5 (local_rank: 5)
+  exitcode  : -15 (pid: 80)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 80
+[6]:
+  time      : 2026-08-17_18:38:41
+  host      : mi355-gpu-33
+  rank      : 6 (local_rank: 6)
+  exitcode  : -15 (pid: 81)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 81
+[7]:
+  time      : 2026-08-17_18:38:41
+  host      : mi355-gpu-33
+  rank      : 7 (local_rank: 7)
+  exitcode  : -15 (pid: 82)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 82
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-08-17_18:38:41
+  host      : mi355-gpu-33
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 75)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

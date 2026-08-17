@@ -272,10 +272,34 @@ def main():
                   "| **Unaccounted** | **~19 ms** | **~70%** |", "",
                   "No single hardware resource is saturated: bandwidth ~4%, compute ~12%, "
                   "interconnect ~10%. Calling these models \"compute-bound\" would be wrong. "
-                  "The ~70% residual is almost certainly **prefill interleaved with decode** "
-                  "— at c=256 with ISL=1024 there are ~262K prompt tokens to process, and "
-                  "TTFT p99 climbing to 5,470 ms shows requests queueing behind that work — "
-                  "plus scheduler and framework overhead per step.", "",
+                  "The ~70% residual is almost certainly **prefill interleaved with decode**, "
+                  "plus per-step scheduler overhead.", "",
+                  "**What prefill and decode are.** Serving a request has two phases. "
+                  "*Prefill* is the one-time pass over the whole input prompt — all 1024 "
+                  "tokens processed in a single parallel forward pass, compute-heavy, once "
+                  "per request. *Decode* is everything after: output tokens generated one at "
+                  "a time, each a separate forward pass reading the KV cache. All the "
+                  "throughput and TPOT numbers here measure decode, and the roofline above "
+                  "models decode only.", "",
+                  "**Why prefill becomes the limiter.** ATOM (like vLLM) uses continuous "
+                  "batching with chunked prefill: prefill and decode share the same GPU time "
+                  "slice, and a request cannot decode until it is prefilled. At c=256 with "
+                  "ISL=1024 that is **~262,000 prompt tokens** of backlog competing for the "
+                  "same GPU. While the scheduler runs prefill chunks, decode steps for "
+                  "in-flight requests wait. The signature is visible in the data: TTFT "
+                  "**median stays low (182 ms) while p99 blows out to 5,470 ms** — most "
+                  "requests prefill quickly, the tail queues behind the backlog.", "",
+                  "**\"Scheduling\"** is the per-step cost of the serving loop itself — "
+                  "choosing which requests enter this step's batch, KV-cache block "
+                  "allocation, continuous-batching bookkeeping. It is CPU-side work on the "
+                  "critical path of every step, independent of GPU load.", "",
+                  "**Why Kimi-K3 escapes this.** Its concurrency is capped at 64, so the "
+                  "prefill backlog is far smaller — and its per-step GPU work (931 GB of "
+                  "weight reads) is so large that prefill and scheduler overhead are "
+                  "comparatively negligible. That is much of why its roofline utilization "
+                  "(29%) looks so much healthier than the dense models' (4-6%): for Kimi the "
+                  "GPU-bound part genuinely dominates the step, while for Qwen and Llama the "
+                  "GPU-bound part is small and everything else fills the remaining ~70%.", "",
                   "So the three tiers are limited by three different things: **Kimi-K3 by "
                   "memory bandwidth**, and **Qwen / Llama by prefill throughput and "
                   "scheduling**, with no hardware unit near its ceiling. Their distance from "
@@ -284,10 +308,12 @@ def main():
                   "benchmark.", "",
                   "> **This last part is inference, not measurement.** The residual is what "
                   "is left after subtracting four estimated costs; it is not a profiled "
-                  "breakdown, and the individual estimates carry their own error. Settling "
-                  "it properly needs a profiler trace, or a decode-only run (short ISL, or "
-                  "prefill and decode measured separately) to isolate the prefill "
-                  "contribution.", ""]
+                  "breakdown, and the individual estimates carry their own error. The TTFT "
+                  "median-vs-p99 gap is real measured evidence that queueing happens, but "
+                  "the *split* between prefill contention and scheduler overhead inside that "
+                  "~70% is not measured — no trace shows \"X ms prefill, Y ms scheduler\". "
+                  "Settling it needs a profiler trace, or a decode-only run (short ISL, or "
+                  "prefill and decode measured separately).", ""]
         if notes:
             L += ["### Reading the comparison", ""] + notes + [""]
         L += ["> **Caveat: different TP.** Tier 1 is TP=1 (single GPU), tiers 2 and 3 are "

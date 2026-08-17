@@ -4,6 +4,9 @@
 [2026-08-17T18:39:17+00:00] launching (timeout 3600s)
 [2026-08-17T18:45:57+00:00] run rc=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/megatron-ref/run_20260817_183917/megatron_ref_N8.log
 [2026-08-17T18:45:57+00:00] parsed TF/s/GPU = none
+N=8
+TFLOPS=
+RC=0
 [2026-08-17T18:45:57+00:00] FAILED or no throughput parsed — not updating the report.
 [2026-08-17T18:45:57+00:00] last 30 lines:
  [2026-08-17 18:45:41] iteration       48/      50 | consumed samples:         1536 | elapsed time per iteration (ms): 6271.3 | mem usages: 0.6888 | learning rate: 3.000000E-05 | global batch size:    32 | lm loss: 8.088737E+00 | loss scale: 1.0 | grad norm: 0.169 | number of skipped iterations:   0 | number of nan iterations:   0 |

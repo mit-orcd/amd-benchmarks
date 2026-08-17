@@ -12,10 +12,16 @@
 # Every one of those is reproduced below, read out of Dell's own resolved-argument dump in
 # logs/tflops_v26.1_tune_20260604_104624/bench_bf16_ddp_bucket_250M.log.
 #
-# One deliberate difference, and it is the point of the exercise: Dell had to set
-# HSA_OVERRIDE_GFX_VERSION=9.4.2 because their image's PyTorch had no gfx950 code objects.
-# We do NOT set it. If the newer image is gfx950-native, that is a real advantage for this
-# host and belongs in the result, not hidden.
+# HSA_OVERRIDE_GFX_VERSION=9.4.2 IS set below, matching Dell. This was tried unset first
+# (2026-08-14 21:10 run) on the premise that a native-gfx950 image wouldn't need it -- that
+# premise held for ATOM's rocm/atom-dev (hipBLASLt has its own gfx950 tuning independent of
+# torch's compiled arch list) but does NOT hold for this image. Without the override:
+#   torch.cuda.get_arch_list() == []   (no compiled code objects at all, confirmed by probe)
+#   forward pass ran; backward failed in TE's layernorm_linear wgrad_gemm ->
+#     RuntimeError: Unable to find any suitable algorithms  (all 8 ranks, same point)
+# Setting the override lets TE/hipBLASLt fall back to its gfx942 kernel set, same as Dell's
+# run. This makes the run apples-to-apples with Dell on software stack too, not just config
+# -- both sides now execute the same code objects. See megatron-ref/*.log for the failed run.
 #
 # Usage: ./run_megatron_ref.sh [N_GPUS]     (default 8 — the only N with a B200 reference)
 set -uo pipefail
@@ -101,6 +107,8 @@ timeout --signal=TERM --kill-after=30s 3600 \
   docker run --rm $(dgpu_args) \
     -v "$OUT":/out \
     -e HIP_VISIBLE_DEVICES="$devs" -e ROCR_VISIBLE_DEVICES="$devs" \
+    -e HSA_OVERRIDE_GFX_VERSION=9.4.2 \
+    -e HSA_NO_SCRATCH_RECLAIM=1 \
     -e NCCL_IB_DISABLE=1 -e RCCL_MSCCL_ENABLE=1 -e NCCL_DEBUG=WARN \
     "$IMG" bash /out/cmd.sh >"$LOG" 2>&1
 rc=$?

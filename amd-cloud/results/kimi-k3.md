@@ -69,6 +69,12 @@ entire memory table is read verbatim from the server's own budget line.
 
 ## 1. Computing performance
 
+**Concurrency** = number of independent requests being served *at once*, each with its own
+prompt and growing output. It is a client-side load setting, not a hardware unit — all 64
+requests at c=64 are batched together and run on the **same 8 GPUs** in one continuous
+batching loop, not one request per GPU (this box only has 8 GPUs, TP=8, so there is no
+per-request GPU mapping at all).
+
 | Concurrency | Throughput (tok/s) | TTFT med (ms) | TPOT med (ms) | req/s |
 |---:|---:|---:|---:|---:|
 | 1 | 46.1 | 224.9 | 21.48 | 0.05 |
@@ -81,8 +87,11 @@ entire memory table is read verbatim from the server's own budget line.
 
 Throughput scales **27×** from c=1 to c=64 (46 → 1259 tok/s) while TPOT grows only 2.3×
 (21.5 → 49.9 ms) — batching is working well and the engine is nowhere near saturation at
-c=64. The sweep stops at 64 because `max_num_seqs=64`; past that you would measure queueing,
-not the engine.
+c=64. The sweep stops at 64 because the server was launched with `--max-num-seqs 64` (a
+recipe config choice, not a hardware limit — §3.2 shows the KV pool is barely 3% used at
+this concurrency); past 64 you would measure queueing, not the engine. AMD's own MAD
+benchmark harness sweeps to concurrency 256 with the same `max-num-seqs=64` setting, letting
+requests queue past it — untested here, see `notes-kimi-k3.md`.
 
 ### Achieved TFLOP/s
 

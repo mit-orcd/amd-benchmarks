@@ -1,29 +1,29 @@
-# Kimi-K3 on 8 × MI355X — max-num-seqs experiment (compute and communication analysis)
+# Kimi-K3 on 8 × MI355X — MAD-recipe rerun (compute and communication analysis)
 
 Serving `moonshotai/Kimi-K3` (2.78 T params, 1.5 TB MXFP4 checkpoint) on a single
-8 × MI355X node via ATOM, TP=8, with **`--max-num-seqs` raised from 64 to 256** to
-test whether the in-flight cap — not hardware — was the binding limit.
-Source run: `kimi_maxseqs_20260819_171529`.
+8 × MI355X node via ATOM, TP=8, using **AMD's official MAD benchmark recipe**
+([ROCm/MAD](https://github.com/ROCm/MAD/blob/develop/benchmark/kimi_k3/README.md)).
+Source run: `kimi_mad_20260818_223148`.
 
-> This file reports **only** the raised-`max-num-seqs` run. Baseline runs are in
-> `kimi-k3.md` (original recipe, max-num-seqs=64) and `kimi-k3-mad.md` (MAD recipe,
-> max-num-seqs=64); their head-to-head is `kimi-k3-comparison.md`. All are kept
-> separate so none overwrites another.
+> This file reports **only** the MAD-recipe run. The earlier run using
+> `rocm/atom-dev:latest` with the ATOM in-repo recipe is in `kimi-k3.md`; the two are
+> kept separate on purpose so neither overwrites the other. Rationale and the full
+> config diff are in `notes-kimi-k3.md`.
 
 **Run configuration** (from the server log and launch command, not assumed):
 
 | Setting | Value |
 |---|---|
-| Image | `rocm/atom-dev:latest` (the better-performing baseline, see kimi-k3-comparison.md) |
+| Image | `rocm/atom-dev:rocm7.2.4_...20260727_kimi_k3` (MAD-pinned, Kimi-K3-specific) |
 | Parallelism | `tensor_parallel_size=8`, PP=1, DP=1, EP off |
-| Quantization | MXFP4 routed experts + PTPC-FP8 via `--online_quant_config` (original recipe) |
+| Quantization | MXFP4 routed experts; kernel set selected by MAD env vars (no `--online_quant_config`) |
 | KV cache dtype | fp8 |
-| `max_model_len` / `max_num_seqs` | 16384 / **256** (raised from 64) |
-| `max_num_batched_tokens` | 16384 |
+| `max_model_len` / `max_num_seqs` | 16384 / 64 |
+| `max_num_batched_tokens` | 10240 |
 | `gpu_memory_utilization` | 0.93 |
 | Prefix caching | disabled (KDA recurrent state cannot be rebuilt from paged cache) |
 | Workload | ISL/OSL 1024/1024, `--ignore-eos`, concurrency 64→256 |
-| Kernel-selection env vars | none (original recipe; MAD vars measured ~9% slower) |
+| MAD env vars | `ATOM_USE_TRITON_GEMM=1`, `ATOM_USE_TRITON_MOE=0`, `AITER_USE_GROUPED_GEMM=0`, `AITER_FLYDSL_FORCE=1`, `ATOM_USE_UNIFIED_ATTN=1`, `ATOM_FORCE_ATTN_TRITON=1`, +loader/timeout vars |
 
 **Architecture**: 93 layers — **24 MLA full-attention** + **69 KDA linear-attention**;
 hidden 7168; MoE with **896 routed experts, top-16 + 2 shared**, expert hidden
@@ -33,13 +33,13 @@ hidden 7168; MoE with **896 routed experts, top-16 + 2 shared**, expert hidden
 
 ## 0. Overview — the short version
 
-**§1 Compute** — **2,482.2 tok/s** peak at c=256 (TPOT 103.72 ms, TTFT 463.1 ms). Achieved **417.0 TFLOP/s aggregate = 52.1/GPU = 2.1% of BF16 peak**.
+**§1 Compute** — **1,187.3 tok/s** peak at c=128 (TPOT 53.35 ms, TTFT 49,456.2 ms). Achieved **199.5 TFLOP/s aggregate = 24.9/GPU = 1.0% of BF16 peak**.
 
-**§2 Memory** — per GPU: **190.4 GB weights** + **57.7 GB KV pool**. KV is 13.5 KB/token — only the 24 MLA layers keep a paged cache; the 69 KDA layers hold fixed recurrent state.
+**§2 Memory** — per GPU: **191.0 GB weights** + **56.2 GB KV pool**. KV is 13.5 KB/token — only the 24 MLA layers keep a paged cache; the 69 KDA layers hold fixed recurrent state.
 
-**§3 Bottleneck — intra-GPU HBM bandwidth.** Compute 2.1% utilized, XGMI 2.2%, **HBM ~20%** (1,636.7 GB/s of 8,000). At batch 256, **887 of 896 experts** activate per layer, so weight traffic is 168.8 GB/GPU/step.
+**§3 Bottleneck — intra-GPU HBM bandwidth.** Compute 1.0% utilized, XGMI 1.0%, **HBM ~18%** (1,421.7 GB/s of 8,000). At batch 128, **805 of 896 experts** activate per layer, so weight traffic is 153.3 GB/GPU/step.
 
-**§4 Communication** — XGMI carries only activations: 186 all-reduces/token, **11.58 GB/s per GPU (2.2% of ceiling)**. No all-to-all (EP off), no gradients, no KV exchange.
+**§4 Communication** — XGMI carries only activations: 186 all-reduces/token, **5.54 GB/s per GPU (1.0% of ceiling)**. No all-to-all (EP off), no gradients, no KV exchange.
 
 ---
 
@@ -51,15 +51,14 @@ requests are batched together on the **same 8 GPUs** (TP=8), not one per GPU.
 
 | Concurrency | Throughput (tok/s) | TTFT med (ms) | TTFT p99 (ms) | TPOT med (ms) | req/s | completed |
 |---:|---:|---:|---:|---:|---:|---:|
-| 64 | 1,237.0 | 282.9 | 13,406.2 | 49.98 | 1.34 | 640 |
-| 128 | 1,792.5 | 346.4 | 7,198.0 | 70.98 | 1.95 | 1,280 |
-| 256 | **2,482.2** | 463.1 | 13,196.8 | 103.72 | 2.69 | 2,560 |
+| 64 | 1,142.7 | 281.1 | 25,279.0 | 52.97 | 1.24 | 640 |
+| 128 | **1,187.3** | 49,456.2 | 52,969.2 | 53.35 | 1.29 | 1,280 |
+| 256 | 1,182.4 | 149,723.0 | 154,193.2 | 53.85 | 1.28 | 2,560 |
 
-Throughput scales **2.0×** from c=64 to c=256 while TPOT grows 2.1×.
+Throughput scales **1.0×** from c=64 to c=256 while TPOT grows 1.0×.
 
-With `--max-num-seqs 256`, concurrency up to 256 is admitted to the batch rather than
-queued. Compare against `kimi-k3-mad.md`, where the same concurrencies ran against
-a 64-slot server and TTFT median reached 150 s at c=256 while throughput stayed flat.
+MAD's sweep deliberately runs past `--max-num-seqs 64`, so concurrency above 64
+queues rather than being rejected — the TTFT p99 column is where that shows up.
 
 ### Achieved TFLOP/s
 
@@ -68,9 +67,9 @@ params ≈ **84 B** of 2.76 T (3.0%). At 2 FLOP per active param per token:
 
 | Concurrency | Aggregate TFLOP/s | Per GPU | % of BF16 peak (2500) |
 |---:|---:|---:|---:|
-| 64 | 207.8 | 26.0 | 1.04% |
-| 128 | 301.1 | 37.6 | 1.51% |
-| 256 | 417.0 | 52.1 | 2.09% |
+| 64 | 192.0 | 24.0 | 0.96% |
+| 128 | 199.5 | 24.9 | 1.00% |
+| 256 | 198.6 | 24.8 | 0.99% |
 
 **Decode is nowhere near compute-bound** — a fraction of peak matrix throughput. That
 is expected: autoregressive decode does one token per sequence per step, so every
@@ -87,17 +86,17 @@ Measured per rank at load time, from the server's own budget line:
 
 ```
 total_gpu=287.98GB  utilization=0.93  budget=267.83GB
-peak_torch=190.37GB  non_torch=13.17GB  cudagraph_est=0.84GB  safety=5.76GB
-available_for_kv=57.68GB  block_bytes=1769472  num_kvcache_blocks=26874
+peak_torch=191.02GB  non_torch=14.35GB  cudagraph_est=0.53GB  safety=5.76GB
+available_for_kv=56.16GB  block_bytes=1769472  num_kvcache_blocks=32049
 ```
 
 | Component | Per GPU | Node total (×8) |
 |---|---:|---:|
-| Model weights + framework (`peak_torch`) | 190.4 GB | 1,523 GB |
-| Non-torch (RCCL buffers, HIP runtime) | 13.2 GB | 105 GB |
-| CUDA-graph pool | 0.84 GB | 6.7 GB |
+| Model weights + framework (`peak_torch`) | 191.0 GB | 1,528 GB |
+| Non-torch (RCCL buffers, HIP runtime) | 14.3 GB | 115 GB |
+| CUDA-graph pool | 0.53 GB | 4.2 GB |
 | Safety margin | 5.76 GB | 46.1 GB |
-| **KV cache pool** | **57.7 GB** | **461 GB** |
+| **KV cache pool** | **56.2 GB** | **449 GB** |
 
 **It does not load only weights** — a KV pool is carved out on top.
 
@@ -114,17 +113,17 @@ That decodes exactly: MLA stores a compressed latent KV of `kv_lora(512) + qk_ro
    heads, so sharding would force a re-gather every step. Replication trades idle
    HBM for zero communication.
 
-Capacity: 57.7 GB ÷ 13,824 B = **4.17 M tokens** per GPU. At c=256 × ~2048 ctx that is 7.25 GB — **12.6% of the pool**.
+Capacity: 56.2 GB ÷ 13,824 B = **4.06 M tokens** per GPU. At c=128 × ~2048 ctx that is 3.62 GB — **6.5% of the pool**.
 
 ## 3. What is the bottleneck?
 
 **Intra-GPU HBM bandwidth.** Not compute, not the interconnect.
 
-| Resource | Demand at c=256 | MI355X capability | Utilization |
+| Resource | Demand at c=128 | MI355X capability | Utilization |
 |---|---:|---:|---:|
-| Compute | 52.1 TFLOP/s per GPU | 2,500 TFLOP/s BF16 | **2.1%** |
-| **HBM bandwidth** | **1,636.7 GB/s per GPU** | 8,000 GB/s | **~20%** |
-| XGMI (GPU↔GPU) | 11.58 GB/s per GPU | ~537.6 GB/s (1-direction) | **~2.2%** |
+| Compute | 24.9 TFLOP/s per GPU | 2,500 TFLOP/s BF16 | **1.0%** |
+| **HBM bandwidth** | **1,421.7 GB/s per GPU** | 8,000 GB/s | **~18%** |
+| XGMI (GPU↔GPU) | 5.54 GB/s per GPU | ~537.6 GB/s (1-direction) | **~1.0%** |
 
 ### 3.1 Why HBM — the MoE batching mechanism
 
@@ -139,13 +138,13 @@ traffic grows much faster** until nearly every expert is touched every step. MXF
 what makes it tractable — at BF16 the same reads would be 4× larger and exceed HBM
 bandwidth outright.
 
-### 3.2 How to improve it — raising HBM utilization above the current ~20%
+### 3.2 How to improve it — raising HBM utilization above the current ~18%
 
 RVS `babel`, a pure streaming-read kernel with no compute or routing, measured
-**7,260 GB/s = 91% of spec** on this box (Part A). So ~91% is the practical hardware ceiling, and this run delivers **23% of what the memory system can actually do**.
+**7,260 GB/s = 91% of spec** on this box (Part A). So ~91% is the practical hardware ceiling, and this run delivers **20% of what the memory system can actually do**.
 
-The shortfall is that MoE GEMMs are thin: at batch 256 each activated expert sees only
-**4.6 tokens**, making each weight read a matrix-*vector*
+The shortfall is that MoE GEMMs are thin: at batch 128 each activated expert sees only
+**2.5 tokens**, making each weight read a matrix-*vector*
 product that cannot issue enough concurrent memory requests to saturate HBM.
 
 Ranked levers:
@@ -164,8 +163,8 @@ target.**
 
 ### 3.3 Why TTFT and TPOT behave differently
 
-TTFT moves from 282.9 → 463.1 ms across the sweep while TPOT moves
-49.98 → 103.72 ms. Prefill is compute-dense and has headroom;
+TTFT moves from 281.1 → 149,723.0 ms across the sweep while TPOT moves
+52.97 → 53.85 ms. Prefill is compute-dense and has headroom;
 decode adds weight-read traffic per step as more experts activate. The two metrics sit
 in different regimes — further confirmation that decode is bandwidth-limited.
 
@@ -185,17 +184,17 @@ With **TP=8 and EP disabled**, every expert is sharded across all 8 GPUs, so the
 
 | Concurrency | Steps/s | Payload/step | Wire bytes/step¹ | Sustained per GPU |
 |---:|---:|---:|---:|---:|
-| 64 | 19.3 | 170.7 MB | 298.6 MB | **5.77 GB/s** |
-| 128 | 14.0 | 341.3 MB | 597.3 MB | **8.36 GB/s** |
-| 256 | 9.7 | 682.6 MB | 1194.6 MB | **11.58 GB/s** |
+| 64 | 17.9 | 170.7 MB | 298.6 MB | **5.33 GB/s** |
+| 128 | 9.3 | 341.3 MB | 597.3 MB | **5.54 GB/s** |
+| 256 | 4.6 | 682.6 MB | 1194.6 MB | **5.52 GB/s** |
 
 ¹ busbw convention: an all-reduce moves `2(N−1)/N × payload` on the wire.
 
-At **11.58 GB/s against a ~537.6 GB/s per-direction ceiling (~2.2%)**, the interconnect is almost entirely idle. The
+At **5.54 GB/s against a ~537.6 GB/s per-direction ceiling (~1.0%)**, the interconnect is almost entirely idle. The
 N=5/6/7 RCCL cliff found in Part B is irrelevant here — TP=8 is a power-of-2 arity that
 never triggers it, and even the degraded cliff bandwidth would be ample.
 
-**Message-size caveat**: each call is only 3584 KB at c=256 — far below the
+**Message-size caveat**: each call is only 1792 KB at c=128 — far below the
 16 MiB–8 GiB range Part B swept, so these collectives are **latency-dominated, not
 bandwidth-dominated**. The 186 serialized calls per step mean the true cost is
 higher than the raw utilization figure suggests.
@@ -205,16 +204,16 @@ higher than the raw utilization figure suggests.
 
 ### Intra-GPU (HBM) — dominated by weights
 
-Per decode step at c=256, per GPU:
+Per decode step at c=128, per GPU:
 
 | Traffic | Bytes/step | Share |
 |---|---:|---:|
-| **Expert weights (MXFP4)** | **~168.8 GB** | **~96%** |
-| KV cache read | ~7.25 GB | ~4.1% |
-| Activations | ~0.68 GB | ~0.4% |
+| **Expert weights (MXFP4)** | **~153.3 GB** | **~97%** |
+| KV cache read | ~3.62 GB | ~2.3% |
+| Activations | ~0.34 GB | ~0.2% |
 
-HBM moves ~168.8 GB/step while XGMI moves ~1.19 GB/step — roughly
-**141:1**. Optimization effort belongs on the memory side.
+HBM moves ~153.3 GB/step while XGMI moves ~0.60 GB/step — roughly
+**257:1**. Optimization effort belongs on the memory side.
 
 ## 5. Further discussion
 
@@ -224,9 +223,8 @@ masking` — the MXFP4 SiTUv2 grouped-MoE kernel has no expert-parallel variant.
 experts and EP are mutually exclusive in this build, so the HBM-vs-XGMI trade cannot be
 evaluated on this model today.
 
-**2. `max_num_seqs` was raised to 256 for this run** — the whole point of the
-experiment. Whether it moved throughput is answered by the §1 table versus the
-~1,180 tok/s plateau the 64-slot runs hit; see `kimi-k3-comparison.md` §2.
+**2. `max_num_seqs=64` remains the binding limit, not hardware** — this sweep drives
+past it, so concurrency above 64 queues rather than increasing in-flight batch.
 
 **3. Prefix caching is disabled for correctness.** KDA recurrent state is per-request
 and cannot be reconstructed from the paged MLA cache. In workloads with shared prefixes
@@ -247,11 +245,11 @@ defaults. Comparison between the two is in `notes-kimi-k3.md`.
 
 | What | Where |
 |---|---|
-| Per-concurrency JSON / logs | `logs/atom/kimi_maxseqs_20260819_171529/c<N>.{json,log}` |
-| Sweep summary | `logs/atom/kimi_maxseqs_20260819_171529/summary.txt` |
-| Server log (memory budget, engine config) | `logs/atom/kimi_maxseqs_20260819_171529/atom_server.log` |
-| Driver state | `logs/atom/kimi_maxseqs_20260819_171529/STATE.txt` |
-| This table as CSV | `results/kimi-k3-maxseqs.csv` |
+| Per-concurrency JSON / logs | `logs/atom/kimi_mad_20260818_223148/c<N>.{json,log}` |
+| Sweep summary | `logs/atom/kimi_mad_20260818_223148/summary.txt` |
+| Server log (memory budget, engine config) | `logs/atom/kimi_mad_20260818_223148/atom_server.log` |
+| Driver state | `logs/atom/kimi_mad_20260818_223148/STATE.txt` |
+| This table as CSV | `results/kimi-k3-mad.csv` |
 | Rerun rationale + config diff | `notes-kimi-k3.md` |
 | Original (non-MAD) run | `kimi-k3.md` |
 
@@ -268,6 +266,6 @@ bypassing CPU and PCIe. All-to-all mesh (K₈), every pair 1 hop, **~537 GB/s pe
 direction** aggregate per GPU. This is the **intra-node** path; AMD's NVLink counterpart.
 
 HBM is ~15× faster than XGMI per GPU, so the instinct is that HBM can never be the
-constraint. For this workload that is backwards: HBM moves ~168.8 GB/step while XGMI
-moves ~1.19 GB — the *slower* link is the idle one.
+constraint. For this workload that is backwards: HBM moves ~153.3 GB/step while XGMI
+moves ~0.60 GB — the *slower* link is the idle one.
 

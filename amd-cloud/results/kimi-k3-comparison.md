@@ -12,7 +12,7 @@ configuration. Neither file is modified by this one; it reads both and compares.
 | `--max-num-batched-tokens` | 16384 | 10240 |
 | `--max-num-seqs` | 64 | 64 |
 | Concurrency swept | 1 → 64 | 64 → 256 |
-| Detail | `kimi-k3.md` | `kimi-k3-summary.md` |
+| Detail | `kimi-k3.md` | `kimi-k3-mad.md` |
 | Raw data | `logs/atom/sweep_20260814_164903/` | `logs/atom/kimi_mad_20260818_223148/` |
 
 ---
@@ -80,7 +80,7 @@ Two consequences:
 
 ### Why HBM utilization *fell* in Run B
 
-`kimi-k3-summary.md` reports ~18% versus Run A's ~29%. That is an artifact of where the
+`kimi-k3-mad.md` reports ~18% versus Run A's ~29%. That is an artifact of where the
 number is taken, not a regression in memory throughput: the summary computes it at the
 peak-throughput concurrency, which is c=128 in Run B. At c=128 more experts activate
 (805 of 896 vs 610), so weight traffic per step rises to 153 GB, but step time rises faster

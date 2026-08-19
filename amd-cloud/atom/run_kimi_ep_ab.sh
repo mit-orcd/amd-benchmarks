@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # A/B experiment: Kimi-K3 with expert parallelism ON, against the existing TP-only baseline.
 #
-# Hypothesis (from results/kimi-k3.md section 3/5): with EP off, TP shards every expert
+# Hypothesis (from results/kimi-k3-base.md section 3/5): with EP off, TP shards every expert
 # across all 8 GPUs, so each GPU reads a slice of EVERY activated expert -- ~116 GB/step of
 # HBM traffic at c=64 (~29% of HBM bandwidth) while XGMI sits at ~1%. EP instead places
 # whole experts on specific ranks: fewer, complete expert reads per GPU, paid for with
@@ -75,9 +75,9 @@ fi
 echo "EP_STATUS=ok" >>"$STATE"
 echo "EP_SWEEP=$SWEEP" >>"$STATE"
 
-say "appending analysis to results/kimi-k3.md"
+say "appending analysis to results/kimi-k3-base.md"
 $PY analyze_kimi_ep.py "$SWEEP" \
    "$LOG_ROOT/atom/sweep_20260814_164903" \
-   "$BENCH_ROOT/results/kimi-k3.md" >"$DRV/analyze.log" 2>&1
-say "analyze rc=$? -> $BENCH_ROOT/results/kimi-k3.md"
+   "$BENCH_ROOT/results/kimi-k3-base.md" >"$DRV/analyze.log" 2>&1
+say "analyze rc=$? -> $BENCH_ROOT/results/kimi-k3-base.md"
 say "EP A/B DONE"

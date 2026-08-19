@@ -1,0 +1,9 @@
+Kimi-K3 MAD-recipe sweep 20260818_183450
+image   : rocm/atom-dev:rocm7.2.4_ubuntu24.04_py3.12_pytorch2.10.0_20260727_kimi_k3
+model   : /mnt/scratch/shaohao/models/Kimi-K3
+port    : 8010
+ISL/OSL : 1024/1024
+conc    : 64 128 256
+
+  conc        req/s    out_tok/s  ttft_ms_med  tpot_ms_med
+    64            -            -            -            -  rc=124 3600s (no json)

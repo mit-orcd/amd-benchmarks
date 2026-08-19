@@ -1,0 +1,21 @@
+[2026-08-18T22:31:48+00:00] Kimi-K3 MAD-recipe rerun start (out: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_mad_20260818_223148)
+[2026-08-18T22:31:48+00:00] image=rocm/atom-dev:rocm7.2.4_ubuntu24.04_py3.12_pytorch2.10.0_20260727_kimi_k3 conc='64 128 256' ISL/OSL=1024/1024
+[2026-08-18T22:31:48+00:00] GPUs idle, no foreign server, model present
+[2026-08-18T22:31:48+00:00] image already present
+/dev/sdb2       839G  740G   63G  93% /
+[2026-08-18T22:31:48+00:00] starting server (MAD env + flags) on port 8010
+[2026-08-18T22:31:48+00:00] waiting for server (1.5 TB load, up to 40 min)
+[2026-08-18T22:33:55+00:00]   still loading (120s)
+[2026-08-18T22:36:03+00:00]   still loading (240s)
+[2026-08-18T22:38:10+00:00]   still loading (360s)
+[2026-08-18T22:40:17+00:00]   still loading (480s)
+[2026-08-18T22:42:25+00:00]   still loading (600s)
+[2026-08-18T22:44:31+00:00]   still loading (720s)
+[2026-08-18T22:46:38+00:00]   still loading (840s)
+[2026-08-18T22:47:50+00:00] server READY
+[2026-08-18T23:49:01+00:00] stopping server
+MAD_STATUS=ok
+MAD_SWEEP=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_mad_20260818_223148
+[2026-08-18T23:49:38+00:00] generating results/kimi-k3-summary.md
+[2026-08-18T23:49:38+00:00] analyze rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/results/kimi-k3-summary.md
+[2026-08-18T23:49:38+00:00] MAD RERUN DONE

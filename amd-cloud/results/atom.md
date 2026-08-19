@@ -84,9 +84,9 @@ e.g. Llama-70B: 256 x (8000 GB/s x 8) / 68 GB = **240,941 tok/s**.
 | `Llama-3.1-70B-Instruct-FP8` | 8 | 9,342.4 | **1,167.8** | 27.4 | 68.0 GB | 240,941.2 | **3.9%** |
 | `Kimi-K3` | 8 | 1,258.5 | **157.3** | 50.9 | 931.0 GB | 4,399.6 | **28.6%** |
 
-**Yes — and the % column is the interesting part.** Kimi-K3 sits at ~29% of its weight-bandwidth ceiling while the two dense models sit at 4-6%. That is not Kimi doing better; it means Kimi is genuinely **bandwidth-bound** while Qwen and Llama are not. It also matches, independently, the ~29% HBM utilization measured in `kimi-k3.md` §3 — two different routes to the same number.
+**Yes — and the % column is the interesting part.** Kimi-K3 sits at ~29% of its weight-bandwidth ceiling while the two dense models sit at 4-6%. That is not Kimi doing better; it means Kimi is genuinely **bandwidth-bound** while Qwen and Llama are not. It also matches, independently, the ~29% HBM utilization measured in `kimi-k3-base.md` §3 — two different routes to the same number.
 
-To be precise about *which* bandwidth: this is **intra-GPU HBM** — each GPU reading weights out of its own 8 TB/s on-package memory. It is **not** the XGMI GPU-to-GPU interconnect, which in the same run carries only activation all-reduces and sits at ~1% utilized. The two are often conflated; here they differ by roughly 390:1 in traffic. **See [`kimi-k3.md`](kimi-k3.md) for the full breakdown** — §3 ranks the three candidate bottlenecks (compute 1.1%, HBM ~29%, XGMI ~1.1%), §4 gives the per-step byte volumes on each path, and the terminology section at the top defines HBM vs XGMI.
+To be precise about *which* bandwidth: this is **intra-GPU HBM** — each GPU reading weights out of its own 8 TB/s on-package memory. It is **not** the XGMI GPU-to-GPU interconnect, which in the same run carries only activation all-reduces and sits at ~1% utilized. The two are often conflated; here they differ by roughly 390:1 in traffic. **See [`kimi-k3-base.md`](kimi-k3-base.md) for the full breakdown** — §3 ranks the three candidate bottlenecks (compute 1.1%, HBM ~29%, XGMI ~1.1%), §4 gives the per-step byte volumes on each path, and the terminology section at the top defines HBM vs XGMI.
 
 #### If the dense models are not bandwidth-bound, what limits them?
 
@@ -117,7 +117,7 @@ So the three tiers are limited by three different things: **Kimi-K3 by memory ba
 ### Reading the comparison
 
 - **8B vs 70B — tracks model size, roughly.** Raw throughput differs only 1.60x, but that hides the GPU count: **per GPU** it is 14,963 vs 1,168 tok/s, a **12.8x** gap against an 8.8x active-parameter ratio. So the 70B recovers most of what its size costs by using 8 GPUs; the residual ~1.5x beyond pure size scaling is TP communication, a larger KV cache per token, and lower per-GPU efficiency. That is the expected shape.
-- **70B vs Kimi-K3 — does NOT track model size, and that is the finding.** Both are TP=8, so per GPU it is 1,168 vs 157 tok/s — **7.4x** apart for only a **1.2x** difference in *active* parameters (70 B vs ~84 B). Size does not explain it; **weight traffic** does. At batch 64 Kimi's tokens route independently across 896 experts, so 610 of them fire per layer and the engine reads **931 GB per step vs the 70B's 68 GB — 13.7x more traffic for 1.2x more active parameters.** A 7.4x slowdown from 13.7x more traffic is actually *better* than linear, because Kimi converts bandwidth to tokens more efficiently (29% of roofline vs 4%). This is the central cost of MoE: sparse activation saves FLOPs but not bytes, and bytes are the binding constraint. Full analysis in `kimi-k3.md`.
+- **70B vs Kimi-K3 — does NOT track model size, and that is the finding.** Both are TP=8, so per GPU it is 1,168 vs 157 tok/s — **7.4x** apart for only a **1.2x** difference in *active* parameters (70 B vs ~84 B). Size does not explain it; **weight traffic** does. At batch 64 Kimi's tokens route independently across 896 experts, so 610 of them fire per layer and the engine reads **931 GB per step vs the 70B's 68 GB — 13.7x more traffic for 1.2x more active parameters.** A 7.4x slowdown from 13.7x more traffic is actually *better* than linear, because Kimi converts bandwidth to tokens more efficiently (29% of roofline vs 4%). This is the central cost of MoE: sparse activation saves FLOPs but not bytes, and bytes are the binding constraint. Full analysis in `kimi-k3-base.md`.
 
 > **Caveat: different TP.** Tier 1 is TP=1 (single GPU), tiers 2 and 3 are TP=8. Throughput is therefore not normalized per GPU, and the tiers answer "what can this box serve for this model" rather than "which model is more efficient per GPU".
 
@@ -191,7 +191,7 @@ So the three tiers are limited by three different things: **Kimi-K3 by memory ba
 
 ## Deep dive
 
-`kimi-k3.md` analyses tier 3 in detail: achieved TFLOP/s, the GPU memory breakdown (weights vs KV pool), why the workload is HBM-bandwidth-bound rather than compute- or interconnect-bound, and the intra-GPU vs intra-node data volumes.
+`kimi-k3-base.md` analyses tier 3 in detail: achieved TFLOP/s, the GPU memory breakdown (weights vs KV pool), why the workload is HBM-bandwidth-bound rather than compute- or interconnect-bound, and the intra-GPU vs intra-node data volumes.
 
 ## Source data
 

@@ -6,7 +6,7 @@ per-run reports remain unchanged as sources of record:
 
 | Run | Config | Detail file |
 |---|---|---|
-| **A — original** | `rocm/atom-dev:latest`, ATOM in-repo recipe, `max-num-seqs 64` | `kimi-k3.md` |
+| **A — original** | `rocm/atom-dev:latest`, ATOM in-repo recipe, `max-num-seqs 64` | `kimi-k3-base.md` |
 | **B — AMD MAD** | MAD-pinned image + 11 kernel env vars, `max-num-seqs 64` | `kimi-k3-mad.md` |
 | **C — raised cap** | Run A's image/recipe, **`max-num-seqs 256`** | `kimi-k3-maxseqs.md` |
 
@@ -96,17 +96,36 @@ which is why Run C was built on Run A's configuration.
 
 ## 3. What limits this workload
 
-Measured at each run's peak-throughput point:
+Utilization depends strongly on batch, so the columns below are labelled by concurrency, not
+by run. **Comparing across different concurrencies is meaningless** — that is the trap
+discussed in §4.
 
-| Resource | Run A (c=64) | Run C (c=256) | Capability |
+**Like-for-like, at matched c=64:**
+
+| Resource | Run A (c=64) | Run C (c=64) | Capability |
 |---|---:|---:|---|
-| Compute | 1.1% | 2.1% | 2,500 TFLOP/s BF16 per GPU |
-| **HBM bandwidth** | **28.6%** | **20.5%** | 8,000 GB/s per GPU |
-| XGMI | 1.1% | 2.2% | ~537 GB/s per direction |
+| Compute | 1.1% | 1.1% | 2,500 TFLOP/s BF16 per GPU |
+| **HBM bandwidth** | **28.6%** | **28.1%** | 8,000 GB/s per GPU |
+| XGMI | 1.1% | 1.1% | ~537 GB/s per direction |
 
-**HBM is the closest to saturation by a wide margin** — compute and interconnect are ~1–2%
-utilized throughout. To be precise about which bandwidth: this is **intra-GPU HBM**, each GPU
-reading weights from its own on-package memory. It is *not* XGMI, which carries only
+The two runs are **the same** at the same batch — raising `max-num-seqs` did not change
+per-batch efficiency, it changed how large a batch the scheduler would admit.
+
+**Run C at its own peak (c=256), which is a different operating point, not a regression:**
+
+| Resource | Run C (c=256) | Capability |
+|---|---:|---|
+| Compute | 2.1% | 2,500 TFLOP/s BF16 per GPU |
+| **HBM bandwidth** | **20.5%** | 8,000 GB/s per GPU |
+| XGMI | 2.2% | ~537 GB/s per direction |
+
+HBM% is *lower* at c=256 than at c=64 (20.5% vs 28.1%) even though throughput is **2× higher**
+— because step time grows faster than weight traffic once attention and compute scale with
+batch. §4 explains the mechanism and why this is expected rather than a problem.
+
+**In every case HBM is the closest to saturation by a wide margin** — compute and interconnect
+sit at ~1–2% throughout. To be precise about which bandwidth: this is **intra-GPU HBM**, each
+GPU reading weights from its own on-package memory. It is *not* XGMI, which carries only
 activation all-reduces. Traffic ratio is roughly **390:1** in HBM's favour.
 
 ### Why HBM traffic is so large: the MoE batching mechanism
@@ -147,7 +166,7 @@ triggers it.
 
 ### Can HBM utilization be pushed higher — and should it?
 
-**A measured correction first.** `kimi-k3.md` §3.2 predicted HBM utilization would *rise* with
+**A measured correction first.** `kimi-k3-base.md` §3.2 predicted HBM utilization would *rise* with
 batch (~45% at 256, ~60% at 1024) as weight reads amortized. Run C shows it **falls**:
 
 | Run | c=64 | c=128 | c=256 |
@@ -178,22 +197,48 @@ not a configuration one.
    was **still climbing at c=256 with no knee** (1,237 → 1,792 → 2,482), so the ceiling has
    not been found. Extend from **`kimi-k3-maxseqs.md`** — it has the best throughput and the
    better-performing image. Expect throughput to keep rising and HBM% to keep falling; that is
-   the correct trade. KV headroom is ample (Run C used ~13% of the 57.7 GB pool).
-2. **ISL = 4096.** MAD's spec sweeps input lengths 1024 *and* 4096; all three runs here use
+   the correct trade. KV headroom is ample (Run C used ~13% of the 57.7 GB pool). ~2 h.
+2. **Profile a step.** Everything about *where* the non-weight ~80% of step time goes is
+   inference from residuals, not measurement. A `rocprof` / torch-profiler trace would replace
+   estimates with a real breakdown — and it is the prerequisite for judging any kernel-level
+   idea, including EP (see below). Do this before optimizing anything kernel-side.
+3. **ISL = 4096.** MAD's spec sweeps input lengths 1024 *and* 4096; all three runs here use
    1024 only. Longer prompts shift the prefill/decode balance and would likely change the
    high-concurrency picture.
-3. **Repeats for the 9% MAD gap.** One run per config supports no claim about small
+4. **Repeats for the 9% MAD gap.** One run per config supports no claim about small
    differences being reproducible. Three repeats at c=64 would settle it.
-4. **Profile the step.** Everything about *where* non-weight time goes is inference from
-   residuals, not measurement. A `rocprof`/torch-profiler trace would replace estimates with
-   a real breakdown — worth doing before optimizing anything kernel-side.
 
-### Known dead ends (tested, do not retry)
+### Should expert parallelism be retried on the MAD image?
 
-- **Expert parallelism.** ATOM raises `NotImplementedError: a16w4 (bf16 A x MXFP4 W) SiTUv2
-  is not supported: expert-parallel masking`. MXFP4 experts and EP are mutually exclusive in
-  this build, so the attractive HBM→XGMI trade cannot be evaluated on this model today.
-  Re-test only on a future ATOM/AITER release.
+**Recommendation: no — deprioritize it.** Not because it is impossible, but because the
+*rationale* for EP has weakened since it was first proposed.
+
+EP was motivated by §3's original reading: HBM at ~29%, XGMI at ~1%, so move traffic from the
+loaded resource to the idle one. Run C undermines that. At c=256 HBM sits at **20.5%**, and
+step time is increasingly dominated by attention, compute and scheduling rather than weight
+reads. **EP would relieve something that is no longer the binding constraint** — best case a
+few percent, and it cannot touch the ~80% of step time that is not weight traffic.
+
+There is one genuine argument the other way, better than "it is a different build": MAD sets
+`ATOM_USE_TRITON_MOE=0` and `AITER_USE_GROUPED_GEMM=0`, which **directly select a different
+MoE kernel path** — and the failure came from the SiTUv2 MXFP4 kernel specifically. So it is
+not implausible the EP-masking gap simply does not apply there. Against it: the MAD image is
+*older* (dated 20260727) and measured ~9% slower overall, so even a working EP would build on
+a worse baseline.
+
+If closure is wanted anyway, it is cheap — the failure surfaces **at model load, ~10 minutes**,
+not after a full sweep. But test it on a **freshly pulled `rocm/atom-dev:latest`** rather than
+the MAD image: `:latest` has likely moved since 2026-08-14, and it is the faster baseline, so
+a working EP there would be useful rather than academic.
+
+### Known dead ends (tested)
+
+- **Expert parallelism on `rocm/atom-dev:latest` (as of 2026-08-14).** ATOM raises
+  `NotImplementedError: a16w4 (bf16 A x MXFP4 W) SiTUv2 is not supported: expert-parallel
+  masking` — MXFP4 experts and EP are mutually exclusive there. Tested on that image only;
+  the MAD image was not pulled until four days later and EP was never retried on it, so this
+  is image-specific evidence, not a universal claim. See the recommendation above before
+  spending time on it.
 - **The MAD recipe as a performance win.** Measured ~9% slower; adopt only if a future image
   changes that.
 
@@ -212,7 +257,7 @@ not a configuration one.
 
 | What | Where |
 |---|---|
-| Run A (original) | `logs/atom/sweep_20260814_164903/` → `kimi-k3.md` |
+| Run A (original) | `logs/atom/sweep_20260814_164903/` → `kimi-k3-base.md` |
 | Run B (MAD) | `logs/atom/kimi_mad_20260818_223148/` → `kimi-k3-mad.md` |
 | Run C (cap 256) | `logs/atom/kimi_maxseqs_20260819_171529/` → `kimi-k3-maxseqs.md` |
 | A-vs-B detail | `kimi-k3-comparison.md` |

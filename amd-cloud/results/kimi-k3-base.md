@@ -56,7 +56,8 @@ latency the 186 serialized calls per step plausibly consume **~3–8% of step ti
 **§5** — EP looked like the top tuning lever (trading HBM traffic at 29% for all-to-all at
 1%), so it was **tested — and it is not supported for this model**: ATOM raises
 `NotImplementedError: a16w4 (bf16 A x MXFP4 W) SiTUv2 is not supported: expert-parallel
-masking`. MXFP4 experts and EP are mutually exclusive in this build, so the bandwidth
+masking`. MXFP4 experts and EP are mutually exclusive on this image (`rocm/atom-dev:latest`,
+the image this run used), so the bandwidth
 headroom is real but not exploitable by that route. The remaining lever is
 `max_num_seqs=64`, which is the binding limit here — not hardware.
 
@@ -401,7 +402,7 @@ NotImplementedError: a16w4 (bf16 A x MXFP4 W) SiTUv2 is not supported: expert-pa
 This is not a misconfiguration — ATOM raises it deliberately. The **MXFP4 SiTUv2 grouped-MoE
 kernel** (the gfx950-native fast path that makes this model viable at all, per
 `ATOM/recipes/Kimi-K3.md`) does not implement the expert-parallel masking variant. The
-combination is simply not built: MXFP4 experts and EP are **mutually exclusive** in this
+combination is simply not built: MXFP4 experts and EP are **mutually exclusive** on this
 ATOM build.
 
 So the HBM-vs-XGMI trade cannot be evaluated on this model today, and the bandwidth headroom

@@ -6,7 +6,7 @@ Serving `moonshotai/Kimi-K3` (2.78 T params, 1.5 TB MXFP4 checkpoint) on a singl
 Source run: `kimi_mad_20260818_223148`.
 
 > This file reports **only** the MAD-recipe run. The earlier run using
-> `rocm/atom-dev:latest` with the ATOM in-repo recipe is in `kimi-k3.md`; the two are
+> `rocm/atom-dev:latest` with the ATOM in-repo recipe is in `kimi-k3-base.md`; the two are
 > kept separate on purpose so neither overwrites the other. Rationale and the full
 > config diff are in `notes-kimi-k3.md`.
 
@@ -220,7 +220,9 @@ HBM moves ~153.3 GB/step while XGMI moves ~0.60 GB/step — roughly
 **1. EP is off and cannot be enabled for this model.** ATOM raises
 `NotImplementedError: a16w4 (bf16 A x MXFP4 W) SiTUv2 is not supported: expert-parallel
 masking` — the MXFP4 SiTUv2 grouped-MoE kernel has no expert-parallel variant. MXFP4
-experts and EP are mutually exclusive in this build, so the HBM-vs-XGMI trade cannot be
+experts and EP are mutually exclusive **on `rocm/atom-dev:latest`, the image the EP test
+actually ran on** (2026-08-14). Not retested on the MAD-pinned image, so treat it as
+image-specific rather than universal. The HBM-vs-XGMI trade cannot be
 evaluated on this model today.
 
 **2. `max_num_seqs=64` remains the binding limit, not hardware** — this sweep drives
@@ -251,7 +253,7 @@ defaults. Comparison between the two is in `notes-kimi-k3.md`.
 | Driver state | `logs/atom/kimi_mad_20260818_223148/STATE.txt` |
 | This table as CSV | `results/kimi-k3-mad.csv` |
 | Rerun rationale + config diff | `notes-kimi-k3.md` |
-| Original (non-MAD) run | `kimi-k3.md` |
+| Original (non-MAD) run | `kimi-k3-base.md` |
 
 ---
 

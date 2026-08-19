@@ -12,7 +12,7 @@ configuration. Neither file is modified by this one; it reads both and compares.
 | `--max-num-batched-tokens` | 16384 | 10240 |
 | `--max-num-seqs` | 64 | 64 |
 | Concurrency swept | 1 → 64 | 64 → 256 |
-| Detail | `kimi-k3.md` | `kimi-k3-mad.md` |
+| Detail | `kimi-k3-base.md` | `kimi-k3-mad.md` |
 | Raw data | `logs/atom/sweep_20260814_164903/` | `logs/atom/kimi_mad_20260818_223148/` |
 
 ---
@@ -74,7 +74,7 @@ Two consequences:
    capability past 64.** The c=128 and c=256 rows describe queueing behaviour. They are
    legitimate numbers, but they answer "what happens when you overload a 64-slot server",
    not "how fast is this model at batch 256".
-2. **It confirms the prediction in `kimi-k3.md` §3.2** that `max-num-seqs` — not hardware —
+2. **It confirms the prediction in `kimi-k3-base.md` §3.2** that `max-num-seqs` — not hardware —
    is the binding limit. HBM sat at ~29% (Run A) / ~18–26% (Run B); compute ~1%; XGMI ~1%.
    Nothing is saturated except the scheduler's own admission cap.
 

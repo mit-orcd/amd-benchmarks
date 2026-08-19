@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Append the Kimi-K3 EP-vs-TP-only A/B result to results/kimi-k3.md.
+"""Append the Kimi-K3 EP-vs-TP-only A/B result to results/kimi-k3-base.md.
 
-Usage: analyze_kimi_ep.py <ep_sweep_dir> <baseline_sweep_dir> <kimi-k3.md>
+Usage: analyze_kimi_ep.py <ep_sweep_dir> <baseline_sweep_dir> <kimi-k3-base.md>
 
 Idempotent: the block is delimited by HTML comment markers and replaced on re-run.
 Interprets the result against the bandwidth hypothesis in section 3/5 rather than just

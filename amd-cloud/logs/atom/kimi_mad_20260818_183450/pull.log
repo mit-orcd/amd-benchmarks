@@ -1,0 +1,85 @@
+rocm7.2.4_ubuntu24.04_py3.12_pytorch2.10.0_20260727_kimi_k3: Pulling from rocm/atom-dev
+b40150c1c271: Pulling fs layer
+576826c4d032: Pulling fs layer
+2931afae3036: Pulling fs layer
+89474c672e4a: Pulling fs layer
+4d19d6f3ac63: Pulling fs layer
+6c1350ec11ac: Pulling fs layer
+72f33eaa92dd: Pulling fs layer
+fc1f0639446c: Pulling fs layer
+e42f6354c103: Pulling fs layer
+efeea70b0041: Pulling fs layer
+0f6069e0a0d3: Pulling fs layer
+2de2cc7b88c1: Pulling fs layer
+23ae9b62ee5a: Pulling fs layer
+80e7f7be06aa: Pulling fs layer
+d810515216f5: Pulling fs layer
+4c4394019ca2: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+34c8fc0a733e: Pulling fs layer
+5a1122b4919b: Pulling fs layer
+3462f322d60e: Pulling fs layer
+7e5f7ecbd450: Pulling fs layer
+c80d9c61ac76: Pulling fs layer
+19a2cc21b76a: Pulling fs layer
+dd9255a7747c: Pulling fs layer
+e061e20de7b6: Pulling fs layer
+4442b2c3a978: Pulling fs layer
+797702a95a82: Pulling fs layer
+4f4fb700ef54: Already exists
+576826c4d032: Download complete
+b40150c1c271: Download complete
+576826c4d032: Pull complete
+b40150c1c271: Pull complete
+89474c672e4a: Download complete
+c80d9c61ac76: Download complete
+fc1f0639446c: Download complete
+72f33eaa92dd: Download complete
+0f6069e0a0d3: Download complete
+2de2cc7b88c1: Download complete
+efeea70b0041: Download complete
+72f33eaa92dd: Pull complete
+2de2cc7b88c1: Pull complete
+2931afae3036: Download complete
+6c1350ec11ac: Download complete
+e42f6354c103: Download complete
+23ae9b62ee5a: Download complete
+d810515216f5: Download complete
+4c4394019ca2: Download complete
+34c8fc0a733e: Download complete
+80e7f7be06aa: Download complete
+7e5f7ecbd450: Download complete
+3462f322d60e: Download complete
+19a2cc21b76a: Download complete
+e061e20de7b6: Download complete
+e061e20de7b6: Pull complete
+5a1122b4919b: Download complete
+797702a95a82: Download complete
+dd9255a7747c: Download complete
+4d19d6f3ac63: Download complete
+4442b2c3a978: Download complete
+4442b2c3a978: Pull complete
+797702a95a82: Pull complete
+dd9255a7747c: Pull complete
+89474c672e4a: Pull complete
+6c1350ec11ac: Pull complete
+4c4394019ca2: Pull complete
+c80d9c61ac76: Pull complete
+0f6069e0a0d3: Pull complete
+e42f6354c103: Pull complete
+23ae9b62ee5a: Pull complete
+d810515216f5: Pull complete
+80e7f7be06aa: Pull complete
+efeea70b0041: Pull complete
+4d19d6f3ac63: Pull complete
+5a1122b4919b: Pull complete
+fc1f0639446c: Pull complete
+4f4fb700ef54: Pull complete
+3462f322d60e: Pull complete
+34c8fc0a733e: Pull complete
+7e5f7ecbd450: Pull complete
+19a2cc21b76a: Pull complete
+2931afae3036: Pull complete
+Digest: sha256:a2d017e4bddbb012d5fbcd8cb5f7abe1ba708513bc41048aa57b8dc5eaad03a0
+Status: Downloaded newer image for rocm/atom-dev:rocm7.2.4_ubuntu24.04_py3.12_pytorch2.10.0_20260727_kimi_k3
+docker.io/rocm/atom-dev:rocm7.2.4_ubuntu24.04_py3.12_pytorch2.10.0_20260727_kimi_k3

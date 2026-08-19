@@ -75,8 +75,13 @@ amd-cloud/
     ├── fp4_investigation.md        Part A follow-up
     ├── rccl.{md,csv}, rccl_busbw.png   Part B
     ├── PRIMUS_REPORT.md            Part C
-    ├── atom.{md,csv}               Part D
-    └── kimi-k3.md                  Part D deep-dive: compute/memory/bandwidth/comms
+    ├── atom.{md,csv}               Part D — 3 model tiers at a glance
+    └── Kimi-K3 deep-dive (Part D tier 3):
+        ├── kimi-k3-improve.md          ← START HERE: all 3 runs consolidated + next steps
+        ├── kimi-k3-base.md             run A — original recipe, max-num-seqs 64
+        ├── kimi-k3-mad.{md,csv}        run B — AMD MAD recipe, max-num-seqs 64
+        ├── kimi-k3-maxseqs.{md,csv}    run C — max-num-seqs 256 (best: 2,482 tok/s)
+        └── kimi-k3-comparison.md       run A vs run B detail
 ```
 
 Megatron-LM is benchmarked **only** through Primus (Part C). Part B mirrors

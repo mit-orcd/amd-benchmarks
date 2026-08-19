@@ -1,0 +1,16 @@
+[2026-08-18T18:34:50+00:00] Kimi-K3 MAD-recipe rerun start (out: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_mad_20260818_183450)
+[2026-08-18T18:34:50+00:00] image=rocm/atom-dev:rocm7.2.4_ubuntu24.04_py3.12_pytorch2.10.0_20260727_kimi_k3 conc='64 128 256' ISL/OSL=1024/1024
+[2026-08-18T18:34:50+00:00] GPUs idle, no foreign server, model present
+[2026-08-18T18:34:50+00:00] pulling MAD image (~15.5 GB compressed); / has 123G free
+[2026-08-18T18:38:47+00:00] pull OK
+/dev/sdb2       839G  740G   63G  93% /
+[2026-08-18T18:38:47+00:00] starting server (MAD env + flags) on port 8010
+[2026-08-18T18:38:53+00:00] waiting for server (1.5 TB load, up to 40 min)
+[2026-08-18T18:40:59+00:00]   still loading (120s)
+[2026-08-18T18:43:05+00:00]   still loading (240s)
+[2026-08-18T18:45:11+00:00]   still loading (360s)
+[2026-08-18T18:45:18+00:00] server READY
+[2026-08-18T19:45:18+00:00] FATAL: no result json at c=64
+[2026-08-18T19:45:18+00:00] stopping server
+[2026-08-18T19:45:54+00:00] SWEEP FAILED — not generating summary (a report of zeros is worse than none).
+MAD_STATUS=failed

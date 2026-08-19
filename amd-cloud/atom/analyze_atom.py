@@ -205,7 +205,7 @@ def main():
                 f"linear, because Kimi converts bandwidth to tokens more efficiently (29% of "
                 f"roofline vs 4%). This is the central cost of MoE: sparse activation saves "
                 f"FLOPs but not bytes, and bytes are the binding constraint. Full analysis "
-                f"in `kimi-k3.md`.")
+                f"in `kimi-k3-base.md`.")
         # ---- roofline: are these numbers what the hardware should give? ----
         HBM = 8000.0   # GB/s per MI355X
         roof_rows = []
@@ -249,14 +249,14 @@ def main():
                   "of its weight-bandwidth ceiling while the two dense models sit at 4-6%. "
                   "That is not Kimi doing better; it means Kimi is genuinely "
                   "**bandwidth-bound** while Qwen and Llama are not. It also matches, "
-                  "independently, the ~29% HBM utilization measured in `kimi-k3.md` §3 — two "
+                  "independently, the ~29% HBM utilization measured in `kimi-k3-base.md` §3 — two "
                   "different routes to the same number.", "",
                   "To be precise about *which* bandwidth: this is **intra-GPU HBM** — each "
                   "GPU reading weights out of its own 8 TB/s on-package memory. It is **not** "
                   "the XGMI GPU-to-GPU interconnect, which in the same run carries only "
                   "activation all-reduces and sits at ~1% utilized. The two are often "
                   "conflated; here they differ by roughly 390:1 in traffic. "
-                  "**See [`kimi-k3.md`](kimi-k3.md) for the full breakdown** — §3 ranks the "
+                  "**See [`kimi-k3-base.md`](kimi-k3-base.md) for the full breakdown** — §3 ranks the "
                   "three candidate bottlenecks (compute 1.1%, HBM ~29%, XGMI ~1.1%), §4 "
                   "gives the per-step byte volumes on each path, and the terminology section "
                   "at the top defines HBM vs XGMI.", "",
@@ -375,7 +375,7 @@ def main():
           "- KV cache dtype is fp8; Kimi-K3 additionally runs with prefix caching disabled "
           "(required — KDA recurrent state cannot be rebuilt from the paged cache).", "",
           "## Deep dive", "",
-          "`kimi-k3.md` analyses tier 3 in detail: achieved TFLOP/s, the GPU memory "
+          "`kimi-k3-base.md` analyses tier 3 in detail: achieved TFLOP/s, the GPU memory "
           "breakdown (weights vs KV pool), why the workload is HBM-bandwidth-bound rather "
           "than compute- or interconnect-bound, and the intra-GPU vs intra-node data "
           "volumes.", "",

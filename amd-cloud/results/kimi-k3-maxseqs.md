@@ -6,7 +6,7 @@ test whether the in-flight cap — not hardware — was the binding limit.
 Source run: `kimi_maxseqs_20260819_171529`.
 
 > This file reports **only** the raised-`max-num-seqs` run. Baseline runs are in
-> `kimi-k3.md` (original recipe, max-num-seqs=64) and `kimi-k3-mad.md` (MAD recipe,
+> `kimi-k3-base.md` (original recipe, max-num-seqs=64) and `kimi-k3-mad.md` (MAD recipe,
 > max-num-seqs=64); their head-to-head is `kimi-k3-comparison.md`. All are kept
 > separate so none overwrites another.
 
@@ -221,7 +221,9 @@ HBM moves ~168.8 GB/step while XGMI moves ~1.19 GB/step — roughly
 **1. EP is off and cannot be enabled for this model.** ATOM raises
 `NotImplementedError: a16w4 (bf16 A x MXFP4 W) SiTUv2 is not supported: expert-parallel
 masking` — the MXFP4 SiTUv2 grouped-MoE kernel has no expert-parallel variant. MXFP4
-experts and EP are mutually exclusive in this build, so the HBM-vs-XGMI trade cannot be
+experts and EP are mutually exclusive **on `rocm/atom-dev:latest`, the image the EP test
+actually ran on** (2026-08-14). Not retested on the MAD-pinned image, so treat it as
+image-specific rather than universal. The HBM-vs-XGMI trade cannot be
 evaluated on this model today.
 
 **2. `max_num_seqs` was raised to 256 for this run** — the whole point of the
@@ -253,7 +255,7 @@ defaults. Comparison between the two is in `notes-kimi-k3.md`.
 | Driver state | `logs/atom/kimi_maxseqs_20260819_171529/STATE.txt` |
 | This table as CSV | `results/kimi-k3-maxseqs.csv` |
 | Rerun rationale + config diff | `notes-kimi-k3.md` |
-| Original (non-MAD) run | `kimi-k3.md` |
+| Original (non-MAD) run | `kimi-k3-base.md` |
 
 ---
 

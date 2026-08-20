@@ -64,6 +64,49 @@ Latency at the same points:
 | 128 | **49,456** / 53.35 | **346** / 70.98 |
 | 256 | **149,723** / 53.85 | **463** / 103.72 |
 
+### Per-request speed — what one user actually experiences
+
+The tables above are **aggregate** throughput, summed over all concurrent requests. The number
+a single user sees is `1000 / TPOT` — the decode rate of *one* stream. It moves in the
+**opposite direction**, and it is the metric no experiment here has yet improved:
+
+| Concurrency | A — original | B — MAD | C — cap 256 | D — cap 512 |
+|---:|---:|---:|---:|---:|
+| **1** | **46.6** | — | — | — |
+| 2 | 44.3 | — | — | — |
+| 4 | 40.0 | — | — | — |
+| 8 | 37.0 | — | — | — |
+| 16 | 32.0 | — | — | — |
+| 32 | 26.4 | — | — | — |
+| 64 | 20.0 | 18.9 | 20.0 | 20.0 |
+| 128 | — | 18.7 | 14.1 | 14.1 |
+| 256 | — | 18.6 | 9.6 | 9.8 |
+| 512 | — | — | — | **6.5** |
+
+*Per-request tok/s = `1000 / median TPOT`. Sources as in §Source data.*
+
+**The peak aggregate result and the peak per-request result are at opposite ends of the
+table.** Run D's headline 3,385.9 tok/s at c=512 is simultaneously the **worst** single-stream
+experience measured — 6.5 tok/s per user, 7× slower than c=1. Batching does not create
+throughput out of nothing; it trades latency for it.
+
+**Two readings that are easy to get wrong here:**
+
+- **B's flat column is an artifact, not stability.** B holds ~18.6–18.9 tok/s across c=64→256
+  only because `max-num-seqs 64` capped the *running* batch at 64 regardless of requested
+  concurrency. Its TPOT stayed flat because the effective batch stayed flat; the queue absorbed
+  everything else, which is why TTFT went to 149,723 ms. Read B's column as "per-request speed
+  at effective batch 64", measured three times.
+- **C and D agree closely** at every shared point (20.0/14.1/9.6 vs 20.0/14.1/9.8), which is
+  the useful confirmation: per-request speed is a function of *effective batch size*, not of
+  the cap setting. Raising the cap does not slow anyone down — admitting more concurrent work
+  does.
+
+**c=1 was measured once, in Run A only**, at **46.6 tok/s (TPOT 21.48 ms)**. Every subsequent
+run starts at c=64. So the single-stream floor rests on one measurement from the original
+image and has never been reproduced, nor tested against any other kernel configuration — see
+§4 *Improving per-request speed*.
+
 ### Three findings, in order of importance
 
 **1. `max-num-seqs` was the binding limit — raising it 64 → 256 gave 2.1× throughput.**
@@ -123,10 +166,56 @@ HBM% is *lower* at c=256 than at c=64 (20.5% vs 28.1%) even though throughput is
 — because step time grows faster than weight traffic once attention and compute scale with
 batch. §4 explains the mechanism and why this is expected rather than a problem.
 
-**In every case HBM is the closest to saturation by a wide margin** — compute and interconnect
-sit at ~1–2% throughout. To be precise about which bandwidth: this is **intra-GPU HBM**, each
-GPU reading weights from its own on-package memory. It is *not* XGMI, which carries only
+**HBM is the closest to saturation by a wide margin** — compute and interconnect sit at
+~1–2% throughout. To be precise about which bandwidth: this is **intra-GPU HBM**, each GPU
+reading weights from its own on-package memory. It is *not* XGMI, which carries only
 activation all-reduces. Traffic ratio is roughly **390:1** in HBM's favour.
+
+### The bottleneck is latency, not bandwidth
+
+Closest to saturation is not the same as saturated, and this is the single most important
+thing to take from the table above. **No resource is above ~30%.** Compute ~1–2%, XGMI ~1–2%,
+HBM ~20–28%. When nothing is near its ceiling and throughput is still limited, the limiter is
+not any bandwidth — it is **latency and serialization**: time spent waiting on dependent
+operations rather than time spent moving bytes.
+
+This reframes the whole file. "HBM is the bottleneck" is the right answer to *which resource
+is under the most pressure*, and the wrong answer to *what should be fixed*. Two reasons:
+
+**1. The 28% is measured against a ceiling this access pattern cannot reach.** The 8,000 GB/s
+figure — and the 7,260 GB/s Part A `babel` measurement, 91% of it — is **sequential streaming
+read**. Kimi's expert reads are the opposite of streaming: top-16 of 896 experts, each GPU
+holding a 1/8 TP slice, gathered from scattered locations, with MXFP4 block-scale dequant on
+top. Gather-style reads of many medium-sized blocks never approach streaming peak. So 28% of
+*streaming* peak is not 72% of headroom — it may already be close to the practical ceiling
+**for this pattern**, and 90% was never reachable. Quoting HBM% against the spec number
+overstates how much is being left on the table.
+
+**2. The step-time arithmetic points away from weight traffic.** From c=64 to c=256, weight
+traffic grows **+45%** (116 → 169 GB) but step time grows **+99%** (51.7 → 103.1 ms). The
+extra time is going somewhere that scales with batch while weight reads plateau — attention,
+expert routing, and collectives.
+
+**The serialization suspects, in order of suspicion:**
+
+- **186 all-reduces per token** (2 × 93 layers) at 14 KB–896 KB each. These are far below the
+  size where bandwidth matters, so each costs a round-trip plus a synchronization barrier.
+  The "~1% XGMI" is the **signature** of a latency-bound collective, not evidence of spare
+  capacity — see *Communication is not a bandwidth factor* below, which is precise about
+  that distinction.
+- **69 of 93 layers are KDA** linear attention, carrying recurrent state with a sequential
+  dependency from one step to the next and low arithmetic intensity.
+- **Kernel launch and scheduler overhead**, which becomes a meaningful fraction when
+  per-kernel work is small.
+
+**This ranking is inference, not measurement — and the run that was supposed to settle it
+failed.** The profiling step (next-step #2) captured 8 traces but the analyzer found no GPU
+kernel events in them (702,510 events parsed, none carrying a GPU kernel category — most
+likely a kineto category-name mismatch, not an empty trace). See `kimi-k3-profile.md`. The
+95 MB of raw traces are retained at `/mnt/scratch/shaohao/traces/kimi_20260820_041644`, so
+re-parsing them costs **no GPU time**. Until that is done, the split between collectives, KDA
+and launch overhead is unresolved, and no kernel-level optimization should be chosen on the
+strength of the ordering above.
 
 ### Why HBM traffic is so large: the MoE batching mechanism
 
@@ -146,7 +235,7 @@ faster**, until nearly every expert is touched every step and traffic plateaus (
 batch 512 on). MXFP4 is what makes it tractable — at BF16 the same reads would be 4× larger
 and exceed HBM bandwidth outright.
 
-### Communication is not a factor
+### Communication is not a *bandwidth* factor
 
 With TP=8 and EP off, XGMI carries **only activation all-reduces**: 2 per layer × 93 layers =
 **186 per token**, 14 KB per call, 2.67 MB/token. At Run C's peak that is a few GB/s against a
@@ -231,10 +320,101 @@ concurrencies. At matched c=64, Run C is 28.1% against Run A's 28.6% — the sam
 
 **So: no, batching cannot raise HBM utilization, and it is the wrong target.** Throughput more
 than doubled *while* HBM% fell. HBM% is a diagnostic of what limits you, not a goal — chasing
-it means returning to c=64, which is 2× slower. If you specifically wanted higher HBM%, the
-lever is reducing *non-weight* step time (attention kernels, the 186 serialized all-reduces,
-scheduler overhead) so weight reads become a larger share — an ATOM/AITER kernel question,
-not a configuration one.
+it means returning to c=64, which is 2× slower.
+
+**And 28% is not as low as it looks.** It is measured against 8,000 GB/s, which is the
+*sequential streaming* rate. Reading top-16-of-896 experts as scattered 1/8 TP slices with
+MXFP4 dequant is a gather, not a stream, and gathers do not reach streaming peak — so a large
+part of the apparent 72% gap is unreachable by construction rather than lost to inefficiency.
+Pushing toward 90% is not a realistic target for this access pattern at any batch size.
+
+**The real reason it cannot be pushed higher is that HBM is not what is holding the workload
+back.** Nothing is above ~30% — compute ~1–2%, XGMI ~1–2%, HBM ~20–28% — which means the
+binding constraint is **latency and serialization, not bandwidth** (§3, *The bottleneck is
+latency, not bandwidth*). Raising HBM% would require shrinking *non-weight* step time — the
+186 serialized all-reduces, the 69 KDA layers' sequential state updates, kernel launch
+overhead — so that weight reads become a larger share of a shorter step. That is an
+ATOM/AITER kernel question, not a configuration one, and the profiling run meant to identify
+which of those dominates did not produce usable kernel data (see §3). Re-parsing the retained
+traces is the cheapest next move, and it costs no GPU time.
+
+### Improving per-request speed (single-stream tok/s)
+
+**No experiment run so far has targeted this metric.** Every Kimi-K3 experiment to date —
+caps 64/256/512/1024, ISL=4096, MAD recipe, EP, repeats — measured *aggregate* throughput, and
+each either left per-request speed unchanged (~20 tok/s at c=64 in A, C and D alike) or made
+it worse by admitting a larger batch. The single-stream number has exactly **one** measurement
+behind it: **46.6 tok/s at c=1** in Run A.
+
+#### Is it improvable? Yes in principle, no by configuration
+
+Two questions get confused here, and they have different answers:
+
+| Question | Answer |
+|---|---|
+| Is there headroom in single-stream speed? | **Yes** — and it is large |
+| Can any setting on this server realize it? | **No** — every config lever is tested or closed |
+| What would realize it? | **ATOM/AITER kernel changes** — code, not configuration |
+
+**The headroom is arithmetic, not opinion.** At c=1 a decode step reads ~3.4 GB of weights per
+GPU. At the ~2.2 TB/s effective rate the c=64 measurement implies (116 GB / 51.7 ms), those
+reads should take **~1.5 ms**. Measured TPOT at c=1 is **21.48 ms**. So **~93% of a
+single-request step is not weight reading** — it is the serialization described in §3, and
+unlike a bandwidth wall, serialization is compressible. That gap is a property of the workload
+and holds regardless of what any experiment returns.
+
+**But nothing in a config file reaches it.** TP=8 is forced by 1.5 TB of weights against
+2.3 TB of HBM; the 186 all-reduces are fixed by TP × 93 layers with no flag to reduce them;
+`num_nextn_predict_layers = 0`, so there are no MTP heads for speculative decoding; HIP graphs
+are already enabled. Kernel-path selection is the **only** untested configuration knob, which
+is precisely what the experiment below sweeps — and why a small or null result there is the
+expected outcome rather than a surprise.
+
+**So the honest form of the answer is: yes, but it needs engine work, not tuning.** Fusing or
+batching the per-layer collectives, or breaking the sequential dependency across the 69 KDA
+layers, is a change to ATOM/AITER. The experiment below does not test that and cannot; what it
+does is **close out the configuration question**, so that any remaining effort goes to the
+kernels instead of to more flag sweeps.
+
+**What could move it, and what could not:**
+
+| Lever | Available here? | Why |
+|---|---|---|
+| Kernel path selection (Triton vs AITER for GEMM / MoE / attention) | **Yes — untested at low batch** | At c=1 kernel efficiency and launch overhead dominate; every kernel comparison so far was run at c=64+, where batching hides exactly the costs that matter at c=1 |
+| Reducing collective count | No | 186 all-reduces is fixed by TP=8 × 93 layers; there is no flag |
+| TP < 8 with replicas | No | 1.5 TB of weights against 2.3 TB of HBM forces TP=8 on one node |
+| Speculative decoding / MTP | No | `num_nextn_predict_layers = 0` — Kimi-K3 ships no MTP heads, so the standard single-stream multiplier is unavailable without an external draft model |
+| HIP graphs | Already on | Server log reports `cudagraph=True`; launch overhead is already partly mitigated |
+
+Only the first row is testable as a configuration change, which makes it the whole experiment.
+
+**Set up (not yet run): `atom/run_single_stream.sh`.** Sweeps the **low-concurrency** regime
+(c=1/2/4/8) across four kernel configurations on the MAD image, reporting TPOT and per-request
+tok/s rather than aggregate throughput. Configurations flip one kernel-path decision at a time
+from the MAD baseline:
+
+| Config | Change from MAD baseline | Isolates |
+|---|---|---|
+| `K1_mad_default` | none (reference) | — |
+| `K2_triton_moe` | `ATOM_USE_TRITON_MOE=1` | MoE kernel path |
+| `K3_aiter_attn` | `ATOM_USE_UNIFIED_ATTN=0`, `ATOM_FORCE_ATTN_TRITON=0` | attention path (the 69 KDA + 24 MLA layers) |
+| `K4_grouped_gemm` | `ATOM_USE_TRITON_GEMM=0`, `AITER_USE_GROUPED_GEMM=1` | GEMM / grouped-GEMM path |
+
+One variable per arm, so a difference is attributable. Run A's c=1 figure of 46.6 tok/s is the
+number to beat, with the caveat that it was measured on `rocm/atom-dev:latest` and these arms
+run on the MAD image — `K1_mad_default` therefore doubles as the matched control that makes
+the comparison legitimate. ~1.5 h for all four.
+
+**Expectations, stated in advance:** effects should be modest — single-digit to low-tens of
+percent. The MAD kernel set was already measured ~9% *slower* in aggregate at c=64, which is
+evidence these knobs matter at the margin rather than the order of magnitude. **A negative
+result is still worth having**, because it would localize the 93% to launch overhead and the
+KDA dependency chain — things no environment variable can reach — and would close
+configuration-level tuning for this model.
+
+**Do the trace re-parse first if possible.** It costs no GPU time and would say whether
+attention, collectives or launch overhead dominates at low batch, which turns this sweep from
+four guesses into a targeted test. See §3.
 
 ### Ranked next experiments
 
@@ -243,10 +423,14 @@ not a configuration one.
    not been found. Extend from **`kimi-k3-maxseqs.md`** — it has the best throughput and the
    better-performing image. Expect throughput to keep rising and HBM% to keep falling; that is
    the correct trade. KV headroom is ample (Run C used ~13% of the 57.7 GB pool). ~2 h.
-2. **Profile a step.** Everything about *where* the non-weight ~80% of step time goes is
-   inference from residuals, not measurement. A `rocprof` / torch-profiler trace would replace
-   estimates with a real breakdown — and it is the prerequisite for judging any kernel-level
-   idea, including EP (see below). Do this before optimizing anything kernel-side.
+2. **Profile a step.** **ATTEMPTED — traces captured, analysis FAILED.** Still the highest-value
+   open item. Everything about *where* the non-weight ~80% of step time goes is inference from
+   residuals, not measurement, and it is the prerequisite for judging any kernel-level idea,
+   including EP (see below). The run captured 8 traces (95 MB, retained at
+   `/mnt/scratch/shaohao/traces/kimi_20260820_041644`) but `analyze_profile.py` found no GPU
+   kernel events among 702,510 parsed — a kineto category-name mismatch, most likely. **Fixing
+   the parser needs no GPU time**, so this should be done regardless of machine availability.
+   ATOM ships `tools/analyze_trace_summary.py`, which is the obvious thing to try first.
 3. ~~**ISL = 4096.**~~ **DONE — see above.** MAD's spec sweeps input lengths 1024 *and* 4096; all three runs here use
    1024 only. Longer prompts shift the prefill/decode balance and would likely change the
    high-concurrency picture.

@@ -56,11 +56,18 @@ say() { echo "[$(date -Iseconds)] $*" | tee -a "$STATE"; }
 NUM_LAYERS=40; HIDDEN=6144; FFN=16384; NUM_HEADS=48; NUM_KV_HEADS=8
 SEQ_LEN=4096; VOCAB=50304
 MICRO_BS=4; GBS=$(( MICRO_BS * N ))
+# Bisect knobs for the 2026-08-20 17:00 SIGSEGV (crashed on the FIRST training step with the
+# full Dell flag set; the model itself built correctly -- 16,223,016,960 params, matching Dell
+# exactly). OVERLAP=0 drops --overlap-grad-reduce/--overlap-param-gather, which are pure comm
+# optimizations: the model stays byte-for-byte Dell-comparable, only the DP overlap differs.
+# GAF=0 additionally drops gradient-accumulation-fusion. Try OVERLAP=0 first.
+OVERLAP="${OVERLAP:-1}"
+GAF="${GAF:-1}"
 TRAIN_ITERS=50
 DDP_BUCKET=250000000
 
 say "Megatron-LM reference reproduction (Dell-matched) start"
-say "image=$IMG N=$N MBS=$MICRO_BS GBS=$GBS seq=$SEQ_LEN L=$NUM_LAYERS H=$HIDDEN"
+say "image=$IMG N=$N MBS=$MICRO_BS GBS=$GBS seq=$SEQ_LEN L=$NUM_LAYERS H=$HIDDEN OVERLAP=$OVERLAP GAF=$GAF"
 
 busy=$(rocm-smi --showuse 2>/dev/null | awk '/GPU use/ {print $NF}' | grep -cv '^0$')
 if [[ "${busy:-0}" -ne 0 ]]; then
@@ -85,6 +92,11 @@ devs=$(seq -s, 0 $((N-1)))
 LOG="$OUT/megatron_ref_N${N}.log"
 
 # Written to a file rather than inlined, to keep quoting out of docker+bash -c.
+OPT_FLAGS=""
+[[ "$OVERLAP" == "1" ]] && OPT_FLAGS="$OPT_FLAGS --overlap-grad-reduce --overlap-param-gather"
+[[ "$GAF" == "0" ]] && OPT_FLAGS="$OPT_FLAGS --no-gradient-accumulation-fusion"
+say "optional flags:${OPT_FLAGS:- (none)}"
+
 CMD="$OUT/cmd.sh"
 cat >"$CMD" <<EOF
 #!/usr/bin/env bash
@@ -112,9 +124,8 @@ torchrun --nproc_per_node=$N --nnodes=1 \\
     --bf16 \\
     --use-distributed-optimizer \\
     --ddp-bucket-size $DDP_BUCKET \\
-    --overlap-grad-reduce \\
-    --overlap-param-gather \\
     --log-throughput \\
+    $OPT_FLAGS \\
     --use-flash-attn \\
     --transformer-impl transformer_engine \\
     --train-iters $TRAIN_ITERS \\

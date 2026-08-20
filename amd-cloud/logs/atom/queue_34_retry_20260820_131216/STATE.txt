@@ -1,0 +1,10 @@
+[2026-08-20T13:12:16+00:00] retry queue start -- #1 already done, running #3 then #4 directly
+[2026-08-20T13:12:17+00:00] ===== STAGE #3: ISL=4096 sweep =====
+[2026-08-20T13:58:21+00:00] #3 rc=0
+[2026-08-20T13:58:51+00:00] ===== STAGE #4: repeats at c=64 =====
+[2026-08-20T14:27:17+00:00] #4 rc=0
+[2026-08-20T14:27:17+00:00] ===== updating results/kimi-k3-improve.md =====
+[2026-08-20T14:27:17+00:00] update rc=0 -> results/kimi-k3-improve.md
+RC3=0
+RC4=0
+[2026-08-20T14:27:17+00:00] RETRY QUEUE DONE (#3 rc=0, #4 rc=0)

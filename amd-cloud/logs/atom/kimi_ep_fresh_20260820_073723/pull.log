@@ -1,0 +1,86 @@
+latest: Pulling from rocm/atom-dev
+576826c4d032: Pulling fs layer
+72f33eaa92dd: Pulling fs layer
+7d7c79e3ce93: Pulling fs layer
+797702a95a82: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+4e2a3927d8ca: Pulling fs layer
+fd33fe640987: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+e061e20de7b6: Pulling fs layer
+b40150c1c271: Pulling fs layer
+4442b2c3a978: Pulling fs layer
+ca724656238a: Pulling fs layer
+3309f085a86b: Pulling fs layer
+95999de5ef66: Pulling fs layer
+125bf2533c93: Pulling fs layer
+a69f7c28c08d: Pulling fs layer
+8c857e8610a1: Pulling fs layer
+7b72f8fb0f68: Pulling fs layer
+dd9255a7747c: Pulling fs layer
+bee29c6dd59d: Pulling fs layer
+6e14800059fd: Pulling fs layer
+e2bd8c52be50: Pulling fs layer
+58e453b070bb: Pulling fs layer
+d8ca999445f4: Pulling fs layer
+e156a9af4824: Pulling fs layer
+9d4a29a90a0e: Pulling fs layer
+2de2cc7b88c1: Pulling fs layer
+4fe2517e3661: Pulling fs layer
+4f4fb700ef54: Already exists
+797702a95a82: Download complete
+576826c4d032: Download complete
+58e453b070bb: Download complete
+7d7c79e3ce93: Download complete
+fd33fe640987: Download complete
+72f33eaa92dd: Download complete
+4e2a3927d8ca: Download complete
+e061e20de7b6: Download complete
+3309f085a86b: Download complete
+b40150c1c271: Download complete
+95999de5ef66: Download complete
+125bf2533c93: Download complete
+a69f7c28c08d: Download complete
+ca724656238a: Download complete
+576826c4d032: Pull complete
+b40150c1c271: Pull complete
+7b72f8fb0f68: Download complete
+8c857e8610a1: Download complete
+72f33eaa92dd: Pull complete
+bee29c6dd59d: Download complete
+e2bd8c52be50: Download complete
+d8ca999445f4: Download complete
+6e14800059fd: Download complete
+2de2cc7b88c1: Download complete
+e156a9af4824: Download complete
+4fe2517e3661: Download complete
+dd9255a7747c: Download complete
+2de2cc7b88c1: Pull complete
+e061e20de7b6: Pull complete
+9d4a29a90a0e: Download complete
+4442b2c3a978: Download complete
+4442b2c3a978: Pull complete
+797702a95a82: Pull complete
+dd9255a7747c: Pull complete
+4f4fb700ef54: Pull complete
+3309f085a86b: Pull complete
+4e2a3927d8ca: Pull complete
+e2bd8c52be50: Pull complete
+d8ca999445f4: Pull complete
+e156a9af4824: Pull complete
+a69f7c28c08d: Pull complete
+8c857e8610a1: Pull complete
+7b72f8fb0f68: Pull complete
+7d7c79e3ce93: Pull complete
+fd33fe640987: Pull complete
+9d4a29a90a0e: Pull complete
+58e453b070bb: Pull complete
+6e14800059fd: Pull complete
+bee29c6dd59d: Pull complete
+125bf2533c93: Pull complete
+95999de5ef66: Pull complete
+4fe2517e3661: Pull complete
+ca724656238a: Pull complete
+Digest: sha256:f86e2bb21d86c5927cedf53e5f88d90e907b26d3494921eb1f8c1af7ff49b049
+Status: Downloaded newer image for rocm/atom-dev:latest
+docker.io/rocm/atom-dev:latest

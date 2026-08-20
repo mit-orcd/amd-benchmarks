@@ -1,0 +1,14 @@
+RVS bandwidth-module re-run 20260820_075226 (quiet machine)
+rvs: /home/amd/shaohao/amd-benchmarks/amd-cloud/work-rocmval/ROCmValidationSuite/install_local/bin/rvs
+
+----- babel (HBM bandwidth) conf=MI355X/babel.conf -----
+  rc=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_bw_20260820_075226/babel.log
+----- pebb (PCIe host<->device bandwidth) conf=MI355X/pebb_single.conf -----
+  rc=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_bw_20260820_075226/pebb.log
+----- pbqt (peer-to-peer XGMI bandwidth) conf=MI355X/pbqt_single.conf -----
+  rc=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_bw_20260820_075226/pbqt.log
+results: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_bw_20260820_075226
+
+Compare against the first pass to see whether download contention mattered:
+  diff <(grep -oE '[0-9.]+ GB/s' /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_*/pebb.log | sort) \
+       <(grep -oE '[0-9.]+ GB/s' /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/rvs/health_bw_20260820_075226/pebb.log | sort)

@@ -1,0 +1,466 @@
+[atom 07:33:04] Raised RLIMIT_NOFILE soft limit 1024 -> 65535 (hard=524288)
+[atom 07:33:04] Loading tokenizer from /model...
+[atom 07:33:05] Initializing engine with model /model...
+[atom 07:33:05] Engine kwargs: {'trust_remote_code': True, 'tensor_parallel_size': 8, 'decode_context_parallel_size': 1, 'pipeline_parallel_size': 1, 'prefill_context_parallel_size': 1, 'data_parallel_size': 1, 'enforce_eager': False, 'enable_prefix_caching': False, 'port': 8006, 'kv_cache_dtype': 'fp8', 'index_cache_dtype': 'fp8', 'max_model_len': 16384, 'max_num_batched_tokens': 16384, 'long_prefill_token_threshold': 0, 'attn_prefill_chunk_size': 16384, 'state_checkpoint_interval_tokens': 8192, 'enable_chunked_prefill': True, 'scheduler_delay_factor': 0.0, 'max_num_seqs': 2048, 'gpu_memory_utilization': 0.93, 'load_dummy': None, 'enable_expert_parallel': False, 'torch_profiler_dir': None, 'enable_dp_attention': False, 'dp_load_balance': 'least_requests', 'kv_transfer_config': '{}', 'mark_trace': False, 'enable_rapidserve': False, 'disagg_prefill_max_num_seqs': None, 'disagg_constrained': False, 'online_quant_config': {'global_quant_config': 'ptpc_fp8', 'exclude_layer': ['lm_head', 'model.embed_tokens', '*self_attn.[qkv]_conv1d*', '*block_sparse_moe.experts*', '*block_sparse_moe.routed_expert_*', '*vision_tower*', '*mm_projector*']}, 'hf_overrides': None, 'eplb_enable': False, 'kv_cache_block_size': 128, 'compilation_config': CompilationConfig(level=3, use_cudagraph=True, local_cache_dir=None, cudagraph_capture_sizes=[1, 2, 4, 8, 16, 32, 48, 64, 128, 256, 512], cuda_graph_sizes=[512], debug_dump_path='', traced_files=set(), cache_dir='', use_inductor=True, cudagraph_mode=<CUDAGraphMode.FULL: 2>, compilation_time=0.0, splitting_ops=None, cudagraph_copy_inputs=False, inductor_compile_config={}, compile_sizes=None, static_forward_context={}), 'speculative_config': None, 'enable_tbo': False, 'enable_tbo_decode': False, 'enable_low_latency': False, 'dspark': DSparkConfig(confidence_schedule=False, ragged=False, ragged_graph_sizes='', q_buckets='', disable_sps_calib=False), 'eplb_config': EPLBConfig(load_window_size=1000, rebalance_interval=3000, rebalance_layers_per_chunk=64, num_redundant_experts=0, rebalance_min_balancedness=2.0, rebalance_balancedness_agg='min', p2p_batch_chunk_size=32, placement_policy='naive')}
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[atom 07:33:09] Online quant with compressed-tensors is not fully supported. Be careful about the online quant config setting when launching the server.
+[atom 07:33:09] Engine Core Mgr: Creating EngineCore engine 0 (dp=0, pp=0) of 1
+[atom 07:33:09] Creating EngineCore process: DP rank 0, will use GPUs 0 to 7
+[atom 07:33:09] Engine Core Mgr: Starting EngineCore for DP rank 0/1
+[atom 07:33:24] Create lazy wrapper for FusedMoE to change the naming
+[atom 07:33:24] Create lazy wrapper for FusedMoE to change the naming
+[atom 07:33:24] ModelRunner rank=3, dp_rank_local=0, pp_rank=0, local_device_rank=3, device=cuda:3
+[atom 07:33:24] Create lazy wrapper for FusedMoE to change the naming
+[atom 07:33:24] ModelRunner rank=5, dp_rank_local=0, pp_rank=0, local_device_rank=5, device=cuda:5
+[atom 07:33:24] Create lazy wrapper for FusedMoE to change the naming
+[atom 07:33:24] Create lazy wrapper for FusedMoE to change the naming
+[atom 07:33:24] Create lazy wrapper for FusedMoE to change the naming
+[atom 07:33:24] ModelRunner rank=6, dp_rank_local=0, pp_rank=0, local_device_rank=6, device=cuda:6
+[atom 07:33:24] ModelRunner rank=7, dp_rank_local=0, pp_rank=0, local_device_rank=7, device=cuda:7
+[atom 07:33:24] ModelRunner rank=2, dp_rank_local=0, pp_rank=0, local_device_rank=2, device=cuda:2
+[atom 07:33:24] Create lazy wrapper for FusedMoE to change the naming
+[atom 07:33:24] ModelRunner rank=0, dp_rank_local=0, pp_rank=0, local_device_rank=0, device=cuda:0
+[atom 07:33:24] Create lazy wrapper for FusedMoE to change the naming
+[atom 07:33:24] ModelRunner rank=1, dp_rank_local=0, pp_rank=0, local_device_rank=1, device=cuda:1
+[atom 07:33:24] ModelRunner rank=4, dp_rank_local=0, pp_rank=0, local_device_rank=4, device=cuda:4
+[atom 07:33:34] disable_mmap: False
+[atom 07:33:34] disable_mmap: False
+[atom 07:33:34] disable_mmap: False
+[atom 07:33:34] disable_mmap: False
+[atom 07:33:34] disable_mmap: False
+[atom 07:33:34] disable_mmap: False
+[atom 07:33:34] disable_mmap: False
+[atom 07:33:34] disable_mmap: False
+[atom 07:33:34] Prefetching 12/96 shards into page cache in the background (node-local rank 3 of 8, 4 threads, 16 MiB blocks)
+[atom 07:33:35] Prefetching 12/96 shards into page cache in the background (node-local rank 6 of 8, 4 threads, 16 MiB blocks)
+[atom 07:33:35] Prefetching 12/96 shards into page cache in the background (node-local rank 4 of 8, 4 threads, 16 MiB blocks)
+[atom 07:33:35] Prefetching 12/96 shards into page cache in the background (node-local rank 0 of 8, 4 threads, 16 MiB blocks)
+Loading safetensors shards[/model]:   0%|          | 0/96 [00:00<?, ?it/s][atom 07:33:35] Prefetching 12/96 shards into page cache in the background (node-local rank 7 of 8, 4 threads, 16 MiB blocks)
+[atom 07:33:35] Prefetching 12/96 shards into page cache in the background (node-local rank 2 of 8, 4 threads, 16 MiB blocks)
+[atom 07:33:35] Prefetching 12/96 shards into page cache in the background (node-local rank 1 of 8, 4 threads, 16 MiB blocks)
+[atom 07:33:35] Prefetching 12/96 shards into page cache in the background (node-local rank 5 of 8, 4 threads, 16 MiB blocks)
+Loading safetensors shards[/model]:   2%|▏         | 2/96 [00:02<01:35,  1.01s/it]Loading safetensors shards[/model]:   3%|▎         | 3/96 [00:04<02:36,  1.68s/it]Loading safetensors shards[/model]:   4%|▍         | 4/96 [00:07<03:00,  1.97s/it]Loading safetensors shards[/model]:   5%|▌         | 5/96 [00:09<02:59,  1.97s/it]Loading safetensors shards[/model]:   6%|▋         | 6/96 [00:10<02:50,  1.90s/it]Loading safetensors shards[/model]:   7%|▋         | 7/96 [00:12<02:47,  1.89s/it]Loading safetensors shards[/model]:   8%|▊         | 8/96 [00:15<03:07,  2.13s/it][atom 07:33:51] Checkpoint prefetch finished: 12/96 shards in 16.7s
+Loading safetensors shards[/model]:   9%|▉         | 9/96 [00:16<02:45,  1.91s/it][atom 07:33:52] Checkpoint prefetch finished: 12/96 shards in 16.6s
+[atom 07:33:52] Checkpoint prefetch finished: 12/96 shards in 17.1s
+[atom 07:33:52] Checkpoint prefetch finished: 12/96 shards in 17.2s
+[atom 07:33:52] Checkpoint prefetch finished: 12/96 shards in 17.0s
+[atom 07:33:53] Checkpoint prefetch finished: 12/96 shards in 17.4s
+[atom 07:33:53] Checkpoint prefetch finished: 12/96 shards in 18.1s
+Loading safetensors shards[/model]:  10%|█         | 10/96 [00:18<02:28,  1.73s/it][atom 07:33:54] Checkpoint prefetch finished: 12/96 shards in 18.5s
+Loading safetensors shards[/model]:  11%|█▏        | 11/96 [00:19<02:19,  1.64s/it]Loading safetensors shards[/model]:  12%|█▎        | 12/96 [00:20<02:07,  1.52s/it]Loading safetensors shards[/model]:  14%|█▎        | 13/96 [00:23<02:29,  1.81s/it]Loading safetensors shards[/model]:  15%|█▍        | 14/96 [00:24<02:22,  1.74s/it]Loading safetensors shards[/model]:  16%|█▌        | 15/96 [00:26<02:20,  1.74s/it]Loading safetensors shards[/model]:  17%|█▋        | 16/96 [00:27<02:09,  1.62s/it]Loading safetensors shards[/model]:  18%|█▊        | 17/96 [00:29<02:05,  1.59s/it]Loading safetensors shards[/model]:  19%|█▉        | 18/96 [00:30<02:03,  1.58s/it]Loading safetensors shards[/model]:  20%|█▉        | 19/96 [00:32<01:54,  1.48s/it]Loading safetensors shards[/model]:  21%|██        | 20/96 [00:34<02:07,  1.67s/it]Loading safetensors shards[/model]:  22%|██▏       | 21/96 [00:35<01:59,  1.59s/it]Loading safetensors shards[/model]:  23%|██▎       | 22/96 [00:37<01:51,  1.51s/it]Loading safetensors shards[/model]:  24%|██▍       | 23/96 [00:38<01:53,  1.55s/it]Loading safetensors shards[/model]:  25%|██▌       | 24/96 [00:40<01:46,  1.48s/it]Loading safetensors shards[/model]:  26%|██▌       | 25/96 [00:41<01:42,  1.44s/it]Loading safetensors shards[/model]:  27%|██▋       | 26/96 [00:43<01:46,  1.53s/it]Loading safetensors shards[/model]:  28%|██▊       | 27/96 [00:44<01:40,  1.46s/it]Loading safetensors shards[/model]:  29%|██▉       | 28/96 [00:46<02:01,  1.79s/it]Loading safetensors shards[/model]:  30%|███       | 29/96 [00:48<01:49,  1.64s/it]Loading safetensors shards[/model]:  31%|███▏      | 30/96 [00:49<01:42,  1.56s/it]Loading safetensors shards[/model]:  32%|███▏      | 31/96 [00:51<01:41,  1.56s/it]Loading safetensors shards[/model]:  33%|███▎      | 32/96 [00:52<01:38,  1.54s/it]Loading safetensors shards[/model]:  34%|███▍      | 33/96 [00:54<01:35,  1.51s/it]Loading safetensors shards[/model]:  35%|███▌      | 34/96 [00:55<01:30,  1.47s/it]Loading safetensors shards[/model]:  36%|███▋      | 35/96 [00:56<01:26,  1.42s/it]Loading safetensors shards[/model]:  38%|███▊      | 36/96 [00:58<01:24,  1.40s/it]Loading safetensors shards[/model]:  39%|███▊      | 37/96 [00:59<01:29,  1.51s/it]Loading safetensors shards[/model]:  40%|███▉      | 38/96 [01:02<01:51,  1.93s/it]Loading safetensors shards[/model]:  41%|████      | 39/96 [01:04<01:39,  1.75s/it]Loading safetensors shards[/model]:  42%|████▏     | 40/96 [01:05<01:34,  1.68s/it]Loading safetensors shards[/model]:  43%|████▎     | 41/96 [01:07<01:28,  1.61s/it]Loading safetensors shards[/model]:  44%|████▍     | 42/96 [01:08<01:23,  1.54s/it]Loading safetensors shards[/model]:  45%|████▍     | 43/96 [01:09<01:19,  1.51s/it]Loading safetensors shards[/model]:  46%|████▌     | 44/96 [01:11<01:18,  1.50s/it]Loading safetensors shards[/model]:  47%|████▋     | 45/96 [01:12<01:14,  1.47s/it]Loading safetensors shards[/model]:  48%|████▊     | 46/96 [01:14<01:12,  1.44s/it]Loading safetensors shards[/model]:  49%|████▉     | 47/96 [01:15<01:07,  1.39s/it]Loading safetensors shards[/model]:  50%|█████     | 48/96 [01:16<01:04,  1.35s/it]Loading safetensors shards[/model]:  51%|█████     | 49/96 [01:18<01:04,  1.37s/it]Loading safetensors shards[/model]:  52%|█████▏    | 50/96 [01:20<01:23,  1.80s/it]Loading safetensors shards[/model]:  53%|█████▎    | 51/96 [01:22<01:17,  1.73s/it]Loading safetensors shards[/model]:  54%|█████▍    | 52/96 [01:23<01:10,  1.61s/it]Loading safetensors shards[/model]:  55%|█████▌    | 53/96 [01:25<01:05,  1.53s/it]Loading safetensors shards[/model]:  56%|█████▋    | 54/96 [01:26<01:05,  1.55s/it]Loading safetensors shards[/model]:  57%|█████▋    | 55/96 [01:28<01:02,  1.52s/it]Loading safetensors shards[/model]:  58%|█████▊    | 56/96 [01:29<00:59,  1.48s/it]Loading safetensors shards[/model]:  59%|█████▉    | 57/96 [01:31<00:58,  1.49s/it]Loading safetensors shards[/model]:  60%|██████    | 58/96 [01:32<00:56,  1.48s/it]Loading safetensors shards[/model]:  61%|██████▏   | 59/96 [01:33<00:53,  1.46s/it]Loading safetensors shards[/model]:  62%|██████▎   | 60/96 [01:35<00:51,  1.43s/it]Loading safetensors shards[/model]:  64%|██████▎   | 61/96 [01:36<00:49,  1.40s/it]Loading safetensors shards[/model]:  65%|██████▍   | 62/96 [01:38<00:47,  1.41s/it]Loading safetensors shards[/model]:  66%|██████▌   | 63/96 [01:39<00:46,  1.41s/it]Loading safetensors shards[/model]:  67%|██████▋   | 64/96 [01:40<00:45,  1.42s/it]Loading safetensors shards[/model]:  68%|██████▊   | 65/96 [01:44<01:00,  1.96s/it]Loading safetensors shards[/model]:  69%|██████▉   | 66/96 [01:45<00:52,  1.73s/it]Loading safetensors shards[/model]:  70%|██████▉   | 67/96 [01:46<00:47,  1.62s/it]Loading safetensors shards[/model]:  71%|███████   | 68/96 [01:48<00:43,  1.56s/it]Loading safetensors shards[/model]:  72%|███████▏  | 69/96 [01:49<00:39,  1.47s/it]Loading safetensors shards[/model]:  73%|███████▎  | 70/96 [01:50<00:37,  1.43s/it]Loading safetensors shards[/model]:  74%|███████▍  | 71/96 [01:52<00:36,  1.45s/it]Loading safetensors shards[/model]:  75%|███████▌  | 72/96 [01:53<00:33,  1.40s/it]Loading safetensors shards[/model]:  76%|███████▌  | 73/96 [01:54<00:30,  1.34s/it]Loading safetensors shards[/model]:  77%|███████▋  | 74/96 [01:56<00:29,  1.32s/it]Loading safetensors shards[/model]:  78%|███████▊  | 75/96 [01:57<00:28,  1.34s/it]Loading safetensors shards[/model]:  79%|███████▉  | 76/96 [01:58<00:27,  1.36s/it]Loading safetensors shards[/model]:  80%|████████  | 77/96 [02:00<00:25,  1.35s/it]Loading safetensors shards[/model]:  81%|████████▏ | 78/96 [02:01<00:23,  1.32s/it]Loading safetensors shards[/model]:  82%|████████▏ | 79/96 [02:02<00:22,  1.32s/it]Loading safetensors shards[/model]:  83%|████████▎ | 80/96 [02:04<00:21,  1.33s/it]Loading safetensors shards[/model]:  84%|████████▍ | 81/96 [02:05<00:20,  1.34s/it]Loading safetensors shards[/model]:  85%|████████▌ | 82/96 [02:06<00:18,  1.32s/it]Loading safetensors shards[/model]:  86%|████████▋ | 83/96 [02:10<00:25,  1.93s/it]Loading safetensors shards[/model]:  88%|████████▊ | 84/96 [02:11<00:20,  1.72s/it]Loading safetensors shards[/model]:  89%|████████▊ | 85/96 [02:12<00:17,  1.60s/it]Loading safetensors shards[/model]:  90%|████████▉ | 86/96 [02:13<00:15,  1.52s/it]Loading safetensors shards[/model]:  91%|█████████ | 87/96 [02:15<00:13,  1.48s/it]Loading safetensors shards[/model]:  92%|█████████▏| 88/96 [02:16<00:11,  1.47s/it]Loading safetensors shards[/model]:  93%|█████████▎| 89/96 [02:18<00:09,  1.42s/it]Loading safetensors shards[/model]:  94%|█████████▍| 90/96 [02:19<00:08,  1.40s/it]Loading safetensors shards[/model]:  95%|█████████▍| 91/96 [02:20<00:06,  1.37s/it]Loading safetensors shards[/model]:  96%|█████████▌| 92/96 [02:22<00:05,  1.38s/it][atom 07:35:59] Staging buffers: 368 allocated (168.4 GiB, 15.14s pinning)
+[atom 07:35:59] [rank_7] load phases: read+queue 141.96s (497220 tensors) | drain 2.53s | staging flush 0.00s | threads 16
+[atom 07:35:59] Staging buffers: 368 allocated (168.4 GiB, 13.65s pinning)
+[atom 07:35:59] [rank_1] load phases: read+queue 142.52s (497220 tensors) | drain 2.31s | staging flush 0.00s | threads 16
+[atom 07:35:59] Staging buffers: 368 allocated (168.4 GiB, 15.53s pinning)
+[atom 07:35:59] Weight post-processing started (includes online quantization)
+[atom 07:35:59] [rank_6] load phases: read+queue 142.91s (497220 tensors) | drain 2.39s | staging flush 0.00s | threads 16
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+Loading safetensors shards[/model]:  97%|█████████▋| 93/96 [02:24<00:04,  1.62s/it]Loading safetensors shards[/model]: 100%|██████████| 96/96 [02:24<00:00,  1.50s/it]
+[atom 07:35:59] Weight post-processing started (includes online quantization)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 07:36:00] Weight post-processing started (includes online quantization)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 07:36:01] Staging buffers: 368 allocated (168.4 GiB, 20.23s pinning)
+[atom 07:36:01] [rank_4] load phases: read+queue 144.46s (497220 tensors) | drain 2.26s | staging flush 0.00s | threads 16
+[atom 07:36:01] Weight post-processing started (includes online quantization)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 07:36:02] Staging buffers: 368 allocated (168.4 GiB, 13.98s pinning)
+[atom 07:36:02] [rank_0] load phases: read+queue 145.46s (497220 tensors) | drain 2.34s | staging flush 0.00s | threads 16
+[atom 07:36:02] Staging buffers: 368 allocated (168.4 GiB, 15.91s pinning)
+[atom 07:36:02] [rank_5] load phases: read+queue 146.00s (497220 tensors) | drain 2.05s | staging flush 0.00s | threads 16
+[atom 07:36:02] Staging buffers: 368 allocated (168.4 GiB, 15.05s pinning)
+[atom 07:36:02] [rank_3] load phases: read+queue 146.24s (497220 tensors) | drain 2.20s | staging flush 0.00s | threads 16
+[atom 07:36:02] Weight post-processing started (includes online quantization)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 07:36:03] Weight post-processing started (includes online quantization)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 07:36:03] Weight post-processing started (includes online quantization)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 07:36:03] Staging buffers: 368 allocated (168.4 GiB, 15.23s pinning)
+[atom 07:36:03] [rank_2] load phases: read+queue 147.03s (497220 tensors) | drain 2.05s | staging flush 0.00s | threads 16
+[atom 07:36:04] Weight post-processing started (includes online quantization)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 07:36:05] [rank_2] Weight post-processing done: 1.57 seconds, 607 layers online-quantized
+[atom 07:36:05] [rank_2] Model load done: /model (weights loaded in 151.47s)
+[atom 07:36:05] [rank_3] Weight post-processing done: 2.50 seconds, 607 layers online-quantized
+[atom 07:36:05] [rank_3] Model load done: /model (weights loaded in 151.74s)
+[atom 07:36:05] [rank_4] Weight post-processing done: 4.10 seconds, 607 layers online-quantized
+[atom 07:36:05] [rank_4] Model load done: /model (weights loaded in 151.67s)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[atom 07:36:06] [rank_7] Weight post-processing done: 6.38 seconds, 607 layers online-quantized
+[atom 07:36:06] [rank_7] Model load done: /model (weights loaded in 151.74s)
+[atom 07:36:06] [rank_1] Weight post-processing done: 6.09 seconds, 607 layers online-quantized
+[atom 07:36:06] [rank_1] Model load done: /model (weights loaded in 151.75s)
+[atom 07:36:06] [rank_5] Weight post-processing done: 2.84 seconds, 607 layers online-quantized
+[atom 07:36:06] [rank_5] Model load done: /model (weights loaded in 151.70s)
+[atom 07:36:06] [rank_0] Weight post-processing done: 3.25 seconds, 607 layers online-quantized
+[atom 07:36:06] Online quantization info saved to /online_quant_info_20260820_073606_106784562.json
+[atom 07:36:06] [rank_0] Model load done: /model (weights loaded in 151.92s)
+[atom 07:36:06] [rank_6] Weight post-processing done: 5.82 seconds, 607 layers online-quantized
+[atom 07:36:06] [rank_6] Model load done: /model (weights loaded in 151.98s)
+[atom 07:36:06] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 07:36:06] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 07:36:06] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 07:36:06] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 07:36:06] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 07:36:06] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 07:36:06] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 07:36:06] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 07:36:06] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 07:36:06] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 07:36:06] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 07:36:06] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 07:36:06] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 07:36:06] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 07:36:06] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 07:36:06] forward_vars ring: 1 slot (staging reuse gated on its H2D)
+[atom 07:36:11] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_3/backbone for vLLM's torch.compile
+[atom 07:36:11] Dynamo bytecode transform time: 4.57 s
+[atom 07:36:11] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_1/backbone for vLLM's torch.compile
+[atom 07:36:11] Dynamo bytecode transform time: 4.63 s
+[atom 07:36:11] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_2/backbone for vLLM's torch.compile
+[atom 07:36:11] Dynamo bytecode transform time: 4.61 s
+[atom 07:36:11] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_7/backbone for vLLM's torch.compile
+[atom 07:36:11] Dynamo bytecode transform time: 4.63 s
+[atom 07:36:11] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_6/backbone for vLLM's torch.compile
+[atom 07:36:11] Dynamo bytecode transform time: 4.64 s
+[atom 07:36:11] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_4/backbone for vLLM's torch.compile
+[atom 07:36:11] Dynamo bytecode transform time: 4.64 s
+[atom 07:36:11] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_0/backbone for vLLM's torch.compile
+[atom 07:36:11] Dynamo bytecode transform time: 4.71 s
+[atom 07:36:11] Using cache directory: /root/.cache/atom/torch_compile_cache/8761bb269a/rank_5/backbone for vLLM's torch.compile
+[atom 07:36:11] Dynamo bytecode transform time: 4.71 s
+[atom 07:36:12] Cache the graph for dynamic shape for later use
+[atom 07:36:12] Cache the graph for dynamic shape for later use
+[atom 07:36:12] Cache the graph for dynamic shape for later use
+[atom 07:36:12] Cache the graph for dynamic shape for later use
+[atom 07:36:12] Cache the graph for dynamic shape for later use
+[atom 07:36:12] Cache the graph for dynamic shape for later use
+[atom 07:36:12] Cache the graph for dynamic shape for later use
+[atom 07:36:13] Cache the graph for dynamic shape for later use
+[atom 07:36:29] Compiling a graph for dynamic shape takes 17.09 s
+[atom 07:36:29] Compiling a graph for dynamic shape takes 17.20 s
+[atom 07:36:29] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_5/backbone/computation_graph.py
+[atom 07:36:29] Compiling a graph for dynamic shape takes 17.35 s
+[atom 07:36:29] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_0/backbone/computation_graph.py
+[atom 07:36:29] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_1/backbone/computation_graph.py
+[atom 07:36:29] Compiling a graph for dynamic shape takes 17.36 s
+[atom 07:36:29] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_2/backbone/computation_graph.py
+[atom 07:36:29] Compiling a graph for dynamic shape takes 17.13 s
+[atom 07:36:29] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_3/backbone/computation_graph.py
+[atom 07:36:30] Compiling a graph for dynamic shape takes 18.04 s
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[atom 07:36:30] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_7/backbone/computation_graph.py
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[atom 07:36:30] Compiling a graph for dynamic shape takes 18.17 s
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[atom 07:36:30] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_4/backbone/computation_graph.py
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[atom 07:36:30] Compiling a graph for dynamic shape takes 18.31 s
+[atom 07:36:30] Computation graph saved to /root/.cache/atom/torch_compile_cache/8761bb269a/rank_6/backbone/computation_graph.py
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[aiter] type hints mismatch, override to --> gemm_a8w8_bpreshuffle_cktile(XQ: torch.Tensor, WQ: torch.Tensor, x_scale: torch.Tensor, w_scale: torch.Tensor, Out: torch.Tensor, splitK: int = 0) -> torch.Tensor
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 449 rows
+[atom 07:36:39] Model Runner0/8: warmup_model 32.74 seconds with 1 reqs 16384 tokens
+[atom 07:36:39] Model warmup done: /model
+[atom 07:36:39] Model Runner7/8: warmup_model 32.71 seconds with 1 reqs 16384 tokens
+[atom 07:36:39] Model warmup done: /model
+[atom 07:36:39] Model Runner5/8: warmup_model 32.71 seconds with 1 reqs 16384 tokens
+[atom 07:36:39] Model warmup done: /model
+[atom 07:36:39] Model Runner6/8: warmup_model 32.72 seconds with 1 reqs 16384 tokens
+[atom 07:36:39] Model warmup done: /model
+[atom 07:36:39] Model Runner1/8: warmup_model 32.74 seconds with 1 reqs 16384 tokens
+[atom 07:36:39] Model warmup done: /model
+[atom 07:36:39] Model Runner4/8: warmup_model 32.72 seconds with 1 reqs 16384 tokens
+[atom 07:36:39] Model warmup done: /model
+[atom 07:36:39] Model Runner2/8: warmup_model 32.73 seconds with 1 reqs 16384 tokens
+[atom 07:36:39] Model warmup done: /model
+[atom 07:36:39] Model Runner3/8: warmup_model 32.74 seconds with 1 reqs 16384 tokens
+[atom 07:36:39] Model warmup done: /model
+Process ModelRunner4/8:
+Traceback (most recent call last):
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1581, in get_num_blocks
+    plan = plan_pools(specs, available_for_kv, config.max_num_seqs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/attentions/sub_pool_spec.py", line 226, in plan_pools
+    raise InsufficientPoolBudget(
+atom.model_ops.attentions.sub_pool_spec.InsufficientPoolBudget: state pool needs 115039272960B of 62231079773B
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 153, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 218, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1617, in get_num_blocks
+    raise RuntimeError(base_msg + fix_msg) from exc
+RuntimeError: Per-request cache tensor (107.14GB for 2048 slots) exceeds available KV budget (57.96GB) at --gpu-memory-utilization 0.93. Even --gpu-memory-utilization 1.0 is insufficient (would need 1.10); reduce --max-num-seqs (currently 2048) or free GPU memory.
+
+[2026-08-20 07:33:25] mi355-gpu-33:761:761 [4] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+
+[2026-08-20 07:33:28] mi355-gpu-33:761:761 [4] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+Process ModelRunner3/8:
+Traceback (most recent call last):
+Process ModelRunner2/8:
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1581, in get_num_blocks
+    plan = plan_pools(specs, available_for_kv, config.max_num_seqs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/attentions/sub_pool_spec.py", line 226, in plan_pools
+    raise InsufficientPoolBudget(
+atom.model_ops.attentions.sub_pool_spec.InsufficientPoolBudget: state pool needs 115039272960B of 61834718045B
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 153, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 218, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1617, in get_num_blocks
+    raise RuntimeError(base_msg + fix_msg) from exc
+RuntimeError: Per-request cache tensor (107.14GB for 2048 slots) exceeds available KV budget (57.59GB) at --gpu-memory-utilization 0.93. Even --gpu-memory-utilization 1.0 is insufficient (would need 1.10); reduce --max-num-seqs (currently 2048) or free GPU memory.
+
+[2026-08-20 07:33:25] mi355-gpu-33:760:760 [3] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+
+[2026-08-20 07:33:28] mi355-gpu-33:760:760 [3] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+Traceback (most recent call last):
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1581, in get_num_blocks
+    plan = plan_pools(specs, available_for_kv, config.max_num_seqs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/attentions/sub_pool_spec.py", line 226, in plan_pools
+    raise InsufficientPoolBudget(
+atom.model_ops.attentions.sub_pool_spec.InsufficientPoolBudget: state pool needs 115039272960B of 61815843677B
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 153, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 218, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1617, in get_num_blocks
+    raise RuntimeError(base_msg + fix_msg) from exc
+RuntimeError: Per-request cache tensor (107.14GB for 2048 slots) exceeds available KV budget (57.57GB) at --gpu-memory-utilization 0.93. Even --gpu-memory-utilization 1.0 is insufficient (would need 1.10); reduce --max-num-seqs (currently 2048) or free GPU memory.
+
+[2026-08-20 07:33:25] mi355-gpu-33:759:759 [2] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+
+[2026-08-20 07:33:28] mi355-gpu-33:759:759 [2] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+Process ModelRunner1/8:
+Traceback (most recent call last):
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1581, in get_num_blocks
+    plan = plan_pools(specs, available_for_kv, config.max_num_seqs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/attentions/sub_pool_spec.py", line 226, in plan_pools
+    raise InsufficientPoolBudget(
+atom.model_ops.attentions.sub_pool_spec.InsufficientPoolBudget: state pool needs 115039272960B of 63218838365B
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 153, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 218, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1617, in get_num_blocks
+    raise RuntimeError(base_msg + fix_msg) from exc
+RuntimeError: Per-request cache tensor (107.14GB for 2048 slots) exceeds available KV budget (58.88GB) at --gpu-memory-utilization 0.93. Even --gpu-memory-utilization 1.0 is insufficient (would need 1.10); reduce --max-num-seqs (currently 2048) or free GPU memory.
+
+[2026-08-20 07:33:25] mi355-gpu-33:758:758 [1] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+
+[2026-08-20 07:33:28] mi355-gpu-33:758:758 [1] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+Process ModelRunner6/8:
+Traceback (most recent call last):
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1581, in get_num_blocks
+    plan = plan_pools(specs, available_for_kv, config.max_num_seqs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/attentions/sub_pool_spec.py", line 226, in plan_pools
+    raise InsufficientPoolBudget(
+atom.model_ops.attentions.sub_pool_spec.InsufficientPoolBudget: state pool needs 115039272960B of 62224788317B
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 153, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 218, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1617, in get_num_blocks
+    raise RuntimeError(base_msg + fix_msg) from exc
+RuntimeError: Per-request cache tensor (107.14GB for 2048 slots) exceeds available KV budget (57.95GB) at --gpu-memory-utilization 0.93. Even --gpu-memory-utilization 1.0 is insufficient (would need 1.10); reduce --max-num-seqs (currently 2048) or free GPU memory.
+
+[2026-08-20 07:33:25] mi355-gpu-33:763:763 [6] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+
+[2026-08-20 07:33:28] mi355-gpu-33:763:763 [6] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+Process ModelRunner5/8:
+Traceback (most recent call last):
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1581, in get_num_blocks
+    plan = plan_pools(specs, available_for_kv, config.max_num_seqs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/attentions/sub_pool_spec.py", line 226, in plan_pools
+    raise InsufficientPoolBudget(
+atom.model_ops.attentions.sub_pool_spec.InsufficientPoolBudget: state pool needs 115039272960B of 62031850333B
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 153, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 218, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1617, in get_num_blocks
+    raise RuntimeError(base_msg + fix_msg) from exc
+RuntimeError: Per-request cache tensor (107.14GB for 2048 slots) exceeds available KV budget (57.77GB) at --gpu-memory-utilization 0.93. Even --gpu-memory-utilization 1.0 is insufficient (would need 1.10); reduce --max-num-seqs (currently 2048) or free GPU memory.
+
+[2026-08-20 07:33:25] mi355-gpu-33:762:762 [5] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+
+[2026-08-20 07:33:28] mi355-gpu-33:762:762 [5] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+Process ModelRunner0/8:
+Traceback (most recent call last):
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1581, in get_num_blocks
+    plan = plan_pools(specs, available_for_kv, config.max_num_seqs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/attentions/sub_pool_spec.py", line 226, in plan_pools
+    raise InsufficientPoolBudget(
+atom.model_ops.attentions.sub_pool_spec.InsufficientPoolBudget: state pool needs 115039272960B of 61807455069B
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 153, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 218, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1617, in get_num_blocks
+    raise RuntimeError(base_msg + fix_msg) from exc
+RuntimeError: Per-request cache tensor (107.14GB for 2048 slots) exceeds available KV budget (57.56GB) at --gpu-memory-utilization 0.93. Even --gpu-memory-utilization 1.0 is insufficient (would need 1.10); reduce --max-num-seqs (currently 2048) or free GPU memory.
+
+[2026-08-20 07:33:25] mi355-gpu-33:757:757 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+RCCL version : 2.30.4-HEAD:2b22ab0
+HIP version  : 7.14.60850-0000000
+ROCm version : 7.14.0.0-9999-2b22ab01
+Hostname     : mi355-gpu-33
+Librccl path : /opt/venv/lib/python3.12/site-packages/_rocm_sdk_libraries/lib/librccl.so.1
+
+[2026-08-20 07:33:28] mi355-gpu-33:757:757 [0] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+Process ModelRunner7/8:
+Traceback (most recent call last):
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1581, in get_num_blocks
+    plan = plan_pools(specs, available_for_kv, config.max_num_seqs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/attentions/sub_pool_spec.py", line 226, in plan_pools
+    raise InsufficientPoolBudget(
+atom.model_ops.attentions.sub_pool_spec.InsufficientPoolBudget: state pool needs 115039272960B of 62216399709B
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 153, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 218, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1617, in get_num_blocks
+    raise RuntimeError(base_msg + fix_msg) from exc
+RuntimeError: Per-request cache tensor (107.14GB for 2048 slots) exceeds available KV budget (57.94GB) at --gpu-memory-utilization 0.93. Even --gpu-memory-utilization 1.0 is insufficient (would need 1.10); reduce --max-num-seqs (currently 2048) or free GPU memory.
+
+[2026-08-20 07:33:25] mi355-gpu-33:764:764 [7] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/init.cc:236 NCCL WARN HSA_NO_SCRATCH_RECLAIM=1 must be set to avoid performance degradation with the current HIP configuration. (Runtime version:71460850, GPU Firmware version:0)
+
+[2026-08-20 07:33:28] mi355-gpu-33:764:764 [7] /__w/rockrel/rockrel/build/comm-libs/rccl/build/hipify/src/misc/amdsmi_wrap.cc:214 NCCL WARN RCCL_USE_AMD_SMI_LIB not set, but HIP_FABRIC_API is defined. Fabric support is only available through AMD SMI. Rerun with RCCL_USE_AMD_SMI_LIB=1 to enable AMD SMI and UALoE fabric support.
+[atom 07:36:46] AsyncIOProcManager(ModelRunner): [ModelRunner4/8] proc died unexpectedly (exitcode=1), shutting down.
+[atom 07:36:46] AsyncIOProcManager(ModelRunner): shutdown all runners...
+[atom 07:36:48] AsyncIOProcManager(ModelRunner): All runners are shutdown.
+[atom 07:36:48] Engine Core: load model runner failed
+[atom 07:36:48] Engine Core Mgr: Failed to initialize all EngineCores, cleaning up: Engine Core Mgr: Received unexpected SHUTDOWN signal from DP rank 0 during initialization
+[atom 07:36:48] Engine Core Mgr: Shutting down all 1 EngineCores
+[atom 07:36:50] Engine Core Mgr: All EngineCores shut down
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/app/ATOM/atom/entrypoints/openai_server.py", line 22, in <module>
+    main()
+  File "/app/ATOM/atom/entrypoints/openai/api_server.py", line 1988, in main
+    engine = engine_args.create_engine(tokenizer=tokenizer)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/arg_utils.py", line 559, in create_engine
+    return LLMEngine(self.model, tokenizer=tokenizer, **self._get_engine_kwargs())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/llm_engine.py", line 132, in __init__
+    self.core_mgr = CoreManager(config)
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/engine_core_mgr.py", line 206, in __init__
+    self._wait_for_all_ready_signals()
+  File "/app/ATOM/atom/model_engine/engine_core_mgr.py", line 273, in _wait_for_all_ready_signals
+    raise RuntimeError(
+RuntimeError: Engine Core Mgr: Received unexpected SHUTDOWN signal from DP rank 0 during initialization

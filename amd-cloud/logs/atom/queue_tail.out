@@ -1,0 +1,38 @@
+[2026-08-20T14:26:25+00:00] tail queue start — Kimi-K3 stages first, then megatron-ref
+[2026-08-20T14:26:25+00:00] waiting for run_queue_34_retry.sh (#4 repeats config A)...
+[2026-08-20T14:27:25+00:00] prior queue finished after 60s
+[2026-08-20T14:27:55+00:00] ===== T1_ep_matched =====
+[2026-08-20T16:16:08+00:00] T1_ep_matched rc=0
+[2026-08-20T16:16:38+00:00] ===== T2_repeats_mad =====
+[2026-08-20T16:16:38+00:00] prior repeats dir (config A): /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_repeats_20260820_135851
+[2026-08-20T16:56:17+00:00] T2_repeats_mad rc=0
+[2026-08-20T16:56:17+00:00] merging config A (3 files, from kimi_repeats_20260820_135851) into kimi_repeats_20260820_161638 (3 B files)
+[2026-08-20T16:56:17+00:00] re-running analyze_repeats.py on the merged dir
+[2026-08-20T16:56:17+00:00] merged analyze rc=0 -> results/kimi-k3-repeats.md
+[2026-08-20T16:56:47+00:00] ### ALL KIMI-K3 WORK COMPLETE ###
+[2026-08-20T16:56:47+00:00] ===== N1_megatron_ref =====
+[2026-08-20T17:00:15+00:00] N1_megatron_ref rc=1
+  exitcode  : -11 (pid: 80)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 80
+[7]:
+  time      : 2026-08-20_17:00:13
+  host      : mi355-gpu-33
+  rank      : 7 (local_rank: 7)
+  exitcode  : -9 (pid: 82)
+  error_file: <N/A>
+  traceback : Signal 9 (SIGKILL) received by PID 82
+----------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-08-20_16:59:43
+  host      : mi355-gpu-33
+  rank      : 6 (local_rank: 6)
+  exitcode  : -11 (pid: 81)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 81
+====================================================
+[2026-08-20T17:00:15+00:00] TAIL QUEUE DONE — all remaining GPU work complete
+T1_RC=0
+T2_RC=0
+N1_RC=1

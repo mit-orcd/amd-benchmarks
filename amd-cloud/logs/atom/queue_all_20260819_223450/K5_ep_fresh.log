@@ -1,0 +1,15 @@
+[2026-08-20T07:37:23+00:00] EP retest on freshly pulled :latest — start
+[2026-08-20T07:37:23+00:00] current :latest id = sha256:b750c5fbe4b79
+[2026-08-20T07:37:23+00:00] free on / : 62 GB (need ~100 GB)
+[2026-08-20T07:37:23+00:00] insufficient space — removing the MAD-pinned image to make room
+[2026-08-20T07:37:23+00:00]   (its results are already captured in kimi-k3-mad.md; the tag is re-pullable)
+[2026-08-20T07:37:33+00:00]   removed MAD image
+[2026-08-20T07:37:33+00:00] free on / : 122 GB
+[2026-08-20T07:37:34+00:00] pulling rocm/atom-dev:latest
+[2026-08-20T07:40:57+00:00] new :latest id = sha256:f86e2bb21d86c
+[2026-08-20T07:40:57+00:00] image HAS changed since the original EP test — retest is meaningful
+[2026-08-20T07:40:57+00:00] starting server with --enable-expert-parallel
+[2026-08-20T07:41:00+00:00] waiting (EP failure, if any, appears at load)
+[2026-08-20T07:44:09+00:00]   still loading (180s)
+[2026-08-20T07:45:02+00:00] === EP STILL NOT SUPPORTED on :latest ===
+Error response from daemon: can not get logs from container which is dead or marked for removal

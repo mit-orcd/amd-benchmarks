@@ -416,6 +416,32 @@ configuration-level tuning for this model.
 attention, collectives or launch overhead dominates at low batch, which turns this sweep from
 four guesses into a targeted test. See §3.
 
+<!-- BEGIN single-stream (auto-generated) -->
+
+#### Result — kernel path does / does not move single-stream speed
+
+Source: `kimi_single_stream_20260820_174733`, full detail in `kimi-k3-single-stream.md`. Per-request tok/s = `1000 / median TPOT`; `K1_mad_default` is the control.
+
+| Concurrency | `K1_mad_default` | `K3_aiter_attn` | `K4_grouped_gemm` |
+|---:|---:|---:|---:|
+| 1 | 40.9 | 40.8 | 42.1 |
+| 2 | 39.7 | 39.8 | 40.8 |
+| 4 | 37.7 | 37.7 | 38.7 |
+| 8 | 34.7 | 34.8 | 35.5 |
+
+Control at c=1: **40.9 tok/s per request** (TPOT 24.44 ms).
+
+| Arm | per-request tok/s | vs control |
+|---|---:|---:|
+| `K3_aiter_attn` | 40.8 | -0.2% |
+| `K4_grouped_gemm` | 42.1 | +2.8% |
+
+**Null result: the whole spread is within ±5% of the control** (-0.2% to +2.8%). This is informative rather than disappointing — it localizes the ~93% non-weight portion of a single-request step to costs no environment variable can reach: kernel launch overhead, the 186 serialized all-reduces (fixed by TP=8 × 93 layers), and the sequential dependency across the 69 KDA layers. **Configuration-level tuning for per-request speed is closed**; further gains require ATOM/AITER kernel work, and the trace re-parse is the way to target it.
+
+Run A's 46.6 tok/s at c=1 used `rocm/atom-dev:latest`, a different image, so it is context rather than a comparison point — `K1_mad_default` is the matched control.
+
+<!-- END single-stream -->
+
 ### Ranked next experiments
 
 1. ~~**Extend Run C: `--max-num-seqs 512`, sweep to c=512.**~~ **DONE — see Run D above.** Was highest value. Run C's throughput

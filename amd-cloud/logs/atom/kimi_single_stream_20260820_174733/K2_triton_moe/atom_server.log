@@ -1,0 +1,1454 @@
+[aiter] import [module_aiter_core] under /app/aiter-test/aiter/jit/module_aiter_core.so
+[atom 18:11:54] Raised RLIMIT_NOFILE soft limit 1024 -> 65535 (hard=524288)
+[atom 18:11:54] Loading tokenizer from /model...
+[atom 18:11:54] Initializing engine with model /model...
+[atom 18:11:54] Engine kwargs: {'trust_remote_code': True, 'tensor_parallel_size': 8, 'decode_context_parallel_size': 1, 'prefill_context_parallel_size': 1, 'data_parallel_size': 1, 'enforce_eager': False, 'enable_prefix_caching': False, 'port': 8006, 'kv_cache_dtype': 'fp8', 'index_cache_dtype': 'fp8', 'max_model_len': 16384, 'max_num_batched_tokens': 10240, 'long_prefill_token_threshold': 0, 'attn_prefill_chunk_size': 16384, 'enable_chunked_prefill': True, 'scheduler_delay_factor': 0.0, 'max_num_seqs': 64, 'gpu_memory_utilization': 0.93, 'load_dummy': None, 'enable_expert_parallel': False, 'torch_profiler_dir': None, 'enable_dp_attention': False, 'dp_load_balance': 'least_requests', 'kv_transfer_config': '{}', 'mark_trace': False, 'enable_rapidserve': False, 'disagg_prefill_max_num_seqs': None, 'disagg_constrained': False, 'online_quant_config': None, 'hf_overrides': None, 'eplb_enable': False, 'kv_cache_block_size': 128, 'compilation_config': CompilationConfig(level=3, use_cudagraph=True, local_cache_dir=None, cudagraph_capture_sizes=[1, 2, 4, 8, 16, 32, 48, 64, 128, 256, 512], cuda_graph_sizes=[512], debug_dump_path='', traced_files=set(), cache_dir='', use_inductor=True, cudagraph_mode=<CUDAGraphMode.FULL: 2>, compilation_time=0.0, splitting_ops=None, cudagraph_copy_inputs=False, inductor_compile_config={}, compile_sizes=None, static_forward_context={}), 'speculative_config': None, 'enable_tbo': False, 'enable_tbo_decode': False, 'enable_low_latency': False, 'dspark': DSparkConfig(confidence_schedule=False, ragged=False, ragged_graph_sizes='', q_buckets='', disable_sps_calib=False), 'eplb_config': EPLBConfig(load_window_size=1000, rebalance_interval=3000, rebalance_layers_per_chunk=64, num_redundant_experts=0, rebalance_min_balancedness=2.0, rebalance_balancedness_agg='min', p2p_batch_chunk_size=32, placement_policy='naive')}
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[atom 18:11:54] Engine Core Mgr: Creating EngineCore for DP rank 0/1
+[atom 18:11:54] Creating EngineCore process: DP rank 0, will use GPUs 0 to 7
+[atom 18:11:54] Engine Core Mgr: Starting EngineCore for DP rank 0/1
+[aiter] import [module_aiter_core] under /app/aiter-test/aiter/jit/module_aiter_core.so
+[aiter] message queue communication handle: Handle(local_reader_ranks=[0, 1, 2, 3, 4, 5, 6, 7], buffer_handle=(8, 16777216, 10, 'psm_fbe5d28e'), local_subscribe_addr='ipc:///tmp/da9f5ce2-ed92-4317-b45a-0405c647aa33', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[aiter] import [module_aiter_core] under /app/aiter-test/aiter/jit/module_aiter_core.so
+[aiter] import [module_aiter_core] under /app/aiter-test/aiter/jit/module_aiter_core.so
+[atom 18:12:06] Create lazy wrapper for FusedMoE to change the naming
+[aiter] merge tuned file under model_configs/ and configs/ /app/aiter-test/aiter/configs/bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama405B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/gptoss_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen3_5_397b_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/minimax_m3_eagle_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik2_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimi_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm47_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm5_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama70B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen32B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv4_bf16_tuned_gemm.csv
+[atom 18:12:06] ModelRunner rank=0, dp_rank_local=0, local_device_rank=0, device=cuda:0
+[aiter] import [module_aiter_core] under /app/aiter-test/aiter/jit/module_aiter_core.so
+[atom 18:12:10] Create lazy wrapper for FusedMoE to change the naming
+[aiter] merge tuned file under model_configs/ and configs/ /app/aiter-test/aiter/configs/bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama405B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/gptoss_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen3_5_397b_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/minimax_m3_eagle_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik2_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimi_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm47_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm5_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama70B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen32B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv4_bf16_tuned_gemm.csv
+[atom 18:12:10] ModelRunner rank=1, dp_rank_local=0, local_device_rank=1, device=cuda:1
+[aiter] import [module_aiter_core] under /app/aiter-test/aiter/jit/module_aiter_core.so
+[atom 18:12:14] Create lazy wrapper for FusedMoE to change the naming
+[aiter] merge tuned file under model_configs/ and configs/ /app/aiter-test/aiter/configs/bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama405B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/gptoss_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen3_5_397b_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/minimax_m3_eagle_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik2_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimi_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm47_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm5_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama70B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen32B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv4_bf16_tuned_gemm.csv
+[atom 18:12:14] ModelRunner rank=2, dp_rank_local=0, local_device_rank=2, device=cuda:2
+[aiter] import [module_aiter_core] under /app/aiter-test/aiter/jit/module_aiter_core.so
+[atom 18:12:18] Create lazy wrapper for FusedMoE to change the naming
+[aiter] merge tuned file under model_configs/ and configs/ /app/aiter-test/aiter/configs/bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama405B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/gptoss_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen3_5_397b_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/minimax_m3_eagle_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik2_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimi_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm47_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm5_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama70B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen32B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv4_bf16_tuned_gemm.csv
+[atom 18:12:18] ModelRunner rank=3, dp_rank_local=0, local_device_rank=3, device=cuda:3
+[aiter] import [module_aiter_core] under /app/aiter-test/aiter/jit/module_aiter_core.so
+[atom 18:12:22] Create lazy wrapper for FusedMoE to change the naming
+[aiter] merge tuned file under model_configs/ and configs/ /app/aiter-test/aiter/configs/bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama405B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/gptoss_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen3_5_397b_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/minimax_m3_eagle_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik2_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimi_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm47_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm5_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama70B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen32B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv4_bf16_tuned_gemm.csv
+[atom 18:12:23] ModelRunner rank=4, dp_rank_local=0, local_device_rank=4, device=cuda:4
+[aiter] import [module_aiter_core] under /app/aiter-test/aiter/jit/module_aiter_core.so
+[atom 18:12:27] Create lazy wrapper for FusedMoE to change the naming
+[aiter] merge tuned file under model_configs/ and configs/ /app/aiter-test/aiter/configs/bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama405B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/gptoss_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen3_5_397b_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/minimax_m3_eagle_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik2_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimi_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm47_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm5_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama70B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen32B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv4_bf16_tuned_gemm.csv
+[atom 18:12:27] ModelRunner rank=5, dp_rank_local=0, local_device_rank=5, device=cuda:5
+[aiter] import [module_aiter_core] under /app/aiter-test/aiter/jit/module_aiter_core.so
+[atom 18:12:31] Create lazy wrapper for FusedMoE to change the naming
+[aiter] merge tuned file under model_configs/ and configs/ /app/aiter-test/aiter/configs/bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama405B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/gptoss_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen3_5_397b_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/minimax_m3_eagle_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik2_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimi_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm47_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm5_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama70B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen32B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv4_bf16_tuned_gemm.csv
+[atom 18:12:31] ModelRunner rank=6, dp_rank_local=0, local_device_rank=6, device=cuda:6
+[atom 18:12:35] Create lazy wrapper for FusedMoE to change the naming
+[aiter] merge tuned file under model_configs/ and configs/ /app/aiter-test/aiter/configs/bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama405B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/gptoss_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen3_5_397b_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/minimax_m3_eagle_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik2_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimi_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm47_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/glm5_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/llama70B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/qwen32B_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/kimik3_bf16_tuned_gemm.csv:/app/aiter-test/aiter/configs/model_configs/dsv4_bf16_tuned_gemm.csv
+[atom 18:12:35] ModelRunner rank=7, dp_rank_local=0, local_device_rank=7, device=cuda:7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[aiter] import [module_custom_all_reduce] under /app/aiter-test/aiter/jit/module_custom_all_reduce.so
+[aiter] import [module_custom_all_reduce] under /app/aiter-test/aiter/jit/module_custom_all_reduce.so
+[aiter] import [module_custom_all_reduce] under /app/aiter-test/aiter/jit/module_custom_all_reduce.so
+[aiter] import [module_custom_all_reduce] under /app/aiter-test/aiter/jit/module_custom_all_reduce.so
+[aiter] import [module_custom_all_reduce] under /app/aiter-test/aiter/jit/module_custom_all_reduce.so
+[aiter] import [module_custom_all_reduce] under /app/aiter-test/aiter/jit/module_custom_all_reduce.so
+[aiter] import [module_custom_all_reduce] under /app/aiter-test/aiter/jit/module_custom_all_reduce.so
+[aiter] import [module_custom_all_reduce] under /app/aiter-test/aiter/jit/module_custom_all_reduce.so
+[aiter] load RCCL version: 2.27.7
+[aiter] message queue communication handle: Handle(local_reader_ranks=[1, 2, 3, 4, 5, 6, 7], buffer_handle=(7, 4194304, 6, 'psm_db33f192'), local_subscribe_addr='ipc:///tmp/210678a1-95ae-4c74-8f04-9aa057208fc7', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+RCCL version : 2.27.7-HEAD:29e1567
+HIP version  : 7.2.53211-97f5574fe2
+ROCm version : 7.2.4.0-93-97f5574fe2
+Hostname     : mi355-gpu-33
+Librccl path : /usr/local/lib/librccl.so.1
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[aiter] load RCCL version: 2.27.7
+[aiter] rank 0 in world size 8 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank 0
+[aiter] rank 6 in world size 8 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 6, EP rank 6
+[aiter] rank 5 in world size 8 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 5, EP rank 5
+[aiter] rank 7 in world size 8 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 7, EP rank 7
+[aiter] rank 2 in world size 8 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 2, EP rank 2
+[aiter] rank 1 in world size 8 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 1, EP rank 1
+[aiter] rank 3 in world size 8 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 3, EP rank 3
+[aiter] rank 4 in world size 8 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 4, EP rank 4
+[atom 18:12:43] disable_mmap: False
+[atom 18:12:43] disable_mmap: False
+[atom 18:12:43] disable_mmap: False
+[atom 18:12:43] disable_mmap: False
+[atom 18:12:43] disable_mmap: False
+[atom 18:12:43] disable_mmap: False
+[atom 18:12:43] disable_mmap: False
+[atom 18:12:43] disable_mmap: False
+Loading safetensors shards[/model]:   0%|          | 0/96 [00:00<?, ?it/s]Loading safetensors shards[/model]:   1%|          | 1/96 [00:04<07:19,  4.63s/it]Loading safetensors shards[/model]:   2%|▏         | 2/96 [00:06<04:45,  3.04s/it]Loading safetensors shards[/model]:   3%|▎         | 3/96 [00:09<04:52,  3.15s/it]Loading safetensors shards[/model]:   4%|▍         | 4/96 [00:12<04:19,  2.82s/it]Loading safetensors shards[/model]:   5%|▌         | 5/96 [00:14<04:06,  2.71s/it]Loading safetensors shards[/model]:   6%|▋         | 6/96 [00:17<03:55,  2.62s/it]Loading safetensors shards[/model]:   7%|▋         | 7/96 [00:20<04:13,  2.85s/it]Loading safetensors shards[/model]:   8%|▊         | 8/96 [00:23<04:08,  2.82s/it]Loading safetensors shards[/model]:   9%|▉         | 9/96 [00:25<03:53,  2.68s/it]Loading safetensors shards[/model]:  10%|█         | 10/96 [00:28<03:55,  2.74s/it]Loading safetensors shards[/model]:  11%|█▏        | 11/96 [00:31<03:54,  2.76s/it]Loading safetensors shards[/model]:  12%|█▎        | 12/96 [00:34<03:55,  2.81s/it]Loading safetensors shards[/model]:  14%|█▎        | 13/96 [00:36<03:47,  2.74s/it]Loading safetensors shards[/model]:  17%|█▋        | 16/96 [00:38<02:07,  1.59s/it]Loading safetensors shards[/model]:  18%|█▊        | 17/96 [00:41<02:24,  1.83s/it]Loading safetensors shards[/model]:  19%|█▉        | 18/96 [00:43<02:30,  1.93s/it]Loading safetensors shards[/model]:  20%|█▉        | 19/96 [00:46<02:45,  2.15s/it]Loading safetensors shards[/model]:  21%|██        | 20/96 [00:49<02:54,  2.30s/it]Loading safetensors shards[/model]:  22%|██▏       | 21/96 [00:52<03:19,  2.66s/it]Loading safetensors shards[/model]:  23%|██▎       | 22/96 [00:54<02:59,  2.43s/it]Loading safetensors shards[/model]:  24%|██▍       | 23/96 [00:57<02:53,  2.38s/it]Loading safetensors shards[/model]:  25%|██▌       | 24/96 [00:59<03:01,  2.52s/it]Loading safetensors shards[/model]:  26%|██▌       | 25/96 [01:02<02:59,  2.53s/it]Loading safetensors shards[/model]:  27%|██▋       | 26/96 [01:04<02:49,  2.43s/it]Loading safetensors shards[/model]:  28%|██▊       | 27/96 [01:06<02:44,  2.39s/it]Loading safetensors shards[/model]:  29%|██▉       | 28/96 [01:09<02:52,  2.54s/it]Loading safetensors shards[/model]:  30%|███       | 29/96 [01:11<02:40,  2.39s/it]Loading safetensors shards[/model]:  31%|███▏      | 30/96 [01:13<02:30,  2.29s/it]Loading safetensors shards[/model]:  32%|███▏      | 31/96 [01:16<02:26,  2.25s/it]Loading safetensors shards[/model]:  33%|███▎      | 32/96 [01:18<02:21,  2.21s/it]Loading safetensors shards[/model]:  34%|███▍      | 33/96 [01:20<02:14,  2.14s/it]Loading safetensors shards[/model]:  35%|███▌      | 34/96 [01:21<02:03,  2.00s/it]Loading safetensors shards[/model]:  36%|███▋      | 35/96 [01:23<01:56,  1.90s/it]Loading safetensors shards[/model]:  38%|███▊      | 36/96 [01:25<01:55,  1.92s/it]Loading safetensors shards[/model]:  39%|███▊      | 37/96 [01:28<02:09,  2.20s/it]Loading safetensors shards[/model]:  40%|███▉      | 38/96 [01:30<02:07,  2.20s/it]Loading safetensors shards[/model]:  41%|████      | 39/96 [01:31<01:51,  1.96s/it]Loading safetensors shards[/model]:  42%|████▏     | 40/96 [01:33<01:41,  1.82s/it]Loading safetensors shards[/model]:  43%|████▎     | 41/96 [01:34<01:33,  1.70s/it]Loading safetensors shards[/model]:  44%|████▍     | 42/96 [01:36<01:29,  1.66s/it]Loading safetensors shards[/model]:  45%|████▍     | 43/96 [01:38<01:30,  1.72s/it]Loading safetensors shards[/model]:  46%|████▌     | 44/96 [01:40<01:41,  1.95s/it]Loading safetensors shards[/model]:  47%|████▋     | 45/96 [01:43<01:44,  2.04s/it]Loading safetensors shards[/model]:  48%|████▊     | 46/96 [01:44<01:33,  1.88s/it]Loading safetensors shards[/model]:  49%|████▉     | 47/96 [01:46<01:31,  1.87s/it]Loading safetensors shards[/model]:  50%|█████     | 48/96 [01:48<01:32,  1.94s/it]Loading safetensors shards[/model]:  51%|█████     | 49/96 [01:51<01:53,  2.40s/it]Loading safetensors shards[/model]:  52%|█████▏    | 50/96 [01:53<01:40,  2.19s/it]Loading safetensors shards[/model]:  53%|█████▎    | 51/96 [01:55<01:34,  2.10s/it]Loading safetensors shards[/model]:  54%|█████▍    | 52/96 [01:57<01:25,  1.95s/it]Loading safetensors shards[/model]:  55%|█████▌    | 53/96 [01:59<01:24,  1.97s/it]Loading safetensors shards[/model]:  56%|█████▋    | 54/96 [02:01<01:28,  2.12s/it]Loading safetensors shards[/model]:  57%|█████▋    | 55/96 [02:03<01:27,  2.14s/it]Loading safetensors shards[/model]:  58%|█████▊    | 56/96 [02:05<01:20,  2.02s/it]Loading safetensors shards[/model]:  59%|█████▉    | 57/96 [02:07<01:17,  1.99s/it]Loading safetensors shards[/model]:  60%|██████    | 58/96 [02:09<01:16,  2.02s/it]Loading safetensors shards[/model]:  61%|██████▏   | 59/96 [02:11<01:11,  1.93s/it]Loading safetensors shards[/model]:  62%|██████▎   | 60/96 [02:13<01:16,  2.12s/it]Loading safetensors shards[/model]:  64%|██████▎   | 61/96 [02:15<01:12,  2.08s/it]Loading safetensors shards[/model]:  66%|██████▌   | 63/96 [02:17<00:48,  1.48s/it]Loading safetensors shards[/model]:  67%|██████▋   | 64/96 [02:20<01:01,  1.92s/it]Loading safetensors shards[/model]:  68%|██████▊   | 65/96 [02:22<00:56,  1.83s/it]Loading safetensors shards[/model]:  69%|██████▉   | 66/96 [02:23<00:51,  1.73s/it]Loading safetensors shards[/model]:  70%|██████▉   | 67/96 [02:25<00:47,  1.65s/it]Loading safetensors shards[/model]:  71%|███████   | 68/96 [02:26<00:44,  1.58s/it]Loading safetensors shards[/model]:  72%|███████▏  | 69/96 [02:27<00:41,  1.53s/it]Loading safetensors shards[/model]:  73%|███████▎  | 70/96 [02:29<00:39,  1.50s/it]Loading safetensors shards[/model]:  74%|███████▍  | 71/96 [02:31<00:40,  1.64s/it]Loading safetensors shards[/model]:  75%|███████▌  | 72/96 [02:32<00:38,  1.62s/it]Loading safetensors shards[/model]:  76%|███████▌  | 73/96 [02:34<00:35,  1.56s/it]Loading safetensors shards[/model]:  77%|███████▋  | 74/96 [02:36<00:34,  1.59s/it]Loading safetensors shards[/model]:  78%|███████▊  | 75/96 [02:37<00:32,  1.56s/it]Loading safetensors shards[/model]:  79%|███████▉  | 76/96 [02:39<00:31,  1.59s/it]Loading safetensors shards[/model]:  80%|████████  | 77/96 [02:40<00:30,  1.59s/it]Loading safetensors shards[/model]:  81%|████████▏ | 78/96 [02:42<00:30,  1.68s/it]Loading safetensors shards[/model]:  83%|████████▎ | 80/96 [02:44<00:19,  1.22s/it]Loading safetensors shards[/model]:  84%|████████▍ | 81/96 [02:45<00:19,  1.32s/it]Loading safetensors shards[/model]:  85%|████████▌ | 82/96 [02:46<00:18,  1.31s/it]Loading safetensors shards[/model]:  86%|████████▋ | 83/96 [02:50<00:24,  1.87s/it]Loading safetensors shards[/model]:  88%|████████▊ | 84/96 [02:51<00:21,  1.79s/it]Loading safetensors shards[/model]:  89%|████████▊ | 85/96 [02:53<00:18,  1.67s/it]Loading safetensors shards[/model]:  90%|████████▉ | 86/96 [02:54<00:16,  1.65s/it]Loading safetensors shards[/model]:  91%|█████████ | 87/96 [02:56<00:13,  1.56s/it]Loading safetensors shards[/model]:  92%|█████████▏| 88/96 [02:57<00:12,  1.53s/it]Loading safetensors shards[/model]:  93%|█████████▎| 89/96 [02:59<00:10,  1.51s/it]Loading safetensors shards[/model]:  94%|█████████▍| 90/96 [03:00<00:09,  1.55s/it]Loading safetensors shards[/model]:  95%|█████████▍| 91/96 [03:02<00:07,  1.54s/it]Loading safetensors shards[/model]:  96%|█████████▌| 92/96 [03:03<00:05,  1.48s/it]Loading safetensors shards[/model]:  97%|█████████▋| 93/96 [03:05<00:04,  1.60s/it]Loading safetensors shards[/model]:  98%|█████████▊| 94/96 [03:07<00:03,  1.80s/it]Loading safetensors shards[/model]:  99%|█████████▉| 95/96 [03:09<00:01,  1.74s/it]Loading safetensors shards[/model]: 100%|██████████| 96/96 [03:11<00:00,  1.83s/it]Loading safetensors shards[/model]: 100%|██████████| 96/96 [03:11<00:00,  1.99s/it]
+[aiter] import [module_quant] under /app/aiter-test/aiter/jit/module_quant.so
+[atom 18:15:57] [rank_2] Model load done: /model (weights loaded in 193.60s)
+[atom 18:15:57] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 18:15:57] Model Runner2/8: dp_size=1, dp_attn=False, warmup_max_tokens=10240 < max_model_len=16384. Using 1 seq with length 10240 for warmup.
+[aiter] import [module_quant] under /app/aiter-test/aiter/jit/module_quant.so
+[atom 18:15:58] [rank_0] Model load done: /model (weights loaded in 195.19s)
+[atom 18:15:59] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 18:15:59] Model Runner0/8: dp_size=1, dp_attn=False, warmup_max_tokens=10240 < max_model_len=16384. Using 1 seq with length 10240 for warmup.
+[aiter] import [module_quant] under /app/aiter-test/aiter/jit/module_quant.so
+[atom 18:16:00] [rank_3] Model load done: /model (weights loaded in 196.61s)
+[aiter] import [module_quant] under /app/aiter-test/aiter/jit/module_quant.so
+[atom 18:16:00] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 18:16:00] [rank_1] Model load done: /model (weights loaded in 197.02s)
+[atom 18:16:00] Model Runner3/8: dp_size=1, dp_attn=False, warmup_max_tokens=10240 < max_model_len=16384. Using 1 seq with length 10240 for warmup.
+[atom 18:16:01] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 18:16:01] Model Runner1/8: dp_size=1, dp_attn=False, warmup_max_tokens=10240 < max_model_len=16384. Using 1 seq with length 10240 for warmup.
+[atom 18:16:13] Using cache directory: /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_2/backbone for vLLM's torch.compile
+[atom 18:16:13] Dynamo bytecode transform time: 15.46 s
+[atom 18:16:14] Using cache directory: /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_0/backbone for vLLM's torch.compile
+[atom 18:16:14] Dynamo bytecode transform time: 14.75 s
+[atom 18:16:14] Using cache directory: /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_3/backbone for vLLM's torch.compile
+[atom 18:16:14] Dynamo bytecode transform time: 13.33 s
+[atom 18:16:15] Cache the graph for dynamic shape for later use
+[atom 18:16:15] Cache the graph for dynamic shape for later use
+[atom 18:16:16] Cache the graph for dynamic shape for later use
+[atom 18:16:17] Using cache directory: /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_1/backbone for vLLM's torch.compile
+[atom 18:16:17] Dynamo bytecode transform time: 15.87 s
+[atom 18:16:18] Cache the graph for dynamic shape for later use
+[aiter] import [module_quant] under /app/aiter-test/aiter/jit/module_quant.so
+[atom 18:16:28] [rank_4] Model load done: /model (weights loaded in 224.33s)
+[atom 18:16:28] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 18:16:28] Model Runner4/8: dp_size=1, dp_attn=False, warmup_max_tokens=10240 < max_model_len=16384. Using 1 seq with length 10240 for warmup.
+[atom 18:16:44] Using cache directory: /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_4/backbone for vLLM's torch.compile
+[atom 18:16:44] Dynamo bytecode transform time: 15.20 s
+[atom 18:16:45] Cache the graph for dynamic shape for later use
+[atom 18:16:57] Compiling a graph for dynamic shape takes 42.48 s
+[atom 18:16:57] Computation graph saved to /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_3/backbone/computation_graph.py
+[atom 18:16:59] Compiling a graph for dynamic shape takes 45.04 s
+[atom 18:16:59] Computation graph saved to /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_2/backbone/computation_graph.py
+[atom 18:16:59] Compiling a graph for dynamic shape takes 44.53 s
+[atom 18:16:59] Computation graph saved to /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_0/backbone/computation_graph.py
+[aiter] import [module_quant] under /app/aiter-test/aiter/jit/module_quant.so
+[atom 18:17:04] [rank_5] Model load done: /model (weights loaded in 260.61s)
+[atom 18:17:04] Compiling a graph for dynamic shape takes 46.65 s
+[atom 18:17:04] Computation graph saved to /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_1/backbone/computation_graph.py
+[atom 18:17:04] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 18:17:05] Model Runner5/8: dp_size=1, dp_attn=False, warmup_max_tokens=10240 < max_model_len=16384. Using 1 seq with length 10240 for warmup.
+[atom 18:17:19] Using cache directory: /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_5/backbone for vLLM's torch.compile
+[atom 18:17:19] Dynamo bytecode transform time: 14.41 s
+[atom 18:17:21] Cache the graph for dynamic shape for later use
+[atom 18:17:35] Compiling a graph for dynamic shape takes 51.37 s
+[atom 18:17:36] Computation graph saved to /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_4/backbone/computation_graph.py
+[atom 18:18:06] Compiling a graph for dynamic shape takes 46.06 s
+[atom 18:18:06] Computation graph saved to /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_5/backbone/computation_graph.py
+[aiter] import [module_quant] under /app/aiter-test/aiter/jit/module_quant.so
+[atom 18:18:53] [rank_6] Model load done: /model (weights loaded in 369.49s)
+[atom 18:18:53] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 18:18:53] Model Runner6/8: dp_size=1, dp_attn=False, warmup_max_tokens=10240 < max_model_len=16384. Using 1 seq with length 10240 for warmup.
+[atom 18:19:07] Using cache directory: /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_6/backbone for vLLM's torch.compile
+[atom 18:19:07] Dynamo bytecode transform time: 13.73 s
+[atom 18:19:09] Cache the graph for dynamic shape for later use
+[atom 18:19:52] Compiling a graph for dynamic shape takes 43.62 s
+[atom 18:19:52] Computation graph saved to /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_6/backbone/computation_graph.py
+[aiter] import [module_quant] under /app/aiter-test/aiter/jit/module_quant.so
+[atom 18:20:15] [rank_7] Model load done: /model (weights loaded in 451.57s)
+[atom 18:20:15] Allocated MLA chunked-prefill workspaces: k(16384, 12, 192) v(16384, 12, 128) (120.0 MiB total, dtype=torch.bfloat16)
+[atom 18:20:15] Model Runner7/8: dp_size=1, dp_attn=False, warmup_max_tokens=10240 < max_model_len=16384. Using 1 seq with length 10240 for warmup.
+[atom 18:20:29] Using cache directory: /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_7/backbone for vLLM's torch.compile
+[atom 18:20:29] Dynamo bytecode transform time: 13.25 s
+[atom 18:20:30] Cache the graph for dynamic shape for later use
+[atom 18:21:08] Compiling a graph for dynamic shape takes 38.44 s
+[atom 18:21:08] Computation graph saved to /root/.cache/atom/torch_compile_cache/ef5cbcc4cc/rank_7/backbone/computation_graph.py
+[aiter] import [module_rmsnorm_quant] under /app/aiter-test/aiter/jit/module_rmsnorm_quant.so
+[aiter] import [module_rmsnorm_quant] under /app/aiter-test/aiter/jit/module_rmsnorm_quant.so
+[aiter] import [module_rmsnorm_quant] under /app/aiter-test/aiter/jit/module_rmsnorm_quant.so
+[aiter] import [module_rmsnorm_quant] under /app/aiter-test/aiter/jit/module_rmsnorm_quant.so
+[aiter] import [module_rmsnorm_quant] under /app/aiter-test/aiter/jit/module_rmsnorm_quant.so
+[aiter] import [module_rmsnorm_quant] under /app/aiter-test/aiter/jit/module_rmsnorm_quant.so
+[aiter] import [module_rmsnorm_quant] under /app/aiter-test/aiter/jit/module_rmsnorm_quant.so
+[aiter] import [module_rmsnorm_quant] under /app/aiter-test/aiter/jit/module_rmsnorm_quant.so
+[aiter] shape is M:10240, N:8448, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:8448, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:8448, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:8448, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:8448, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:8448, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:8448, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:8448, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:7168, K:4224 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:896, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:7168, K:4224 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:896, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:7168, K:4224 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:896, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:7168, K:4224 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:896, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:7168, K:4224 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:896, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:7168, K:4224 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:896, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:7168, K:4224 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:896, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+[aiter] shape is M:10240, N:7168, K:4224 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+Process ModelRunner6/8:
+Process ModelRunner1/8:
+Process ModelRunner3/8:
+Process ModelRunner5/8:
+Process ModelRunner0/8:
+Process ModelRunner4/8:
+Process ModelRunner7/8:
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 152, in __init__
+    self.runners = [runner_class(rank, *args, **kwargs)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 833, in __init__
+    self._maybe_warmup()
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 874, in _maybe_warmup
+    self.warmup_model()
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1255, in warmup_model
+    self.forward(dummy_batch)
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/eplb.py", line 2319, in wrapper
+    return fn(self, batch, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 3063, in forward
+    logits, hidden_states = self.run_model(input_ids, batch)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 2830, in run_model
+    model_output = self.model(input_ids, positions)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1329, in forward
+    return self.language_model(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1261, in forward
+    return self.model(input_ids, positions, intermediate_tensors, inputs_embeds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 566, in __call__
+    output = self.compiled_callable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 953, in compile_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1161, in forward
+    def forward(
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 465, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 936, in call_wrapped
+    return self._wrapped_call(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 152, in __init__
+    self.runners = [runner_class(rank, *args, **kwargs)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 455, in __call__
+    raise e
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 833, in __init__
+    self._maybe_warmup()
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 442, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 874, in _maybe_warmup
+    self.warmup_model()
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1255, in warmup_model
+    self.forward(dummy_batch)
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/eplb.py", line 2319, in wrapper
+    return fn(self, batch, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 3063, in forward
+    logits, hidden_states = self.run_model(input_ids, batch)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.188", line 1247, in forward
+    submod_4 = self.submod_4(getitem_3, s72, getitem_1, l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight, submod_3, l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_, l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight, l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_);  getitem_3 = l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight = submod_3 = l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_ = l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight = l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_ = None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 2830, in run_model
+    model_output = self.model(input_ids, positions)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/cuda_piecewise_backend.py", line 87, in __call__
+    return self.compiled_graph_for_general_shape(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/standalone_compile.py", line 122, in __call__
+    return self._compiled_fn(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1148, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__
+    return self.compiled_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper
+    return compiled_fn(runtime_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 729, in inner_fn
+    outs = compiled_fn(args)
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/output_code.py", line 638, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/utils.py", line 3220, in run
+    out = model(new_inputs)
+          ^^^^^^^^^^^^^^^^^
+  File "/tmp/torchinductor_root/sf/csfqgu2taa7z4daflfc74h6xjufuakshhijqazsf7cx52pumxt4e.py", line 323, in call
+    buf13 = torch.ops.aiter.moe_forward.default(buf12, buf10, 'language_model.model.layers.1.block_sparse_moe.experts')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 2367, in moe_forward
+    return self.forward_impl(hidden_states, router_logits)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 3788, in forward_impl
+    final_hidden_states = self.quant_method.apply(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 213, in wrapped
+    return record_wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 87, in _wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 1300, in apply
+    routing_data, gather_idx, scatter_idx = routing(
+                                            ^^^^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/routing.py", line 388, in routing
+    expt_scal, expt_indx, bitmatrix = topk(
+                                      ^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/topk.py", line 206, in topk
+    assert score_mode in (
+           ^^^^^^^^^^^^^^^
+AssertionError: score_mode must be 'softmax' or 'sqrtsoftplus', got 'sigmoid'
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1329, in forward
+    return self.language_model(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 152, in __init__
+    self.runners = [runner_class(rank, *args, **kwargs)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 833, in __init__
+    self._maybe_warmup()
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 874, in _maybe_warmup
+    self.warmup_model()
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1261, in forward
+    return self.model(input_ids, positions, intermediate_tensors, inputs_embeds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1255, in warmup_model
+    self.forward(dummy_batch)
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/eplb.py", line 2319, in wrapper
+    return fn(self, batch, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 566, in __call__
+    output = self.compiled_callable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 3063, in forward
+    logits, hidden_states = self.run_model(input_ids, batch)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 2830, in run_model
+    model_output = self.model(input_ids, positions)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 953, in compile_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1329, in forward
+    return self.language_model(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1161, in forward
+    def forward(
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1261, in forward
+    return self.model(input_ids, positions, intermediate_tensors, inputs_embeds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 465, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 566, in __call__
+    output = self.compiled_callable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 953, in compile_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1161, in forward
+    def forward(
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 465, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 936, in call_wrapped
+    return self._wrapped_call(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 455, in __call__
+    raise e
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 442, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 936, in call_wrapped
+    return self._wrapped_call(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 152, in __init__
+    self.runners = [runner_class(rank, *args, **kwargs)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 833, in __init__
+    self._maybe_warmup()
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 874, in _maybe_warmup
+    self.warmup_model()
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1255, in warmup_model
+    self.forward(dummy_batch)
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 455, in __call__
+    raise e
+  File "<eval_with_key>.188", line 1247, in forward
+    submod_4 = self.submod_4(getitem_3, s72, getitem_1, l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight, submod_3, l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_, l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight, l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_);  getitem_3 = l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight = submod_3 = l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_ = l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight = l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_ = None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/cuda_piecewise_backend.py", line 87, in __call__
+    return self.compiled_graph_for_general_shape(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/eplb.py", line 2319, in wrapper
+    return fn(self, batch, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 442, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/standalone_compile.py", line 122, in __call__
+    return self._compiled_fn(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 3063, in forward
+    logits, hidden_states = self.run_model(input_ids, batch)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1148, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 2830, in run_model
+    model_output = self.model(input_ids, positions)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__
+    return self.compiled_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1329, in forward
+    return self.language_model(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper
+    return compiled_fn(runtime_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 729, in inner_fn
+    outs = compiled_fn(args)
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/output_code.py", line 638, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1261, in forward
+    return self.model(input_ids, positions, intermediate_tensors, inputs_embeds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/utils.py", line 3220, in run
+    out = model(new_inputs)
+          ^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 566, in __call__
+    output = self.compiled_callable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torchinductor_root/e4/ce4eqs377rfxokm3jxel32haotsecjqrtfjtgxz6c7atki3hudio.py", line 323, in call
+    buf13 = torch.ops.aiter.moe_forward.default(buf12, buf10, 'language_model.model.layers.1.block_sparse_moe.experts')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 953, in compile_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1161, in forward
+    def forward(
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 465, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.188", line 1247, in forward
+    submod_4 = self.submod_4(getitem_3, s72, getitem_1, l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight, submod_3, l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_, l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight, l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_);  getitem_3 = l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight = submod_3 = l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_ = l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight = l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_ = None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 2367, in moe_forward
+    return self.forward_impl(hidden_states, router_logits)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/cuda_piecewise_backend.py", line 87, in __call__
+    return self.compiled_graph_for_general_shape(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 3788, in forward_impl
+    final_hidden_states = self.quant_method.apply(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 213, in wrapped
+    return record_wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 936, in call_wrapped
+    return self._wrapped_call(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/standalone_compile.py", line 122, in __call__
+    return self._compiled_fn(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 87, in _wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 455, in __call__
+    raise e
+  File "/app/ATOM/atom/model_ops/moe.py", line 1300, in apply
+    routing_data, gather_idx, scatter_idx = routing(
+                                            ^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 442, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/routing.py", line 388, in routing
+    expt_scal, expt_indx, bitmatrix = topk(
+                                      ^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/topk.py", line 206, in topk
+    assert score_mode in (
+           ^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1148, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: score_mode must be 'softmax' or 'sqrtsoftplus', got 'sigmoid'
+  File "<eval_with_key>.188", line 1247, in forward
+    submod_4 = self.submod_4(getitem_3, s72, getitem_1, l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight, submod_3, l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_, l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight, l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_);  getitem_3 = l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight = submod_3 = l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_ = l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight = l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_ = None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/cuda_piecewise_backend.py", line 87, in __call__
+    return self.compiled_graph_for_general_shape(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/standalone_compile.py", line 122, in __call__
+    return self._compiled_fn(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1148, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__
+    return self.compiled_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__
+    return self.compiled_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper
+    return compiled_fn(runtime_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper
+    return compiled_fn(runtime_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 729, in inner_fn
+    outs = compiled_fn(args)
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 729, in inner_fn
+    outs = compiled_fn(args)
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/output_code.py", line 638, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/utils.py", line 3220, in run
+    out = model(new_inputs)
+          ^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/output_code.py", line 638, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torchinductor_root/4n/c4nrt73krgtty6bmlbj35uf2bbxgqcw5iw5cqjcjw3ofl36nk6ot.py", line 323, in call
+    buf13 = torch.ops.aiter.moe_forward.default(buf12, buf10, 'language_model.model.layers.1.block_sparse_moe.experts')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/utils.py", line 3220, in run
+    out = model(new_inputs)
+          ^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 2367, in moe_forward
+    return self.forward_impl(hidden_states, router_logits)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 3788, in forward_impl
+    final_hidden_states = self.quant_method.apply(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torchinductor_root/br/cbrr7cecat7tvzg4rdkxotjt27lc377k7vpuq6wv34wvw6ywndly.py", line 323, in call
+    buf13 = torch.ops.aiter.moe_forward.default(buf12, buf10, 'language_model.model.layers.1.block_sparse_moe.experts')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 213, in wrapped
+    return record_wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/app/ATOM/atom/utils/decorators.py", line 87, in _wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_ops/moe.py", line 1300, in apply
+    routing_data, gather_idx, scatter_idx = routing(
+                                            ^^^^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/routing.py", line 388, in routing
+    expt_scal, expt_indx, bitmatrix = topk(
+                                      ^^^^^
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 152, in __init__
+    self.runners = [runner_class(rank, *args, **kwargs)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/topk.py", line 206, in topk
+    assert score_mode in (
+           ^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 833, in __init__
+    self._maybe_warmup()
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 874, in _maybe_warmup
+    self.warmup_model()
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1255, in warmup_model
+    self.forward(dummy_batch)
+AssertionError: score_mode must be 'softmax' or 'sqrtsoftplus', got 'sigmoid'
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/app/ATOM/atom/model_ops/moe.py", line 2367, in moe_forward
+    return self.forward_impl(hidden_states, router_logits)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/eplb.py", line 2319, in wrapper
+    return fn(self, batch, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 3063, in forward
+    logits, hidden_states = self.run_model(input_ids, batch)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 3788, in forward_impl
+    final_hidden_states = self.quant_method.apply(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 152, in __init__
+    self.runners = [runner_class(rank, *args, **kwargs)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 2830, in run_model
+    model_output = self.model(input_ids, positions)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 833, in __init__
+    self._maybe_warmup()
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 874, in _maybe_warmup
+    self.warmup_model()
+  File "/app/ATOM/atom/utils/decorators.py", line 213, in wrapped
+    return record_wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1255, in warmup_model
+    self.forward(dummy_batch)
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 87, in _wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1329, in forward
+    return self.language_model(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/eplb.py", line 2319, in wrapper
+    return fn(self, batch, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 1300, in apply
+    routing_data, gather_idx, scatter_idx = routing(
+                                            ^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 3063, in forward
+    logits, hidden_states = self.run_model(input_ids, batch)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 2830, in run_model
+    model_output = self.model(input_ids, positions)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1261, in forward
+    return self.model(input_ids, positions, intermediate_tensors, inputs_embeds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/routing.py", line 388, in routing
+    expt_scal, expt_indx, bitmatrix = topk(
+                                      ^^^^^
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 566, in __call__
+    output = self.compiled_callable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 953, in compile_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 152, in __init__
+    self.runners = [runner_class(rank, *args, **kwargs)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/topk.py", line 206, in topk
+    assert score_mode in (
+           ^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1161, in forward
+    def forward(
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 833, in __init__
+    self._maybe_warmup()
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1329, in forward
+    return self.language_model(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 465, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 874, in _maybe_warmup
+    self.warmup_model()
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1255, in warmup_model
+    self.forward(dummy_batch)
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1261, in forward
+    return self.model(input_ids, positions, intermediate_tensors, inputs_embeds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/eplb.py", line 2319, in wrapper
+    return fn(self, batch, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 566, in __call__
+    output = self.compiled_callable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 936, in call_wrapped
+    return self._wrapped_call(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 3063, in forward
+    logits, hidden_states = self.run_model(input_ids, batch)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 953, in compile_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 455, in __call__
+    raise e
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 2830, in run_model
+    model_output = self.model(input_ids, positions)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 442, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: score_mode must be 'softmax' or 'sqrtsoftplus', got 'sigmoid'
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1161, in forward
+    def forward(
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 465, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1329, in forward
+    return self.language_model(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.188", line 1247, in forward
+    submod_4 = self.submod_4(getitem_3, s72, getitem_1, l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight, submod_3, l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_, l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight, l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_);  getitem_3 = l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight = submod_3 = l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_ = l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight = l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_ = None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/cuda_piecewise_backend.py", line 87, in __call__
+    return self.compiled_graph_for_general_shape(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1261, in forward
+    return self.model(input_ids, positions, intermediate_tensors, inputs_embeds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 936, in call_wrapped
+    return self._wrapped_call(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/standalone_compile.py", line 122, in __call__
+    return self._compiled_fn(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 566, in __call__
+    output = self.compiled_callable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 455, in __call__
+    raise e
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 953, in compile_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1148, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 442, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1161, in forward
+    def forward(
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 465, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__
+    return self.compiled_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper
+    return compiled_fn(runtime_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.188", line 1247, in forward
+    submod_4 = self.submod_4(getitem_3, s72, getitem_1, l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight, submod_3, l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_, l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight, l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_);  getitem_3 = l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight = submod_3 = l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_ = l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight = l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_ = None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 729, in inner_fn
+    outs = compiled_fn(args)
+           ^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/cuda_piecewise_backend.py", line 87, in __call__
+    return self.compiled_graph_for_general_shape(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/output_code.py", line 638, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/standalone_compile.py", line 122, in __call__
+    return self._compiled_fn(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/utils.py", line 3220, in run
+    out = model(new_inputs)
+          ^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1148, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torchinductor_root/7b/c7bzszntk37zblvi44l6e2lyx6oduocaxj6zufwupd2dciocyeww.py", line 323, in call
+    buf13 = torch.ops.aiter.moe_forward.default(buf12, buf10, 'language_model.model.layers.1.block_sparse_moe.experts')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 936, in call_wrapped
+    return self._wrapped_call(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 455, in __call__
+    raise e
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__
+    return self.compiled_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper
+    return compiled_fn(runtime_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 442, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 2367, in moe_forward
+    return self.forward_impl(hidden_states, router_logits)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 3788, in forward_impl
+    final_hidden_states = self.quant_method.apply(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 729, in inner_fn
+    outs = compiled_fn(args)
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 213, in wrapped
+    return record_wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/output_code.py", line 638, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 87, in _wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/utils.py", line 3220, in run
+    out = model(new_inputs)
+          ^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 1300, in apply
+    routing_data, gather_idx, scatter_idx = routing(
+                                            ^^^^^^^^
+  File "<eval_with_key>.188", line 1247, in forward
+    submod_4 = self.submod_4(getitem_3, s72, getitem_1, l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight, submod_3, l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_, l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight, l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_);  getitem_3 = l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight = submod_3 = l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_ = l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight = l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_ = None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torchinductor_root/zt/cztuu5fbjzzqxijykp5fvsdgnfw3glhew7xw2jdywq3ennbz2pia.py", line 323, in call
+    buf13 = torch.ops.aiter.moe_forward.default(buf12, buf10, 'language_model.model.layers.1.block_sparse_moe.experts')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/routing.py", line 388, in routing
+    expt_scal, expt_indx, bitmatrix = topk(
+                                      ^^^^^
+  File "/app/ATOM/atom/utils/cuda_piecewise_backend.py", line 87, in __call__
+    return self.compiled_graph_for_general_shape(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/topk.py", line 206, in topk
+    assert score_mode in (
+           ^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/standalone_compile.py", line 122, in __call__
+    return self._compiled_fn(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 2367, in moe_forward
+    return self.forward_impl(hidden_states, router_logits)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1148, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: score_mode must be 'softmax' or 'sqrtsoftplus', got 'sigmoid'
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 3788, in forward_impl
+    final_hidden_states = self.quant_method.apply(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 213, in wrapped
+    return record_wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__
+    return self.compiled_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 87, in _wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper
+    return compiled_fn(runtime_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 1300, in apply
+    routing_data, gather_idx, scatter_idx = routing(
+                                            ^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 729, in inner_fn
+    outs = compiled_fn(args)
+           ^^^^^^^^^^^^^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/routing.py", line 388, in routing
+    expt_scal, expt_indx, bitmatrix = topk(
+                                      ^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/output_code.py", line 638, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/topk.py", line 206, in topk
+    assert score_mode in (
+           ^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/utils.py", line 3220, in run
+    out = model(new_inputs)
+          ^^^^^^^^^^^^^^^^^
+  File "/tmp/torchinductor_root/sm/csm24fieoqyuk45ft2jb66eeda6hxizurcrw5kmb5nboktwf6sl3.py", line 323, in call
+    buf13 = torch.ops.aiter.moe_forward.default(buf12, buf10, 'language_model.model.layers.1.block_sparse_moe.experts')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: score_mode must be 'softmax' or 'sqrtsoftplus', got 'sigmoid'
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 2367, in moe_forward
+    return self.forward_impl(hidden_states, router_logits)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 3788, in forward_impl
+    final_hidden_states = self.quant_method.apply(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 213, in wrapped
+    return record_wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 87, in _wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 1300, in apply
+    routing_data, gather_idx, scatter_idx = routing(
+                                            ^^^^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/routing.py", line 388, in routing
+    expt_scal, expt_indx, bitmatrix = topk(
+                                      ^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/topk.py", line 206, in topk
+    assert score_mode in (
+           ^^^^^^^^^^^^^^^
+AssertionError: score_mode must be 'softmax' or 'sqrtsoftplus', got 'sigmoid'
+[aiter] shape is M:10240, N:896, K:7168 dtype='torch.bfloat16' otype='torch.bfloat16' bias=False, scaleAB=False, bpreshuffle=False, not found tuned config in /tmp/aiter_configs/bf16_tuned_gemm.csv, will use default config! using torch solution:0
+Process ModelRunner2/8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 152, in __init__
+    self.runners = [runner_class(rank, *args, **kwargs)]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 833, in __init__
+    self._maybe_warmup()
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 874, in _maybe_warmup
+    self.warmup_model()
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1255, in warmup_model
+    self.forward(dummy_batch)
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/eplb.py", line 2319, in wrapper
+    return fn(self, batch, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 3063, in forward
+    logits, hidden_states = self.run_model(input_ids, batch)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 2830, in run_model
+    model_output = self.model(input_ids, positions)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1329, in forward
+    return self.language_model(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1261, in forward
+    return self.model(input_ids, positions, intermediate_tensors, inputs_embeds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 566, in __call__
+    output = self.compiled_callable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 953, in compile_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/models/kimi_k3.py", line 1161, in forward
+    def forward(
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 465, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 936, in call_wrapped
+    return self._wrapped_call(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 455, in __call__
+    raise e
+  File "/opt/venv/lib/python3.12/site-packages/torch/fx/graph_module.py", line 442, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.188", line 1247, in forward
+    submod_4 = self.submod_4(getitem_3, s72, getitem_1, l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight, submod_3, l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_, l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_, l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight, l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_);  getitem_3 = l_self_modules_layers_modules_1_modules_mlp_res_proj_score_weight = submod_3 = l_self_modules_layers_modules_1_modules_post_attention_layernorm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_gate_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_down_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_norm_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_scale_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_routed_expert_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_gate_up_proj_parameters_weight_ = l_self_modules_layers_modules_1_modules_block_sparse_moe_modules_shared_experts_modules_down_proj_parameters_weight_ = l_self_modules_layers_modules_2_modules_self_attention_res_proj_score_weight = l_self_modules_layers_modules_2_modules_input_layernorm_parameters_weight_ = None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/cuda_piecewise_backend.py", line 87, in __call__
+    return self.compiled_graph_for_general_shape(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/standalone_compile.py", line 122, in __call__
+    return self._compiled_fn(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1181, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1148, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 357, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py", line 134, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1962, in __call__
+    return self.compiled_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 531, in wrapper
+    return compiled_fn(runtime_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 729, in inner_fn
+    outs = compiled_fn(args)
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/output_code.py", line 638, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_inductor/utils.py", line 3220, in run
+    out = model(new_inputs)
+          ^^^^^^^^^^^^^^^^^
+  File "/tmp/torchinductor_root/se/cse2gewm77liekgafgpxezigmy6ypetzz4z7lisy7gwrbp44g476.py", line 323, in call
+    buf13 = torch.ops.aiter.moe_forward.default(buf12, buf10, 'language_model.model.layers.1.block_sparse_moe.experts')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_device.py", line 109, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/_ops.py", line 819, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 2367, in moe_forward
+    return self.forward_impl(hidden_states, router_logits)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 3788, in forward_impl
+    final_hidden_states = self.quant_method.apply(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 213, in wrapped
+    return record_wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/utils/decorators.py", line 87, in _wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_ops/moe.py", line 1300, in apply
+    routing_data, gather_idx, scatter_idx = routing(
+                                            ^^^^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/routing.py", line 388, in routing
+    expt_scal, expt_indx, bitmatrix = topk(
+                                      ^^^^^
+  File "/app/aiter-test/aiter/ops/triton/moe/moe_routing/topk.py", line 206, in topk
+    assert score_mode in (
+           ^^^^^^^^^^^^^^^
+AssertionError: score_mode must be 'softmax' or 'sqrtsoftplus', got 'sigmoid'
+[atom 18:21:22] AsyncIOProcManager(ModelRunner): [ModelRunner1/8] proc died unexpectedly (exitcode=1), shutting down.
+[atom 18:21:22] AsyncIOProcManager(ModelRunner): shutdown all runners...
+[atom 18:21:24] AsyncIOProcManager(ModelRunner): All runners are shutdown.
+[atom 18:21:24] Engine Core: load model runner failed
+[atom 18:21:24] Engine Core Mgr: Failed to initialize all EngineCores, cleaning up: Engine Core Mgr: Received unexpected SHUTDOWN signal from DP rank 0 during initialization
+[atom 18:21:24] Engine Core Mgr: Shutting down all 1 EngineCores
+[atom 18:21:25] Engine Core Mgr: All EngineCores shut down
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/app/ATOM/atom/entrypoints/openai_server.py", line 22, in <module>
+    main()
+  File "/app/ATOM/atom/entrypoints/openai/api_server.py", line 1795, in main
+    engine = engine_args.create_engine(tokenizer=tokenizer)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/arg_utils.py", line 529, in create_engine
+    return LLMEngine(self.model, tokenizer=tokenizer, **self._get_engine_kwargs())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/llm_engine.py", line 131, in __init__
+    self.core_mgr = CoreManager(config)
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/engine_core_mgr.py", line 153, in __init__
+    self._wait_for_all_ready_signals()
+  File "/app/ATOM/atom/model_engine/engine_core_mgr.py", line 220, in _wait_for_all_ready_signals
+    raise RuntimeError(
+RuntimeError: Engine Core Mgr: Received unexpected SHUTDOWN signal from DP rank 0 during initialization

@@ -1,0 +1,14 @@
+[2026-08-20T13:12:17+00:00] Kimi-K3 max-num-seqs=256 experiment start (out: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_isl4096_20260820_131217)
+[2026-08-20T13:12:17+00:00] image=rocm/atom-dev:latest conc='64 128 256' ISL/OSL=4096/1024
+[2026-08-20T13:12:17+00:00] GPUs idle, no foreign server, model + image present
+[2026-08-20T13:12:17+00:00] starting server (max-num-seqs=256) on port 8013
+[2026-08-20T13:12:17+00:00] waiting for server (1.5 TB load, up to 40 min)
+[2026-08-20T13:14:22+00:00]   still loading (120s)
+[2026-08-20T13:16:28+00:00]   still loading (240s)
+[2026-08-20T13:16:37+00:00] server READY
+[2026-08-20T13:57:45+00:00] stopping server
+ISL4096_STATUS=ok
+ISL4096_SWEEP=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_isl4096_20260820_131217
+[2026-08-20T13:58:21+00:00] generating results/kimi-k3-isl4096.md
+[2026-08-20T13:58:21+00:00] analyze rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/results/kimi-k3-isl4096.md
+[2026-08-20T13:58:21+00:00] MAX-NUM-SEQS EXPERIMENT DONE

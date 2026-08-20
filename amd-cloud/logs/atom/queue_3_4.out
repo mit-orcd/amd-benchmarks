@@ -1,0 +1,15 @@
+[2026-08-19T22:14:46+00:00] queue start — will run #3 (ISL=4096) then #4 (repeats) after #1 completes
+[2026-08-19T22:14:47+00:00] waiting for run_kimi_512.sh (#1) to finish...
+[2026-08-19T22:44:49+00:00]   still waiting for #1 (1800s)
+[2026-08-19T23:14:51+00:00]   still waiting for #1 (3600s)
+[2026-08-19T23:44:53+00:00]   still waiting for #1 (5400s)
+[2026-08-20T00:14:55+00:00]   still waiting for #1 (7200s)
+[2026-08-20T00:44:57+00:00]   still waiting for #1 (9000s)
+[2026-08-20T01:14:59+00:00]   still waiting for #1 (10800s)
+[2026-08-20T01:45:01+00:00]   still waiting for #1 (12600s)
+[2026-08-20T02:15:03+00:00]   still waiting for #1 (14400s)
+[2026-08-20T02:45:05+00:00]   still waiting for #1 (16200s)
+[2026-08-20T03:15:07+00:00]   still waiting for #1 (18000s)
+[2026-08-20T03:45:09+00:00]   still waiting for #1 (19800s)
+[2026-08-20T04:15:11+00:00]   still waiting for #1 (21600s)
+[2026-08-20T04:16:12+00:00] ABORT: #1 still running after 6 h

@@ -1,0 +1,5 @@
+Kimi-K3 EP-enabled sweep (MAD image) 20260820_042519
+
+  conc    out_tok/s  ttft_ms_med  tpot_ms_med
+    64        977.5        287.7        56.72
+   128       1633.7        392.0        77.50

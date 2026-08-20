@@ -1,0 +1,16 @@
+[2026-08-19T21:18:57+00:00] Kimi-K3 max-num-seqs=512 experiment start (out: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_512_20260819_211857)
+[2026-08-19T21:18:57+00:00] image=rocm/atom-dev:latest conc='64 128 256 512' ISL/OSL=1024/1024
+[2026-08-19T21:18:57+00:00] GPUs idle, no foreign server, model + image present
+[2026-08-19T21:18:57+00:00] starting server (max-num-seqs=512) on port 8012
+[2026-08-19T21:18:58+00:00] waiting for server (1.5 TB load, up to 40 min)
+[2026-08-19T21:21:02+00:00]   still loading (120s)
+[2026-08-19T21:23:08+00:00]   still loading (240s)
+[2026-08-19T21:23:13+00:00] server READY
+[2026-08-19T22:23:55+00:00] stopping server
+MAXSEQS512_STATUS=ok
+MAXSEQS512_SWEEP=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_512_20260819_211857
+[2026-08-19T22:24:31+00:00] generating results/kimi-k3-maxseqs512.md
+[2026-08-19T22:24:32+00:00] analyze rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/results/kimi-k3-maxseqs512.md
+[2026-08-19T22:24:32+00:00] updating results/kimi-k3-improve.md with Run D
+[2026-08-19T22:24:32+00:00] improve-file update rc=0
+[2026-08-19T22:24:32+00:00] MAX-NUM-SEQS 512 EXPERIMENT DONE

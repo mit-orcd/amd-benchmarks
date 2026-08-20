@@ -1,0 +1,163 @@
+[aiter] import [module_aiter_core] under /app/aiter-test/aiter/jit/module_aiter_core.so
+[atom 18:08:01] Raised RLIMIT_NOFILE soft limit 1024 -> 65535 (hard=524288)
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Namespace(backend='vllm', base_url='http://localhost:8022', host='127.0.0.1', port=8000, endpoint='/v1/completions', dataset_name='random', dataset_path=None, max_concurrency=8, model='/model', tokenizer=None, best_of=1, use_beam_search=False, num_prompts=40, logprobs=None, request_rate=inf, burstiness=1.0, seed=0, trust_remote_code=True, disable_tqdm=False, profile=False, save_result=True, save_detailed=False, metadata=None, result_dir='/out', result_filename='c8.json', ignore_eos=True, percentile_metrics='ttft,tpot,itl,e2el', metric_percentiles='99', goodput=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, random_input_len=1024, random_output_len=1024, random_range_ratio=0.8, random_prefix_len=0, use_chat_template=False, hf_subset=None, hf_split=None, hf_output_len=None, tokenizer_mode='auto', served_model_name=None, lora_modules=None, num_warmups=1)
+-------------------  Input/Output Length Statistics  -------------------
+ input_lens : min=828   max=1016  mean=926.70   avg_token_mismatch=0.00  
+ output_lens: min=820   max=1022  mean=917.73  
+------------------------------------------------------------------------ 
+
+Starting initial single prompt test run...
+Warming up with 1 requests...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:21<00:00, 21.03s/it]100%|██████████| 1/1 [00:21<00:00, 21.03s/it]
+Warmup completed.
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 8
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:42<27:39, 42.56s/it]  5%|▌         | 2/40 [00:43<11:24, 18.00s/it] 12%|█▎        | 5/40 [00:46<03:24,  5.84s/it] 15%|█▌        | 6/40 [00:48<02:43,  4.81s/it] 18%|█▊        | 7/40 [00:48<02:00,  3.64s/it] 20%|██        | 8/40 [00:49<01:28,  2.77s/it] 22%|██▎       | 9/40 [01:10<04:07,  7.99s/it] 25%|██▌       | 10/40 [01:10<02:56,  5.87s/it] 28%|██▊       | 11/40 [01:12<02:10,  4.49s/it] 30%|███       | 12/40 [01:12<01:34,  3.38s/it] 32%|███▎      | 13/40 [01:13<01:08,  2.55s/it] 35%|███▌      | 14/40 [01:13<00:49,  1.91s/it] 38%|███▊      | 15/40 [01:16<00:50,  2.02s/it] 40%|████      | 16/40 [01:16<00:39,  1.64s/it] 42%|████▎     | 17/40 [01:37<02:48,  7.31s/it] 45%|████▌     | 18/40 [01:37<01:54,  5.22s/it] 48%|████▊     | 19/40 [01:38<01:20,  3.84s/it] 50%|█████     | 20/40 [01:38<00:56,  2.83s/it] 52%|█████▎    | 21/40 [01:40<00:46,  2.46s/it] 55%|█████▌    | 22/40 [01:41<00:35,  1.96s/it] 57%|█████▊    | 23/40 [01:42<00:30,  1.79s/it] 60%|██████    | 24/40 [01:44<00:30,  1.92s/it] 62%|██████▎   | 25/40 [02:03<01:41,  6.79s/it] 65%|██████▌   | 26/40 [02:03<01:09,  4.95s/it] 68%|██████▊   | 27/40 [02:05<00:50,  3.89s/it] 70%|███████   | 28/40 [02:05<00:33,  2.83s/it] 72%|███████▎  | 29/40 [02:08<00:30,  2.79s/it] 75%|███████▌  | 30/40 [02:08<00:20,  2.07s/it] 78%|███████▊  | 31/40 [02:08<00:13,  1.53s/it] 80%|████████  | 32/40 [02:13<00:20,  2.59s/it] 82%|████████▎ | 33/40 [02:28<00:43,  6.21s/it] 85%|████████▌ | 34/40 [02:28<00:26,  4.46s/it] 88%|████████▊ | 35/40 [02:31<00:19,  3.92s/it] 90%|█████████ | 36/40 [02:31<00:11,  2.79s/it] 92%|█████████▎| 37/40 [02:32<00:06,  2.09s/it] 95%|█████████▌| 38/40 [02:33<00:03,  1.96s/it] 98%|█████████▊| 39/40 [02:36<00:02,  2.04s/it]100%|██████████| 40/40 [02:38<00:00,  2.15s/it]100%|██████████| 40/40 [02:38<00:00,  3.96s/it]
+Starting main benchmark run...
+============ Serving Benchmark Result ============
+Successful requests:                     40        
+Benchmark duration (s):                  158.44    
+Total input tokens:                      37068     
+Total generated tokens:                  36709     
+Request throughput (req/s):              0.25      
+Output token throughput (tok/s):         231.68    
+Total Token throughput (tok/s):          465.63    
+Concurrency:                             7.71      
+---------------Time to First Token----------------
+Mean TTFT (ms):                          4179.72   
+Median TTFT (ms):                        256.27    
+P99 TTFT (ms):                           19791.12  
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          28.73     
+Median TPOT (ms):                        28.81     
+P99 TPOT (ms):                           29.94     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           28.71     
+Median ITL (ms):                         27.51     
+P99 ITL (ms):                            40.03     
+----------------End-to-end Latency----------------
+Mean E2EL (ms):                          30527.23  
+Median E2EL (ms):                        27706.74  
+P99 E2EL (ms):                           48921.42  
+==================================================

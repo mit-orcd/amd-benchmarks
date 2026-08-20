@@ -1,0 +1,5 @@
+[2026-08-20T19:01:36+00:00] Megatron-LM reference reproduction (Dell-matched) start
+[2026-08-20T19:01:36+00:00] image=rocm/megatron-lm:v26.1 N=8 MBS=4 GBS=32 seq=4096 L=40 H=6144 OVERLAP=0 GAF=1
+[2026-08-20T19:01:37+00:00] GPUs idle
+[2026-08-20T19:01:37+00:00] optional flags: (none)
+[2026-08-20T19:01:37+00:00] launching (timeout 3600s)

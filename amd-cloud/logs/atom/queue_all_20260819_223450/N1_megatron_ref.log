@@ -1,0 +1,38 @@
+[2026-08-20T07:45:32+00:00] Megatron-LM reference reproduction (Dell-matched) start
+[2026-08-20T07:45:32+00:00] image=rocm/megatron-lm:v26.1 N=8 MBS=4 GBS=32 seq=4096 L=40 H=6144
+[2026-08-20T07:45:32+00:00] GPUs idle
+[2026-08-20T07:45:32+00:00] launching (timeout 3600s)
+[2026-08-20T07:51:56+00:00] run rc=0 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/megatron-ref/run_20260820_074532/megatron_ref_N8.log
+[2026-08-20T07:51:56+00:00] parsed TF/s/GPU = none
+[2026-08-20T07:51:56+00:00] FAILED or no throughput parsed — not updating the report.
+[2026-08-20T07:51:56+00:00] last 30 lines:
+ [2026-08-20 07:51:39] iteration       48/      50 | consumed samples:         1536 | elapsed time per iteration (ms): 6263.3 | mem usages: 0.6888 | learning rate: 3.000000E-05 | global batch size:    32 | lm loss: 8.088766E+00 | loss scale: 1.0 | grad norm: 0.169 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-08-20 07:51:45] iteration       49/      50 | consumed samples:         1568 | elapsed time per iteration (ms): 6256.3 | mem usages: 0.6888 | learning rate: 3.000000E-05 | global batch size:    32 | lm loss: 8.145447E+00 | loss scale: 1.0 | grad norm: 0.114 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-08-20 07:51:52] iteration       50/      50 | consumed samples:         1600 | elapsed time per iteration (ms): 6262.7 | mem usages: 0.6888 | learning rate: 3.000000E-05 | global batch size:    32 | lm loss: 8.082318E+00 | loss scale: 1.0 | grad norm: 0.114 | number of skipped iterations:   0 | number of nan iterations:   0 |
+[after training is done] datetime: 2026-08-20 07:51:52 
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode disabled
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode disabled
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode disabled
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode disabled
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode disabled
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode disabled
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode disabled
+WARNING:megatron.core.rerun_state_machine:Setting RerunStateMachine mode disabled
+Evaluating on 3200 samples
+Evaluating iter 1/100
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)

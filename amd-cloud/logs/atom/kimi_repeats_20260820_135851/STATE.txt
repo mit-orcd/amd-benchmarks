@@ -1,0 +1,19 @@
+[2026-08-20T13:58:51+00:00] Kimi-K3 repeatability run start (reps=3, c=64) out: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_repeats_20260820_135851
+[2026-08-20T13:58:52+00:00] GPUs idle, model present
+[2026-08-20T13:58:52+00:00] ===== config A_original : rocm/atom-dev:latest =====
+[2026-08-20T13:58:52+00:00] A_original: waiting for server
+[2026-08-20T14:02:00+00:00]   A_original still loading (180s)
+[2026-08-20T14:03:09+00:00] A_original: server READY
+[2026-08-20T14:11:29+00:00]   A_original rep1: 1347.2 tok/s completed=640
+[2026-08-20T14:19:04+00:00]   A_original rep2: 1375.4 tok/s completed=640
+[2026-08-20T14:26:40+00:00]   A_original rep3: 1372.8 tok/s completed=640
+[2026-08-20T14:27:16+00:00] A_original: done
+[2026-08-20T14:27:16+00:00] ===== config B_mad : rocm/atom-dev:rocm7.2.4_ubuntu24.04_py3.12_pytorch2.10.0_20260727_kimi_k3 =====
+[2026-08-20T14:27:16+00:00] SKIP B_mad: image absent
+[2026-08-20T14:27:16+00:00] config B incomplete
+[2026-08-20T14:27:16+00:00] collected 3 result files
+REPEATS_STATUS=ok
+REPEATS_SWEEP=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_repeats_20260820_135851
+[2026-08-20T14:27:16+00:00] generating results/kimi-k3-repeats.md
+[2026-08-20T14:27:17+00:00] analyze rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/results/kimi-k3-repeats.md
+[2026-08-20T14:27:17+00:00] REPEATS RUN DONE

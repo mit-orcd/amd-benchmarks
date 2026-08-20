@@ -1,0 +1,32 @@
+[2026-08-20T14:27:55+00:00] matched-cap EP A/B start (cap=256, conc='64 128 256') out: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_ep_matched_20260820_142755
+[2026-08-20T14:27:55+00:00] MAD image absent (K5 removed it) — need to re-pull
+[2026-08-20T14:27:55+00:00] free on / : 62 GB (need ~80 GB)
+[2026-08-20T14:27:55+00:00] removing rocm/atom-dev:latest — no remaining queued job needs it, re-pullable in ~3 min
+[2026-08-20T14:28:05+00:00]   removed
+[2026-08-20T14:28:06+00:00] free on / : 122 GB
+[2026-08-20T14:28:06+00:00] pulling rocm/atom-dev:rocm7.2.4_ubuntu24.04_py3.12_pytorch2.10.0_20260727_kimi_k3
+[2026-08-20T14:31:40+00:00] pull ok
+[2026-08-20T14:31:40+00:00] ===== arm tp_only (cap=256, extra='none') =====
+[2026-08-20T14:31:46+00:00] tp_only: waiting for server
+[2026-08-20T14:37:03+00:00]   tp_only still loading (300s)
+[2026-08-20T14:42:21+00:00]   tp_only still loading (600s)
+[2026-08-20T14:44:11+00:00] tp_only: server READY
+[2026-08-20T14:54:21+00:00]   tp_only c=64: 1145.7 tok/s ttft=281ms tpot=53.17ms
+[2026-08-20T15:06:12+00:00]   tp_only c=128: 1741.6 tok/s ttft=363ms tpot=72.85ms
+[2026-08-20T15:23:00+00:00]   tp_only c=256: 2433.3 tok/s ttft=457ms tpot=104.78ms
+[2026-08-20T15:23:41+00:00] tp_only: done
+[2026-08-20T15:23:41+00:00] ===== arm ep (cap=256, extra='--enable-expert-parallel') =====
+[2026-08-20T15:23:41+00:00] ep: waiting for server
+[2026-08-20T15:28:58+00:00]   ep still loading (300s)
+[2026-08-20T15:33:39+00:00] ep: server READY
+[2026-08-20T15:45:03+00:00]   ep c=64: 976.6 tok/s ttft=290ms tpot=56.85ms
+[2026-08-20T15:57:39+00:00]   ep c=128: 1634.6 tok/s ttft=386ms tpot=77.43ms
+[2026-08-20T16:15:27+00:00]   ep c=256: 2294.7 tok/s ttft=484ms tpot=110.85ms
+[2026-08-20T16:16:08+00:00] ep: done
+[2026-08-20T16:16:08+00:00] collected tp_only=3 ep=3 result files
+EPM_TP_N=3
+EPM_EP_N=3
+EPM_STATUS=ok
+[2026-08-20T16:16:08+00:00] generating /home/amd/shaohao/amd-benchmarks/amd-cloud/results/kimi-k3-ep-matched.md
+[2026-08-20T16:16:08+00:00] analyze rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/results/kimi-k3-ep-matched.md
+[2026-08-20T16:16:08+00:00] MATCHED EP A/B DONE

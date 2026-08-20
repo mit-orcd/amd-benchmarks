@@ -1,0 +1,13 @@
+[2026-08-20T04:25:19+00:00] EP retest on MAD image start (out: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_ep_mad_20260820_042519)
+[2026-08-20T04:25:19+00:00] starting server with --enable-expert-parallel (MAD env + MAD image)
+[2026-08-20T04:25:19+00:00] waiting for server (EP failure, if any, appears at load)
+[2026-08-20T04:28:29+00:00]   still loading (180s)
+[2026-08-20T04:31:40+00:00]   still loading (360s)
+[2026-08-20T04:34:50+00:00]   still loading (540s)
+[2026-08-20T04:37:41+00:00] === EP WORKS ON THE MAD IMAGE — this contradicts the :latest result ===
+Kimi-K3 EP-enabled sweep (MAD image) 20260820_042519
+
+  conc    out_tok/s  ttft_ms_med  tpot_ms_med
+    64        977.5        287.7        56.72
+   128       1633.7        392.0        77.50
+[2026-08-20T05:02:13+00:00] EP MAD RETEST DONE

@@ -1,0 +1,6 @@
+[2026-08-20T17:49:50+00:00] megatron bisect queue start
+[2026-08-20T17:50:58+00:00] waiting for run_single_stream.sh (Kimi priority)...
+[2026-08-20T18:23:33+00:00]   still waiting (1800s)
+[2026-08-20T18:53:36+00:00]   still waiting (3600s)
+[2026-08-20T19:00:36+00:00] single-stream finished after 4020s
+[2026-08-20T19:01:36+00:00] ===== megatron attempt A_no_overlap (OVERLAP=0 GAF=1) =====

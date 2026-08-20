@@ -1,0 +1,11 @@
+Kimi-K3 max-num-seqs=1024 sweep 20260820_050243
+image   : rocm/atom-dev:latest
+model   : /mnt/scratch/shaohao/models/Kimi-K3
+port    : 8016
+ISL/OSL : 1024/1024
+conc    : 256 512 1024
+
+  conc        req/s    out_tok/s  ttft_ms_med  tpot_ms_med
+   256         2.20       2027.6       8564.0       108.42  rc=0 1242s completed=2560
+   512         2.11       1945.7     118135.8       114.45  rc=0 2470s completed=5120
+  1024         2.08       1919.1     366510.8       116.00  rc=0 4979s completed=10240

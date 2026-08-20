@@ -1,0 +1,69 @@
+[2026-08-19T22:34:50+00:00] master queue start — ALL Kimi-K3 stages first, then non-Kimi
+[2026-08-19T22:34:50+00:00] waiting for run_queue_3_4.sh (holds #1, #3, #4)...
+[2026-08-19T23:04:52+00:00]   still waiting (1800s)
+[2026-08-19T23:34:54+00:00]   still waiting (3600s)
+[2026-08-20T00:04:56+00:00]   still waiting (5400s)
+[2026-08-20T00:34:58+00:00]   still waiting (7200s)
+[2026-08-20T01:05:00+00:00]   still waiting (9000s)
+[2026-08-20T01:35:02+00:00]   still waiting (10800s)
+[2026-08-20T02:05:05+00:00]   still waiting (12600s)
+[2026-08-20T02:35:07+00:00]   still waiting (14400s)
+[2026-08-20T03:05:09+00:00]   still waiting (16200s)
+[2026-08-20T03:35:11+00:00]   still waiting (18000s)
+[2026-08-20T04:05:13+00:00]   still waiting (19800s)
+[2026-08-20T04:16:14+00:00] prior queue finished after 20460s
+[2026-08-20T04:16:44+00:00] ===== K1_profiling =====
+[2026-08-20T04:24:49+00:00] K1_profiling rc=0
+[2026-08-20T04:25:19+00:00] ===== K2_ep_mad =====
+[2026-08-20T05:02:13+00:00] K2_ep_mad rc=0
+[2026-08-20T05:02:43+00:00] ===== K3_maxseqs1024 =====
+[2026-08-20T07:32:25+00:00] K3_maxseqs1024 rc=0
+[2026-08-20T07:32:55+00:00] ===== K4_maxseqs2048 =====
+[2026-08-20T07:36:53+00:00] K4_maxseqs2048 rc=1
+[2026-08-20T07:32:55+00:00] Kimi-K3 max-num-seqs=2048 experiment start (out: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_2048_20260820_073255)
+[2026-08-20T07:32:55+00:00] image=rocm/atom-dev:latest conc='512 1024 2048' ISL/OSL=1024/1024
+[2026-08-20T07:32:55+00:00] GPUs idle, no foreign server, model + image present
+[2026-08-20T07:32:55+00:00] starting server (max-num-seqs=2048) on port 8018
+[2026-08-20T07:32:55+00:00] waiting for server (1.5 TB load, up to 40 min)
+[2026-08-20T07:35:00+00:00]   still loading (120s)
+[2026-08-20T07:36:53+00:00] ABORT: container exited during load. Last 40 lines:
+Error response from daemon: can not get logs from container which is dead or marked for removal
+[2026-08-20T07:37:23+00:00] ===== K5_ep_fresh =====
+[2026-08-20T07:45:02+00:00] K5_ep_fresh rc=1
+[2026-08-20T07:37:23+00:00] insufficient space — removing the MAD-pinned image to make room
+[2026-08-20T07:37:23+00:00]   (its results are already captured in kimi-k3-mad.md; the tag is re-pullable)
+[2026-08-20T07:37:33+00:00]   removed MAD image
+[2026-08-20T07:37:33+00:00] free on / : 122 GB
+[2026-08-20T07:37:34+00:00] pulling rocm/atom-dev:latest
+[2026-08-20T07:40:57+00:00] new :latest id = sha256:f86e2bb21d86c
+[2026-08-20T07:40:57+00:00] image HAS changed since the original EP test — retest is meaningful
+[2026-08-20T07:40:57+00:00] starting server with --enable-expert-parallel
+[2026-08-20T07:41:00+00:00] waiting (EP failure, if any, appears at load)
+[2026-08-20T07:44:09+00:00]   still loading (180s)
+[2026-08-20T07:45:02+00:00] === EP STILL NOT SUPPORTED on :latest ===
+Error response from daemon: can not get logs from container which is dead or marked for removal
+[2026-08-20T07:45:32+00:00] ### ALL KIMI-K3 WORK COMPLETE ###
+[2026-08-20T07:45:32+00:00] ===== N1_megatron_ref =====
+[2026-08-20T07:51:56+00:00] N1_megatron_ref rc=1
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)
+
+[AITER] /workspace/aiter/aiter/jit/build/libmha_fwd/blob/asm_fmha_fwd_v3_gfx942.cpp:141 fail to call hipModuleLaunchKernel(kernel_func, gdx, gdy, gdz, bdx, 1, 1, 0, s.stream_id_, NULL, reinterpret_cast<void**>(&config)) ---> [HIP error](invalid resource handle)
+[2026-08-20T07:52:26+00:00] ===== N2_bandwidth =====
+[2026-08-20T08:05:23+00:00] N2_bandwidth rc=0
+[2026-08-20T08:05:53+00:00] MASTER QUEUE DONE — all GPU work for this server is complete
+K1_profiling_RC=0
+K2_ep_mad_RC=0
+K3_maxseqs1024_RC=0
+K4_maxseqs2048_RC=1
+K5_ep_fresh_RC=1
+N1_megatron_ref_RC=1
+N2_bandwidth_RC=0

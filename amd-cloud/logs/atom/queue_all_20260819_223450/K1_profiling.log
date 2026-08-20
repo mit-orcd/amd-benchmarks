@@ -1,0 +1,12 @@
+[2026-08-20T04:16:44+00:00] Kimi-K3 profiling run start (c=256) out: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_profile_20260820_041644 traces: /mnt/scratch/shaohao/traces/kimi_20260820_041644
+[2026-08-20T04:16:44+00:00] starting server with --torch-profiler-dir
+[2026-08-20T04:16:44+00:00] waiting for server
+[2026-08-20T04:19:52+00:00]   still loading (180s)
+[2026-08-20T04:21:01+00:00] server READY
+[2026-08-20T04:21:01+00:00] running profiled benchmark (c=256, short)
+[2026-08-20T04:23:36+00:00] profiled bench rc=0
+[2026-08-20T04:23:36+00:00] stopping server
+[2026-08-20T04:24:47+00:00] traces captured: 8 file(s), 91M in /mnt/scratch/shaohao/traces/kimi_20260820_041644
+[2026-08-20T04:24:47+00:00] summarising trace with analyze_profile.py
+[2026-08-20T04:24:49+00:00] analyze rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/results/kimi-k3-profile.md
+[2026-08-20T04:24:49+00:00] PROFILING RUN DONE

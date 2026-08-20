@@ -1,0 +1,41 @@
+[2026-08-20T17:47:33+00:00] single-stream experiment start (conc='1 2 4 8', arms='K1_mad_default K2_triton_moe K3_aiter_attn K4_grouped_gemm') out: /home/amd/shaohao/amd-benchmarks/amd-cloud/logs/atom/kimi_single_stream_20260820_174733
+[2026-08-20T17:47:33+00:00] ===== arm K1_mad_default =====
+[2026-08-20T17:47:34+00:00] K1_mad_default: waiting for server
+[2026-08-20T17:52:51+00:00]   K1_mad_default still loading (300s)
+[2026-08-20T17:58:07+00:00]   K1_mad_default still loading (600s)
+[2026-08-20T17:58:26+00:00] K1_mad_default: server READY
+[2026-08-20T18:02:53+00:00]   K1_mad_default c=1: 24.44 ms TPOT -> 40.9 tok/s per request (aggregate 40.5)
+[2026-08-20T18:05:20+00:00]   K1_mad_default c=2: 25.21 ms TPOT -> 39.7 tok/s per request (aggregate 77.2)
+[2026-08-20T18:07:57+00:00]   K1_mad_default c=4: 26.53 ms TPOT -> 37.7 tok/s per request (aggregate 144.2)
+[2026-08-20T18:11:01+00:00]   K1_mad_default c=8: 28.81 ms TPOT -> 34.7 tok/s per request (aggregate 231.7)
+[2026-08-20T18:11:43+00:00] K1_mad_default: done
+[2026-08-20T18:11:43+00:00] ===== arm K2_triton_moe =====
+[2026-08-20T18:11:43+00:00] K2_triton_moe: waiting for server
+[2026-08-20T18:17:00+00:00]   K2_triton_moe still loading (300s)
+[2026-08-20T18:21:28+00:00] K2_triton_moe: container died during load (this arm's kernel set may be unsupported)
+Error response from daemon: No such container: atom-kimi-ss
+[2026-08-20T18:21:28+00:00] arm K2_triton_moe incomplete — continuing
+[2026-08-20T18:21:28+00:00] ===== arm K3_aiter_attn =====
+[2026-08-20T18:21:28+00:00] K3_aiter_attn: waiting for server
+[2026-08-20T18:26:43+00:00]   K3_aiter_attn still loading (300s)
+[2026-08-20T18:27:43+00:00] K3_aiter_attn: server READY
+[2026-08-20T18:32:12+00:00]   K3_aiter_attn c=1: 24.49 ms TPOT -> 40.8 tok/s per request (aggregate 40.5)
+[2026-08-20T18:34:38+00:00]   K3_aiter_attn c=2: 25.14 ms TPOT -> 39.8 tok/s per request (aggregate 77.4)
+[2026-08-20T18:37:15+00:00]   K3_aiter_attn c=4: 26.49 ms TPOT -> 37.7 tok/s per request (aggregate 144.6)
+[2026-08-20T18:40:19+00:00]   K3_aiter_attn c=8: 28.73 ms TPOT -> 34.8 tok/s per request (aggregate 231.8)
+[2026-08-20T18:41:01+00:00] K3_aiter_attn: done
+[2026-08-20T18:41:01+00:00] ===== arm K4_grouped_gemm =====
+[2026-08-20T18:41:01+00:00] K4_grouped_gemm: waiting for server
+[2026-08-20T18:46:15+00:00]   K4_grouped_gemm still loading (300s)
+[2026-08-20T18:46:57+00:00] K4_grouped_gemm: server READY
+[2026-08-20T18:51:20+00:00]   K4_grouped_gemm c=1: 23.78 ms TPOT -> 42.1 tok/s per request (aggregate 41.7)
+[2026-08-20T18:53:43+00:00]   K4_grouped_gemm c=2: 24.48 ms TPOT -> 40.8 tok/s per request (aggregate 79.4)
+[2026-08-20T18:56:16+00:00]   K4_grouped_gemm c=4: 25.85 ms TPOT -> 38.7 tok/s per request (aggregate 148.2)
+[2026-08-20T18:59:17+00:00]   K4_grouped_gemm c=8: 28.19 ms TPOT -> 35.5 tok/s per request (aggregate 235.9)
+[2026-08-20T18:59:58+00:00] K4_grouped_gemm: done
+[2026-08-20T18:59:58+00:00] collected 12 result files across arms
+[2026-08-20T18:59:58+00:00] generating results/kimi-k3-single-stream.md
+[2026-08-20T18:59:58+00:00] analyze rc=0 -> /home/amd/shaohao/amd-benchmarks/amd-cloud/results/kimi-k3-single-stream.md
+[2026-08-20T18:59:58+00:00] folding result into results/kimi-k3-improve.md
+[2026-08-20T18:59:58+00:00] improve-file update rc=0 -> results/kimi-k3-improve.md
+[2026-08-20T18:59:58+00:00] SINGLE-STREAM EXPERIMENT DONE

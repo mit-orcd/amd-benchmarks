@@ -4,3 +4,32 @@
 [2026-08-20T18:53:36+00:00]   still waiting (3600s)
 [2026-08-20T19:00:36+00:00] single-stream finished after 4020s
 [2026-08-20T19:01:36+00:00] ===== megatron attempt A_no_overlap (OVERLAP=0 GAF=1) =====
+[2026-08-20T19:05:09+00:00] A_no_overlap rc=1 parsed_TFLOPS=none
+  error_file: <N/A>
+  traceback : Signal 9 (SIGKILL) received by PID 82
+----------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-08-20_19:04:37
+  host      : mi355-gpu-33
+  rank      : 2 (local_rank: 2)
+  exitcode  : -11 (pid: 77)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 77
+====================================================
+[2026-08-20T19:06:10+00:00] ===== megatron attempt B_no_overlap_no_gaf (OVERLAP=0 GAF=0) =====
+[2026-08-20T19:10:40+00:00] B_no_overlap_no_gaf rc=1 parsed_TFLOPS=none
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 82
+----------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-08-20_19:09:06
+  host      : mi355-gpu-33
+  rank      : 3 (local_rank: 3)
+  exitcode  : -11 (pid: 78)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 78
+====================================================
+[2026-08-20T19:10:40+00:00] MEGATRON BISECT DONE — both attempts failed; megatron-ref remains unmeasured on this host
+[2026-08-20T19:10:40+00:00] PRIMUS_REPORT.md 1.2 therefore still carries external reference data only.

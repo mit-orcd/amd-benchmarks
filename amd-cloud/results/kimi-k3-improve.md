@@ -196,26 +196,42 @@ traffic grows **+45%** (116 → 169 GB) but step time grows **+99%** (51.7 → 1
 extra time is going somewhere that scales with batch while weight reads plateau — attention,
 expert routing, and collectives.
 
-**The serialization suspects, in order of suspicion:**
+**Where the time actually goes — MEASURED** (mean of 8 ranks, exclusive host time; full
+method and caveats in `kimi-k3-profile.md`):
 
-- **186 all-reduces per token** (2 × 93 layers) at 14 KB–896 KB each. These are far below the
-  size where bandwidth matters, so each costs a round-trip plus a synchronization barrier.
-  The "~1% XGMI" is the **signature** of a latency-bound collective, not evidence of spare
-  capacity — see *Communication is not a bandwidth factor* below, which is precise about
-  that distinction.
-- **69 of 93 layers are KDA** linear attention, carrying recurrent state with a sequential
-  dependency from one step to the next and low arithmetic intensity.
-- **Kernel launch and scheduler overhead**, which becomes a meaningful fraction when
-  per-kernel work is small.
+| Bucket | Share |
+|---|---:|
+| **tensor copy/reshape** (`aten::copy_`, 23,447 calls @ ~0.42 ms) | **41.3%** |
+| **KDA linear attention** (`ChunkKDAFunction` @ ~7.8 ms/call) | **38.6%** |
+| MLA full attention | 6.6% |
+| GEMM | 4.9% |
+| other | 4.9% |
+| norm/act/quant | 1.5% |
+| MoE routing/experts | 1.3% |
+| **collectives** | **0.8%** |
 
-**This ranking is inference, not measurement — and the run that was supposed to settle it
-failed.** The profiling step (next-step #2) captured 8 traces but the analyzer found no GPU
-kernel events in them (702,510 events parsed, none carrying a GPU kernel category — most
-likely a kineto category-name mismatch, not an empty trace). See `kimi-k3-profile.md`. The
-95 MB of raw traces are retained at `/mnt/scratch/shaohao/traces/kimi_20260820_041644`, so
-re-parsing them costs **no GPU time**. Until that is done, the split between collectives, KDA
-and launch overhead is unresolved, and no kernel-level optimization should be chosen on the
-strength of the ordering above.
+**This corrected an earlier ranking in this file, which was wrong.** The 186 all-reduces were
+listed here as the leading suspect on the reasoning that ~1% XGMI utilization is the signature
+of a latency-bound collective. Measured, **collectives are 0.8% — the smallest bucket**. The
+low utilization simply means they are cheap. Two independent lines of evidence agree:
+
+- **The CPU-side breakdown** above, stable within ±0.5 pp across all 8 ranks.
+- **Tail latency**: TPOT p99/median stays between **1.00 and 1.11** from c=1 to c=512. If 186
+  barriers per token drove step time, decode would be tail-sensitive — one straggler rank on
+  any barrier stretches that step. It is metronomic instead. (TTFT p99/median *does* explode,
+  1.2 → 49, but that is admission and prefill scheduling, not decode.)
+
+**What actually dominates is the linear-attention path and the tensor traffic around it —
+~80% between them.** The `aten::copy_` volume is the most actionable single number here:
+~21 copies per KDA call looks like layout conversion around the `fla` KDA integration rather
+than anything the model requires.
+
+**Caveat that limits all of this.** The traces contain **no GPU kernel events at all** — only
+`cpu_op` — so this is host time, not kernel time. For fully async ops that is launch overhead;
+it is strong evidence only where per-call averages are far too large to be launch overhead,
+as with `ChunkKDAFunction` at ~7.8 ms. It is also not a kineto category-name mismatch as
+earlier supposed: GPU capture was simply never enabled, and **kernel-level timing is
+unrecoverable from these files**. A future profiling run must enable GPU activity explicitly.
 
 ### Why HBM traffic is so large: the MoE batching mechanism
 
@@ -242,10 +258,12 @@ With TP=8 and EP off, XGMI carries **only activation all-reduces**: 2 per layer 
 537 GB/s ceiling. Nothing else crosses the interconnect — weights are resident, KV is
 replicated, gradients don't exist in inference, and there is no expert all-to-all.
 
-One caveat against reading "~2% utilized" as "free": each call is 14 KB–896 KB, far below the
-16 MiB–8 GiB range Part B's rccl-tests swept, so these collectives are **latency-dominated,
-not bandwidth-dominated**. With 186 serialized calls per step, realistic per-call latency puts
-their true cost at several percent of step time. Separately, this settles the Part B question:
+A caveat used to sit here arguing that "~2% utilized" hides a large latency cost: each call is
+14 KB–896 KB, far below the 16 MiB–8 GiB range Part B swept, so the collectives are certainly
+latency- rather than bandwidth-dominated. **But measurement showed the total is small anyway
+— 0.8% of host step time** (see §3). The calls are latency-dominated *and* cheap; low
+utilization here really does mean low cost. The general warning still stands — utilization is
+not a cost estimate — it just does not bite in this particular case. Separately, this settles the Part B question:
 the N=5/6/7 RCCL cliff is irrelevant here, since TP=8 is a power-of-2 arity that never
 triggers it.
 
@@ -332,8 +350,9 @@ Pushing toward 90% is not a realistic target for this access pattern at any batc
 back.** Nothing is above ~30% — compute ~1–2%, XGMI ~1–2%, HBM ~20–28% — which means the
 binding constraint is **latency and serialization, not bandwidth** (§3, *The bottleneck is
 latency, not bandwidth*). Raising HBM% would require shrinking *non-weight* step time — the
-186 serialized all-reduces, the 69 KDA layers' sequential state updates, kernel launch
-overhead — so that weight reads become a larger share of a shorter step. That is an
+tensor copies and KDA attention that measurement showed dominate it (41.3% and 38.6% of host
+step time; the collectives are only 0.8%) — so that weight reads become a larger share of a
+shorter step. That is an
 ATOM/AITER kernel question, not a configuration one, and the profiling run meant to identify
 which of those dominates did not produce usable kernel data (see §3). Re-parsing the retained
 traces is the cheapest next move, and it costs no GPU time.

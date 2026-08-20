@@ -1,7 +1,8 @@
-W0820 19:01:40.991000 7 torch/distributed/run.py:853] 
-W0820 19:01:40.991000 7 torch/distributed/run.py:853] *****************************************
-W0820 19:01:40.991000 7 torch/distributed/run.py:853] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0820 19:01:40.991000 7 torch/distributed/run.py:853] *****************************************
+W0820 19:06:14.327000 7 torch/distributed/run.py:853] 
+W0820 19:06:14.327000 7 torch/distributed/run.py:853] *****************************************
+W0820 19:06:14.327000 7 torch/distributed/run.py:853] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0820 19:06:14.327000 7 torch/distributed/run.py:853] *****************************************
+Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
 Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
 /workspace/Megatron-LM/megatron/core/rerun_state_machine.py:253: SyntaxWarning: assertion is always true, perhaps remove parentheses?
   assert (
@@ -9,7 +10,12 @@ Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
   assert (
 /workspace/Megatron-LM/megatron/core/rerun_state_machine.py:668: SyntaxWarning: assertion is always true, perhaps remove parentheses?
   assert (
-Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
+/workspace/Megatron-LM/megatron/core/rerun_state_machine.py:253: SyntaxWarning: assertion is always true, perhaps remove parentheses?
+  assert (
+/workspace/Megatron-LM/megatron/core/rerun_state_machine.py:264: SyntaxWarning: assertion is always true, perhaps remove parentheses?
+  assert (
+/workspace/Megatron-LM/megatron/core/rerun_state_machine.py:668: SyntaxWarning: assertion is always true, perhaps remove parentheses?
+  assert (
 Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
 Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
 Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
@@ -24,7 +30,7 @@ Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
 [aiter] waiting for baton release at /workspace/aiter/aiter/jit/build/lock_module_aiter_enum
 [aiter] waiting for baton release at /workspace/aiter/aiter/jit/build/lock_module_aiter_enum
 [aiter] waiting for baton release at /workspace/aiter/aiter/jit/build/lock_module_aiter_enum
-[aiter] [32mfinish build [module_aiter_enum], cost 9.0s [0m
+[aiter] [32mfinish build [module_aiter_enum], cost 8.8s [0m
 [aiter] import [module_aiter_enum] under /workspace/aiter/aiter/jit/module_aiter_enum.so
 [aiter] import [module_aiter_enum] under /workspace/aiter/aiter/jit/module_aiter_enum.so
 [aiter] import [module_aiter_enum] under /workspace/aiter/aiter/jit/module_aiter_enum.so
@@ -115,6 +121,7 @@ Supported flash-attn versions are >= 2.1.1, <= 2.8.1. Found flash-attn 2.8.3.
   self.m.impl(
 WARNING:megatron.core.rerun_state_machine:RerunStateMachine initialized in mode disabled
 WARNING:megatron.core.rerun_state_machine:RerunStateMachine initialized in mode disabled
+WARNING: one_logger package is required to enable e2e metrics tracking. please go to https://confluence.nvidia.com/display/MLWFO/Package+Repositories for details to install it
 WARNING:megatron.core.rerun_state_machine:RerunStateMachine initialized in mode disabled
 WARNING:megatron.core.rerun_state_machine:RerunStateMachine initialized in mode disabled
 WARNING:megatron.core.rerun_state_machine:RerunStateMachine initialized in mode disabled
@@ -256,7 +263,7 @@ using torch.bfloat16 for parameters ...
   fp8_wgrad ....................................... True
   fused_padded_mla_attention ...................... False
   global_batch_size ............................... 32
-  gradient_accumulation_fusion .................... True
+  gradient_accumulation_fusion .................... False
   group_query_attention ........................... True
   head_lr_mult .................................... 1.0
   hidden_dropout .................................. 0.1
@@ -532,32 +539,31 @@ using torch.bfloat16 for parameters ...
 > initializing torch distributed ...
 WARNING:megatron.core.rerun_state_machine:RerunStateMachine initialized in mode disabled
 WARNING:megatron.core.rerun_state_machine:RerunStateMachine initialized in mode disabled
-WARNING: one_logger package is required to enable e2e metrics tracking. please go to https://confluence.nvidia.com/display/MLWFO/Package+Repositories for details to install it
 WARNING:megatron.core.rerun_state_machine:RerunStateMachine initialized in mode disabled
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank [Gloo] Rank 5 is connected to 47 is connected to  peer ranks. Expected number of connected peer ranks is : 77 peer ranks. 
-Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7[Gloo] Rank  peer ranks. Expected number of connected peer ranks is : 7
+3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 [Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-[Gloo] Rank [Gloo] Rank 63 is connected to  is connected to 77 peer ranks.  peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 77
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank [Gloo] Rank 67 is connected to  is connected to 77 peer ranks.  peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 77
 
-[Gloo] Rank [Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
-4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
 > initialized tensor model parallel with size 1
 > initialized pipeline model parallel with size 1
 > setting random seeds to 1234 ...
@@ -565,22 +571,22 @@ Expected number of connected peer ranks is : 7
 make: Entering directory '/workspace/Megatron-LM/megatron/core/datasets'
 make: Nothing to be done for 'default'.
 make: Leaving directory '/workspace/Megatron-LM/megatron/core/datasets'
->>> done with dataset index builder. Compilation time: 0.038 seconds
+>>> done with dataset index builder. Compilation time: 0.039 seconds
 WARNING: constraints for invoking optimized fused softmax kernel are not met. We default back to unfused kernel invocations.
 > compiling and loading fused kernels ...
 /opt/venv/lib/python3.10/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
   return func(*args, **kwargs)
-[rank0]:[W820 19:02:02.013370340 ProcessGroupNCCL.cpp:5138] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+[rank0]:[W820 19:06:35.010503871 ProcessGroupNCCL.cpp:5138] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
 RCCL version : 2.27.7-HEAD:ca8ec1f
 HIP version  : 7.1.25424-4179531dcd
 ROCm version : 7.1.0.0-20-4179531dcd
 Hostname     : mi355-gpu-33
 Librccl path : /opt/venv/lib/python3.10/site-packages/torch/lib/librccl.so
->>> done with compiling and loading fused kernels. Compilation time: 21.722 seconds
-time to initialize megatron (seconds): 26.969
+>>> done with compiling and loading fused kernels. Compilation time: 18.146 seconds
+time to initialize megatron (seconds): 23.440
 /opt/venv/lib/python3.10/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
   return func(*args, **kwargs)
-[after megatron is initialized] datetime: 2026-08-20 19:02:27 
+[after megatron is initialized] datetime: 2026-08-20 19:06:57 
 building GPT model ...
 /workspace/Megatron-LM/megatron/core/models/gpt/gpt_layer_specs.py:78: UserWarning: The fp8 argument in "get_gpt_layer_with_transformer_engine_spec" has been deprecated and will be removed soon. Please update your code accordingly.
   warnings.warn(
@@ -615,7 +621,7 @@ building GPT model ...
 /opt/venv/lib/python3.10/site-packages/transformer_engine/pytorch/cpu_offload.py:673: DeprecationWarning: Offloading weights is deprecated. Using offload_weights=True does not have any effect.
   warnings.warn(
  > number of parameters on (tensor, pipeline) model parallel rank (0, 0): 16223016960
-[after model, optimizer, and learning rate scheduler are built] datetime: 2026-08-20 19:02:28 
+[after model, optimizer, and learning rate scheduler are built] datetime: 2026-08-20 19:06:57 
 > building train, validation, and test datasets ...
  > datasets target sizes (minimum size):
     train:      1600
@@ -626,13 +632,13 @@ WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes
 WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
 WARNING:megatron.core.datasets.gpt_dataset:Unable to save MockGPTDataset indexes because path_to_cache is None
 > finished creating GPT datasets ...
-[after dataloaders are built] datetime: 2026-08-20 19:02:29 
+[after dataloaders are built] datetime: 2026-08-20 19:06:58 
 done with setup ...
 training ...
 (min, max) time across ranks (ms):
-    model-and-optimizer-setup ......................: (584.62, 633.70)
-    train/valid/test-data-iterators-setup ..........: (927.42, 992.44)
-[before the start of training step] datetime: 2026-08-20 19:02:30 
+    model-and-optimizer-setup ......................: (609.40, 658.12)
+    train/valid/test-data-iterators-setup ..........: (763.28, 1098.20)
+[before the start of training step] datetime: 2026-08-20 19:06:59 
 RCCL version : 2.27.7-HEAD:ca8ec1f
 HIP version  : 7.1.25424-4179531dcd
 ROCm version : 7.1.0.0-20-4179531dcd
@@ -684,8 +690,8 @@ INFO:aiter:waiting for baton release at /workspace/aiter/aiter/jit/build/lock_mo
 INFO:aiter:waiting for baton release at /workspace/aiter/aiter/jit/build/lock_module_rope_general_fwd
 [aiter] waiting for baton release at /workspace/aiter/aiter/jit/build/lock_module_rope_general_fwd
 INFO:aiter:waiting for baton release at /workspace/aiter/aiter/jit/build/lock_module_rope_general_fwd
-[aiter] [32mfinish build [module_rope_general_fwd], cost 96.4s [0m
-INFO:aiter:[32mfinish build [module_rope_general_fwd], cost 96.4s [0m
+[aiter] [32mfinish build [module_rope_general_fwd], cost 95.4s [0m
+INFO:aiter:[32mfinish build [module_rope_general_fwd], cost 95.4s [0m
 [aiter] import [module_rope_general_fwd] under /workspace/aiter/aiter/jit/module_rope_general_fwd.so
 INFO:aiter:import [module_rope_general_fwd] under /workspace/aiter/aiter/jit/module_rope_general_fwd.so
 [aiter] type hints mismatch, override to --> rope_fwd_impl(arg0: torch.Tensor, arg1: torch.Tensor, arg2: torch.Tensor, arg3: int, arg4: bool, arg5: bool) -> None
@@ -700,10 +706,6 @@ INFO:aiter:import [module_rope_general_fwd] under /workspace/aiter/aiter/jit/mod
 WARNING:aiter:type hints mismatch, override to --> rope_fwd_impl(arg0: torch.Tensor, arg1: torch.Tensor, arg2: torch.Tensor, arg3: int, arg4: bool, arg5: bool) -> None
 [aiter] import [module_rope_general_fwd] under /workspace/aiter/aiter/jit/module_rope_general_fwd.so
 INFO:aiter:import [module_rope_general_fwd] under /workspace/aiter/aiter/jit/module_rope_general_fwd.so
-[aiter] type hints mismatch, override to --> rope_fwd_impl(arg0: torch.Tensor, arg1: torch.Tensor, arg2: torch.Tensor, arg3: int, arg4: bool, arg5: bool) -> None
-WARNING:aiter:type hints mismatch, override to --> rope_fwd_impl(arg0: torch.Tensor, arg1: torch.Tensor, arg2: torch.Tensor, arg3: int, arg4: bool, arg5: bool) -> None
-[aiter] import [module_rope_general_fwd] under /workspace/aiter/aiter/jit/module_rope_general_fwd.so
-INFO:aiter:import [module_rope_general_fwd] under /workspace/aiter/aiter/jit/module_rope_general_fwd.so
 [aiter] import [module_rope_general_fwd] under /workspace/aiter/aiter/jit/module_rope_general_fwd.so
 INFO:aiter:import [module_rope_general_fwd] under /workspace/aiter/aiter/jit/module_rope_general_fwd.so
 [aiter] type hints mismatch, override to --> rope_fwd_impl(arg0: torch.Tensor, arg1: torch.Tensor, arg2: torch.Tensor, arg3: int, arg4: bool, arg5: bool) -> None
@@ -718,14 +720,18 @@ WARNING:aiter:type hints mismatch, override to --> rope_fwd_impl(arg0: torch.Ten
 INFO:aiter:import [module_rope_general_fwd] under /workspace/aiter/aiter/jit/module_rope_general_fwd.so
 [aiter] type hints mismatch, override to --> rope_fwd_impl(arg0: torch.Tensor, arg1: torch.Tensor, arg2: torch.Tensor, arg3: int, arg4: bool, arg5: bool) -> None
 WARNING:aiter:type hints mismatch, override to --> rope_fwd_impl(arg0: torch.Tensor, arg1: torch.Tensor, arg2: torch.Tensor, arg3: int, arg4: bool, arg5: bool) -> None
-W0820 19:04:37.860000 7 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 75 closing signal SIGTERM
-W0820 19:04:37.861000 7 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 76 closing signal SIGTERM
-W0820 19:04:37.862000 7 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 78 closing signal SIGTERM
-W0820 19:04:37.870000 7 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 79 closing signal SIGTERM
-W0820 19:04:37.879000 7 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 80 closing signal SIGTERM
-W0820 19:04:37.900000 7 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 82 closing signal SIGTERM
-W0820 19:05:07.905000 7 torch/distributed/elastic/multiprocessing/api.py:1023] Unable to shutdown process 82 via Signals.SIGTERM, forcefully exiting via Signals.SIGKILL
-E0820 19:05:08.351000 7 torch/distributed/elastic/multiprocessing/api.py:978] failed (exitcode: -11) local_rank: 2 (pid: 77) of binary: /opt/venv/bin/python
+[aiter] import [module_rope_general_fwd] under /workspace/aiter/aiter/jit/module_rope_general_fwd.so
+INFO:aiter:import [module_rope_general_fwd] under /workspace/aiter/aiter/jit/module_rope_general_fwd.so
+[aiter] type hints mismatch, override to --> rope_fwd_impl(arg0: torch.Tensor, arg1: torch.Tensor, arg2: torch.Tensor, arg3: int, arg4: bool, arg5: bool) -> None
+WARNING:aiter:type hints mismatch, override to --> rope_fwd_impl(arg0: torch.Tensor, arg1: torch.Tensor, arg2: torch.Tensor, arg3: int, arg4: bool, arg5: bool) -> None
+W0820 19:09:06.464000 7 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 75 closing signal SIGTERM
+W0820 19:09:06.466000 7 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 76 closing signal SIGTERM
+W0820 19:09:06.469000 7 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 77 closing signal SIGTERM
+W0820 19:09:06.473000 7 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 79 closing signal SIGTERM
+W0820 19:09:06.478000 7 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 80 closing signal SIGTERM
+W0820 19:09:06.481000 7 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 81 closing signal SIGTERM
+W0820 19:09:06.492000 7 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 82 closing signal SIGTERM
+E0820 19:09:06.839000 7 torch/distributed/elastic/multiprocessing/api.py:978] failed (exitcode: -11) local_rank: 3 (pid: 78) of binary: /opt/venv/bin/python
 Traceback (most recent call last):
   File "/opt/venv/bin/torchrun", line 33, in <module>
     sys.exit(load_entry_point('torch', 'console_scripts', 'torchrun')())
@@ -745,61 +751,61 @@ pretrain_gpt.py FAILED
 ----------------------------------------------------
 Failures:
 [1]:
-  time      : 2026-08-20_19:05:08
+  time      : 2026-08-20_19:09:06
   host      : mi355-gpu-33
   rank      : 0 (local_rank: 0)
   exitcode  : -11 (pid: 75)
   error_file: <N/A>
   traceback : Signal 11 (SIGSEGV) received by PID 75
 [2]:
-  time      : 2026-08-20_19:05:08
+  time      : 2026-08-20_19:09:06
   host      : mi355-gpu-33
   rank      : 1 (local_rank: 1)
   exitcode  : -11 (pid: 76)
   error_file: <N/A>
   traceback : Signal 11 (SIGSEGV) received by PID 76
 [3]:
-  time      : 2026-08-20_19:05:08
+  time      : 2026-08-20_19:09:06
   host      : mi355-gpu-33
-  rank      : 3 (local_rank: 3)
-  exitcode  : -11 (pid: 78)
+  rank      : 2 (local_rank: 2)
+  exitcode  : -11 (pid: 77)
   error_file: <N/A>
-  traceback : Signal 11 (SIGSEGV) received by PID 78
+  traceback : Signal 11 (SIGSEGV) received by PID 77
 [4]:
-  time      : 2026-08-20_19:05:08
+  time      : 2026-08-20_19:09:06
   host      : mi355-gpu-33
   rank      : 4 (local_rank: 4)
   exitcode  : -11 (pid: 79)
   error_file: <N/A>
   traceback : Signal 11 (SIGSEGV) received by PID 79
 [5]:
-  time      : 2026-08-20_19:05:08
+  time      : 2026-08-20_19:09:06
   host      : mi355-gpu-33
   rank      : 5 (local_rank: 5)
   exitcode  : -11 (pid: 80)
   error_file: <N/A>
   traceback : Signal 11 (SIGSEGV) received by PID 80
 [6]:
-  time      : 2026-08-20_19:05:08
+  time      : 2026-08-20_19:09:06
   host      : mi355-gpu-33
   rank      : 6 (local_rank: 6)
   exitcode  : -11 (pid: 81)
   error_file: <N/A>
   traceback : Signal 11 (SIGSEGV) received by PID 81
 [7]:
-  time      : 2026-08-20_19:05:08
+  time      : 2026-08-20_19:09:06
   host      : mi355-gpu-33
   rank      : 7 (local_rank: 7)
-  exitcode  : -9 (pid: 82)
+  exitcode  : -11 (pid: 82)
   error_file: <N/A>
-  traceback : Signal 9 (SIGKILL) received by PID 82
+  traceback : Signal 11 (SIGSEGV) received by PID 82
 ----------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2026-08-20_19:04:37
+  time      : 2026-08-20_19:09:06
   host      : mi355-gpu-33
-  rank      : 2 (local_rank: 2)
-  exitcode  : -11 (pid: 77)
+  rank      : 3 (local_rank: 3)
+  exitcode  : -11 (pid: 78)
   error_file: <N/A>
-  traceback : Signal 11 (SIGSEGV) received by PID 77
+  traceback : Signal 11 (SIGSEGV) received by PID 78
 ====================================================

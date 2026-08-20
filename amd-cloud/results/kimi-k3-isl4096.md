@@ -200,6 +200,9 @@ never triggers it, and even the degraded cliff bandwidth would be ample.
 bandwidth-dominated**. The 186 serialized calls per step mean the true cost is
 higher than the raw utilization figure suggests.
 
+> **Superseded (2026-08-20).** Measurement replaced this estimate: collectives are **0.8%** of host step time, the smallest bucket — not several percent. Tensor copies (41.3%) and KDA attention (38.6%) dominate. See `kimi-k3-profile.md`.
+
+
 **What is NOT transferred over XGMI:** weights (resident per GPU), KV cache
 (replicated), gradients (inference), expert tokens (EP off).
 

@@ -3,3 +3,40 @@
 [2026-08-20T19:01:37+00:00] GPUs idle
 [2026-08-20T19:01:37+00:00] optional flags: (none)
 [2026-08-20T19:01:37+00:00] launching (timeout 3600s)
+[2026-08-20T19:05:09+00:00] run rc=1 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/megatron-ref/run_20260820_190136/megatron_ref_N8.log
+[2026-08-20T19:05:09+00:00] parsed TF/s/GPU = none
+N=8
+TFLOPS=
+RC=1
+[2026-08-20T19:05:09+00:00] FAILED or no throughput parsed — not updating the report.
+[2026-08-20T19:05:09+00:00] last 30 lines:
+  time      : 2026-08-20_19:05:08
+  host      : mi355-gpu-33
+  rank      : 5 (local_rank: 5)
+  exitcode  : -11 (pid: 80)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 80
+[6]:
+  time      : 2026-08-20_19:05:08
+  host      : mi355-gpu-33
+  rank      : 6 (local_rank: 6)
+  exitcode  : -11 (pid: 81)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 81
+[7]:
+  time      : 2026-08-20_19:05:08
+  host      : mi355-gpu-33
+  rank      : 7 (local_rank: 7)
+  exitcode  : -9 (pid: 82)
+  error_file: <N/A>
+  traceback : Signal 9 (SIGKILL) received by PID 82
+----------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-08-20_19:04:37
+  host      : mi355-gpu-33
+  rank      : 2 (local_rank: 2)
+  exitcode  : -11 (pid: 77)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 77
+====================================================

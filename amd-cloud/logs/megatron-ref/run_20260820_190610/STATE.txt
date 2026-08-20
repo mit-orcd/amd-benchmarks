@@ -1,0 +1,42 @@
+[2026-08-20T19:06:10+00:00] Megatron-LM reference reproduction (Dell-matched) start
+[2026-08-20T19:06:10+00:00] image=rocm/megatron-lm:v26.1 N=8 MBS=4 GBS=32 seq=4096 L=40 H=6144 OVERLAP=0 GAF=0
+[2026-08-20T19:06:10+00:00] GPUs idle
+[2026-08-20T19:06:10+00:00] optional flags: --no-gradient-accumulation-fusion
+[2026-08-20T19:06:10+00:00] launching (timeout 3600s)
+[2026-08-20T19:10:40+00:00] run rc=1 log=/home/amd/shaohao/amd-benchmarks/amd-cloud/logs/megatron-ref/run_20260820_190610/megatron_ref_N8.log
+[2026-08-20T19:10:40+00:00] parsed TF/s/GPU = none
+N=8
+TFLOPS=
+RC=1
+[2026-08-20T19:10:40+00:00] FAILED or no throughput parsed — not updating the report.
+[2026-08-20T19:10:40+00:00] last 30 lines:
+  time      : 2026-08-20_19:09:06
+  host      : mi355-gpu-33
+  rank      : 5 (local_rank: 5)
+  exitcode  : -11 (pid: 80)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 80
+[6]:
+  time      : 2026-08-20_19:09:06
+  host      : mi355-gpu-33
+  rank      : 6 (local_rank: 6)
+  exitcode  : -11 (pid: 81)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 81
+[7]:
+  time      : 2026-08-20_19:09:06
+  host      : mi355-gpu-33
+  rank      : 7 (local_rank: 7)
+  exitcode  : -11 (pid: 82)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 82
+----------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-08-20_19:09:06
+  host      : mi355-gpu-33
+  rank      : 3 (local_rank: 3)
+  exitcode  : -11 (pid: 78)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 78
+====================================================

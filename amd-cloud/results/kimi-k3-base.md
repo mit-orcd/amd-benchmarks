@@ -51,7 +51,7 @@ tokens at batch 64 — a GEMV, which cannot saturate HBM. Raising `max-num-seqs`
 and TP=8 is a power-of-2 arity that never triggers it anyway. **But 1.1% is a floor, not the
 cost**: each call is only 14 KB–896 KB, far below the 16 MiB–8 GiB Part B swept, so these
 collectives are latency-dominated, not bandwidth-dominated. With realistic small-message
-latency the 186 serialized calls per step plausibly consume **~3–8% of step time**.
+latency the 186 serialized calls per step plausibly consume **~3–8% of step time**.> **Superseded (2026-08-20).** Measurement replaced this estimate: collectives are **0.8%** of host step time, the smallest bucket — not several percent. Tensor copies (41.3%) and KDA attention (38.6%) dominate. See `kimi-k3-profile.md`.
 
 **§5** — EP looked like the top tuning lever (trading HBM traffic at 29% for all-to-all at
 1%), so it was **tested — and it is not supported for this model**: ATOM raises

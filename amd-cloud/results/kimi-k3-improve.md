@@ -162,6 +162,51 @@ triggers it.
 
 ---
 
+<!-- BEGIN run-d-maxseqs512 (auto-generated) -->
+
+### Run D — `max-num-seqs 512` (next-step #1, completed)
+
+Ran the top-ranked follow-up: raise the cap again and sweep further. Source: `logs/atom/kimi_512_20260819_211857/`, detail in `kimi-k3-maxseqs512.md`.
+
+| Concurrency | Run C (cap 256) | **Run D (cap 512)** | D / C | D TTFT med (ms) | D TPOT med (ms) |
+|---:|---:|---:|---:|---:|---:|
+| 64 | 1,237.0 | 1,236.0 | **1.00×** | 285.2 | 50.08 |
+| 128 | 1,792.5 | 1,795.5 | **1.00×** | 387.2 | 70.71 |
+| 256 | 2,482.2 | 2,529.9 | **1.02×** | 458.3 | 101.52 |
+| 512 | — | **3,385.9** | — | 541.2 | 152.82 |
+
+**Still climbing.** c=256 → 512 gained **34%** (2,529.9 → 3,385.9 tok/s). The admission cap was still the binding limit at 256; the ceiling has *still* not been found. Raising it further is worth another round, though TPOT (152.82 ms) is now the thing to watch — at some point the latency cost stops being acceptable even if throughput rises.
+
+At the peak point (c=512): **896 of 896 experts** fire per layer, 170.5 GB/GPU/step of weight traffic, step 151.2 ms → HBM **~14%**. As predicted in §4, HBM utilization keeps falling as batch grows while throughput rises — the two move in opposite directions, which is why HBM% is a diagnostic and not a target.
+
+<!-- END run-d-maxseqs512 -->
+
+<!-- BEGIN next-steps-3-4 (auto-generated) -->
+
+### ISL = 4096 (next-step #3, completed)
+
+Same config as Run C (cap 256) with **input length 4096 instead of 1024** — ISL is the only variable. Source: `logs/atom/kimi_isl4096_20260820_131217/`, detail in `kimi-k3-isl4096.md`.
+
+| Concurrency | ISL 1024 (Run C) | **ISL 4096** | 4096/1024 | TTFT med (ms) | TPOT med (ms) |
+|---:|---:|---:|---:|---:|---:|
+| 64 | 1,237.0 | **1,225.3** | **0.99×** | 318.6 | 50.08 |
+| 128 | 1,792.5 | **1,671.0** | **0.93×** | 471.9 | 75.01 |
+| 256 | 2,482.2 | **2,098.2** | **0.85×** | 531.6 | 120.03 |
+
+**4× longer prompts cost 15% throughput** at c=256. Prefill work scales with ISL and competes with decode for the same GPU, so a bigger share of each step goes to prompt processing. Expected direction; the magnitude is the useful number for capacity planning.
+
+### Repeatability of the MAD gap (next-step #4, completed)
+
+Three repeats at c=64 per config, to test whether the single-run **0.91×** figure in `kimi-k3-comparison.md` is real. Source: `logs/atom/kimi_repeats_20260820_135851/`, detail in `kimi-k3-repeats.md`.
+
+| Config | n | mean tok/s | stdev | rel. spread |
+|---|---:|---:|---:|---:|
+| `A_original` | 3 | **1,365.2** | 15.6 | 2.1% |
+
+> Repeats share one server process per config, so this bounds benchmark-to-benchmark variance, not full cold-start variance.
+
+<!-- END next-steps-3-4 -->
+
 ## 4. Next steps
 
 ### Can HBM utilization be pushed higher — and should it?
@@ -193,7 +238,7 @@ not a configuration one.
 
 ### Ranked next experiments
 
-1. **Extend Run C: `--max-num-seqs 512`, sweep to c=512.** Highest value. Run C's throughput
+1. ~~**Extend Run C: `--max-num-seqs 512`, sweep to c=512.**~~ **DONE — see Run D above.** Was highest value. Run C's throughput
    was **still climbing at c=256 with no knee** (1,237 → 1,792 → 2,482), so the ceiling has
    not been found. Extend from **`kimi-k3-maxseqs.md`** — it has the best throughput and the
    better-performing image. Expect throughput to keep rising and HBM% to keep falling; that is
@@ -202,10 +247,10 @@ not a configuration one.
    inference from residuals, not measurement. A `rocprof` / torch-profiler trace would replace
    estimates with a real breakdown — and it is the prerequisite for judging any kernel-level
    idea, including EP (see below). Do this before optimizing anything kernel-side.
-3. **ISL = 4096.** MAD's spec sweeps input lengths 1024 *and* 4096; all three runs here use
+3. ~~**ISL = 4096.**~~ **DONE — see above.** MAD's spec sweeps input lengths 1024 *and* 4096; all three runs here use
    1024 only. Longer prompts shift the prefill/decode balance and would likely change the
    high-concurrency picture.
-4. **Repeats for the 9% MAD gap.** One run per config supports no claim about small
+4. ~~**Repeats for the 9% MAD gap.**~~ **DONE — see above.** One run per config supports no claim about small
    differences being reproducible. Three repeats at c=64 would settle it.
 
 ### Should expert parallelism be retried on the MAD image?

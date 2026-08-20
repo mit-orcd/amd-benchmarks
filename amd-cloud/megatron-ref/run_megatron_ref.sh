@@ -12,6 +12,24 @@
 # Every one of those is reproduced below, read out of Dell's own resolved-argument dump in
 # logs/tflops_v26.1_tune_20260604_104624/bench_bf16_ddp_bucket_250M.log.
 #
+# 2026-08-20 CORRECTION. The first completed run (run_20260820_074532) claimed to be
+# apples-to-apples but was NOT: eight of Dell's flags were missing, so it built a different
+# model and ran it with less comm overlap. Diffed against Dell's resolved-arg dump:
+#     swiglu               False  vs True    <- different FFN, ~1.29x the MLP FLOPs
+#     normalization    LayerNorm  vs RMSNorm
+#     position_embedding  learned  vs rope
+#     disable_bias_linear  False  vs True
+#     untie_embeddings     False  vs True
+#     masked_softmax_fusion True  vs False
+#     overlap_grad_reduce  False  vs True    <- grad all-reduce not overlapped w/ backward
+#     overlap_param_gather False  vs True
+# That run took 6,266 ms/iter against Dell's 2,114 ms/iter -- ~3x slower on a *cheaper*
+# model, so it cannot be reported next to the 790.4 figure. All eight flags are now set.
+# It also lacked --log-throughput (log_throughput=False), which is why the driver parsed
+# no TFLOP/s and refused to update the report -- correct behaviour, right outcome.
+# --eval-iters 0 is the one deliberate deviation from Dell: the post-training eval phase
+# crashed in AITER's gfx942 asm FMHA kernel, and eval is not part of the measurement.
+#
 # HSA_OVERRIDE_GFX_VERSION=9.4.2 IS set below, matching Dell. This was tried unset first
 # (2026-08-14 21:10 run) on the premise that a native-gfx950 image wouldn't need it -- that
 # premise held for ATOM's rocm/atom-dev (hipBLASLt has its own gfx950 tuning independent of
@@ -83,11 +101,20 @@ torchrun --nproc_per_node=$N --nnodes=1 \\
     --group-query-attention --num-query-groups $NUM_KV_HEADS \\
     --seq-length $SEQ_LEN --max-position-embeddings $SEQ_LEN \\
     --vocab-size $VOCAB \\
+    --swiglu \\
+    --normalization RMSNorm \\
+    --position-embedding-type rope \\
+    --disable-bias-linear \\
+    --untie-embeddings-and-output-weights \\
+    --no-masked-softmax-fusion \\
     --tensor-model-parallel-size 1 --pipeline-model-parallel-size 1 \\
     --micro-batch-size $MICRO_BS --global-batch-size $GBS \\
     --bf16 \\
     --use-distributed-optimizer \\
     --ddp-bucket-size $DDP_BUCKET \\
+    --overlap-grad-reduce \\
+    --overlap-param-gather \\
+    --log-throughput \\
     --use-flash-attn \\
     --transformer-impl transformer_engine \\
     --train-iters $TRAIN_ITERS \\
@@ -98,6 +125,7 @@ torchrun --nproc_per_node=$N --nnodes=1 \\
     --split 949,50,1 \\
     --log-interval 1 \\
     --no-save-optim --no-load-optim \\
+    --eval-iters 0 \\
     --attention-backend fused
 EOF
 chmod +x "$CMD"
